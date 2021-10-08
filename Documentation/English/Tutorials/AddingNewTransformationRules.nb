@@ -847,13 +847,13 @@ Notebook[
                                 InterpretationBox[
                                  StyleBox[
                                   "S",
-                                  LineColor -> RGBColor[0.843947, 0.346711, 0.330922],
                                   FrontFaceColor -> RGBColor[0.843947, 0.346711, 0.330922],
-                                  GraphicsColor -> RGBColor[0.843947, 0.346711, 0.330922],
+                                  BackFaceColor -> RGBColor[0.843947, 0.346711, 0.330922],
                                   FontWeight -> Bold,
                                   FontSlant -> Italic,
                                   FontColor -> RGBColor[0.843947, 0.346711, 0.330922],
-                                  BackFaceColor -> RGBColor[0.843947, 0.346711, 0.330922]
+                                  LineColor -> RGBColor[0.843947, 0.346711, 0.330922],
+                                  GraphicsColor -> RGBColor[0.843947, 0.346711, 0.330922]
                                  ],
                                  CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1
                                 ],
@@ -1071,13 +1071,13 @@ Notebook[
                                 InterpretationBox[
                                  StyleBox[
                                   "S",
-                                  LineColor -> RGBColor[0.843947, 0.346711, 0.330922],
                                   FrontFaceColor -> RGBColor[0.843947, 0.346711, 0.330922],
-                                  GraphicsColor -> RGBColor[0.843947, 0.346711, 0.330922],
+                                  BackFaceColor -> RGBColor[0.843947, 0.346711, 0.330922],
                                   FontWeight -> Bold,
                                   FontSlant -> Italic,
                                   FontColor -> RGBColor[0.843947, 0.346711, 0.330922],
-                                  BackFaceColor -> RGBColor[0.843947, 0.346711, 0.330922]
+                                  LineColor -> RGBColor[0.843947, 0.346711, 0.330922],
+                                  GraphicsColor -> RGBColor[0.843947, 0.346711, 0.330922]
                                  ],
                                  CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1
                                 ],
@@ -1746,13 +1746,13 @@ Notebook[
                              InterpretationBox[
                               StyleBox[
                                "S",
-                               LineColor -> RGBColor[0.843947, 0.346711, 0.330922],
                                FrontFaceColor -> RGBColor[0.843947, 0.346711, 0.330922],
-                               GraphicsColor -> RGBColor[0.843947, 0.346711, 0.330922],
+                               BackFaceColor -> RGBColor[0.843947, 0.346711, 0.330922],
                                FontWeight -> Bold,
                                FontSlant -> Italic,
                                FontColor -> RGBColor[0.843947, 0.346711, 0.330922],
-                               BackFaceColor -> RGBColor[0.843947, 0.346711, 0.330922]
+                               LineColor -> RGBColor[0.843947, 0.346711, 0.330922],
+                               GraphicsColor -> RGBColor[0.843947, 0.346711, 0.330922]
                               ],
                               CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1
                              ],
@@ -2694,7 +2694,12 @@ Notebook[
                       "Outcome" -> "Success",
                       "Input" -> HoldForm[
                        CodeEquivalence`ToCanonicalForm[
-                        HoldComplete[Table[n + Range[n], {n, 10}]]
+                        HoldComplete[
+                         Table[
+                          n + Range[n],
+                          {n, 10}
+                         ]
+                        ]
                        ]
                       ],
                       "ExpectedOutput" -> HoldForm[
@@ -2792,17 +2797,33 @@ Notebook[
                         Apply[
                          CodeEquivalence`EvaluationControl`EvaluateSafely,
                          CodeEquivalence`ToCanonicalForm[
-                          HoldComplete[Table[n + Range[n], {n, 10}]]
+                          HoldComplete[
+                           Table[
+                            n + Range[n],
+                            {n, 10}
+                           ]
+                          ]
                          ]
                         ],
-                        Table[n + Range[n], {n, 10}],
+                        Table[
+                         n + Range[n],
+                         {n, 10}
+                        ],
                         Apply[
                          CodeEquivalence`EvaluationControl`EvaluateSafely,
                          CodeEquivalence`ToCanonicalForm[
-                          HoldComplete[Table[(n + 1) + Range[n + 1], {n, 0, 9}]]
+                          HoldComplete[
+                           Table[
+                            (n + 1) + Range[n + 1],
+                            {n, 0, 9}
+                           ]
+                          ]
                          ]
                         ],
-                        Table[(n + 1) + Range[n + 1], {n, 0, 9}]
+                        Table[
+                         (n + 1) + Range[n + 1],
+                         {n, 0, 9}
+                        ]
                        ]
                       ],
                       "ExpectedOutput" -> HoldForm[True],
@@ -2821,7 +2842,12 @@ Notebook[
                       "Outcome" -> "Success",
                       "Input" -> HoldForm[
                        CodeEquivalence`ToCanonicalForm[
-                        HoldComplete[Table[Range[2^3 + 2]^(n + 1), {n, 3}]]
+                        HoldComplete[
+                         Table[
+                          Range[2^3 + 2]^(n + 1),
+                          {n, 3}
+                         ]
+                        ]
                        ]
                       ],
                       "ExpectedOutput" -> HoldForm[
@@ -2919,17 +2945,35 @@ Notebook[
                         Apply[
                          CodeEquivalence`EvaluationControl`EvaluateSafely,
                          CodeEquivalence`ToCanonicalForm[
-                          HoldComplete[Table[Range[2^3 + 2]^(n + 1), {n, 3}]]
+                          HoldComplete[
+                           Table[
+                            Range[2^3 + 2]^(n + 1),
+                            {n, 3}
+                           ]
+                          ]
                          ]
                         ],
-                        Table[Range[2^3 + 2]^(n + 1), {n, 3}],
+                        Table[
+                         Range[2^3 + 2]^(n + 1),
+                         {n, 3}
+                        ],
                         Apply[
                          CodeEquivalence`EvaluationControl`EvaluateSafely,
                          CodeEquivalence`ToCanonicalForm[
-                          HoldComplete[Table[n^p, {p, 2, 4}, {n, 10}]]
+                          HoldComplete[
+                           Table[
+                            n^p,
+                            {p, 2, 4},
+                            {n, 10}
+                           ]
+                          ]
                          ]
                         ],
-                        Table[n^p, {p, 2, 4}, {n, 10}]
+                        Table[
+                         n^p,
+                         {p, 2, 4},
+                         {n, 10}
+                        ]
                        ]
                       ],
                       "ExpectedOutput" -> HoldForm[True],
@@ -2949,7 +2993,10 @@ Notebook[
                       "Input" -> HoldForm[
                        CodeEquivalence`ToCanonicalForm[
                         HoldComplete[
-                         Table[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}^(n + 1), {n, 3}]
+                         Table[
+                          {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}^(n + 1),
+                          {n, 3}
+                         ]
                         ]
                        ]
                       ],
@@ -3049,18 +3096,34 @@ Notebook[
                          CodeEquivalence`EvaluationControl`EvaluateSafely,
                          CodeEquivalence`ToCanonicalForm[
                           HoldComplete[
-                           Table[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}^(n + 1), {n, 3}]
+                           Table[
+                            {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}^(n + 1),
+                            {n, 3}
+                           ]
                           ]
                          ]
                         ],
-                        Table[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}^(n + 1), {n, 3}],
+                        Table[
+                         {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}^(n + 1),
+                         {n, 3}
+                        ],
                         Apply[
                          CodeEquivalence`EvaluationControl`EvaluateSafely,
                          CodeEquivalence`ToCanonicalForm[
-                          HoldComplete[Table[n^p, {p, 2, 4}, {n, 10}]]
+                          HoldComplete[
+                           Table[
+                            n^p,
+                            {p, 2, 4},
+                            {n, 10}
+                           ]
+                          ]
                          ]
                         ],
-                        Table[n^p, {p, 2, 4}, {n, 10}]
+                        Table[
+                         n^p,
+                         {p, 2, 4},
+                         {n, 10}
+                        ]
                        ]
                       ],
                       "ExpectedOutput" -> HoldForm[True],
@@ -3288,7 +3351,10 @@ Notebook[
                       "TestID" -> None,
                       "Outcome" -> "Success",
                       "Input" -> HoldForm[
-                       CodeEquivalence`CodeEquivalentQ[2*(x + 1), 2*x + 2]
+                       CodeEquivalence`CodeEquivalentQ[
+                        2*(x + 1),
+                        2*x + 2
+                       ]
                       ],
                       "ExpectedOutput" -> HoldForm[True],
                       "ActualOutput" -> HoldForm[True],
@@ -3344,8 +3410,12 @@ Notebook[
                       "Input" -> HoldForm[
                        Not[
                         CodeEquivalence`CodeEquivalentQ[
-                         f[Pattern[x, Blank[]]] := x^2,
-                         f[Pattern[x, Blank[]]] := x^3
+                         f[Pattern[x, Blank[]]] :=
+                          x^2
+,
+                         f[Pattern[x, Blank[]]] :=
+                          x^3
+
                         ]
                        ]
                       ],
@@ -3843,7 +3913,9 @@ Notebook[
                       "Outcome" -> "Success",
                       "Input" -> HoldForm[
                        CodeEquivalence`ToCanonicalForm[
-                        HoldComplete[Table[n, {n, 2, 20, 2}]]
+                        HoldComplete[
+                         Table[n, {n, 2, 20, 2}]
+                        ]
                        ]
                       ],
                       "ExpectedOutput" -> HoldForm[
@@ -4119,7 +4191,9 @@ Notebook[
                       "Outcome" -> "Success",
                       "Input" -> HoldForm[
                        CodeEquivalence`ToCanonicalForm[
-                        HoldComplete[Table[n, {n, 1, 100, 2}]]
+                        HoldComplete[
+                         Table[n, {n, 1, 100, 2}]
+                        ]
                        ]
                       ],
                       "ExpectedOutput" -> HoldForm[
@@ -4174,7 +4248,9 @@ Notebook[
                       "Outcome" -> "Success",
                       "Input" -> HoldForm[
                        CodeEquivalence`ToCanonicalForm[
-                        HoldComplete[Table[n^2, {n, 2, 100, 2}]]
+                        HoldComplete[
+                         Table[n^2, {n, 2, 100, 2}]
+                        ]
                        ]
                       ],
                       "ExpectedOutput" -> HoldForm[
@@ -4307,7 +4383,12 @@ Notebook[
                       "Input" -> HoldForm[
                        CodeEquivalence`ToCanonicalForm[
                         HoldComplete[
-                         ListLinePlot[Table[RandomInteger[{0, n}], {n, 100}]]
+                         ListLinePlot[
+                          Table[
+                           RandomInteger[{0, n}],
+                           {n, 100}
+                          ]
+                         ]
                         ]
                        ]
                       ],
@@ -5997,13 +6078,13 @@ Notebook[
                    InterpretationBox[
                     StyleBox[
                      "S",
-                     LineColor -> RGBColor[0.28026441037696703, 0.715, 0.4292089322474965],
                      FrontFaceColor -> RGBColor[0.28026441037696703, 0.715, 0.4292089322474965],
-                     GraphicsColor -> RGBColor[0.28026441037696703, 0.715, 0.4292089322474965],
+                     BackFaceColor -> RGBColor[0.28026441037696703, 0.715, 0.4292089322474965],
                      FontWeight -> Bold,
                      FontSlant -> Italic,
                      FontColor -> RGBColor[0.28026441037696703, 0.715, 0.4292089322474965],
-                     BackFaceColor -> RGBColor[0.28026441037696703, 0.715, 0.4292089322474965]
+                     LineColor -> RGBColor[0.28026441037696703, 0.715, 0.4292089322474965],
+                     GraphicsColor -> RGBColor[0.28026441037696703, 0.715, 0.4292089322474965]
                     ],
                     CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S$12
                    ]
@@ -6935,11 +7016,10 @@ Notebook[
   ],
   "NotebookUUID" -> "553273e1-809d-b2df-3b59-50f54845a6c4"
  },
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (August 21, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 7, 2021)",
  StyleDefinitions -> FrontEnd`FileName[
   {"Wolfram"},
   "TechNotePageStylesExt.nb",
   CharacterEncoding -> "UTF-8"
- ],
- ExpressionUUID -> "ed31b0bc-1d8d-46a3-9014-11e5d3ba0e94"
+ ]
 ]

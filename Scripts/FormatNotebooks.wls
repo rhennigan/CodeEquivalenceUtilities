@@ -83,6 +83,14 @@ print[ ind_Integer, msg__ ] :=
 
 print[ msg__ ] := print[ 0, msg ];
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*makeUnreadable*)
+makeUnreadable[ file_ ] := enclose[
+    ConfirmBy[ Export[ file, Import[ file, "NB" ] ], FileExistsQ ],
+    StringForm[ "Failed to unformat notebook: `1`", file ]
+];
+
 (******************************************************************************)
 (* ::Subsection::Closed:: *)
 (*makeReadable*)
@@ -195,7 +203,10 @@ $overrideFormats = HoldComplete[
 (* ::Section::Closed:: *)
 (*Run*)
 
-makeReadable /@ getNotebookFiles[ ]
+If[ MemberQ[ $ScriptCommandLine, "--unformat" ],
+    makeUnreadable /@ getNotebookFiles[ ],
+    makeReadable /@ getNotebookFiles[ ]
+]
 
 
 (* :!CodeAnalysis::EndBlock:: *)

@@ -1120,11 +1120,10 @@ Notebook[
   "CreationDate" -> "02-19-2021 12:29:28"
  },
  CellContext -> "Global`",
- FrontEndVersion -> "12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 7, 2021)",
  StyleDefinitions -> FrontEnd`FileName[
   {"Wolfram"},
   "FunctionPageStylesExt.nb",
   CharacterEncoding -> "UTF-8"
- ],
- ExpressionUUID -> "319174ff-7105-4c09-a7c9-1f763f4776b6"
+ ]
 ]

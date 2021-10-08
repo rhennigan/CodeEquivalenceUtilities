@@ -130,6 +130,7 @@ Notebook[
             "FileManagerFile",
             CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
             CellGroupingRules -> {"SectionGrouping", 100},
+            TaggingRules -> { },
             CellFrameLabels -> {
              {
               Cell[
@@ -193,6 +194,7 @@ Notebook[
                "FileManagerDirectory",
                CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 100},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -258,6 +260,7 @@ Notebook[
                   "FileManagerDirectory",
                   CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 110},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -323,6 +326,7 @@ Notebook[
                      "FileManagerDirectory",
                      CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                      CellGroupingRules -> {"SectionGrouping", 120},
+                     TaggingRules -> { },
                      CellFrameLabels -> {
                       {
                        Cell[
@@ -369,6 +373,7 @@ Notebook[
                      "FileManagerFile",
                      CellMargins -> {{69 + Inherited, Inherited}, {Inherited, Inherited}},
                      CellGroupingRules -> {"SectionGrouping", 130},
+                     TaggingRules -> { },
                      CellFrameLabels -> {
                       {
                        Cell[
@@ -436,6 +441,7 @@ Notebook[
                      "FileManagerDirectory",
                      CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                      CellGroupingRules -> {"SectionGrouping", 120},
+                     TaggingRules -> { },
                      CellFrameLabels -> {
                       {
                        Cell[
@@ -501,6 +507,7 @@ Notebook[
                         "FileManagerDirectory",
                         CellMargins -> {{69 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 130},
+                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -547,6 +554,7 @@ Notebook[
                         "FileManagerFile",
                         CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 140},
+                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -591,6 +599,7 @@ Notebook[
                         "FileManagerFile",
                         CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 140},
+                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -635,6 +644,7 @@ Notebook[
                         "FileManagerFile",
                         CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 140},
+                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -679,6 +689,7 @@ Notebook[
                         "FileManagerFile",
                         CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 140},
+                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -723,6 +734,7 @@ Notebook[
                         "FileManagerFile",
                         CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 140},
+                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -737,11 +749,11 @@ Notebook[
                         CellID -> 85288088
                        ]
                       },
-                      Closed
+                      Open
                      ]
                     ]
                    },
-                   Closed
+                   Open
                   ]
                  ],
                  Cell[
@@ -794,6 +806,7 @@ Notebook[
                      "FileManagerDirectory",
                      CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                      CellGroupingRules -> {"SectionGrouping", 120},
+                     TaggingRules -> { },
                      CellFrameLabels -> {
                       {
                        Cell[
@@ -840,6 +853,7 @@ Notebook[
                      "FileManagerFile",
                      CellMargins -> {{69 + Inherited, Inherited}, {Inherited, Inherited}},
                      CellGroupingRules -> {"SectionGrouping", 130},
+                     TaggingRules -> { },
                      CellFrameLabels -> {
                       {
                        Cell[
@@ -913,6 +927,7 @@ Notebook[
                "FileManagerDirectory",
                CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 100},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -957,6 +972,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1020,6 +1036,7 @@ Notebook[
                   "FileManagerDirectory",
                   CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 110},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -1066,6 +1083,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -1110,6 +1128,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -1154,6 +1173,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -1198,6 +1218,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -1242,6 +1263,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -1286,6 +1308,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -1330,6 +1353,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -1378,6 +1402,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1422,6 +1447,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1466,6 +1492,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1510,6 +1537,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1554,6 +1582,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1598,6 +1627,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1642,6 +1672,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1686,6 +1717,7 @@ Notebook[
             "FileManagerFile",
             CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
             CellGroupingRules -> {"SectionGrouping", 100},
+            TaggingRules -> { },
             CellFrameLabels -> {
              {
               Cell[
@@ -1730,6 +1762,7 @@ Notebook[
             "FileManagerFile",
             CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
             CellGroupingRules -> {"SectionGrouping", 100},
+            TaggingRules -> { },
             CellFrameLabels -> {
              {
               Cell[
@@ -1772,6 +1805,7 @@ Notebook[
             "FileManagerFile",
             CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
             CellGroupingRules -> {"SectionGrouping", 100},
+            TaggingRules -> { },
             CellFrameLabels -> {
              {
               Cell[
@@ -1833,6 +1867,7 @@ Notebook[
                "FileManagerDirectory",
                CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 100},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1879,6 +1914,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1944,6 +1980,7 @@ Notebook[
                "FileManagerDirectory",
                CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 100},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2009,6 +2046,7 @@ Notebook[
                   "FileManagerDirectory",
                   CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 110},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2055,6 +2093,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2099,6 +2138,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2143,6 +2183,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2210,6 +2251,7 @@ Notebook[
                   "FileManagerDirectory",
                   CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 110},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2256,6 +2298,7 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
+                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2270,7 +2313,7 @@ Notebook[
                   CellID -> 253388253
                  ]
                 },
-                Closed
+                Open
                ]
               ],
               Cell[
@@ -2304,6 +2347,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2348,6 +2392,7 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2362,13 +2407,14 @@ Notebook[
                CellID -> 652145811
               ]
              },
-             Closed
+             Open
             ]
            ],
            Cell[
             "",
             "FileManagerBottomSpacer",
             CellGroupingRules -> {"SectionGrouping", 100},
+            TaggingRules -> { },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
             CellID -> 265281480
            ]
@@ -3194,110 +3240,57 @@ Notebook[
             CellID -> 903367029
            ],
            Cell[
-            TextData[
-             {
-              "In a formal language such as ",
-              ButtonBox[
-               "type theory",
-               BaseStyle -> "Hyperlink",
-               ButtonData -> {URL["https://ncatlab.org/nlab/show/type+theory"], None},
-               ButtonNote -> "https://ncatlab.org/nlab/show/type+theory"
-              ],
-              ", one distinguishes various different notions of ",
-              StyleBox["equality", FontSlant -> "Italic"],
-              " or ",
-              StyleBox["equivalence", FontSlant -> "Italic"],
-              " of the terms of the language."
-             }
-            ],
+            "CodeEquivalenceUtilities is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.",
             "Text",
-            "Excluded",
             TaggingRules -> { },
-            CellID -> 106944942
+            CellID -> 100012179
+           ],
+           Cell[
+            "This allows comparison of unevaluated expressions that may have non-deterministic outputs (e.g. random values, dates, etc).",
+            "Text",
+            TaggingRules -> { },
+            CellID -> 166934268
            ],
            Cell[
             TextData[
              {
-              "Note that both ",
+              "This Paclet represents the underlying technology that powers several ",
               ButtonBox[
-               "intensional",
+               "automated code grading systems",
                BaseStyle -> "Hyperlink",
                ButtonData -> {
                 URL[
-                 "https://ncatlab.org/nlab/show/intensional+type+theory"
+                 "https://www.wolfram.com/broadcast/video.php?c=104&v=1747&disp=list&ob=date&o=DESC&p=44"
                 ],
                 None
                },
-               ButtonNote -> "https://ncatlab.org/nlab/show/intensional+type+theory"
+               ButtonNote -> "https://www.wolfram.com/broadcast/video.php?c=104&v=1747&disp=list&ob=date&o=DESC&p=44"
+              ],
+              ", such as the ",
+              ButtonBox[
+               "online exercises for EIWL",
+               BaseStyle -> "Hyperlink",
+               ButtonData -> {
+                URL[
+                 "https://lab.wolframcloud.com/app/view/openEIWL?parentFilePath=elementary-introduction/01-starting-out-elementary-arithmetic-exercises.nb#sidebar=eiwl/01-starting-out-elementary-arithmetic"
+                ],
+                None
+               },
+               ButtonNote -> "https://lab.wolframcloud.com/app/view/openEIWL?parentFilePath=elementary-introduction/01-starting-out-elementary-arithmetic-exercises.nb#sidebar=eiwl/01-starting-out-elementary-arithmetic"
               ],
               " and ",
               ButtonBox[
-               "extensional",
+               "Wolfram Challenges",
                BaseStyle -> "Hyperlink",
-               ButtonData -> {
-                URL[
-                 "https://ncatlab.org/nlab/show/extensional+type+theory"
-                ],
-                None
-               },
-               ButtonNote -> "https://ncatlab.org/nlab/show/extensional+type+theory"
+               ButtonData -> {URL["https://challenges.wolframcloud.com/"], None},
+               ButtonNote -> "https://challenges.wolframcloud.com/"
               ],
-              " type theories may distinguish between intensional and extensional equality (and whether the type theory satisfies ",
-              ButtonBox[
-               "function extensionality",
-               BaseStyle -> "Hyperlink",
-               ButtonData -> {
-                URL[
-                 "https://ncatlab.org/nlab/show/function+extensionality"
-                ],
-                None
-               },
-               ButtonNote -> "https://ncatlab.org/nlab/show/function+extensionality"
-              ],
-              " is yet a separate issue)."
+              "."
              }
             ],
             "Text",
-            "Excluded",
             TaggingRules -> { },
-            CellID -> 637811235
-           ],
-           Cell[
-            TextData[
-             {
-              "Another sort of equality which is very important in type theory is ",
-              StyleBox["computational", FontSlant -> "Italic"],
-              ", ",
-              StyleBox["conversional", FontSlant -> "Italic"],
-              ", or ",
-              StyleBox["reductional", FontSlant -> "Italic"],
-              " equality. This is the congruence on terms generated by various conversion or reduction rules, such as ",
-              ButtonBox[
-               "\[Infinity]-reduction",
-               BaseStyle -> "Hyperlink",
-               ButtonData -> {
-                URL["https://ncatlab.org/nlab/show/%E2%88%9E-reduction"],
-                None
-               },
-               ButtonNote -> "https://ncatlab.org/nlab/show/%E2%88%9E-reduction"
-              ],
-              " or ",
-              ButtonBox[
-               "\[Infinity]-conversion",
-               BaseStyle -> "Hyperlink",
-               ButtonData -> {
-                URL["https://ncatlab.org/nlab/show/%E2%88%9E-conversion"],
-                None
-               },
-               ButtonNote -> "https://ncatlab.org/nlab/show/%E2%88%9E-conversion"
-              ],
-              " (the choice of rules depends on the type theory)."
-             }
-            ],
-            "Text",
-            "Excluded",
-            TaggingRules -> { },
-            CellID -> 2842270
+            CellID -> 655013924
            ]
           },
           Open
@@ -3361,261 +3354,33 @@ Notebook[
             CellID -> 427358009
            ],
            Cell[
-            TextData[
-             {
-              "Here is a list of distinctions between different notions of ",
-              StyleBox["equality", FontSlant -> "Italic"],
-              ", in different contexts, where possibly all the following pairs of notions are, in turn, \[OpenCurlyDoubleQuote]the same\[CloseCurlyDoubleQuote], just expressed in terms of different terminologies:"
-             }
-            ],
-            "Notes",
-            "Excluded",
+            "TODO",
+            "AuthorComment",
             TaggingRules -> { },
-            CellID -> 927568266
-           ],
-           Cell[
-            BoxData[
-             GridBox[
-              {
-               {
-                Cell[
-                 TextData[
-                  {
-                   "the difference between ",
-                   ButtonBox[
-                    "axiomatic",
-                    BaseStyle -> "Hyperlink",
-                    ButtonData -> {URL["https://ncatlab.org/nlab/show/axiom"], None},
-                    ButtonNote -> "https://ncatlab.org/nlab/show/axiom"
-                   ],
-                   " and ",
-                   ButtonBox[
-                    "defined",
-                    BaseStyle -> "Hyperlink",
-                    ButtonData -> {URL["https://ncatlab.org/nlab/show/definition"], None},
-                    ButtonNote -> "https://ncatlab.org/nlab/show/definition"
-                   ],
-                   " equality;"
-                  }
-                 ],
-                 "TableText"
-                ]
-               },
-               {
-                Cell[
-                 "the difference between identity and equality;",
-                 "TableText"
-                ]
-               },
-               {
-                Cell[
-                 "the difference between intensional and extensional equality;",
-                 "TableText"
-                ]
-               },
-               {
-                Cell[
-                 TextData[
-                  {
-                   "the difference between equality ",
-                   ButtonBox[
-                    "judgements",
-                    BaseStyle -> "Hyperlink",
-                    ButtonData -> {URL["https://ncatlab.org/nlab/show/judgements"], None},
-                    ButtonNote -> "https://ncatlab.org/nlab/show/judgements"
-                   ],
-                   " and equality ",
-                   ButtonBox[
-                    "propositions",
-                    BaseStyle -> "Hyperlink",
-                    ButtonData -> {URL["https://ncatlab.org/nlab/show/propositions"], None},
-                    ButtonNote -> "https://ncatlab.org/nlab/show/propositions"
-                   ],
-                   ","
-                  }
-                 ],
-                 "TableText"
-                ]
-               },
-               {
-                Cell[
-                 TextData[
-                  {
-                   "the difference between equality and ",
-                   ButtonBox[
-                    "isomorphism",
-                    BaseStyle -> "Hyperlink",
-                    ButtonData -> {URL["https://ncatlab.org/nlab/show/isomorphism"], None},
-                    ButtonNote -> "https://ncatlab.org/nlab/show/isomorphism"
-                   ],
-                   ","
-                  }
-                 ],
-                 "TableText"
-                ]
-               },
-               {
-                Cell[
-                 TextData[
-                  {
-                   "the difference between equality and ",
-                   ButtonBox[
-                    "equivalence",
-                    BaseStyle -> "Hyperlink",
-                    ButtonData -> {URL["https://ncatlab.org/nlab/show/equivalence"], None},
-                    ButtonNote -> "https://ncatlab.org/nlab/show/equivalence"
-                   ],
-                   ","
-                  }
-                 ],
-                 "TableText"
-                ]
-               },
-               {
-                Cell[
-                 "the possibility of operations that might not preserve equality.",
-                 "TableText"
-                ]
-               }
-              }
-             ]
-            ],
-            "TableNotes",
-            "Excluded",
-            TaggingRules -> { },
-            CellID -> 30042919
-           ],
-           Cell[
-            TextData[
+            CellFrameLabels -> {
              {
-              "The paradigmatic example of computational equality is a pair of terms like \[OpenCurlyDoubleQuote]",
+              None,
               Cell[
                BoxData[
-                FormBox[
-                 RowBox[
-                  {
-                   RowBox[
-                    {
-                     "(",
-                     RowBox[{RowBox[{"\[Lambda]x", ".", "x"}], "+", "x"}],
-                     ")"
-                    }
-                   ],
-                   "2"
-                  }
-                 ],
-                 TraditionalForm
+                TemplateBox[
+                 {
+                  StyleBox[
+                   "\"richardh@wolfram.com\"",
+                   ShowStringCharacters -> False,
+                   StripOnInput -> False
+                  ],
+                  3842714033.8572075
+                 },
+                 "CommentCellLabelTemplate"
                 ]
-               ]
-              ],
-              "\[CloseCurlyDoubleQuote] and \[OpenCurlyDoubleQuote]",
-              Cell[
-               BoxData[FormBox[RowBox[{"2", "+", "2"}], TraditionalForm]]
-              ],
-              "\[CloseCurlyDoubleQuote], where the second is obtained by \[Beta]-reduction from the first. In a type theory that includes definitions by ",
-              ButtonBox[
-               "recursion",
-               BaseStyle -> "Hyperlink",
-               ButtonData -> {URL["https://ncatlab.org/nlab/show/recursion"], None},
-               ButtonNote -> "https://ncatlab.org/nlab/show/recursion"
-              ],
-              ", expansion of a recursor is also computational equality. For instance, if addition is defined by recursion, then \[OpenCurlyDoubleQuote]",
-              Cell[
-               BoxData[FormBox[RowBox[{"2", "+", "2"}], TraditionalForm]]
-              ],
-              "\[CloseCurlyDoubleQuote] (that is, ",
-              Cell[
-               BoxData[
-                FormBox[
-                 RowBox[
-                  {
-                   RowBox[
-                    {
-                     "s",
-                     RowBox[{"(", RowBox[{"s", RowBox[{"(", "0", ")"}]}], ")"}]
-                    }
-                   ],
-                   "+",
-                   RowBox[
-                    {
-                     "s",
-                     RowBox[{"(", RowBox[{"s", RowBox[{"(", "0", ")"}]}], ")"}]
-                    }
-                   ]
-                  }
-                 ],
-                 TraditionalForm
-                ]
-               ]
-              ],
-              ") reduces via this rule to \[OpenCurlyDoubleQuote]",
-              Cell[BoxData[FormBox["4", TraditionalForm]]],
-              "\[CloseCurlyDoubleQuote] (that is, ",
-              Cell[
-               BoxData[
-                FormBox[
-                 RowBox[
-                  {
-                   "s",
-                   RowBox[
-                    {
-                     "(",
-                     RowBox[
-                      {
-                       "s",
-                       RowBox[
-                        {
-                         "(",
-                         RowBox[
-                          {
-                           "s",
-                           RowBox[{"(", RowBox[{"s", RowBox[{"(", "0", ")"}]}], ")"}]
-                          }
-                         ],
-                         ")"
-                        }
-                       ]
-                      }
-                     ],
-                     ")"
-                    }
-                   ]
-                  }
-                 ],
-                 TraditionalForm
-                ]
-               ]
-              ],
-              ")."
-             }
-            ],
-            "Notes",
-            "Excluded",
-            TaggingRules -> { },
-            CellID -> 323928631
-           ],
-           Cell[
-            TextData[
-             {
-              "For better or for worse, however, it is common in type theory to use the phrase \[OpenCurlyDoubleQuote]definitional equality\[CloseCurlyDoubleQuote] to ",
-              StyleBox["include", FontSlant -> "Italic"],
-              " computational equality, even though it involves more than mere expansion of definitional abbreviations. There is even a phrase \[OpenCurlyDoubleQuote]\[Delta]-reduction\[CloseCurlyDoubleQuote] for the substitution of definitions regarded as a conversion rule analogous to \[Beta]-reduction and \[Eta]-expansion. Thus, even though \[OpenCurlyDoubleQuote]",
-              Cell[
-               BoxData[FormBox[RowBox[{"2", "+", "2"}], TraditionalForm]]
-              ],
-              "\[CloseCurlyDoubleQuote] and \[OpenCurlyDoubleQuote]",
-              Cell[BoxData[FormBox["4", TraditionalForm]]],
-              "\[CloseCurlyDoubleQuote] are not literally equal by ",
-              StyleBox["definition", FontSlant -> "Italic"],
-              " but only by performing some computation (even if the computation is fairly trivial in this case), the type of equality they do enjoy is generally called ",
-              StyleBox["definitional", FontSlant -> "Italic"],
-              "."
-             }
-            ],
-            "Notes",
-            "Excluded",
-            TaggingRules -> { },
-            CellID -> 4506145
+               ],
+               Background -> None
+              ]
+             },
+             {None, None}
+            },
+            CellTags -> {"AuthorComment", "CommentCell"},
+            CellID -> 366744303
            ]
           },
           Open
@@ -7135,7 +6900,13 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                           HoldForm[
+                            Table[
+                             i,
+                             {i, 5},
+                             {j, i + 2}
+                            ]
+                           ],
                            HoldForm[
                             Table[
                              Table[
@@ -7637,7 +7408,12 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                           HoldForm[
+                            Table[
+                             ConstantArray[i, i + 2],
+                             {i, 5}
+                            ]
+                           ],
                            HoldForm[
                             Table[
                              ConstantArray[
@@ -8386,7 +8162,15 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                           HoldForm[
+                            Part[
+                             Table[
+                              Table[j, {j, i}],
+                              {i, 10}
+                             ],
+                             2
+                            ]
+                           ],
                            HoldForm[
                             Part[
                              Table[
@@ -8770,7 +8554,15 @@ Notebook[
                          2
                         ]
                        ],
-                       HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                       HoldForm[
+                        Part[
+                         Table[
+                          Table[j, {j, i}],
+                          {i, 10}
+                         ],
+                         2
+                        ]
+                       ],
                        HoldForm[
                         Part[
                          Table[
@@ -8879,7 +8671,12 @@ Notebook[
                          2
                         ]
                        ],
-                       HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                       HoldForm[
+                        Table[
+                         ConstantArray[i, i + 2],
+                         {i, 5}
+                        ]
+                       ],
                        HoldForm[
                         Table[
                          ConstantArray[
@@ -9274,7 +9071,13 @@ Notebook[
                          }
                         ]
                        ],
-                       HoldForm[Table[i, {i, 5}, {j, i + 2}]]
+                       HoldForm[
+                        Table[
+                         i,
+                         {i, 5},
+                         {j, i + 2}
+                        ]
+                       ]
                       },
                       {
                        {
@@ -9370,7 +9173,12 @@ Notebook[
                           ]
                          ]
                         ],
-                        HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                        HoldForm[
+                         Table[
+                          ConstantArray[i, i + 2],
+                          {i, 5}
+                         ]
+                        ],
                         HoldForm[
                          Table[
                           Table[
@@ -9419,7 +9227,13 @@ Notebook[
                           }
                          ]
                         ],
-                        HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                        HoldForm[
+                         Table[
+                          i,
+                          {i, 5},
+                          {j, i + 2}
+                         ]
+                        ],
                         HoldForm[
                          Table[
                           Table[
@@ -9638,7 +9452,13 @@ Notebook[
                          ]
                         ],
                         DirectedEdge[
-                         HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                         HoldForm[
+                          Table[
+                           i,
+                           {i, 5},
+                           {j, i + 2}
+                          ]
+                         ],
                          HoldForm[
                           Table[
                            Table[
@@ -9702,9 +9522,22 @@ Notebook[
                           }
                          ]
                         ],
-                        HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                        HoldForm[
+                         Part[
+                          Table[
+                           Table[j, {j, i}],
+                           {i, 10}
+                          ],
+                          2
+                         ]
+                        ],
                         DirectedEdge[
-                         HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                         HoldForm[
+                          Table[
+                           ConstantArray[i, i + 2],
+                           {i, 5}
+                          ]
+                         ],
                          HoldForm[
                           Table[
                            ConstantArray[
@@ -9794,7 +9627,15 @@ Notebook[
                          ]
                         ],
                         DirectedEdge[
-                         HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                         HoldForm[
+                          Part[
+                           Table[
+                            Table[j, {j, i}],
+                            {i, 10}
+                           ],
+                           2
+                          ]
+                         ],
                          HoldForm[
                           Part[
                            Table[
@@ -10037,7 +9878,13 @@ Notebook[
                          ]
                         },
                         DirectedEdge[
-                         HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                         HoldForm[
+                          Table[
+                           i,
+                           {i, 5},
+                           {j, i + 2}
+                          ]
+                         ],
                          HoldForm[
                           Table[
                            Table[
@@ -10085,7 +9932,15 @@ Notebook[
                          ]
                         ] -> {EdgeStyle -> Directive[Opacity[1], Hue[0.2, 1, 0.6]]},
                         DirectedEdge[
-                         HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                         HoldForm[
+                          Part[
+                           Table[
+                            Table[j, {j, i}],
+                            {i, 10}
+                           ],
+                           2
+                          ]
+                         ],
                          HoldForm[
                           Part[
                            Table[
@@ -10145,7 +10000,13 @@ Notebook[
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}]
                          ]
                         },
-                        HoldForm[Table[i, {i, 5}, {j, i + 2}]] -> {
+                        HoldForm[
+                         Table[
+                          i,
+                          {i, 5},
+                          {j, i + 2}
+                         ]
+                        ] -> {
                          VertexStyle -> Directive[
                           Hue[0, 1, 0.8],
                           EdgeForm[{Hue[0, 1, 0.8], Opacity[1]}]
@@ -10216,7 +10077,12 @@ Notebook[
                          ]
                         ] -> {EdgeStyle -> Directive[Hue[0.2, 1, 0.6], Opacity[1]]},
                         DirectedEdge[
-                         HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                         HoldForm[
+                          Table[
+                           ConstantArray[i, i + 2],
+                           {i, 5}
+                          ]
+                         ],
                          HoldForm[
                           Table[
                            ConstantArray[
@@ -10235,13 +10101,26 @@ Notebook[
                           ]
                          ]
                         ] -> {EdgeStyle -> Directive[Hue[0.8, 0.6, 0.8], Opacity[1]]},
-                        HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]] -> {
+                        HoldForm[
+                         Table[
+                          ConstantArray[i, i + 2],
+                          {i, 5}
+                         ]
+                        ] -> {
                          VertexStyle -> Directive[
                           Hue[0.8, 0.6, 0.8],
                           EdgeForm[{Hue[0.8, 0.6, 0.8], Opacity[1]}]
                          ]
                         },
-                        HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]] -> {
+                        HoldForm[
+                         Part[
+                          Table[
+                           Table[j, {j, i}],
+                           {i, 10}
+                          ],
+                          2
+                         ]
+                        ] -> {
                          VertexStyle -> Directive[
                           Hue[0.1, 0.6, 0.7],
                           EdgeForm[{Hue[0.1, 0.6, 0.7], Opacity[1]}]
@@ -11479,7 +11358,15 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                          HoldForm[
+                           Part[
+                            Table[
+                             Table[j, {j, i}],
+                             {i, 10}
+                            ],
+                            2
+                           ]
+                          ],
                           "Tooltip"
                          ]
                         ]
@@ -12387,7 +12274,12 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                          HoldForm[
+                           Table[
+                            ConstantArray[i, i + 2],
+                            {i, 5}
+                           ]
+                          ],
                           "Tooltip"
                          ]
                         ]
@@ -15632,7 +15524,13 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                          HoldForm[
+                           Table[
+                            i,
+                            {i, 5},
+                            {j, i + 2}
+                           ]
+                          ],
                           "Tooltip"
                          ]
                         ]
@@ -17655,8 +17553,19 @@ Notebook[
                   {
                    {
                     {
-                     HoldForm[Table[i, {i, 5}, {j, i + 2}]],
-                     HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]]
+                     HoldForm[
+                      Table[
+                       i,
+                       {i, 5},
+                       {j, i + 2}
+                      ]
+                     ],
+                     HoldForm[
+                      Table[
+                       ConstantArray[i, i + 2],
+                       {i, 5}
+                      ]
+                     ]
                     },
                     HoldForm[
                      Table[
@@ -17736,7 +17645,15 @@ Notebook[
                    {
                     {
                      HoldForm[First[Rest[Map[Range, Range[10]]]]],
-                     HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]]
+                     HoldForm[
+                      Part[
+                       Table[
+                        Table[j, {j, i}],
+                        {i, 10}
+                       ],
+                       2
+                      ]
+                     ]
                     },
                     HoldForm[
                      Part[
@@ -17942,6 +17859,7 @@ Notebook[
            Cell[
             "https://github.com/rhennigan/CodeEquivalenceUtilities",
             "Text",
+            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :> Replace[
@@ -18196,6 +18114,24 @@ Notebook[
              PassEventsUp -> False
             },
             CellID -> 291183993
+           ],
+           Cell[
+            "exercises",
+            "Item",
+            TaggingRules -> { },
+            CellID -> 36335462
+           ],
+           Cell[
+            "code quiz",
+            "Item",
+            TaggingRules -> { },
+            CellID -> 193079286
+           ],
+           Cell[
+            "grading",
+            "Item",
+            TaggingRules -> { },
+            CellID -> 154307701
            ]
           },
           Open
@@ -18853,6 +18789,7 @@ Notebook[
            Cell[
             "Source, reference or citation information",
             "Text",
+            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :> Replace[
@@ -18942,20 +18879,69 @@ Notebook[
            Cell[
             TextData[
              ButtonBox[
-              "Starting Out: Elementary Arithmetic: Elementary Introduction to the Wolfram Language",
+              "Wolfram Videos - Determining Code Equivalence for Automated Grading",
               BaseStyle -> "Hyperlink",
               ButtonData -> {
                URL[
-                "https://www.wolfram.com/language/elementary-introduction/2nd-ed/01-starting-out-elementary-arithmetic.html"
+                "https://www.wolfram.com/broadcast/video.php?c=104&v=1747&disp=list&ob=date&o=DESC&p=44"
                ],
                None
               },
-              ButtonNote -> "https://www.wolfram.com/language/elementary-introduction/2nd-ed/01-starting-out-elementary-arithmetic.html"
+              ButtonNote -> "https://www.wolfram.com/broadcast/video.php?c=104&v=1747&disp=list&ob=date&o=DESC&p=44"
              ]
             ],
             "Item",
             TaggingRules -> { },
-            CellID -> 432913984
+            CellID -> 813678111
+           ],
+           Cell[
+            TextData[
+             ButtonBox[
+              "Wolfram Videos - Wolfram Challenges: Behind the Scenes",
+              BaseStyle -> "Hyperlink",
+              ButtonData -> {
+               URL[
+                "https://www.wolfram.com/broadcast/video.php?c=104&v=2457&disp=list&ob=title&o=ASC&p=34"
+               ],
+               None
+              },
+              ButtonNote -> "https://www.wolfram.com/broadcast/video.php?c=104&v=2457&disp=list&ob=title&o=ASC&p=34"
+             ]
+            ],
+            "Item",
+            TaggingRules -> { },
+            CellID -> 227467228
+           ],
+           Cell[
+            TextData[
+             ButtonBox[
+              "Wolfram Challenges: Programming Puzzles for the Wolfram Language",
+              BaseStyle -> "Hyperlink",
+              ButtonData -> {URL["https://challenges.wolframcloud.com/"], None},
+              ButtonNote -> "https://challenges.wolframcloud.com/"
+             ]
+            ],
+            "Item",
+            TaggingRules -> { },
+            CellID -> 511426257
+           ],
+           Cell[
+            TextData[
+             ButtonBox[
+              "An Elementary Introduction to the Wolfram Language - Online Exercises",
+              BaseStyle -> "Hyperlink",
+              ButtonData -> {
+               URL[
+                "https://lab.wolframcloud.com/app/view/openEIWL?parentFilePath=elementary-introduction%2F01-starting-out-elementary-arithmetic-exercises.nb#sidebar=eiwl/01-starting-out-elementary-arithmetic"
+               ],
+               None
+              },
+              ButtonNote -> "https://lab.wolframcloud.com/app/view/openEIWL?parentFilePath=elementary-introduction%2F01-starting-out-elementary-arithmetic-exercises.nb#sidebar=eiwl/01-starting-out-elementary-arithmetic"
+             ]
+            ],
+            "Item",
+            TaggingRules -> { },
+            CellID -> 446113075
            ]
           },
           Open
@@ -19789,6 +19775,7 @@ Notebook[
         Cell[
          "Additional information about limitations, issues, etc.",
          "Text",
+         TaggingRules -> { },
          CellEventActions -> {
           Inherited,
           {"KeyDown", "\t"} :> Replace[
@@ -19813,6 +19800,53 @@ Notebook[
          },
          CellTags -> {"DefaultContent", "TabNext"},
          CellID -> 908162033
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             InterpretationBox[
+              RowBox[
+               {
+                "\"\"",
+                "\[InvisibleSpace]",
+                "\"Fri 8 Oct 2021 17:09:40.464\"",
+                "\[InvisibleSpace]",
+                "\": \"",
+                "\[InvisibleSpace]",
+                "\"Formatting: \"",
+                "\[InvisibleSpace]",
+                "\"DefinitionNotebook.nb\""
+               }
+              ],
+              SequenceForm[
+               "",
+               "Fri 8 Oct 2021 17:09:40.464",
+               ": ",
+               "Formatting: ",
+               "DefinitionNotebook.nb"
+              ],
+              Editable -> False
+             ]
+            ],
+            "Print",
+            TaggingRules -> { },
+            CellLabel -> "During evaluation of In[1]:=",
+            CellID -> 149441656
+           ],
+           Cell[
+            BoxData[
+             "\"Failed to format notebook: H:\\\\Documents\\\\CodeEquivalenceUtilities\\\\DefinitionNotebook.nb\""
+            ],
+            "Print",
+            TaggingRules -> { },
+            CellLabel -> "During evaluation of In[1]:=",
+            CellID -> 344823360
+           ]
+          },
+          Open
+         ]
         ]
        },
        Open
@@ -19870,19 +19904,20 @@ Notebook[
    "DefaultContentMethod" -> "Tagged"
   },
   "SubmissionReviewData" -> {"Review" -> False},
-  "ToolsOpen" -> True,
+  "ToolsOpen" -> False,
   "UpdatedTimestamp" -> 3842633619.,
   "TemplateVersion" -> "1.5.45",
   "StatusMessage" -> "",
   "AutoUpdate" -> True,
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" -> DateObject[
-   {2021, 10, 8, 15, 15, 59.7658313`9.529027792843952},
+   {2021, 10, 8, 17, 28, 23.567652`9.124891243179416},
    "Instant",
    "Gregorian",
    -4.
   ],
-  "NotebookUUID" -> "0e82ef88-8bb1-4c63-bd79-6efe1d3d6922"
+  "NotebookUUID" -> "0e82ef88-8bb1-4c63-bd79-6efe1d3d6922",
+  "PacletBuildData" -> {"FileHashes" -> {}, "LastBuiltArchive" -> $Failed}
  },
  CreateCellID -> True,
  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 7, 2021)",
@@ -29387,5 +29422,5 @@ Notebook[
   FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 7, 2021)",
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"
  ],
- ExpressionUUID -> "0e82ef88-8bb1-4c63-bd79-6efe1d3d6922"
+ ExpressionUUID -> "7bd7dea0-712d-4287-847c-f6a9bcbb450c"
 ]

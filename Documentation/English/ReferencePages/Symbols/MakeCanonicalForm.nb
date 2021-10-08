@@ -1969,11 +1969,10 @@ Notebook[
   "NotebookUUID" -> "2767433e-1950-ecb8-4c78-ffa4ddd526a6"
  },
  CellContext -> "Global`",
- FrontEndVersion -> "12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 7, 2021)",
  StyleDefinitions -> FrontEnd`FileName[
   {"Wolfram"},
   "FunctionPageStylesExt.nb",
   CharacterEncoding -> "UTF-8"
- ],
- ExpressionUUID -> "eebb2cb4-68e3-4d8a-93fd-77da812d0286"
+ ]
 ]

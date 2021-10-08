@@ -74,7 +74,6 @@ PacletObject[
           "Wolfram`CodeEquivalenceUtilities`EquivalenceTestData",
           "Wolfram`CodeEquivalenceUtilities`FromCanonicalForm",
           "Wolfram`CodeEquivalenceUtilities`MakeCanonicalForm",
-          "Wolfram`CodeEquivalenceUtilities`TestFunction",
           "Wolfram`CodeEquivalenceUtilities`ToCanonicalForm"
         }
       },

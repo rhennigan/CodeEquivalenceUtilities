@@ -1336,6 +1336,5 @@ Notebook[
   {"Wolfram"},
   "GuidePageStylesExt.nb",
   CharacterEncoding -> "UTF-8"
- ],
- ExpressionUUID -> "c03dabbe-92ea-4ba6-9bb0-2fa34c8e6f12"
+ ]
 ]
