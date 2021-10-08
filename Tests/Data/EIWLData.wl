@@ -1,3 +1,6 @@
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::PatternRule:: *)
+(* :!CodeAnalysis::Disable::DuplicateKeys::ListOfRules:: *)
 <|
 "1.1"    -> HoldComplete[1 + 2 + 3],
 "1.2"    -> HoldComplete[1 + 2 + 3 + 4 + 5],
@@ -644,3 +647,4 @@
 "47.2"   -> HoldComplete[First[Last[Reap[Fold[10*Sow[#1] + #2 & , {1, 2, 3, 4, 5}]]]]],
 "47.3"   -> HoldComplete[First[Last[Reap[Nest[If[EvenQ[#1], Sow[#1]/2, 3*#1 + 1] & , 1000, 20]]]]]
 |>
+(* :!CodeAnalysis::EndBlock:: *)

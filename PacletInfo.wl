@@ -5,7 +5,7 @@ PacletObject[
     "Name" -> "Wolfram__CodeEquivalenceUtilities",
     "Description" -> "Utilities for testing code equivalence",
     "Creator" -> "Richard Hennigan <richardh@wolfram.com>",
-    "Version" -> "1.0.0",
+    "Version" -> "1.1.0",
     "WolframVersion" -> "12.0+",
     "Extensions" -> {
       {
