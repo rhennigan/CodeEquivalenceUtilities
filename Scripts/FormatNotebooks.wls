@@ -15,6 +15,7 @@ $defaultIgnore = FileNameJoin @ { $defaultRoot, "build" };
 (*Get arguments*)
 $root   := $root   = makeRootString @ getArg[ "root"  , $defaultRoot   ];
 $ignore := $ignore = makeIgnorePatt @ getArg[ "ignore", $defaultIgnore ];
+$strict := $strict = Interpreter[ "Boolean" ][ getArg[ "strict", "True" ] ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -40,7 +41,7 @@ enclose[ eval_           ] := enclose[ eval, "An unspecified error occured." ];
 enclose[ eval_, msg_     ] := enclose[ eval, msg, 1 ];
 enclose[ eval_, msg_, n_ ] := Enclose[
     eval,
-    (Print @ ToString @ msg; Exit @ n) &
+    (Print @ ToString @ msg; If[ $strict, Exit @ n ]) &
 ];
 
 (* ::**********************************************************************:: *)
