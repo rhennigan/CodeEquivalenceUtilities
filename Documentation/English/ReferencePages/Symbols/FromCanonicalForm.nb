@@ -1,0 +1,788 @@
+Notebook[
+ {
+  Cell[
+   TextData[
+    {
+     "New in: ",
+     Cell["", "HistoryData", CellTags -> "New"],
+     " | Modified in: ",
+     Cell[" ", "HistoryData", CellTags -> "Modified"],
+     " | Obsolete in: ",
+     Cell[" ", "HistoryData", CellTags -> "Obsolete"],
+     " | Excised in: ",
+     Cell[" ", "HistoryData", CellTags -> "Excised"]
+    }
+   ],
+   "History",
+   CellID -> 1247902091
+  ],
+  Cell[
+   "Created by: richardh on 02-19-2021 12:29:48",
+   "AuthorDate",
+   CellID -> 391650868
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Categorization",
+      "CategorizationSection",
+      CellID -> 1122911449
+     ],
+     Cell[
+      "Symbol",
+      "Categorization",
+      CellLabel -> "Entity Type",
+      CellID -> 686433507
+     ],
+     Cell[
+      "Wolfram__CodeEquivalenceUtilities",
+      "Categorization",
+      CellLabel -> "Paclet Name",
+      CellID -> 605800465
+     ],
+     Cell[
+      "Wolfram`CodeEquivalenceUtilities`",
+      "Categorization",
+      CellLabel -> "Context",
+      CellID -> 468444828
+     ],
+     Cell[
+      "Wolfram__CodeEquivalenceUtilities/ref/FromCanonicalForm",
+      "Categorization",
+      CellLabel -> "URI",
+      CellID -> 592332030
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["Keywords", "KeywordsSection", CellID -> 477174294],
+     Cell["canonical form", "Keywords", CellID -> 1164421360]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Syntax Templates",
+      "TemplatesSection",
+      CellID -> 1872225408
+     ],
+     Cell[
+      BoxData[""],
+      "Template",
+      CellLabel -> "Additional Function Template",
+      CellID -> 1562036412
+     ],
+     Cell[
+      BoxData[""],
+      "Template",
+      CellLabel -> "Arguments Pattern",
+      CellID -> 158391909
+     ],
+     Cell[
+      BoxData[""],
+      "Template",
+      CellLabel -> "Local Variables",
+      CellID -> 1360575930
+     ],
+     Cell[
+      BoxData[""],
+      "Template",
+      CellLabel -> "Color Equal Signs",
+      CellID -> 793782254
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "FromCanonicalForm",
+      "ObjectName",
+      CellID -> 1224892054
+     ],
+     Cell[
+      TextData[
+       {
+        Cell["   ", "ModInfo"],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            ButtonBox[
+             "FromCanonicalForm",
+             BaseStyle -> "Link",
+             ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/FromCanonicalForm"
+            ],
+            "[",
+            StyleBox["expr", "TI"],
+            "]"
+           }
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[LineSeparator]converts the canonical form expression ",
+        Cell[BoxData[StyleBox["expr", "TI"]], "InlineFormula"],
+        " into a normal expression."
+       }
+      ],
+      "Usage",
+      CellID -> 982511436
+     ],
+     Cell[
+      TextData[
+       {
+        "The expression ",
+        Cell[BoxData[StyleBox["expr", "TI"]], "InlineFormula"],
+        " should be the output of ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "ToCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/ToCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " or ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "MakeCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/MakeCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        "."
+       }
+      ],
+      "Notes",
+      CellID -> 1067943069
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["Tech Notes", "TechNotesSection", CellID -> 250839057],
+     Cell["XXXX", "Tutorials", CellID -> 341631938]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Related Demonstrations",
+      "RelatedDemonstrationsSection",
+      CellID -> 1268215905
+     ],
+     Cell["XXXX", "RelatedDemonstrations", CellID -> 1129518860]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Related Links",
+      "RelatedLinksSection",
+      CellID -> 1584193535
+     ],
+     Cell["XXXX", "RelatedLinks", CellID -> 1038487239]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["See Also", "SeeAlsoSection", CellID -> 1255426704],
+     Cell[
+      TextData[
+       {
+        Cell[
+         BoxData[
+          ButtonBox[
+           "ToCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/ToCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[EmptyVerySmallSquare] ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "MakeCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/MakeCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[EmptyVerySmallSquare] ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "CodeEquivalentQ",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/CodeEquivalentQ"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[EmptyVerySmallSquare] ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "EquivalenceTestData",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/EquivalenceTestData"
+          ]
+         ],
+         "InlineFormula"
+        ]
+       }
+      ],
+      "SeeAlso",
+      CellID -> 929782353
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["More About", "MoreAboutSection", CellID -> 38303248],
+     Cell["XXXX", "MoreAbout", CellID -> 1665078683]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      BoxData[
+       InterpretationBox[
+        GridBox[
+         {
+          {
+           StyleBox["Examples", "PrimaryExamplesSection"],
+           ButtonBox[
+            RowBox[
+             {
+              RowBox[{"More", " ", "Examples"}],
+              " ",
+              "\[RightTriangle]"
+             }
+            ],
+            BaseStyle -> "ExtendedExamplesLink",
+            ButtonData :> "ExtendedExamples"
+           ]
+          }
+         }
+        ],
+        $Line = 0;
+        Null
+       ]
+      ],
+      "PrimaryExamplesSection",
+      CellID -> 880084151
+     ],
+     Cell[
+      TextData[
+       {
+        "Convert an expression into its canonical form using ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "MakeCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/MakeCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        ":"
+       }
+      ],
+      "ExampleText",
+      CellID -> 15808792
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            "MakeCanonicalForm",
+            "[",
+            RowBox[
+             {"RandomInteger", "/@", RowBox[{"Range", "[", "5", "]"}]}
+            ],
+            "]"
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[1]:=",
+         CellID -> 59928917
+        ],
+        Cell[
+         BoxData[
+          TagBox[
+           RowBox[
+            {
+             "Table",
+             "[",
+             RowBox[
+              {
+               RowBox[
+                {
+                 InterpretationBox[
+                  TagBox[
+                   TooltipBox[
+                    StyleBox[
+                     FrameBox[
+                      "\"\[ScriptCapitalR]\"",
+                      Background -> RGBColor[
+                       {Rational[199, 255], Rational[72, 85], Rational[152, 255]}
+                      ],
+                      ContentPadding -> False,
+                      FrameMargins -> 3,
+                      RoundingRadius -> 3,
+                      StripOnInput -> False
+                     ],
+                     StripOnInput -> False,
+                     ShowStringCharacters -> False,
+                     FontWeight -> Bold,
+                     FontColor -> RGBColor[
+                      {Rational[107, 255], Rational[44, 85], Rational[37, 255]}
+                     ]
+                    ],
+                    "\"RandomValue\"",
+                    TooltipStyle -> "TextStyling"
+                   ],
+                   Annotation[#1, "RandomValue", "Tooltip"] & 
+                  ],
+                  CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
+                 ],
+                 "[",
+                 RowBox[
+                  {
+                   "DiscreteUniformDistribution",
+                   "[",
+                   RowBox[
+                    {
+                     "{",
+                     RowBox[
+                      {
+                       "0",
+                       ",",
+                       InterpretationBox[
+                        TagBox[
+                         TooltipBox[
+                          FrameBox[
+                           Cell[
+                            TextData[
+                             {
+                              StyleBox[
+                               "S1",
+                               FontWeight -> "Bold",
+                               FontColor -> RGBColor[
+                                {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                               ]
+                              ],
+                              StyleBox[
+                               "\[ThinSpace]\[Proportion]\[ThinSpace]",
+                               FontWeight -> "Bold",
+                               FontColor -> RGBColor[
+                                {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                               ]
+                              ],
+                              StyleBox[
+                               "Int",
+                               FontWeight -> "Plain",
+                               FontColor -> RGBColor[
+                                {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                               ]
+                              ]
+                             }
+                            ],
+                            "Text"
+                           ],
+                           Background -> RGBColor[
+                            {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
+                           ],
+                           ContentPadding -> False,
+                           FrameMargins -> 2,
+                           RoundingRadius -> 2,
+                           StripOnInput -> False
+                          ],
+                          "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                         ],
+                         #1 & 
+                        ],
+                        CodeEquivalenceUtilities`Types`TypedSymbol[
+                         CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                         _Integer
+                        ]
+                       ]
+                      }
+                     ],
+                     "}"
+                    }
+                   ],
+                   "]"
+                  }
+                 ],
+                 "]"
+                }
+               ],
+               ",",
+               RowBox[
+                {
+                 "{",
+                 RowBox[
+                  {
+                   InterpretationBox[
+                    TagBox[
+                     TooltipBox[
+                      FrameBox[
+                       Cell[
+                        TextData[
+                         {
+                          StyleBox[
+                           "S1",
+                           FontWeight -> "Bold",
+                           FontColor -> RGBColor[
+                            {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                           ]
+                          ],
+                          StyleBox[
+                           "\[ThinSpace]\[Proportion]\[ThinSpace]",
+                           FontWeight -> "Bold",
+                           FontColor -> RGBColor[
+                            {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                           ]
+                          ],
+                          StyleBox[
+                           "Int",
+                           FontWeight -> "Plain",
+                           FontColor -> RGBColor[
+                            {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                           ]
+                          ]
+                         }
+                        ],
+                        "Text"
+                       ],
+                       Background -> RGBColor[
+                        {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
+                       ],
+                       ContentPadding -> False,
+                       FrameMargins -> 2,
+                       RoundingRadius -> 2,
+                       StripOnInput -> False
+                      ],
+                      "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                     ],
+                     #1 & 
+                    ],
+                    CodeEquivalenceUtilities`Types`TypedSymbol[
+                     CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                     _Integer
+                    ]
+                   ],
+                   ",",
+                   "1",
+                   ",",
+                   "5",
+                   ",",
+                   "1"
+                  }
+                 ],
+                 "}"
+                }
+               ]
+              }
+             ],
+             "]"
+            }
+           ],
+           HoldForm
+          ]
+         ],
+         "Output",
+         CellLabel -> "Out[1]=",
+         CellID -> 78870498
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      "Convert it into a normal expression:",
+      "ExampleText",
+      CellID -> 161220892
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[RowBox[{"FromCanonicalForm", "[", "%", "]"}]],
+         "Input",
+         CellLabel -> "In[2]:=",
+         CellID -> 122130055
+        ],
+        Cell[
+         BoxData[
+          TagBox[
+           RowBox[
+            {
+             "Table",
+             "[",
+             RowBox[
+              {
+               RowBox[
+                {
+                 "RandomVariate",
+                 "[",
+                 RowBox[
+                  {
+                   "DiscreteUniformDistribution",
+                   "[",
+                   RowBox[{"{", RowBox[{"0", ",", "S1"}], "}"}],
+                   "]"
+                  }
+                 ],
+                 "]"
+                }
+               ],
+               ",",
+               RowBox[
+                {"{", RowBox[{"S1", ",", "1", ",", "5", ",", "1"}], "}"}
+               ]
+              }
+             ],
+             "]"
+            }
+           ],
+           HoldForm
+          ]
+         ],
+         "Output",
+         CellLabel -> "Out[2]=",
+         CellID -> 23711498
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[RowBox[{"ReleaseHold", "[", "%", "]"}]],
+         "Input",
+         CellLabel -> "In[3]:=",
+         CellID -> 18420733
+        ],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            "{",
+            RowBox[{"1", ",", "0", ",", "1", ",", "0", ",", "5"}],
+            "}"
+           }
+          ]
+         ],
+         "Output",
+         CellLabel -> "Out[3]=",
+         CellID -> 55034639
+        ]
+       },
+       Open
+      ]
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "More Examples",
+      "ExtendedExamplesSection",
+      CellTags -> "ExtendedExamples",
+      CellID -> 1854448968
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Scope", "ExampleSection"],
+        $Line = 0;
+        Null
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 1293636265
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Generalizations & Extensions", "ExampleSection"],
+        $Line = 0;
+        Null
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 1020263627
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["Options", "ExampleSection"],
+           $Line = 0;
+           Null
+          ]
+         ],
+         "ExampleSection",
+         CellID -> 2061341341
+        ],
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["XXXX", "ExampleSubsection"],
+           $Line = 0;
+           Null
+          ]
+         ],
+         "ExampleSubsection",
+         CellID -> 1757724783
+        ],
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["XXXX", "ExampleSubsection"],
+           $Line = 0;
+           Null
+          ]
+         ],
+         "ExampleSubsection",
+         CellID -> 1295379749
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Applications", "ExampleSection"],
+        $Line = 0;
+        Null
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 258228157
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Properties & Relations", "ExampleSection"],
+        $Line = 0;
+        Null
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 2123667759
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Possible Issues", "ExampleSection"],
+        $Line = 0;
+        Null
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 1305812373
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Interactive Examples", "ExampleSection"],
+        $Line = 0;
+        Null
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 1653164318
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Neat Examples", "ExampleSection"],
+        $Line = 0;
+        Null
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 589267740
+     ]
+    },
+    Open
+   ]
+  ]
+ },
+ WindowStatusArea -> Automatic,
+ TaggingRules -> {
+  "WelcomeScreenSettings" -> {"FEStarting" -> False},
+  "Author" -> "richardh",
+  "CreationDate" -> "02-19-2021 12:29:48",
+  "NotebookIndexQ" -> True,
+  "NotebookLastIndexed" -> DateObject[
+   {2021, 2, 22, 13, 5, 24.0296876`9.133323048457441},
+   "Instant",
+   "Gregorian",
+   -5.
+  ],
+  "NotebookUUID" -> "493a1eb9-f143-e679-5438-8c9fc3f5a4e0"
+ },
+ CellContext -> "Global`",
+ FrontEndVersion -> "12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
+ StyleDefinitions -> FrontEnd`FileName[
+  {"Wolfram"},
+  "FunctionPageStylesExt.nb",
+  CharacterEncoding -> "UTF-8"
+ ],
+ ExpressionUUID -> "b333f2c5-d11e-4ae8-87e7-a5db939000e3"
+]

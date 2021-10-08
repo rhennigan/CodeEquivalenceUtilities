@@ -1,0 +1,1004 @@
+Notebook[
+ {
+  Cell[
+   TextData[
+    {
+     "New in: ",
+     Cell["??", "HistoryData", CellTags -> "New"],
+     " | Modified in: ",
+     Cell[" ", "HistoryData", CellTags -> "Modified"],
+     " | Obsolete in: ",
+     Cell[" ", "HistoryData", CellTags -> "Obsolete"],
+     " | Excised in: ",
+     Cell[" ", "HistoryData", CellTags -> "Excised"]
+    }
+   ],
+   "History",
+   CellID -> 1247902091
+  ],
+  Cell[
+   "Created by: rhennigan on 07-22-2021 13:20:14",
+   "AuthorDate",
+   CellID -> 70277049
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Categorization",
+      "CategorizationSection",
+      CellID -> 1122911449
+     ],
+     Cell[
+      "Guide",
+      "Categorization",
+      CellLabel -> "Entity Type",
+      CellID -> 686433507
+     ],
+     Cell[
+      "Wolfram__CodeEquivalenceUtilities",
+      "Categorization",
+      CellLabel -> "Paclet Name",
+      CellID -> 605800465
+     ],
+     Cell[
+      "Wolfram`CodeEquivalenceUtilities`",
+      "Categorization",
+      CellLabel -> "Context",
+      CellID -> 468444828
+     ],
+     Cell[
+      "Wolfram__CodeEquivalenceUtilities/guide/CodeEquivalenceUtilities",
+      "Categorization",
+      CellLabel -> "URI"
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["Keywords", "KeywordsSection", CellID -> 1427428552],
+     Cell["XXXX", "Keywords", CellID -> 1251852827]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Code Equivalence Utilities",
+      "GuideTitle",
+      CellID -> 942062912
+     ],
+     Cell[
+      TextData[
+       {
+        "Here is some text that explains the point of the paclet in some more detail. While you're here, how about checking out this ",
+        ButtonBox[
+         "neat resource function",
+         BaseStyle -> "Hyperlink",
+         ButtonData -> {
+          URL[
+           "https://resources.wolframcloud.com/FunctionRepository/resources/BirdSay"
+          ],
+          None
+         },
+         ButtonNote -> "https://resources.wolframcloud.com/FunctionRepository/resources/BirdSay"
+        ],
+        "? Note that most of these symbols were just added to pad this page with some content and are undocumented. Only the first few symbols will actually link anywhere."
+       }
+      ],
+      "GuideAbstract",
+      CellID -> 2001916300
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["", "GuideFunctionsSection", CellID -> 1866139230],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         "Equivalence Testing",
+         "GuideFunctionsSubsection",
+         CellID -> 178061819
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "CodeEquivalentQ",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/CodeEquivalentQ"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "test if two unevaluated expressions are equivalent"
+          }
+         ],
+         "GuideText",
+         CellID -> 203374175
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "EquivalenceTestData",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/EquivalenceTestData"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] get additional information about the equivalence test performed by ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "CodeEquivalentQ",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/CodeEquivalentQ"
+             ]
+            ],
+            "InlineFormula"
+           ]
+          }
+         ],
+         "GuideText",
+         CellID -> 1463276848
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         "Code Transformation",
+         "GuideFunctionsSubsection",
+         CellID -> 108932801
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "ToCanonicalForm",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/ToCanonicalForm"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "convert an expression into a canonical representation for direct comparison"
+          }
+         ],
+         "GuideText",
+         CellID -> 574217542
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "MakeCanonicalForm",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/MakeCanonicalForm"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "convert to canonical form without evaluating the input"
+          }
+         ],
+         "GuideText",
+         CellID -> 46592503
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "FromCanonicalForm",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/FromCanonicalForm"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "convert a canonical representation back into a normal evaluatable expression"
+          }
+         ],
+         "GuideText",
+         CellID -> 128160938
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell["\t", "GuideDelimiter", CellID -> 88327012],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "RandomValue",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/RandomValue"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "a symbolic representation of a value sampled from a particular distribution"
+          }
+         ],
+         "GuideText",
+         CellID -> 34928599
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "BuildDispatch",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/BuildDispatch"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           ", ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "$Dispatch",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/$Dispatch"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           ", ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "MakeTransformationRules",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/MakeTransformationRules"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "build new sets of transformation rules"
+          }
+         ],
+         "GuideText",
+         CellID -> 304748677
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "NormalizeNames",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/NormalizeNames"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "$LocalContext",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/$LocalContext"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "CanonicalTrace",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/CanonicalTrace"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "CodeTransformerObject",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/CodeTransformerObject"
+             ]
+            ],
+            "InlineFormula"
+           ]
+          }
+         ],
+         "InlineGuideFunctionListing",
+         CellID -> 236251045
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         "Type System",
+         "GuideFunctionsSubsection",
+         CellID -> 917456
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "TypedLiteral",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/TypedLiteral"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           ", ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "TypedSymbol",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/TypedSymbol"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "symbolic representations of typed expressions"
+          }
+         ],
+         "GuideText",
+         CellID -> 48670516
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "IntTypeQ",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/IntTypeQ"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           ", ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "StringTypeQ",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/StringTypeQ"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           ", ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "ListTypeQ",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/ListTypeQ"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "test if expressions belong to a certain type class"
+          }
+         ],
+         "GuideText",
+         CellID -> 129417475
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "ToTypedExpression",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/ToTypedExpression"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "automatically add types to an expression"
+          }
+         ],
+         "GuideText",
+         CellID -> 37770504
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "UnionType",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/UnionType"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "Algebraic",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/Algebraic"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "NumericUnionType",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/NumericUnionType"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "IteratorType",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/IteratorType"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "IteratorTypePrecedence",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/IteratorTypePrecedence"
+             ]
+            ],
+            "InlineFormula"
+           ]
+          }
+         ],
+         "InlineGuideFunctionListing",
+         CellID -> 631553092
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell["\t", "GuideDelimiter", CellID -> 258269630],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         "Utilities",
+         "GuideFunctionsSubsection",
+         CellID -> 52176774
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "DefinitionRules",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:WolframCodeEquivalenceUtilitiesUtilities/ref/DefinitionRules"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "get an ",
+           Cell[
+            BoxData[ButtonBox["Association", BaseStyle -> "Link"]],
+            "InlineFormula"
+           ],
+           " of rules corresponding to the full definition of a symbol"
+          }
+         ],
+         "GuideText",
+         CellID -> 105600057
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "Inline",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:WolframCodeEquivalenceUtilitiesUtilities/ref/Inline"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "insert values of symbols into an expression before evaluation"
+          }
+         ],
+         "GuideText",
+         CellID -> 644407711
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "CopySymbol",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/CopySymbol"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           ", ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "RenameSymbol",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/RenameSymbol"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "copy definitions from one symbol to another"
+          }
+         ],
+         "GuideText",
+         CellID -> 991519927
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "MinimalDefinition",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/MinimalDefinition"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           ", ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "MinimalFullDefinition",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/MinimalFullDefinition"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "get a compact definition for a symbol"
+          }
+         ],
+         "GuideText",
+         CellID -> 858545219
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "SymbolQ",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/SymbolQ"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "UnlockedSymbolQ",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/UnlockedSymbolQ"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "FullSymbolName",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/FullSymbolName"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "DefinedQ",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/DefinedQ"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "DependentSymbols",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/DependentSymbols"
+             ]
+            ],
+            "InlineFormula"
+           ]
+          }
+         ],
+         "InlineGuideFunctionListing",
+         CellID -> 33838388
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell["\t", "GuideDelimiter", CellID -> 625689081],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "EvaluateSafely",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:WolframCodeEquivalenceUtilitiesEvaluationControl/ref/EvaluateSafely"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "evaluate an expression in a restricted sandbox"
+          }
+         ],
+         "GuideText",
+         CellID -> 9105227
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "SafeEvaluatedQ",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:WolframCodeEquivalenceUtilitiesEvaluationControl/ref/SafeEvaluatedQ"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "test if an expression is inert"
+          }
+         ],
+         "GuideText",
+         CellID -> 70734489
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "EvaluateInContext",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:WolframCodeEquivalenceUtilitiesUtilities/ref/EvaluateInContext"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "replace contexts of symbols before evaluation"
+          }
+         ],
+         "GuideText",
+         CellID -> 539425575
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell["\t", "GuideDelimiter", CellID -> 469565110],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "Cached",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/Cached"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "evaluate an expression once and store the results locally"
+          }
+         ],
+         "GuideText",
+         CellID -> 45645577
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "CachedQ",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/CachedQ"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "test if an evaluation is already cached"
+          }
+         ],
+         "GuideText",
+         CellID -> 409566998
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "ClearEvalCache",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/ClearEvalCache"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           ", ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "InvalidateCacheFile",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/InvalidateCacheFile"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "manage cache files"
+          }
+         ],
+         "GuideText",
+         CellID -> 574040926
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "UseCache",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:WolframCodeEquivalenceUtilitiesCachedValues/ref/UseCache"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " \[LongDash] ",
+           "automatically use ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "Cached",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/Cached"
+             ]
+            ],
+            "InlineGuideFunction"
+           ],
+           " for some expressions"
+          }
+         ],
+         "GuideText",
+         CellID -> 1177142
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "CacheFileData",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/CacheFileData"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "CacheFileDataLookup",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/CacheFileDataLookup"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "CachePath",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/CachePath"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "UseCache",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/ref/UseCache"
+             ]
+            ],
+            "InlineFormula"
+           ]
+          }
+         ],
+         "InlineGuideFunctionListing",
+         CellID -> 449454117
+        ]
+       },
+       Open
+      ]
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Tech Notes",
+      "GuideTutorialsSection",
+      CellID -> 415694126
+     ],
+     Cell[
+      TextData[
+       ButtonBox[
+        "Adding New Transformation Rules",
+        BaseStyle -> "Link",
+        ButtonData -> "paclet:Wolfram__CodeEquivalenceUtilities/tutorial/AddingNewTransformationRules"
+       ]
+      ],
+      "GuideTutorial",
+      CellID -> 806871991
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "More About",
+      "GuideMoreAboutSection",
+      CellID -> 23220180
+     ],
+     Cell["XXXX", "GuideMoreAbout", CellID -> 1567025153],
+     Cell["XXXX", "GuideMoreAbout", CellID -> 252299663]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   "Related Links",
+   "GuideRelatedLinksSection",
+   CellID -> 415694148
+  ]
+ },
+ WindowStatusArea -> Automatic,
+ TaggingRules -> <|
+  "Author" -> "rhennigan",
+  "CreationDate" -> "07-22-2021 13:20:14",
+  "NotebookIndexQ" -> True,
+  "NotebookLastIndexed" -> DateObject[
+   {2021, 7, 22, 14, 5, 43.4342295`9.3904069936417},
+   "Instant",
+   "Gregorian",
+   -4.
+  ],
+  "NotebookUUID" -> "c03dabbe-92ea-4ba6-9bb0-2fa34c8e6f12"
+ |>,
+ FrontEndVersion -> "12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
+ StyleDefinitions -> FrontEnd`FileName[
+  {"Wolfram"},
+  "GuidePageStylesExt.nb",
+  CharacterEncoding -> "UTF-8"
+ ],
+ ExpressionUUID -> "c03dabbe-92ea-4ba6-9bb0-2fa34c8e6f12"
+]
