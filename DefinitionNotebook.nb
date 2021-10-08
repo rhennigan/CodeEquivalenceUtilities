@@ -17991,7 +17991,7 @@ Notebook[
             CellID -> 475746126
            ],
            Cell[
-            "https://github.com/UserName/MyPaclet",
+            "https://github.com/rhennigan/CodeEquivalenceUtilities",
             "Text",
             CellEventActions -> {
              Inherited,
@@ -19136,7 +19136,7 @@ Notebook[
                CellID -> 267876551
               ],
               Cell[
-               "12.3+",
+               "12.0+",
                "Text",
                TaggingRules -> { },
                CellID -> 742603301
@@ -19928,7 +19928,7 @@ Notebook[
   "AutoUpdate" -> True,
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" -> DateObject[
-   {2021, 10, 7, 18, 18, 27.9559912`9.199049810611037},
+   {2021, 10, 8, 14, 35, 59.6131621`9.527916987242827},
    "Instant",
    "Gregorian",
    -4.
@@ -19936,7 +19936,7 @@ Notebook[
   "NotebookUUID" -> "0e82ef88-8bb1-4c63-bd79-6efe1d3d6922"
  },
  CreateCellID -> True,
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 6, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 7, 2021)",
  StyleDefinitions -> Notebook[
   {
    Cell[StyleData[StyleDefinitions -> "Default.nb"]],
@@ -29435,7 +29435,7 @@ Notebook[
    ]
   },
   Visible -> False,
-  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 6, 2021)",
+  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 7, 2021)",
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"
  ],
  ExpressionUUID -> "0e82ef88-8bb1-4c63-bd79-6efe1d3d6922"

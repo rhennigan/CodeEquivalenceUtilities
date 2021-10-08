@@ -86,14 +86,25 @@ print[ msg__ ] := print[ 0, msg ];
 (******************************************************************************)
 (* ::Subsection::Closed:: *)
 (*makeReadable*)
-makeReadable[ file_ ] := enclose[
-    print[ "Formatting: ", StringDelete[ file, StartOfString~~$root ] ];
-    ConfirmBy[ makeReadable[ file, $overrideFormats ], FileExistsQ ],
+makeReadable[ file_ ] := makeReadable[ file, Hash @ ReadByteArray @ file ];
+
+makeReadable[ file_, hash_Integer ] /; skipFormattingQ[ file, hash ] :=
+    print[ "Skipping: ", StringDelete[ file, StartOfString~~$root ] ];
+
+makeReadable[ file_, hash_Integer ] := enclose[
+    Module[ { res },
+        print[ "Formatting: ", StringDelete[ file, StartOfString~~$root ] ];
+        res = ConfirmBy[ makeReadable[ file, hash, $overrideFormats ],
+                         FileExistsQ
+              ];
+        saveHash[ file, hash ];
+        res
+    ],
     StringForm[ "Failed to format notebook: `1`", file ]
 ];
 
 (* :!CodeAnalysis::Disable::VariableError::Block:: *)
-makeReadable[ file_, HoldComplete[ overrides___ ] ] :=
+makeReadable[ file_, hash_, HoldComplete[ overrides___ ] ] :=
     Internal`InheritedBlock[ { RawArray, NumericArray, overrides },
         Unprotect[ RawArray, NumericArray, overrides ];
         ReleaseHold[ overrideFormat /@ HoldComplete @ overrides ];
@@ -115,6 +126,24 @@ makeReadable[ file_, HoldComplete[ overrides___ ] ] :=
             "ExcludedNotebookOptions" -> { WindowMargins, WindowSize }
         ]
     ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*skipFormattingQ*)
+skipFormattingQ[ file_, hash_Integer ] :=
+    skipFormattingQ[ file, hash, Hash[ file, "Expression", "HexString" ] ];
+
+skipFormattingQ[ file_, hash_Integer, id_String ] :=
+    (PersistentSymbol[ "FormatNotebooks/FileHashes/" <> id ] === hash);
+
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*saveHash*)
+saveHash[ file_, hash_Integer ] :=
+    saveHash[ file, hash, Hash[ file, "Expression", "HexString" ] ];
+
+saveHash[ file_, hash_Integer, id_String ] :=
+    (PersistentSymbol[ "FormatNotebooks/FileHashes/" <> id ] = hash);
 
 (* ::**********************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
