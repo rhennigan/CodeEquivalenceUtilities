@@ -97,7 +97,7 @@ makeReadable[ file_, hash_Integer ] := enclose[
         res = ConfirmBy[ makeReadable[ file, hash, $overrideFormats ],
                          FileExistsQ
               ];
-        saveHash[ file, hash ];
+        saveHash @ file;
         res
     ],
     StringForm[ "Failed to format notebook: `1`", file ]
@@ -139,6 +139,8 @@ skipFormattingQ[ file_, hash_Integer, id_String ] :=
 (* ::**********************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*saveHash*)
+saveHash[ file_ ] := saveHash[ file, Hash @ ReadByteArray @ file ];
+
 saveHash[ file_, hash_Integer ] :=
     saveHash[ file, hash, Hash[ file, "Expression", "HexString" ] ];
 

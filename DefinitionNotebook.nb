@@ -107,7 +107,7 @@ Notebook[
                 {
                  "\"DefinitionNotebook.nb\"",
                  File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\DefinitionNotebook.nb"
+                  "H:\\Documents\\CodeEquivalenceUtilities\\DefinitionNotebook.nb"
                  ]
                 },
                 "FileManagerFileOpenerTemplate"
@@ -122,7 +122,7 @@ Notebook[
                ]
               ],
               File[
-               "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\DefinitionNotebook.nb"
+               "H:\\Documents\\CodeEquivalenceUtilities\\DefinitionNotebook.nb"
               ],
               BaseStyle -> {"Text"}
              ]
@@ -141,7 +141,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 109664771
+            CellID -> 160400175
            ],
            Cell[
             CellGroupData[
@@ -183,7 +183,7 @@ Notebook[
                     ]
                    ],
                    File[
-                    "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation"
+                    "H:\\Documents\\CodeEquivalenceUtilities\\Documentation"
                    ],
                    BaseStyle -> {"Text"}
                   ]
@@ -206,7 +206,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 498785295
+               CellID -> 281632740
               ],
               Cell[
                CellGroupData[
@@ -248,7 +248,7 @@ Notebook[
                        ]
                       ],
                       File[
-                       "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English"
+                       "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English"
                       ],
                       BaseStyle -> {"Text"}
                      ]
@@ -271,7 +271,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 135975115
+                  CellID -> 271027809
                  ],
                  Cell[
                   CellGroupData[
@@ -313,7 +313,7 @@ Notebook[
                           ]
                          ],
                          File[
-                          "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\Guides"
+                          "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Guides"
                          ],
                          BaseStyle -> {"Text"}
                         ]
@@ -336,7 +336,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 45299987
+                     CellID -> 331672286
                     ],
                     Cell[
                      BoxData[
@@ -346,7 +346,7 @@ Notebook[
                          {
                           "\"CodeEquivalenceUtilities.nb\"",
                           File[
-                           "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\Guides\\CodeEquivalenceUtilities.nb"
+                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Guides\\CodeEquivalenceUtilities.nb"
                           ]
                          },
                          "FileManagerFileOpenerTemplate"
@@ -361,7 +361,7 @@ Notebook[
                         ]
                        ],
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\Guides\\CodeEquivalenceUtilities.nb"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Guides\\CodeEquivalenceUtilities.nb"
                        ],
                        BaseStyle -> {"Text"}
                       ]
@@ -380,10 +380,10 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 409097018
+                     CellID -> 134040328
                     ]
                    },
-                   Open
+                   Closed
                   ]
                  ],
                  Cell[
@@ -426,7 +426,7 @@ Notebook[
                           ]
                          ],
                          File[
-                          "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages"
+                          "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages"
                          ],
                          BaseStyle -> {"Text"}
                         ]
@@ -449,7 +449,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 83686809
+                     CellID -> 28326615
                     ],
                     Cell[
                      CellGroupData[
@@ -491,7 +491,7 @@ Notebook[
                              ]
                             ],
                             File[
-                             "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols"
+                             "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols"
                             ],
                             BaseStyle -> {"Text"}
                            ]
@@ -514,7 +514,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 154359915
+                        CellID -> 711081199
                        ],
                        Cell[
                         BoxData[
@@ -524,7 +524,7 @@ Notebook[
                             {
                              "\"CodeEquivalentQ.nb\"",
                              File[
-                              "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\CodeEquivalentQ.nb"
+                              "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\CodeEquivalentQ.nb"
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -539,7 +539,7 @@ Notebook[
                            ]
                           ],
                           File[
-                           "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\CodeEquivalentQ.nb"
+                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\CodeEquivalentQ.nb"
                           ],
                           BaseStyle -> {"Text"}
                          ]
@@ -558,7 +558,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 534396348
+                        CellID -> 387292340
                        ],
                        Cell[
                         BoxData[
@@ -568,7 +568,7 @@ Notebook[
                             {
                              "\"EquivalenceTestData.nb\"",
                              File[
-                              "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\EquivalenceTestData.nb"
+                              "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\EquivalenceTestData.nb"
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -583,7 +583,7 @@ Notebook[
                            ]
                           ],
                           File[
-                           "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\EquivalenceTestData.nb"
+                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\EquivalenceTestData.nb"
                           ],
                           BaseStyle -> {"Text"}
                          ]
@@ -602,7 +602,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 11158473
+                        CellID -> 832908526
                        ],
                        Cell[
                         BoxData[
@@ -612,7 +612,7 @@ Notebook[
                             {
                              "\"FromCanonicalForm.nb\"",
                              File[
-                              "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\FromCanonicalForm.nb"
+                              "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\FromCanonicalForm.nb"
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -627,7 +627,7 @@ Notebook[
                            ]
                           ],
                           File[
-                           "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\FromCanonicalForm.nb"
+                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\FromCanonicalForm.nb"
                           ],
                           BaseStyle -> {"Text"}
                          ]
@@ -646,7 +646,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 75288942
+                        CellID -> 430130367
                        ],
                        Cell[
                         BoxData[
@@ -656,7 +656,7 @@ Notebook[
                             {
                              "\"MakeCanonicalForm.nb\"",
                              File[
-                              "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\MakeCanonicalForm.nb"
+                              "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\MakeCanonicalForm.nb"
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -671,7 +671,7 @@ Notebook[
                            ]
                           ],
                           File[
-                           "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\MakeCanonicalForm.nb"
+                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\MakeCanonicalForm.nb"
                           ],
                           BaseStyle -> {"Text"}
                          ]
@@ -690,7 +690,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 784853443
+                        CellID -> 641970685
                        ],
                        Cell[
                         BoxData[
@@ -700,7 +700,7 @@ Notebook[
                             {
                              "\"ToCanonicalForm.nb\"",
                              File[
-                              "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\ToCanonicalForm.nb"
+                              "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\ToCanonicalForm.nb"
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -715,7 +715,7 @@ Notebook[
                            ]
                           ],
                           File[
-                           "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\ToCanonicalForm.nb"
+                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\ToCanonicalForm.nb"
                           ],
                           BaseStyle -> {"Text"}
                          ]
@@ -734,14 +734,14 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 322414798
+                        CellID -> 85288088
                        ]
                       },
-                      Open
+                      Closed
                      ]
                     ]
                    },
-                   Open
+                   Closed
                   ]
                  ],
                  Cell[
@@ -784,7 +784,7 @@ Notebook[
                           ]
                          ],
                          File[
-                          "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\Tutorials"
+                          "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Tutorials"
                          ],
                          BaseStyle -> {"Text"}
                         ]
@@ -807,7 +807,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 283593406
+                     CellID -> 416491777
                     ],
                     Cell[
                      BoxData[
@@ -817,7 +817,7 @@ Notebook[
                          {
                           "\"AddingNewTransformationRules.nb\"",
                           File[
-                           "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\Tutorials\\AddingNewTransformationRules.nb"
+                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Tutorials\\AddingNewTransformationRules.nb"
                           ]
                          },
                          "FileManagerFileOpenerTemplate"
@@ -832,7 +832,7 @@ Notebook[
                         ]
                        ],
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Documentation\\English\\Tutorials\\AddingNewTransformationRules.nb"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Tutorials\\AddingNewTransformationRules.nb"
                        ],
                        BaseStyle -> {"Text"}
                       ]
@@ -851,18 +851,18 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 747689
+                     CellID -> 849181374
                     ]
                    },
-                   Open
+                   Closed
                   ]
                  ]
                 },
-                Open
+                Closed
                ]
               ]
              },
-             Open
+             Closed
             ]
            ],
            Cell[
@@ -904,9 +904,7 @@ Notebook[
                      ]
                     ]
                    ],
-                   File[
-                    "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel"
-                   ],
+                   File["H:\\Documents\\CodeEquivalenceUtilities\\Kernel"],
                    BaseStyle -> {"Text"}
                   ]
                  ]
@@ -926,7 +924,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 1460340
+               CellID -> 119959361
               ],
               Cell[
                BoxData[
@@ -936,7 +934,7 @@ Notebook[
                    {
                     "\"CachedValues.wl\"",
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CachedValues.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CachedValues.wl"
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -951,7 +949,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CachedValues.wl"
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CachedValues.wl"
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -970,7 +968,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 137110685
+               CellID -> 20784315
               ],
               Cell[
                CellGroupData[
@@ -1012,7 +1010,7 @@ Notebook[
                        ]
                       ],
                       File[
-                       "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms"
+                       "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms"
                       ],
                       BaseStyle -> {"Text"}
                      ]
@@ -1035,7 +1033,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 149127677
+                  CellID -> 23638772
                  ],
                  Cell[
                   BoxData[
@@ -1045,7 +1043,7 @@ Notebook[
                       {
                        "\"Attributes.wl\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Attributes.wl"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Attributes.wl"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1060,7 +1058,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Attributes.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Attributes.wl"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1079,7 +1077,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 13897193
+                  CellID -> 8255639
                  ],
                  Cell[
                   BoxData[
@@ -1089,7 +1087,7 @@ Notebook[
                       {
                        "\"Common.wl\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Common.wl"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Common.wl"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1104,7 +1102,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Common.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Common.wl"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1123,7 +1121,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 510270587
+                  CellID -> 274315025
                  ],
                  Cell[
                   BoxData[
@@ -1133,7 +1131,7 @@ Notebook[
                       {
                        "\"ExperimentalRules.wl\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\ExperimentalRules.wl"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\ExperimentalRules.wl"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1148,7 +1146,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\ExperimentalRules.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\ExperimentalRules.wl"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1167,7 +1165,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 204761233
+                  CellID -> 146307564
                  ],
                  Cell[
                   BoxData[
@@ -1177,7 +1175,7 @@ Notebook[
                       {
                        "\"Graphics.wl\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Graphics.wl"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Graphics.wl"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1192,7 +1190,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Graphics.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Graphics.wl"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1211,7 +1209,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 360895549
+                  CellID -> 48466545
                  ],
                  Cell[
                   BoxData[
@@ -1221,7 +1219,7 @@ Notebook[
                       {
                        "\"Rules.wl\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Rules.wl"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Rules.wl"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1236,7 +1234,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Rules.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Rules.wl"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1255,7 +1253,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 324990328
+                  CellID -> 316919434
                  ],
                  Cell[
                   BoxData[
@@ -1265,7 +1263,7 @@ Notebook[
                       {
                        "\"Scope.wl\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Scope.wl"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Scope.wl"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1280,7 +1278,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Scope.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Scope.wl"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1299,7 +1297,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 220474602
+                  CellID -> 131981959
                  ],
                  Cell[
                   BoxData[
@@ -1309,7 +1307,7 @@ Notebook[
                       {
                        "\"Structural.wl\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Structural.wl"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Structural.wl"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1324,7 +1322,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Structural.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Structural.wl"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1343,472 +1341,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 783891143
-                 ]
-                },
-                Open
-               ]
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"CodeEquivalenceUtilities.wl\"",
-                    File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CodeEquivalenceUtilities.wl"
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\CodeEquivalenceUtilities.wl"
-                 ],
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 96924990
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"Debugging.wl\"",
-                    File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\Debugging.wl"
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\Debugging.wl"
-                 ],
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 621572650
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"EvaluationControl.wl\"",
-                    File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\EvaluationControl.wl"
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\EvaluationControl.wl"
-                 ],
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 128521031
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"Formatting.wl\"",
-                    File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\Formatting.wl"
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\Formatting.wl"
-                 ],
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 99700546
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"init.wl\"",
-                    File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\init.wl"
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\init.wl"
-                 ],
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 39659
-              ],
-              Cell[
-               CellGroupData[
-                {
-                 Cell[
-                  TextData[
-                   Cell[
-                    BoxData[
-                     InterpretationBox[
-                      TagBox[
-                       ActionMenuBox[
-                        "\"SymbolInformation\"",
-                        {
-                         "\"Open/Close Group\"" :> (SelectionMove[ParentCell[EvaluationCell[]], All, Cell];
-                         FrontEndTokenExecute[
-                          EvaluationNotebook[],
-                          "OpenCloseGroup"
-                         ]),
-                         "\"Open Directory\"" :> DefinitionNotebookClient`FileTreeOpen[
-                          ParentCell[EvaluationCell[]]
-                         ],
-                         "\"Un/Mark as Excluded\"" :> DefinitionNotebookClient`FileTreeExclusionToggle[
-                          ParentCell[EvaluationCell[]]
-                         ],
-                         "\"Copy Path to Clipboard\"" :> DefinitionNotebookClient`FileTreeCopy[
-                          ParentCell[EvaluationCell[]]
-                         ]
-                        },
-                        Appearance -> None,
-                        BaseStyle -> {"Text"}
-                       ],
-                       Function[
-                        Annotation[
-                         #1,
-                         DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                          1
-                         ]
-                        ]
-                       ]
-                      ],
-                      File[
-                       "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\SymbolInformation"
-                      ],
-                      BaseStyle -> {"Text"}
-                     ]
-                    ]
-                   ]
-                  ],
-                  "FileManagerDirectory",
-                  CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-                  CellGroupingRules -> {"SectionGrouping", 110},
-                  CellFrameLabels -> {
-                   {
-                    Cell[
-                     BoxData[
-                      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]
-                     ],
-                     Background -> None
-                    ],
-                    Inherited
-                   },
-                   {Inherited, Inherited}
-                  },
-                  CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 11054003
-                 ],
-                 Cell[
-                  BoxData[
-                   InterpretationBox[
-                    TagBox[
-                     TemplateBox[
-                      {
-                       "\"SymbolBlacklist.wl\"",
-                       File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\SymbolInformation\\SymbolBlacklist.wl"
-                       ]
-                      },
-                      "FileManagerFileOpenerTemplate"
-                     ],
-                     Function[
-                      Annotation[
-                       #1,
-                       DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                        2
-                       ]
-                      ]
-                     ]
-                    ],
-                    File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\SymbolInformation\\SymbolBlacklist.wl"
-                    ],
-                    BaseStyle -> {"Text"}
-                   ]
-                  ],
-                  "FileManagerFile",
-                  CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
-                  CellGroupingRules -> {"SectionGrouping", 120},
-                  CellFrameLabels -> {
-                   {
-                    Cell[
-                     BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                     Background -> None
-                    ],
-                    Inherited
-                   },
-                   {Inherited, Inherited}
-                  },
-                  CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 128750483
-                 ],
-                 Cell[
-                  BoxData[
-                   InterpretationBox[
-                    TagBox[
-                     TemplateBox[
-                      {
-                       "\"SymbolFlaglist.wl\"",
-                       File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\SymbolInformation\\SymbolFlaglist.wl"
-                       ]
-                      },
-                      "FileManagerFileOpenerTemplate"
-                     ],
-                     Function[
-                      Annotation[
-                       #1,
-                       DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                        2
-                       ]
-                      ]
-                     ]
-                    ],
-                    File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\SymbolInformation\\SymbolFlaglist.wl"
-                    ],
-                    BaseStyle -> {"Text"}
-                   ]
-                  ],
-                  "FileManagerFile",
-                  CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
-                  CellGroupingRules -> {"SectionGrouping", 120},
-                  CellFrameLabels -> {
-                   {
-                    Cell[
-                     BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                     Background -> None
-                    ],
-                    Inherited
-                   },
-                   {Inherited, Inherited}
-                  },
-                  CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 27238991
-                 ],
-                 Cell[
-                  BoxData[
-                   InterpretationBox[
-                    TagBox[
-                     TemplateBox[
-                      {
-                       "\"SymbolWhitelist.wl\"",
-                       File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\SymbolInformation\\SymbolWhitelist.wl"
-                       ]
-                      },
-                      "FileManagerFileOpenerTemplate"
-                     ],
-                     Function[
-                      Annotation[
-                       #1,
-                       DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                        2
-                       ]
-                      ]
-                     ]
-                    ],
-                    File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\SymbolInformation\\SymbolWhitelist.wl"
-                    ],
-                    BaseStyle -> {"Text"}
-                   ]
-                  ],
-                  "FileManagerFile",
-                  CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
-                  CellGroupingRules -> {"SectionGrouping", 120},
-                  CellFrameLabels -> {
-                   {
-                    Cell[
-                     BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                     Background -> None
-                    ],
-                    Inherited
-                   },
-                   {Inherited, Inherited}
-                  },
-                  CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 158677299
-                 ],
-                 Cell[
-                  BoxData[
-                   InterpretationBox[
-                    TagBox[
-                     TemplateBox[
-                      {
-                       "\"Test.wl\"",
-                       File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\SymbolInformation\\Test.wl"
-                       ]
-                      },
-                      "FileManagerFileOpenerTemplate"
-                     ],
-                     Function[
-                      Annotation[
-                       #1,
-                       DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                        2
-                       ]
-                      ]
-                     ]
-                    ],
-                    File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\SymbolInformation\\Test.wl"
-                    ],
-                    BaseStyle -> {"Text"}
-                   ]
-                  ],
-                  "FileManagerFile",
-                  CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
-                  CellGroupingRules -> {"SectionGrouping", 120},
-                  CellFrameLabels -> {
-                   {
-                    Cell[
-                     BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                     Background -> None
-                    ],
-                    Inherited
-                   },
-                   {Inherited, Inherited}
-                  },
-                  CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 40879135
+                  CellID -> 366415704
                  ]
                 },
                 Closed
@@ -1820,9 +1353,9 @@ Notebook[
                  TagBox[
                   TemplateBox[
                    {
-                    "\"Types.wl\"",
+                    "\"CodeEquivalenceUtilities.wl\"",
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\Types.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CodeEquivalenceUtilities.wl"
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1837,7 +1370,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\Types.wl"
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CodeEquivalenceUtilities.wl"
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1856,7 +1389,227 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 462437188
+               CellID -> 91100690
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"Debugging.wl\"",
+                    File[
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Debugging.wl"
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Debugging.wl"
+                 ],
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 77021095
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"EvaluationControl.wl\"",
+                    File[
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\EvaluationControl.wl"
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\EvaluationControl.wl"
+                 ],
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 113510574
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"Formatting.wl\"",
+                    File[
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Formatting.wl"
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Formatting.wl"
+                 ],
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 308698136
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"init.wl\"",
+                    File[
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\init.wl"
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\init.wl"
+                 ],
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 174985711
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"Types.wl\"",
+                    File[
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Types.wl"
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Types.wl"
+                 ],
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 328365778
               ],
               Cell[
                BoxData[
@@ -1866,7 +1619,7 @@ Notebook[
                    {
                     "\"Utilities.wl\"",
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\Utilities.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Utilities.wl"
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1881,7 +1634,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Kernel\\Utilities.wl"
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Utilities.wl"
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1900,11 +1653,51 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 563319391
+               CellID -> 221383751
               ]
              },
-             Open
+             Closed
             ]
+           ],
+           Cell[
+            BoxData[
+             InterpretationBox[
+              TagBox[
+               TemplateBox[
+                {
+                 "\"LICENSE\"",
+                 File["H:\\Documents\\CodeEquivalenceUtilities\\LICENSE"]
+                },
+                "FileManagerFileOpenerTemplate"
+               ],
+               Function[
+                Annotation[
+                 #1,
+                 DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                  0
+                 ]
+                ]
+               ]
+              ],
+              File["H:\\Documents\\CodeEquivalenceUtilities\\LICENSE"],
+              BaseStyle -> {"Text"}
+             ]
+            ],
+            "FileManagerFile",
+            CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
+            CellGroupingRules -> {"SectionGrouping", 100},
+            CellFrameLabels -> {
+             {
+              Cell[
+               BoxData[TemplateBox[{}, "FileManagerUnknownIconTemplate"]],
+               Background -> None
+              ],
+              Inherited
+             },
+             {Inherited, Inherited}
+            },
+            CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+            CellID -> 44203680
            ],
            Cell[
             BoxData[
@@ -1914,7 +1707,7 @@ Notebook[
                 {
                  "\"PacletInfo.wl\"",
                  File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\PacletInfo.wl"
+                  "H:\\Documents\\CodeEquivalenceUtilities\\PacletInfo.wl"
                  ]
                 },
                 "FileManagerFileOpenerTemplate"
@@ -1929,7 +1722,7 @@ Notebook[
                ]
               ],
               File[
-               "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\PacletInfo.wl"
+               "H:\\Documents\\CodeEquivalenceUtilities\\PacletInfo.wl"
               ],
               BaseStyle -> {"Text"}
              ]
@@ -1950,7 +1743,158 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 130988888
+            CellID -> 251471320
+           ],
+           Cell[
+            BoxData[
+             InterpretationBox[
+              TagBox[
+               TemplateBox[
+                {
+                 "\"README.md\"",
+                 File["H:\\Documents\\CodeEquivalenceUtilities\\README.md"]
+                },
+                "FileManagerFileOpenerTemplate"
+               ],
+               Function[
+                Annotation[
+                 #1,
+                 DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                  0
+                 ]
+                ]
+               ]
+              ],
+              File["H:\\Documents\\CodeEquivalenceUtilities\\README.md"],
+              BaseStyle -> {"Text"}
+             ]
+            ],
+            "FileManagerFile",
+            CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
+            CellGroupingRules -> {"SectionGrouping", 100},
+            CellFrameLabels -> {
+             {
+              Cell[
+               BoxData[TemplateBox[{}, "FileManagerTXTIconTemplate"]],
+               Background -> None
+              ],
+              Inherited
+             },
+             {Inherited, Inherited}
+            },
+            CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+            CellID -> 389243652
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               TextData[
+                Cell[
+                 BoxData[
+                  InterpretationBox[
+                   TagBox[
+                    ActionMenuBox[
+                     "\"Scripts\"",
+                     {
+                      "\"Open/Close Group\"" :> (SelectionMove[ParentCell[EvaluationCell[]], All, Cell];
+                      FrontEndTokenExecute[
+                       EvaluationNotebook[],
+                       "OpenCloseGroup"
+                      ]),
+                      "\"Open Directory\"" :> DefinitionNotebookClient`FileTreeOpen[
+                       ParentCell[EvaluationCell[]]
+                      ],
+                      "\"Un/Mark as Excluded\"" :> DefinitionNotebookClient`FileTreeExclusionToggle[
+                       ParentCell[EvaluationCell[]]
+                      ],
+                      "\"Copy Path to Clipboard\"" :> DefinitionNotebookClient`FileTreeCopy[
+                       ParentCell[EvaluationCell[]]
+                      ]
+                     },
+                     Appearance -> None,
+                     BaseStyle -> {"Text"}
+                    ],
+                    Function[
+                     Annotation[
+                      #1,
+                      DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                       0
+                      ]
+                     ]
+                    ]
+                   ],
+                   File["H:\\Documents\\CodeEquivalenceUtilities\\Scripts"],
+                   BaseStyle -> {"Text"}
+                  ]
+                 ]
+                ]
+               ],
+               "FileManagerDirectory",
+               CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 100},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[
+                   TemplateBox[{}, "FileManagerDirectoryIconTemplate"]
+                  ],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 22312732
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"FormatNotebooks.wls\"",
+                    File[
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Scripts\\FormatNotebooks.wls"
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Scripts\\FormatNotebooks.wls"
+                 ],
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 240755237
+              ]
+             },
+             Closed
+            ]
            ],
            Cell[
             CellGroupData[
@@ -1991,9 +1935,7 @@ Notebook[
                      ]
                     ]
                    ],
-                   File[
-                    "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests"
-                   ],
+                   File["H:\\Documents\\CodeEquivalenceUtilities\\Tests"],
                    BaseStyle -> {"Text"}
                   ]
                  ]
@@ -2015,7 +1957,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 482906895
+               CellID -> 255046421
               ],
               Cell[
                CellGroupData[
@@ -2057,7 +1999,7 @@ Notebook[
                        ]
                       ],
                       File[
-                       "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\CanonicalForms"
+                       "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\CanonicalForms"
                       ],
                       BaseStyle -> {"Text"}
                      ]
@@ -2080,7 +2022,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 49388465
+                  CellID -> 36808063
                  ],
                  Cell[
                   BoxData[
@@ -2090,7 +2032,7 @@ Notebook[
                       {
                        "\"Attributes.wlt\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Attributes.wlt"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Attributes.wlt"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -2105,7 +2047,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Attributes.wlt"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Attributes.wlt"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -2124,7 +2066,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 120197430
+                  CellID -> 11143924
                  ],
                  Cell[
                   BoxData[
@@ -2134,7 +2076,7 @@ Notebook[
                       {
                        "\"Common.wlt\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Common.wlt"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Common.wlt"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -2149,7 +2091,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Common.wlt"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Common.wlt"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -2168,7 +2110,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 59275193
+                  CellID -> 120489309
                  ],
                  Cell[
                   BoxData[
@@ -2178,7 +2120,7 @@ Notebook[
                       {
                        "\"Rules.wlt\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Rules.wlt"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Rules.wlt"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -2193,7 +2135,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Rules.wlt"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\CanonicalForms\\Rules.wlt"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -2212,7 +2154,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 188929169
+                  CellID -> 72411293
                  ]
                 },
                 Closed
@@ -2258,7 +2200,7 @@ Notebook[
                        ]
                       ],
                       File[
-                       "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\Data"
+                       "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Data"
                       ],
                       BaseStyle -> {"Text"}
                      ]
@@ -2281,7 +2223,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 5622940
+                  CellID -> 141634574
                  ],
                  Cell[
                   BoxData[
@@ -2291,7 +2233,7 @@ Notebook[
                       {
                        "\"EIWLData.wl\"",
                        File[
-                        "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\Data\\EIWLData.wl"
+                        "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Data\\EIWLData.wl"
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -2306,7 +2248,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\Data\\EIWLData.wl"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Data\\EIWLData.wl"
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -2325,7 +2267,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 60946965
+                  CellID -> 253388253
                  ]
                 },
                 Closed
@@ -2339,7 +2281,7 @@ Notebook[
                    {
                     "\"EIWL.wlt\"",
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\EIWL.wlt"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\EIWL.wlt"
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -2354,7 +2296,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\EIWL.wlt"
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\EIWL.wlt"
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -2373,7 +2315,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 122150989
+               CellID -> 208495693
               ],
               Cell[
                BoxData[
@@ -2383,7 +2325,7 @@ Notebook[
                    {
                     "\"EvaluationControl.wlt\"",
                     File[
-                     "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\EvaluationControl.wlt"
+                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\EvaluationControl.wlt"
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -2398,7 +2340,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\Paclets\\CodeEquivalenceUtilities\\Tests\\EvaluationControl.wlt"
+                  "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\EvaluationControl.wlt"
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -2417,7 +2359,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 195410712
+               CellID -> 652145811
               ]
              },
              Closed
@@ -2428,7 +2370,7 @@ Notebook[
             "FileManagerBottomSpacer",
             CellGroupingRules -> {"SectionGrouping", 100},
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 65085243
+            CellID -> 265281480
            ]
           },
           Open
@@ -19921,14 +19863,14 @@ Notebook[
    "DefaultContentMethod" -> "Tagged"
   },
   "SubmissionReviewData" -> {"Review" -> False},
-  "ToolsOpen" -> False,
+  "ToolsOpen" -> True,
   "UpdatedTimestamp" -> 3842633619.,
   "TemplateVersion" -> "1.5.45",
   "StatusMessage" -> "",
   "AutoUpdate" -> True,
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" -> DateObject[
-   {2021, 10, 8, 14, 35, 59.6131621`9.527916987242827},
+   {2021, 10, 8, 14, 56, 0.2366171`7.126621116464899},
    "Instant",
    "Gregorian",
    -4.
