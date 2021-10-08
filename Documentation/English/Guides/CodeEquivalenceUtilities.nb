@@ -74,23 +74,7 @@ Notebook[
       CellID -> 942062912
      ],
      Cell[
-      TextData[
-       {
-        "Here is some text that explains the point of the paclet in some more detail. While you're here, how about checking out this ",
-        ButtonBox[
-         "neat resource function",
-         BaseStyle -> "Hyperlink",
-         ButtonData -> {
-          URL[
-           "https://resources.wolframcloud.com/FunctionRepository/resources/BirdSay"
-          ],
-          None
-         },
-         ButtonNote -> "https://resources.wolframcloud.com/FunctionRepository/resources/BirdSay"
-        ],
-        "? Note that most of these symbols were just added to pad this page with some content and are undocumented. Only the first few symbols will actually link anywhere."
-       }
-      ],
+      "Equivalence for Wolfram Language code can be defined in many ways. The methods used by CodeEquivalenceUtilities attempt to determine intensional equivalence by transforming expressions into a canonical representation.",
       "GuideAbstract",
       CellID -> 2001916300
      ]
@@ -238,7 +222,22 @@ Notebook[
      Cell[
       CellGroupData[
        {
-        Cell["\t", "GuideDelimiter", CellID -> 88327012],
+        Cell[
+         "\t",
+         "GuideDelimiter",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
+         CellID -> 88327012
+        ],
         Cell[
          TextData[
           {
@@ -257,6 +256,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
          CellID -> 34928599
         ],
         Cell[
@@ -299,6 +309,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
          CellID -> 304748677
         ],
         Cell[
@@ -350,6 +371,17 @@ Notebook[
           }
          ],
          "InlineGuideFunctionListing",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
          CellID -> 236251045
         ]
        },
@@ -362,6 +394,17 @@ Notebook[
         Cell[
          "Type System",
          "GuideFunctionsSubsection",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
          CellID -> 917456
         ],
         Cell[
@@ -393,6 +436,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
          CellID -> 48670516
         ],
         Cell[
@@ -435,6 +489,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
          CellID -> 129417475
         ],
         Cell[
@@ -455,6 +520,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
          CellID -> 37770504
         ],
         Cell[
@@ -517,19 +593,56 @@ Notebook[
           }
          ],
          "InlineGuideFunctionListing",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
          CellID -> 631553092
         ]
        },
        Open
       ]
      ],
-     Cell["\t", "GuideDelimiter", CellID -> 258269630],
+     Cell[
+      "\t",
+      "GuideDelimiter",
+      "FutureExample",
+      CellDingbat -> Cell[
+       BoxData[
+        TooltipBox[
+         Cell["rhennigan      ", "TentativeID"],
+         "2021-10-08"
+        ]
+       ],
+       "TentativeWrapper"
+      ],
+      CellTags -> "20211008150344",
+      CellID -> 258269630
+     ],
      Cell[
       CellGroupData[
        {
         Cell[
          "Utilities",
          "GuideFunctionsSubsection",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
          CellID -> 52176774
         ],
         Cell[
@@ -555,6 +668,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> "20211008150344",
          CellID -> 105600057
         ],
         Cell[
@@ -575,6 +699,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {"20211008150344", "20211008150400"},
          CellID -> 644407711
         ],
         Cell[
@@ -606,6 +741,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {"20211008150344", "20211008150400"},
          CellID -> 991519927
         ],
         Cell[
@@ -637,6 +783,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {"20211008150344", "20211008150400", "20211008150405"},
          CellID -> 858545219
         ],
         Cell[
@@ -699,6 +856,17 @@ Notebook[
           }
          ],
          "InlineGuideFunctionListing",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {"20211008150344", "20211008150400", "20211008150405"},
          CellID -> 33838388
         ]
        },
@@ -708,7 +876,27 @@ Notebook[
      Cell[
       CellGroupData[
        {
-        Cell["\t", "GuideDelimiter", CellID -> 625689081],
+        Cell[
+         "\t",
+         "GuideDelimiter",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {
+          "20211008150344",
+          "20211008150400",
+          "20211008150405",
+          "20211008150412"
+         },
+         CellID -> 625689081
+        ],
         Cell[
          TextData[
           {
@@ -727,6 +915,22 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {
+          "20211008150344",
+          "20211008150400",
+          "20211008150405",
+          "20211008150412"
+         },
          CellID -> 9105227
         ],
         Cell[
@@ -747,6 +951,23 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {
+          "20211008150344",
+          "20211008150400",
+          "20211008150405",
+          "20211008150412",
+          "20211008150416"
+         },
          CellID -> 70734489
         ],
         Cell[
@@ -767,6 +988,23 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {
+          "20211008150344",
+          "20211008150400",
+          "20211008150405",
+          "20211008150412",
+          "20211008150416"
+         },
          CellID -> 539425575
         ]
        },
@@ -776,7 +1014,27 @@ Notebook[
      Cell[
       CellGroupData[
        {
-        Cell["\t", "GuideDelimiter", CellID -> 469565110],
+        Cell[
+         "\t",
+         "GuideDelimiter",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {
+          "20211008150344",
+          "20211008150400",
+          "20211008150405",
+          "20211008150416"
+         },
+         CellID -> 469565110
+        ],
         Cell[
          TextData[
           {
@@ -795,6 +1053,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {"20211008150344", "20211008150400", "20211008150405"},
          CellID -> 45645577
         ],
         Cell[
@@ -815,6 +1084,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {"20211008150344", "20211008150400", "20211008150405"},
          CellID -> 409566998
         ],
         Cell[
@@ -846,6 +1126,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {"20211008150344", "20211008150400", "20211008150405"},
          CellID -> 574040926
         ],
         Cell[
@@ -877,6 +1168,17 @@ Notebook[
           }
          ],
          "GuideText",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {"20211008150344", "20211008150400", "20211008150405"},
          CellID -> 1177142
         ],
         Cell[
@@ -928,6 +1230,17 @@ Notebook[
           }
          ],
          "InlineGuideFunctionListing",
+         "FutureExample",
+         CellDingbat -> Cell[
+          BoxData[
+           TooltipBox[
+            Cell["rhennigan      ", "TentativeID"],
+            "2021-10-08"
+           ]
+          ],
+          "TentativeWrapper"
+         ],
+         CellTags -> {"20211008150344", "20211008150400", "20211008150405"},
          CellID -> 449454117
         ]
        },
@@ -976,9 +1289,33 @@ Notebook[
    ]
   ],
   Cell[
-   "Related Links",
-   "GuideRelatedLinksSection",
-   CellID -> 415694148
+   CellGroupData[
+    {
+     Cell[
+      "Related Links",
+      "GuideRelatedLinksSection",
+      CellID -> 415694148
+     ],
+     Cell[
+      TextData[
+       ButtonBox[
+        "nLab - Equality",
+        BaseStyle -> "Hyperlink",
+        ButtonData -> {
+         URL[
+          "https://ncatlab.org/nlab/show/equality#in_type_theory"
+         ],
+         None
+        },
+        ButtonNote -> "https://ncatlab.org/nlab/show/equality#in_type_theory"
+       ]
+      ],
+      "GuideRelatedLinks",
+      CellID -> 723226975
+     ]
+    },
+    Open
+   ]
   ]
  },
  WindowStatusArea -> Automatic,
@@ -987,14 +1324,14 @@ Notebook[
   "CreationDate" -> "07-22-2021 13:20:14",
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" -> DateObject[
-   {2021, 7, 22, 14, 5, 43.4342295`9.3904069936417},
+   {2021, 10, 8, 15, 16, 0.1094032`6.791605014283661},
    "Instant",
    "Gregorian",
    -4.
   ],
   "NotebookUUID" -> "c03dabbe-92ea-4ba6-9bb0-2fa34c8e6f12"
  |>,
- FrontEndVersion -> "12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 7, 2021)",
  StyleDefinitions -> FrontEnd`FileName[
   {"Wolfram"},
   "GuidePageStylesExt.nb",
