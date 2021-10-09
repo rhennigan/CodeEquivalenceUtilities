@@ -3,11 +3,12 @@
 <table>
 <tr>
 <td>
-CodeEquivalenceUtilities is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.
+
+[CodeEquivalenceUtilities](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities) is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.
 
 This allows comparison of unevaluated expressions that may have non-deterministic outputs (e.g. random values, dates, etc).
 
-This Paclet represents the underlying technology that powers several automated code grading systems, such as the online exercises for EIWL and Wolfram Challenges.
+This Paclet represents the underlying technology that powers several [automated code grading systems](https://www.wolfram.com/broadcast/video.php?c=104&v=1747&disp=list&ob=date&o=DESC&p=44), such as the [online exercises for EIWL](https://lab.wolframcloud.com/app/view/openEIWL?parentFilePath=elementary-introduction/01-starting-out-elementary-arithmetic-exercises.nb#sidebar=eiwl/01-starting-out-elementary-arithmetic) and [Wolfram Challenges](https://challenges.wolframcloud.com/).
 </td>
 <td>
 <img src="Images/hero-image.png" width="80%">
@@ -20,14 +21,17 @@ This Paclet represents the underlying technology that powers several automated c
 ## Installing CodeEquivalenceUtilities
 
 
-### From the Wolfram Paclet Repository
+### From the [Wolfram Paclet Repository](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities/)
+
+Using Wolfram Language version 13.0 or later:
 
 ```Mathematica
-(* Coming soon... *)
 PacletInstall[ResourceObject["Wolfram: CodeEquivalenceUtilities"]]
 ```
 
 ### Using [GitHubInstall](https://resources.wolframcloud.com/FunctionRepository/resources/GitHubInstall/)
+
+Using Wolfram Language version 12.0 or later:
 
 ```Mathematica
 ResourceFunction["GitHubInstall"]["rhennigan", "CodeEquivalenceUtilities"]
