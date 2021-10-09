@@ -10,7 +10,7 @@ This allows comparison of unevaluated expressions that may have non-deterministi
 This Paclet represents the underlying technology that powers several automated code grading systems, such as the online exercises for EIWL and Wolfram Challenges.
 </td>
 <td>
-<img src="https://www.wolframcloud.com/obj/resourcesystem/published/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities/hero-image.png" width="50%">
+<img src="Images/hero-image.png" width="80%">
 </td>
 </tr>
 </table>
@@ -78,119 +78,110 @@ Equivalence for Wolfram Language code can be defined in many ways. The methods u
 Check if two expressions are equivalent:
 
 ```Mathematica
-In[1]:= CodeEquivalentQ[RandomInteger /@ Range[5], Array[RandomInteger, 5]]
-
-Out[1]= True
+CodeEquivalentQ[RandomInteger /@ Range[5], Array[RandomInteger, 5]]
 ```
+<img src="Images/674eb267f6beef39.png" width="25" height="17" style="width: 1.5625em; height: 1.0625em; background: white;">
 
 ---
 
 View the canonical representations of expressions:
 
 ```Mathematica
-In[1]:= MakeCanonicalForm[RandomInteger /@ Range[5]]
-
-Out[1]= Table[R[DiscreteUniformDistribution[{0, S1::Int}]],{S1::Int, 1, 5, 1}]
+MakeCanonicalForm[RandomInteger /@ Range[5]]
 ```
+<p><img src="Images/0d12d8551029ee6a.png" width="415" height="27" style="width: 25.9375em; height: 1.6875em; background: white;"></p>
+
 
 ```Mathematica
-In[2]:= MakeCanonicalForm[Array[RandomInteger, 5]]
-
-Out[2]= Table[R[DiscreteUniformDistribution[{0, S1::Int}]], {S1::Int, 1, 5, 1}]
+MakeCanonicalForm[Array[RandomInteger, 5]]
 ```
+<img src="Images/59eada987ec4d919.png" width="415" height="27" style="width: 25.9375em; height: 1.6875em; background: white;">
+
 
 These are directly comparable:
 
 ```Mathematica
-In[3]:= % === %%
-
-Out[3]= True
+% === %%
 ```
+<img src="Images/5dfbd7b1ec4305fe.png" width="25" height="17" style="width: 1.5625em; height: 1.0625em; background: white;">
 
 ### Scope (3)
 
 Get additional information about the equivalence test:
 
 ```Mathematica
-In[1]:= EquivalenceTestData[
-            First[Rest[Range /@ Range[2^100]]],
-            Part[Table[Table[j, {j, i}], {i, 2^100}], 2]
-        ]
-
-Out[1]= <|"Timing" -> <|"SameQ" -> 0.*10^-8, "ToCanonicalForm1" -> 0.9639954, 
-            "ToCanonicalForm2" -> 1.5199949|>, "SameQ" -> False, <<1>>, 
-            "Can...entQ" -> <<4>>, "EquivalentQ" -> True|>
+EquivalenceTestData[
+    First[Rest[Range /@ Range[2^100]]],
+    Part[Table[Table[j, {j, i}], {i, 2^100}], 2]
+]
 ```
+<img src="Images/58724d56ad2d0a5d.png" width="609" height="187" style="width: 38.0625em; height: 11.6875em; background: white;">
 
 ---
 
 View the sequence of transformations used to convert an expression to its canonical form:
 
 ```Mathematica
-In[1]:= MakeCanonicalForm[Array[RandomInteger, 5], "Trace" -> True] // Column
-
-Out[1]= ...
+MakeCanonicalForm[Array[RandomInteger, 5], "Trace" -> True] // Column
 ```
+<img src="Images/43a40f076b9b5860.png" width="415" height="171" style="width: 25.9375em; height: 10.6875em; background: white;">
+
 
 ---
 
 Convert a canonical representation to a normal expression:
 
 ```Mathematica
-In[1]:= MakeCanonicalForm[Array[RandomInteger, 5]]
-
-Out[1]= Table[R[DiscreteUniformDistribution[{0, S1::Int}]], {S1::Int, 1, 5, 1}]
+MakeCanonicalForm[Array[RandomInteger, 5]]
 ```
+<img src="Images/3a38f3a85d4a4795.png" width="415" height="27" style="width: 25.9375em; height: 1.6875em; background: white;">
+
 
 ```Mathematica
-In[2]:= FromCanonicalForm[%]
-
-Out[2]= Table[RandomVariate[DiscreteUniformDistribution[{0, S1}]], {S1, 1, 5, 1}]
+FromCanonicalForm[%]
 ```
+<img src="Images/52714167c1555ca8.png" width="389" height="17" style="width: 24.3125em; height: 1.0625em; background: white;">
 
 Evaluate:
 
 ```Mathematica
-In[3]:= ReleaseHold[%]
-
-Out[3]= {1, 1, 1, 0, 1}
+ReleaseHold[%]
 ```
+<img src="Images/152f8d1bb9acf613.png" width="65" height="17" style="width: 4.0625em; height: 1.0625em; background: white;">
 
 ### Neat Examples (6)
 
 Here is a list of expressions, some of which are equivalent to others:
 
 ```Mathematica
-In[1]:= expressions = {
-   HoldForm[Table[i, {i, 5}, {j, i + 2}]],
-   HoldForm[Array[Range, 5, 3]],
-   HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
-   HoldForm[First[Rest[Range /@ Range[10]]]],
-   HoldForm[Range /@ Range[3, 7]],
-   HoldForm[Part[Table[Table[j, {j, i}], {i, 10}], 2]]
-   };
+expressions = {
+    HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+    HoldForm[Array[Range, 5, 3]],
+    HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+    HoldForm[First[Rest[Range /@ Range[10]]]],
+    HoldForm[Range /@ Range[3, 7]],
+    HoldForm[Part[Table[Table[j, {j, i}], {i, 10}], 2]]
+};
 ```
 
 Find the sequence of transformations for each expression:
 
 ```Mathematica
-In[2]:= Short[traces = Most@ToCanonicalForm[#, "Trace" -> True] & /@ expressions]
-
-Out[2]//Short= ...
+Short[traces = Most@ToCanonicalForm[#, "Trace" -> True] & /@ expressions]
 ```
+<img src="Images/0bf8dc73177c188f.png" width="592" height="58" style="width: 37.0000em; height: 3.6250em; background: white;">
 
 Generate a graph for each sequence:
 
 ```Mathematica
-In[3]:= paths = Graph[DirectedEdge @@@ Partition[#, 2, 1]] & /@ traces
-
-Out[3]= ...
+paths = Graph[DirectedEdge @@@ Partition[#, 2, 1]] & /@ traces
 ```
+<img src="Images/267c2baf6dadcfcc.png" width="568" height="39" style="width: 35.5000em; height: 2.4375em; background: white;">
 
 Combine the graphs:
 
 ```Mathematica
-In[4]:= graph = Graph[GraphUnion @@ paths, Sequence[
+graph = Graph[GraphUnion @@ paths, Sequence[
    VertexLabels -> Placed["Name", Tooltip], 
     GraphLayout -> "LayeredDigraphEmbedding"]];
 ```
@@ -198,21 +189,18 @@ In[4]:= graph = Graph[GraphUnion @@ paths, Sequence[
 Equivalent expressions converge to the same connected component:
 
 ```Mathematica
-In[5]:= HighlightGraph[graph, paths]
-
-Out[5]= ... 
+HighlightGraph[graph, paths]
 ```
+<img src="Images/1cd67b7d1f0771ae.png" width="209" height="269" style="width: 13.0625em; height: 16.8125em; background: white;">
 
 Group the expressions into their corresponding equivalence class:
 
 ```Mathematica
-In[6]:= grouped = GroupBy[expressions, ToCanonicalForm]
-
-Out[6]= ...
+grouped = GroupBy[expressions, ToCanonicalForm]
 ```
+<img src="Images/12a4ebc788f8cb2c.png" width="443" height="166" style="width: 27.6875em; height: 10.3750em; background: white;">
 
 ```Mathematica
-In[7]:= TableForm[KeyValueMap[Reverse@*List, grouped]]
-
-Out[7]= ...
+TableForm[KeyValueMap[Reverse@*List, grouped]]
 ```
+<img src="Images/751d18c398c2d8f2.png" width="628" height="93" style="width: 39.2500em; height: 5.8125em; background: white;">
