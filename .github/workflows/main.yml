@@ -74,7 +74,7 @@ jobs:
         run: |
           $env:Path += ';${{ env.WOLFRAMENGINE_INSTALLATION_DIRECTORY }}\'
           
-          wolfram -run 'Get[\"https://wolfr.am/Zeo7o1nN\"]'
+          wolfram -run 'Get["https://wolfr.am/Zeo7o1nN"]'
           
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
