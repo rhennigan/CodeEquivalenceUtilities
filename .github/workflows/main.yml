@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Format Notebooks
+name: Do the thing
 
 # Controls when the workflow will run
 on:
@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  format:
+  thing:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container:
@@ -31,13 +31,13 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Do the thing
+      - name: Run the thing
         env:
           WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
         run: |
           wolframscript -code 'Export["Neat.png", ResourceFunction["BirdSay"]["neat"]]'
           
-      - name: Neat
+      - name: Upload the thing
         uses: actions/upload-artifact@v2
         with:
           name: BirdSay
