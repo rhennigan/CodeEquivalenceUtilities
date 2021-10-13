@@ -22,27 +22,23 @@ $LiteralTypeStyles =
       "Text" ->
         <|
             "Value" -> Sequence[
-                FontColor -> RGBColor[ {  71,  88,  25 } / 255 ],
-                FontWeight -> "Bold"
+                FontColor -> RGBColor[ {  71,  88,  25 } / 255 ]
             ],
 
             "Separator" -> Sequence[
-                FontColor -> RGBColor[ { 143, 176,  50 } / 255 ],
-                FontWeight -> "Bold"
+                FontColor -> RGBColor[ { 143, 176,  50 } / 255 ]
             ],
 
             "Type" -> Sequence[
-                FontColor -> RGBColor[ { 107, 132,  37 } / 255 ],
-                FontWeight -> "Plain"
+                FontColor -> RGBColor[ { 107, 132,  37 } / 255 ]
             ]
         |>,
 
       "FrameBoxOptions" -> Sequence[
-          Background -> RGBColor[ { 199, 216, 152 } / 255 ],
-          RoundingRadius -> 3,
-          FrameMargins -> 3,
           ContentPadding -> False,
-          StripOnInput -> False
+          FrameStyle -> None,
+          RoundingRadius -> 5,
+          Background -> Lighter[ColorData[97][3], .75]
       ]
   |>;
 
@@ -51,27 +47,23 @@ $SymbolTypeStyles =
       "Text" ->
         <|
             "Value" -> Sequence[
-                FontColor -> RGBColor[ {  47,  65,  90 } / 255 ],
-                FontWeight -> "Bold"
+                FontColor -> RGBColor[ {  47,  65,  90 } / 255 ]
             ],
 
             "Separator" -> Sequence[
-                FontColor -> RGBColor[ {  94, 129, 181 } / 255 ],
-                FontWeight -> "Bold"
+                FontColor -> RGBColor[ {  94, 129, 181 } / 255 ]
             ],
 
             "Type" -> Sequence[
-                FontColor -> RGBColor[ {  70,  97, 136 } / 255 ],
-                FontWeight -> "Plain"
+                FontColor -> RGBColor[ {  70,  97, 136 } / 255 ]
             ]
         |>,
 
       "FrameBoxOptions" -> Sequence[
-          Background -> RGBColor[ { 174, 192, 218 } / 255 ],
-          RoundingRadius -> 2,
-          FrameMargins -> 2,
           ContentPadding -> False,
-          StripOnInput -> False
+          FrameStyle -> None,
+          RoundingRadius -> 5,
+          Background -> Lighter[ColorData[97][1], .75]
       ]
   |>;
 
@@ -80,27 +72,23 @@ $ExprTypeStyles =
       "Text" ->
         <|
             "Value" -> Sequence[
-                FontColor -> RGBColor[ { 112,  78,  18 } / 255 ],
-                FontWeight -> "Bold"
+                FontColor -> RGBColor[ { 112,  78,  18 } / 255 ]
             ],
 
             "Separator" -> Sequence[
-                FontColor -> RGBColor[ { 225, 156,  36 } / 255 ],
-                FontWeight -> "Bold"
+                FontColor -> RGBColor[ { 225, 156,  36 } / 255 ]
             ],
 
             "Type" -> Sequence[
-                FontColor -> RGBColor[ { 168, 117,  27 } / 255 ],
-                FontWeight -> "Plain"
+                FontColor -> RGBColor[ { 168, 117,  27 } / 255 ]
             ]
         |>,
 
       "FrameBoxOptions" -> Sequence[
-          Background -> RGBColor[ { 240, 205, 146 } / 255 ],
-          RoundingRadius -> 3,
-          FrameMargins -> 3,
           ContentPadding -> False,
-          StripOnInput -> False
+          FrameStyle -> None,
+          RoundingRadius -> 5,
+          Background -> Lighter[ColorData[97][2], .75]
       ]
   |>;
 
@@ -154,6 +142,57 @@ MakeAtomicTypeBox[ value_, typeName_, tooltip_, styles_ ] :=
       TagBox[ ttpBox, #1 & ]
 
 ];
+
+MakeAtomicTypeBox[ value_, typeName_, tooltip_, styles_ ] :=
+
+  Module[
+
+      {
+          separator = "\[Proportion]",
+          valString, typString,
+          valBox, sepBox, typBox,
+          txtBox, frmBox, ttpStr, ttpBox
+      },
+
+      (*valString = If[ StringQ @ value,
+                      value,
+                      ToString[ Unevaluated @ value, InputForm ]
+                  ];*)
+
+      valString =
+        If[ StringQ @ value
+            ,
+            value
+            ,
+            StringTake[ ToString[
+                HoldComplete @ value /. s_Symbol? LocalContextQ :>
+                  TrEval @ Symbol[ "Global`" <> SymbolName @ Unevaluated @ s ],
+                InputForm
+            ], { 14, -2 } ]
+      ];
+
+      typString = makeTypeString @ typeName;
+
+      valBox = valString ~StyleBox~ styles[ "Text", "Value"     ];
+      sepBox = separator ~StyleBox~ styles[ "Text", "Separator" ];
+      typBox = typString ~StyleBox~ styles[ "Text", "Type"      ];
+
+      txtBox = RowBox @ { valBox, sepBox, typBox };
+      frmBox = FrameBox[ txtBox, styles @ "FrameBoxOptions" ];
+      ttpStr = ToBoxes @ ToString[ Unevaluated @ tooltip, InputForm ];
+      ttpBox = TooltipBox[ StyleBox[ frmBox, FontSize -> Inherited*0.9 ], ttpStr ];
+
+      TagBox[ ttpBox, #1 & ]
+
+];
+
+makeTypeString[ Integer  ] := "\[DoubleStruckCapitalZ]";
+makeTypeString[ Real     ] := "\[DoubleStruckCapitalR]";
+makeTypeString[ Rational ] := "\[DoubleStruckCapitalQ]";
+makeTypeString[ Complex  ] := "\[DoubleStruckCapitalC]";
+makeTypeString[ str_     ] :=
+    ToLowerCase @ StringTake[ ToString @ str, UpTo[ 3 ] ];
+
 
 (******************************************************************************)
 
