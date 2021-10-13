@@ -18,24 +18,63 @@ jobs:
 
   check:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    container:
-      image: wolframresearch/wolframengine:latest
-      options: --user root
+    runs-on: windows-latest
     env:
-      WOLFRAM_SYSTEM_ID: Linux-x86-64
+      WOLFRAM_SYSTEM_ID: Windows-x86-64
+      WOLFRAMENGINE_INSTALL_MSI_DOWNLOAD_URL: https://files.wolframcdn.com/packages/winget/12.2.0.0/WolframEngine_12.2.0_WIN.msi
+      WOLFRAMENGINE_CACHE_KEY: WolframEngine-A
+      WOLFRAMENGINE_INSTALLATION_SUBDIRECTORY: WolframEngine
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Cache/restore Wolfram Engine install
+        id: cache-restore
+        uses: actions/cache@v2
+        env:
+          WOLFRAMENGINE_INSTALLATION_DIRECTORY: '${{ runner.temp }}\${{ env.WOLFRAMENGINE_INSTALLATION_SUBDIRECTORY }}'
+        with:
+          path: ${{ env.WOLFRAMENGINE_INSTALLATION_DIRECTORY }}
+          key: wolframengine-${{ env.WOLFRAM_SYSTEM_ID }}-${{ env.WOLFRAMENGINE_CACHE_KEY }}
+
+      - name: Download and install Wolfram Engine
+        if: steps.cache-restore.outputs.cache-hit != 'true'
+        env:
+          WOLFRAMENGINE_INSTALLATION_DIRECTORY: '${{ runner.temp }}\${{ env.WOLFRAMENGINE_INSTALLATION_SUBDIRECTORY }}'
+          WOLFRAMENGINE_INSTALL_MSI_PATH: '${{ runner.temp }}\WolframEngine-Install.msi'
+          WOLFRAMENGINE_INSTALL_LOG_PATH: '${{ runner.temp }}\WolframEngine-Install.log'
+        run: |
+          echo 'Downloading Wolfram Engine installer...'
+          $msiFile = '${{ env.WOLFRAMENGINE_INSTALL_MSI_PATH }}'
+          $logFile = '${{ env.WOLFRAMENGINE_INSTALL_LOG_PATH }}'
+          Import-Module BitsTransfer
+          Start-BitsTransfer '${{ env.WOLFRAMENGINE_INSTALL_MSI_DOWNLOAD_URL }}' $msiFile
+          echo 'Downloaded Wolfram Engine installer.'
+          $DataStamp = get-date -Format yyyyMMddTHHmmss
+          $MSIArguments = @(
+              "/i"
+              ('"{0}"' -f $msiFile)
+              'INSTALLLOCATION="${{ env.WOLFRAMENGINE_INSTALLATION_DIRECTORY }}"'
+              "/qn"
+              "/norestart"
+              "/L*v"
+              $logFile
+          )
+          echo 'Installing Wolfram Engine...'
+          Start-Process "msiexec.exe" -ArgumentList $MSIArguments -Wait -NoNewWindow
+          echo 'Installed Wolfram Engine.'
 
       # Runs a single command using the runners shell
       - name: Run Paclet Check and Build
         env:
-          WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
+          WOLFRAMENGINE_INSTALLATION_DIRECTORY: '${{ runner.temp }}\${{ env.WOLFRAMENGINE_INSTALLATION_SUBDIRECTORY }}'
+          WOLFRAMINIT: "-pwfile !cloudlm.wolfram.com -entitlement ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}"
         run: |
-          wolframscript -code 'Get["https://wolfr.am/Zeo7o1nN"]'
+          $env:Path += ';${{ env.WOLFRAMENGINE_INSTALLATION_DIRECTORY }}\'
+          
+          wolfram -run 'Get["https://wolfr.am/Zeo7o1nN"]'
           
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
