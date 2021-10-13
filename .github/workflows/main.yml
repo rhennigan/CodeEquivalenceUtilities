@@ -32,22 +32,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Do the thing
-        id: format-notebooks
         env:
           WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
         run: |
-          wolframscript -script ./Scripts/FormatNotebooks.wls
+          wolframscript -code 'Export["Neat.png", ResourceFunction["BirdSay"]["neat"]]'
           
-      - name: Check for modified files
-        id: git-check
-        run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
-        
-      - name: Push changes
-        if: steps.git-check.outputs.modified == 'true'
-        run: |
-          git config --global user.name 'Rick Hennigan'
-          git config --global user.email 'richardh@wolfram.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git commit -am "Automated changes"
-          git push
-          git push
+      - name: Neat
+        uses: actions/upload-artifact@v2
+        with:
+          name: BirdSay
+          path: Neat.png
+          if-no-files-found: error
