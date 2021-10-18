@@ -77,9 +77,9 @@ PacletObject[
           "Wolfram`CodeEquivalenceUtilities`ToCanonicalForm"
         }
       },
-      {"Documentation", "Root" -> "Documentation"},
+      {"Documentation", "Root" -> "Documentation"}(* ,
       {"Asset", "Assets" -> {{"TestData", "./Tests/Data"}}},
-      {"Tests", "Method" -> "Experimental-v1"}
+      {"Tests", "Method" -> "Experimental-v1"} *)
     },
     "PublisherID" -> "Wolfram"
   |>
