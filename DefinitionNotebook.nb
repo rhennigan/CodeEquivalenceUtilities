@@ -388,7 +388,7 @@ Notebook[
                      CellID -> 468968744
                     ]
                    },
-                   Open
+                   Closed
                   ]
                  ],
                  Cell[
@@ -872,11 +872,11 @@ Notebook[
                   ]
                  ]
                 },
-                Open
+                Closed
                ]
               ]
              },
-             Open
+             Closed
             ]
            ],
            Cell[
@@ -3675,7 +3675,7 @@ Notebook[
             "Input",
             "Excluded",
             TaggingRules -> { },
-            CellLabel -> "In[6]:=",
+            CellLabel -> "In[1]:=",
             CellID -> 177882608
            ],
            Cell[
@@ -3743,7 +3743,7 @@ Notebook[
             TaggingRules -> { },
             InitializationCell -> True,
             CellTags -> "DefaultContent",
-            CellLabel -> "In[1]:=",
+            CellLabel -> "In[3]:=",
             CellID -> 227436451
            ],
            Cell[
@@ -3805,14 +3805,15 @@ Notebook[
             "Excluded",
             TaggingRules -> { },
             InitializationCell -> True,
-            CellLabel -> "In[2]:=",
+            CellLabel -> "In[4]:=",
             CellID -> 996669468
            ],
            Cell[
             BoxData[RowBox[{"ClearEvalCache", "[", "]"}]],
             "Input",
             "Excluded",
-            CellLabel -> "In[3]:=",
+            TaggingRules -> { },
+            CellLabel -> "In[5]:=",
             CellID -> 119547485
            ]
           },
@@ -6849,13 +6850,7 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[
-                            Table[
-                             i,
-                             {i, 5},
-                             {j, i + 2}
-                            ]
-                           ],
+                           HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                            HoldForm[
                             Table[
                              Table[
@@ -7357,12 +7352,7 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[
-                            Table[
-                             ConstantArray[i, i + 2],
-                             {i, 5}
-                            ]
-                           ],
+                           HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                            HoldForm[
                             Table[
                              ConstantArray[
@@ -8111,15 +8101,7 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[
-                            Part[
-                             Table[
-                              Table[j, {j, i}],
-                              {i, 10}
-                             ],
-                             2
-                            ]
-                           ],
+                           HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                            HoldForm[
                             Part[
                              Table[
@@ -8248,10 +8230,7 @@ Notebook[
                             Hue[0.6, 0.7, 0.5],
                             Opacity[0.7],
                             Arrowheads[Medium],
-                            ArrowBox[
-                             {{1, 2}, {2, 3}, {3, 4}, {4, 5}},
-                             0.0370056
-                            ]
+                            ArrowBox[{{1, 2}, {2, 3}, {3, 4}, {4, 5}}, 0.0370056]
                            },
                            {
                             Hue[0.6, 0.2, 0.8],
@@ -8506,15 +8485,7 @@ Notebook[
                          2
                         ]
                        ],
-                       HoldForm[
-                        Part[
-                         Table[
-                          Table[j, {j, i}],
-                          {i, 10}
-                         ],
-                         2
-                        ]
-                       ],
+                       HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                        HoldForm[
                         Part[
                          Table[
@@ -8623,12 +8594,7 @@ Notebook[
                          2
                         ]
                        ],
-                       HoldForm[
-                        Table[
-                         ConstantArray[i, i + 2],
-                         {i, 5}
-                        ]
-                       ],
+                       HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                        HoldForm[
                         Table[
                          ConstantArray[
@@ -9023,13 +8989,7 @@ Notebook[
                          }
                         ]
                        ],
-                       HoldForm[
-                        Table[
-                         i,
-                         {i, 5},
-                         {j, i + 2}
-                        ]
-                       ]
+                       HoldForm[Table[i, {i, 5}, {j, i + 2}]]
                       },
                       {
                        {
@@ -9125,12 +9085,7 @@ Notebook[
                           ]
                          ]
                         ],
-                        HoldForm[
-                         Table[
-                          ConstantArray[i, i + 2],
-                          {i, 5}
-                         ]
-                        ],
+                        HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                         HoldForm[
                          Table[
                           Table[
@@ -9179,13 +9134,7 @@ Notebook[
                           }
                          ]
                         ],
-                        HoldForm[
-                         Table[
-                          i,
-                          {i, 5},
-                          {j, i + 2}
-                         ]
-                        ],
+                        HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                         HoldForm[
                          Table[
                           Table[
@@ -9404,13 +9353,7 @@ Notebook[
                          ]
                         ],
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           i,
-                           {i, 5},
-                           {j, i + 2}
-                          ]
-                         ],
+                         HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                          HoldForm[
                           Table[
                            Table[
@@ -9474,22 +9417,9 @@ Notebook[
                           }
                          ]
                         ],
-                        HoldForm[
-                         Part[
-                          Table[
-                           Table[j, {j, i}],
-                           {i, 10}
-                          ],
-                          2
-                         ]
-                        ],
+                        HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           ConstantArray[i, i + 2],
-                           {i, 5}
-                          ]
-                         ],
+                         HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                          HoldForm[
                           Table[
                            ConstantArray[
@@ -9579,15 +9509,7 @@ Notebook[
                          ]
                         ],
                         DirectedEdge[
-                         HoldForm[
-                          Part[
-                           Table[
-                            Table[j, {j, i}],
-                            {i, 10}
-                           ],
-                           2
-                          ]
-                         ],
+                         HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                          HoldForm[
                           Part[
                            Table[
@@ -9830,13 +9752,7 @@ Notebook[
                          ]
                         },
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           i,
-                           {i, 5},
-                           {j, i + 2}
-                          ]
-                         ],
+                         HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                          HoldForm[
                           Table[
                            Table[
@@ -9884,15 +9800,7 @@ Notebook[
                          ]
                         ] -> {EdgeStyle -> Directive[Opacity[1], Hue[0.2, 1, 0.6]]},
                         DirectedEdge[
-                         HoldForm[
-                          Part[
-                           Table[
-                            Table[j, {j, i}],
-                            {i, 10}
-                           ],
-                           2
-                          ]
-                         ],
+                         HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                          HoldForm[
                           Part[
                            Table[
@@ -9952,13 +9860,7 @@ Notebook[
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}]
                          ]
                         },
-                        HoldForm[
-                         Table[
-                          i,
-                          {i, 5},
-                          {j, i + 2}
-                         ]
-                        ] -> {
+                        HoldForm[Table[i, {i, 5}, {j, i + 2}]] -> {
                          VertexStyle -> Directive[
                           Hue[0, 1, 0.8],
                           EdgeForm[{Hue[0, 1, 0.8], Opacity[1]}]
@@ -10029,12 +9931,7 @@ Notebook[
                          ]
                         ] -> {EdgeStyle -> Directive[Hue[0.2, 1, 0.6], Opacity[1]]},
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           ConstantArray[i, i + 2],
-                           {i, 5}
-                          ]
-                         ],
+                         HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                          HoldForm[
                           Table[
                            ConstantArray[
@@ -10053,26 +9950,13 @@ Notebook[
                           ]
                          ]
                         ] -> {EdgeStyle -> Directive[Hue[0.8, 0.6, 0.8], Opacity[1]]},
-                        HoldForm[
-                         Table[
-                          ConstantArray[i, i + 2],
-                          {i, 5}
-                         ]
-                        ] -> {
+                        HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]] -> {
                          VertexStyle -> Directive[
                           Hue[0.8, 0.6, 0.8],
                           EdgeForm[{Hue[0.8, 0.6, 0.8], Opacity[1]}]
                          ]
                         },
-                        HoldForm[
-                         Part[
-                          Table[
-                           Table[j, {j, i}],
-                           {i, 10}
-                          ],
-                          2
-                         ]
-                        ] -> {
+                        HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]] -> {
                          VertexStyle -> Directive[
                           Hue[0.1, 0.6, 0.7],
                           EdgeForm[{Hue[0.1, 0.6, 0.7], Opacity[1]}]
@@ -10570,10 +10454,7 @@ Notebook[
                          {
                           Hue[0.07, 1, 1],
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}],
-                          DiskBox[
-                           {4.50003, -1.1666766666666675},
-                           0.0656118
-                          ]
+                          DiskBox[{4.50003, -1.1666766666666675}, 0.0656118]
                          },
                          RowBox[
                           {
@@ -10756,10 +10637,7 @@ Notebook[
                          {
                           Hue[0.07, 1, 1],
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}],
-                          DiskBox[
-                           {4.50003, -2.1666766666666675},
-                           0.0656118
-                          ]
+                          DiskBox[{4.50003, -2.1666766666666675}, 0.0656118]
                          },
                          RowBox[
                           {
@@ -10789,10 +10667,7 @@ Notebook[
                          {
                           Hue[0.07, 1, 1],
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}],
-                          DiskBox[
-                           {4.50003, -3.1666766666666675},
-                           0.0656118
-                          ]
+                          DiskBox[{4.50003, -3.1666766666666675}, 0.0656118]
                          },
                          RowBox[
                           {
@@ -10831,10 +10706,7 @@ Notebook[
                          {
                           Hue[0.07, 1, 1],
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}],
-                          DiskBox[
-                           {4.50003, -4.1666766666666675},
-                           0.0656118
-                          ]
+                          DiskBox[{4.50003, -4.1666766666666675}, 0.0656118]
                          },
                          RowBox[
                           {
@@ -10929,10 +10801,7 @@ Notebook[
                          {
                           Hue[0.07, 1, 1],
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}],
-                          DiskBox[
-                           {4.50003, -5.1666766666666675},
-                           0.0656118
-                          ]
+                          DiskBox[{4.50003, -5.1666766666666675}, 0.0656118]
                          },
                          RowBox[
                           {
@@ -11017,10 +10886,7 @@ Notebook[
                          {
                           Hue[0.07, 1, 1],
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}],
-                          DiskBox[
-                           {4.50003, -6.1666766666666675},
-                           0.0656118
-                          ]
+                          DiskBox[{4.50003, -6.1666766666666675}, 0.0656118]
                          },
                          RowBox[
                           {
@@ -11108,10 +10974,7 @@ Notebook[
                        ],
                        TagBox[
                         TooltipBox[
-                         DiskBox[
-                          {4.50003, -7.1666766666666675},
-                          0.0656118
-                         ],
+                         DiskBox[{4.50003, -7.1666766666666675}, 0.0656118],
                          RowBox[
                           {
                            RowBox[
@@ -11275,10 +11138,7 @@ Notebook[
                          {
                           Hue[0.1, 0.6, 0.7],
                           EdgeForm[{Hue[0.1, 0.6, 0.7], Opacity[1]}],
-                          DiskBox[
-                           {5.50003, -6.1666766666666675},
-                           0.0656118
-                          ]
+                          DiskBox[{5.50003, -6.1666766666666675}, 0.0656118]
                          },
                          RowBox[
                           {
@@ -11314,15 +11174,7 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[
-                           Part[
-                            Table[
-                             Table[j, {j, i}],
-                             {i, 10}
-                            ],
-                            2
-                           ]
-                          ],
+                          HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                           "Tooltip"
                          ]
                         ]
@@ -11332,10 +11184,7 @@ Notebook[
                          {
                           Hue[0.1, 0.6, 0.7],
                           EdgeForm[{Hue[0.1, 0.6, 0.7], Opacity[1]}],
-                          DiskBox[
-                           {5.50003, -7.1666766666666675},
-                           0.0656118
-                          ]
+                          DiskBox[{5.50003, -7.1666766666666675}, 0.0656118]
                          },
                          RowBox[
                           {
@@ -11865,10 +11714,7 @@ Notebook[
                        ],
                        TagBox[
                         TooltipBox[
-                         DiskBox[
-                          {5.50003, -10.166676666666667},
-                          0.0656118
-                         ],
+                         DiskBox[{5.50003, -10.166676666666667}, 0.0656118],
                          RowBox[
                           {
                            RowBox[
@@ -12180,12 +12026,7 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[
-                           Table[
-                            ConstantArray[i, i + 2],
-                            {i, 5}
-                           ]
-                          ],
+                          HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                           "Tooltip"
                          ]
                         ]
@@ -12300,10 +12141,7 @@ Notebook[
                        ],
                        TagBox[
                         TooltipBox[
-                         DiskBox[
-                          {7.833383333333334, -4.166676666666667},
-                          0.0656118
-                         ],
+                         DiskBox[{7.833383333333334, -4.166676666666667}, 0.0656118],
                          RowBox[
                           {
                            "Table",
@@ -13600,10 +13438,7 @@ Notebook[
                        ],
                        TagBox[
                         TooltipBox[
-                         DiskBox[
-                          {8.833383333333334, -4.166676666666667},
-                          0.0656118
-                         ],
+                         DiskBox[{8.833383333333334, -4.166676666666667}, 0.0656118],
                          RowBox[
                           {
                            "Table",
@@ -13838,10 +13673,7 @@ Notebook[
                        ],
                        TagBox[
                         TooltipBox[
-                         DiskBox[
-                          {7.833383333333334, -5.166676666666667},
-                          0.0656118
-                         ],
+                         DiskBox[{7.833383333333334, -5.166676666666667}, 0.0656118],
                          RowBox[
                           {
                            "Table",
@@ -14644,10 +14476,7 @@ Notebook[
                        ],
                        TagBox[
                         TooltipBox[
-                         DiskBox[
-                          {7.833383333333334, -6.166676666666667},
-                          0.0656118
-                         ],
+                         DiskBox[{7.833383333333334, -6.166676666666667}, 0.0656118],
                          RowBox[
                           {
                            "Table",
@@ -14925,10 +14754,7 @@ Notebook[
                        ],
                        TagBox[
                         TooltipBox[
-                         DiskBox[
-                          {7.833383333333334, -7.166676666666667},
-                          0.0656118
-                         ],
+                         DiskBox[{7.833383333333334, -7.166676666666667}, 0.0656118],
                          RowBox[
                           {
                            "Table",
@@ -15236,13 +15062,7 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[
-                           Table[
-                            i,
-                            {i, 5},
-                            {j, i + 2}
-                           ]
-                          ],
+                          HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                           "Tooltip"
                          ]
                         ]
@@ -17121,19 +16941,8 @@ Notebook[
                   {
                    {
                     {
-                     HoldForm[
-                      Table[
-                       i,
-                       {i, 5},
-                       {j, i + 2}
-                      ]
-                     ],
-                     HoldForm[
-                      Table[
-                       ConstantArray[i, i + 2],
-                       {i, 5}
-                      ]
-                     ]
+                     HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                     HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]]
                     },
                     HoldForm[
                      Table[
@@ -17213,15 +17022,7 @@ Notebook[
                    {
                     {
                      HoldForm[First[Rest[Map[Range, Range[10]]]]],
-                     HoldForm[
-                      Part[
-                       Table[
-                        Table[j, {j, i}],
-                        {i, 10}
-                       ],
-                       2
-                      ]
-                     ]
+                     HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]]
                     },
                     HoldForm[
                      Part[
@@ -19368,53 +19169,6 @@ Notebook[
          },
          CellTags -> {"DefaultContent", "TabNext"},
          CellID -> 908162033
-        ],
-        Cell[
-         CellGroupData[
-          {
-           Cell[
-            BoxData[
-             InterpretationBox[
-              RowBox[
-               {
-                "\"\"",
-                "\[InvisibleSpace]",
-                "\"Fri 8 Oct 2021 17:09:40.464\"",
-                "\[InvisibleSpace]",
-                "\": \"",
-                "\[InvisibleSpace]",
-                "\"Formatting: \"",
-                "\[InvisibleSpace]",
-                "\"DefinitionNotebook.nb\""
-               }
-              ],
-              SequenceForm[
-               "",
-               "Fri 8 Oct 2021 17:09:40.464",
-               ": ",
-               "Formatting: ",
-               "DefinitionNotebook.nb"
-              ],
-              Editable -> False
-             ]
-            ],
-            "Print",
-            TaggingRules -> { },
-            CellLabel -> "During evaluation of In[1]:=",
-            CellID -> 149441656
-           ],
-           Cell[
-            BoxData[
-             "\"Failed to format notebook: H:\\\\Documents\\\\CodeEquivalenceUtilities\\\\DefinitionNotebook.nb\""
-            ],
-            "Print",
-            TaggingRules -> { },
-            CellLabel -> "During evaluation of In[1]:=",
-            CellID -> 344823360
-           ]
-          },
-          Open
-         ]
         ]
        },
        Open
@@ -19472,26 +19226,26 @@ Notebook[
    "DefaultContentMethod" -> "Tagged"
   },
   "SubmissionReviewData" -> {"Review" -> False},
-  "ToolsOpen" -> True,
+  "ToolsOpen" -> False,
   "UpdatedTimestamp" -> 3842633619.,
   "TemplateVersion" -> "1.5.45",
   "StatusMessage" -> "",
   "AutoUpdate" -> True,
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" -> DateObject[
-   {2021, 10, 13, 11, 54, 33.3168481`9.275238807926897},
+   {2021, 10, 18, 13, 41, 28.0961949`9.201222419675329},
    "Instant",
    "Gregorian",
    -4.
   ],
   "NotebookUUID" -> "0e82ef88-8bb1-4c63-bd79-6efe1d3d6922",
   "PacletBuildData" -> {
-   "FileHashes" -> ByteArray["OEM6eJyVlm9sE2Ucxx0OtmA2VwZ7MTcapxuCXCtYyAiBWbpubO2A8bRTt7Dy9O5p+2zX57q75/aHGXBkwAuJKBgxMhJJUIPBBOOcUVA2YNFMl6AuBuILkQScxhgSYggI6G0rfcq1vbWvmnx738/3ud/z+z3P2cs5UFkt8WoYEQoplojVSYIiVkLWWhULSLE6JAE5O1TcCUVEeOSlWMQUI8VC/PY5HJgHJFXmkbtn525HiO8waYoHykFE3UN1re/93PjJBg6UJQ+oIwLqtvqes/ABJQ6lZG+SCGKcNya+fH/5T78t50CFEUdBwam/FN/zBqzyFVltg3tK1nPgmXRYliAiBjRTw5W+492/r+FAVXLaVhRA8lTVtsCgVkrQE/ZLoq6ktFFXSe9F1+TxjuG5LGfjwLb9Hx50+jjgyCgnbts8SKHVkEJdVlXLQFPx0eutLIs3jb8ZKe1r4YA9o6waWQo7IJEI5qFYI8lhXdLtvKcdk3WqjSXlXj1ZOu/WC6syTWqA7cgoyb35ZvaxXK6YJV1+tQLVf/1PZab75JGMcurf/tV54vJpwHJaSm++/G7/nTIOLEueAxCU+dBMj9lmOh8Z9FdT8cgK9/zexzLhGU3SX5N/5LaeKljLgaVp8hRsgNv72p+Brw5B7QTh0sEFMBIFxdIlGiC7j1y/3XbJZOaALR0knvptQBQKU61tSM5Ht/YvGK7ayAFLOuTYabLSgPn5GFx3QBhuTJPZJWOKLKLEtxswsXdz2UtXvS4OLEnBjCBRjB6dtlk2/O6V/B/GrOXaiD07Kyz2xn4DYC86ec204PCG1FueCJzlEM2aM7J30fiuxpTD6VGpJGOozaNdEDAJbkJdHhkSJaCN5PSTW1Ux4ToSfN81ix9YV7MczrT77zXHOpZyoMiFZIJEqwPyISQ0QVFFurZ0u9aWnPYepguZnSlPxexxZ4O2OEpl7FdpAmtiIO/7ubbxTsZiijk5yyGFwxLRcQ6Ntje3nS3MYRymLEvOcXZHkIynSyrOVOlh5McT46vuW7eHGJIpTyZH1sowEsK8nvRtTedZ/GP/IkZiyuLkpGQLKvy3yT525l4vwzAlBQbwUgTpMFmuPfjOkV2vxHVZTEmxfYDKKk9VGYr6Gp3PGly87wsxrkYxpewBK9U30sOo6oKhwYoLp8oZiimFUVQ18qvBoNbmOu+Foewz5mvbKpmXKU9EvU4tX50eCYdEqCzpXyVn3b6P7l866GQMpiyMMmqmp4omLqD+v9FvRopW7mRmpuRHzZhgqrOdK2wxb38kdz6zMeXxqM3TE0moVW1z0ev9v4zG3a5MeVCrVHUuuXjiRdKX42NepuRtgbyIaB0JSDrXZxHzOzvcvQXMxRTTjKsBEhzQvqSMrxqL23/jrU8fzfsfv8Amhw=="],
-   "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram__CodeEquivalenceUtilities-1.1.0.paclet"
+   "FileHashes" -> ByteArray["OEM6eJytlmtMFFcYhougUEALcrEXK5EWtLSzW4E1FGsN7gVwd0Wc5aIIeHbm7HLc2RmcOcOlkhBa0B9aS0ovNpI0sU2TSpvYhthasGjVtrGQttYfNhpsmpQK6Y8G01LbYLoL65512B1mk/4iednveed833suJRRFF5kERvZCHgOMBF5v5t0ckpr0pTJioaQ3Ciw075dRC+Agz8AqjDiEEZR0vLNkCUUvowVZZKCtb+LdJ9tfGMj0KQ4guiG2ddn2LD3h+auVorPDG5TzLGzTNz6rY1xSCEqK2y7wkHBOTm3b/ybo3UjRuWocCbr9/5IaC1RY7yTX3O6wIDNFr9fC0rkhr0JLtf/c9V7bb89R9JbwtJ3QBUV/13YAt6+VdLvXKXCKluJKRSfH7U6qbtj6IvHJf9gTM8NOdlC0MSqfkLE5oIRNAAOF158rv+M61p0RiVdse8VsT6/BQ9ElUXlZRMFrBLzAIwZwFkH0KpxWfWxM3zWc00Ccptne/iH7jYRonezAA9WcRr7+6qipYOgAcXIwh9lb0xkN0c7JIaj5PJ/8edLUQEUF8dn6ibv+9bVJuRSdF96HhkBkmuYzVjiffKiSr+pHz2+wJR5IioantpN+vzWZ0HAqZRNFP6WRJyEV3MHDU66zfSCHoiktOBeCHCvpWjkVZNvxiTv7rqVmUXShFiTy/7VDDFh/tFXJK+DMkZXntpRRtE4LOXia5KswP70MNr/KnqvUyGwVEYY6TmA8KkxUVZFd+0uVVdPMDYtnaGA2/9txS/KD0fDUMpT39h938GhcqaYMGRbN0IXb8UXHxjfu0pQhw/+fIUM0Gar77CfEjsY+rmneBm0ZKis/Udbfs2ybRmaUGVoXgdkMOS5w/RYuMvAfHbX5N2Nf9i366UVhwRU7VYDFRzZY4185lh955AuBi1zEMUvOH8wY66yMeMA7ZCyICPjO9BKWRbx7O2x1iICXXL5jfe6XO2VuwZNmZvKm7of3a+OJj9W1tbO4f6KeojOtUOQhpzcCpgmy1YCToSKWNuum1UNVb+H0kPKg8kSwPOR+8X0cxiJyyngB62r/8tGlhWMthEWUrPAso+D1CryC03fJs3vfSFrIkoiSF55jbmuGIpprKTffpfuRH10dM9zV720iSKKsDY8sFUFzE2KUpG8sLSPoSncGIRFlTXhSuA9K+7e65PLwbMj9T5QIGJoRmqECE2PtQf8c7+wISVlQiTA+Gosyg2URcMoeXYgZXHPoDBfSo6CSfY8V6Z19P8qUcnow9+KpHIIiSloAZYJO2e32xVxRe/F03HDWr/VFpJYojwVqzT5/eW5LGAUei4JyKfGbD528e+01M2EQJT3AsMztKrzwAyq7U14aTL+RSoqJsiJQjHiEFWVfptVl7X0gIZGUEeWhQJmjvXlBr0p3Zx7tvn6JJnVEuderSH1e/f0HNXxXfCOpJcryHYDhIC7nXYKi6u8Cpvh64od7SBVRUuer7IBHLt9rXP2quTJy9pnBL/of8Z00/qe7pPc/3vXm8hqbacE1ZeuLy5l+Y33aqpBdHVD+A5XbCn4="],
+   "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram__CodeEquivalenceUtilities-1.2.0.paclet"
   }
  },
  CreateCellID -> True,
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 13, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 17, 2021)",
  StyleDefinitions -> Notebook[
   {
    Cell[StyleData[StyleDefinitions -> "Default.nb"]],
@@ -28990,7 +28744,7 @@ Notebook[
    ]
   },
   Visible -> False,
-  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 13, 2021)",
+  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 17, 2021)",
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"
  ],
  ExpressionUUID -> "e8a467c0-30fe-49eb-9c07-86a699a75dc9"

@@ -1331,7 +1331,7 @@ Notebook[
   ],
   "NotebookUUID" -> "c03dabbe-92ea-4ba6-9bb0-2fa34c8e6f12"
  |>,
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 7, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 17, 2021)",
  StyleDefinitions -> FrontEnd`FileName[
   {"Wolfram"},
   "GuidePageStylesExt.nb",
