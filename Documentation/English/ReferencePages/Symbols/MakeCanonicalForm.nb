@@ -361,7 +361,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[3]:=",
+         CellLabel -> "In[1]:=",
          CellID -> 442224743
         ],
         Cell[
@@ -376,49 +376,43 @@ Notebook[
                InterpretationBox[
                 TagBox[
                  TooltipBox[
-                  FrameBox[
-                   Cell[
-                    TextData[
+                  StyleBox[
+                   FrameBox[
+                    RowBox[
                      {
                       StyleBox[
                        "S1",
-                       FontWeight -> "Bold",
                        FontColor -> RGBColor[
                         {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                        ]
                       ],
                       StyleBox[
-                       "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                       FontWeight -> "Bold",
+                       "\[Proportion]",
                        FontColor -> RGBColor[
                         {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                        ]
                       ],
                       StyleBox[
-                       "Int",
-                       FontWeight -> "Plain",
+                       "\[DoubleStruckCapitalZ]",
                        FontColor -> RGBColor[
                         {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                        ]
                       ]
                      }
                     ],
-                    "Text"
+                    Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                    ContentPadding -> False,
+                    FrameStyle -> None,
+                    RoundingRadius -> 5
                    ],
-                   Background -> RGBColor[
-                    {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                   ],
-                   ContentPadding -> False,
-                   FrameMargins -> 2,
-                   RoundingRadius -> 2,
-                   StripOnInput -> False
+                   FontSize -> 0.9*Inherited
                   ],
-                  "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                  "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                  ],
                  #1 & 
                 ],
-                CodeEquivalenceUtilities`Types`TypedSymbol[
-                 CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                 Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                  _Integer
                 ]
                ],
@@ -431,49 +425,43 @@ Notebook[
                    InterpretationBox[
                     TagBox[
                      TooltipBox[
-                      FrameBox[
-                       Cell[
-                        TextData[
+                      StyleBox[
+                       FrameBox[
+                        RowBox[
                          {
                           StyleBox[
                            "S1",
-                           FontWeight -> "Bold",
                            FontColor -> RGBColor[
                             {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                            ]
                           ],
                           StyleBox[
-                           "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                           FontWeight -> "Bold",
+                           "\[Proportion]",
                            FontColor -> RGBColor[
                             {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                            ]
                           ],
                           StyleBox[
-                           "Int",
-                           FontWeight -> "Plain",
+                           "\[DoubleStruckCapitalZ]",
                            FontColor -> RGBColor[
                             {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                            ]
                           ]
                          }
                         ],
-                        "Text"
+                        Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                        ContentPadding -> False,
+                        FrameStyle -> None,
+                        RoundingRadius -> 5
                        ],
-                       Background -> RGBColor[
-                        {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                       ],
-                       ContentPadding -> False,
-                       FrameMargins -> 2,
-                       RoundingRadius -> 2,
-                       StripOnInput -> False
+                       FontSize -> 0.9*Inherited
                       ],
-                      "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                      "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                      ],
                      #1 & 
                     ],
-                    CodeEquivalenceUtilities`Types`TypedSymbol[
-                     CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                    Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                     Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                      _Integer
                     ]
                    ],
@@ -497,8 +485,8 @@ Notebook[
           ]
          ],
          "Output",
-         CellLabel -> "Out[3]=",
-         CellID -> 115012910
+         CellLabel -> "Out[1]=",
+         CellID -> 497565738
         ]
        },
        Open
@@ -519,7 +507,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[4]:=",
+         CellLabel -> "In[2]:=",
          CellID -> 645328
         ],
         Cell[
@@ -540,49 +528,43 @@ Notebook[
                    InterpretationBox[
                     TagBox[
                      TooltipBox[
-                      FrameBox[
-                       Cell[
-                        TextData[
+                      StyleBox[
+                       FrameBox[
+                        RowBox[
                          {
                           StyleBox[
                            "S1",
-                           FontWeight -> "Bold",
                            FontColor -> RGBColor[
                             {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                            ]
                           ],
                           StyleBox[
-                           "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                           FontWeight -> "Bold",
+                           "\[Proportion]",
                            FontColor -> RGBColor[
                             {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                            ]
                           ],
                           StyleBox[
-                           "Int",
-                           FontWeight -> "Plain",
+                           "\[DoubleStruckCapitalZ]",
                            FontColor -> RGBColor[
                             {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                            ]
                           ]
                          }
                         ],
-                        "Text"
+                        Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                        ContentPadding -> False,
+                        FrameStyle -> None,
+                        RoundingRadius -> 5
                        ],
-                       Background -> RGBColor[
-                        {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                       ],
-                       ContentPadding -> False,
-                       FrameMargins -> 2,
-                       RoundingRadius -> 2,
-                       StripOnInput -> False
+                       FontSize -> 0.9*Inherited
                       ],
-                      "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                      "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                      ],
                      #1 & 
                     ],
-                    CodeEquivalenceUtilities`Types`TypedSymbol[
-                     CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                    Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                     Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                      _Integer
                     ]
                    ],
@@ -595,49 +577,43 @@ Notebook[
                        InterpretationBox[
                         TagBox[
                          TooltipBox[
-                          FrameBox[
-                           Cell[
-                            TextData[
+                          StyleBox[
+                           FrameBox[
+                            RowBox[
                              {
                               StyleBox[
                                "S1",
-                               FontWeight -> "Bold",
                                FontColor -> RGBColor[
                                 {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                                ]
                               ],
                               StyleBox[
-                               "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                               FontWeight -> "Bold",
+                               "\[Proportion]",
                                FontColor -> RGBColor[
                                 {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                                ]
                               ],
                               StyleBox[
-                               "Int",
-                               FontWeight -> "Plain",
+                               "\[DoubleStruckCapitalZ]",
                                FontColor -> RGBColor[
                                 {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                                ]
                               ]
                              }
                             ],
-                            "Text"
+                            Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                            ContentPadding -> False,
+                            FrameStyle -> None,
+                            RoundingRadius -> 5
                            ],
-                           Background -> RGBColor[
-                            {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                           ],
-                           ContentPadding -> False,
-                           FrameMargins -> 2,
-                           RoundingRadius -> 2,
-                           StripOnInput -> False
+                           FontSize -> 0.9*Inherited
                           ],
-                          "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                          "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                          ],
                          #1 & 
                         ],
-                        CodeEquivalenceUtilities`Types`TypedSymbol[
-                         CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                        Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                         Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                          _Integer
                         ]
                        ],
@@ -647,49 +623,43 @@ Notebook[
                        InterpretationBox[
                         TagBox[
                          TooltipBox[
-                          FrameBox[
-                           Cell[
-                            TextData[
+                          StyleBox[
+                           FrameBox[
+                            RowBox[
                              {
                               StyleBox[
                                "S2",
-                               FontWeight -> "Bold",
                                FontColor -> RGBColor[
                                 {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                                ]
                               ],
                               StyleBox[
-                               "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                               FontWeight -> "Bold",
+                               "\[Proportion]",
                                FontColor -> RGBColor[
                                 {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                                ]
                               ],
                               StyleBox[
-                               "Int",
-                               FontWeight -> "Plain",
+                               "\[DoubleStruckCapitalZ]",
                                FontColor -> RGBColor[
                                 {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                                ]
                               ]
                              }
                             ],
-                            "Text"
+                            Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                            ContentPadding -> False,
+                            FrameStyle -> None,
+                            RoundingRadius -> 5
                            ],
-                           Background -> RGBColor[
-                            {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                           ],
-                           ContentPadding -> False,
-                           FrameMargins -> 2,
-                           RoundingRadius -> 2,
-                           StripOnInput -> False
+                           FontSize -> 0.9*Inherited
                           ],
-                          "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
+                          "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                          ],
                          #1 & 
                         ],
-                        CodeEquivalenceUtilities`Types`TypedSymbol[
-                         CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
+                        Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                         Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
                          _Integer
                         ]
                        ],
@@ -714,49 +684,43 @@ Notebook[
                    InterpretationBox[
                     TagBox[
                      TooltipBox[
-                      FrameBox[
-                       Cell[
-                        TextData[
+                      StyleBox[
+                       FrameBox[
+                        RowBox[
                          {
                           StyleBox[
                            "S2",
-                           FontWeight -> "Bold",
                            FontColor -> RGBColor[
                             {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                            ]
                           ],
                           StyleBox[
-                           "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                           FontWeight -> "Bold",
+                           "\[Proportion]",
                            FontColor -> RGBColor[
                             {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                            ]
                           ],
                           StyleBox[
-                           "Int",
-                           FontWeight -> "Plain",
+                           "\[DoubleStruckCapitalZ]",
                            FontColor -> RGBColor[
                             {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                            ]
                           ]
                          }
                         ],
-                        "Text"
+                        Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                        ContentPadding -> False,
+                        FrameStyle -> None,
+                        RoundingRadius -> 5
                        ],
-                       Background -> RGBColor[
-                        {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                       ],
-                       ContentPadding -> False,
-                       FrameMargins -> 2,
-                       RoundingRadius -> 2,
-                       StripOnInput -> False
+                       FontSize -> 0.9*Inherited
                       ],
-                      "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
+                      "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                      ],
                      #1 & 
                     ],
-                    CodeEquivalenceUtilities`Types`TypedSymbol[
-                     CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
+                    Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                     Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
                      _Integer
                     ]
                    ],
@@ -780,8 +744,8 @@ Notebook[
           ]
          ],
          "Output",
-         CellLabel -> "Out[4]=",
-         CellID -> 305353979
+         CellLabel -> "Out[2]=",
+         CellID -> 69632146
         ]
        },
        Open
@@ -804,7 +768,7 @@ Notebook[
           ]
          ],
          "Input",
-         CellLabel -> "In[5]:=",
+         CellLabel -> "In[3]:=",
          CellID -> 471230914
         ],
         Cell[
@@ -844,7 +808,7 @@ Notebook[
                    ],
                    Annotation[#1, "RandomValue", "Tooltip"] & 
                   ],
-                  CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
+                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                  ],
                  "[",
                  RowBox[
@@ -861,49 +825,43 @@ Notebook[
                        InterpretationBox[
                         TagBox[
                          TooltipBox[
-                          FrameBox[
-                           Cell[
-                            TextData[
+                          StyleBox[
+                           FrameBox[
+                            RowBox[
                              {
                               StyleBox[
                                "S1",
-                               FontWeight -> "Bold",
                                FontColor -> RGBColor[
                                 {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                                ]
                               ],
                               StyleBox[
-                               "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                               FontWeight -> "Bold",
+                               "\[Proportion]",
                                FontColor -> RGBColor[
                                 {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                                ]
                               ],
                               StyleBox[
-                               "Int",
-                               FontWeight -> "Plain",
+                               "\[DoubleStruckCapitalZ]",
                                FontColor -> RGBColor[
                                 {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                                ]
                               ]
                              }
                             ],
-                            "Text"
+                            Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                            ContentPadding -> False,
+                            FrameStyle -> None,
+                            RoundingRadius -> 5
                            ],
-                           Background -> RGBColor[
-                            {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                           ],
-                           ContentPadding -> False,
-                           FrameMargins -> 2,
-                           RoundingRadius -> 2,
-                           StripOnInput -> False
+                           FontSize -> 0.9*Inherited
                           ],
-                          "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                          "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                          ],
                          #1 & 
                         ],
-                        CodeEquivalenceUtilities`Types`TypedSymbol[
-                         CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                        Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                         Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                          _Integer
                         ]
                        ]
@@ -927,49 +885,43 @@ Notebook[
                    InterpretationBox[
                     TagBox[
                      TooltipBox[
-                      FrameBox[
-                       Cell[
-                        TextData[
+                      StyleBox[
+                       FrameBox[
+                        RowBox[
                          {
                           StyleBox[
                            "S1",
-                           FontWeight -> "Bold",
                            FontColor -> RGBColor[
                             {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                            ]
                           ],
                           StyleBox[
-                           "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                           FontWeight -> "Bold",
+                           "\[Proportion]",
                            FontColor -> RGBColor[
                             {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                            ]
                           ],
                           StyleBox[
-                           "Int",
-                           FontWeight -> "Plain",
+                           "\[DoubleStruckCapitalZ]",
                            FontColor -> RGBColor[
                             {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                            ]
                           ]
                          }
                         ],
-                        "Text"
+                        Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                        ContentPadding -> False,
+                        FrameStyle -> None,
+                        RoundingRadius -> 5
                        ],
-                       Background -> RGBColor[
-                        {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                       ],
-                       ContentPadding -> False,
-                       FrameMargins -> 2,
-                       RoundingRadius -> 2,
-                       StripOnInput -> False
+                       FontSize -> 0.9*Inherited
                       ],
-                      "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                      "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                      ],
                      #1 & 
                     ],
-                    CodeEquivalenceUtilities`Types`TypedSymbol[
-                     CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                    Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                     Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                      _Integer
                     ]
                    ],
@@ -993,8 +945,8 @@ Notebook[
           ]
          ],
          "Output",
-         CellLabel -> "Out[5]=",
-         CellID -> 28241985
+         CellLabel -> "Out[3]=",
+         CellID -> 158844166
         ]
        },
        Open
@@ -1036,7 +988,7 @@ Notebook[
              ]
             ],
             "Input",
-            CellLabel -> "In[6]:=",
+            CellLabel -> "In[1]:=",
             CellID -> 118507479
            ],
            Cell[
@@ -1054,49 +1006,43 @@ Notebook[
                    InterpretationBox[
                     TagBox[
                      TooltipBox[
-                      FrameBox[
-                       Cell[
-                        TextData[
+                      StyleBox[
+                       FrameBox[
+                        RowBox[
                          {
                           StyleBox[
                            "S1",
-                           FontWeight -> "Bold",
                            FontColor -> RGBColor[
                             {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                            ]
                           ],
                           StyleBox[
-                           "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                           FontWeight -> "Bold",
+                           "\[Proportion]",
                            FontColor -> RGBColor[
                             {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                            ]
                           ],
                           StyleBox[
-                           "Int",
-                           FontWeight -> "Plain",
+                           "\[DoubleStruckCapitalZ]",
                            FontColor -> RGBColor[
                             {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                            ]
                           ]
                          }
                         ],
-                        "Text"
+                        Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                        ContentPadding -> False,
+                        FrameStyle -> None,
+                        RoundingRadius -> 5
                        ],
-                       Background -> RGBColor[
-                        {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                       ],
-                       ContentPadding -> False,
-                       FrameMargins -> 2,
-                       RoundingRadius -> 2,
-                       StripOnInput -> False
+                       FontSize -> 0.9*Inherited
                       ],
-                      "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                      "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                      ],
                      #1 & 
                     ],
-                    CodeEquivalenceUtilities`Types`TypedSymbol[
-                     CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                    Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                     Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                      _Integer
                     ]
                    ],
@@ -1109,49 +1055,43 @@ Notebook[
                        InterpretationBox[
                         TagBox[
                          TooltipBox[
-                          FrameBox[
-                           Cell[
-                            TextData[
+                          StyleBox[
+                           FrameBox[
+                            RowBox[
                              {
                               StyleBox[
                                "S1",
-                               FontWeight -> "Bold",
                                FontColor -> RGBColor[
                                 {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                                ]
                               ],
                               StyleBox[
-                               "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                               FontWeight -> "Bold",
+                               "\[Proportion]",
                                FontColor -> RGBColor[
                                 {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                                ]
                               ],
                               StyleBox[
-                               "Int",
-                               FontWeight -> "Plain",
+                               "\[DoubleStruckCapitalZ]",
                                FontColor -> RGBColor[
                                 {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                                ]
                               ]
                              }
                             ],
-                            "Text"
+                            Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                            ContentPadding -> False,
+                            FrameStyle -> None,
+                            RoundingRadius -> 5
                            ],
-                           Background -> RGBColor[
-                            {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                           ],
-                           ContentPadding -> False,
-                           FrameMargins -> 2,
-                           RoundingRadius -> 2,
-                           StripOnInput -> False
+                           FontSize -> 0.9*Inherited
                           ],
-                          "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                          "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                          ],
                          #1 & 
                         ],
-                        CodeEquivalenceUtilities`Types`TypedSymbol[
-                         CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                        Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                         Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                          _Integer
                         ]
                        ],
@@ -1176,8 +1116,8 @@ Notebook[
              ]
             ],
             "Output",
-            CellLabel -> "Out[6]=",
-            CellID -> 67372330
+            CellLabel -> "Out[1]=",
+            CellID -> 380490464
            ]
           },
           Open
@@ -1349,7 +1289,7 @@ Notebook[
                       ],
                       Annotation[#1, "RandomValue", "Tooltip"] & 
                      ],
-                     CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
+                     Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                     ],
                     "[",
                     RowBox[
@@ -1366,49 +1306,43 @@ Notebook[
                           InterpretationBox[
                            TagBox[
                             TooltipBox[
-                             FrameBox[
-                              Cell[
-                               TextData[
+                             StyleBox[
+                              FrameBox[
+                               RowBox[
                                 {
                                  StyleBox[
                                   "S1",
-                                  FontWeight -> "Bold",
                                   FontColor -> RGBColor[
                                    {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                                   ]
                                  ],
                                  StyleBox[
-                                  "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                                  FontWeight -> "Bold",
+                                  "\[Proportion]",
                                   FontColor -> RGBColor[
                                    {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                                   ]
                                  ],
                                  StyleBox[
-                                  "Int",
-                                  FontWeight -> "Plain",
+                                  "\[DoubleStruckCapitalZ]",
                                   FontColor -> RGBColor[
                                    {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                                   ]
                                  ]
                                 }
                                ],
-                               "Text"
+                               Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                               ContentPadding -> False,
+                               FrameStyle -> None,
+                               RoundingRadius -> 5
                               ],
-                              Background -> RGBColor[
-                               {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                              ],
-                              ContentPadding -> False,
-                              FrameMargins -> 2,
-                              RoundingRadius -> 2,
-                              StripOnInput -> False
+                              FontSize -> 0.9*Inherited
                              ],
-                             "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                             "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                             ],
                             #1 & 
                            ],
-                           CodeEquivalenceUtilities`Types`TypedSymbol[
-                            CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                           Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                            Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                             _Integer
                            ]
                           ]
@@ -1432,49 +1366,43 @@ Notebook[
                       InterpretationBox[
                        TagBox[
                         TooltipBox[
-                         FrameBox[
-                          Cell[
-                           TextData[
+                         StyleBox[
+                          FrameBox[
+                           RowBox[
                             {
                              StyleBox[
                               "S1",
-                              FontWeight -> "Bold",
                               FontColor -> RGBColor[
                                {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                               ]
                              ],
                              StyleBox[
-                              "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                              FontWeight -> "Bold",
+                              "\[Proportion]",
                               FontColor -> RGBColor[
                                {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                               ]
                              ],
                              StyleBox[
-                              "Int",
-                              FontWeight -> "Plain",
+                              "\[DoubleStruckCapitalZ]",
                               FontColor -> RGBColor[
                                {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                               ]
                              ]
                             }
                            ],
-                           "Text"
+                           Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                           ContentPadding -> False,
+                           FrameStyle -> None,
+                           RoundingRadius -> 5
                           ],
-                          Background -> RGBColor[
-                           {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                          ],
-                          ContentPadding -> False,
-                          FrameMargins -> 2,
-                          RoundingRadius -> 2,
-                          StripOnInput -> False
+                          FontSize -> 0.9*Inherited
                          ],
-                         "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                         ],
                         #1 & 
                        ],
-                       CodeEquivalenceUtilities`Types`TypedSymbol[
-                        CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                         _Integer
                        ]
                       ],
@@ -1499,7 +1427,7 @@ Notebook[
             ],
             "Output",
             CellLabel -> "Out[1]=",
-            CellID -> 113966391
+            CellID -> 1005299903
            ]
           },
           Open
@@ -1572,7 +1500,7 @@ Notebook[
             ],
             "Output",
             CellLabel -> "Out[2]=",
-            CellID -> 832893577
+            CellID -> 480761642
            ]
           },
           Open
@@ -1592,14 +1520,14 @@ Notebook[
              RowBox[
               {
                "{",
-               RowBox[{"0", ",", "2", ",", "3", ",", "1", ",", "0"}],
+               RowBox[{"0", ",", "0", ",", "1", ",", "0", ",", "2"}],
                "}"
               }
              ]
             ],
             "Output",
             CellLabel -> "Out[3]=",
-            CellID -> 48473317
+            CellID -> 112116001
            ]
           },
           Open
@@ -1663,14 +1591,14 @@ Notebook[
                 RowBox[
                  {
                   "{",
-                  RowBox[{"0", ",", "0", ",", "0", ",", "3", ",", "4"}],
+                  RowBox[{"1", ",", "2", ",", "3", ",", "0", ",", "1"}],
                   "}"
                  }
                 ]
                ],
                "Output",
                CellLabel -> "Out[1]=",
-               CellID -> 667870565
+               CellID -> 67438531
               ]
              },
              Open
@@ -1752,7 +1680,7 @@ Notebook[
                          ],
                          Annotation[#1, "RandomValue", "Tooltip"] & 
                         ],
-                        CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
+                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                        ],
                        "[",
                        RowBox[
@@ -1769,49 +1697,43 @@ Notebook[
                              InterpretationBox[
                               TagBox[
                                TooltipBox[
-                                FrameBox[
-                                 Cell[
-                                  TextData[
+                                StyleBox[
+                                 FrameBox[
+                                  RowBox[
                                    {
                                     StyleBox[
                                      "S1",
-                                     FontWeight -> "Bold",
                                      FontColor -> RGBColor[
                                       {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                                      ]
                                     ],
                                     StyleBox[
-                                     "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                                     FontWeight -> "Bold",
+                                     "\[Proportion]",
                                      FontColor -> RGBColor[
                                       {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                                      ]
                                     ],
                                     StyleBox[
-                                     "Int",
-                                     FontWeight -> "Plain",
+                                     "\[DoubleStruckCapitalZ]",
                                      FontColor -> RGBColor[
                                       {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                                      ]
                                     ]
                                    }
                                   ],
-                                  "Text"
+                                  Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                                  ContentPadding -> False,
+                                  FrameStyle -> None,
+                                  RoundingRadius -> 5
                                  ],
-                                 Background -> RGBColor[
-                                  {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                                 ],
-                                 ContentPadding -> False,
-                                 FrameMargins -> 2,
-                                 RoundingRadius -> 2,
-                                 StripOnInput -> False
+                                 FontSize -> 0.9*Inherited
                                 ],
-                                "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                ],
                                #1 & 
                               ],
-                              CodeEquivalenceUtilities`Types`TypedSymbol[
-                               CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                                _Integer
                               ]
                              ]
@@ -1835,49 +1757,43 @@ Notebook[
                          InterpretationBox[
                           TagBox[
                            TooltipBox[
-                            FrameBox[
-                             Cell[
-                              TextData[
+                            StyleBox[
+                             FrameBox[
+                              RowBox[
                                {
                                 StyleBox[
                                  "S1",
-                                 FontWeight -> "Bold",
                                  FontColor -> RGBColor[
                                   {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
                                  ]
                                 ],
                                 StyleBox[
-                                 "\[ThinSpace]\[Proportion]\[ThinSpace]",
-                                 FontWeight -> "Bold",
+                                 "\[Proportion]",
                                  FontColor -> RGBColor[
                                   {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
                                  ]
                                 ],
                                 StyleBox[
-                                 "Int",
-                                 FontWeight -> "Plain",
+                                 "\[DoubleStruckCapitalZ]",
                                  FontColor -> RGBColor[
                                   {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
                                  ]
                                 ]
                                }
                               ],
-                              "Text"
+                              Background -> RGBColor[0.84210425, 0.87669475, 0.9274495],
+                              ContentPadding -> False,
+                              FrameStyle -> None,
+                              RoundingRadius -> 5
                              ],
-                             Background -> RGBColor[
-                              {Rational[58, 85], Rational[64, 85], Rational[218, 255]}
-                             ],
-                             ContentPadding -> False,
-                             FrameMargins -> 2,
-                             RoundingRadius -> 2,
-                             StripOnInput -> False
+                             FontSize -> 0.9*Inherited
                             ],
-                            "\"TypedSymbol[CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
+                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                            ],
                            #1 & 
                           ],
-                          CodeEquivalenceUtilities`Types`TypedSymbol[
-                           CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
+                          Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                            _Integer
                           ]
                          ],
@@ -1902,7 +1818,7 @@ Notebook[
                ],
                "Output",
                CellLabel -> "Out[2]=",
-               CellID -> 717713115
+               CellID -> 4869286
               ]
              },
              Open
@@ -1969,10 +1885,11 @@ Notebook[
   "NotebookUUID" -> "2767433e-1950-ecb8-4c78-ffa4ddd526a6"
  },
  CellContext -> "Global`",
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 7, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 17, 2021)",
  StyleDefinitions -> FrontEnd`FileName[
   {"Wolfram"},
   "FunctionPageStylesExt.nb",
   CharacterEncoding -> "UTF-8"
- ]
+ ],
+ ExpressionUUID -> "8ee848d4-73aa-4b9c-9d6e-b056303d289e"
 ]
