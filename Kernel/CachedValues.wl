@@ -1,7 +1,7 @@
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
 
-BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CachedValues`",
+BeginPackage[ "Wrong`CodeEquivalenceUtilities`CachedValues`",
     {
         "Wolfram`CodeEquivalenceUtilities`Utilities`",
         "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`",
