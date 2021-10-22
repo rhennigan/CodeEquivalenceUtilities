@@ -144,7 +144,8 @@ reportTemplate =
 
 BuildDispatch[ ] := BuildDispatch @ $TransformationRules;
 
-
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 BuildDispatch[ rules_ ] :=
 
   Module[ { oldRules, appended, newRules, added, removed },
@@ -175,7 +176,7 @@ BuildDispatch[ rules_ ] :=
       ];
 
   ];
-
+(* :!CodeAnalysis::EndBlock:: *)
 
 
 BuildDispatch[ ];
@@ -260,18 +261,19 @@ iToCanonicalForm[ expr_, wrapper_, True, limit_, timeout_ ] :=
       wrapper @@@ Prepend[ transformations, HoldComplete @ expr ]
   ];
 
-iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_ ] :=
-  Module[ { },
-      TimeConstrained[
-          FixedPoint[
-              canonicalStepTransform,
-              $LastTransformation = HoldComplete @ expr,
-              limit
-          ],
-          timeout
-      ];
-      Replace[ $LastTransformation, HoldComplete[ e_ ] :> wrapper @ e ]
-  ];
+iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_ ] := (
+
+    TimeConstrained[
+        FixedPoint[
+            canonicalStepTransform,
+            $LastTransformation = HoldComplete @ expr,
+            limit
+        ],
+        timeout
+    ];
+
+    Replace[ $LastTransformation, HoldComplete[ e_ ] :> wrapper @ e ]
+);
 
 
 
@@ -351,7 +353,8 @@ $holdWrapper // Attributes = { HoldAllComplete };
 FromCanonicalForm // Attributes = { };
 FromCanonicalForm // Options    = { };
 
-
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 FromCanonicalForm[ expr_ ] :=
   expr //. {
       TypedSymbol[ s_, _ ] :> s,
@@ -367,7 +370,7 @@ FromCanonicalForm[ expr_ ] :=
 
       StringArg[ x_? SymbolQ ] :> TrEval @ SymbolName @ Unevaluated @ x
   };
-
+(* :!CodeAnalysis::EndBlock:: *)
 
 
 (******************************************************************************)
@@ -501,12 +504,13 @@ iEquivalenceTestData // ClearAll;
 iEquivalenceTestData // Attributes = { HoldAllComplete };
 iEquivalenceTestData // Options    = { "AllTests" -> False };
 
-
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 iEquivalenceTestData[ a___, sym_ ? SymbolQ, b___ ] :=
   With[ { eval = HoldComplete[ a, sym, b ] /. OwnValues @ Unevaluated @ sym },
       iEquivalenceTestData @@ eval /; eval =!= HoldComplete[ a, sym, b ]
   ];
-
+(* :!CodeAnalysis::EndBlock:: *)
 
 iEquivalenceTestData[ expr1_, expr2_, opts : OptionsPattern[ ] ] :=
 

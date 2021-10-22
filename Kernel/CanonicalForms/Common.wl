@@ -101,12 +101,13 @@ MakeTransformationRules::trform =
 MakeTransformationRules[ ( Rule | RuleDelayed )[ p: $nohp, exp_ ] ] :=
   Inline[ $nohp, MakeTransformationRules[ HoldPattern @ p :> exp ] ];
 
-
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::Arguments::With:: *)
 MakeTransformationRules[
     RuleDelayed[ p: $nohp, With[ vars_, exp: Except[ _Condition ] ] ]
 ] :=
   Inline[ $nohp, HoldPattern @ p :> TrEval @ With[ vars, HoldApply @ exp ] ];
-
+(* :!CodeAnalysis::EndBlock:: *)
 
 MakeTransformationRules[ p: $nohp :> eval_PartialEvaluation ] :=
   Inline[ $nohp, HoldPattern @ p :> TrEval @ eval ];
@@ -321,10 +322,10 @@ symbolBaseName[ sym_String ] :=
                    ] :> first <> name
     ];
 
-
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 symbolBaseName[ sym_? SymbolQ ] :=
   symbolBaseName @@ { SymbolName @ Unevaluated @ sym };
-
 
 
 $emptyDefinition =
@@ -505,7 +506,7 @@ FindDependencies[symbol_?SymbolQ] :=
 FindDependencies[name_String] :=
   ToExpression[ name, StandardForm, FindDependencies ];
 
-
+(* :!CodeAnalysis::EndBlock:: *)
 
 (******************************************************************************)
 

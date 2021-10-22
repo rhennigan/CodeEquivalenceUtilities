@@ -1,10 +1,10 @@
 {
     "Files": {
-        "Include": ["*"],
-        "Exclude": [   ],
+        "Include": [ "*" ],
+        "Exclude": [ "build" ],
         "Extensions": ["m", "wl", "mt", "wlt", "wls"]
     },
     "ConfidenceLevel": 0.5,
-    "SeverityExclusions": ["Scoping"],
-    "TagExclusions": []
+    "SeverityExclusions": [ "Scoping" ],
+    "TagExclusions": [ ]
 }
