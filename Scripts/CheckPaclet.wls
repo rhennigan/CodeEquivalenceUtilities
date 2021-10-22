@@ -50,7 +50,7 @@ printHint[ KeyValuePattern @ {
     printError[ message, hintTag @ tag ];
 
 printHint[ KeyValuePattern @ {
-    "Level"   -> "Warning",
+    "Level"   -> "Warning"|"Suggestion",
     "Message" -> message_,
     "Tag"     -> tag_
 } ] :=
