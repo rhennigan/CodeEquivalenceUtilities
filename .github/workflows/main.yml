@@ -6,7 +6,7 @@ name: Check Paclet
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ main, "feature/testing-cloud-paclet-check" ]
   pull_request:
     branches: [ main ]
 
@@ -34,8 +34,9 @@ jobs:
       - name: Run Paclet Check and Build
         env:
           WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
+          CHECKGITHUBPACLET_PERMISSIONS_KEY: ${{ secrets.CHECKGITHUBPACLET_PERMISSIONS_KEY }}
         run: |
-          wolframscript -code 'Get["https://wolfr.am/Zeo7o1nN"]'
+          wolframscript Scripts/CheckPaclet.wls
           
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2

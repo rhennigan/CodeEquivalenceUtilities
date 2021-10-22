@@ -6850,7 +6850,13 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                           HoldForm[
+                            Table[
+                             i,
+                             {i, 5},
+                             {j, i + 2}
+                            ]
+                           ],
                            HoldForm[
                             Table[
                              Table[
@@ -7352,7 +7358,12 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                           HoldForm[
+                            Table[
+                             ConstantArray[i, i + 2],
+                             {i, 5}
+                            ]
+                           ],
                            HoldForm[
                             Table[
                              ConstantArray[
@@ -8101,7 +8112,15 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                           HoldForm[
+                            Part[
+                             Table[
+                              Table[j, {j, i}],
+                              {i, 10}
+                             ],
+                             2
+                            ]
+                           ],
                            HoldForm[
                             Part[
                              Table[
@@ -8485,7 +8504,15 @@ Notebook[
                          2
                         ]
                        ],
-                       HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                       HoldForm[
+                        Part[
+                         Table[
+                          Table[j, {j, i}],
+                          {i, 10}
+                         ],
+                         2
+                        ]
+                       ],
                        HoldForm[
                         Part[
                          Table[
@@ -8594,7 +8621,12 @@ Notebook[
                          2
                         ]
                        ],
-                       HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                       HoldForm[
+                        Table[
+                         ConstantArray[i, i + 2],
+                         {i, 5}
+                        ]
+                       ],
                        HoldForm[
                         Table[
                          ConstantArray[
@@ -8989,7 +9021,13 @@ Notebook[
                          }
                         ]
                        ],
-                       HoldForm[Table[i, {i, 5}, {j, i + 2}]]
+                       HoldForm[
+                        Table[
+                         i,
+                         {i, 5},
+                         {j, i + 2}
+                        ]
+                       ]
                       },
                       {
                        {
@@ -9085,7 +9123,12 @@ Notebook[
                           ]
                          ]
                         ],
-                        HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                        HoldForm[
+                         Table[
+                          ConstantArray[i, i + 2],
+                          {i, 5}
+                         ]
+                        ],
                         HoldForm[
                          Table[
                           Table[
@@ -9134,7 +9177,13 @@ Notebook[
                           }
                          ]
                         ],
-                        HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                        HoldForm[
+                         Table[
+                          i,
+                          {i, 5},
+                          {j, i + 2}
+                         ]
+                        ],
                         HoldForm[
                          Table[
                           Table[
@@ -9353,7 +9402,13 @@ Notebook[
                          ]
                         ],
                         DirectedEdge[
-                         HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                         HoldForm[
+                          Table[
+                           i,
+                           {i, 5},
+                           {j, i + 2}
+                          ]
+                         ],
                          HoldForm[
                           Table[
                            Table[
@@ -9417,9 +9472,22 @@ Notebook[
                           }
                          ]
                         ],
-                        HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                        HoldForm[
+                         Part[
+                          Table[
+                           Table[j, {j, i}],
+                           {i, 10}
+                          ],
+                          2
+                         ]
+                        ],
                         DirectedEdge[
-                         HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                         HoldForm[
+                          Table[
+                           ConstantArray[i, i + 2],
+                           {i, 5}
+                          ]
+                         ],
                          HoldForm[
                           Table[
                            ConstantArray[
@@ -9509,7 +9577,15 @@ Notebook[
                          ]
                         ],
                         DirectedEdge[
-                         HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                         HoldForm[
+                          Part[
+                           Table[
+                            Table[j, {j, i}],
+                            {i, 10}
+                           ],
+                           2
+                          ]
+                         ],
                          HoldForm[
                           Part[
                            Table[
@@ -9752,7 +9828,13 @@ Notebook[
                          ]
                         },
                         DirectedEdge[
-                         HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                         HoldForm[
+                          Table[
+                           i,
+                           {i, 5},
+                           {j, i + 2}
+                          ]
+                         ],
                          HoldForm[
                           Table[
                            Table[
@@ -9800,7 +9882,15 @@ Notebook[
                          ]
                         ] -> {EdgeStyle -> Directive[Opacity[1], Hue[0.2, 1, 0.6]]},
                         DirectedEdge[
-                         HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                         HoldForm[
+                          Part[
+                           Table[
+                            Table[j, {j, i}],
+                            {i, 10}
+                           ],
+                           2
+                          ]
+                         ],
                          HoldForm[
                           Part[
                            Table[
@@ -9860,7 +9950,13 @@ Notebook[
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}]
                          ]
                         },
-                        HoldForm[Table[i, {i, 5}, {j, i + 2}]] -> {
+                        HoldForm[
+                         Table[
+                          i,
+                          {i, 5},
+                          {j, i + 2}
+                         ]
+                        ] -> {
                          VertexStyle -> Directive[
                           Hue[0, 1, 0.8],
                           EdgeForm[{Hue[0, 1, 0.8], Opacity[1]}]
@@ -9931,7 +10027,12 @@ Notebook[
                          ]
                         ] -> {EdgeStyle -> Directive[Hue[0.2, 1, 0.6], Opacity[1]]},
                         DirectedEdge[
-                         HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                         HoldForm[
+                          Table[
+                           ConstantArray[i, i + 2],
+                           {i, 5}
+                          ]
+                         ],
                          HoldForm[
                           Table[
                            ConstantArray[
@@ -9950,13 +10051,26 @@ Notebook[
                           ]
                          ]
                         ] -> {EdgeStyle -> Directive[Hue[0.8, 0.6, 0.8], Opacity[1]]},
-                        HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]] -> {
+                        HoldForm[
+                         Table[
+                          ConstantArray[i, i + 2],
+                          {i, 5}
+                         ]
+                        ] -> {
                          VertexStyle -> Directive[
                           Hue[0.8, 0.6, 0.8],
                           EdgeForm[{Hue[0.8, 0.6, 0.8], Opacity[1]}]
                          ]
                         },
-                        HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]] -> {
+                        HoldForm[
+                         Part[
+                          Table[
+                           Table[j, {j, i}],
+                           {i, 10}
+                          ],
+                          2
+                         ]
+                        ] -> {
                          VertexStyle -> Directive[
                           Hue[0.1, 0.6, 0.7],
                           EdgeForm[{Hue[0.1, 0.6, 0.7], Opacity[1]}]
@@ -11174,7 +11288,15 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
+                          HoldForm[
+                           Part[
+                            Table[
+                             Table[j, {j, i}],
+                             {i, 10}
+                            ],
+                            2
+                           ]
+                          ],
                           "Tooltip"
                          ]
                         ]
@@ -12026,7 +12148,12 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
+                          HoldForm[
+                           Table[
+                            ConstantArray[i, i + 2],
+                            {i, 5}
+                           ]
+                          ],
                           "Tooltip"
                          ]
                         ]
@@ -15062,7 +15189,13 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                          HoldForm[
+                           Table[
+                            i,
+                            {i, 5},
+                            {j, i + 2}
+                           ]
+                          ],
                           "Tooltip"
                          ]
                         ]
@@ -16941,8 +17074,19 @@ Notebook[
                   {
                    {
                     {
-                     HoldForm[Table[i, {i, 5}, {j, i + 2}]],
-                     HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]]
+                     HoldForm[
+                      Table[
+                       i,
+                       {i, 5},
+                       {j, i + 2}
+                      ]
+                     ],
+                     HoldForm[
+                      Table[
+                       ConstantArray[i, i + 2],
+                       {i, 5}
+                      ]
+                     ]
                     },
                     HoldForm[
                      Table[
@@ -17022,7 +17166,15 @@ Notebook[
                    {
                     {
                      HoldForm[First[Rest[Map[Range, Range[10]]]]],
-                     HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]]
+                     HoldForm[
+                      Part[
+                       Table[
+                        Table[j, {j, i}],
+                        {i, 10}
+                       ],
+                       2
+                      ]
+                     ]
                     },
                     HoldForm[
                      Part[
@@ -17253,6 +17405,343 @@ Notebook[
             },
             CellTags -> {"DefaultContent", "TabNext"},
             CellID -> 75689085
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            TextData[
+             {
+              "License",
+              Cell[
+               BoxData[
+                PaneSelectorBox[
+                 {
+                  True -> TemplateBox[
+                   {
+                    "LicenseID",
+                    Cell[
+                     BoxData[
+                      FrameBox[
+                       Cell[
+                        TextData[
+                         {
+                          "Choose a license to specify the terms and conditions regarding how your resource can be used, modified, and distributed. If submitting to the Wolfram Resource System, this also includes the terms outlined by the ",
+                          Cell[
+                           BoxData[
+                            TagBox[
+                             ButtonBox[
+                              StyleBox[
+                               "\"publisher agreement\"",
+                               "Text",
+                               ShowStringCharacters -> False
+                              ],
+                              BaseStyle -> "Hyperlink",
+                              ButtonData -> {
+                               URL[
+                                "https://resources.wolframcloud.com/publisher/publisher-agreement"
+                               ],
+                               None
+                              },
+                              ButtonNote -> "https://resources.wolframcloud.com/publisher/publisher-agreement"
+                             ],
+                             MouseAppearanceTag["LinkHand"]
+                            ]
+                           ]
+                          ],
+                          "."
+                         }
+                        ],
+                        "MoreInfoText"
+                       ],
+                       Background -> GrayLevel[0.95],
+                       FrameMargins -> 20,
+                       FrameStyle -> GrayLevel[0.9],
+                       RoundingRadius -> 5,
+                       ImageSize -> {Scaled[0.65], Automatic}
+                      ]
+                     ],
+                     "MoreInfoText",
+                     Deletable -> True,
+                     CellTags -> {"SectionMoreInfoLicenseID"},
+                     CellMargins -> {{66, 66}, {15, 15}}
+                    ]
+                   },
+                   "MoreInfoOpenerButtonTemplate"
+                  ]
+                 },
+                 Dynamic[
+                  CurrentValue[
+                   EvaluationNotebook[],
+                   {TaggingRules, "ResourceCreateNotebook"}
+                  ]
+                 ],
+                 ImageSize -> Automatic
+                ]
+               ]
+              ]
+             }
+            ],
+            "Subsection",
+            Editable -> False,
+            Deletable -> False,
+            TaggingRules -> {"TemplateGroupName" -> "LicenseID"},
+            DefaultNewCellStyle -> "Text",
+            CellTags -> {"License", "LicenseID", "TemplateCellGroup"},
+            CellID -> 281611704
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              GridBox[
+               {
+                {
+                 StyleBox[
+                  TemplateBox[
+                   {
+                    RadioButtonBox[
+                     Dynamic[
+                      CurrentValue[
+                       EvaluationCell[],
+                       {TaggingRules, "RadioButtonValue"}
+                      ],
+                      Function[
+                       CurrentValue[
+                        EvaluationCell[],
+                        {TaggingRules, "RadioButtonValue"}
+                       ] = #1;
+                       CurrentValue[
+                        EvaluationNotebook[],
+                        {TaggingRules, "Openers", "SpecifyLicense"}
+                       ] = #1 === "Other"
+                      ]
+                     ],
+                     {"MIT"}
+                    ],
+                    "\" \"",
+                    TemplateBox[
+                     {
+                      "\"MIT License\"",
+                      "\"\[ThinSpace]\"",
+                      TemplateBox[
+                       {
+                        "\"\[RightGuillemet]\"",
+                        "https://choosealicense.com/licenses/mit/"
+                       },
+                       "HyperlinkURL"
+                      ]
+                     },
+                     "RowDefault"
+                    ]
+                   },
+                   "RowDefault"
+                  ],
+                  StripOnInput -> False,
+                  FontSize -> 12
+                 ],
+                 StyleBox[
+                  TemplateBox[
+                   {
+                    RadioButtonBox[
+                     Dynamic[
+                      CurrentValue[
+                       EvaluationCell[],
+                       {TaggingRules, "RadioButtonValue"}
+                      ],
+                      Function[
+                       CurrentValue[
+                        EvaluationCell[],
+                        {TaggingRules, "RadioButtonValue"}
+                       ] = #1;
+                       CurrentValue[
+                        EvaluationNotebook[],
+                        {TaggingRules, "Openers", "SpecifyLicense"}
+                       ] = #1 === "Other"
+                      ]
+                     ],
+                     {"Apache-2.0"}
+                    ],
+                    "\" \"",
+                    TemplateBox[
+                     {
+                      "\"Apache License 2.0\"",
+                      "\"\[ThinSpace]\"",
+                      TemplateBox[
+                       {
+                        "\"\[RightGuillemet]\"",
+                        "https://choosealicense.com/licenses/apache-2.0/"
+                       },
+                       "HyperlinkURL"
+                      ]
+                     },
+                     "RowDefault"
+                    ]
+                   },
+                   "RowDefault"
+                  ],
+                  StripOnInput -> False,
+                  FontSize -> 12
+                 ]
+                },
+                {
+                 StyleBox[
+                  TemplateBox[
+                   {
+                    RadioButtonBox[
+                     Dynamic[
+                      CurrentValue[
+                       EvaluationCell[],
+                       {TaggingRules, "RadioButtonValue"}
+                      ],
+                      Function[
+                       CurrentValue[
+                        EvaluationCell[],
+                        {TaggingRules, "RadioButtonValue"}
+                       ] = #1;
+                       CurrentValue[
+                        EvaluationNotebook[],
+                        {TaggingRules, "Openers", "SpecifyLicense"}
+                       ] = #1 === "Other"
+                      ]
+                     ],
+                     {"CC0-1.0"}
+                    ],
+                    "\" \"",
+                    TemplateBox[
+                     {
+                      "\"Creative Commons Zero v1.0 Universal\"",
+                      "\"\[ThinSpace]\"",
+                      TemplateBox[
+                       {
+                        "\"\[RightGuillemet]\"",
+                        "https://choosealicense.com/licenses/cc0-1.0/"
+                       },
+                       "HyperlinkURL"
+                      ]
+                     },
+                     "RowDefault"
+                    ]
+                   },
+                   "RowDefault"
+                  ],
+                  StripOnInput -> False,
+                  FontSize -> 12
+                 ],
+                 StyleBox[
+                  TemplateBox[
+                   {
+                    RadioButtonBox[
+                     Dynamic[
+                      CurrentValue[
+                       EvaluationCell[],
+                       {TaggingRules, "RadioButtonValue"}
+                      ],
+                      Function[
+                       CurrentValue[
+                        EvaluationCell[],
+                        {TaggingRules, "RadioButtonValue"}
+                       ] = #1;
+                       CurrentValue[
+                        EvaluationNotebook[],
+                        {TaggingRules, "Openers", "SpecifyLicense"}
+                       ] = #1 === "Other"
+                      ]
+                     ],
+                     {"None"}
+                    ],
+                    "\" \"",
+                    TemplateBox[
+                     {
+                      "\"None\"",
+                      "\"A license is not required for personal deployments\""
+                     },
+                     "PrettyTooltipTemplate"
+                    ]
+                   },
+                   "RowDefault"
+                  ],
+                  StripOnInput -> False,
+                  FontSize -> 12
+                 ]
+                },
+                {
+                 StyleBox[
+                  TemplateBox[
+                   {
+                    RadioButtonBox[
+                     Dynamic[
+                      CurrentValue[
+                       EvaluationCell[],
+                       {TaggingRules, "RadioButtonValue"}
+                      ],
+                      Function[
+                       CurrentValue[
+                        EvaluationCell[],
+                        {TaggingRules, "RadioButtonValue"}
+                       ] = #1;
+                       CurrentValue[
+                        EvaluationNotebook[],
+                        {TaggingRules, "Openers", "SpecifyLicense"}
+                       ] = #1 === "Other"
+                      ]
+                     ],
+                     {"Other"}
+                    ],
+                    "\" \"",
+                    "\"Other (Specify Below)\""
+                   },
+                   "RowDefault"
+                  ],
+                  StripOnInput -> False,
+                  FontSize -> 12
+                 ],
+                 "\"\""
+                }
+               },
+               AutoDelete -> False,
+               BaseStyle -> {"ControlStyle"},
+               GridBoxAlignment -> {"Columns" -> {{Left}}},
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings -> {"Columns" -> {{2}}}
+              ],
+              "Grid"
+             ]
+            ],
+            "Output",
+            Editable -> False,
+            Deletable -> False,
+            TaggingRules -> {
+             "CheckboxData" -> "OEM6eJytksFOGzEQhgtJgJQIVUjcragHKnVZqHrqLdmAGokCzaQ99GY2s8TC61nsMbC3XvtMvfVR+iT1brJAK0Xi0Nt4bH//r5l/sB1BB7jUCBvnngvPEWwmc0yvcZa9cO1T5UKnM2bMXdZZnLN11554jdmaa03oLmst2rD9aTwVpypF4xBav7//CA+7H8sCrVbmGtZ//YT9OXPhPsRxOidyKPXi9UFKebysXZwrjqEVYKuEdgeFTOfYaIl3B4cr9OLn6MmaFgVKDC8HD4dV6q8Ti5LVLYqE8pyME9/Qkrg9OjgUX0zoWyf1Cj9vn+MnTQ+jo8rMZpLU1RMnWxN5N6R7dKG3PcW80JIxNKontbuN/hkZ7MP7/kAsiUI5YYiFxRuvLM5ERlYEV46M1GKGhaYyR8OuD3sXFpnLKZFmVTR8aFfMxgXsnfMcrdiHAlOVlWKImu7eQKduR7B1YSnQuYTuckHjUQjVecEqDKsx2tDc1vFMsbwMVedEavcg47oj1Pj0pkomaZ8bl6xHsDM2jLYIfmUFhu7AlOAvHVYJHmEmveY6RRF0EzIslUFbTfDEm7T6EYQ2R6WRuUpD2Uu8tWEIX6X2GJK/c3wbqhqdoNaNbdebyqsrZa5qi/BqImeKhp6ZzOLn3wK7ISIFeTM7vg9OnVt0W4D8XyXboImTtdXo3Uf0GTFeEl03ef4HH/aEYVAOdpbrXe4wQDsgc/z8KPew8d4EHXmb4jSEHTYuZKqrLbTrY++JX/cHjVmHqQ==",
+             "RadioButtonValue" -> "MIT"
+            },
+            CellTags -> {"LicenseID", "LicenseID-RadioButtons", "RadioButtonsCell"},
+            CellID -> 723435361
+           ],
+           Cell[
+            "Full License Name or ID",
+            "Text",
+            CellElementSpacings -> {
+             "CellMinHeight" -> 0,
+             "ClosedCellHeight" -> 0,
+             "ClosedGroupTopMargin" -> 0
+            },
+            CellOpen -> Dynamic[
+             CurrentValue[
+              EvaluationNotebook[],
+              {TaggingRules, "Openers", "SpecifyLicense"},
+              False
+             ]
+            ],
+            TaggingRules -> { },
+            CellLabelPositioning -> Above,
+            CellLabelMargins -> {{66, 10}, {0, 0}},
+            ShowAutoSpellCheck -> False,
+            CellLabel -> "License",
+            CellID -> 605170314
            ]
           },
           Open
@@ -17872,7 +18361,7 @@ Notebook[
              "CheckboxData" -> "OEM6eJxVUMtKxEAQBHE1EfHuRXLylo8IcYWFxV22/YHJbBuHnUfox2H+3g6i6KmLKrqquoemhw1IjQg3B5VFpYfb8RP9Bc8fV3y9DyzwOBbCbu/yrG7G7rkDIfWihPAENU0lBm/smyYkQ2NJ5uMklGzmO8HE3A4qJRnne2iOVBYkqXA3OsG5UEC22MOyrvBP7DpPGpGb7TmImwxtXl1k/BXaF4z4V1m7l6gp/w982GVBWgi/S0E75Ao6Mdqx9yfkouTxvS72g6PzZvkFyEVgxA=="
             },
             CellTags -> {"Categories", "Categories-Checkboxes", "CheckboxCell"},
-            CellID -> 84354130
+            CellID -> 18511573
            ]
           },
           Open
@@ -18568,7 +19057,7 @@ Notebook[
                 "CompatibilityOperatingSystem",
                 "CompatibilityOperatingSystem-Checkboxes"
                },
-               CellID -> 356796075
+               CellID -> 446426635
               ]
              },
              Closed
@@ -18715,7 +19204,7 @@ Notebook[
                 "CompatibilityFeatures",
                 "CompatibilityFeatures-Checkboxes"
                },
-               CellID -> 140006188
+               CellID -> 98599390
               ]
              },
              Closed
@@ -18961,7 +19450,7 @@ Notebook[
                 "CompatibilityEvaluationEnvironment",
                 "CompatibilityEvaluationEnvironment-Checkboxes"
                },
-               CellID -> 247035719
+               CellID -> 78211162
               ]
              },
              Closed
@@ -19070,7 +19559,7 @@ Notebook[
                 "CompatibilityCloudSupport",
                 "CompatibilityCloudSupport-Checkboxes"
                },
-               CellID -> 85612473
+               CellID -> 166544544
               ]
              },
              Closed
@@ -19179,7 +19668,6 @@ Notebook[
    ]
   ]
  },
- WindowStatusArea -> Automatic,
  DockedCells -> {
   Cell[
    BoxData[TemplateBox[{}, "MainGridTemplate"]],
@@ -19227,22 +19715,15 @@ Notebook[
   },
   "SubmissionReviewData" -> {"Review" -> False},
   "ToolsOpen" -> False,
-  "UpdatedTimestamp" -> 3842633619.,
-  "TemplateVersion" -> "1.5.45",
+  "UpdatedTimestamp" -> 3843912213.0844066,
+  "TemplateVersion" -> "1.5.46",
+  "Openers" -> {"SpecifyLicense" -> False},
   "StatusMessage" -> "",
-  "AutoUpdate" -> True,
-  "NotebookIndexQ" -> True,
-  "NotebookLastIndexed" -> DateObject[
-   {2021, 10, 18, 13, 41, 28.0961949`9.201222419675329},
-   "Instant",
-   "Gregorian",
-   -4.
-  ],
-  "NotebookUUID" -> "0e82ef88-8bb1-4c63-bd79-6efe1d3d6922",
   "PacletBuildData" -> {
-   "FileHashes" -> ByteArray["OEM6eJytlmtMFFcYhougUEALcrEXK5EWtLSzW4E1FGsN7gVwd0Wc5aIIeHbm7HLc2RmcOcOlkhBa0B9aS0ovNpI0sU2TSpvYhthasGjVtrGQttYfNhpsmpQK6Y8G01LbYLoL65512B1mk/4iednveed833suJRRFF5kERvZCHgOMBF5v5t0ckpr0pTJioaQ3Ciw075dRC+Agz8AqjDiEEZR0vLNkCUUvowVZZKCtb+LdJ9tfGMj0KQ4guiG2ddn2LD3h+auVorPDG5TzLGzTNz6rY1xSCEqK2y7wkHBOTm3b/ybo3UjRuWocCbr9/5IaC1RY7yTX3O6wIDNFr9fC0rkhr0JLtf/c9V7bb89R9JbwtJ3QBUV/13YAt6+VdLvXKXCKluJKRSfH7U6qbtj6IvHJf9gTM8NOdlC0MSqfkLE5oIRNAAOF158rv+M61p0RiVdse8VsT6/BQ9ElUXlZRMFrBLzAIwZwFkH0KpxWfWxM3zWc00Ccptne/iH7jYRonezAA9WcRr7+6qipYOgAcXIwh9lb0xkN0c7JIaj5PJ/8edLUQEUF8dn6ibv+9bVJuRSdF96HhkBkmuYzVjiffKiSr+pHz2+wJR5IioantpN+vzWZ0HAqZRNFP6WRJyEV3MHDU66zfSCHoiktOBeCHCvpWjkVZNvxiTv7rqVmUXShFiTy/7VDDFh/tFXJK+DMkZXntpRRtE4LOXia5KswP70MNr/KnqvUyGwVEYY6TmA8KkxUVZFd+0uVVdPMDYtnaGA2/9txS/KD0fDUMpT39h938GhcqaYMGRbN0IXb8UXHxjfu0pQhw/+fIUM0Gar77CfEjsY+rmneBm0ZKis/Udbfs2ybRmaUGVoXgdkMOS5w/RYuMvAfHbX5N2Nf9i366UVhwRU7VYDFRzZY4185lh955AuBi1zEMUvOH8wY66yMeMA7ZCyICPjO9BKWRbx7O2x1iICXXL5jfe6XO2VuwZNmZvKm7of3a+OJj9W1tbO4f6KeojOtUOQhpzcCpgmy1YCToSKWNuum1UNVb+H0kPKg8kSwPOR+8X0cxiJyyngB62r/8tGlhWMthEWUrPAso+D1CryC03fJs3vfSFrIkoiSF55jbmuGIpprKTffpfuRH10dM9zV720iSKKsDY8sFUFzE2KUpG8sLSPoSncGIRFlTXhSuA9K+7e65PLwbMj9T5QIGJoRmqECE2PtQf8c7+wISVlQiTA+Gosyg2URcMoeXYgZXHPoDBfSo6CSfY8V6Z19P8qUcnow9+KpHIIiSloAZYJO2e32xVxRe/F03HDWr/VFpJYojwVqzT5/eW5LGAUei4JyKfGbD528e+01M2EQJT3AsMztKrzwAyq7U14aTL+RSoqJsiJQjHiEFWVfptVl7X0gIZGUEeWhQJmjvXlBr0p3Zx7tvn6JJnVEuderSH1e/f0HNXxXfCOpJcryHYDhIC7nXYKi6u8Cpvh64od7SBVRUuer7IBHLt9rXP2quTJy9pnBL/of8Z00/qe7pPc/3vXm8hqbacE1ZeuLy5l+Y33aqpBdHVD+A5XbCn4="],
-   "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram__CodeEquivalenceUtilities-1.2.0.paclet"
-  }
+   "FileHashes" -> ByteArray["OEM6eJyVlm1sU1UcxhlMQBdemnboQkth4JwjtxdXSkpApXZtneu2stNtRcHt9Pa0Pdvtvd2957KihmWKGyQGDYvzheAX/CKGxcQEYiDROY2LkWQBPyxqosENE8mWBT+IEojt1u3U2/au/dTk6X1+zzn//3lzVDHAXidySgwJBBIsCqxLiPBYjrIeBYeQzDrFEHL1KPgo5JHAoVaCeUwwki1C0LGSAauBqEgc8p4aHDz++46K5qTih1IEEe+h7946Pv7K31sZUJk7oF4IoQTbscvCheUMlFzaJAqIci78+ULPMHxnDwOqtDgyiqT+kjusGiy4rX2genCkmgHVhbAsESRo0HSNv/V/nPhjLwOezU1rQWEkparmg5FkKcGxWFDkVSUlB1WVHB07UyFKAQ/NuTsK+x/6dHwnA5xF5WS0zY9kUgcJVGWVmGtcd4YDr9KsvkPGfRd1z4cY4Cgqyy2JMScURAFzkHeLUkyVtOHhJvf1xOcZs7q99991p6Y2by82qRF2I62ksQ92bWWbfVto0mev3/KsuhzYUWyf/KJWTskXd/8yDrVZac7h+6f3VJpN3QyoyZ0DEJS46MIasy2sfKSxvgz6s3yZu7OsGJ7WTrr9fu0zB2Z77Qx4skCejDVwE1+V3Pvop8s2BjCF4MIY8SHZ0strIBNnb/3TNakzM2B3IUic+m1EBIZSS1uTfO7crK5cmulhgKUQ8tJpUqvBtO63t3hx0F4gs1fCBFl4kevWYOLW5srAzdYGBjyRhxlHPJ8+Oncv0/Ab/kDtr6veMDFg57KwpRkHNYC2k8NlRyb6DPlbng1c5hAtWTk6UH6t72DezelXiChhmNyPjlAIC5Em1OuXoCCHk1ty/ssWhc+6juIjl3xdo2NdNGemyrTR1B/tYMCmBiQJiGedkIuiUBvkFaRalt6GfcYrre8RA7VTZfuSPeNsSA6OEAkHFZLFOjC9nnvzpuSjLKqYc7OcYiwmCirO5JhfVG6wRsqhSk1ujisRRxKeLym/UKX/Iy/+eM32gO2MUiRVtuVGeiQYj2JOTRp3H/0SXz9RTklU2ZKblGtA+nttju+v3s+4j6iSBwM4MY5UmKesqxvxh9aXKYYqedoHiKRwRJEgr2INkJno3Mj5jBpRpXKRle+NpOrg+ce8h8d/qMjo4JKiT6PqUFCJRJLLXOX95lLpVfP0ETv1UmVz2utK5ivzW8IpCkQS1VNZ8/TghQeTZ1yUQRVDmuGe31UkewDThrdnf1kxZKJmqqxPm7GAicr2tf4lc+eKtY9QG1U2pG3+Y/GsWnle3HT6xM/fAuqjymKt8tXZOPFJu9C/poN6qbLOBzkekXohLKpcG+em9M1rg69RF1V0C65GKOBw8iWlfdXMPXelc2q/zZk8aVLPLplNPbxYV327ty7rmvIOlT5+591q/aPUvqj8B20AN+U="],
+   "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram__CodeEquivalenceUtilities-1.3.0.paclet"
+  },
+  "AutoUpdate" -> True
  },
  CreateCellID -> True,
  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 17, 2021)",
@@ -23062,7 +23543,7 @@ Notebook[
               BoxForm`ImageTag[
                "Byte",
                ColorSpace -> "Grayscale",
-               Interleaving -> False
+               Interleaving -> True
               ],
               Selectable -> False
              ],
@@ -23083,7 +23564,7 @@ Notebook[
               BoxForm`ImageTag[
                "Byte",
                ColorSpace -> "Grayscale",
-               Interleaving -> False
+               Interleaving -> True
               ],
               Selectable -> False
              ],

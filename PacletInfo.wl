@@ -6,7 +6,7 @@ PacletObject[ <|
     "SourceControlURL" -> "https://github.com/rhennigan/CodeEquivalenceUtilities",
     "License"          -> "MIT",
     "PublisherID"      -> "Wolfram",
-    "Version"          -> "1.2.0",
+    "Version"          -> "1.2.1",
     "WolframVersion"   -> "12.2+",
     "Extensions"       -> {
         {
@@ -43,7 +43,10 @@ PacletObject[ <|
         {
             "Asset",
             "Assets" -> { { "TestData", "./Tests/Data" } }
-        }(* ,
-        {"Tests", "Method" -> "Experimental-v1"} *)
+        }(*,
+        {
+            "Tests",
+            "Method" -> "Experimental-v1"
+        } *)
     }
 |> ]
