@@ -388,7 +388,7 @@ Notebook[
                      CellID -> 468968744
                     ]
                    },
-                   Closed
+                   Open
                   ]
                  ],
                  Cell[
@@ -872,11 +872,11 @@ Notebook[
                   ]
                  ]
                 },
-                Closed
+                Open
                ]
               ]
              },
-             Closed
+             Open
             ]
            ],
            Cell[
@@ -6850,13 +6850,7 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[
-                            Table[
-                             i,
-                             {i, 5},
-                             {j, i + 2}
-                            ]
-                           ],
+                           HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                            HoldForm[
                             Table[
                              Table[
@@ -7358,12 +7352,7 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[
-                            Table[
-                             ConstantArray[i, i + 2],
-                             {i, 5}
-                            ]
-                           ],
+                           HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                            HoldForm[
                             Table[
                              ConstantArray[
@@ -8112,15 +8101,7 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[
-                            Part[
-                             Table[
-                              Table[j, {j, i}],
-                              {i, 10}
-                             ],
-                             2
-                            ]
-                           ],
+                           HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                            HoldForm[
                             Part[
                              Table[
@@ -8504,15 +8485,7 @@ Notebook[
                          2
                         ]
                        ],
-                       HoldForm[
-                        Part[
-                         Table[
-                          Table[j, {j, i}],
-                          {i, 10}
-                         ],
-                         2
-                        ]
-                       ],
+                       HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                        HoldForm[
                         Part[
                          Table[
@@ -8621,12 +8594,7 @@ Notebook[
                          2
                         ]
                        ],
-                       HoldForm[
-                        Table[
-                         ConstantArray[i, i + 2],
-                         {i, 5}
-                        ]
-                       ],
+                       HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                        HoldForm[
                         Table[
                          ConstantArray[
@@ -9021,13 +8989,7 @@ Notebook[
                          }
                         ]
                        ],
-                       HoldForm[
-                        Table[
-                         i,
-                         {i, 5},
-                         {j, i + 2}
-                        ]
-                       ]
+                       HoldForm[Table[i, {i, 5}, {j, i + 2}]]
                       },
                       {
                        {
@@ -9123,12 +9085,7 @@ Notebook[
                           ]
                          ]
                         ],
-                        HoldForm[
-                         Table[
-                          ConstantArray[i, i + 2],
-                          {i, 5}
-                         ]
-                        ],
+                        HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                         HoldForm[
                          Table[
                           Table[
@@ -9177,13 +9134,7 @@ Notebook[
                           }
                          ]
                         ],
-                        HoldForm[
-                         Table[
-                          i,
-                          {i, 5},
-                          {j, i + 2}
-                         ]
-                        ],
+                        HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                         HoldForm[
                          Table[
                           Table[
@@ -9402,13 +9353,7 @@ Notebook[
                          ]
                         ],
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           i,
-                           {i, 5},
-                           {j, i + 2}
-                          ]
-                         ],
+                         HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                          HoldForm[
                           Table[
                            Table[
@@ -9472,22 +9417,9 @@ Notebook[
                           }
                          ]
                         ],
-                        HoldForm[
-                         Part[
-                          Table[
-                           Table[j, {j, i}],
-                           {i, 10}
-                          ],
-                          2
-                         ]
-                        ],
+                        HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           ConstantArray[i, i + 2],
-                           {i, 5}
-                          ]
-                         ],
+                         HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                          HoldForm[
                           Table[
                            ConstantArray[
@@ -9577,15 +9509,7 @@ Notebook[
                          ]
                         ],
                         DirectedEdge[
-                         HoldForm[
-                          Part[
-                           Table[
-                            Table[j, {j, i}],
-                            {i, 10}
-                           ],
-                           2
-                          ]
-                         ],
+                         HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                          HoldForm[
                           Part[
                            Table[
@@ -9828,13 +9752,7 @@ Notebook[
                          ]
                         },
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           i,
-                           {i, 5},
-                           {j, i + 2}
-                          ]
-                         ],
+                         HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                          HoldForm[
                           Table[
                            Table[
@@ -9882,15 +9800,7 @@ Notebook[
                          ]
                         ] -> {EdgeStyle -> Directive[Opacity[1], Hue[0.2, 1, 0.6]]},
                         DirectedEdge[
-                         HoldForm[
-                          Part[
-                           Table[
-                            Table[j, {j, i}],
-                            {i, 10}
-                           ],
-                           2
-                          ]
-                         ],
+                         HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                          HoldForm[
                           Part[
                            Table[
@@ -9950,13 +9860,7 @@ Notebook[
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}]
                          ]
                         },
-                        HoldForm[
-                         Table[
-                          i,
-                          {i, 5},
-                          {j, i + 2}
-                         ]
-                        ] -> {
+                        HoldForm[Table[i, {i, 5}, {j, i + 2}]] -> {
                          VertexStyle -> Directive[
                           Hue[0, 1, 0.8],
                           EdgeForm[{Hue[0, 1, 0.8], Opacity[1]}]
@@ -10027,12 +9931,7 @@ Notebook[
                          ]
                         ] -> {EdgeStyle -> Directive[Hue[0.2, 1, 0.6], Opacity[1]]},
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           ConstantArray[i, i + 2],
-                           {i, 5}
-                          ]
-                         ],
+                         HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                          HoldForm[
                           Table[
                            ConstantArray[
@@ -10051,26 +9950,13 @@ Notebook[
                           ]
                          ]
                         ] -> {EdgeStyle -> Directive[Hue[0.8, 0.6, 0.8], Opacity[1]]},
-                        HoldForm[
-                         Table[
-                          ConstantArray[i, i + 2],
-                          {i, 5}
-                         ]
-                        ] -> {
+                        HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]] -> {
                          VertexStyle -> Directive[
                           Hue[0.8, 0.6, 0.8],
                           EdgeForm[{Hue[0.8, 0.6, 0.8], Opacity[1]}]
                          ]
                         },
-                        HoldForm[
-                         Part[
-                          Table[
-                           Table[j, {j, i}],
-                           {i, 10}
-                          ],
-                          2
-                         ]
-                        ] -> {
+                        HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]] -> {
                          VertexStyle -> Directive[
                           Hue[0.1, 0.6, 0.7],
                           EdgeForm[{Hue[0.1, 0.6, 0.7], Opacity[1]}]
@@ -11288,15 +11174,7 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[
-                           Part[
-                            Table[
-                             Table[j, {j, i}],
-                             {i, 10}
-                            ],
-                            2
-                           ]
-                          ],
+                          HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                           "Tooltip"
                          ]
                         ]
@@ -12148,12 +12026,7 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[
-                           Table[
-                            ConstantArray[i, i + 2],
-                            {i, 5}
-                           ]
-                          ],
+                          HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                           "Tooltip"
                          ]
                         ]
@@ -15189,13 +15062,7 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[
-                           Table[
-                            i,
-                            {i, 5},
-                            {j, i + 2}
-                           ]
-                          ],
+                          HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                           "Tooltip"
                          ]
                         ]
@@ -17074,19 +16941,8 @@ Notebook[
                   {
                    {
                     {
-                     HoldForm[
-                      Table[
-                       i,
-                       {i, 5},
-                       {j, i + 2}
-                      ]
-                     ],
-                     HoldForm[
-                      Table[
-                       ConstantArray[i, i + 2],
-                       {i, 5}
-                      ]
-                     ]
+                     HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                     HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]]
                     },
                     HoldForm[
                      Table[
@@ -17166,15 +17022,7 @@ Notebook[
                    {
                     {
                      HoldForm[First[Rest[Map[Range, Range[10]]]]],
-                     HoldForm[
-                      Part[
-                       Table[
-                        Table[j, {j, i}],
-                        {i, 10}
-                       ],
-                       2
-                      ]
-                     ]
+                     HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]]
                     },
                     HoldForm[
                      Part[
@@ -17378,7 +17226,7 @@ Notebook[
             CellID -> 475746126
            ],
            Cell[
-            "https://github.com/rhennigan/CodeEquivalenceUtilities",
+            "https://github.com/rhennigan/CodeEquivalenceStuff",
             "Text",
             TaggingRules -> { },
             CellEventActions -> {
@@ -19715,7 +19563,7 @@ Notebook[
   },
   "SubmissionReviewData" -> {"Review" -> False},
   "ToolsOpen" -> False,
-  "UpdatedTimestamp" -> 3843912213.0844066,
+  "UpdatedTimestamp" -> 3843912213.,
   "TemplateVersion" -> "1.5.46",
   "Openers" -> {"SpecifyLicense" -> False},
   "StatusMessage" -> "",

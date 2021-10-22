@@ -1,6 +1,6 @@
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
-
+If[ a, b, b ]
 
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`Utilities`" ];
 
