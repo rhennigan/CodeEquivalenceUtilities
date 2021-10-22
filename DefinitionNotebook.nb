@@ -3831,7 +3831,7 @@ Notebook[
             CellID -> 462042388
            ],
            Cell[
-            "Check if two expressions are equivalent:",
+            "Check if two expressions are equivalent.",
             "Text",
             TaggingRules -> { },
             CellID -> 128039117
@@ -17071,6 +17071,12 @@ Notebook[
              },
              Open
             ]
+           ],
+           Cell[
+            "This text has unformatted code in it. ResourceFunction[\"BirdSay\"][\"this is unformatted code\"].",
+            "Text",
+            TaggingRules -> { },
+            CellID -> 190335383
            ]
           },
           Open
@@ -18430,6 +18436,12 @@ Notebook[
              PassEventsUp -> False
             },
             CellID -> 187087922
+           ],
+           Cell[
+            "BirdSays",
+            "Item",
+            TaggingRules -> { },
+            CellID -> 53509037
            ]
           },
           Open
@@ -19516,6 +19528,7 @@ Notebook[
    ]
   ]
  },
+ WindowStatusArea -> Automatic,
  DockedCells -> {
   Cell[
    BoxData[TemplateBox[{}, "MainGridTemplate"]],
@@ -19571,7 +19584,15 @@ Notebook[
    "FileHashes" -> ByteArray["OEM6eJyVlm1sU1UcxhlMQBdemnboQkth4JwjtxdXSkpApXZtneu2stNtRcHt9Pa0Pdvtvd2957KihmWKGyQGDYvzheAX/CKGxcQEYiDROY2LkWQBPyxqosENE8mWBT+IEojt1u3U2/au/dTk6X1+zzn//3lzVDHAXidySgwJBBIsCqxLiPBYjrIeBYeQzDrFEHL1KPgo5JHAoVaCeUwwki1C0LGSAauBqEgc8p4aHDz++46K5qTih1IEEe+h7946Pv7K31sZUJk7oF4IoQTbscvCheUMlFzaJAqIci78+ULPMHxnDwOqtDgyiqT+kjusGiy4rX2genCkmgHVhbAsESRo0HSNv/V/nPhjLwOezU1rQWEkparmg5FkKcGxWFDkVSUlB1WVHB07UyFKAQ/NuTsK+x/6dHwnA5xF5WS0zY9kUgcJVGWVmGtcd4YDr9KsvkPGfRd1z4cY4Cgqyy2JMScURAFzkHeLUkyVtOHhJvf1xOcZs7q99991p6Y2by82qRF2I62ksQ92bWWbfVto0mev3/KsuhzYUWyf/KJWTskXd/8yDrVZac7h+6f3VJpN3QyoyZ0DEJS46MIasy2sfKSxvgz6s3yZu7OsGJ7WTrr9fu0zB2Z77Qx4skCejDVwE1+V3Pvop8s2BjCF4MIY8SHZ0strIBNnb/3TNakzM2B3IUic+m1EBIZSS1uTfO7crK5cmulhgKUQ8tJpUqvBtO63t3hx0F4gs1fCBFl4kevWYOLW5srAzdYGBjyRhxlHPJ8+Oncv0/Ab/kDtr6veMDFg57KwpRkHNYC2k8NlRyb6DPlbng1c5hAtWTk6UH6t72DezelXiChhmNyPjlAIC5Em1OuXoCCHk1ty/ssWhc+6juIjl3xdo2NdNGemyrTR1B/tYMCmBiQJiGedkIuiUBvkFaRalt6GfcYrre8RA7VTZfuSPeNsSA6OEAkHFZLFOjC9nnvzpuSjLKqYc7OcYiwmCirO5JhfVG6wRsqhSk1ujisRRxKeLym/UKX/Iy/+eM32gO2MUiRVtuVGeiQYj2JOTRp3H/0SXz9RTklU2ZKblGtA+nttju+v3s+4j6iSBwM4MY5UmKesqxvxh9aXKYYqedoHiKRwRJEgr2INkJno3Mj5jBpRpXKRle+NpOrg+ce8h8d/qMjo4JKiT6PqUFCJRJLLXOX95lLpVfP0ETv1UmVz2utK5ivzW8IpCkQS1VNZ8/TghQeTZ1yUQRVDmuGe31UkewDThrdnf1kxZKJmqqxPm7GAicr2tf4lc+eKtY9QG1U2pG3+Y/GsWnle3HT6xM/fAuqjymKt8tXZOPFJu9C/poN6qbLOBzkekXohLKpcG+em9M1rg69RF1V0C65GKOBw8iWlfdXMPXelc2q/zZk8aVLPLplNPbxYV327ty7rmvIOlT5+591q/aPUvqj8B20AN+U="],
    "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram__CodeEquivalenceUtilities-1.3.0.paclet"
   },
-  "AutoUpdate" -> True
+  "AutoUpdate" -> True,
+  "NotebookIndexQ" -> True,
+  "NotebookLastIndexed" -> DateObject[
+   {2021, 10, 22, 17, 34, 25.3806855`9.157078268629801},
+   "Instant",
+   "Gregorian",
+   -4.
+  ],
+  "NotebookUUID" -> "e8a467c0-30fe-49eb-9c07-86a699a75dc9"
  },
  CreateCellID -> True,
  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 17, 2021)",
