@@ -125,8 +125,13 @@ printHint /@ result[ "Hints" ];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
-(*Download files*)
+(*Export files*)
 downloadBuildArtifacts @ result;
+
+Export[ FileNameJoin @ { $buildDir, "DefinitionNotebook.nb" },
+        result[ "Notebook" ],
+        "Binary"
+];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
