@@ -1,5 +1,8 @@
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
+
 
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Structural`",
     {
@@ -604,5 +607,7 @@ CanonicalTransformFromStructure[ exp_ ] :=
 End[ ];
 
 EndPackage[ ];
+
+(* :!CodeAnalysis::EndBlock:: *)
 
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;

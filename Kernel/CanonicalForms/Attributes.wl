@@ -1,5 +1,8 @@
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
+
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Attributes`",
     {
         "Wolfram`CodeEquivalenceUtilities`Utilities`"
@@ -387,5 +390,7 @@ CanonicalTransformFromAttributes[ expression_ ] :=
 End[]; (* `Private` *)
 
 EndPackage[];
+
+(* :!CodeAnalysis::EndBlock:: *)
 
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;

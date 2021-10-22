@@ -1,6 +1,7 @@
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
-
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`",
     {
@@ -743,5 +744,7 @@ HideLocalSymbols[ expression_,
 End[];
 
 EndPackage[];
+
+(* :!CodeAnalysis::EndBlock:: *)
 
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;

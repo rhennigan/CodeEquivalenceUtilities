@@ -1,5 +1,8 @@
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
+
 
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`Formatting`",
     {
@@ -581,5 +584,7 @@ Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue /:
 End[]; (* `Private` *)
 
 EndPackage[];
+
+(* :!CodeAnalysis::EndBlock:: *)
 
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;

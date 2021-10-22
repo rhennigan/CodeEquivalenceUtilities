@@ -186,3 +186,5 @@ VerificationTest[
     { False, True, True },
     TestID -> "HoldingQ2"
 ];
+
+(* :!CodeAnalysis::EndBlock:: *)
