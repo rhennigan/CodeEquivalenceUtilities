@@ -47,17 +47,19 @@ printHint[ KeyValuePattern @ {
     "Message" -> message_,
     "Tag"     -> tag_
 } ] :=
-    printError[ message, " [", tag, "]" ];
+    printError[ message, hintTag @ tag ];
 
 printHint[ KeyValuePattern @ {
     "Level"   -> "Warning",
     "Message" -> message_,
     "Tag"     -> tag_
 } ] :=
-    printWarning[ message, " [", tag, "]" ];
+    printWarning[ message, hintTag @ tag ];
 
 printHint[ KeyValuePattern @ { "Message" -> message_, "Tag" -> tag_ } ] :=
-    Print[ message, " [", tag, "]" ];
+    Print[ message, hintTag @ tag ];
+
+hintTag[ tag_ ] := Sequence[ " [DefinitionNotebookClient:", tag, "]" ];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -129,6 +131,10 @@ downloadBuildArtifacts @ result;
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*Finish*)
-If[ MatchQ[ result[ "Result" ], _Success ], Exit[ 0 ], Exit[ 1 ] ];
+If[ ! MatchQ[ result[ "Result" ], _Success ],
+    printError[ "Inspection failed: ", result[ "Result" ] ]
+];
+
+Exit[ ];
 
 (* :!CodeAnalysis::EndBlock:: *)
