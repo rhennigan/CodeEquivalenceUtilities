@@ -42,7 +42,10 @@ jUnitTestSuite[ file_? FileExistsQ ] :=
         xml =
             Block[
                 {
-                    $currentFile = StringDelete[ file, StartOfString~~$testDir ]
+                    $currentFile = StringDelete[
+                        file,
+                        StartOfString~~$pacletDir
+                    ]
                 },
                 jUnitTestSuite @ report
             ];
@@ -148,11 +151,11 @@ printOutcome[ id_, result_TestResultObject ] :=
     printOutcome[ id, result, result[ "Outcome" ] ];
 
 printOutcome[ id_, result_TestResultObject, "Success" ] :=
-    Print[ "Success: ", $currentFile, id ];
+    Print[ "Success: .", $currentFile, " : ", id ];
 
 printOutcome[ id_, result_TestResultObject, outcome_ ] := (
     $failed = True;
-    Print[ "::error::", outcome, ": ", $currentFile, id ]
+    Print[ "::error::", outcome, ": .", $currentFile, " : ", id ]
 );
 
 (* ::**********************************************************************:: *)
