@@ -130,13 +130,16 @@ printOutcome[ id_, result_TestResultObject ] :=
 printOutcome[ id_, result_TestResultObject, "Success" ] :=
     Print[ "Success: ", id ];
 
-printOutcome[ id_, result_TestResultObject, outcome_ ] :=
-    Print[ "::error::", outcome, ": ", id ];
+printOutcome[ id_, result_TestResultObject, outcome_ ] := (
+    $failed = True;
+    Print[ "::error::", outcome, ": ", id ]
+);
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Run*)
 $testIndex     = 0;
+$failed        = False;
 $inputFileName = Replace[ $InputFileName, "" :> NotebookFileName[ ] ];
 $pacletDir     = DirectoryName[ $inputFileName, 2 ];
 $testDir       = FileNameJoin @ { $pacletDir, "Tests" };
@@ -149,5 +152,6 @@ Export[ FileNameJoin @ { $outDir, "results.xml" },
         jUnitTestResults @ $testFiles
 ];
 
+If[ $failed, Exit[ 1 ], Exit[ 0 ] ];
 
 (* :!CodeAnalysis::EndBlock:: *)
