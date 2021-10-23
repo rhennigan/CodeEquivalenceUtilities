@@ -39,7 +39,14 @@ jUnitTestSuite[ file_? FileExistsQ ] :=
             report
         ];
 
-        xml = jUnitTestSuite @ report;
+        xml =
+            Block[
+                {
+                    $currentFile = StringDelete[ file, StartOfString~~$testDir ]
+                },
+                jUnitTestSuite @ report
+            ];
+
         Print[ "::endgroup::" ];
         xml
     ];
@@ -110,6 +117,19 @@ jUnitTestCase[ result_TestResultObject ] :=
                 ]
             },
             {
+                With[ { outcome = result[ "Outcome" ] },
+                    If[ outcome =!= "Success",
+                        XMLElement[
+                            "failure",
+                            {
+                                "message" -> "[ Insert Useful Failure Message Here ]",
+                                "type" -> outcome
+                            },
+                            { }
+                        ],
+                        Nothing
+                    ]
+                ],
                 XMLElement[ "system-out", { }, { } ],
                 XMLElement[ "system-err", { }, { (* TODO *) } ]
             }
@@ -128,11 +148,11 @@ printOutcome[ id_, result_TestResultObject ] :=
     printOutcome[ id, result, result[ "Outcome" ] ];
 
 printOutcome[ id_, result_TestResultObject, "Success" ] :=
-    Print[ "Success: ", id ];
+    Print[ "Success: ", $currentFile, id ];
 
 printOutcome[ id_, result_TestResultObject, outcome_ ] := (
     $failed = True;
-    Print[ "::error::", outcome, ": ", id ]
+    Print[ "::error::", outcome, ": ", $currentFile, id ]
 );
 
 (* ::**********************************************************************:: *)
