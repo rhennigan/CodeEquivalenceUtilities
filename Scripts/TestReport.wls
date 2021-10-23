@@ -131,7 +131,7 @@ printOutcome[ id_, result_TestResultObject, "Success" ] :=
     Print[ "Success: ", id ];
 
 printOutcome[ id_, result_TestResultObject, outcome_ ] :=
-    Print[ outcome, ": ", id ];
+    Print[ "::error::", outcome, ": ", id ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

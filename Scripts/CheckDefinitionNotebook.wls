@@ -47,19 +47,19 @@ printHint[ KeyValuePattern @ {
     "Message" -> message_,
     "Tag"     -> tag_
 } ] :=
-    printError[ message, hintTag @ tag ];
+    printError[ hintTag @ tag, message ];
 
 printHint[ KeyValuePattern @ {
     "Level"   -> "Warning"|"Suggestion",
     "Message" -> message_,
     "Tag"     -> tag_
 } ] :=
-    printWarning[ message, hintTag @ tag ];
+    printWarning[ hintTag @ tag, message ];
 
 printHint[ KeyValuePattern @ { "Message" -> message_, "Tag" -> tag_ } ] :=
-    Print[ message, hintTag @ tag ];
+    Print[ hintTag @ tag, message ];
 
-hintTag[ tag_ ] := Sequence[ " [DefinitionNotebookClient:", tag, "]" ];
+hintTag[ tag_ ] := Sequence[ "[DefinitionNotebookClient:", tag, "] " ];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
