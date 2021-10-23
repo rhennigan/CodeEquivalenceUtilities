@@ -137,9 +137,9 @@ Export[ FileNameJoin @ { $buildDir, "DefinitionNotebook.nb" },
 (* ::Subsection::Closed:: *)
 (*Finish*)
 If[ ! MatchQ[ result[ "Result" ], _Success ],
-    printError[ "Inspection failed: ", result[ "Result" ] ]
+    printError[ "Inspection failed: ", result[ "Result" ] ];
+    Exit[ 1 ],
+    Exit[ 0 ]
 ];
-
-Exit[ ];
 
 (* :!CodeAnalysis::EndBlock:: *)
