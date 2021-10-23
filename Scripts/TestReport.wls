@@ -21,7 +21,8 @@ jUnitTestResults[ files_List ] :=
 (* ::Subsection::Closed:: *)
 (*jUnitTestSuite*)
 jUnitTestSuite[ file_? FileExistsQ ] :=
-    Module[ { report },
+    Module[ { report, xml },
+        Print[ "::group::", file ];
         report = TestReport @ file;
 
         Export[
@@ -38,7 +39,9 @@ jUnitTestSuite[ file_? FileExistsQ ] :=
             report
         ];
 
-        jUnitTestSuite @ report
+        xml = jUnitTestSuite @ report;
+        Print[ "::endgroup::" ];
+        xml
     ];
 
 jUnitTestSuite[ report_TestReportObject ] :=
@@ -85,34 +88,50 @@ getTestID[ result_TestResultObject ] := (
 (* ::Subsection::Closed:: *)
 (*jUnitTestCase*)
 jUnitTestCase[ result_TestResultObject ] :=
-    XMLElement[
-        "testcase",
-        {
-            "classname" -> getTestID @ result,
-            "name" ->
-                StringTake[
-                    Replace[
-                        result[ "Input" ],
-                        HoldForm[ expr_ ] :>
-                            ToString[ Unevaluated @ expr, InputForm ]
+    Module[ { id },
+        id = getTestID @ result;
+        printOutcome[ id, result ];
+        XMLElement[
+            "testcase",
+            {
+                "classname" -> id,
+                "name" ->
+                    StringTake[
+                        Replace[
+                            result[ "Input" ],
+                            HoldForm[ expr_ ] :>
+                                ToString[ Unevaluated @ expr, InputForm ]
+                        ],
+                        UpTo[ 80 ]
                     ],
-                    UpTo[ 80 ]
-                ],
-            "time" -> TextString @ QuantityMagnitude @ UnitConvert[
-                result[ "AbsoluteTimeUsed" ],
-                "Seconds"
-            ]
-        },
-        {
-            XMLElement[ "system-out", { }, { } ],
-            XMLElement[ "system-err", { }, { (* TODO *) } ]
-        }
+                "time" -> TextString @ QuantityMagnitude @ UnitConvert[
+                    result[ "AbsoluteTimeUsed" ],
+                    "Seconds"
+                ]
+            },
+            {
+                XMLElement[ "system-out", { }, { } ],
+                XMLElement[ "system-err", { }, { (* TODO *) } ]
+            }
+        ]
     ];
 
 jUnitTestCase[ e_, ___ ] := (
     Print[ "::error::", "Expected a TestResultObject instead of ", Short @ e ];
     Exit[ 1 ]
 );
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*printOutcome*)
+printOutcome[ id_, result_TestResultObject ] :=
+    printOutcome[ id, result, result[ "Outcome" ] ];
+
+printOutcome[ id_, result_TestResultObject, "Success" ] :=
+    Print[ "Success: ", id ];
+
+printOutcome[ id_, result_TestResultObject, outcome_ ] :=
+    Print[ outcome, ": ", id ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
