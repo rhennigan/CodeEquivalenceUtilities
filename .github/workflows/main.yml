@@ -41,7 +41,7 @@ jobs:
         if: success() || failure()    # run this step even if previous step failed
         uses: actions/upload-artifact@v2
         with:
-          name: artifacts
+          name: build-artifacts
           path: build/
           if-no-files-found: error
 
@@ -91,10 +91,10 @@ jobs:
         with:
           files: test-results/**/*.xml
 
-      # - name: Upload test artifacts
-      #   if: success() || failure()    # run this step even if previous step failed
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: artifacts
-      #     path: test-results/
-      #     if-no-files-found: error
+      - name: Upload test artifacts
+        if: success() || failure()    # run this step even if previous step failed
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-artifacts
+          path: test-results/
+          if-no-files-found: error
