@@ -36,6 +36,11 @@ printWarning[ args___ ] := Print[ "::warning::", args ];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
+(*printNotice*)
+printNotice[ args___ ] := Print[ "::notice::", args ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
 (*printDebug*)
 printDebug[ args___ ] := Print[ "::debug::", args ];
 
@@ -50,11 +55,18 @@ printHint[ KeyValuePattern @ {
     printError[ hintTag @ tag, message ];
 
 printHint[ KeyValuePattern @ {
-    "Level"   -> "Warning"|"Suggestion",
+    "Level"   -> "Warning",
     "Message" -> message_,
     "Tag"     -> tag_
 } ] :=
     printWarning[ hintTag @ tag, message ];
+
+printHint[ KeyValuePattern @ {
+    "Level"   -> "Suggestion",
+    "Message" -> message_,
+    "Tag"     -> tag_
+} ] :=
+    printNotice[ hintTag @ tag, message ];
 
 printHint[ KeyValuePattern @ { "Message" -> message_, "Tag" -> tag_ } ] :=
     Print[ hintTag @ tag, message ];
