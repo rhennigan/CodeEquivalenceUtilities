@@ -923,6 +923,11 @@ $assocInner = HoldPattern @ Alternatives[
     RandomSample
 ];
 
+$joinable = HoldPattern @ Alternatives[
+    List,
+    Association
+];
+
 
 simpleListQ // Attributes = { HoldAllComplete };
 simpleListQ[ { (_String? UStringQ | _Integer? UIntegerQ)... } ] := True;
@@ -930,7 +935,7 @@ simpleListQ[ { other___ } ] := AllTrue[ HoldComplete @ other, simpleListQ ];
 simpleListQ[ ___ ] := False;
 
 
-listRules = Inline[ { $assocOuter, $assocInner }, HoldComplete[
+listRules = Inline[ { $assocOuter, $assocInner, $joinable }, HoldComplete[
     Reverse[Reverse[expr_]] :> expr,
     Sort[Reverse[expr_]] :> Sort[expr],
     Reverse[SortBy[list_, f_]] :> SortBy[list, -f[#] &],
@@ -990,7 +995,7 @@ listRules = Inline[ { $assocOuter, $assocInner }, HoldComplete[
     Select[ expr_, Equal[ a___, b_? StringTypeQ, c___ ] & ] :>
       Select[ expr, SameQ[ a, b, c ] & ],
 
-    Join[ f_[ a___ ], f_[ b___ ], c___f ] :> WithHolding[
+    Join[ (f:$joinable)[ a___ ], f_[ b___ ], c___f ] :> WithHolding[
         {
             held = Flatten @ Replace[
                 TempHold[ f @ a, f @ b, c ],

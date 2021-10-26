@@ -1143,15 +1143,16 @@ safeCloudObjectFileQ[ _, "/files/auth", { } ] := True;
 
 
 $safeURLs := $safeURLs = rebasedCloudURLs @ Alternatives[
-    "https://www.wolframcloud.com/OAuthVersion",
-    "https://www.wolframcloud.com/info",
     "https://www.wolframcloud.com/app/OAuthVersion",
-    "https://www.wolframcloud.com/objects/resourcesystem/ResourceVersions",
+    "https://www.wolframcloud.com/files?path=auth&fields=path",
+    "https://www.wolframcloud.com/files?path=resourcesystem%2FVersionInformation%2F12-2%2FResourceVersions&fields=uuid",
+    "https://www.wolframcloud.com/files/auth",
+    "https://www.wolframcloud.com/info",
+    "https://www.wolframcloud.com/OAuthVersion",
+    "https://www.wolframcloud.com/obj/resourcesystem/api/1.0/SearchResources",
     "https://www.wolframcloud.com/obj/resourcesystem/ResourceVersions",
     "https://www.wolframcloud.com/objects/resourcesystem/api/1.0/SearchResources",
-    "https://www.wolframcloud.com/obj/resourcesystem/api/1.0/SearchResources",
-    "https://www.wolframcloud.com/files?path=auth&fields=path",
-    "https://www.wolframcloud.com/files?path=resourcesystem%2FVersionInformation%2F12-2%2FResourceVersions&fields=uuid"
+    "https://www.wolframcloud.com/objects/resourcesystem/ResourceVersions"
 ];
 
 $fetchElement := $fetchElement =
@@ -1257,8 +1258,7 @@ With[ {
           ReadList[ InputStream[ pathTemp|String, ___ ], ___ ],
           ReadLine[ pathSystem | pathTemp | pathKB, ___ ],
           ReadLine[ InputStream[ pathSystem | pathTemp | pathKB | String, ___ ], ___ ],
-          RenameFile[ pathResources, pathResources, ___ ],
-          RenameFile[ pathLockFiles, pathLockFiles, ___ ],
+          RenameFile[ pathResources|pathTemp|pathLockFiles, pathResources|pathTemp|pathLockFiles, ___ ],
           urlFetch[ cloudFiles | { cloudFiles }, allowedFetchOptions ],
           urlFetch[ cloudFiles | { cloudFiles }, allowedFetchElements, allowedFetchOptions ],
           urlFetch[ (rurl|domains|shortURL) | { rurl|domains|shortURL }, ___ ],
@@ -1268,7 +1268,8 @@ With[ {
           CloudGet[ _? safeCloudObjectQ | (rurl|persistence) | CloudObject[ (rurl|persistence) ] | URL[ (rurl|persistence) ] ],
           Unprotect[ s_Symbol /; ! StringStartsQ[ SafeContext @ s, "WolframChallenges`"|"Wolfram`CodeEquivalenceUtilities`" ] ],
           URLFetch["https://www.wolframcloud.com/OAuthVersion"|"https://www.wolframcloud.com/app/OAuthVersion", ___],
-          URLFetchAsynchronous[ "https://www.wolframcloud.com/files/7918edd1-f8a1-46d0-8b87-7755d5325634", ___ ]
+          URLFetchAsynchronous[ "https://www.wolframcloud.com/files/7918edd1-f8a1-46d0-8b87-7755d5325634", ___ ],
+          URLSave[ "https://resources.wolframcloud.com/PacletRepository/pacletsite/PacletSite.mz", ___ ]
       ]
   ]]);
 

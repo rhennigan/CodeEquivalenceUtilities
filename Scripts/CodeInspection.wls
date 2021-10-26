@@ -3,7 +3,7 @@
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 
-Print[ "::error::Nothing here yet!" ];
-Exit[ 1 ];
+Print[ "::notice::Nothing here yet!" ];
+Exit[ 0 ];
 
 (* :!CodeAnalysis::EndBlock:: *)

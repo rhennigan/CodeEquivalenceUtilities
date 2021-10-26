@@ -4,7 +4,7 @@
 <tr>
 <td>
 
-[CodeEquivalenceUtilities](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities) is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.
+[CodeEquivalenceUtilities](#ComingSoon) is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.
 
 This allows comparison of unevaluated expressions that may have non-deterministic outputs (e.g. random values, dates, etc).
 
@@ -21,7 +21,7 @@ This Paclet represents the underlying technology that powers several [automated 
 ## Installing CodeEquivalenceUtilities
 
 
-### From the [Wolfram Paclet Repository](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities/)
+### From the [Wolfram Paclet Repository](#ComingSoon)
 
 Using Wolfram Language version 13.0 or later:
 
@@ -62,18 +62,18 @@ Equivalence for Wolfram Language code can be defined in many ways. The methods u
 
 ### Equivalence Testing
 
-[CodeEquivalentQ](https://www.wolframcloud.com/obj/resourcesystem/published/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities/ref/CodeEquivalentQ.html) - test if two unevaluated expressions are equivalent
+[CodeEquivalentQ](#ComingSoon) - test if two unevaluated expressions are equivalent
 
-[EquivalenceTestData](https://www.wolframcloud.com/obj/resourcesystem/published/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities/ref/EquivalenceTestData.html) - get additional information about the equivalence test performed by 
-[CodeEquivalentQ](https://www.wolframcloud.com/obj/resourcesystem/published/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities/ref/CodeEquivalentQ.html)
+[EquivalenceTestData](#ComingSoon) - get additional information about the equivalence test performed by 
+[CodeEquivalentQ](#ComingSoon)
 
 ### Code Transformation
 
-[ToCanonicalForm](https://www.wolframcloud.com/obj/resourcesystem/published/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities/ref/ToCanonicalForm.html) - convert an expression into a canonical representation for direct comparison
+[ToCanonicalForm](#ComingSoon) - convert an expression into a canonical representation for direct comparison
 
-[MakeCanonicalForm](https://www.wolframcloud.com/obj/resourcesystem/published/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities/ref/MakeCanonicalForm.html) - convert to canonical form without evaluating the input
+[MakeCanonicalForm](#ComingSoon) - convert to canonical form without evaluating the input
 
-[FromCanonicalForm](https://www.wolframcloud.com/obj/resourcesystem/published/PacletRepository/resources/Wolfram-CodeEquivalenceUtilities/ref/FromCanonicalForm.html) - convert a canonical representation back into a normal evaluatable expression
+[FromCanonicalForm](#ComingSoon) - convert a canonical representation back into a normal evaluatable expression
 
 ## Examples
 

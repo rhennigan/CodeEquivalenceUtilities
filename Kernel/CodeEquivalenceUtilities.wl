@@ -542,6 +542,16 @@ iEquivalenceTestData[ expr1_, expr2_, opts : OptionsPattern[ ] ] :=
           If[ throwQ, Throw @ testData ]
       ];
 
+      testData[ "EqualQ" ] = TrueQ[ hexpr1 == hexpr2 ];
+      timing[ "EqualQ" ];
+
+      If[ testData[ "EqualQ" ]
+          ,
+          equivalentQ = True;
+          testData["EquivalentQ"] = True;
+          If[ throwQ, Throw @ testData ]
+      ];
+
       cexpr1 = ToCanonicalForm @ hexpr1;
       timing[ "ToCanonicalForm1" ];
 
@@ -549,7 +559,7 @@ iEquivalenceTestData[ expr1_, expr2_, opts : OptionsPattern[ ] ] :=
       timing[ "ToCanonicalForm2" ];
 
       testData[ "CanonicalForms" ] = <| 1 -> cexpr1, 2 -> cexpr2 |>;
-      testData[ "CanonicalEquivalentQ" ] = cexpr1 === cexpr2;
+      testData[ "CanonicalEquivalentQ" ] = cexpr1 ~equalQ~ cexpr2;
 
       If[ testData[ "CanonicalEquivalentQ" ]
           ,
@@ -558,16 +568,16 @@ iEquivalenceTestData[ expr1_, expr2_, opts : OptionsPattern[ ] ] :=
           If[ throwQ, Throw @ testData ]
       ];
 
-      eval1 = EvaluateSafely @@ FromCanonicalForm[ cexpr1 ];
+      eval1 = EvaluateSafely @@ hexpr1;
       timing[ "Evaluate1" ];
 
-      eval2 = EvaluateSafely @@ FromCanonicalForm[ cexpr2 ];
+      eval2 = EvaluateSafely @@ hexpr2;
       timing[ "Evaluate2" ];
 
       testData[ "SandboxForms" ] = <| 1 -> eval1, 2 -> eval2 |>;
 
       testData[ "SandboxEquivalentQ" ] =
-        NormalizeNames @ eval1 === NormalizeNames @ eval2;
+        NormalizeNames @ eval1 ~equalQ~ NormalizeNames @ eval2;
       timing[ "SandboxEquivalentQ" ];
 
       If[ testData[ "SandboxEquivalentQ" ]
@@ -608,7 +618,7 @@ iEquivalenceTestData[ expr1_, expr2_, opts : OptionsPattern[ ] ] :=
           testData[ "RandomSandboxForms" ] = <| 1 -> reval1, 2 -> reval2 |>;
 
           testData[ "RandomSandboxEquivalentQ" ] =
-            NormalizeNames @ reval1 === NormalizeNames @ reval2;
+            NormalizeNames @ reval1 ~equalQ~ NormalizeNames @ reval2;
           timing[ "RandomSandboxEquivalentQ" ];
 
           If[ testData[ "RandomSandboxEquivalentQ" ]
@@ -657,6 +667,8 @@ iEquivalenceTestData[ expr1_, expr2_, opts : OptionsPattern[ ] ] :=
 
   ];
 
+
+equalQ[ a___ ] := TrueQ @ Or[ SameQ @ a, Equal @ a ];
 
 
 (******************************************************************************)
