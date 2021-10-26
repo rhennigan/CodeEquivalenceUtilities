@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  check:
+  CheckDefinitionNotebook:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container:
@@ -34,12 +34,67 @@ jobs:
       - name: Run Paclet Check and Build
         env:
           WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
-        run: |
-          wolframscript -code 'Get["https://wolfr.am/Zeo7o1nN"]'
+          CHECKGITHUBPACLET_PERMISSIONS_KEY: ${{ secrets.CHECKGITHUBPACLET_PERMISSIONS_KEY }}
+        run: wolframscript Scripts/CheckDefinitionNotebook.wls
           
       - name: Upload build artifacts
+        if: success() || failure()    # run this step even if previous step failed
         uses: actions/upload-artifact@v2
         with:
-          name: artifacts
+          name: build-artifacts
           path: build/
+          if-no-files-found: error
+
+  CodeInspection:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container:
+      image: wolframresearch/wolframengine:latest
+      options: --user root
+    env:
+      WOLFRAM_SYSTEM_ID: Linux-x86-64
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run CodeInspector on Paclet files
+        env:
+          WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
+        run: wolframscript Scripts/CodeInspection.wls
+
+  TestReport:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container:
+      image: wolframresearch/wolframengine:latest
+      options: --user root
+    env:
+      WOLFRAM_SYSTEM_ID: Linux-x86-64
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run all tests
+        env:
+          WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
+        run: wolframscript Scripts/TestReport.wls
+
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: test-results/**/*.xml
+
+      - name: Upload test artifacts
+        if: success() || failure()    # run this step even if previous step failed
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-artifacts
+          path: test-results/
           if-no-files-found: error

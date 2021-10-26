@@ -1,7 +1,5 @@
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
-
-
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`Utilities`" ];
 
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;

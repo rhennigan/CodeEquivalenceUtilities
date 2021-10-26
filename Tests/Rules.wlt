@@ -201,12 +201,12 @@ VerificationTest[
     HoldComplete @ Table[
         Table[
             TypedSymbol[
-                CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                 _Integer
             ],
             {
                 TypedSymbol[
-                    CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                     _Integer
                 ],
                 1,
@@ -215,7 +215,7 @@ VerificationTest[
                     Times[
                         -1,
                         TypedSymbol[
-                            CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S2,
+                            Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
                             _Integer
                         ]
                     ]
@@ -225,7 +225,7 @@ VerificationTest[
         ],
         {
             TypedSymbol[
-                CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S2,
+                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
                 _Integer
             ],
             1,
@@ -241,13 +241,13 @@ VerificationTest[
         Plus[
             9,
             TypedSymbol[
-                CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                 _Integer
             ]
         ],
         {
             TypedSymbol[
-                CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                 _Integer
             ],
             1,
@@ -265,7 +265,7 @@ VerificationTest[
             Times[
                 -34,
                 TypedSymbol[
-                    CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                     _Integer
                 ]
             ],
@@ -273,7 +273,7 @@ VerificationTest[
                 3,
                 Power[
                     TypedSymbol[
-                        CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                         _Integer
                     ],
                     2
@@ -282,7 +282,7 @@ VerificationTest[
         ],
         {
             TypedSymbol[
-                CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                 _Integer
             ],
             1,
@@ -312,12 +312,12 @@ VerificationTest[
     HoldForm @ Table[
         Table[
             TypedSymbol[
-                CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                 _Integer
             ],
             {
                 TypedSymbol[
-                    CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                     _Integer
                 ],
                 1,
@@ -326,7 +326,7 @@ VerificationTest[
                     Plus[
                         2,
                         TypedSymbol[
-                            CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S2,
+                            Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
                             _Integer
                         ]
                     ]
@@ -336,7 +336,7 @@ VerificationTest[
         ],
         {
             TypedSymbol[
-                CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S2,
+                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
                 _Integer
             ],
             1,
@@ -352,13 +352,13 @@ VerificationTest[
         Plus[
             -1,
             TypedSymbol[
-                CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                 _Integer
             ]
         ],
         {
             TypedSymbol[
-                CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                 _Integer
             ],
             1,
@@ -376,13 +376,13 @@ VerificationTest[
                 Times[
                     3,
                     TypedSymbol[
-                        CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                         _Integer
                     ]
                 ],
                 {
                     TypedSymbol[
-                        CodeEquivalence`CanonicalForms`Scope`LocalSymbols`S1,
+                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
                         _Integer
                     ],
                     1,
