@@ -865,6 +865,9 @@ pureFunctionRules = HoldComplete[
         With[ { composed = TempHold @ f /. HoldPattern[ Slot ][ 1 ] :> g },
             Composition[ a, Function @ composed, b ] /; True
             ]
+    ,
+
+    Function[ # ][ a_ ] :> a
 ];
 
 
