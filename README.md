@@ -208,3 +208,7 @@ grouped = GroupBy[expressions, ToCanonicalForm]
 TableForm[KeyValueMap[Reverse@*List, grouped]]
 ```
 <img src="Images/751d18c398c2d8f2.png" width="628" height="93" style="width: 39.2500em; height: 5.8125em; background: white;">
+
+## License
+
+This project is licensed under the terms of the MIT license. See the LICENSE file in the root directory of this source tree for details.

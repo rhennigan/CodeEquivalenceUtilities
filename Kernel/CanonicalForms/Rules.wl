@@ -1070,10 +1070,10 @@ stringRules = HoldComplete[
     StringLength /@ TextCases[ e_, "Word" ] :>
         StringLength @ TextCases[ e, "Word" ],
 
-    StringJoin[ str__? UStringQ ] :>
+    HoldPattern[ StringJoin ][ str__? UStringQ ] :>
         RuleCondition @ StringJoin @ str,
 
-    StringJoin[ a1___, a2_String? UStringQ, a3_String? UStringQ, a4___ ] :>
+    HoldPattern[ StringJoin ][ a1___, a2_String? UStringQ, a3_String? UStringQ, a4___ ] :>
         With[ { joined = StringJoin[ a2, a3 ] },
             StringJoin[ a1, joined, a4 ] /; UStringQ @ joined
         ],
@@ -1108,8 +1108,11 @@ stringRules = HoldComplete[
     TextWords[ str_? StringTypeQ, n_? IntTypeQ ] :>
         TextCases[ str, "Word", n ],
 
-    StringJoin[ str_? StringTypeQ ] :>
-        str
+    HoldPattern[ StringJoin ][ str_? StringTypeQ ] :>
+        str,
+
+    StringReverse[ str_ ] :>
+        StringJoin @ Reverse @ Characters @ str
 ];
 
 entityFrameworkRules = HoldComplete[
