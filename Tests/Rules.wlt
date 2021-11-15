@@ -492,3 +492,8 @@ VerificationTest[
         { n, 10 }
     ]
 ];
+
+VerificationTest[
+    ToCanonicalForm[ #1 <> StringReverse[ #1 ] & ],
+    ToCanonicalForm[ #1 <> (StringJoin @ Reverse @ Characters[ #1 ]) & ]
+];
