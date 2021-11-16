@@ -4,7 +4,7 @@ Notebook[
    CellGroupData[
     {
      Cell[
-      "Wolfram: CodeEquivalenceUtilities",
+      "Wolfram/CodeEquivalenceUtilities",
       "Title",
       Deletable -> False,
       TaggingRules -> { },
@@ -40,13 +40,16 @@ Notebook[
             Editable -> False,
             Deletable -> False,
             TaggingRules -> {"TemplateGroupName" -> "PacletDirectory"},
-            DefaultNewCellStyle -> "LocalDirectoryInput",
+            DefaultNewCellStyle -> {
+             "LocalDirectoryInput",
+             TaggingRules -> {"FileInputProperty" -> "PacletDirectory"}
+            },
             CellTags -> {
              "Paclet Directory",
              "PacletDirectory",
              "TemplateCellGroup"
             },
-            CellID -> 838143232
+            CellID -> 95800296
            ],
            Cell[
             BoxData[RowBox[{"NotebookDirectory", "[", "]"}]],
@@ -3239,12 +3242,12 @@ Notebook[
                  {
                   True -> TemplateBox[
                    {
-                    "Notes",
+                    "Details",
                     Cell[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "Give a detailed explanation of how the function is used and configured (e.g. acceptable input types, result formats, options specifications, background information). This section may include multiple cells, bullet lists, tables, hyperlinks and additional styles/structures as needed.\n\nAdd any other information that may be relevant, such as when the function was first discovered or how and why it is used within a given field. Include all relevant background or contextual information related to the function, its development, and its usage.",
+                        "Details may include a long description of the resource's contents, history, methodology or other relevant information. Give references here if they are directly relevant to the resource. The details will appear above the examples on the webpage for the resource.",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -3256,7 +3259,7 @@ Notebook[
                      ],
                      "MoreInfoText",
                      Deletable -> True,
-                     CellTags -> {"SectionMoreInfoNotes"},
+                     CellTags -> {"SectionMoreInfoDetails"},
                      CellMargins -> {{66, 66}, {15, 15}}
                     ]
                    },
@@ -3278,10 +3281,10 @@ Notebook[
             "Subsection",
             Editable -> False,
             Deletable -> False,
-            TaggingRules -> {"TemplateGroupName" -> "Notes"},
+            TaggingRules -> {"TemplateGroupName" -> "Details"},
             DefaultNewCellStyle -> "Notes",
-            CellTags -> {"Details", "Notes", "TemplateCellGroup"},
-            CellID -> 427358009
+            CellTags -> {"Details", "TemplateCellGroup"},
+            CellID -> 484110581
            ],
            Cell[
             "TODO",
@@ -3369,9 +3372,12 @@ Notebook[
             Editable -> False,
             Deletable -> False,
             TaggingRules -> {"TemplateGroupName" -> "MainGuidePage"},
-            DefaultNewCellStyle -> "LocalFileInput",
+            DefaultNewCellStyle -> {
+             "LocalFileInput",
+             TaggingRules -> {"FileInputProperty" -> "MainGuidePage"}
+            },
             CellTags -> {"Main Guide Page", "MainGuidePage", "TemplateCellGroup"},
-            CellID -> 440966923
+            CellID -> 93952416
            ],
            Cell[
             BoxData[
@@ -3565,7 +3571,7 @@ Notebook[
              "Initialization for Examples",
              "TemplateCellGroup"
             },
-            CellLabel -> "In[1]:=",
+            CellLabel -> "In[5]:=",
             CellID -> 297609475
            ],
            Cell[
@@ -3633,7 +3639,7 @@ Notebook[
             TaggingRules -> { },
             InitializationCell -> True,
             CellTags -> "DefaultContent",
-            CellLabel -> "In[2]:=",
+            CellLabel -> "In[1]:=",
             CellID -> 227436451
            ],
            Cell[
@@ -3695,7 +3701,7 @@ Notebook[
             "Excluded",
             TaggingRules -> { },
             InitializationCell -> True,
-            CellLabel -> "In[3]:=",
+            CellLabel -> "In[2]:=",
             CellID -> 996669468
            ],
            Cell[
@@ -3704,7 +3710,7 @@ Notebook[
             "Excluded",
             TaggingRules -> { },
             InitializationCell -> True,
-            CellLabel -> "In[4]:=",
+            CellLabel -> "In[3]:=",
             CellID -> 119547485
            ]
           },
@@ -17153,7 +17159,7 @@ Notebook[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "Enter the name of the person, people or organization that should be publicly credited with contributing this function.",
+                        "Enter the name of the person, people or organization that should be publicly credited with contributing this paclet.",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -17195,7 +17201,7 @@ Notebook[
              "Creator",
              "TemplateCellGroup"
             },
-            CellID -> 20087350
+            CellID -> 57534933
            ],
            Cell[
             "Richard Hennigan <richardh@wolfram.com>",
@@ -17307,343 +17313,6 @@ Notebook[
            Cell[
             TextData[
              {
-              "License",
-              Cell[
-               BoxData[
-                PaneSelectorBox[
-                 {
-                  True -> TemplateBox[
-                   {
-                    "LicenseID",
-                    Cell[
-                     BoxData[
-                      FrameBox[
-                       Cell[
-                        TextData[
-                         {
-                          "Choose a license to specify the terms and conditions regarding how your resource can be used, modified, and distributed. If submitting to the Wolfram Resource System, this also includes the terms outlined by the ",
-                          Cell[
-                           BoxData[
-                            TagBox[
-                             ButtonBox[
-                              StyleBox[
-                               "\"publisher agreement\"",
-                               "Text",
-                               ShowStringCharacters -> False
-                              ],
-                              BaseStyle -> "Hyperlink",
-                              ButtonData -> {
-                               URL[
-                                "https://resources.wolframcloud.com/publisher/publisher-agreement"
-                               ],
-                               None
-                              },
-                              ButtonNote -> "https://resources.wolframcloud.com/publisher/publisher-agreement"
-                             ],
-                             MouseAppearanceTag["LinkHand"]
-                            ]
-                           ]
-                          ],
-                          "."
-                         }
-                        ],
-                        "MoreInfoText"
-                       ],
-                       Background -> GrayLevel[0.95],
-                       FrameMargins -> 20,
-                       FrameStyle -> GrayLevel[0.9],
-                       RoundingRadius -> 5,
-                       ImageSize -> {Scaled[0.65], Automatic}
-                      ]
-                     ],
-                     "MoreInfoText",
-                     Deletable -> True,
-                     CellTags -> {"SectionMoreInfoLicenseID"},
-                     CellMargins -> {{66, 66}, {15, 15}}
-                    ]
-                   },
-                   "MoreInfoOpenerButtonTemplate"
-                  ]
-                 },
-                 Dynamic[
-                  CurrentValue[
-                   EvaluationNotebook[],
-                   {TaggingRules, "ResourceCreateNotebook"}
-                  ]
-                 ],
-                 ImageSize -> Automatic
-                ]
-               ]
-              ]
-             }
-            ],
-            "Subsection",
-            Editable -> False,
-            Deletable -> False,
-            TaggingRules -> {"TemplateGroupName" -> "LicenseID"},
-            DefaultNewCellStyle -> "Text",
-            CellTags -> {"License", "LicenseID", "TemplateCellGroup"},
-            CellID -> 281611704
-           ],
-           Cell[
-            BoxData[
-             TagBox[
-              GridBox[
-               {
-                {
-                 StyleBox[
-                  TemplateBox[
-                   {
-                    RadioButtonBox[
-                     Dynamic[
-                      CurrentValue[
-                       EvaluationCell[],
-                       {TaggingRules, "RadioButtonValue"}
-                      ],
-                      Function[
-                       CurrentValue[
-                        EvaluationCell[],
-                        {TaggingRules, "RadioButtonValue"}
-                       ] = #1;
-                       CurrentValue[
-                        EvaluationNotebook[],
-                        {TaggingRules, "Openers", "SpecifyLicense"}
-                       ] = #1 === "Other"
-                      ]
-                     ],
-                     {"MIT"}
-                    ],
-                    "\" \"",
-                    TemplateBox[
-                     {
-                      "\"MIT License\"",
-                      "\"\[ThinSpace]\"",
-                      TemplateBox[
-                       {
-                        "\"\[RightGuillemet]\"",
-                        "https://choosealicense.com/licenses/mit/"
-                       },
-                       "HyperlinkURL"
-                      ]
-                     },
-                     "RowDefault"
-                    ]
-                   },
-                   "RowDefault"
-                  ],
-                  StripOnInput -> False,
-                  FontSize -> 12
-                 ],
-                 StyleBox[
-                  TemplateBox[
-                   {
-                    RadioButtonBox[
-                     Dynamic[
-                      CurrentValue[
-                       EvaluationCell[],
-                       {TaggingRules, "RadioButtonValue"}
-                      ],
-                      Function[
-                       CurrentValue[
-                        EvaluationCell[],
-                        {TaggingRules, "RadioButtonValue"}
-                       ] = #1;
-                       CurrentValue[
-                        EvaluationNotebook[],
-                        {TaggingRules, "Openers", "SpecifyLicense"}
-                       ] = #1 === "Other"
-                      ]
-                     ],
-                     {"Apache-2.0"}
-                    ],
-                    "\" \"",
-                    TemplateBox[
-                     {
-                      "\"Apache License 2.0\"",
-                      "\"\[ThinSpace]\"",
-                      TemplateBox[
-                       {
-                        "\"\[RightGuillemet]\"",
-                        "https://choosealicense.com/licenses/apache-2.0/"
-                       },
-                       "HyperlinkURL"
-                      ]
-                     },
-                     "RowDefault"
-                    ]
-                   },
-                   "RowDefault"
-                  ],
-                  StripOnInput -> False,
-                  FontSize -> 12
-                 ]
-                },
-                {
-                 StyleBox[
-                  TemplateBox[
-                   {
-                    RadioButtonBox[
-                     Dynamic[
-                      CurrentValue[
-                       EvaluationCell[],
-                       {TaggingRules, "RadioButtonValue"}
-                      ],
-                      Function[
-                       CurrentValue[
-                        EvaluationCell[],
-                        {TaggingRules, "RadioButtonValue"}
-                       ] = #1;
-                       CurrentValue[
-                        EvaluationNotebook[],
-                        {TaggingRules, "Openers", "SpecifyLicense"}
-                       ] = #1 === "Other"
-                      ]
-                     ],
-                     {"CC0-1.0"}
-                    ],
-                    "\" \"",
-                    TemplateBox[
-                     {
-                      "\"Creative Commons Zero v1.0 Universal\"",
-                      "\"\[ThinSpace]\"",
-                      TemplateBox[
-                       {
-                        "\"\[RightGuillemet]\"",
-                        "https://choosealicense.com/licenses/cc0-1.0/"
-                       },
-                       "HyperlinkURL"
-                      ]
-                     },
-                     "RowDefault"
-                    ]
-                   },
-                   "RowDefault"
-                  ],
-                  StripOnInput -> False,
-                  FontSize -> 12
-                 ],
-                 StyleBox[
-                  TemplateBox[
-                   {
-                    RadioButtonBox[
-                     Dynamic[
-                      CurrentValue[
-                       EvaluationCell[],
-                       {TaggingRules, "RadioButtonValue"}
-                      ],
-                      Function[
-                       CurrentValue[
-                        EvaluationCell[],
-                        {TaggingRules, "RadioButtonValue"}
-                       ] = #1;
-                       CurrentValue[
-                        EvaluationNotebook[],
-                        {TaggingRules, "Openers", "SpecifyLicense"}
-                       ] = #1 === "Other"
-                      ]
-                     ],
-                     {"None"}
-                    ],
-                    "\" \"",
-                    TemplateBox[
-                     {
-                      "\"None\"",
-                      "\"A license is not required for personal deployments\""
-                     },
-                     "PrettyTooltipTemplate"
-                    ]
-                   },
-                   "RowDefault"
-                  ],
-                  StripOnInput -> False,
-                  FontSize -> 12
-                 ]
-                },
-                {
-                 StyleBox[
-                  TemplateBox[
-                   {
-                    RadioButtonBox[
-                     Dynamic[
-                      CurrentValue[
-                       EvaluationCell[],
-                       {TaggingRules, "RadioButtonValue"}
-                      ],
-                      Function[
-                       CurrentValue[
-                        EvaluationCell[],
-                        {TaggingRules, "RadioButtonValue"}
-                       ] = #1;
-                       CurrentValue[
-                        EvaluationNotebook[],
-                        {TaggingRules, "Openers", "SpecifyLicense"}
-                       ] = #1 === "Other"
-                      ]
-                     ],
-                     {"Other"}
-                    ],
-                    "\" \"",
-                    "\"Other (Specify Below)\""
-                   },
-                   "RowDefault"
-                  ],
-                  StripOnInput -> False,
-                  FontSize -> 12
-                 ],
-                 "\"\""
-                }
-               },
-               AutoDelete -> False,
-               BaseStyle -> {"ControlStyle"},
-               GridBoxAlignment -> {"Columns" -> {{Left}}},
-               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-               GridBoxSpacings -> {"Columns" -> {{2}}}
-              ],
-              "Grid"
-             ]
-            ],
-            "Output",
-            Editable -> False,
-            Deletable -> False,
-            TaggingRules -> {
-             "CheckboxData" -> "OEM6eJytksFOGzEQhgtJgJQIVUjcragHKnVZqHrqLdmAGokCzaQ99GY2s8TC61nsMbC3XvtMvfVR+iT1brJAK0Xi0Nt4bH//r5l/sB1BB7jUCBvnngvPEWwmc0yvcZa9cO1T5UKnM2bMXdZZnLN11554jdmaa03oLmst2rD9aTwVpypF4xBav7//CA+7H8sCrVbmGtZ//YT9OXPhPsRxOidyKPXi9UFKebysXZwrjqEVYKuEdgeFTOfYaIl3B4cr9OLn6MmaFgVKDC8HD4dV6q8Ti5LVLYqE8pyME9/Qkrg9OjgUX0zoWyf1Cj9vn+MnTQ+jo8rMZpLU1RMnWxN5N6R7dKG3PcW80JIxNKontbuN/hkZ7MP7/kAsiUI5YYiFxRuvLM5ERlYEV46M1GKGhaYyR8OuD3sXFpnLKZFmVTR8aFfMxgXsnfMcrdiHAlOVlWKImu7eQKduR7B1YSnQuYTuckHjUQjVecEqDKsx2tDc1vFMsbwMVedEavcg47oj1Pj0pkomaZ8bl6xHsDM2jLYIfmUFhu7AlOAvHVYJHmEmveY6RRF0EzIslUFbTfDEm7T6EYQ2R6WRuUpD2Uu8tWEIX6X2GJK/c3wbqhqdoNaNbdebyqsrZa5qi/BqImeKhp6ZzOLn3wK7ISIFeTM7vg9OnVt0W4D8XyXboImTtdXo3Uf0GTFeEl03ef4HH/aEYVAOdpbrXe4wQDsgc/z8KPew8d4EHXmb4jSEHTYuZKqrLbTrY++JX/cHjVmHqQ==",
-             "RadioButtonValue" -> "MIT"
-            },
-            CellTags -> {"LicenseID-RadioButtons", "RadioButtonsCell"},
-            CellID -> 723435361
-           ],
-           Cell[
-            "Full License Name or ID",
-            "Text",
-            CellElementSpacings -> {
-             "CellMinHeight" -> 0,
-             "ClosedCellHeight" -> 0,
-             "ClosedGroupTopMargin" -> 0
-            },
-            CellOpen -> Dynamic[
-             CurrentValue[
-              EvaluationNotebook[],
-              {TaggingRules, "Openers", "SpecifyLicense"},
-              False
-             ]
-            ],
-            TaggingRules -> { },
-            CellLabelPositioning -> Above,
-            CellLabelMargins -> {{66, 10}, {0, 0}},
-            ShowAutoSpellCheck -> False,
-            CellLabel -> "License",
-            CellID -> 605170314
-           ]
-          },
-          Open
-         ]
-        ],
-        Cell[
-         CellGroupData[
-          {
-           Cell[
-            TextData[
-             {
               "Keywords",
               Cell[
                BoxData[
@@ -17656,7 +17325,7 @@ Notebook[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "List relevant terms (e.g. functional areas, algorithm names, related concepts) that should be used to include the function in search results.",
+                        "List relevant terms (e.g. functional areas, algorithm names, related concepts) that should be used to include the paclet in search results.",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -17693,7 +17362,7 @@ Notebook[
             TaggingRules -> {"TemplateGroupName" -> "Keywords"},
             DefaultNewCellStyle -> "Item",
             CellTags -> {"Keywords", "TemplateCellGroup"},
-            CellID -> 854882061
+            CellID -> 913860664
            ],
            Cell[
             "code equivalence",
@@ -18252,7 +17921,7 @@ Notebook[
              "CheckboxData" -> "OEM6eJxVUMtKxEAQBHE1EfHuRXLylo8IcYWFxV22/YHJbBuHnUfox2H+3g6i6KmLKrqquoemhw1IjQg3B5VFpYfb8RP9Bc8fV3y9DyzwOBbCbu/yrG7G7rkDIfWihPAENU0lBm/smyYkQ2NJ5uMklGzmO8HE3A4qJRnne2iOVBYkqXA3OsG5UEC22MOyrvBP7DpPGpGb7TmImwxtXl1k/BXaF4z4V1m7l6gp/w982GVBWgi/S0E75Ao6Mdqx9yfkouTxvS72g6PzZvkFyEVgxA=="
             },
             CellTags -> {"Categories", "Categories-Checkboxes", "CheckboxCell"},
-            CellID -> 559702514
+            CellID -> 224871752
            ]
           },
           Open
@@ -18276,7 +17945,7 @@ Notebook[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "List the names of published resource objects from any Wolfram repository that are related to this function.",
+                        "List the names of published resource objects from any Wolfram repository that are related to this paclet.",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -18313,7 +17982,7 @@ Notebook[
             TaggingRules -> {"TemplateGroupName" -> "Related Resource Objects"},
             DefaultNewCellStyle -> "Item",
             CellTags -> {"Related Resource Objects", "TemplateCellGroup"},
-            CellID -> 869341850
+            CellID -> 280622473
            ],
            Cell[
             "SameExpressionShapeQ",
@@ -18496,7 +18165,7 @@ Notebook[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "Give a bibliographic-style citation for the original source of the function and/or its components (e.g. a published paper, algorithm, or code repository).",
+                        "Give a bibliographic-style citation for the original source of the paclet and/or its components (e.g. a published paper, algorithm, or code repository).",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -18533,7 +18202,7 @@ Notebook[
             TaggingRules -> {"TemplateGroupName" -> "Source/Reference Citation"},
             DefaultNewCellStyle -> "Text",
             CellTags -> {"Source/Reference Citation", "TemplateCellGroup"},
-            CellID -> 788767010
+            CellID -> 53755805
            ],
            Cell[
             "Source, reference or citation information",
@@ -18586,7 +18255,7 @@ Notebook[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "List additional URLs or hyperlinks for external information related to the function.",
+                        "List additional URLs or hyperlinks for external information related to the paclet.",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -18623,7 +18292,7 @@ Notebook[
             TaggingRules -> {"TemplateGroupName" -> "Links"},
             DefaultNewCellStyle -> "Item",
             CellTags -> {"Links", "TemplateCellGroup"},
-            CellID -> 341958311
+            CellID -> 179193585
            ],
            Cell[
             TextData[
@@ -18714,7 +18383,7 @@ Notebook[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "Specify any known compatibilities for your resource to ensure it is discoverable on the correct platforms.",
+                        "Specify any known compatibilities for your paclet to ensure it is discoverable on the correct platforms.",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -18750,7 +18419,7 @@ Notebook[
             Deletable -> False,
             TaggingRules -> {"TemplateGroupName" -> "Compatibility"},
             CellTags -> {"Compatibility", "TemplateCellGroup"},
-            CellID -> 787186911
+            CellID -> 31633819
            ],
            Cell[
             CellGroupData[
@@ -18847,7 +18516,7 @@ Notebook[
                         BoxData[
                          FrameBox[
                           Cell[
-                           "Select all operating systems where your resource is expected to function properly.",
+                           "Select all operating systems where your paclet is expected to function properly.",
                            "MoreInfoText"
                           ],
                           Background -> GrayLevel[0.95],
@@ -18890,7 +18559,7 @@ Notebook[
                 "Operating System",
                 "TemplateCellGroup"
                },
-               CellID -> 641233002
+               CellID -> 54346056
               ],
               Cell[
                BoxData[
@@ -18912,7 +18581,7 @@ Notebook[
                     ],
                     StyleBox[
                      TemplateBox[
-                      {CheckboxBox["Mac", {False, "Mac"}], "\" \"", "\"Mac\""},
+                      {CheckboxBox[False, {False, "Mac"}], "\" \"", "\"Mac\""},
                       "RowDefault"
                      ],
                      StripOnInput -> False,
@@ -18941,14 +18610,14 @@ Notebook[
                Editable -> False,
                Deletable -> False,
                TaggingRules -> {
-                "CheckboxData" -> "OEM6eJxNkOGKwjAMx8HNc4LcE9wr7CFkeiB4TIzi526LWq5rS5Ny17c3G2z4JST5//NLm21RwhI4GYSPOrKPXMKqemL7i909o/yoiWF107ZzfwTZj2ohv1r9L1MHxp4mz31B+TkKZfZOyayMw0OYOyNp4hWn4DwGTvBVud4r1o02mlMtTSnsAxLJRnle7Vk7O4LfV1Ox7zSrRrLltzKEs7DeocF3ZfijM7G3VGUlfB4sY/BBLAMY1lubIDaEcovNGcnF0OIleTnRSbVCegEutWkg"
+                "CheckboxData" -> "OEM6eJxNkOGKwjAMx8FNnSA+wb3CHkKmB4IyMXfcfe22eBa7tjQpZ9/eONjwS0jy/+eXNtuihDlwMgiLOrKPXMKyumF7x+6aUX7UxLD80bZz/wSLk2pr+IX82+qHDB4Yexpt1xnllyigyT4mk5LJ/BCmzkAaecU5OI+BE3xUrveKdaON5lRLUwr7B4lko7yw9qydHcDvq6nYd5pVI9n8UxnCSVjt0OC78vqmM7G3VGUlbA6WMfgglhcYVlubIDaEco71BcnF0OJX8nKls2qF9ARhG2od"
                },
                CellTags -> {
                 "CheckboxCell",
                 "CompatibilityOperatingSystem",
                 "CompatibilityOperatingSystem-Checkboxes"
                },
-               CellID -> 309805540
+               CellID -> 876725607
               ]
              },
              Closed
@@ -18984,7 +18653,7 @@ Notebook[
                                ]
                               ]
                              ],
-                             " in order to use your resource."
+                             " in order to use your paclet."
                             }
                            ],
                            "MoreInfoText"
@@ -19029,7 +18698,7 @@ Notebook[
                 "Required Features",
                 "TemplateCellGroup"
                },
-               CellID -> 154956349
+               CellID -> 666988317
               ],
               Cell[
                BoxData[
@@ -19095,7 +18764,7 @@ Notebook[
                 "CompatibilityFeatures",
                 "CompatibilityFeatures-Checkboxes"
                },
-               CellID -> 337217673
+               CellID -> 292747138
               ]
              },
              Closed
@@ -19121,7 +18790,7 @@ Notebook[
                           Cell[
                            TextData[
                             {
-                             "Select all evaluation environments where your resource is expected to be compatible. See ",
+                             "Select all evaluation environments where your paclet is expected to be compatible. See ",
                              Cell[
                               BoxData[
                                StyleBox[
@@ -19197,7 +18866,7 @@ Notebook[
                 "Environments",
                 "TemplateCellGroup"
                },
-               CellID -> 929178938
+               CellID -> 701114648
               ],
               Cell[
                BoxData[
@@ -19341,7 +19010,7 @@ Notebook[
                 "CompatibilityEvaluationEnvironment",
                 "CompatibilityEvaluationEnvironment-Checkboxes"
                },
-               CellID -> 355438575
+               CellID -> 74280888
               ]
              },
              Closed
@@ -19365,7 +19034,7 @@ Notebook[
                         BoxData[
                          FrameBox[
                           Cell[
-                           "Specify whether your resource is expected to work in the public cloud.",
+                           "Specify whether your paclet is expected to work in the public cloud.",
                            "MoreInfoText"
                           ],
                           Background -> GrayLevel[0.95],
@@ -19408,7 +19077,7 @@ Notebook[
                 "CompatibilityCloudSupport",
                 "TemplateCellGroup"
                },
-               CellID -> 584200270
+               CellID -> 677592290
               ],
               Cell[
                BoxData[
@@ -19450,7 +19119,7 @@ Notebook[
                 "CompatibilityCloudSupport",
                 "CompatibilityCloudSupport-Checkboxes"
                },
-               CellID -> 638468747
+               CellID -> 367886396
               ]
              },
              Closed
@@ -19482,7 +19151,7 @@ Notebook[
                   BoxData[
                    FrameBox[
                     Cell[
-                     "This section, when used, will appear near the bottom of the published resource. Content displayed in this section can include background, possible improvements, additional information and/or implementation details that are otherwise beyond the scope of the function documentation.",
+                     "This section, when used, will appear near the bottom of the published resource. Content displayed in this section can include background, possible improvements, additional information and/or implementation details that are otherwise beyond the scope of the paclet documentation.",
                      "MoreInfoText"
                     ],
                     Background -> GrayLevel[0.95],
@@ -19519,7 +19188,7 @@ Notebook[
          TaggingRules -> {"TemplateGroupName" -> "Author Notes"},
          DefaultNewCellStyle -> "Text",
          CellTags -> {"Author Notes", "TemplateCellGroup"},
-         CellID -> 897529167
+         CellID -> 951557313
         ],
         Cell[
          "Additional information about limitations, issues, etc.",
@@ -19606,14 +19275,14 @@ Notebook[
   },
   "SubmissionReviewData" -> {"Review" -> False},
   "ToolsOpen" -> False,
-  "UpdatedTimestamp" -> 3844265376.3844431,
-  "TemplateVersion" -> "1.5.47",
-  "Openers" -> {"SpecifyLicense" -> False},
+  "UpdatedTimestamp" -> 3846018682.8162366,
+  "TemplateVersion" -> "1.5.53",
   "StatusMessage" -> "",
-  "PacletBuildData" -> {"FileHashes" -> {}}
+  "PacletBuildData" -> {"FileHashes" -> {}},
+  "AutoUpdate" -> True
  },
  CreateCellID -> True,
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 23, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (November 11, 2021)",
  StyleDefinitions -> Notebook[
   {
    Cell[StyleData[StyleDefinitions -> "Default.nb"]],
@@ -22712,7 +22381,7 @@ Notebook[
                     ],
                     "Grid"
                    ],
-                   "\"Submit changes to update your resource submission\""
+                   "\"Submit changes to update your paclet submission\""
                   },
                   "PrettyTooltipTemplate"
                  ],
@@ -22731,7 +22400,7 @@ Notebook[
                    DefinitionNotebookClient`ButtonCodeID[3196298050911436087]
                   ]
                  ],
-                 "\"Submit changes to update your resource submission\"",
+                 "\"Submit changes to update your paclet submission\"",
                  True
                 },
                 "OrangeButtonTemplate"
@@ -28986,16 +28655,49 @@ Notebook[
          Evaluator -> Automatic,
          Method -> "Queued",
          ButtonFunction :> With[
-          {
-           RSNB`file = SystemDialogInput["FileOpen"],
-           RSNB`cell = ParentCell[EvaluationCell[]]
-          },
-          If[
-           RSNB`file =!= $Canceled,
-           SelectionMove[RSNB`cell, All, CellContents];
-           NotebookWrite[
-            Notebooks[RSNB`cell],
-            RowBox[{"File", "[", ToBoxes[RSNB`file], "]"}]
+          {RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath},
+          Quiet[
+           Block[
+            {
+             $ContextPath = RSNB`$cp$,
+             ResourceSystemClient`$AsyncronousResourceInformationUpdates = False,
+             DefinitionNotebookClient`$ButtonCodeID = None
+            },
+            Internal`WithLocalSettings[
+             DefinitionNotebookClient`$ButtonsDisabled = True;
+             Once[
+              ReleaseHold[
+               CurrentValue[RSNB`nb$, {TaggingRules, "CompatibilityTest"}]
+              ],
+              "KernelSession"
+             ];
+             Needs["DefinitionNotebookClient`"],
+             Annotation[
+              DefinitionNotebookClient`$ButtonCodeID = 1053094956087266899;
+              DefinitionNotebookClient`CheckForUpdates[
+               RSNB`nb$,
+               ReleaseHold[
+                DefinitionNotebookClient`$ButtonCode = HoldForm[
+                 If[
+                  $VersionNumber >= 13.,
+                  DefinitionNotebookClient`LocalFileInputDialog[
+                   "Paclet",
+                   ParentCell[EvaluationCell[]],
+                   "Type" -> "FileOpen"
+                  ],
+                  MessageDialog[
+                   "This feature requires Wolfram Language version 13 or later."
+                  ]
+                 ]
+                ]
+               ]
+              ],
+              DefinitionNotebookClient`ButtonCodeID[1053094956087266899]
+             ],
+             DefinitionNotebookClient`$ButtonsDisabled = False;
+             Null
+            ];
+            Null
            ]
           ]
          ],
@@ -29027,16 +28729,49 @@ Notebook[
          Evaluator -> Automatic,
          Method -> "Queued",
          ButtonFunction :> With[
-          {
-           RSNB`file = SystemDialogInput["Directory"],
-           RSNB`cell = ParentCell[EvaluationCell[]]
-          },
-          If[
-           RSNB`file =!= $Canceled,
-           SelectionMove[RSNB`cell, All, CellContents];
-           NotebookWrite[
-            Notebooks[RSNB`cell],
-            RowBox[{"File", "[", ToBoxes[RSNB`file], "]"}]
+          {RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath},
+          Quiet[
+           Block[
+            {
+             $ContextPath = RSNB`$cp$,
+             ResourceSystemClient`$AsyncronousResourceInformationUpdates = False,
+             DefinitionNotebookClient`$ButtonCodeID = None
+            },
+            Internal`WithLocalSettings[
+             DefinitionNotebookClient`$ButtonsDisabled = True;
+             Once[
+              ReleaseHold[
+               CurrentValue[RSNB`nb$, {TaggingRules, "CompatibilityTest"}]
+              ],
+              "KernelSession"
+             ];
+             Needs["DefinitionNotebookClient`"],
+             Annotation[
+              DefinitionNotebookClient`$ButtonCodeID = 4898876371082581810;
+              DefinitionNotebookClient`CheckForUpdates[
+               RSNB`nb$,
+               ReleaseHold[
+                DefinitionNotebookClient`$ButtonCode = HoldForm[
+                 If[
+                  $VersionNumber >= 13.,
+                  DefinitionNotebookClient`LocalFileInputDialog[
+                   "Paclet",
+                   ParentCell[EvaluationCell[]],
+                   "Type" -> "Directory"
+                  ],
+                  MessageDialog[
+                   "This feature requires Wolfram Language version 13 or later."
+                  ]
+                 ]
+                ]
+               ]
+              ],
+              DefinitionNotebookClient`ButtonCodeID[4898876371082581810]
+             ],
+             DefinitionNotebookClient`$ButtonsDisabled = False;
+             Null
+            ];
+            Null
            ]
           ]
          ],
@@ -29112,7 +28847,7 @@ Notebook[
    ]
   },
   Visible -> False,
-  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 23, 2021)",
+  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (November 11, 2021)",
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"
  ],
  ExpressionUUID -> "e8a467c0-30fe-49eb-9c07-86a699a75dc9"

@@ -36,7 +36,7 @@ Notebook[
       CellID -> 686433507
      ],
      Cell[
-      "Wolfram__CodeEquivalenceUtilities",
+      "Wolfram/CodeEquivalenceUtilities",
       "Categorization",
       CellLabel -> "Paclet Name",
       CellID -> 605800465
@@ -48,7 +48,7 @@ Notebook[
       CellID -> 468444828
      ],
      Cell[
-      "Wolfram__CodeEquivalenceUtilities/ref/FromCanonicalForm",
+      "Wolfram/CodeEquivalenceUtilities/ref/FromCanonicalForm",
       "Categorization",
       CellLabel -> "URI",
       CellID -> 592332030
@@ -766,7 +766,7 @@ Notebook[
   "NotebookUUID" -> "493a1eb9-f143-e679-5438-8c9fc3f5a4e0"
  },
  CellContext -> "Global`",
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (October 17, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (November 11, 2021)",
  StyleDefinitions -> FrontEnd`FileName[
   {"Wolfram"},
   "FunctionPageStylesExt.nb",
