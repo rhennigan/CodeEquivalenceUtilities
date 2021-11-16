@@ -4,7 +4,7 @@
 Needs[ "Wolfram`CodeEquivalenceUtilities`" ];
 
 $testDataDirectory =
-    PacletObject[ "Wolfram__CodeEquivalenceUtilities" ][
+    PacletObject[ "Wolfram/CodeEquivalenceUtilities" ][
         "AssetLocation",
         "TestData"
     ];

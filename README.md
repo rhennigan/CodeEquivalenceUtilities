@@ -47,13 +47,13 @@ PacletInstall["/full/path/to/CodeEquivalenceUtilities.paclet"]
 This will permanently install the CodeEquivalenceUtilities paclet. The Wolfram Language will always use the latest installed version of CodeEquivalenceUtilities. Installed versions can be enumerated using the command:
 
 ```Mathematica
-PacletFind["Wolfram__CodeEquivalenceUtilities"]
+PacletFind["Wolfram/CodeEquivalenceUtilities"]
 ```
 
 And all versions can be uninstalled using the command:
 
 ```Mathematica
-PacletUninstall["Wolfram__CodeEquivalenceUtilities"]
+PacletUninstall["Wolfram/CodeEquivalenceUtilities"]
 ```
 
 ## Paclet Guide
