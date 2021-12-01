@@ -19131,13 +19131,14 @@ Notebook[
   "TemplateVersion" -> "1.5.53",
   "StatusMessage" -> "",
   "PacletBuildData" -> {
-   "FileHashes" -> ByteArray["OEM6eJyVlm9sE2Ucx9kfF4O6ZWz8SVidm7LV6rVItwhOxaXrmtkWOp6bneIG1+tz1weu99S757ZuGQ4ibokv8AUz6DDGKCq+0ESjbkGNf/gzY0KMwosFMBDMmJioaKIJCUOvW9enXNtb+6rJt/f9fJ/7Pb/fc09rAwM2tmFei0KZcARh2eGWRQmpEYdHQ2GoOlw4DN3PaaiPk6DMwy6CJEQQVO1yqLWYAWUAawoPfZ69hwKhc6eGdIXlFBESX8g3Bve9NEUYUJ89oEMOw7hjx3o7L6hpKLV0C5Yh5Vhtrlc98RuAAQ1mHBWKib/UHU4T1tCja8d/+O/9xxlgzYdlF6FsQqv0X9p3JD67iQGbs9O2QQEqiaoFOFEvJRiIhrBkKCnpNFTSZkUX2OA7PTTn+8fCKzYL73kZ4CooJ23bWKiSNo5whqzGhpZy9FHTMM36cuLfrc5LxfcxoLWgrHYFR12cjGXEc1I7VqKGpMMxbs2vd4w4adKTsy1/nZqd8hSa5Od2Q7OkqrlRefKeyQGaNPhux8D26ZsPF7pPLDbLcRXV1cSvNO6hObeVHbONHZ+zMsCWPQdATuEjCz3WvND50KS/KrTnj6FHhLpCeGaTdHX1WWwZ6l3BgPvz5KnIBLf36bG6pimxhAFMPjgBQSms2vslE2T88JXru6YraxnQlA8SJX79kHDhRGubkoOdRcKeQUVjgD0fcuo02WDC/PiTq+fFQNSeJ7NfQQTaJczvNmGirq313Ze79FlvzMGMQUlKHp1NS2z4GbZ7w8WSFywMeGBJWOqNQybAiZOWqW7/UUvuLc8ELnGIFhV/M7Ly9HBnzuFkNYIVxOnz2BoOI1ncAvtZhZNVQR/J+Se3aVLG52jurbIju9682ExzHhydLOmZuKYfC6u8UJGh5HBxfASGn+IkDRra0udtqfm86xCppnaq3Juyp50N+uIIUVBIIxmsJ2bK+RcvKwHKokptdpYLR6NYNnCmj7NYO+OooRyq2LJz3PEYVNB8SaWFKt2K/ODs6eabjp0RiqRKXXakR+FiEcQbSd+1932Fftq/kpKocnd2UrYF/VJRMdq4PKhQDFVyYACPY9CAechZ5kfjzl6KoUqO7QNE0XiiKZxkYI2Q3yPXPnw7rUZUqV9k5boj3YqKRP88N3N0cD1FUaUqiWqDIU0U9TY3eE98VvpF7UzPRuqlytqk163na/Mj4cIyUbDxVYa8nwZP3PlaX9p9KKVUJxnt81NFMhcwU/3yHxeWHbRQM1XKk2YkI2KwfVu1vXbnstuXUxtVKpI2diCWUSvPM6sO7D9/ElAfVRZrlavOz256Y3jN6z+vo16q3BXgeAmSDlnAxupcZ8Z/6/2RTatOSqlccPk5GQn6Tcr8U+P9xy4Eb3zt10+axLVLdSQuXg53R9DXlvGZ8h0sXff3K9aq1dS+qPwPTlU8Iw=="],
-   "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram_CodeEquivalenceUtilities-1.3.0.paclet"
+   "FileHashes" -> ByteArray["OEM6eJyVlm1sU1UYxycu2yTAUjdaEoFlI1tH5+3FvcQRs2jTtc3SFjrO7YZOXm5vT9vDbs+t9567djqDRpzfRpQgryMh8kE/QAjZMMsQfMFoYhYTIEDYiIKpfvEt+sFIzGK7dTvltr1rPzX5t//f//Q5z3POsTUxoLNbEtQoxIQnSMKsA4dFpERYl4qCUGHtUhA6XlPREC9CLEA/QSIiCCpWHLCtYkAFkFRZgJ7xO50XfHuefyqlcLwchsQzdLKvf3Je6WVAQ/6AHhyECXbfNqsQUrJQSvkOCUPKabbYj7sS/wEGNOlxFBhOf6Xsa9Nh8d8NjG094MQMaC6GZQ1DrEMzeH98+1zil+0MeDE/bRcMQTldNR8fTpUSDEcDkqgpKenVVHKsy9Qx64UtNKeqdeKWjXyTWrW9pJysbeOgQrp5wmuyAlPjE5++cXQbzTqVlM+u6Vk7wABbSVlOWYraeSxhJPCiU5KjmqTPRhqvXL3vBjTJMvdromvOOFhqkpcfhHpJvumpMs70906a9M/3Tze9+cBUX+o+cZJeTmXFBsuHsWDWPp05P38vGsIsAyz5cwDkZSGy2GMdi50PdfpL3NL3SJo1mEvh6U3SB+T2y+dmXM8yYGuRPAXp4Kb9LXHAvd/OAKYYXAhBMahY46IOMnHq538P3DXUMaC9GCRKf3oh4YPp1tYlT3ZV1pwYv21kgLUY8vJp0qrD/KTy2sjhmSmhSGZcRgRaRUkY1GEi/86G3Q/9bgaYCzBjUBQzR2f7Cht+k9vd+sOT72xiQMuKsOV/HNABXoxeGt1sOiYW3vJc4AqH6BOrvhhdP3Owt+BwciqRZMSn5tEWDCIc3gHjnMxjJZQayYVf7lLFnOvozmWf2Tz9eS3NeVTfefat5F7EAKMbyhiKrJ0XIjDYx4sq1LSlx/3Cxmn/MZJlp8qWZXvW2ZBaHCEyCqgkh/VScp3w7kPZR1lUqcvPskvRqIQ1nLtfcZJ6k91IOVSx5Oc4EjEoo4WSiotVehx5/tZMxzy7P0KRVKnPj3TJfCyCBC3pW+fQNXTj0HpKosrm/KR8C/qpuvo98+p+mWKoUgADBCkGNZjn2iq86GTbXoqhSoHtA0RWBaLKvKhhjZLfIn9e+CirRlRpWGIVeiM9jopE/7iX/Pj1rNuWKjUZVDcMqOFwqs013uuXy6/UJfd0Ui9Vnsl4Hal8dWEk7BImsqT9KyPuyf7ra04MUQZVajMM58JUkdwFJGsP/z5XdmQTNVNlXcaMMCIa25c1A3X7y6pWUxtVqjM2bjiWUyvXK8axQ7NfZ70XqLJUq0J1fnX7mYMbTt9vpF6qrPXxgghJDw5J2mEYNj24wZ62Zg3DsmJYdHl5jEKpl5T+VYPjVVcTE4ZU5xvTzy6FTT+8WEdPv6c755ryHClv/Otoc42J2peU/wHEgzm0"],
+   "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram__CodeEquivalenceUtilities-1.3.1"
   },
-  "AutoUpdate" -> True
+  "AutoUpdate" -> True,
+  "TryRealOnly" -> False
  },
  CreateCellID -> True,
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (November 30, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (December 1, 2021)",
  StyleDefinitions -> Notebook[
   {
    Cell[StyleData[StyleDefinitions -> "Default.nb"]],
@@ -28702,7 +28703,7 @@ Notebook[
    ]
   },
   Visible -> False,
-  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (November 30, 2021)",
+  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (December 1, 2021)",
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"
  ],
  ExpressionUUID -> "e8a467c0-30fe-49eb-9c07-86a699a75dc9"
