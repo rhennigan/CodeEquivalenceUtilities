@@ -121,7 +121,7 @@ Notebook[
             ButtonBox[
              "FromCanonicalForm",
              BaseStyle -> "Link",
-             ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/FromCanonicalForm"
+             ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/FromCanonicalForm"
             ],
             "[",
             StyleBox["expr", "TI"],
@@ -150,7 +150,7 @@ Notebook[
           ButtonBox[
            "ToCanonicalForm",
            BaseStyle -> "Link",
-           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/ToCanonicalForm"
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/ToCanonicalForm"
           ]
          ],
          "InlineFormula"
@@ -161,7 +161,7 @@ Notebook[
           ButtonBox[
            "MakeCanonicalForm",
            BaseStyle -> "Link",
-           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/MakeCanonicalForm"
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/MakeCanonicalForm"
           ]
          ],
          "InlineFormula"
@@ -223,7 +223,7 @@ Notebook[
           ButtonBox[
            "ToCanonicalForm",
            BaseStyle -> "Link",
-           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/ToCanonicalForm"
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/ToCanonicalForm"
           ]
          ],
          "InlineFormula"
@@ -234,7 +234,7 @@ Notebook[
           ButtonBox[
            "MakeCanonicalForm",
            BaseStyle -> "Link",
-           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/MakeCanonicalForm"
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/MakeCanonicalForm"
           ]
          ],
          "InlineFormula"
@@ -245,7 +245,7 @@ Notebook[
           ButtonBox[
            "CodeEquivalentQ",
            BaseStyle -> "Link",
-           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/CodeEquivalentQ"
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/CodeEquivalentQ"
           ]
          ],
          "InlineFormula"
@@ -256,7 +256,7 @@ Notebook[
           ButtonBox[
            "EquivalenceTestData",
            BaseStyle -> "Link",
-           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/EquivalenceTestData"
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/EquivalenceTestData"
           ]
          ],
          "InlineFormula"
@@ -319,7 +319,7 @@ Notebook[
           ButtonBox[
            "MakeCanonicalForm",
            BaseStyle -> "Link",
-           ButtonData -> "paclet:Wolfram__Code_Equivalence_Utilities/ref/MakeCanonicalForm"
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/MakeCanonicalForm"
           ]
          ],
          "InlineFormula"
