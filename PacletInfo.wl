@@ -8,12 +8,13 @@ PacletObject[ <|
     "PublisherID"      -> "Wolfram",
     "Version"          -> "1.3.3",
     "WolframVersion"   -> "12.2+",
+    "Keywords"         -> { "code transformations", "equivalent input" },
     "Extensions"       -> {
         {
             "Kernel",
             "Root"    -> "Kernel",
             "Symbols" -> {
-                "Wolfram`CodeEquivalenceUtilities`CodeEquivalentQ",
+                (* "Wolfram`CodeEquivalenceUtilities`CodeEquivalentQ", *)
                 "Wolfram`CodeEquivalenceUtilities`EquivalenceTestData",
                 "Wolfram`CodeEquivalenceUtilities`FromCanonicalForm",
                 "Wolfram`CodeEquivalenceUtilities`MakeCanonicalForm",

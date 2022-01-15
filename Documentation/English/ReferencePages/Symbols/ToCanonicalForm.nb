@@ -36,7 +36,7 @@ Notebook[
       CellID -> 686433507
      ],
      Cell[
-      "Wolfram/CodeEquivalenceUtilities",
+      "WrongPacletName",
       "Categorization",
       CellLabel -> "Paclet Name",
       CellID -> 605800465
@@ -1654,7 +1654,7 @@ Notebook[
   "NotebookUUID" -> "4b929d74-162b-5da8-1445-775fdc62943c"
  },
  CellContext -> "Global`",
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (November 11, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
  StyleDefinitions -> FrontEnd`FileName[
   {"Wolfram"},
   "FunctionPageStylesExt.nb",

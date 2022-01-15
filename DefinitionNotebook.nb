@@ -12,7 +12,7 @@ Notebook[
       CellID -> 543342918
      ],
      Cell[
-      "Utilities for testing code equivalence",
+      "Utilities for testing code equivalence.",
       "Text",
       Deletable -> False,
       TaggingRules -> { },
@@ -752,11 +752,11 @@ Notebook[
                         CellID -> 112374766
                        ]
                       },
-                      Closed
+                      Open
                      ]
                     ]
                    },
-                   Closed
+                   Open
                   ]
                  ],
                  Cell[
@@ -875,11 +875,11 @@ Notebook[
                   ]
                  ]
                 },
-                Closed
+                Open
                ]
               ]
              },
-             Closed
+             Open
             ]
            ],
            Cell[
@@ -3728,7 +3728,7 @@ Notebook[
             CellID -> 462042388
            ],
            Cell[
-            "Check if two expressions are equivalent:",
+            "Check if two expressions are equivalent",
             "Text",
             TaggingRules -> { },
             CellID -> 128039117
@@ -3768,6 +3768,37 @@ Notebook[
                TaggingRules -> { },
                CellLabel -> "Out[1]=",
                CellID -> 47767555
+              ]
+             },
+             Open
+            ]
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                {
+                 RowBox[{"1", "+", "1"}],
+                 "\[IndentingNewLine]",
+                 RowBox[{"2", "+", "2"}]
+                }
+               ],
+               "Input",
+               CellLabel -> "In[17]:=",
+               CellID -> 218950119
+              ],
+              Cell[
+               BoxData["2"],
+               "Output",
+               CellLabel -> "Out[17]=",
+               CellID -> 276287180
+              ],
+              Cell[
+               BoxData["4"],
+               "Output",
+               CellLabel -> "Out[18]=",
+               CellID -> 444545838
               ]
              },
              Open
@@ -19139,7 +19170,7 @@ Notebook[
   "TryRealOnly" -> False,
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" -> DateObject[
-   {2021, 12, 16, 13, 46, 58.6105282`9.520550466238598},
+   {2022, 1, 13, 20, 53, 51.3316982`9.462960482263124},
    "Instant",
    "Gregorian",
    -5.
