@@ -1,11 +1,10 @@
 PacletObject[ <|
-    "Name"             -> "Wolfram/CodeEquivalenceUtilities",
+    "Name"             -> "CodeEquivalenceUtilities",
     "Description"      -> "Utilities for testing code equivalence",
     "Creator"          -> "Richard Hennigan <richardh@wolfram.com>",
     "URL"              -> "https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities",
     "SourceControlURL" -> "https://github.com/rhennigan/CodeEquivalenceUtilities",
     "License"          -> "MIT",
-    "PublisherID"      -> "Wolfram",
     "Version"          -> "1.3.3",
     "WolframVersion"   -> "12.2+",
     "Keywords"         -> { "code transformations", "equivalent input" },
