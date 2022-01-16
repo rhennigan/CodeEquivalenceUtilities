@@ -110,7 +110,7 @@ Notebook[
                 {
                  "\"DefinitionNotebook.nb\"",
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\DefinitionNotebook.nb"
+                  FileNameJoin[{NotebookDirectory[], "DefinitionNotebook.nb"}]
                  ]
                 },
                 "FileManagerFileOpenerTemplate"
@@ -125,7 +125,7 @@ Notebook[
                ]
               ],
               File[
-               "H:\\Documents\\CodeEquivalenceUtilities\\DefinitionNotebook.nb"
+               FileNameJoin[{NotebookDirectory[], "DefinitionNotebook.nb"}]
               ],
               BaseStyle -> {"Text"}
              ]
@@ -187,7 +187,7 @@ Notebook[
                     ]
                    ],
                    File[
-                    "H:\\Documents\\CodeEquivalenceUtilities\\Documentation"
+                    FileNameJoin[{NotebookDirectory[], "Documentation"}]
                    ],
                    BaseStyle -> {"Text"}
                   ]
@@ -253,7 +253,7 @@ Notebook[
                        ]
                       ],
                       File[
-                       "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English"
+                       FileNameJoin[{NotebookDirectory[], "Documentation/English"}]
                       ],
                       BaseStyle -> {"Text"}
                      ]
@@ -319,7 +319,7 @@ Notebook[
                           ]
                          ],
                          File[
-                          "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Guides"
+                          FileNameJoin[{NotebookDirectory[], "Documentation/English/Guides"}]
                          ],
                          BaseStyle -> {"Text"}
                         ]
@@ -353,7 +353,7 @@ Notebook[
                          {
                           "\"CodeEquivalenceUtilities.nb\"",
                           File[
-                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Guides\\CodeEquivalenceUtilities.nb"
+                           FileNameJoin[{NotebookDirectory[], "Documentation/English/Guides/CodeEquivalenceUtilities.nb"}]
                           ]
                          },
                          "FileManagerFileOpenerTemplate"
@@ -368,7 +368,7 @@ Notebook[
                         ]
                        ],
                        File[
-                        "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Guides\\CodeEquivalenceUtilities.nb"
+                        FileNameJoin[{NotebookDirectory[], "Documentation/English/Guides/CodeEquivalenceUtilities.nb"}]
                        ],
                        BaseStyle -> {"Text"}
                       ]
@@ -434,7 +434,7 @@ Notebook[
                           ]
                          ],
                          File[
-                          "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages"
+                          FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages"}]
                          ],
                          BaseStyle -> {"Text"}
                         ]
@@ -500,7 +500,7 @@ Notebook[
                              ]
                             ],
                             File[
-                             "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols"
+                             FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols"}]
                             ],
                             BaseStyle -> {"Text"}
                            ]
@@ -534,7 +534,7 @@ Notebook[
                             {
                              "\"CodeEquivalentQ.nb\"",
                              File[
-                              "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\CodeEquivalentQ.nb"
+                              FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/CodeEquivalentQ.nb"}]
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -549,7 +549,7 @@ Notebook[
                            ]
                           ],
                           File[
-                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\CodeEquivalentQ.nb"
+                           FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/CodeEquivalentQ.nb"}]
                           ],
                           BaseStyle -> {"Text"}
                          ]
@@ -579,7 +579,7 @@ Notebook[
                             {
                              "\"EquivalenceTestData.nb\"",
                              File[
-                              "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\EquivalenceTestData.nb"
+                              FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/EquivalenceTestData.nb"}]
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -594,7 +594,7 @@ Notebook[
                            ]
                           ],
                           File[
-                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\EquivalenceTestData.nb"
+                           FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/EquivalenceTestData.nb"}]
                           ],
                           BaseStyle -> {"Text"}
                          ]
@@ -624,7 +624,7 @@ Notebook[
                             {
                              "\"FromCanonicalForm.nb\"",
                              File[
-                              "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\FromCanonicalForm.nb"
+                              FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/FromCanonicalForm.nb"}]
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -639,7 +639,7 @@ Notebook[
                            ]
                           ],
                           File[
-                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\FromCanonicalForm.nb"
+                           FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/FromCanonicalForm.nb"}]
                           ],
                           BaseStyle -> {"Text"}
                          ]
@@ -669,7 +669,7 @@ Notebook[
                             {
                              "\"MakeCanonicalForm.nb\"",
                              File[
-                              "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\MakeCanonicalForm.nb"
+                              FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/MakeCanonicalForm.nb"}]
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -684,7 +684,7 @@ Notebook[
                            ]
                           ],
                           File[
-                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\MakeCanonicalForm.nb"
+                           FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/MakeCanonicalForm.nb"}]
                           ],
                           BaseStyle -> {"Text"}
                          ]
@@ -714,7 +714,7 @@ Notebook[
                             {
                              "\"ToCanonicalForm.nb\"",
                              File[
-                              "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\ToCanonicalForm.nb"
+                              FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/ToCanonicalForm.nb"}]
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -729,7 +729,7 @@ Notebook[
                            ]
                           ],
                           File[
-                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\ReferencePages\\Symbols\\ToCanonicalForm.nb"
+                           FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/ToCanonicalForm.nb"}]
                           ],
                           BaseStyle -> {"Text"}
                          ]
@@ -799,7 +799,7 @@ Notebook[
                           ]
                          ],
                          File[
-                          "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Tutorials"
+                          FileNameJoin[{NotebookDirectory[], "Documentation/English/Tutorials"}]
                          ],
                          BaseStyle -> {"Text"}
                         ]
@@ -833,7 +833,7 @@ Notebook[
                          {
                           "\"AddingNewTransformationRules.nb\"",
                           File[
-                           "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Tutorials\\AddingNewTransformationRules.nb"
+                           FileNameJoin[{NotebookDirectory[], "Documentation/English/Tutorials/AddingNewTransformationRules.nb"}]
                           ]
                          },
                          "FileManagerFileOpenerTemplate"
@@ -848,7 +848,7 @@ Notebook[
                         ]
                        ],
                        File[
-                        "H:\\Documents\\CodeEquivalenceUtilities\\Documentation\\English\\Tutorials\\AddingNewTransformationRules.nb"
+                        FileNameJoin[{NotebookDirectory[], "Documentation/English/Tutorials/AddingNewTransformationRules.nb"}]
                        ],
                        BaseStyle -> {"Text"}
                       ]
@@ -921,7 +921,7 @@ Notebook[
                      ]
                     ]
                    ],
-                   File["H:\\Documents\\CodeEquivalenceUtilities\\Kernel"],
+                   File[FileNameJoin[{NotebookDirectory[], "Kernel"}]],
                    BaseStyle -> {"Text"}
                   ]
                  ]
@@ -952,7 +952,7 @@ Notebook[
                    {
                     "\"CachedValues.wl\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CachedValues.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/CachedValues.wl"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -967,7 +967,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CachedValues.wl"
+                  FileNameJoin[{NotebookDirectory[], "Kernel/CachedValues.wl"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1029,7 +1029,7 @@ Notebook[
                        ]
                       ],
                       File[
-                       "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms"
+                       FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms"}]
                       ],
                       BaseStyle -> {"Text"}
                      ]
@@ -1063,7 +1063,7 @@ Notebook[
                       {
                        "\"Attributes.wl\"",
                        File[
-                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Attributes.wl"
+                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Attributes.wl"}]
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1078,7 +1078,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Attributes.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Attributes.wl"}]
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1108,7 +1108,7 @@ Notebook[
                       {
                        "\"Common.wl\"",
                        File[
-                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Common.wl"
+                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Common.wl"}]
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1123,7 +1123,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Common.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Common.wl"}]
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1153,7 +1153,7 @@ Notebook[
                       {
                        "\"ExperimentalRules.wl\"",
                        File[
-                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\ExperimentalRules.wl"
+                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/ExperimentalRules.wl"}]
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1168,7 +1168,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\ExperimentalRules.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/ExperimentalRules.wl"}]
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1198,7 +1198,7 @@ Notebook[
                       {
                        "\"Graphics.wl\"",
                        File[
-                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Graphics.wl"
+                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Graphics.wl"}]
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1213,7 +1213,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Graphics.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Graphics.wl"}]
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1243,7 +1243,7 @@ Notebook[
                       {
                        "\"Rules.wl\"",
                        File[
-                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Rules.wl"
+                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Rules.wl"}]
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1258,7 +1258,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Rules.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Rules.wl"}]
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1288,7 +1288,7 @@ Notebook[
                       {
                        "\"Scope.wl\"",
                        File[
-                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Scope.wl"
+                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Scope.wl"}]
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1303,7 +1303,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Scope.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Scope.wl"}]
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1333,7 +1333,7 @@ Notebook[
                       {
                        "\"Structural.wl\"",
                        File[
-                        "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Structural.wl"
+                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Structural.wl"}]
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1348,7 +1348,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CanonicalForms\\Structural.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Structural.wl"}]
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -1382,7 +1382,7 @@ Notebook[
                    {
                     "\"CodeEquivalenceUtilities.wl\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CodeEquivalenceUtilities.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/CodeEquivalenceUtilities.wl"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1397,7 +1397,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\CodeEquivalenceUtilities.wl"
+                  FileNameJoin[{NotebookDirectory[], "Kernel/CodeEquivalenceUtilities.wl"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1427,7 +1427,7 @@ Notebook[
                    {
                     "\"Debugging.wl\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Debugging.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/Debugging.wl"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1442,7 +1442,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Debugging.wl"
+                  FileNameJoin[{NotebookDirectory[], "Kernel/Debugging.wl"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1472,7 +1472,7 @@ Notebook[
                    {
                     "\"EvaluationControl.wl\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\EvaluationControl.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/EvaluationControl.wl"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1487,7 +1487,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\EvaluationControl.wl"
+                  FileNameJoin[{NotebookDirectory[], "Kernel/EvaluationControl.wl"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1517,7 +1517,7 @@ Notebook[
                    {
                     "\"Formatting.wl\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Formatting.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/Formatting.wl"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1532,7 +1532,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Formatting.wl"
+                  FileNameJoin[{NotebookDirectory[], "Kernel/Formatting.wl"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1562,7 +1562,7 @@ Notebook[
                    {
                     "\"init.wl\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\init.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/init.wl"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1577,7 +1577,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\init.wl"
+                  FileNameJoin[{NotebookDirectory[], "Kernel/init.wl"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1607,7 +1607,7 @@ Notebook[
                    {
                     "\"Types.wl\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Types.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/Types.wl"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1622,7 +1622,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Types.wl"
+                  FileNameJoin[{NotebookDirectory[], "Kernel/Types.wl"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1652,7 +1652,7 @@ Notebook[
                    {
                     "\"Utilities.wl\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Utilities.wl"
+                     FileNameJoin[{NotebookDirectory[], "Kernel/Utilities.wl"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1667,7 +1667,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Kernel\\Utilities.wl"
+                  FileNameJoin[{NotebookDirectory[], "Kernel/Utilities.wl"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1700,7 +1700,7 @@ Notebook[
                TemplateBox[
                 {
                  "\"LICENSE\"",
-                 File["H:\\Documents\\CodeEquivalenceUtilities\\LICENSE"]
+                 File[FileNameJoin[{NotebookDirectory[], "LICENSE"}]]
                 },
                 "FileManagerFileOpenerTemplate"
                ],
@@ -1713,7 +1713,7 @@ Notebook[
                 ]
                ]
               ],
-              File["H:\\Documents\\CodeEquivalenceUtilities\\LICENSE"],
+              File[FileNameJoin[{NotebookDirectory[], "LICENSE"}]],
               BaseStyle -> {"Text"}
              ]
             ],
@@ -1742,7 +1742,7 @@ Notebook[
                 {
                  "\"PacletInfo.wl\"",
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\PacletInfo.wl"
+                  FileNameJoin[{NotebookDirectory[], "PacletInfo.wl"}]
                  ]
                 },
                 "FileManagerFileOpenerTemplate"
@@ -1757,7 +1757,7 @@ Notebook[
                ]
               ],
               File[
-               "H:\\Documents\\CodeEquivalenceUtilities\\PacletInfo.wl"
+               FileNameJoin[{NotebookDirectory[], "PacletInfo.wl"}]
               ],
               BaseStyle -> {"Text"}
              ]
@@ -1788,7 +1788,7 @@ Notebook[
                TemplateBox[
                 {
                  "\"README.md\"",
-                 File["H:\\Documents\\CodeEquivalenceUtilities\\README.md"]
+                 File[FileNameJoin[{NotebookDirectory[], "README.md"}]]
                 },
                 "FileManagerFileOpenerTemplate"
                ],
@@ -1801,7 +1801,7 @@ Notebook[
                 ]
                ]
               ],
-              File["H:\\Documents\\CodeEquivalenceUtilities\\README.md"],
+              File[FileNameJoin[{NotebookDirectory[], "README.md"}]],
               BaseStyle -> {"Text"}
              ]
             ],
@@ -1861,7 +1861,7 @@ Notebook[
                      ]
                     ]
                    ],
-                   File["H:\\Documents\\CodeEquivalenceUtilities\\Scripts"],
+                   File[FileNameJoin[{NotebookDirectory[], "Scripts"}]],
                    BaseStyle -> {"Text"}
                   ]
                  ]
@@ -1894,7 +1894,7 @@ Notebook[
                    {
                     "\"FormatNotebooks.wls\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Scripts\\FormatNotebooks.wls"
+                     FileNameJoin[{NotebookDirectory[], "Scripts/FormatNotebooks.wls"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1909,7 +1909,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Scripts\\FormatNotebooks.wls"
+                  FileNameJoin[{NotebookDirectory[], "Scripts/FormatNotebooks.wls"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -1974,7 +1974,7 @@ Notebook[
                      ]
                     ]
                    ],
-                   File["H:\\Documents\\CodeEquivalenceUtilities\\Tests"],
+                   File[FileNameJoin[{NotebookDirectory[], "Tests"}]],
                    BaseStyle -> {"Text"}
                   ]
                  ]
@@ -2007,7 +2007,7 @@ Notebook[
                    {
                     "\"Attributes.wlt\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Attributes.wlt"
+                     FileNameJoin[{NotebookDirectory[], "Tests/Attributes.wlt"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -2022,7 +2022,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Attributes.wlt"
+                  FileNameJoin[{NotebookDirectory[], "Tests/Attributes.wlt"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -2052,7 +2052,7 @@ Notebook[
                    {
                     "\"Common.wlt\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Common.wlt"
+                     FileNameJoin[{NotebookDirectory[], "Tests/Common.wlt"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -2067,7 +2067,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Common.wlt"
+                  FileNameJoin[{NotebookDirectory[], "Tests/Common.wlt"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -2129,7 +2129,7 @@ Notebook[
                        ]
                       ],
                       File[
-                       "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Data"
+                       FileNameJoin[{NotebookDirectory[], "Tests/Data"}]
                       ],
                       BaseStyle -> {"Text"}
                      ]
@@ -2163,7 +2163,7 @@ Notebook[
                       {
                        "\"EIWLData.wl\"",
                        File[
-                        "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Data\\EIWLData.wl"
+                        FileNameJoin[{NotebookDirectory[], "Tests/Data/EIWLData.wl"}]
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -2178,7 +2178,7 @@ Notebook[
                      ]
                     ],
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Data\\EIWLData.wl"
+                     FileNameJoin[{NotebookDirectory[], "Tests/Data/EIWLData.wl"}]
                     ],
                     BaseStyle -> {"Text"}
                    ]
@@ -2212,7 +2212,7 @@ Notebook[
                    {
                     "\"EIWL.wlt\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\EIWL.wlt"
+                     FileNameJoin[{NotebookDirectory[], "Tests/EIWL.wlt"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -2227,7 +2227,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\EIWL.wlt"
+                  FileNameJoin[{NotebookDirectory[], "Tests/EIWL.wlt"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -2257,7 +2257,7 @@ Notebook[
                    {
                     "\"EvaluationControl.wlt\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\EvaluationControl.wlt"
+                     FileNameJoin[{NotebookDirectory[], "Tests/EvaluationControl.wlt"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -2272,7 +2272,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\EvaluationControl.wlt"
+                  FileNameJoin[{NotebookDirectory[], "Tests/EvaluationControl.wlt"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -2302,7 +2302,7 @@ Notebook[
                    {
                     "\"Rules.wlt\"",
                     File[
-                     "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Rules.wlt"
+                     FileNameJoin[{NotebookDirectory[], "Tests/Rules.wlt"}]
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -2317,7 +2317,7 @@ Notebook[
                   ]
                  ],
                  File[
-                  "H:\\Documents\\CodeEquivalenceUtilities\\Tests\\Rules.wlt"
+                  FileNameJoin[{NotebookDirectory[], "Tests/Rules.wlt"}]
                  ],
                  BaseStyle -> {"Text"}
                 ]
@@ -3881,7 +3881,7 @@ Notebook[
                              "\"RandomValue\"",
                              TooltipStyle -> "TextStyling"
                             ],
-                            Annotation[#1, "RandomValue", "Tooltip"] & 
+                            Annotation[#1, "RandomValue", "Tooltip"] &
                            ],
                            Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                           ],
@@ -3933,7 +3933,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 & 
+                                  #1 &
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -3993,7 +3993,7 @@ Notebook[
                                ],
                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                               ],
-                              #1 & 
+                              #1 &
                              ],
                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4084,7 +4084,7 @@ Notebook[
                              "\"RandomValue\"",
                              TooltipStyle -> "TextStyling"
                             ],
-                            Annotation[#1, "RandomValue", "Tooltip"] & 
+                            Annotation[#1, "RandomValue", "Tooltip"] &
                            ],
                            Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                           ],
@@ -4136,7 +4136,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 & 
+                                  #1 &
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4196,7 +4196,7 @@ Notebook[
                                ],
                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                               ],
-                              #1 & 
+                              #1 &
                              ],
                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4477,7 +4477,7 @@ Notebook[
                                            ],
                                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                           ],
-                                          #1 & 
+                                          #1 &
                                          ],
                                          Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4526,7 +4526,7 @@ Notebook[
                                                ],
                                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                               ],
-                                              #1 & 
+                                              #1 &
                                              ],
                                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4572,7 +4572,7 @@ Notebook[
                                                ],
                                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                               ],
-                                              #1 & 
+                                              #1 &
                                              ],
                                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -4633,7 +4633,7 @@ Notebook[
                                            ],
                                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                           ],
-                                          #1 & 
+                                          #1 &
                                          ],
                                          Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -4725,7 +4725,7 @@ Notebook[
                                            ],
                                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                           ],
-                                          #1 & 
+                                          #1 &
                                          ],
                                          Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4774,7 +4774,7 @@ Notebook[
                                                ],
                                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                               ],
-                                              #1 & 
+                                              #1 &
                                              ],
                                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4820,7 +4820,7 @@ Notebook[
                                                ],
                                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                               ],
-                                              #1 & 
+                                              #1 &
                                              ],
                                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -4881,7 +4881,7 @@ Notebook[
                                            ],
                                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                           ],
-                                          #1 & 
+                                          #1 &
                                          ],
                                          Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -5167,7 +5167,7 @@ Notebook[
                                  ],
                                  "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                 ],
-                                #1 & 
+                                #1 &
                                ],
                                Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                 Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5219,7 +5219,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 & 
+                                  #1 &
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5300,7 +5300,7 @@ Notebook[
                                      ],
                                      "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                     ],
-                                    #1 & 
+                                    #1 &
                                    ],
                                    Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                     Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5357,7 +5357,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 & 
+                                  #1 &
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5417,7 +5417,7 @@ Notebook[
                                  "\"RandomValue\"",
                                  TooltipStyle -> "TextStyling"
                                 ],
-                                Annotation[#1, "RandomValue", "Tooltip"] & 
+                                Annotation[#1, "RandomValue", "Tooltip"] &
                                ],
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                               ],
@@ -5469,7 +5469,7 @@ Notebook[
                                        ],
                                        "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                       ],
-                                      #1 & 
+                                      #1 &
                                      ],
                                      Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                       Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5529,7 +5529,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 & 
+                                  #1 &
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5589,7 +5589,7 @@ Notebook[
                                  "\"RandomValue\"",
                                  TooltipStyle -> "TextStyling"
                                 ],
-                                Annotation[#1, "RandomValue", "Tooltip"] & 
+                                Annotation[#1, "RandomValue", "Tooltip"] &
                                ],
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                               ],
@@ -5641,7 +5641,7 @@ Notebook[
                                        ],
                                        "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                       ],
-                                      #1 & 
+                                      #1 &
                                      ],
                                      Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                       Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5701,7 +5701,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 & 
+                                  #1 &
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5825,7 +5825,7 @@ Notebook[
                              "\"RandomValue\"",
                              TooltipStyle -> "TextStyling"
                             ],
-                            Annotation[#1, "RandomValue", "Tooltip"] & 
+                            Annotation[#1, "RandomValue", "Tooltip"] &
                            ],
                            Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                           ],
@@ -5877,7 +5877,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 & 
+                                  #1 &
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5937,7 +5937,7 @@ Notebook[
                                ],
                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                               ],
-                              #1 & 
+                              #1 &
                              ],
                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -6496,7 +6496,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -6545,7 +6545,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                        ],
-                                       #1 & 
+                                       #1 &
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -6595,7 +6595,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -6658,7 +6658,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -10375,7 +10375,7 @@ Notebook[
                           {"Array", "[", RowBox[{"Range", ",", "5", ",", "3"}], "]"}
                          ]
                         ],
-                        Annotation[#1, HoldForm[Array[Range, 5, 3]], "Tooltip"] & 
+                        Annotation[#1, HoldForm[Array[Range, 5, 3]], "Tooltip"] &
                        ],
                        TagBox[
                         TooltipBox[
@@ -10951,7 +10951,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -11003,7 +11003,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -11314,7 +11314,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -11373,7 +11373,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -11515,7 +11515,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -11576,7 +11576,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -11693,7 +11693,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -11742,7 +11742,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -11788,7 +11788,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -11849,7 +11849,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -12118,7 +12118,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -12164,7 +12164,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -12222,7 +12222,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -12426,7 +12426,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -12482,7 +12482,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -12781,7 +12781,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -12844,7 +12844,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -13240,7 +13240,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -13305,7 +13305,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -13415,7 +13415,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13476,7 +13476,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13539,7 +13539,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13650,7 +13650,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13713,7 +13713,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13778,7 +13778,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13894,7 +13894,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13943,7 +13943,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                        ],
-                                       #1 & 
+                                       #1 &
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13991,7 +13991,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14056,7 +14056,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14175,7 +14175,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14224,7 +14224,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                        ],
-                                       #1 & 
+                                       #1 &
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14274,7 +14274,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14337,7 +14337,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14453,7 +14453,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14502,7 +14502,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                        ],
-                                       #1 & 
+                                       #1 &
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14550,7 +14550,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14615,7 +14615,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14731,7 +14731,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14780,7 +14780,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                        ],
-                                       #1 & 
+                                       #1 &
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14830,7 +14830,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 & 
+                                         #1 &
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14893,7 +14893,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15110,7 +15110,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                  ],
-                                 #1 & 
+                                 #1 &
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15159,7 +15159,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -15209,7 +15209,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                        ],
-                                       #1 & 
+                                       #1 &
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15272,7 +15272,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                  ],
-                                 #1 & 
+                                 #1 &
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15408,7 +15408,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                  ],
-                                 #1 & 
+                                 #1 &
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15457,7 +15457,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15507,7 +15507,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                        ],
-                                       #1 & 
+                                       #1 &
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -15570,7 +15570,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                  ],
-                                 #1 & 
+                                 #1 &
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -15679,7 +15679,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15728,7 +15728,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                        ],
-                                       #1 & 
+                                       #1 &
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15774,7 +15774,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                        ],
-                                       #1 & 
+                                       #1 &
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -15835,7 +15835,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -16088,7 +16088,7 @@ Notebook[
                                 ],
                                 "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                ],
-                               #1 & 
+                               #1 &
                               ],
                               Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16137,7 +16137,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -16187,7 +16187,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16250,7 +16250,7 @@ Notebook[
                                 ],
                                 "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                ],
-                               #1 & 
+                               #1 &
                               ],
                               Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16359,7 +16359,7 @@ Notebook[
                                 ],
                                 "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                ],
-                               #1 & 
+                               #1 &
                               ],
                               Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16408,7 +16408,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 & 
+                                   #1 &
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16458,7 +16458,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -16521,7 +16521,7 @@ Notebook[
                                 ],
                                 "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                ],
-                               #1 & 
+                               #1 &
                               ],
                               Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -16667,7 +16667,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                  ],
-                                 #1 & 
+                                 #1 &
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16716,7 +16716,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16762,7 +16762,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 & 
+                                     #1 &
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -16823,7 +16823,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                  ],
-                                 #1 & 
+                                 #1 &
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -19162,10 +19162,6 @@ Notebook[
   "UpdatedTimestamp" -> 3846018683.,
   "TemplateVersion" -> "1.5.53",
   "StatusMessage" -> "",
-  "PacletBuildData" -> {
-   "FileHashes" -> ByteArray["OEM6eJyVlntMW1Ucx3ESwMVBmvKYAWSi2Mly2zlASxazYR9I2kLZ6QM3GLu9PW0Pu723O/dcHtuSxYgzW+JcnOgebn84TKYZxEyFNJj4GD5ighrnssVhXGbQP3zMaExmTJy3UDjdbXspfzX59nw/33N/v/NqMTDAbBU5OQoFwhIkCiabEOaRFDG1yigIJZNFDELbHhn1szwUOOgliEcEQckoBFpWMaAAiDLmoPP0FfO4u+fxexTFw+IwJM5bb8/6T0iHlTG1mQPahCAcNPVuNHIhKQUl5beLAqScke72ui8u3GIY8LAWR4LhxF9Sb4MG66mxmk/Pr3uzlQHrc2EZw1DQoOlc158ZHfy5mQFbMtO2wRDEiaq52bBSSjAUDYi8qqSkU1XJI09UNF1zwQ0053Xsm+mNdyiztqwoJ6VtHigRK0tYVVYgfvrdyX0jG2nW179ur//X8uUQA1pWlGXHYtTCCqKAOJa3iziqSqo6VF3kbY2voUnDzWMP9e2L37fSJBe7G2oluafieZ6Kvzpo0lHdO58FL0/wK+2TR9TKKSxYW/9KLJjSJ//tPfoLHfJeBtRnzgGQxVxkYY01Lax8qLG+zlf9cmZ460vdK+Fp7ST8dGPXuPVlKwMeyZEnIQ2c2XKosNS1uZgBTC64EIJ8UDIO8BrIwVM//dN3VVfDgMZckCjx64KEDSaWtiZ5x9mvJht1fUYGGHMhL50mmzSYs+cqXxioZPQ5MgcwItDIi9xuDSbydtR23fA6GGDIwoxBnk8enY3LNPySp2vTD3c/W82ADcvClr44oAG8fXN0erLE4c3e8nTgMofoXas+Olg2c6Az6+b0yETEiFX2Y0swiIRwOxzwYFaQQsqWnB+5TebTrqMrE26DYerDUppT+eTJ4393bfExoNwBsQB5k4XlIjDoY3kZqpal07G5asr7KkmxU+XBJXvK2aBMjhCMAjJJY22dK+aeu4HdlEWVmswsixiNioKKc/WiR5Qvmaoohyr1mTm2wRjEaL6k/EKV7kSOfTvT9J9pV4QiqfJAZmQrZmMRxKlJn9v7P0DfDJdRElXuz0zKNKEfS0qeN6z2Y4qhShYM4MQYVGEebShwoZMNOymGKlnaBwiWOSJjllexDpLfIn+Mn02pEVVqF1nZ3kh3oiLRm9/NndubcttSRZ9EWWFADoeVZa7yTk/kv18z12OmXqpUJr02JV+e3xIWUSBYVH/Kfsd7/ul7T/RTBlVKkwz7/K4i6ROYK33x99m8Y9XUTJXipBkJiKhsH+t31OzKK1pNbVQpSdo8Q7G0WrVuLz8yfO0TQH1UWaxVtjp3N585sPa17+uolyqFzjaLrR3YUseP+uzhi9ff8tHxVFnjZjkekjYhJKpSLu/Ej5WtO9xDXVTRLbhcrIBCystL+2rqfWN/ZxEyK/doeeKZJpkSDzWTrc3vtKZda85j+XV/jqzXV1D7ovI/A9FG7A=="],
-   "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram__CodeEquivalenceUtilities-1.3.3"
-  },
   "AutoUpdate" -> True,
   "TryRealOnly" -> False,
   "NotebookIndexQ" -> True,
