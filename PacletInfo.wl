@@ -39,7 +39,8 @@ PacletObject[ <|
         },
         {
             "Documentation",
-            "Root" -> "Documentation"
+            "Root"     -> "Documentation",
+            "LinkBase" -> "EvilLinkBase"
         },
         {
             "Asset",
