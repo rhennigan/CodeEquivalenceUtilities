@@ -12,8 +12,6 @@ BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CachedValues`",
 
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
-(* Hey CodeInspector, what do you think of this? *)
-If[ a, b, b ]
 
 (******************************************************************************)
 (* Exported symbols added here with SymbolName::usage *)
