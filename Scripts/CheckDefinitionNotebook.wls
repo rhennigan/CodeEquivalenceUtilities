@@ -3,7 +3,7 @@
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 
-Print[ Environment[ "GITHUB_WORKFLOW" ] ];
+Print[ "::notice::", "GITHUB_WORKFLOW: ", Environment[ "GITHUB_WORKFLOW" ] ];
 
 PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/DefinitionNotebookClient.paclet" ];
 PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/PacletResource.paclet" ];
