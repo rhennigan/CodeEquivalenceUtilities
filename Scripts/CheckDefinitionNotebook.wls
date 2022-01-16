@@ -10,7 +10,8 @@ PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/DefinitionNot
 PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/PacletResource.paclet" ];
 PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/ResourceSystemClient.paclet" ];
 
-Block[ { CloudConnect = $Failed & },
+CloudObject;
+Block[ { CloudObject`Private`promptForWebLogin = $Failed & },
     Quiet[
         DefinitionNotebookClient`CheckDefinitionNotebook[
             File[ "DefinitionNotebook.nb" ],
