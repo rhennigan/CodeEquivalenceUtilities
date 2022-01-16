@@ -8,7 +8,7 @@ PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/PacletResourc
 PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/ResourceSystemClient.paclet" ];
 
 Print @ DefinitionNotebookClient`CheckDefinitionNotebook[
-    File[ "CodeEquivalenceUtilities/DefinitionNotebook.nb" ],
+    File[ "DefinitionNotebook.nb" ],
     "ConsoleType"   -> Automatic,
     "ClickedButton" -> "Submit"
 ];
