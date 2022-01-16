@@ -36,7 +36,7 @@ Notebook[
       CellID -> 686433507
      ],
      Cell[
-      "WrongPacletName",
+      "Wolfram/CodeEquivalenceUtilities",
       "Categorization",
       CellLabel -> "Paclet Name",
       CellID -> 605800465

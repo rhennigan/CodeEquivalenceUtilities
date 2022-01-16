@@ -14,7 +14,7 @@ PacletObject[ <|
             "Kernel",
             "Root"    -> "Kernel",
             "Symbols" -> {
-                (* "Wolfram`CodeEquivalenceUtilities`CodeEquivalentQ", *)
+                "Wolfram`CodeEquivalenceUtilities`CodeEquivalentQ",
                 "Wolfram`CodeEquivalenceUtilities`EquivalenceTestData",
                 "Wolfram`CodeEquivalenceUtilities`FromCanonicalForm",
                 "Wolfram`CodeEquivalenceUtilities`MakeCanonicalForm",
@@ -39,8 +39,7 @@ PacletObject[ <|
         },
         {
             "Documentation",
-            "Root"     -> "Documentation",
-            "LinkBase" -> "EvilLinkBase"
+            "Root"     -> "Documentation"
         },
         {
             "Asset",
