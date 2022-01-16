@@ -109,8 +109,8 @@ Notebook[
                TemplateBox[
                 {
                  "\"DefinitionNotebook.nb\"",
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "DefinitionNotebook.nb"}]
+                 FileNameJoin[
+                  {NotebookDirectory[], "DefinitionNotebook.nb"}
                  ]
                 },
                 "FileManagerFileOpenerTemplate"
@@ -124,9 +124,10 @@ Notebook[
                 ]
                ]
               ],
-              File[
-               FileNameJoin[{NotebookDirectory[], "DefinitionNotebook.nb"}]
+              FileNameJoin[
+               {NotebookDirectory[], "DefinitionNotebook.nb"}
               ],
+              BoxID -> "FileTreePath",
               BaseStyle -> {"Text"}
              ]
             ],
@@ -145,7 +146,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 213509771
+            CellID -> 76690009
            ],
            Cell[
             CellGroupData[
@@ -186,9 +187,8 @@ Notebook[
                      ]
                     ]
                    ],
-                   File[
-                    FileNameJoin[{NotebookDirectory[], "Documentation"}]
-                   ],
+                   FileNameJoin[{NotebookDirectory[], "Documentation"}],
+                   BoxID -> "FileTreePath",
                    BaseStyle -> {"Text"}
                   ]
                  ]
@@ -211,7 +211,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 304404765
+               CellID -> 46306611
               ],
               Cell[
                CellGroupData[
@@ -252,9 +252,10 @@ Notebook[
                         ]
                        ]
                       ],
-                      File[
-                       FileNameJoin[{NotebookDirectory[], "Documentation/English"}]
+                      FileNameJoin[
+                       {NotebookDirectory[], "Documentation/English"}
                       ],
+                      BoxID -> "FileTreePath",
                       BaseStyle -> {"Text"}
                      ]
                     ]
@@ -277,7 +278,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 334803467
+                  CellID -> 23092208
                  ],
                  Cell[
                   CellGroupData[
@@ -318,9 +319,10 @@ Notebook[
                            ]
                           ]
                          ],
-                         File[
-                          FileNameJoin[{NotebookDirectory[], "Documentation/English/Guides"}]
+                         FileNameJoin[
+                          {NotebookDirectory[], "Documentation/English/Guides"}
                          ],
+                         BoxID -> "FileTreePath",
                          BaseStyle -> {"Text"}
                         ]
                        ]
@@ -343,7 +345,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 739090824
+                     CellID -> 312477649
                     ],
                     Cell[
                      BoxData[
@@ -352,8 +354,11 @@ Notebook[
                         TemplateBox[
                          {
                           "\"CodeEquivalenceUtilities.nb\"",
-                          File[
-                           FileNameJoin[{NotebookDirectory[], "Documentation/English/Guides/CodeEquivalenceUtilities.nb"}]
+                          FileNameJoin[
+                           {
+                            NotebookDirectory[],
+                            "Documentation/English/Guides/CodeEquivalenceUtilities.nb"
+                           }
                           ]
                          },
                          "FileManagerFileOpenerTemplate"
@@ -367,9 +372,13 @@ Notebook[
                          ]
                         ]
                        ],
-                       File[
-                        FileNameJoin[{NotebookDirectory[], "Documentation/English/Guides/CodeEquivalenceUtilities.nb"}]
+                       FileNameJoin[
+                        {
+                         NotebookDirectory[],
+                         "Documentation/English/Guides/CodeEquivalenceUtilities.nb"
+                        }
                        ],
+                       BoxID -> "FileTreePath",
                        BaseStyle -> {"Text"}
                       ]
                      ],
@@ -388,7 +397,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 468968744
+                     CellID -> 324894684
                     ]
                    },
                    Closed
@@ -433,9 +442,13 @@ Notebook[
                            ]
                           ]
                          ],
-                         File[
-                          FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages"}]
+                         FileNameJoin[
+                          {
+                           NotebookDirectory[],
+                           "Documentation/English/ReferencePages"
+                          }
                          ],
+                         BoxID -> "FileTreePath",
                          BaseStyle -> {"Text"}
                         ]
                        ]
@@ -458,7 +471,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 63211829
+                     CellID -> 156577629
                     ],
                     Cell[
                      CellGroupData[
@@ -499,9 +512,13 @@ Notebook[
                               ]
                              ]
                             ],
-                            File[
-                             FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols"}]
+                            FileNameJoin[
+                             {
+                              NotebookDirectory[],
+                              "Documentation/English/ReferencePages/Symbols"
+                             }
                             ],
+                            BoxID -> "FileTreePath",
                             BaseStyle -> {"Text"}
                            ]
                           ]
@@ -524,7 +541,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 357611179
+                        CellID -> 652061225
                        ],
                        Cell[
                         BoxData[
@@ -533,8 +550,11 @@ Notebook[
                            TemplateBox[
                             {
                              "\"CodeEquivalentQ.nb\"",
-                             File[
-                              FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/CodeEquivalentQ.nb"}]
+                             FileNameJoin[
+                              {
+                               NotebookDirectory[],
+                               "Documentation/English/ReferencePages/Symbols/CodeEquivalentQ.nb"
+                              }
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -548,9 +568,13 @@ Notebook[
                             ]
                            ]
                           ],
-                          File[
-                           FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/CodeEquivalentQ.nb"}]
+                          FileNameJoin[
+                           {
+                            NotebookDirectory[],
+                            "Documentation/English/ReferencePages/Symbols/CodeEquivalentQ.nb"
+                           }
                           ],
+                          BoxID -> "FileTreePath",
                           BaseStyle -> {"Text"}
                          ]
                         ],
@@ -569,7 +593,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 611045274
+                        CellID -> 276211973
                        ],
                        Cell[
                         BoxData[
@@ -578,8 +602,11 @@ Notebook[
                            TemplateBox[
                             {
                              "\"EquivalenceTestData.nb\"",
-                             File[
-                              FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/EquivalenceTestData.nb"}]
+                             FileNameJoin[
+                              {
+                               NotebookDirectory[],
+                               "Documentation/English/ReferencePages/Symbols/EquivalenceTestData.nb"
+                              }
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -593,9 +620,13 @@ Notebook[
                             ]
                            ]
                           ],
-                          File[
-                           FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/EquivalenceTestData.nb"}]
+                          FileNameJoin[
+                           {
+                            NotebookDirectory[],
+                            "Documentation/English/ReferencePages/Symbols/EquivalenceTestData.nb"
+                           }
                           ],
+                          BoxID -> "FileTreePath",
                           BaseStyle -> {"Text"}
                          ]
                         ],
@@ -614,7 +645,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 9982323
+                        CellID -> 763597840
                        ],
                        Cell[
                         BoxData[
@@ -623,8 +654,11 @@ Notebook[
                            TemplateBox[
                             {
                              "\"FromCanonicalForm.nb\"",
-                             File[
-                              FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/FromCanonicalForm.nb"}]
+                             FileNameJoin[
+                              {
+                               NotebookDirectory[],
+                               "Documentation/English/ReferencePages/Symbols/FromCanonicalForm.nb"
+                              }
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -638,9 +672,13 @@ Notebook[
                             ]
                            ]
                           ],
-                          File[
-                           FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/FromCanonicalForm.nb"}]
+                          FileNameJoin[
+                           {
+                            NotebookDirectory[],
+                            "Documentation/English/ReferencePages/Symbols/FromCanonicalForm.nb"
+                           }
                           ],
+                          BoxID -> "FileTreePath",
                           BaseStyle -> {"Text"}
                          ]
                         ],
@@ -659,7 +697,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 569578125
+                        CellID -> 49855888
                        ],
                        Cell[
                         BoxData[
@@ -668,8 +706,11 @@ Notebook[
                            TemplateBox[
                             {
                              "\"MakeCanonicalForm.nb\"",
-                             File[
-                              FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/MakeCanonicalForm.nb"}]
+                             FileNameJoin[
+                              {
+                               NotebookDirectory[],
+                               "Documentation/English/ReferencePages/Symbols/MakeCanonicalForm.nb"
+                              }
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -683,9 +724,13 @@ Notebook[
                             ]
                            ]
                           ],
-                          File[
-                           FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/MakeCanonicalForm.nb"}]
+                          FileNameJoin[
+                           {
+                            NotebookDirectory[],
+                            "Documentation/English/ReferencePages/Symbols/MakeCanonicalForm.nb"
+                           }
                           ],
+                          BoxID -> "FileTreePath",
                           BaseStyle -> {"Text"}
                          ]
                         ],
@@ -704,7 +749,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 10578002
+                        CellID -> 171524878
                        ],
                        Cell[
                         BoxData[
@@ -713,8 +758,11 @@ Notebook[
                            TemplateBox[
                             {
                              "\"ToCanonicalForm.nb\"",
-                             File[
-                              FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/ToCanonicalForm.nb"}]
+                             FileNameJoin[
+                              {
+                               NotebookDirectory[],
+                               "Documentation/English/ReferencePages/Symbols/ToCanonicalForm.nb"
+                              }
                              ]
                             },
                             "FileManagerFileOpenerTemplate"
@@ -728,9 +776,13 @@ Notebook[
                             ]
                            ]
                           ],
-                          File[
-                           FileNameJoin[{NotebookDirectory[], "Documentation/English/ReferencePages/Symbols/ToCanonicalForm.nb"}]
+                          FileNameJoin[
+                           {
+                            NotebookDirectory[],
+                            "Documentation/English/ReferencePages/Symbols/ToCanonicalForm.nb"
+                           }
                           ],
+                          BoxID -> "FileTreePath",
                           BaseStyle -> {"Text"}
                          ]
                         ],
@@ -749,7 +801,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 112374766
+                        CellID -> 305496415
                        ]
                       },
                       Open
@@ -798,9 +850,10 @@ Notebook[
                            ]
                           ]
                          ],
-                         File[
-                          FileNameJoin[{NotebookDirectory[], "Documentation/English/Tutorials"}]
+                         FileNameJoin[
+                          {NotebookDirectory[], "Documentation/English/Tutorials"}
                          ],
+                         BoxID -> "FileTreePath",
                          BaseStyle -> {"Text"}
                         ]
                        ]
@@ -823,7 +876,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 357021061
+                     CellID -> 700139274
                     ],
                     Cell[
                      BoxData[
@@ -832,8 +885,11 @@ Notebook[
                         TemplateBox[
                          {
                           "\"AddingNewTransformationRules.nb\"",
-                          File[
-                           FileNameJoin[{NotebookDirectory[], "Documentation/English/Tutorials/AddingNewTransformationRules.nb"}]
+                          FileNameJoin[
+                           {
+                            NotebookDirectory[],
+                            "Documentation/English/Tutorials/AddingNewTransformationRules.nb"
+                           }
                           ]
                          },
                          "FileManagerFileOpenerTemplate"
@@ -847,9 +903,13 @@ Notebook[
                          ]
                         ]
                        ],
-                       File[
-                        FileNameJoin[{NotebookDirectory[], "Documentation/English/Tutorials/AddingNewTransformationRules.nb"}]
+                       FileNameJoin[
+                        {
+                         NotebookDirectory[],
+                         "Documentation/English/Tutorials/AddingNewTransformationRules.nb"
+                        }
                        ],
+                       BoxID -> "FileTreePath",
                        BaseStyle -> {"Text"}
                       ]
                      ],
@@ -868,7 +928,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 186413917
+                     CellID -> 642060330
                     ]
                    },
                    Closed
@@ -880,6 +940,827 @@ Notebook[
               ]
              },
              Open
+            ]
+           ],
+           Cell[
+            TextData[
+             Cell[
+              BoxData[
+               InterpretationBox[
+                TagBox[
+                 ActionMenuBox[
+                  "\"FrontEnd\"",
+                  {
+                   "\"Open/Close Group\"" :> (SelectionMove[ParentCell[EvaluationCell[]], All, Cell];
+                   FrontEndTokenExecute[
+                    EvaluationNotebook[],
+                    "OpenCloseGroup"
+                   ]),
+                   "\"Open Directory\"" :> DefinitionNotebookClient`FileTreeOpen[
+                    ParentCell[EvaluationCell[]]
+                   ],
+                   "\"Un/Mark as Excluded\"" :> DefinitionNotebookClient`FileTreeExclusionToggle[
+                    ParentCell[EvaluationCell[]]
+                   ],
+                   "\"Copy Path to Clipboard\"" :> DefinitionNotebookClient`FileTreeCopy[
+                    ParentCell[EvaluationCell[]]
+                   ]
+                  },
+                  Appearance -> None,
+                  BaseStyle -> {"Text"}
+                 ],
+                 Function[
+                  Annotation[
+                   #1,
+                   DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                    0
+                   ]
+                  ]
+                 ]
+                ],
+                FileNameJoin[{NotebookDirectory[], "FrontEnd"}],
+                BoxID -> "FileTreePath",
+                BaseStyle -> {"Text"}
+               ]
+              ]
+             ]
+            ],
+            "FileManagerDirectory",
+            CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
+            CellGroupingRules -> {"SectionGrouping", 100},
+            TaggingRules -> { },
+            CellFrameLabels -> {
+             {
+              Cell[
+               BoxData[
+                TemplateBox[{}, "FileManagerEmptyDirectoryIconTemplate"]
+               ],
+               Background -> None
+              ],
+              Inherited
+             },
+             {Inherited, Inherited}
+            },
+            CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+            CellID -> 1761790
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               TextData[
+                Cell[
+                 BoxData[
+                  InterpretationBox[
+                   TagBox[
+                    ActionMenuBox[
+                     "\"Images\"",
+                     {
+                      "\"Open/Close Group\"" :> (SelectionMove[ParentCell[EvaluationCell[]], All, Cell];
+                      FrontEndTokenExecute[
+                       EvaluationNotebook[],
+                       "OpenCloseGroup"
+                      ]),
+                      "\"Open Directory\"" :> DefinitionNotebookClient`FileTreeOpen[
+                       ParentCell[EvaluationCell[]]
+                      ],
+                      "\"Un/Mark as Excluded\"" :> DefinitionNotebookClient`FileTreeExclusionToggle[
+                       ParentCell[EvaluationCell[]]
+                      ],
+                      "\"Copy Path to Clipboard\"" :> DefinitionNotebookClient`FileTreeCopy[
+                       ParentCell[EvaluationCell[]]
+                      ]
+                     },
+                     Appearance -> None,
+                     BaseStyle -> {"Text"}
+                    ],
+                    Function[
+                     Annotation[
+                      #1,
+                      DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                       0
+                      ]
+                     ]
+                    ]
+                   ],
+                   FileNameJoin[{NotebookDirectory[], "Images"}],
+                   BoxID -> "FileTreePath",
+                   BaseStyle -> {"Text"}
+                  ]
+                 ]
+                ]
+               ],
+               "FileManagerDirectory",
+               CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 100},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[
+                   TemplateBox[{}, "FileManagerDirectoryIconTemplate"]
+                  ],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 372241553
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"0bf8dc73177c188f.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/0bf8dc73177c188f.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/0bf8dc73177c188f.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 354583052
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"0d12d8551029ee6a.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/0d12d8551029ee6a.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/0d12d8551029ee6a.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 396252558
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"12a4ebc788f8cb2c.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/12a4ebc788f8cb2c.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/12a4ebc788f8cb2c.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 454917232
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"152f8d1bb9acf613.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/152f8d1bb9acf613.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/152f8d1bb9acf613.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 399382647
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"1cd67b7d1f0771ae.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/1cd67b7d1f0771ae.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/1cd67b7d1f0771ae.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 101302647
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"267c2baf6dadcfcc.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/267c2baf6dadcfcc.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/267c2baf6dadcfcc.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 827835058
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"3a38f3a85d4a4795.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/3a38f3a85d4a4795.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/3a38f3a85d4a4795.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 33524661
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"43a40f076b9b5860.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/43a40f076b9b5860.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/43a40f076b9b5860.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 379872752
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"52714167c1555ca8.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/52714167c1555ca8.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/52714167c1555ca8.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 15840850
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"58724d56ad2d0a5d.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/58724d56ad2d0a5d.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/58724d56ad2d0a5d.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 15217903
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"59eada987ec4d919.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/59eada987ec4d919.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/59eada987ec4d919.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 125415195
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"5dfbd7b1ec4305fe.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/5dfbd7b1ec4305fe.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/5dfbd7b1ec4305fe.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 639703921
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"674eb267f6beef39.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/674eb267f6beef39.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/674eb267f6beef39.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 82932373
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"751d18c398c2d8f2.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/751d18c398c2d8f2.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/751d18c398c2d8f2.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 170338121
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"hero-image.png\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Images/hero-image.png"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Images/hero-image.png"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerPNGIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 419910795
+              ]
+             },
+             Closed
             ]
            ],
            Cell[
@@ -921,7 +1802,8 @@ Notebook[
                      ]
                     ]
                    ],
-                   File[FileNameJoin[{NotebookDirectory[], "Kernel"}]],
+                   FileNameJoin[{NotebookDirectory[], "Kernel"}],
+                   BoxID -> "FileTreePath",
                    BaseStyle -> {"Text"}
                   ]
                  ]
@@ -942,7 +1824,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 293996799
+               CellID -> 280703666
               ],
               Cell[
                BoxData[
@@ -951,8 +1833,8 @@ Notebook[
                   TemplateBox[
                    {
                     "\"CachedValues.wl\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/CachedValues.wl"}]
+                    FileNameJoin[
+                     {NotebookDirectory[], "Kernel/CachedValues.wl"}
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -966,9 +1848,10 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Kernel/CachedValues.wl"}]
+                 FileNameJoin[
+                  {NotebookDirectory[], "Kernel/CachedValues.wl"}
                  ],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -987,7 +1870,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 760031200
+               CellID -> 512212465
               ],
               Cell[
                CellGroupData[
@@ -1028,9 +1911,10 @@ Notebook[
                         ]
                        ]
                       ],
-                      File[
-                       FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms"}]
+                      FileNameJoin[
+                       {NotebookDirectory[], "Kernel/CanonicalForms"}
                       ],
+                      BoxID -> "FileTreePath",
                       BaseStyle -> {"Text"}
                      ]
                     ]
@@ -1053,7 +1937,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 120173570
+                  CellID -> 925301860
                  ],
                  Cell[
                   BoxData[
@@ -1062,8 +1946,11 @@ Notebook[
                      TemplateBox[
                       {
                        "\"Attributes.wl\"",
-                       File[
-                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Attributes.wl"}]
+                       FileNameJoin[
+                        {
+                         NotebookDirectory[],
+                         "Kernel/CanonicalForms/Attributes.wl"
+                        }
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1077,9 +1964,13 @@ Notebook[
                       ]
                      ]
                     ],
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Attributes.wl"}]
+                    FileNameJoin[
+                     {
+                      NotebookDirectory[],
+                      "Kernel/CanonicalForms/Attributes.wl"
+                     }
                     ],
+                    BoxID -> "FileTreePath",
                     BaseStyle -> {"Text"}
                    ]
                   ],
@@ -1098,7 +1989,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 707865483
+                  CellID -> 396699942
                  ],
                  Cell[
                   BoxData[
@@ -1107,8 +1998,8 @@ Notebook[
                      TemplateBox[
                       {
                        "\"Common.wl\"",
-                       File[
-                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Common.wl"}]
+                       FileNameJoin[
+                        {NotebookDirectory[], "Kernel/CanonicalForms/Common.wl"}
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1122,9 +2013,10 @@ Notebook[
                       ]
                      ]
                     ],
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Common.wl"}]
+                    FileNameJoin[
+                     {NotebookDirectory[], "Kernel/CanonicalForms/Common.wl"}
                     ],
+                    BoxID -> "FileTreePath",
                     BaseStyle -> {"Text"}
                    ]
                   ],
@@ -1143,7 +2035,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 347143656
+                  CellID -> 2920824
                  ],
                  Cell[
                   BoxData[
@@ -1152,8 +2044,11 @@ Notebook[
                      TemplateBox[
                       {
                        "\"ExperimentalRules.wl\"",
-                       File[
-                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/ExperimentalRules.wl"}]
+                       FileNameJoin[
+                        {
+                         NotebookDirectory[],
+                         "Kernel/CanonicalForms/ExperimentalRules.wl"
+                        }
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1167,9 +2062,13 @@ Notebook[
                       ]
                      ]
                     ],
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/ExperimentalRules.wl"}]
+                    FileNameJoin[
+                     {
+                      NotebookDirectory[],
+                      "Kernel/CanonicalForms/ExperimentalRules.wl"
+                     }
                     ],
+                    BoxID -> "FileTreePath",
                     BaseStyle -> {"Text"}
                    ]
                   ],
@@ -1188,7 +2087,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 351557073
+                  CellID -> 171263081
                  ],
                  Cell[
                   BoxData[
@@ -1197,8 +2096,8 @@ Notebook[
                      TemplateBox[
                       {
                        "\"Graphics.wl\"",
-                       File[
-                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Graphics.wl"}]
+                       FileNameJoin[
+                        {NotebookDirectory[], "Kernel/CanonicalForms/Graphics.wl"}
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1212,9 +2111,10 @@ Notebook[
                       ]
                      ]
                     ],
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Graphics.wl"}]
+                    FileNameJoin[
+                     {NotebookDirectory[], "Kernel/CanonicalForms/Graphics.wl"}
                     ],
+                    BoxID -> "FileTreePath",
                     BaseStyle -> {"Text"}
                    ]
                   ],
@@ -1233,7 +2133,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 165360656
+                  CellID -> 441951327
                  ],
                  Cell[
                   BoxData[
@@ -1242,8 +2142,8 @@ Notebook[
                      TemplateBox[
                       {
                        "\"Rules.wl\"",
-                       File[
-                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Rules.wl"}]
+                       FileNameJoin[
+                        {NotebookDirectory[], "Kernel/CanonicalForms/Rules.wl"}
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1257,9 +2157,10 @@ Notebook[
                       ]
                      ]
                     ],
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Rules.wl"}]
+                    FileNameJoin[
+                     {NotebookDirectory[], "Kernel/CanonicalForms/Rules.wl"}
                     ],
+                    BoxID -> "FileTreePath",
                     BaseStyle -> {"Text"}
                    ]
                   ],
@@ -1278,7 +2179,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 446945557
+                  CellID -> 478995926
                  ],
                  Cell[
                   BoxData[
@@ -1287,8 +2188,8 @@ Notebook[
                      TemplateBox[
                       {
                        "\"Scope.wl\"",
-                       File[
-                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Scope.wl"}]
+                       FileNameJoin[
+                        {NotebookDirectory[], "Kernel/CanonicalForms/Scope.wl"}
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1302,9 +2203,10 @@ Notebook[
                       ]
                      ]
                     ],
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Scope.wl"}]
+                    FileNameJoin[
+                     {NotebookDirectory[], "Kernel/CanonicalForms/Scope.wl"}
                     ],
+                    BoxID -> "FileTreePath",
                     BaseStyle -> {"Text"}
                    ]
                   ],
@@ -1323,7 +2225,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 409712348
+                  CellID -> 784440970
                  ],
                  Cell[
                   BoxData[
@@ -1332,8 +2234,11 @@ Notebook[
                      TemplateBox[
                       {
                        "\"Structural.wl\"",
-                       File[
-                        FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Structural.wl"}]
+                       FileNameJoin[
+                        {
+                         NotebookDirectory[],
+                         "Kernel/CanonicalForms/Structural.wl"
+                        }
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -1347,9 +2252,13 @@ Notebook[
                       ]
                      ]
                     ],
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/CanonicalForms/Structural.wl"}]
+                    FileNameJoin[
+                     {
+                      NotebookDirectory[],
+                      "Kernel/CanonicalForms/Structural.wl"
+                     }
                     ],
+                    BoxID -> "FileTreePath",
                     BaseStyle -> {"Text"}
                    ]
                   ],
@@ -1368,7 +2277,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 255408
+                  CellID -> 221197264
                  ]
                 },
                 Closed
@@ -1381,8 +2290,8 @@ Notebook[
                   TemplateBox[
                    {
                     "\"CodeEquivalenceUtilities.wl\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/CodeEquivalenceUtilities.wl"}]
+                    FileNameJoin[
+                     {NotebookDirectory[], "Kernel/CodeEquivalenceUtilities.wl"}
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1396,9 +2305,10 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Kernel/CodeEquivalenceUtilities.wl"}]
+                 FileNameJoin[
+                  {NotebookDirectory[], "Kernel/CodeEquivalenceUtilities.wl"}
                  ],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -1417,7 +2327,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 194264464
+               CellID -> 285024708
               ],
               Cell[
                BoxData[
@@ -1426,9 +2336,7 @@ Notebook[
                   TemplateBox[
                    {
                     "\"Debugging.wl\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/Debugging.wl"}]
-                    ]
+                    FileNameJoin[{NotebookDirectory[], "Kernel/Debugging.wl"}]
                    },
                    "FileManagerFileOpenerTemplate"
                   ],
@@ -1441,9 +2349,8 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Kernel/Debugging.wl"}]
-                 ],
+                 FileNameJoin[{NotebookDirectory[], "Kernel/Debugging.wl"}],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -1462,7 +2369,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 370281573
+               CellID -> 708368063
               ],
               Cell[
                BoxData[
@@ -1471,8 +2378,8 @@ Notebook[
                   TemplateBox[
                    {
                     "\"EvaluationControl.wl\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/EvaluationControl.wl"}]
+                    FileNameJoin[
+                     {NotebookDirectory[], "Kernel/EvaluationControl.wl"}
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1486,9 +2393,10 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Kernel/EvaluationControl.wl"}]
+                 FileNameJoin[
+                  {NotebookDirectory[], "Kernel/EvaluationControl.wl"}
                  ],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -1507,7 +2415,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 161219470
+               CellID -> 119295376
               ],
               Cell[
                BoxData[
@@ -1516,9 +2424,7 @@ Notebook[
                   TemplateBox[
                    {
                     "\"Formatting.wl\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/Formatting.wl"}]
-                    ]
+                    FileNameJoin[{NotebookDirectory[], "Kernel/Formatting.wl"}]
                    },
                    "FileManagerFileOpenerTemplate"
                   ],
@@ -1531,9 +2437,8 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Kernel/Formatting.wl"}]
-                 ],
+                 FileNameJoin[{NotebookDirectory[], "Kernel/Formatting.wl"}],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -1552,7 +2457,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 222664888
+               CellID -> 267296011
               ],
               Cell[
                BoxData[
@@ -1561,9 +2466,7 @@ Notebook[
                   TemplateBox[
                    {
                     "\"init.wl\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/init.wl"}]
-                    ]
+                    FileNameJoin[{NotebookDirectory[], "Kernel/init.wl"}]
                    },
                    "FileManagerFileOpenerTemplate"
                   ],
@@ -1576,9 +2479,8 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Kernel/init.wl"}]
-                 ],
+                 FileNameJoin[{NotebookDirectory[], "Kernel/init.wl"}],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -1597,7 +2499,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 54400507
+               CellID -> 762254600
               ],
               Cell[
                BoxData[
@@ -1606,9 +2508,7 @@ Notebook[
                   TemplateBox[
                    {
                     "\"Types.wl\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/Types.wl"}]
-                    ]
+                    FileNameJoin[{NotebookDirectory[], "Kernel/Types.wl"}]
                    },
                    "FileManagerFileOpenerTemplate"
                   ],
@@ -1621,9 +2521,8 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Kernel/Types.wl"}]
-                 ],
+                 FileNameJoin[{NotebookDirectory[], "Kernel/Types.wl"}],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -1642,7 +2541,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 289610366
+               CellID -> 733414229
               ],
               Cell[
                BoxData[
@@ -1651,9 +2550,7 @@ Notebook[
                   TemplateBox[
                    {
                     "\"Utilities.wl\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Kernel/Utilities.wl"}]
-                    ]
+                    FileNameJoin[{NotebookDirectory[], "Kernel/Utilities.wl"}]
                    },
                    "FileManagerFileOpenerTemplate"
                   ],
@@ -1666,9 +2563,8 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Kernel/Utilities.wl"}]
-                 ],
+                 FileNameJoin[{NotebookDirectory[], "Kernel/Utilities.wl"}],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -1687,7 +2583,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 216693662
+               CellID -> 73314943
               ]
              },
              Closed
@@ -1700,7 +2596,7 @@ Notebook[
                TemplateBox[
                 {
                  "\"LICENSE\"",
-                 File[FileNameJoin[{NotebookDirectory[], "LICENSE"}]]
+                 FileNameJoin[{NotebookDirectory[], "LICENSE"}]
                 },
                 "FileManagerFileOpenerTemplate"
                ],
@@ -1713,7 +2609,8 @@ Notebook[
                 ]
                ]
               ],
-              File[FileNameJoin[{NotebookDirectory[], "LICENSE"}]],
+              FileNameJoin[{NotebookDirectory[], "LICENSE"}],
+              BoxID -> "FileTreePath",
               BaseStyle -> {"Text"}
              ]
             ],
@@ -1732,7 +2629,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 83712109
+            CellID -> 44260408
            ],
            Cell[
             BoxData[
@@ -1741,9 +2638,7 @@ Notebook[
                TemplateBox[
                 {
                  "\"PacletInfo.wl\"",
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "PacletInfo.wl"}]
-                 ]
+                 FileNameJoin[{NotebookDirectory[], "PacletInfo.wl"}]
                 },
                 "FileManagerFileOpenerTemplate"
                ],
@@ -1756,9 +2651,8 @@ Notebook[
                 ]
                ]
               ],
-              File[
-               FileNameJoin[{NotebookDirectory[], "PacletInfo.wl"}]
-              ],
+              FileNameJoin[{NotebookDirectory[], "PacletInfo.wl"}],
+              BoxID -> "FileTreePath",
               BaseStyle -> {"Text"}
              ]
             ],
@@ -1779,7 +2673,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 561892815
+            CellID -> 151192990
            ],
            Cell[
             BoxData[
@@ -1788,7 +2682,7 @@ Notebook[
                TemplateBox[
                 {
                  "\"README.md\"",
-                 File[FileNameJoin[{NotebookDirectory[], "README.md"}]]
+                 FileNameJoin[{NotebookDirectory[], "README.md"}]
                 },
                 "FileManagerFileOpenerTemplate"
                ],
@@ -1801,7 +2695,8 @@ Notebook[
                 ]
                ]
               ],
-              File[FileNameJoin[{NotebookDirectory[], "README.md"}]],
+              FileNameJoin[{NotebookDirectory[], "README.md"}],
+              BoxID -> "FileTreePath",
               BaseStyle -> {"Text"}
              ]
             ],
@@ -1820,7 +2715,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 429619568
+            CellID -> 446181007
            ],
            Cell[
             CellGroupData[
@@ -1861,7 +2756,8 @@ Notebook[
                      ]
                     ]
                    ],
-                   File[FileNameJoin[{NotebookDirectory[], "Scripts"}]],
+                   FileNameJoin[{NotebookDirectory[], "Scripts"}],
+                   BoxID -> "FileTreePath",
                    BaseStyle -> {"Text"}
                   ]
                  ]
@@ -1884,7 +2780,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 51630518
+               CellID -> 58426153
               ],
               Cell[
                BoxData[
@@ -1892,9 +2788,12 @@ Notebook[
                  TagBox[
                   TemplateBox[
                    {
-                    "\"FormatNotebooks.wls\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Scripts/FormatNotebooks.wls"}]
+                    "\"CheckDefinitionNotebook.wls\"",
+                    FileNameJoin[
+                     {
+                      NotebookDirectory[],
+                      "Scripts/CheckDefinitionNotebook.wls"
+                     }
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -1908,9 +2807,13 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Scripts/FormatNotebooks.wls"}]
+                 FileNameJoin[
+                  {
+                   NotebookDirectory[],
+                   "Scripts/CheckDefinitionNotebook.wls"
+                  }
                  ],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -1929,11 +2832,211 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 612016390
+               CellID -> 120876423
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"CodeInspection.wls\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Scripts/CodeInspection.wls"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Scripts/CodeInspection.wls"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 76961849
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"FormatNotebooks.wls\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Scripts/FormatNotebooks.wls"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Scripts/FormatNotebooks.wls"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 413121679
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"TestReport.wls\"",
+                    FileNameJoin[
+                     {NotebookDirectory[], "Scripts/TestReport.wls"}
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 FileNameJoin[
+                  {NotebookDirectory[], "Scripts/TestReport.wls"}
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               TaggingRules -> { },
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 91679337
               ]
              },
              Closed
             ]
+           ],
+           Cell[
+            TextData[
+             Cell[
+              BoxData[
+               InterpretationBox[
+                TagBox[
+                 ActionMenuBox[
+                  "\"TestResults\"",
+                  {
+                   "\"Open/Close Group\"" :> (SelectionMove[ParentCell[EvaluationCell[]], All, Cell];
+                   FrontEndTokenExecute[
+                    EvaluationNotebook[],
+                    "OpenCloseGroup"
+                   ]),
+                   "\"Open Directory\"" :> DefinitionNotebookClient`FileTreeOpen[
+                    ParentCell[EvaluationCell[]]
+                   ],
+                   "\"Un/Mark as Excluded\"" :> DefinitionNotebookClient`FileTreeExclusionToggle[
+                    ParentCell[EvaluationCell[]]
+                   ],
+                   "\"Copy Path to Clipboard\"" :> DefinitionNotebookClient`FileTreeCopy[
+                    ParentCell[EvaluationCell[]]
+                   ]
+                  },
+                  Appearance -> None,
+                  BaseStyle -> {"Text"}
+                 ],
+                 Function[
+                  Annotation[
+                   #1,
+                   DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                    0
+                   ]
+                  ]
+                 ]
+                ],
+                FileNameJoin[{NotebookDirectory[], "TestResults"}],
+                BoxID -> "FileTreePath",
+                BaseStyle -> {"Text"}
+               ]
+              ]
+             ]
+            ],
+            "FileManagerDirectory",
+            CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
+            CellGroupingRules -> {"SectionGrouping", 100},
+            TaggingRules -> { },
+            CellFrameLabels -> {
+             {
+              Cell[
+               BoxData[
+                TemplateBox[{}, "FileManagerEmptyDirectoryIconTemplate"]
+               ],
+               Background -> None
+              ],
+              Inherited
+             },
+             {Inherited, Inherited}
+            },
+            CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+            CellID -> 268117794
            ],
            Cell[
             CellGroupData[
@@ -1974,7 +3077,8 @@ Notebook[
                      ]
                     ]
                    ],
-                   File[FileNameJoin[{NotebookDirectory[], "Tests"}]],
+                   FileNameJoin[{NotebookDirectory[], "Tests"}],
+                   BoxID -> "FileTreePath",
                    BaseStyle -> {"Text"}
                   ]
                  ]
@@ -1997,7 +3101,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 454200326
+               CellID -> 220066983
               ],
               Cell[
                BoxData[
@@ -2006,9 +3110,7 @@ Notebook[
                   TemplateBox[
                    {
                     "\"Attributes.wlt\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Tests/Attributes.wlt"}]
-                    ]
+                    FileNameJoin[{NotebookDirectory[], "Tests/Attributes.wlt"}]
                    },
                    "FileManagerFileOpenerTemplate"
                   ],
@@ -2021,9 +3123,8 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Tests/Attributes.wlt"}]
-                 ],
+                 FileNameJoin[{NotebookDirectory[], "Tests/Attributes.wlt"}],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -2042,7 +3143,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 367632039
+               CellID -> 509894714
               ],
               Cell[
                BoxData[
@@ -2051,9 +3152,7 @@ Notebook[
                   TemplateBox[
                    {
                     "\"Common.wlt\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Tests/Common.wlt"}]
-                    ]
+                    FileNameJoin[{NotebookDirectory[], "Tests/Common.wlt"}]
                    },
                    "FileManagerFileOpenerTemplate"
                   ],
@@ -2066,9 +3165,8 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Tests/Common.wlt"}]
-                 ],
+                 FileNameJoin[{NotebookDirectory[], "Tests/Common.wlt"}],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -2087,7 +3185,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 285040172
+               CellID -> 117820895
               ],
               Cell[
                CellGroupData[
@@ -2128,9 +3226,8 @@ Notebook[
                         ]
                        ]
                       ],
-                      File[
-                       FileNameJoin[{NotebookDirectory[], "Tests/Data"}]
-                      ],
+                      FileNameJoin[{NotebookDirectory[], "Tests/Data"}],
+                      BoxID -> "FileTreePath",
                       BaseStyle -> {"Text"}
                      ]
                     ]
@@ -2153,7 +3250,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 728761546
+                  CellID -> 183664808
                  ],
                  Cell[
                   BoxData[
@@ -2162,8 +3259,8 @@ Notebook[
                      TemplateBox[
                       {
                        "\"EIWLData.wl\"",
-                       File[
-                        FileNameJoin[{NotebookDirectory[], "Tests/Data/EIWLData.wl"}]
+                       FileNameJoin[
+                        {NotebookDirectory[], "Tests/Data/EIWLData.wl"}
                        ]
                       },
                       "FileManagerFileOpenerTemplate"
@@ -2177,9 +3274,10 @@ Notebook[
                       ]
                      ]
                     ],
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Tests/Data/EIWLData.wl"}]
+                    FileNameJoin[
+                     {NotebookDirectory[], "Tests/Data/EIWLData.wl"}
                     ],
+                    BoxID -> "FileTreePath",
                     BaseStyle -> {"Text"}
                    ]
                   ],
@@ -2198,7 +3296,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 132355979
+                  CellID -> 214709487
                  ]
                 },
                 Closed
@@ -2211,9 +3309,7 @@ Notebook[
                   TemplateBox[
                    {
                     "\"EIWL.wlt\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Tests/EIWL.wlt"}]
-                    ]
+                    FileNameJoin[{NotebookDirectory[], "Tests/EIWL.wlt"}]
                    },
                    "FileManagerFileOpenerTemplate"
                   ],
@@ -2226,9 +3322,8 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Tests/EIWL.wlt"}]
-                 ],
+                 FileNameJoin[{NotebookDirectory[], "Tests/EIWL.wlt"}],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -2247,7 +3342,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 684620994
+               CellID -> 146702041
               ],
               Cell[
                BoxData[
@@ -2256,8 +3351,8 @@ Notebook[
                   TemplateBox[
                    {
                     "\"EvaluationControl.wlt\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Tests/EvaluationControl.wlt"}]
+                    FileNameJoin[
+                     {NotebookDirectory[], "Tests/EvaluationControl.wlt"}
                     ]
                    },
                    "FileManagerFileOpenerTemplate"
@@ -2271,9 +3366,10 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Tests/EvaluationControl.wlt"}]
+                 FileNameJoin[
+                  {NotebookDirectory[], "Tests/EvaluationControl.wlt"}
                  ],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -2292,7 +3388,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 128966766
+               CellID -> 871551
               ],
               Cell[
                BoxData[
@@ -2301,9 +3397,7 @@ Notebook[
                   TemplateBox[
                    {
                     "\"Rules.wlt\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Tests/Rules.wlt"}]
-                    ]
+                    FileNameJoin[{NotebookDirectory[], "Tests/Rules.wlt"}]
                    },
                    "FileManagerFileOpenerTemplate"
                   ],
@@ -2316,9 +3410,8 @@ Notebook[
                    ]
                   ]
                  ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Tests/Rules.wlt"}]
-                 ],
+                 FileNameJoin[{NotebookDirectory[], "Tests/Rules.wlt"}],
+                 BoxID -> "FileTreePath",
                  BaseStyle -> {"Text"}
                 ]
                ],
@@ -2337,7 +3430,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 6082515
+               CellID -> 183364895
               ]
              },
              Closed
@@ -2349,7 +3442,7 @@ Notebook[
             CellGroupingRules -> {"SectionGrouping", 100},
             TaggingRules -> { },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 193415645
+            CellID -> 22154010
            ]
           },
           Open
@@ -3785,18 +4878,21 @@ Notebook[
                 }
                ],
                "Input",
+               TaggingRules -> { },
                CellLabel -> "In[17]:=",
                CellID -> 218950119
               ],
               Cell[
                BoxData["2"],
                "Output",
+               TaggingRules -> { },
                CellLabel -> "Out[17]=",
                CellID -> 276287180
               ],
               Cell[
                BoxData["4"],
                "Output",
+               TaggingRules -> { },
                CellLabel -> "Out[18]=",
                CellID -> 444545838
               ]
@@ -3881,7 +4977,7 @@ Notebook[
                              "\"RandomValue\"",
                              TooltipStyle -> "TextStyling"
                             ],
-                            Annotation[#1, "RandomValue", "Tooltip"] &
+                            Annotation[#1, "RandomValue", "Tooltip"] & 
                            ],
                            Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                           ],
@@ -3933,7 +5029,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 &
+                                  #1 & 
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -3993,7 +5089,7 @@ Notebook[
                                ],
                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                               ],
-                              #1 &
+                              #1 & 
                              ],
                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4084,7 +5180,7 @@ Notebook[
                              "\"RandomValue\"",
                              TooltipStyle -> "TextStyling"
                             ],
-                            Annotation[#1, "RandomValue", "Tooltip"] &
+                            Annotation[#1, "RandomValue", "Tooltip"] & 
                            ],
                            Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                           ],
@@ -4136,7 +5232,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 &
+                                  #1 & 
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4196,7 +5292,7 @@ Notebook[
                                ],
                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                               ],
-                              #1 &
+                              #1 & 
                              ],
                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4477,7 +5573,7 @@ Notebook[
                                            ],
                                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                           ],
-                                          #1 &
+                                          #1 & 
                                          ],
                                          Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4526,7 +5622,7 @@ Notebook[
                                                ],
                                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                               ],
-                                              #1 &
+                                              #1 & 
                                              ],
                                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4572,7 +5668,7 @@ Notebook[
                                                ],
                                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                               ],
-                                              #1 &
+                                              #1 & 
                                              ],
                                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -4633,7 +5729,7 @@ Notebook[
                                            ],
                                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                           ],
-                                          #1 &
+                                          #1 & 
                                          ],
                                          Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -4725,7 +5821,7 @@ Notebook[
                                            ],
                                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                           ],
-                                          #1 &
+                                          #1 & 
                                          ],
                                          Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4774,7 +5870,7 @@ Notebook[
                                                ],
                                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                               ],
-                                              #1 &
+                                              #1 & 
                                              ],
                                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -4820,7 +5916,7 @@ Notebook[
                                                ],
                                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                               ],
-                                              #1 &
+                                              #1 & 
                                              ],
                                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -4881,7 +5977,7 @@ Notebook[
                                            ],
                                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                           ],
-                                          #1 &
+                                          #1 & 
                                          ],
                                          Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -5167,7 +6263,7 @@ Notebook[
                                  ],
                                  "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                 ],
-                                #1 &
+                                #1 & 
                                ],
                                Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                 Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5219,7 +6315,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 &
+                                  #1 & 
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5300,7 +6396,7 @@ Notebook[
                                      ],
                                      "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                     ],
-                                    #1 &
+                                    #1 & 
                                    ],
                                    Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                     Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5357,7 +6453,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 &
+                                  #1 & 
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5417,7 +6513,7 @@ Notebook[
                                  "\"RandomValue\"",
                                  TooltipStyle -> "TextStyling"
                                 ],
-                                Annotation[#1, "RandomValue", "Tooltip"] &
+                                Annotation[#1, "RandomValue", "Tooltip"] & 
                                ],
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                               ],
@@ -5469,7 +6565,7 @@ Notebook[
                                        ],
                                        "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                       ],
-                                      #1 &
+                                      #1 & 
                                      ],
                                      Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                       Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5529,7 +6625,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 &
+                                  #1 & 
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5589,7 +6685,7 @@ Notebook[
                                  "\"RandomValue\"",
                                  TooltipStyle -> "TextStyling"
                                 ],
-                                Annotation[#1, "RandomValue", "Tooltip"] &
+                                Annotation[#1, "RandomValue", "Tooltip"] & 
                                ],
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                               ],
@@ -5641,7 +6737,7 @@ Notebook[
                                        ],
                                        "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                       ],
-                                      #1 &
+                                      #1 & 
                                      ],
                                      Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                       Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5701,7 +6797,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 &
+                                  #1 & 
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5825,7 +6921,7 @@ Notebook[
                              "\"RandomValue\"",
                              TooltipStyle -> "TextStyling"
                             ],
-                            Annotation[#1, "RandomValue", "Tooltip"] &
+                            Annotation[#1, "RandomValue", "Tooltip"] & 
                            ],
                            Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue
                           ],
@@ -5877,7 +6973,7 @@ Notebook[
                                    ],
                                    "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                   ],
-                                  #1 &
+                                  #1 & 
                                  ],
                                  Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                   Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -5937,7 +7033,7 @@ Notebook[
                                ],
                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                               ],
-                              #1 &
+                              #1 & 
                              ],
                              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -6496,7 +7592,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -6545,7 +7641,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                        ],
-                                       #1 &
+                                       #1 & 
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -6595,7 +7691,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -6658,7 +7754,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -10375,7 +11471,7 @@ Notebook[
                           {"Array", "[", RowBox[{"Range", ",", "5", ",", "3"}], "]"}
                          ]
                         ],
-                        Annotation[#1, HoldForm[Array[Range, 5, 3]], "Tooltip"] &
+                        Annotation[#1, HoldForm[Array[Range, 5, 3]], "Tooltip"] & 
                        ],
                        TagBox[
                         TooltipBox[
@@ -10951,7 +12047,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -11003,7 +12099,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -11314,7 +12410,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -11373,7 +12469,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -11515,7 +12611,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -11576,7 +12672,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -11693,7 +12789,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -11742,7 +12838,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -11788,7 +12884,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -11849,7 +12945,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -12118,7 +13214,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -12164,7 +13260,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -12222,7 +13318,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -12426,7 +13522,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -12482,7 +13578,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -12781,7 +13877,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -12844,7 +13940,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -13240,7 +14336,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -13305,7 +14401,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -13415,7 +14511,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13476,7 +14572,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13539,7 +14635,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13650,7 +14746,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13713,7 +14809,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13778,7 +14874,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13894,7 +14990,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13943,7 +15039,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                        ],
-                                       #1 &
+                                       #1 & 
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -13991,7 +15087,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14056,7 +15152,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14175,7 +15271,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14224,7 +15320,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                        ],
-                                       #1 &
+                                       #1 & 
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14274,7 +15370,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14337,7 +15433,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14453,7 +15549,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14502,7 +15598,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                        ],
-                                       #1 &
+                                       #1 & 
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14550,7 +15646,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14615,7 +15711,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14731,7 +15827,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14780,7 +15876,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                        ],
-                                       #1 &
+                                       #1 & 
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -14830,7 +15926,7 @@ Notebook[
                                           ],
                                           "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                          ],
-                                         #1 &
+                                         #1 & 
                                         ],
                                         Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                          Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -14893,7 +15989,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15110,7 +16206,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                  ],
-                                 #1 &
+                                 #1 & 
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15159,7 +16255,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -15209,7 +16305,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                        ],
-                                       #1 &
+                                       #1 & 
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15272,7 +16368,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                  ],
-                                 #1 &
+                                 #1 & 
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15408,7 +16504,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                  ],
-                                 #1 &
+                                 #1 & 
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15457,7 +16553,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15507,7 +16603,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                        ],
-                                       #1 &
+                                       #1 & 
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -15570,7 +16666,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                  ],
-                                 #1 &
+                                 #1 & 
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -15679,7 +16775,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15728,7 +16824,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                        ],
-                                       #1 &
+                                       #1 & 
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -15774,7 +16870,7 @@ Notebook[
                                         ],
                                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                        ],
-                                       #1 &
+                                       #1 & 
                                       ],
                                       Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                        Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -15835,7 +16931,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -16088,7 +17184,7 @@ Notebook[
                                 ],
                                 "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                ],
-                               #1 &
+                               #1 & 
                               ],
                               Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16137,7 +17233,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -16187,7 +17283,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16250,7 +17346,7 @@ Notebook[
                                 ],
                                 "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                ],
-                               #1 &
+                               #1 & 
                               ],
                               Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16359,7 +17455,7 @@ Notebook[
                                 ],
                                 "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                ],
-                               #1 &
+                               #1 & 
                               ],
                               Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16408,7 +17504,7 @@ Notebook[
                                     ],
                                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                    ],
-                                   #1 &
+                                   #1 & 
                                   ],
                                   Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16458,7 +17554,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -16521,7 +17617,7 @@ Notebook[
                                 ],
                                 "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                ],
-                               #1 &
+                               #1 & 
                               ],
                               Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -16667,7 +17763,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                  ],
-                                 #1 &
+                                 #1 & 
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16716,7 +17812,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
@@ -16762,7 +17858,7 @@ Notebook[
                                       ],
                                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                      ],
-                                     #1 &
+                                     #1 & 
                                     ],
                                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                      Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -16823,7 +17919,7 @@ Notebook[
                                   ],
                                   "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""
                                  ],
-                                 #1 &
+                                 #1 & 
                                 ],
                                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
                                  Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S2,
@@ -19158,7 +20254,7 @@ Notebook[
    "DefaultContentMethod" -> "Tagged"
   },
   "SubmissionReviewData" -> {"Review" -> False},
-  "ToolsOpen" -> False,
+  "ToolsOpen" -> True,
   "UpdatedTimestamp" -> 3846018683.,
   "TemplateVersion" -> "1.5.53",
   "StatusMessage" -> "",
@@ -19166,7 +20262,7 @@ Notebook[
   "TryRealOnly" -> False,
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" -> DateObject[
-   {2022, 1, 13, 20, 53, 51.3316982`9.462960482263124},
+   {2022, 1, 15, 21, 53, 58.1359063`9.517019278178964},
    "Instant",
    "Gregorian",
    -5.
@@ -19177,43 +20273,50 @@ Notebook[
  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
  StyleDefinitions -> Notebook[
   {
-   Cell[StyleData[StyleDefinitions -> "Default.nb"]],
    Cell[
-    StyleData[All, "Working"],
-    DockedCells -> {
-     Cell[
-      BoxData[TemplateBox[{}, "MainGridTemplate"]],
-      "DockedCell",
-      CellMargins -> {{-10, -10}, {-8, -8}},
-      CellFrame -> 0,
-      Background -> RGBColor[0.47058823529411764, 0., 0.00784313725490196],
-      CellTags -> {"MainDockedCell"},
-      CacheGraphics -> False
-     ],
-     Cell[
-      BoxData[TemplateBox[{}, "ToolsGridTemplate"]],
-      "DockedCell",
-      TaggingRules -> {"Tools" -> True},
-      CellTags -> {"ToolbarDockedCell"},
-      CellFrameMargins -> {{0, 0}, {2, 2}},
-      CellFrame -> {{0, 0}, {1, 0}},
-      CacheGraphics -> False,
-      CellOpen -> Dynamic[
-       CurrentValue[
-        EvaluationNotebook[],
-        {TaggingRules, "ToolsOpen"},
-        True
-       ]
+    CellGroupData[
+     {
+      Cell[StyleData[StyleDefinitions -> "Default.nb"]],
+      Cell[
+       StyleData[All, "Working"],
+       DockedCells -> {
+        Cell[
+         BoxData[TemplateBox[{}, "MainGridTemplate"]],
+         "DockedCell",
+         CellMargins -> {{-10, -10}, {-8, -8}},
+         CellFrame -> 0,
+         Background -> RGBColor[0.47058823529411764, 0., 0.00784313725490196],
+         CellTags -> {"MainDockedCell"},
+         CacheGraphics -> False
+        ],
+        Cell[
+         BoxData[TemplateBox[{}, "ToolsGridTemplate"]],
+         "DockedCell",
+         TaggingRules -> {"Tools" -> True},
+         CellTags -> {"ToolbarDockedCell"},
+         CellFrameMargins -> {{0, 0}, {2, 2}},
+         CellFrame -> {{0, 0}, {1, 0}},
+         CacheGraphics -> False,
+         CellOpen -> Dynamic[
+          CurrentValue[
+           EvaluationNotebook[],
+           {TaggingRules, "ToolsOpen"},
+           True
+          ]
+         ]
+        ]
+       },
+       PrivateNotebookOptions -> {
+        "FileOutlineCache" -> False,
+        "SafeFileOpen" -> "IgnoreCache"
+       },
+       CellLabelAutoDelete -> False,
+       CodeAssistOptions -> {"AutoDetectHyperlinks" -> False},
+       AutoQuoteCharacters -> { }
       ]
-     ]
-    },
-    PrivateNotebookOptions -> {
-     "FileOutlineCache" -> False,
-     "SafeFileOpen" -> "IgnoreCache"
-    },
-    CellLabelAutoDelete -> False,
-    CodeAssistOptions -> {"AutoDetectHyperlinks" -> False},
-    AutoQuoteCharacters -> { }
+     },
+     Open
+    ]
    ],
    Cell[
     StyleData[
