@@ -38,7 +38,8 @@ jobs:
         run: wolframscript Scripts/CheckDefinitionNotebook.wls
           
       - name: Upload build artifacts
-        if: success() || failure()    # run this step even if previous step failed
+        if: ${{ false }}  # disable for now
+        # if: success() || failure()    # run this step even if previous step failed
         uses: actions/upload-artifact@v2
         with:
           name: build-artifacts
@@ -46,6 +47,7 @@ jobs:
           if-no-files-found: error
 
   CodeInspection:
+    if: ${{ false }}  # disable for now
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container:
@@ -66,6 +68,7 @@ jobs:
         run: wolframscript Scripts/CodeInspection.wls
 
   TestReport:
+    if: ${{ false }}  # disable for now
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container:
