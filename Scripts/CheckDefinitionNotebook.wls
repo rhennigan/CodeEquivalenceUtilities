@@ -3,7 +3,11 @@
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 
-DefinitionNotebookClient`CheckDefinitionNotebook[
+PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/DefinitionNotebookClient.paclet" ];
+PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/PacletResource.paclet" ];
+PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/ResourceSystemClient.paclet" ];
+
+Print @ DefinitionNotebookClient`CheckDefinitionNotebook[
     File[ "CodeEquivalenceUtilities/DefinitionNotebook.nb" ],
     "ConsoleType"   -> Automatic,
     "ClickedButton" -> "Submit"
