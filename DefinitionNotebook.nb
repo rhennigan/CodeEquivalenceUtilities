@@ -12,12 +12,12 @@ Notebook[
       CellID -> 543342918
      ],
      Cell[
-      "Utilities for testing code equivalence.",
+      "Utilities for testing code equivalence!!!!",
       "Text",
       Deletable -> False,
       TaggingRules -> { },
       CellTags -> {"Description", "TemplateCell"},
-      CellID -> 51608201
+      CellID -> 51608202
      ],
      Cell[
       CellGroupData[

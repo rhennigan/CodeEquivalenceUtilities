@@ -8,7 +8,7 @@ PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/PacletResourc
 PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/ResourceSystemClient.paclet" ];
 
 CloudObject;
-Block[ { CloudObject`Private`promptForWebLogin = $Canceled & },
+checked = Block[ { CloudObject`Private`promptForWebLogin = $Canceled & },
     Quiet[
         DefinitionNotebookClient`CheckDefinitionNotebook[
             File[ "DefinitionNotebook.nb" ],
@@ -24,6 +24,10 @@ Block[ { CloudObject`Private`promptForWebLogin = $Canceled & },
         ],
         CloudObject::notauth
     ]
+];
+
+If[ ! FreeQ[ checked, KeyValuePattern[ "Level" -> "Error" ], { 1 } ],
+    Exit[ 1 ]
 ];
 
 (* :!CodeAnalysis::EndBlock:: *)
