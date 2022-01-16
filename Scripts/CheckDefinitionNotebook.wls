@@ -11,7 +11,7 @@ PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/PacletResourc
 PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/ResourceSystemClient.paclet" ];
 
 CloudObject;
-Block[ { CloudObject`Private`promptForWebLogin = $Failed & },
+Block[ { CloudObject`Private`promptForWebLogin = $Canceled & },
     Quiet[
         DefinitionNotebookClient`CheckDefinitionNotebook[
             File[ "DefinitionNotebook.nb" ],

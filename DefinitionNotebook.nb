@@ -9,7 +9,7 @@ Notebook[
       Deletable -> False,
       TaggingRules -> { },
       CellTags -> {"Name", "TemplateCell", "Title"},
-      CellID -> 543342918
+      CellID -> 543342917
      ],
      Cell[
       "Utilities for testing code equivalence.",
