@@ -10,10 +10,15 @@ PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/DefinitionNot
 PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/PacletResource.paclet" ];
 PacletInstall[ "https://www.wolframcloud.com/obj/rhennigan/Paclets/ResourceSystemClient.paclet" ];
 
-DefinitionNotebookClient`CheckDefinitionNotebook[
-    File[ "DefinitionNotebook.nb" ],
-    "ConsoleType"   -> Automatic,
-    "ClickedButton" -> "Submit"
+Block[ { CloudConnect = $Failed & },
+    Quiet[
+        DefinitionNotebookClient`CheckDefinitionNotebook[
+            File[ "DefinitionNotebook.nb" ],
+            "ConsoleType"   -> Automatic,
+            "ClickedButton" -> "Submit"
+        ],
+        CloudObject::notauth
+    ]
 ];
 
 (* :!CodeAnalysis::EndBlock:: *)
