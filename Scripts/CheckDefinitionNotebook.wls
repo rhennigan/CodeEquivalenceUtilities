@@ -12,9 +12,15 @@ Block[ { CloudObject`Private`promptForWebLogin = $Canceled & },
     Quiet[
         DefinitionNotebookClient`CheckDefinitionNotebook[
             File[ "DefinitionNotebook.nb" ],
-            "ConsoleType"   -> Automatic,
+            "ConsoleType" -> Automatic,
             "ClickedButton" -> "Submit",
-            "DisabledHints" -> { "PacletRequiresBuild" }
+            "DisabledHints" -> {
+                <|
+                    "MessageTag" -> "PacletRequiresBuild",
+                    "Level"      -> "Error",
+                    "ID"         -> All
+                |>
+            }
         ],
         CloudObject::notauth
     ]
