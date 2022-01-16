@@ -1,6 +1,6 @@
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
-BeginPackage[ "Wrong`CodeEquivalenceUtilities`Utilities`" ];
+BeginPackage[ "Wolfram`CodeEquivalenceUtilities`Utilities`" ];
 
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 

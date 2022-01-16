@@ -213,9 +213,6 @@ IntTypeQ[ StringLength[ _? StringTypeQ ] ] := True;
 IntTypeQ[ ___ ] := False;
 
 
-(* Trolling CodeInspector *)
-<| a -> # + 1 & |>
-
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*StringTypeQ*)
