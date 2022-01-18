@@ -34,7 +34,6 @@ jobs:
       - name: Run Paclet Check and Build
         env:
           WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
-          CHECKGITHUBPACLET_PERMISSIONS_KEY: ${{ secrets.CHECKGITHUBPACLET_PERMISSIONS_KEY }}
         run: wolframscript Scripts/CheckDefinitionNotebook.wls
           
       - name: Upload build artifacts
@@ -46,29 +45,7 @@ jobs:
           path: build/
           if-no-files-found: error
 
-  CodeInspection:
-    if: ${{ false }}  # disable for now
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    container:
-      image: wolframresearch/wolframengine:latest
-      options: --user root
-    env:
-      WOLFRAM_SYSTEM_ID: Linux-x86-64
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run CodeInspector on Paclet files
-        env:
-          WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
-        run: wolframscript Scripts/CodeInspection.wls
-
   TestReport:
-    if: ${{ false }}  # disable for now
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container:
