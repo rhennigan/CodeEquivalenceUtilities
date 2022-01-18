@@ -4,7 +4,7 @@ Notebook[
    CellGroupData[
     {
      Cell[
-      "Wolfram/CodeEquivalenceUtilities",
+      "Wolfram:CodeEquivalenceUtilities",
       "Title",
       Deletable -> False,
       TaggingRules -> { },
@@ -12,7 +12,7 @@ Notebook[
       CellID -> 543342918
      ],
      Cell[
-      "Utilities for testing code equivalence",
+      "Utilities for testing code equivalence!!!",
       "Text",
       Deletable -> False,
       TaggingRules -> { },
@@ -4821,7 +4821,7 @@ Notebook[
             CellID -> 462042388
            ],
            Cell[
-            "Check if two expressions are equivalent:",
+            "Check if two expressions are equivalent",
             "Text",
             TaggingRules -> { },
             CellID -> 128039117
@@ -4861,6 +4861,37 @@ Notebook[
                TaggingRules -> { },
                CellLabel -> "Out[1]=",
                CellID -> 47767555
+              ]
+             },
+             Open
+            ]
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                {
+                 RowBox[{"1", "+", "1"}],
+                 "\[IndentingNewLine]",
+                 RowBox[{"2", "+", "2"}]
+                }
+               ],
+               "Input",
+               CellLabel -> "In[20]:=",
+               CellID -> 29515010
+              ],
+              Cell[
+               BoxData["2"],
+               "Output",
+               CellLabel -> "Out[20]=",
+               CellID -> 684503536
+              ],
+              Cell[
+               BoxData["4"],
+               "Output",
+               CellLabel -> "Out[21]=",
+               CellID -> 20731959
               ]
              },
              Open
@@ -18216,7 +18247,7 @@ Notebook[
             CellID -> 475746126
            ],
            Cell[
-            "https://github.com/rhennigan/CodeEquivalenceUtilities",
+            "https://github.com/rhennigan/CodeEquivalenceStuff",
             "Text",
             TaggingRules -> { },
             CellEventActions -> {
@@ -19301,7 +19332,8 @@ Notebook[
             "Item",
             TaggingRules -> { },
             CellID -> 446113075
-           ]
+           ],
+           Cell["https://www.zombo.com", "Item", CellID -> 125378675]
           },
           Open
          ]

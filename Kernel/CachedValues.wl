@@ -1,14 +1,13 @@
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
 
-BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CachedValues`",
+BeginPackage[ "Wrong`CodeEquivalenceUtilities`CachedValues`",
     {
         "Wolfram`CodeEquivalenceUtilities`Utilities`",
         "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`",
         "Wolfram`CodeEquivalenceUtilities`EvaluationControl`"
     }
 ];
-
 
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
@@ -30,6 +29,9 @@ InitializeCache;
 
 (******************************************************************************)
 
+
+(* Hey CodeInspector, look at this: *)
+If[ a, b, b ]
 
 
 Begin[ "`Private`" ];
