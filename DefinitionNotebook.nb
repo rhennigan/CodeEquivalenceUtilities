@@ -4,7 +4,7 @@ Notebook[
    CellGroupData[
     {
      Cell[
-      "Wolfram:CodeEquivalenceUtilities",
+      "Wolfram/CodeEquivalenceUtilities",
       "Title",
       Deletable -> False,
       TaggingRules -> { },
@@ -12,7 +12,7 @@ Notebook[
       CellID -> 543342918
      ],
      Cell[
-      "Utilities for testing code equivalence!!!",
+      "Utilities for testing code equivalence",
       "Text",
       Deletable -> False,
       TaggingRules -> { },
@@ -2586,7 +2586,7 @@ Notebook[
                CellID -> 73314943
               ]
              },
-             Closed
+             Open
             ]
            ],
            Cell[
@@ -4821,7 +4821,7 @@ Notebook[
             CellID -> 462042388
            ],
            Cell[
-            "Check if two expressions are equivalent",
+            "Check if two expressions are equivalent:",
             "Text",
             TaggingRules -> { },
             CellID -> 128039117
@@ -4861,37 +4861,6 @@ Notebook[
                TaggingRules -> { },
                CellLabel -> "Out[1]=",
                CellID -> 47767555
-              ]
-             },
-             Open
-            ]
-           ],
-           Cell[
-            CellGroupData[
-             {
-              Cell[
-               BoxData[
-                {
-                 RowBox[{"1", "+", "1"}],
-                 "\[IndentingNewLine]",
-                 RowBox[{"2", "+", "2"}]
-                }
-               ],
-               "Input",
-               CellLabel -> "In[10]:=",
-               CellID -> 185896032
-              ],
-              Cell[
-               BoxData["2"],
-               "Output",
-               CellLabel -> "Out[10]=",
-               CellID -> 699013540
-              ],
-              Cell[
-               BoxData["4"],
-               "Output",
-               CellLabel -> "Out[11]=",
-               CellID -> 133681439
               ]
              },
              Open
@@ -18247,7 +18216,7 @@ Notebook[
             CellID -> 475746126
            ],
            Cell[
-            "https://github.com/rhennigan/CodeEquivalenceStuff",
+            "https://github.com/rhennigan/CodeEquivalenceUtilities",
             "Text",
             TaggingRules -> { },
             CellEventActions -> {
@@ -20259,7 +20228,7 @@ Notebook[
   "TryRealOnly" -> False,
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" -> DateObject[
-   {2022, 1, 15, 21, 53, 58.1359063`9.517019278178964},
+   {2022, 1, 18, 10, 24, 45.123884`9.406981340534058},
    "Instant",
    "Gregorian",
    -5.
