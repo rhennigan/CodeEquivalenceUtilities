@@ -1,7 +1,7 @@
 Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
 
-BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CachedValues`",
+BeginPackage[ "Wrong`CodeEquivalenceUtilities`CachedValues`",
     {
         "Wolfram`CodeEquivalenceUtilities`Utilities`",
         "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`",
@@ -16,7 +16,7 @@ Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 (******************************************************************************)
 (* Exported symbols added here with SymbolName::usage *)
 
-
+If[ a, b, b ]
 
 Cached;
 CacheFileData;
