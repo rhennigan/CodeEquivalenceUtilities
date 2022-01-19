@@ -41,4 +41,4 @@ jobs:
           git config --global user.email 'richardh@wolfram.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git commit -am "Automated changes"
-          git push
+          git push origin HEAD:feature/auto-format-notebook-test
