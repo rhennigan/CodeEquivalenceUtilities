@@ -26,6 +26,8 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Format Notebooks
         run: wolframscript Scripts/FormatNotebooks.wls
+      - name: Install Git
+        run: apt install -y git
       - name: Check for modified files
         id: git-check
         run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
