@@ -31,10 +31,15 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
+      - name: Install Development Paclets
+        env:
+          WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
+        run: wolframscript Scripts/InstallPaclets.wls
+
       - name: Run Paclet Check and Build
         env:
           WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
-        run: wolframscript Scripts/CheckDefinitionNotebook.wls
+        run: wolframscript -code 'PacletResource`CICD`CheckPaclet[]'
           
       - name: Upload build artifacts
         if: ${{ false }}  # disable for now

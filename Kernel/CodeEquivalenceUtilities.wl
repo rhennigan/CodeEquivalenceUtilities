@@ -59,6 +59,8 @@ $TransformationLimit        = 10;
 Begin[ "`Private`" ];
 
 
+(* Hey CodeInspector, look at this: *)
+If[ a, b, b ]
 
 (******************************************************************************)
 

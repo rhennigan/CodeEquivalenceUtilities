@@ -30,10 +30,6 @@ InitializeCache;
 (******************************************************************************)
 
 
-(* Hey CodeInspector, look at this: *)
-If[ a, b, b ]
-
-
 Begin[ "`Private`" ];
 
 
