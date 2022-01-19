@@ -2,7 +2,7 @@ Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
 
 
 
-BeginPackage[ "WrongContext`CodeEquivalenceUtilities`",
+BeginPackage[ "Wolfram`CodeEquivalenceUtilities`",
     {
         "Wolfram`CodeEquivalenceUtilities`Utilities`",
         "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`",

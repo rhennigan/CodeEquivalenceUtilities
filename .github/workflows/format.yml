@@ -1,0 +1,39 @@
+name: Format Notebooks
+
+on: 
+
+  push:
+
+    branches: [ "feature/auto-format-notebook-test" ]
+  
+  workflow_dispatch:
+
+jobs:
+  FormatNotebooks:
+    runs-on: ubuntu-latest
+
+    container:
+      image: wolframresearch/wolframengine:latest
+      options: --user root
+
+    env:
+      WOLFRAM_SYSTEM_ID: Linux-x86-64
+      WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
+    
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Format Notebooks
+        run: wolframscript Scripts/FormatNotebooks.wls
+      - name: Check for modified files
+        id: git-check
+        run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
+      - name: Push changes
+        if: steps.git-check.outputs.modified == 'true'
+        run: |
+          git config --global user.name 'Rick Hennigan'
+          git config --global user.email 'richardh@wolfram.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git commit -am "Automated changes"
+          git push
