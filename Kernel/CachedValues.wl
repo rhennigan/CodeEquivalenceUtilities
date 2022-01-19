@@ -429,6 +429,8 @@ precacheValue[ e_ ] :=
         Cached[ e, "Expiration" -> Quantity[ 0, "Days" ] ];
         held = HoldComplete @ e;
         file = ConfirmBy[ CachePath[ held, "Metadata" ], FileExistsQ ];
+        (* Hey CodeInspector, what do you think of this? *)
+        If[ a, b, b ];
         meta = ConfirmBy[ Import @ file, AssociationQ ];
         meta
     ];
