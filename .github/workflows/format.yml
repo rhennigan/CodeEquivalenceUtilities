@@ -21,11 +21,14 @@ jobs:
       WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
     
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
         with:
           ref: ${{ github.head_ref }}
       - name: Format Notebooks
-        run: wolframscript Scripts/FormatNotebooks.wls
+        run: |
+          wolframscript Scripts/FormatNotebooks.wls
+          pwd
+          ls -la
       - name: Install Git
         run: apt install -y git
       - name: Check for modified files
