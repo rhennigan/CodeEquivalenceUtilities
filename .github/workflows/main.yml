@@ -32,7 +32,7 @@ jobs:
       WOLFRAM_SYSTEM_ID: Linux-x86-64
 
       # Set WOLFRAMSCRIPT_ENTITLEMENTID environment variable
-      #   created with CreateLicenseEntitlement (http://reference.wolfram.com/language/ref/CreateLicenseEntitlement.html)
+      #   created with CreateLicenseEntitlement (https://reference.wolfram.com/language/ref/CreateLicenseEntitlement.html)
       #   stored in GitHub repository settings as an encrypted secret (https://docs.github.com/en/actions/security-guides/encrypted-secrets)
       WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
 
