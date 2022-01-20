@@ -62,8 +62,7 @@ jobs:
 
       # I currently have this disabled since PacletResource`CICD`BuildPaclet isn't implemented yet
       - name: Upload build artifacts
-        if: ${{ false }}  # disable for now
-        # if: success() || failure()    # run this step even if previous step failed
+        if: success() || failure()    # run this step even if previous step failed
         uses: actions/upload-artifact@v2
         with:
           name: build-artifacts
