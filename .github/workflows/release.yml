@@ -4,9 +4,7 @@ on:
   workflow_dispatch:
 
   push:
-    # Sequence of patterns matched against refs/tags
-    tags:
-    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+    branches: [ 'release/*' ]
 
 jobs:
   build:
@@ -37,9 +35,9 @@ jobs:
       
       - name: Debugging stuff
         run: |
-          echo "PACLET_PATH ${{ steps.build-paclet.outputs.PACLET_PATH }}"
-          echo "PACLET_FILE ${{ steps.build-paclet.outputs.PACLET_FILE }}"
-          echo "RELEASE_TAG ${{ steps.build-paclet.outputs.RELEASE_TAG }}"
+          echo "PACLET_PATH ${{ env.PACLET_PATH }}"
+          echo "PACLET_FILE ${{ env.PACLET_FILE }}"
+          echo "RELEASE_TAG ${{ env.RELEASE_TAG }}"
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
@@ -54,8 +52,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.build-paclet.outputs.RELEASE_TAG }}
-          release_name: Release ${{ steps.build-paclet.outputs.RELEASE_TAG }}
+          tag_name: ${{ env.RELEASE_TAG }}
+          release_name: Release ${{ env.RELEASE_TAG }}
           draft: false
           prerelease: false
       
@@ -66,6 +64,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ steps.build-paclet.outputs.PACLET_PATH }}
-          asset_name: ${{ steps.build-paclet.outputs.PACLET_FILE }}
+          asset_path: ${{ env.PACLET_PATH }}
+          asset_name: ${{ env.PACLET_FILE }}
           asset_content_type: application/zip
