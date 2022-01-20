@@ -324,6 +324,21 @@ Notebook[
       CellID -> 880084151
      ],
      Cell[
+      "Notebook auto-format test.",
+      "ExampleText",
+      "FutureExample",
+      CellDingbat -> Cell[
+       BoxData[
+        TooltipBox[
+         Cell["rhennigan      ", "TentativeID"],
+         "2022-01-20"
+        ]
+       ],
+       "TentativeWrapper"
+      ],
+      CellID -> 26864466
+     ],
+     Cell[
       "Check if two expressions are equivalent:",
       "ExampleText",
       CellID -> 511676506
@@ -1323,7 +1338,7 @@ Notebook[
   "NotebookUUID" -> "5a8b10f1-ac92-daa3-2e6a-125943a49bdf"
  },
  CellContext -> "Global`",
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (November 11, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
  StyleDefinitions -> FrontEnd`FileName[
   {"Wolfram"},
   "FunctionPageStylesExt.nb",
