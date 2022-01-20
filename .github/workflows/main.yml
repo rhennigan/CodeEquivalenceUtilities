@@ -52,15 +52,12 @@ jobs:
       - name: Install Development Paclets
         run: wolframscript Scripts/InstallPaclets.wls
 
-      # The actual paclet inspection is run with PacletResource`CICD`CheckPaclet
       - name: CheckPaclet
         run: wolframscript -code 'PacletResource`CICD`CheckPaclet[]'
 
-      # The actual paclet inspection is run with PacletResource`CICD`CheckPaclet
       - name: BuildPaclet
         run: wolframscript -code 'PacletResource`CICD`BuildPaclet[]'
 
-      # I currently have this disabled since PacletResource`CICD`BuildPaclet isn't implemented yet
       - name: Upload build artifacts
         if: success() || failure()    # run this step even if previous step failed
         uses: actions/upload-artifact@v2

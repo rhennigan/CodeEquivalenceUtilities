@@ -1,0 +1,60 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+name: Upload Release Asset
+
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+
+    container:
+      image: wolframresearch/wolframengine:latest
+      options: --user root
+
+    env:
+      WOLFRAM_SYSTEM_ID: Linux-x86-64
+      WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install development paclets
+        run: wolframscript Scripts/InstallPaclets.wls
+      
+      - name: Build paclet
+        id: build-paclet
+        run: wolframscript -code 'PacletResource`CICD`BuildPaclet[]'
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: build/
+          if-no-files-found: error
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      
+      - name: Upload release asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ steps.build-paclet.outputs.asset_path }}
+          asset_name: ${{ steps.build-paclet.outputs.asset_name }}
+          asset_content_type: application/zip
