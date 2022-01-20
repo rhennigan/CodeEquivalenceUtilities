@@ -3457,7 +3457,11 @@ Cell[BoxData[
  TaggingRules->{},
  InitializationCell->True,
  CellLabel->"In[3]:=",
- CellID->119547485,ExpressionUUID->"1754cc2d-f7cd-4810-b4bc-06f349f2966f"]
+ CellID->119547485,ExpressionUUID->"1754cc2d-f7cd-4810-b4bc-06f349f2966f"],
+
+Cell["Pre-commit auto format test. ", "Text", "Excluded",
+ CellChangeTimes->{{3.8516858719489927`*^9, 3.851685881505707*^9}},
+ CellID->582261700,ExpressionUUID->"06e455f0-c71a-438f-be18-bc97f367cac3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3919,6 +3923,7 @@ LocalSymbols`S1,
 CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""],
                  #& ],
                 Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                
                 Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S2, 
                  Blank[Integer]]], ",", "1"}], "}"}]}], "]"}], ",", 
@@ -5131,7 +5136,6 @@ LocalSymbols`S1,
             Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S2, 1, 
              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
-              
               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S1, 
                Blank[Integer]] + 2, 1}], {
@@ -5227,7 +5231,6 @@ S1, 1, 5, 1}]],
           Table[
            Range[
            Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
-             
              Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S1, 
               Blank[Integer]] + 2], {
@@ -5362,6 +5365,7 @@ LocalSymbols`S1,
             Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S2, 1, 
              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+              
               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S1, 
                Blank[Integer]] + 2, 1}], {
@@ -5613,7 +5617,6 @@ S1, {Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1,
 LocalSymbols`S2, 
                Blank[Integer]] + 2}], {
             Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
-            
             Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S2, 
              Blank[Integer]], 1, 5, 1}]], 
@@ -5661,7 +5664,6 @@ LocalSymbols`S1,
 LocalSymbols`S1, 
               Blank[Integer]], 1, 2 + 
              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
-              
               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S2, 
                Blank[Integer]], 1}], {
@@ -5755,7 +5757,6 @@ LocalSymbols`S2,
 LocalSymbols`S1, 
               Blank[Integer]], {
               Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
-              
               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S1, 
                Blank[Integer]], 1, 
@@ -5968,7 +5969,6 @@ LocalSymbols`S1,
 LocalSymbols`S2, 
              Blank[Integer]], 1}], {
            Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
-           
            Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`\
 S2, 
             Blank[Integer]], 1, 10, 1}], 2]], 
@@ -6068,7 +6068,6 @@ S1, {Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`S1, 1,
 LocalSymbols`S2, 
              Blank[Integer]] + 2, 1}], {
           Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
-          
           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`\
 S2, 
            Blank[Integer]], 1, 5, 1}]], 
@@ -6116,6 +6115,7 @@ S1,
 S1, 
             Blank[Integer]], 1, 
            Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+            
             Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S2, 
              Blank[Integer]] + 2, 1}], {
@@ -6165,6 +6165,7 @@ S1,
         Table[
          Table[
           Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+          
           Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`LocalSymbols`\
 S1, 
            Blank[Integer]], {
@@ -6798,7 +6799,6 @@ LocalSymbols`S1, 3, 7}]]] -> {EdgeStyle -> Directive[
 LocalSymbols`S1, 
               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S1 + 2], {
-             
              Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S1, 1, 5, 1}]]] -> {EdgeStyle -> Directive[
              Hue[0.8, 0.6, 0.8], 
@@ -7444,6 +7444,7 @@ LocalSymbols`S2,
                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`\
 CanonicalForms`Scope`LocalSymbols`S2, _Integer]\""], #& ], 
                     Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+                    
                     Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S2, 
                     Blank[Integer]]], ",", "1", ",", "10", ",", "1"}], 
@@ -7752,6 +7753,7 @@ LocalSymbols`S1], "+", "2"}]}], "]"}], ",",
                     Rational[47, 255], 
                     Rational[13, 51], 
                     Rational[6, 17]}]], 
+                   
                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S1], ",", "1", ",", "5", ",", "1"}], "}"}]}], "]"}]],
          Annotation[#, 
@@ -7973,6 +7975,7 @@ LocalSymbols`S1,
            Table[
             Range[
             Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+              
               Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S1, 
                Blank[Integer]] + 2], {
@@ -8340,6 +8343,7 @@ LocalSymbols`S1, 1,
 LocalSymbols`S2, 
                 Blank[Integer]] + 2, 1}], {
              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+             
              Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S2, 
               Blank[Integer]], 1, 5, 1}]], "Tooltip"]& ], 
@@ -8384,6 +8388,7 @@ LocalSymbols`S1,
                     Rational[47, 255], 
                     Rational[13, 51], 
                     Rational[6, 17]}]], 
+                    
                     Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S2], ",", 
                     RowBox[{
@@ -8430,8 +8435,7 @@ LocalSymbols`S1,
                     Rational[94, 255], 
                     Rational[43, 85], 
                     Rational[181, 255]}]], 
-                    StyleBox[
-                    "\[DoubleStruckCapitalZ]", FontColor -> RGBColor[{
+                    StyleBox["\[DoubleStruckCapitalZ]", FontColor -> RGBColor[{
                     Rational[14, 51], 
                     Rational[97, 255], 
                     Rational[8, 15]}]]}], ContentPadding -> False, FrameStyle -> 
@@ -8561,7 +8565,6 @@ LocalSymbols`S1,
                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`\
 CanonicalForms`Scope`LocalSymbols`S1, _Integer]\""], #& ], 
                    Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
-                   
                    Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S1, 
                     Blank[Integer]]], ",", "1", ",", "5", ",", "1"}], "}"}]}],
@@ -8864,6 +8867,7 @@ LocalSymbols`S1,
 LocalSymbols`S2, 
                 Blank[Integer]], 1}], {
              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+             
              Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S2, 
               Blank[Integer]], 1, 5, 1}]], "Tooltip"]& ], 
@@ -8994,6 +8998,7 @@ LocalSymbols`S1,
            Table[
             Table[
              Wolfram`CodeEquivalenceUtilities`Types`TypedSymbol[
+             
              Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`\
 LocalSymbols`S1, 
               Blank[Integer]], {
