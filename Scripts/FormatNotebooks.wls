@@ -1,6 +1,14 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
+(*
+    To configure this script to run automatically before each commit, run the
+    following in the repository directory:
+    ```
+    git config --local core.hooksPath Scripts/.githooks
+    ```
+*)
+
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 
@@ -68,9 +76,25 @@ getNotebookFiles[ root_       ] := getNotebookFiles[ root, $ignore ];
 getNotebookFiles[ root_, None ] := FileNames[ "*.nb", root, Infinity ];
 
 getNotebookFiles[ root_, ignore_ ] :=
+    getNotebookFiles[ root, ignore, getNotebookArgs[ ] ];
+
+getNotebookFiles[ root_, ignore_, files: { __String? FileExistsQ } ] := files;
+
+getNotebookFiles[ root_, ignore_, _ ] :=
     Select[ FileNames[ "*.nb", root, Infinity ],
             Not @* StringMatchQ[ ignore~~___ ]
     ];
+
+getNotebookArgs[ ] := getNotebookArgs @ $ScriptCommandLine;
+
+getNotebookArgs[ { a_, b_String /; StringContainsQ[ b, "\n" ] } ] :=
+    getNotebookArgs[ Prepend[ StringSplit[ b, "\n" ], a ] ];
+
+getNotebookArgs[ { _, files__String? FileExistsQ } ] := { files };
+
+getNotebookArgs[ { _, files__String } ] := Print[ "files: ", { files } ];
+
+getNotebookArgs[ ___ ] := Missing[ "NotFound" ];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
