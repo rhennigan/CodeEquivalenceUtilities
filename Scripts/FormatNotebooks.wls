@@ -35,7 +35,7 @@ $strict := $strict = Interpreter[ "Boolean" ][ getArg[ "strict", "True" ] ];
 getArg[ name_String, default_: None ] :=
     SelectFirst[ Flatten @ StringCases[
                      $ScriptCommandLine,
-                     "--" <> name <> "=" ~~ root__ ~~ EndOfString :> root
+                     "--" <> name <> "=" ~~ root___ ~~ EndOfString :> root
                  ],
                  StringQ,
                  default
@@ -78,21 +78,18 @@ getNotebookFiles[ root_, None ] := FileNames[ "*.nb", root, Infinity ];
 getNotebookFiles[ root_, ignore_ ] :=
     getNotebookFiles[ root, ignore, getNotebookArgs[ ] ];
 
-getNotebookFiles[ root_, ignore_, files: { __String? FileExistsQ } ] := files;
+getNotebookFiles[ root_, ignore_, files: { ___String? FileExistsQ } ] := files;
 
 getNotebookFiles[ root_, ignore_, _ ] :=
     Select[ FileNames[ "*.nb", root, Infinity ],
             Not @* StringMatchQ[ ignore~~___ ]
     ];
 
-getNotebookArgs[ ] := getNotebookArgs @ $ScriptCommandLine;
+getNotebookArgs[ ] := getNotebookArgs @ getArg[ "notebooks", None ];
 
-getNotebookArgs[ { a_, b_String /; StringContainsQ[ b, "\n" ] } ] :=
-    getNotebookArgs[ Prepend[ StringSplit[ b, "\n" ], a ] ];
+getNotebookArgs[ nbs_String ] := getNotebookArgs @ StringSplit[ nbs, "\n" ];
 
-getNotebookArgs[ { _, files__String? FileExistsQ } ] := { files };
-
-getNotebookArgs[ { _, files__String } ] := Print[ "files: ", { files } ];
+getNotebookArgs[ { files___String? FileExistsQ } ] := { files };
 
 getNotebookArgs[ ___ ] := Missing[ "NotFound" ];
 
