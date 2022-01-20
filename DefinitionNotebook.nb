@@ -20163,8 +20163,7 @@ Notebook[
          },
          CellTags -> {"DefaultContent", "TabNext"},
          CellID -> 908162033
-        ],
-        Cell["", "Text", CellID -> 50738122]
+        ]
        },
        Open
       ]
