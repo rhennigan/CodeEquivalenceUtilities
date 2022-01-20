@@ -1,12 +1,17 @@
-on:
-  push:
-    # Sequence of patterns matched against refs/tags
-    tags:
-    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-
-  workflow_dispatch:
-
 name: Upload Release Asset
+
+on:
+  workflow_dispatch:
+    inputs:
+      msg: 
+        description: 'This is a description'
+        default: 'This is a default'
+#  push:
+#    # Sequence of patterns matched against refs/tags
+#    tags:
+#    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+
 
 jobs:
   build:
