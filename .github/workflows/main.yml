@@ -36,9 +36,6 @@ jobs:
       #   stored in GitHub repository settings as an encrypted secret (https://docs.github.com/en/actions/security-guides/encrypted-secrets)
       WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
 
-      # Used instead of cloud authentication for submitting to the paclet repository
-      RESOURCE_SYSTEM_SUBMITTER_TOKEN: ${{ secrets.RESOURCE_SYSTEM_SUBMITTER_TOKEN }}
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it

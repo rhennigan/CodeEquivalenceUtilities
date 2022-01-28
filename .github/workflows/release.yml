@@ -25,6 +25,9 @@ jobs:
 
       - name: Build Paclet
         uses: rhennigan/build-paclet@v1.3.0
+        with:
+          check: false
+          debug: true
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
