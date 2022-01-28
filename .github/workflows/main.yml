@@ -46,7 +46,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build Paclet
-        uses: rhennigan/build-paclet@v1.2.0
+        uses: rhennigan/build-paclet@v1.3.0
 
       - name: Upload build artifacts
         if: success() || failure()    # run this step even if previous step failed
