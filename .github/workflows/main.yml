@@ -1,10 +1,10 @@
-name: Check Paclet
+name: Build Paclet
 
 # Controls when the workflow will run
 on:
   push:
     # Triggers the workflow on push for the following branches
-    branches: [ main, "feature/testing-github-annotations" ]
+    branches: [ main ]
   pull_request:
     # Triggers the workflow on pull request for the following branches
     branches: [ main ]
@@ -45,18 +45,8 @@ jobs:
       # https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v2
 
-      # This is a temporary step to install development versions of the following paclets:
-      #   PacletResource
-      #   DefinitionNotebookClient
-      #   ResourceSystemClient
-      - name: Install Development Paclets
-        run: wolframscript Scripts/InstallPaclets.wls
-
-      - name: CheckPaclet
-        run: wolframscript -code 'PacletResource`CICD`CheckPaclet[]'
-
-      - name: BuildPaclet
-        run: wolframscript -code 'PacletResource`CICD`BuildPaclet[]'
+      - name: Build Paclet
+        uses: rhennigan/build-paclet@v1.2.0
 
       - name: Upload build artifacts
         if: success() || failure()    # run this step even if previous step failed
