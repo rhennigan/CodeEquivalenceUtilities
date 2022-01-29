@@ -52,12 +52,13 @@ jobs:
         run: | 
           echo $GITHUB_WORKSPACE
           ls -a $GITHUB_WORKSPACE
+          echo $BUILD_DIR
 
       - name: Upload build artifacts
         if: success() || failure()    # run this step even if previous step failed
         uses: actions/upload-artifact@v2
         with:
-          path: ${{ env.BUILD_DIR }}
+          path: ${{ env.GITHUB_WORKSPACE }}/build
           if-no-files-found: error
 
   # Currently disabled since this takes much longer to run
