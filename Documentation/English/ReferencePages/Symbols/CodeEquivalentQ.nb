@@ -1323,7 +1323,7 @@ Notebook[
   "NotebookUUID" -> "5a8b10f1-ac92-daa3-2e6a-125943a49bdf"
  },
  CellContext -> "Global`",
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (November 11, 2021)",
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
  StyleDefinitions -> FrontEnd`FileName[
   {"Wolfram"},
   "FunctionPageStylesExt.nb",

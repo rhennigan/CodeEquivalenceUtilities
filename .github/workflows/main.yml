@@ -1,13 +1,12 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Check Paclet
+name: Build Paclet
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
+    # Triggers the workflow on push for the following branches
     branches: [ main ]
   pull_request:
+    # Triggers the workflow on pull request for the following branches
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -16,56 +15,50 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  CheckDefinitionNotebook:
-    # The type of runner that the job will run on
+  CheckAndBuild:
+    name: Check and Build
+
+    # Choose which type of machine to run the job on
     runs-on: ubuntu-latest
+
+    # Choose the docker container
     container:
+      # https://hub.docker.com/r/wolframresearch/wolframengine
       image: wolframresearch/wolframengine:latest
       options: --user root
+
+    # Environment variables
     env:
       WOLFRAM_SYSTEM_ID: Linux-x86-64
+
+      # Set WOLFRAMSCRIPT_ENTITLEMENTID environment variable
+      #  created with CreateLicenseEntitlement 
+      #  https://reference.wolfram.com/language/ref/CreateLicenseEntitlement.html
+      #  stored in GitHub repository settings as an encrypted secret 
+      #  https://docs.github.com/en/actions/security-guides/encrypted-secrets
+      WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run Paclet Check and Build
-        env:
-          WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
-          CHECKGITHUBPACLET_PERMISSIONS_KEY: ${{ secrets.CHECKGITHUBPACLET_PERMISSIONS_KEY }}
-        run: wolframscript Scripts/CheckDefinitionNotebook.wls
-          
+      # Checks Paclet for errors and builds if passing
+      # https://github.com/marketplace/actions/build-paclet
+      - name: Build Paclet
+        uses: rhennigan/build-paclet@main
+
+      # Attach the built files to the action summary
       - name: Upload build artifacts
-        if: success() || failure()    # run this step even if previous step failed
         uses: actions/upload-artifact@v2
         with:
-          name: build-artifacts
-          path: build/
+          path: ${{ env.BUILD_DIR }}
           if-no-files-found: error
 
-  CodeInspection:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    container:
-      image: wolframresearch/wolframengine:latest
-      options: --user root
-    env:
-      WOLFRAM_SYSTEM_ID: Linux-x86-64
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run CodeInspector on Paclet files
-        env:
-          WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
-        run: wolframscript Scripts/CodeInspection.wls
-
+  # Currently disabled since this takes much longer to run
   TestReport:
+    if: ${{ false }}  # disable for now
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container:

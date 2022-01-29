@@ -1,0 +1,55 @@
+name: Release Paclet
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches: [ 'release/*' ]
+
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+
+    container:
+      image: wolframresearch/wolframengine:latest
+      options: --user root
+
+    env:
+      WOLFRAM_SYSTEM_ID: Linux-x86-64
+      WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Paclet
+        uses: rhennigan/build-paclet@main
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          path: ${{ env.BUILD_DIR }}
+          if-no-files-found: error
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          release_name: Release ${{ env.RELEASE_TAG }}
+          draft: false
+          prerelease: false
+
+      - name: Upload release asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.PACLET_PATH }}
+          asset_name: ${{ env.PACLET_FILE }}
+          asset_content_type: application/zip

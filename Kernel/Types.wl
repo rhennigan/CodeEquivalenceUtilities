@@ -212,6 +212,7 @@ IntTypeQ[ StringLength[ _? StringTypeQ ] ] := True;
 (* Default *)
 IntTypeQ[ ___ ] := False;
 
+
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*StringTypeQ*)

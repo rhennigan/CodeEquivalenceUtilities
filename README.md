@@ -16,7 +16,7 @@ This Paclet represents the underlying technology that powers several [automated 
 </tr>
 </table>
 
-[![View notebooks](https://wolfr.am/HAAhzkRq)](https://wolfr.am/Z72fzrAk)
+[![View notebooks](https://wolfr.am/HAAhzkRq)](https://wolfr.am/Z72fzrAk) [![Check Paclet](https://github.com/rhennigan/CodeEquivalenceUtilities/actions/workflows/main.yml/badge.svg?branch=feature%2Ftesting-github-annotations)](https://github.com/rhennigan/CodeEquivalenceUtilities/actions/workflows/main.yml)
 
 ## Installing CodeEquivalenceUtilities
 
