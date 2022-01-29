@@ -47,6 +47,11 @@ jobs:
         with:
           check: false
           debug: true
+      
+      - name: Check files
+        run: | 
+          echo $GITHUB_WORKSPACE
+          ls -a $GITHUB_WORKSPACE
 
       - name: Upload build artifacts
         if: success() || failure()    # run this step even if previous step failed
