@@ -324,21 +324,6 @@ Notebook[
       CellID -> 880084151
      ],
      Cell[
-      "Notebook auto-format test.",
-      "ExampleText",
-      "FutureExample",
-      CellDingbat -> Cell[
-       BoxData[
-        TooltipBox[
-         Cell["rhennigan      ", "TentativeID"],
-         "2022-01-20"
-        ]
-       ],
-       "TentativeWrapper"
-      ],
-      CellID -> 26864466
-     ],
-     Cell[
       "Check if two expressions are equivalent:",
       "ExampleText",
       CellID -> 511676506
