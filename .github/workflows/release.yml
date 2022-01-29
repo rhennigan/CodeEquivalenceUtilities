@@ -25,14 +25,6 @@ jobs:
 
       - name: Build Paclet
         uses: rhennigan/build-paclet@main
-        with:
-          check: false
-          debug: true
-
-      - name: Check files
-        run: | 
-          echo $GITHUB_WORKSPACE
-          ls -a $GITHUB_WORKSPACE
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2

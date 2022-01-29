@@ -32,8 +32,10 @@ jobs:
       WOLFRAM_SYSTEM_ID: Linux-x86-64
 
       # Set WOLFRAMSCRIPT_ENTITLEMENTID environment variable
-      #   created with CreateLicenseEntitlement (https://reference.wolfram.com/language/ref/CreateLicenseEntitlement.html)
-      #   stored in GitHub repository settings as an encrypted secret (https://docs.github.com/en/actions/security-guides/encrypted-secrets)
+      #  created with CreateLicenseEntitlement 
+      #  https://reference.wolfram.com/language/ref/CreateLicenseEntitlement.html
+      #  stored in GitHub repository settings as an encrypted secret 
+      #  https://docs.github.com/en/actions/security-guides/encrypted-secrets
       WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAM_LICENSE_ENTITLEMENT_ID }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -42,23 +44,16 @@ jobs:
       # https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v2
 
+      # Checks Paclet for errors and builds if passing
+      # https://github.com/marketplace/actions/build-paclet
       - name: Build Paclet
         uses: rhennigan/build-paclet@main
-        with:
-          check: false
-          debug: true
-      
-      - name: Check files
-        run: | 
-          echo $GITHUB_WORKSPACE
-          ls -a $GITHUB_WORKSPACE
-          echo $BUILD_DIR
 
+      # Attach the built files to the action summary
       - name: Upload build artifacts
-        if: success() || failure()    # run this step even if previous step failed
         uses: actions/upload-artifact@v2
         with:
-          path: build/
+          path: ${{ env.BUILD_DIR }}
           if-no-files-found: error
 
   # Currently disabled since this takes much longer to run
