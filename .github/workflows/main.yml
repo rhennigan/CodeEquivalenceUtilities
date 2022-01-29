@@ -15,8 +15,8 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  # The job name
   CheckAndBuild:
+    name: Check and Build
 
     # Choose which type of machine to run the job on
     runs-on: ubuntu-latest
@@ -52,8 +52,7 @@ jobs:
         if: success() || failure()    # run this step even if previous step failed
         uses: actions/upload-artifact@v2
         with:
-          name: build-artifacts
-          path: build/
+          path: ${{ env.BUILD_DIR }}
           if-no-files-found: error
 
   # Currently disabled since this takes much longer to run
