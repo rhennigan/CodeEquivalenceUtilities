@@ -149,7 +149,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 286598573
+            CellID -> 68415858
            ],
            Cell[
             CellGroupData[
@@ -213,7 +213,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 17309985
+               CellID -> 827775654
               ],
               Cell[
                CellGroupData[
@@ -281,7 +281,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 4840242
+                  CellID -> 520145874
                  ],
                  Cell[
                   CellGroupData[
@@ -349,7 +349,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 291125352
+                     CellID -> 692558814
                     ],
                     Cell[
                      BoxData[
@@ -404,7 +404,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 98251439
+                     CellID -> 215190322
                     ]
                    },
                    Closed
@@ -479,7 +479,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 7099686
+                     CellID -> 259900176
                     ],
                     Cell[
                      CellGroupData[
@@ -550,7 +550,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 422115670
+                        CellID -> 934812802
                        ],
                        Cell[
                         BoxData[
@@ -605,7 +605,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 449182097
+                        CellID -> 297846582
                        ],
                        Cell[
                         BoxData[
@@ -660,7 +660,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 141462681
+                        CellID -> 94768867
                        ],
                        Cell[
                         BoxData[
@@ -715,7 +715,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 66048885
+                        CellID -> 6493675
                        ],
                        Cell[
                         BoxData[
@@ -770,7 +770,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 698425908
+                        CellID -> 200297082
                        ],
                        Cell[
                         BoxData[
@@ -825,7 +825,7 @@ Notebook[
                          {Inherited, Inherited}
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                        CellID -> 377355506
+                        CellID -> 797302730
                        ]
                       },
                       Closed
@@ -901,7 +901,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 366698781
+                     CellID -> 293243441
                     ],
                     Cell[
                      BoxData[
@@ -956,7 +956,7 @@ Notebook[
                       {Inherited, Inherited}
                      },
                      CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                     CellID -> 519036381
+                     CellID -> 139150715
                     ]
                    },
                    Closed
@@ -1029,7 +1029,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 113737239
+            CellID -> 106751834
            ],
            Cell[
             CellGroupData[
@@ -1093,7 +1093,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 119915676
+               CellID -> 30759884
               ],
               Cell[
                BoxData[
@@ -1142,7 +1142,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 33758300
+               CellID -> 52324055
               ],
               Cell[
                BoxData[
@@ -1191,7 +1191,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 37464154
+               CellID -> 874105923
               ],
               Cell[
                BoxData[
@@ -1240,7 +1240,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 519713403
+               CellID -> 221995352
               ],
               Cell[
                BoxData[
@@ -1289,7 +1289,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 99996236
+               CellID -> 97351063
               ],
               Cell[
                BoxData[
@@ -1338,7 +1338,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 29321500
+               CellID -> 174913696
               ],
               Cell[
                BoxData[
@@ -1387,7 +1387,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 104036961
+               CellID -> 578556680
               ],
               Cell[
                BoxData[
@@ -1436,7 +1436,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 366934129
+               CellID -> 489309411
               ],
               Cell[
                BoxData[
@@ -1485,7 +1485,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 644982563
+               CellID -> 146190931
               ],
               Cell[
                BoxData[
@@ -1534,7 +1534,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 303101084
+               CellID -> 730989730
               ],
               Cell[
                BoxData[
@@ -1583,7 +1583,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 466404335
+               CellID -> 30012130
               ],
               Cell[
                BoxData[
@@ -1632,7 +1632,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 37008970
+               CellID -> 362842928
               ],
               Cell[
                BoxData[
@@ -1681,7 +1681,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 20826757
+               CellID -> 676253575
               ],
               Cell[
                BoxData[
@@ -1730,7 +1730,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 110130948
+               CellID -> 174267659
               ],
               Cell[
                BoxData[
@@ -1779,7 +1779,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 162888741
+               CellID -> 104982692
               ],
               Cell[
                BoxData[
@@ -1828,7 +1828,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 177153789
+               CellID -> 461506199
               ]
              },
              Closed
@@ -1894,7 +1894,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 222661366
+               CellID -> 523469
               ],
               Cell[
                BoxData[
@@ -1943,7 +1943,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 67599718
+               CellID -> 474728698
               ],
               Cell[
                CellGroupData[
@@ -2011,7 +2011,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 247037482
+                  CellID -> 229565581
                  ],
                  Cell[
                   BoxData[
@@ -2066,7 +2066,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 507075682
+                  CellID -> 156692529
                  ],
                  Cell[
                   BoxData[
@@ -2115,7 +2115,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 265052240
+                  CellID -> 157851707
                  ],
                  Cell[
                   BoxData[
@@ -2170,7 +2170,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 31973277
+                  CellID -> 450730792
                  ],
                  Cell[
                   BoxData[
@@ -2219,7 +2219,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 499187111
+                  CellID -> 889940493
                  ],
                  Cell[
                   BoxData[
@@ -2268,7 +2268,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 20571853
+                  CellID -> 63331798
                  ],
                  Cell[
                   BoxData[
@@ -2317,7 +2317,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 216149355
+                  CellID -> 59970690
                  ],
                  Cell[
                   BoxData[
@@ -2372,7 +2372,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 381854331
+                  CellID -> 241622849
                  ]
                 },
                 Closed
@@ -2425,7 +2425,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 283073605
+               CellID -> 810630378
               ],
               Cell[
                BoxData[
@@ -2470,7 +2470,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 878326921
+               CellID -> 6551547
               ],
               Cell[
                BoxData[
@@ -2519,7 +2519,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 32878652
+               CellID -> 304943648
               ],
               Cell[
                BoxData[
@@ -2564,7 +2564,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 71319060
+               CellID -> 65582930
               ],
               Cell[
                BoxData[
@@ -2605,7 +2605,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 3792797
+               CellID -> 7008861
               ],
               Cell[
                BoxData[
@@ -2650,7 +2650,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 46066229
+               CellID -> 263461660
               ],
               Cell[
                BoxData[
@@ -2695,7 +2695,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 508564314
+               CellID -> 87675708
               ]
              },
              Closed
@@ -2740,7 +2740,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 305542248
+            CellID -> 164962648
            ],
            Cell[
             BoxData[
@@ -2783,7 +2783,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 734495952
+            CellID -> 15099354
            ],
            Cell[
             BoxData[
@@ -2824,7 +2824,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 329988299
+            CellID -> 47978995
            ],
            Cell[
             CellGroupData[
@@ -2888,111 +2888,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 391816688
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"CheckDefinitionNotebook.wls\"",
-                    File[
-                     FileNameJoin[
-                      {
-                       NotebookDirectory[],
-                       "Scripts/CheckDefinitionNotebook.wls"
-                      }
-                     ]
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  FileNameJoin[
-                   {
-                    NotebookDirectory[],
-                    "Scripts/CheckDefinitionNotebook.wls"
-                   }
-                  ]
-                 ],
-                 BoxID -> "FileTreePath",
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 80105763
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"CodeInspection.wls\"",
-                    File[
-                     FileNameJoin[
-                      {NotebookDirectory[], "Scripts/CodeInspection.wls"}
-                     ]
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  FileNameJoin[
-                   {NotebookDirectory[], "Scripts/CodeInspection.wls"}
-                  ]
-                 ],
-                 BoxID -> "FileTreePath",
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 290241077
+               CellID -> 732494342
               ],
               Cell[
                BoxData[
@@ -3041,56 +2937,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 291798688
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"InstallPaclets.wls\"",
-                    File[
-                     FileNameJoin[
-                      {NotebookDirectory[], "Scripts/InstallPaclets.wls"}
-                     ]
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  FileNameJoin[
-                   {NotebookDirectory[], "Scripts/InstallPaclets.wls"}
-                  ]
-                 ],
-                 BoxID -> "FileTreePath",
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 1321251
+               CellID -> 395363541
               ],
               Cell[
                BoxData[
@@ -3139,7 +2986,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 58984994
+               CellID -> 76184559
               ]
              },
              Closed
@@ -3204,7 +3051,7 @@ Notebook[
              {Inherited, Inherited}
             },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 443677921
+            CellID -> 326194493
            ],
            Cell[
             CellGroupData[
@@ -3268,7 +3115,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 293441920
+               CellID -> 555271034
               ],
               Cell[
                BoxData[
@@ -3313,7 +3160,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 349707656
+               CellID -> 349954137
               ],
               Cell[
                BoxData[
@@ -3358,7 +3205,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 333957800
+               CellID -> 425589510
               ],
               Cell[
                CellGroupData[
@@ -3422,7 +3269,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 39890688
+                  CellID -> 398195296
                  ],
                  Cell[
                   BoxData[
@@ -3471,7 +3318,7 @@ Notebook[
                    {Inherited, Inherited}
                   },
                   CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-                  CellID -> 202870889
+                  CellID -> 38324073
                  ]
                 },
                 Closed
@@ -3516,7 +3363,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 29459619
+               CellID -> 324486667
               ],
               Cell[
                BoxData[
@@ -3565,7 +3412,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 210139589
+               CellID -> 16229153
               ],
               Cell[
                BoxData[
@@ -3610,7 +3457,7 @@ Notebook[
                 {Inherited, Inherited}
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 120459924
+               CellID -> 531219519
               ]
              },
              Closed
@@ -3621,7 +3468,7 @@ Notebook[
             "FileManagerBottomSpacer",
             CellGroupingRules -> {"SectionGrouping", 100},
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 715691920
+            CellID -> 11675981
            ]
           },
           Open
