@@ -43,7 +43,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build Paclet
-        uses: rhennigan/build-paclet@v1.3.0
+        uses: rhennigan/build-paclet@main
         with:
           check: false
           debug: true
