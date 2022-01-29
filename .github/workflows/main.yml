@@ -58,7 +58,7 @@ jobs:
         if: success() || failure()    # run this step even if previous step failed
         uses: actions/upload-artifact@v2
         with:
-          path: ${{ env.GITHUB_WORKSPACE }}/build
+          path: build/
           if-no-files-found: error
 
   # Currently disabled since this takes much longer to run
