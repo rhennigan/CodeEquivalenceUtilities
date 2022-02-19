@@ -24,8 +24,8 @@ jobs:
         target: Submit
         paclet_cicd_version: 0.7.0
         definition_notebook: ./DefinitionNotebook.nb
-  Test: 
-    name: Test
+  TestReport: 
+    name: TestReport
     runs-on: ubuntu-latest
     container: 
       image: wolframresearch/wolframengine:latest
@@ -33,20 +33,14 @@ jobs:
     env: 
       WOLFRAM_SYSTEM_ID: Linux-x86-64
       WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID }}
-    timeout-minutes: 10
     steps: 
     - name: Checkout
       id: checkout-code-step
       uses: actions/checkout@v2
-    - name: Test
-      id: test-paclet-step
-      uses: rhennigan/test-paclet@v1.0.0
-      with: 
-        target: Submit
-        paclet_cicd_version: 0.7.0
-        definition_notebook: ./DefinitionNotebook.nb
+    - name: TestReport
+      run: wolframscript Scripts/TestReport.wls
   Build: 
-    needs:  [Check, Test]
+    needs:  [Check, TestReport]
     name: Build
     runs-on: ubuntu-latest
     container: 
