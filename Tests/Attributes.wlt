@@ -18,7 +18,7 @@ VerificationTest[
         Function[ Null, IntegerQ[ Unevaluated[ #1 ] ], HoldAllComplete ]
     ],
     { HoldAllComplete },
-    TestID -> "GetAttributes1"
+    TestID -> "GetAttributes1@@Tests/Attributes.wlt:16,1-22,2"
 ];
 
 VerificationTest[
@@ -29,7 +29,7 @@ VerificationTest[
         ]
     ],
     { HoldAllComplete },
-    TestID -> "GetAttributes2"
+    TestID -> "GetAttributes2@@Tests/Attributes.wlt:24,1-33,2"
 ];
 
 VerificationTest[
@@ -40,7 +40,7 @@ VerificationTest[
         ]
     ],
     { HoldFirst, SequenceHold },
-    TestID -> "GetAttributes3"
+    TestID -> "GetAttributes3@@Tests/Attributes.wlt:35,1-44,2"
 ];
 
 VerificationTest[
@@ -48,25 +48,25 @@ VerificationTest[
         Function[ x, MakeBoxes[ x, StandardForm ], { HoldFirst, SequenceHold } ]
     ],
     { HoldFirst, SequenceHold },
-    TestID -> "GetAttributes4"
+    TestID -> "GetAttributes4@@Tests/Attributes.wlt:46,1-52,2"
 ];
 
 VerificationTest[
     GetAttributes[ Function[ Null, IntegerQ[ Unevaluated[ #1 ] ] ] ],
     { },
-    TestID -> "GetAttributes5"
+    TestID -> "GetAttributes5@@Tests/Attributes.wlt:54,1-58,2"
 ];
 
 VerificationTest[
     GetAttributes[ Function[ { x, y }, MakeBoxes[ { x, y }, StandardForm ] ] ],
     { },
-    TestID -> "GetAttributes6"
+    TestID -> "GetAttributes6@@Tests/Attributes.wlt:60,1-64,2"
 ];
 
 VerificationTest[
     GetAttributes[ Function[ x, MakeBoxes[ x, StandardForm ] ] ],
     { },
-    TestID -> "GetAttributes7"
+    TestID -> "GetAttributes7@@Tests/Attributes.wlt:66,1-70,2"
 ];
 
 (* ::**********************************************************************:: *)
@@ -76,7 +76,7 @@ VerificationTest[
     With[ { names = RandomSample[ Names[ "*`*" ], 100 ] },
         Attributes /@ names === GetAttributes /@ names
     ],
-    TestID -> "GetAttributesList1"
+    TestID -> "GetAttributesList1@@Tests/Attributes.wlt:75,1-80,2"
 ];
 
 
@@ -84,7 +84,7 @@ VerificationTest[
     With[ { names = RandomSample[ Names[ "*`*" ], 100 ] },
         Attributes @ names === GetAttributes @ names
     ],
-    TestID -> "GetAttributesList2"
+    TestID -> "GetAttributesList2@@Tests/Attributes.wlt:83,1-88,2"
 ];
 
 (* ::**********************************************************************:: *)
@@ -118,7 +118,7 @@ VerificationTest[
         },
         "constant"
     },
-    TestID -> "GetAttributesEvalLeaks1"
+    TestID -> "GetAttributesEvalLeaks1@@Tests/Attributes.wlt:95,1-122,2"
 ];
 
 (* ::**********************************************************************:: *)
@@ -137,7 +137,7 @@ VerificationTest[
           Function[ x, x, { Orderless, Listable } ]
       },
     { False, False, True, True, False, False, True, True },
-    TestID -> "ListableQ1"
+    TestID -> "ListableQ1@@Tests/Attributes.wlt:127,1-141,2"
 ];
 
 VerificationTest[
@@ -151,7 +151,7 @@ VerificationTest[
         }
     ],
     { False, True, True },
-    TestID -> "ListableQ2"
+    TestID -> "ListableQ2@@Tests/Attributes.wlt:143,1-155,2"
 ];
 
 (* ::**********************************************************************:: *)
@@ -170,7 +170,7 @@ VerificationTest[
           Function[ x, x, { Orderless, HoldAllComplete } ]
       },
     { False, False, True, True, False, False, True, True },
-    TestID -> "HoldingQ1"
+    TestID -> "HoldingQ1@@Tests/Attributes.wlt:160,1-174,2"
 ];
 
 VerificationTest[
@@ -184,7 +184,7 @@ VerificationTest[
         }
     ],
     { False, True, True },
-    TestID -> "HoldingQ2"
+    TestID -> "HoldingQ2@@Tests/Attributes.wlt:176,1-188,2"
 ];
 
 (* :!CodeAnalysis::EndBlock:: *)

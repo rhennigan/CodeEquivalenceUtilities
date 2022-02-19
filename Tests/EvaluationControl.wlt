@@ -17,7 +17,7 @@ VerificationTest[
     ,
     { "System`Echo" }
     ,
-    TestID -> "UnsafeSymbols001"
+    TestID -> "UnsafeSymbols001@@Tests/EvaluationControl.wlt:12,1-21,2"
 ];
 
 
@@ -35,7 +35,7 @@ VerificationTest[
         "System`Quit"
     }
     ,
-    TestID -> "UnsafeSymbols002"
+    TestID -> "UnsafeSymbols002@@Tests/EvaluationControl.wlt:24,1-39,2"
 ];
 
 
@@ -44,7 +44,7 @@ VerificationTest[
     ,
     Unsafe[ "HoldComplete", HoldComplete[ 1 + 2, 3 + 4 ] ]
     ,
-    TestID -> "Unsafe001"
+    TestID -> "Unsafe001@@Tests/EvaluationControl.wlt:42,1-48,2"
 ];
 
 
@@ -53,7 +53,7 @@ VerificationTest[
     ,
     Unsafe[ "List", { 1 + 2, 3 + 4 } ]
     ,
-    TestID -> "Unsafe002"
+    TestID -> "Unsafe002@@Tests/EvaluationControl.wlt:51,1-57,2"
 ];
 
 
@@ -72,7 +72,7 @@ VerificationTest[
         }
     ]
     ,
-    TestID -> "EvaluateSafely001"
+    TestID -> "EvaluateSafely001@@Tests/EvaluationControl.wlt:60,1-76,2"
 ];
 
 VerificationTest[
@@ -83,7 +83,7 @@ VerificationTest[
         "Captured" -> { Unsafe[ "System`Echo", { 2 } ] }
     ]
     ,
-    TestID -> "EvaluateSafely002"
+    TestID -> "EvaluateSafely002@@Tests/EvaluationControl.wlt:78,1-87,2"
 ];
 
 
@@ -105,54 +105,28 @@ VerificationTest[
         }
     ]
     ,
-    TestID -> "EvaluateSafelyTypes001"
+    TestID -> "EvaluateSafelyTypes001@@Tests/EvaluationControl.wlt:90,1-109,2"
 ];
 
 
 VerificationTest[
-    EvaluateSafely @ Array[ Echo, 2 ]
-    ,
-    SandboxViolation[
-        { Unsafe[ "System`Echo", { 1 } ], Unsafe[ "System`Echo", { 2 } ] },
-        "Captured" -> {
-            Unsafe[ "System`Echo", Null ],
-            Unsafe[ "System`Echo", { 1 } ],
-            Unsafe[ "System`Echo", { 2 } ]
-        }
-    ]
-];
-
-
-VerificationTest @ Block[ { x },
-    With[ { file = FileNameJoin @ { $TemporaryDirectory, CreateUUID[ ] } },
-
-        Quiet[
-            EvaluateSafely @ Part[ x, 0 ][ "Put" ][ "Hello", file ],
-            EvaluateSafely::unsafe
-        ];
-
-        ! FileExistsQ @ file
-    ]
+  EvaluateSafely[Array[Echo, 2]],
+  SandboxViolation[{Unsafe["System`Echo", {1}], Unsafe["System`Echo", {2}]}, "Captured" -> {Unsafe["System`Echo", Null], Unsafe["System`Echo", {1}], Unsafe["System`Echo", {2}]}],
+  TestID -> "Untitled-4@@Tests/EvaluationControl.wlt:112,1-116,2"
 ];
 
 
 VerificationTest[
-    EvaluateSafely @ GeoListPlot[
-        Part[
-            TakeLargestBy[
-                Normal @ ResourceData[ "Fireballs and Bolides" ],
-                #Altitude &,
-                10
-            ],
-            All,
-            "NearestCity"
-        ],
-        GeoLabels -> True
-    ]
-    ,
-    GeoGraphics[ _Graphics, OptionsPattern[ ] ]
-    ,
-    SameTest -> MatchQ
+  Block[{x}, With[{file = FileNameJoin[{$TemporaryDirectory, CreateUUID[]}]}, Quiet[EvaluateSafely[x[[0]]["Put"]["Hello", file]], EvaluateSafely::unsafe];  !FileExistsQ[file]]],
+  TestID -> "Untitled-5@@Tests/EvaluationControl.wlt:119,1-122,2"
+];
+
+
+VerificationTest[
+  EvaluateSafely[GeoListPlot[TakeLargestBy[Normal[ResourceData["Fireballs and Bolides"]], #Altitude & , 10][[All,"NearestCity"]], GeoLabels -> True]],
+  GeoGraphics[_Graphics, OptionsPattern[]],
+  SameTest -> MatchQ,
+  TestID -> "Untitled-6@@Tests/EvaluationControl.wlt:125,1-130,2"
 ];
 
 (* :!CodeAnalysis::EndBlock:: *)
