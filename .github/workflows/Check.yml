@@ -12,29 +12,28 @@ env:
   RESOURCE_PUBLISHER_TOKEN:    ${{ secrets.RESOURCE_PUBLISHER_TOKEN }}
 
 jobs: 
-  Check: 
-    name: Check
-    runs-on: ubuntu-latest
-    container: 
-      image: wolframresearch/wolframengine:latest
-      options: --user root
+  # Check: 
+  #   name: Check
+  #   runs-on: ubuntu-latest
+  #   container: 
+  #     image: wolframresearch/wolframengine:latest
+  #     options: --user root
     
-    steps: 
-    - name: Checkout
-      id: checkout-code-step
-      uses: actions/checkout@v2
-    - name: Check
-      id: check-paclet-step
-      uses: rhennigan/check-paclet@v1.7.1
-      with: 
-        target: Submit
-        paclet_cicd_version: 0.17.1
-        definition_notebook: ./ResourceDefinition.nb
-        resource_system_base: https://www.wolframcloud.com/obj/rhennigan/api/1.0
+  #   steps: 
+  #   - name: Checkout
+  #     id: checkout-code-step
+  #     uses: actions/checkout@v2
+  #   - name: Check
+  #     id: check-paclet-step
+  #     uses: rhennigan/check-paclet@v1.7.1
+  #     with: 
+  #       target: Submit
+  #       paclet_cicd_version: 0.17.1
+  #       definition_notebook: ./ResourceDefinition.nb
+  #       resource_system_base: https://www.wolframcloud.com/obj/rhennigan/api/1.0
   
   Submit:
     name: Submit
-    needs: [Check]
     runs-on: ubuntu-latest
     container:
       image: wolframresearch/wolframengine:latest
@@ -45,7 +44,7 @@ jobs:
       - name: Checkout files
         uses: actions/checkout@v2
 
-      - name: Check
+      - name: Submit
         id: submit-paclet-step
         uses: rhennigan/submit-paclet@v1.7.1
         with: 
