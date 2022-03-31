@@ -22,7 +22,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Check
       id: check-paclet-step
-      uses: rhennigan/check-paclet@v1.7.0
+      uses: rhennigan/check-paclet@main
       with: 
         target: Submit
         paclet_cicd_version: 0.17.1
