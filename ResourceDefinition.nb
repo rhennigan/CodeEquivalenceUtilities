@@ -103,55 +103,6 @@ Notebook[
             CellID -> 355131546
            ],
            Cell[
-            BoxData[
-             InterpretationBox[
-              TagBox[
-               TemplateBox[
-                {
-                 "\"DefinitionNotebook.nb\"",
-                 File[
-                  FileNameJoin[
-                   {NotebookDirectory[], "DefinitionNotebook.nb"}
-                  ]
-                 ]
-                },
-                "FileManagerFileOpenerTemplate"
-               ],
-               Function[
-                Annotation[
-                 #1,
-                 DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                  0
-                 ]
-                ]
-               ]
-              ],
-              File[
-               FileNameJoin[
-                {NotebookDirectory[], "DefinitionNotebook.nb"}
-               ]
-              ],
-              BoxID -> "FileTreePath",
-              BaseStyle -> {"Text"}
-             ]
-            ],
-            "FileManagerFile",
-            CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
-            CellGroupingRules -> {"SectionGrouping", 100},
-            CellFrameLabels -> {
-             {
-              Cell[
-               BoxData[TemplateBox[{}, "FileManagerNBIconTemplate"]],
-               Background -> None
-              ],
-              Inherited
-             },
-             {Inherited, Inherited}
-            },
-            CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-            CellID -> 68415858
-           ],
-           Cell[
             CellGroupData[
              {
               Cell[
@@ -2827,6 +2778,55 @@ Notebook[
             CellID -> 47978995
            ],
            Cell[
+            BoxData[
+             InterpretationBox[
+              TagBox[
+               TemplateBox[
+                {
+                 "\"ResourceDefinition.nb\"",
+                 File[
+                  FileNameJoin[
+                   {NotebookDirectory[], "ResourceDefinition.nb"}
+                  ]
+                 ]
+                },
+                "FileManagerFileOpenerTemplate"
+               ],
+               Function[
+                Annotation[
+                 #1,
+                 DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                  0
+                 ]
+                ]
+               ]
+              ],
+              File[
+               FileNameJoin[
+                {NotebookDirectory[], "ResourceDefinition.nb"}
+               ]
+              ],
+              BoxID -> "FileTreePath",
+              BaseStyle -> {"Text"}
+             ]
+            ],
+            "FileManagerFile",
+            CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
+            CellGroupingRules -> {"SectionGrouping", 100},
+            CellFrameLabels -> {
+             {
+              Cell[
+               BoxData[TemplateBox[{}, "FileManagerNBIconTemplate"]],
+               Background -> None
+              ],
+              Inherited
+             },
+             {Inherited, Inherited}
+            },
+            CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+            CellID -> 204910785
+           ],
+           Cell[
             CellGroupData[
              {
               Cell[
@@ -2896,6 +2896,96 @@ Notebook[
                  TagBox[
                   TemplateBox[
                    {
+                    "\"After.wls\"",
+                    File[
+                     FileNameJoin[{NotebookDirectory[], "Scripts/After.wls"}]
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[
+                  FileNameJoin[{NotebookDirectory[], "Scripts/After.wls"}]
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 112430048
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"Before.wls\"",
+                    File[
+                     FileNameJoin[{NotebookDirectory[], "Scripts/Before.wls"}]
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[
+                  FileNameJoin[{NotebookDirectory[], "Scripts/Before.wls"}]
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 368404613
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
                     "\"FormatNotebooks.wls\"",
                     File[
                      FileNameJoin[
@@ -2938,6 +3028,51 @@ Notebook[
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
                CellID -> 395363541
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"Run.wls\"",
+                    File[
+                     FileNameJoin[{NotebookDirectory[], "Scripts/Run.wls"}]
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[
+                  FileNameJoin[{NotebookDirectory[], "Scripts/Run.wls"}]
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 766777845
               ],
               Cell[
                BoxData[
@@ -20263,7 +20398,7 @@ Notebook[
   "PacletBuildData" -> {"FileHashes" -> {}}
  },
  CreateCellID -> True,
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
+ FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (March 30, 2022)",
  StyleDefinitions -> Notebook[
   {
    Cell[
@@ -29835,7 +29970,7 @@ Notebook[
    ]
   },
   Visible -> False,
-  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
+  FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (March 30, 2022)",
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"
  ],
  ExpressionUUID -> "e8a467c0-30fe-49eb-9c07-86a699a75dc9"
