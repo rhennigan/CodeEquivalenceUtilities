@@ -22,7 +22,7 @@ jobs:
       id: submit-paclet-step
       uses: rhennigan/submit-paclet@v1.7.1
       with: 
-        paclet_cicd_version: 0.18.0
+        paclet_cicd_version: 0.18.2
         definition_notebook: ./ResourceDefinition.nb
         resource_system_base: https://www.wolframcloud.com/obj/rsdevel/api/1.0
     - name: UploadArtifact
