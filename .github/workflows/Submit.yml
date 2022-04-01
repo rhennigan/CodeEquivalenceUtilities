@@ -3,9 +3,11 @@ on:
   push: 
     branches:  [feature/paclet-cicd-updates]
   workflow_dispatch:
+
 jobs: 
-  Test: 
-    name: Submit
+
+  Submit-1: 
+    name: Submit-1
     runs-on: ubuntu-latest
     container: 
       image: wolframresearch/wolframengine:latest
@@ -25,9 +27,25 @@ jobs:
         paclet_cicd_version: 0.18.2
         definition_notebook: ./ResourceDefinition.nb
         resource_system_base: https://www.wolframcloud.com/obj/rsdevel/api/1.0
-    - name: UploadArtifact
-      id: upload-build-artifacts-step
-      uses: actions/upload-artifact@v2
+
+  Submit-2: 
+    name: Submit-2
+    runs-on: ubuntu-latest
+    container: 
+      image: wolframresearch/wolframengine:latest
+      options: --user root
+    env: 
+      WOLFRAM_SYSTEM_ID: Linux-x86-64
+      WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID }}
+      RESOURCE_PUBLISHER_TOKEN: ${{ secrets.RESOURCE_PUBLISHER_TOKEN }}
+    steps: 
+    - name: Checkout
+      id: checkout-code-step
+      uses: actions/checkout@v2
+    - name: Submit
+      id: submit-paclet-step
+      uses: rhennigan/submit-paclet@v1.7.1
       with: 
-        path: ${{ env.PACLET_BUILD_DIR }}
-        if-no-files-found: ignore
+        paclet_cicd_version: 0.18.2
+        definition_notebook: ./ResourceDefinition.nb
+        resource_system_base: https://www.wolframcloud.com/obj/rhennigan/api/1.0
