@@ -3703,7 +3703,7 @@ Notebook[
                   BoxData[
                    FrameBox[
                     Cell[
-                     "[[ Provide content that you want to display on the main landing page for your paclet. ]]",
+                     "Provide content that you want to display on the main landing page for your paclet.",
                      "MoreInfoText"
                     ],
                     Background -> GrayLevel[0.95],
@@ -3739,7 +3739,7 @@ Notebook[
          Deletable -> False,
          TaggingRules -> {"TemplateGroupName" -> "WebContent"},
          CellTags -> {"TemplateSection", "Web Content", "WebContent"},
-         CellID -> 175269525
+         CellID -> 184208365
         ],
         Cell[
          CellGroupData[
@@ -3759,7 +3759,7 @@ Notebook[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "[[ Give an image that you want to display on the main landing page for your paclet. This will be displayed along side the basic description that's given below. ]]",
+                        "Give an image that you want to display on the main landing page for your paclet. This will be displayed along side the basic description that's given below.",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -3795,7 +3795,7 @@ Notebook[
             Deletable -> False,
             TaggingRules -> {"TemplateGroupName" -> "HeroImage"},
             CellTags -> {"Headline Image", "HeroImage", "TemplateCellGroup"},
-            CellID -> 676431590
+            CellID -> 670275254
            ],
            Cell[
             CellGroupData[
@@ -4455,7 +4455,7 @@ Notebook[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "[[ Give a short paragraph explaining your paclet. This is the first text that users will see when visiting the main landing page of your paclet. ]]",
+                        "Give a short paragraph explaining your paclet. This is the first text that users will see when visiting the main landing page of your paclet.",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -4496,7 +4496,7 @@ Notebook[
              "LongDescription",
              "TemplateCellGroup"
             },
-            CellID -> 903367029
+            CellID -> 433339604
            ],
            Cell[
             "CodeEquivalenceUtilities is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.",
@@ -4663,7 +4663,7 @@ Notebook[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "[[ Choose one of your documentation guide pages to feature as part of the main landing page for your paclet. This guide page should correspond to a general overview of your paclet. ]]",
+                        "Choose one of your documentation guide pages to feature as part of the main landing page for your paclet. This guide page should correspond to a general overview of your paclet.",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -4703,7 +4703,7 @@ Notebook[
              TaggingRules -> {"FileInputProperty" -> "MainGuidePage"}
             },
             CellTags -> {"Main Guide Page", "MainGuidePage", "TemplateCellGroup"},
-            CellID -> 93952416
+            CellID -> 254653237
            ],
            Cell[
             BoxData[
@@ -18557,7 +18557,7 @@ Notebook[
                      BoxData[
                       FrameBox[
                        Cell[
-                        "[[ If this paclet has a corresponding source control repository (e.g. GitHub), you can provide the URL here. ]]",
+                        "If this paclet has a corresponding source control repository (e.g. GitHub), you can provide the URL here.",
                         "MoreInfoText"
                        ],
                        Background -> GrayLevel[0.95],
@@ -18598,7 +18598,7 @@ Notebook[
              "SourceControlURL",
              "TemplateCellGroup"
             },
-            CellID -> 475746126
+            CellID -> 221376991
            ],
            Cell[
             "https://github.com/rhennigan/CodeEquivalenceUtilities",
@@ -18951,11 +18951,7 @@ Notebook[
              "RadioButtonValue" -> "MIT",
              "SpecifiedLicenseID" -> Null
             },
-            CellTags -> {
-             "LicensingInformation",
-             "LicensingInformation-RadioButtons",
-             "RadioButtonsCell"
-            },
+            CellTags -> {"LicensingInformation-RadioButtons", "RadioButtonsCell"},
             CellID -> 42282576
            ]
           },
@@ -19620,7 +19616,7 @@ Notebook[
              "CheckboxData" -> "OEM6eJxVUMtKxEAQBHE1EfHuRXLylo8IcYWFxV22/YHJbBuHnUfox2H+3g6o6KkLqqhHD00PG5AaEW4OKotKD7fjJ/oLnj+u+HofWOAJappKDL577t40IRkaSzKxk1AyPI6FsNu7PKub0UQgpF6U0Mx3gom5HVRKMrnvoTlSWZCkwt3oBOdCAdliD8vqxj+x6z1pRG625yBuMrR5dZHxl2hfMOJfZu1eoqb8P/BhlwVpIfzu2w65gk6MNvb+hFyUPL7XxX5wdN4svwDUCmDE"
             },
             CellTags -> {"Categories", "Categories-Checkboxes", "CheckboxCell"},
-            CellID -> 289369169
+            CellID -> 30351138
            ]
           },
           Open
@@ -20345,14 +20341,14 @@ Notebook[
                Editable -> False,
                Deletable -> False,
                TaggingRules -> {
-                "CheckboxData" -> "OEM6eJxNkOGKwjAMx8FNnSA+wb3CHkKmB4IyMXfcfe22eBa7tjQpZ9/eONjwS0jy/+eXNtuihDlwMgiLOrKPXMKyumF7x+6aUX7UxLD80bZz/wSLk2pr+IX82+qHDB4Yexpt1xnllyigyT4mk5LJ/BCmzkAaecU5OI+BE3xUrveKdaON5lRLUwr7B4lko7yw9qydHcDvq6nYd5pVI9n8UxnCSVjt0OC78vqmM7G3VGUlbA6WMfgglhcYVlubIDaEco71BcnF0OJX8nKls2qF9ARhG2od"
+                "CheckboxData" -> "OEM6eJxNkOGKwjAMx8HpOUF8gnuFPYRMBUGZmBM/d1vUYteWJuWub3+ZsuGXkOT/7y9p1nkBM+BkEL6qyD5yAfPygc0T29uEpgdNDPOrtq37JZherP6TB3vGjm7ZW+5t5yiA0TYko5IdVfMKY+dFGnj5KTiPgRN8l67zinWtjeZUSVMKe4dEMlE2qzxrZ2nYbMBRvm01q1qy2U4ZwlFYbNDgp9J/z5nYWSqzAlZ7yxh8EEsPhsXaJog1oZxheUZyMTT4k7xc56QaIf0DdPtnuA=="
                },
                CellTags -> {
                 "CheckboxCell",
                 "CompatibilityOperatingSystem",
                 "CompatibilityOperatingSystem-Checkboxes"
                },
-               CellID -> 180062979
+               CellID -> 5437941
               ]
              },
              Closed
@@ -20535,7 +20531,7 @@ Notebook[
                 "CompatibilityFeatures",
                 "CompatibilityFeatures-Checkboxes"
                },
-               CellID -> 219371568
+               CellID -> 271948010
               ]
              },
              Closed
@@ -20814,14 +20810,14 @@ Notebook[
                Editable -> False,
                Deletable -> False,
                TaggingRules -> {
-                "CheckboxData" -> "OEM6eJxdUdFqwzAMhK1tEtj2EXvPR3RZBhmDhmqwZydRialjG0su5O/nlMTJ9uSTTtzp5GOawx54VAiHk2frOYek6LG9YndJaPcliSEBJJJGwwFaJy1DBr65otOo4PkHm/ImlBd8nwjlsa7CRNtj5xV2kL4JbvtP0wSninGgRffyQLtzGFn1FxCZxXB+Y3+zwAoj+2+nv+WqPa86vxvtuPoKIxvTbHOltTMWHY/wWpjBBp9GKsnj6lrqm3RGD6inA5/s1KNJdHsISstOsmgC2n8IRRiJ7B0Vbpnpl4zyg6biMYeXSjM668LIPXF21GM4C2EwezojGe9a/B5tCF2LNij9AojVrVE="
+                "CheckboxData" -> "OEM6eJxdkdtqwzAMhmFrc4BtD7H7PESWZpAxaKgGu3YclZg6trHlQt5+ztY46a70S7/5dHCZFbAHmiRCcvRkPBWQVgPyC/bn1O0+hSNIAZ0TWsHzN3b1lUnPaE6zN0Z8+NAdJMCtMARJeFC2DeTguwtahTJIPmDvJfahU0M4uoV7fnC7UzBW/iKiE7l/Mdbv+IuM7r8x79OVfZv1FjfsZeCNjO66c1QFZK3VBi1N8Frp0YQ+nZCCprVrra7CajWimg98NHPNzdDtIVxW94JYF9T+nUmH0cgPKHHrzL+kpR+Vqx4LeGkUoTU2PPndOC/VFM7iMDR7OqHT3nL8mkxYumU8kH4AghGtUQ=="
                },
                CellTags -> {
                 "CheckboxCell",
                 "CompatibilityEvaluationEnvironment",
                 "CompatibilityEvaluationEnvironment-Checkboxes"
                },
-               CellID -> 133006752
+               CellID -> 221638011
               ]
              },
              Closed
@@ -20942,11 +20938,674 @@ Notebook[
                 "CompatibilityCloudSupport",
                 "CompatibilityCloudSupport-Checkboxes"
                },
-               CellID -> 541294174
+               CellID -> 328111026
               ]
              },
              Closed
             ]
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            TextData[
+             {
+              "Disclosures",
+              Cell[
+               BoxData[
+                PaneSelectorBox[
+                 {
+                  True -> TemplateBox[
+                   {
+                    "Disclosures",
+                    Cell[
+                     BoxData[
+                      FrameBox[
+                       Cell[
+                        TextData[
+                         {
+                          "Contributors to the Wolfram Language Paclet Repository can include a list of disclosures with their paclet. These disclosures tell users how to expect the paclet to interact with their environment.\n\nDisclosures should be selected if your paclet interacts with the environment in ways that are not otherwise obvious to the end user. For example, if your paclet needs to write information to local files somewhere to store persistent settings, you should choose the \"Local files\" disclosure so that users are not surprised to find files that they didn't expect.\n\nFor cases where the interaction is inherently part of the paclet behavior (and clearly documented as such), the disclosure is unnecessary. For example, an exporter function that's clearly meant to write files in a place specified by the user would not be necessary to disclose.\n\nFor each disclosure item, additional details can be added by starting a new cell under the cell containing the checkbox. Use this space to clarify how your paclet interacts with the environment for the corresponding item. For example:\n\n",
+                          Cell[
+                           BoxData[
+                            FrameBox[
+                             StyleBox[
+                              "\"MyPublisherID/MyPaclet utilizes the local file system to cache data by writing files in the directory $UserBaseDirectory/ApplicationData/MyPublisherID/MyPaclet/Cache\"",
+                              "Text",
+                              "DisclosureDetails",
+                              StripOnInput -> False,
+                              LineIndent -> 0
+                             ],
+                             Background -> GrayLevel[0.9],
+                             FrameStyle -> GrayLevel[0.8],
+                             ImageSize -> {Full, Automatic},
+                             StripOnInput -> False
+                            ]
+                           ]
+                          ]
+                         }
+                        ],
+                        "MoreInfoText"
+                       ],
+                       Background -> GrayLevel[0.95],
+                       FrameMargins -> 20,
+                       FrameStyle -> GrayLevel[0.9],
+                       RoundingRadius -> 5,
+                       ImageSize -> {Scaled[0.65], Automatic}
+                      ]
+                     ],
+                     "MoreInfoText",
+                     Deletable -> True,
+                     CellTags -> {"SectionMoreInfoDisclosures"},
+                     CellMargins -> {{66, 66}, {15, 15}}
+                    ]
+                   },
+                   "MoreInfoOpenerButtonTemplate"
+                  ]
+                 },
+                 Dynamic[
+                  CurrentValue[
+                   EvaluationNotebook[],
+                   {TaggingRules, "ResourceCreateNotebook"}
+                  ]
+                 ],
+                 ImageSize -> Automatic
+                ]
+               ]
+              ]
+             }
+            ],
+            "Subsection",
+            Editable -> False,
+            Deletable -> False,
+            TaggingRules -> {"TemplateGroupName" -> "Disclosures"},
+            DefaultNewCellStyle -> {"Text", "DisclosureDetails"},
+            CellTags -> {"Disclosures", "TemplateCellGroup"},
+            CellID -> 376414000
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              GridBox[
+               {
+                {
+                 TagBox[
+                  GridBox[
+                   {
+                    {
+                     StyleBox[
+                      TemplateBox[
+                       {
+                        CheckboxBox["LocalFiles", {False, "LocalFiles"}],
+                        "\" \"",
+                        TemplateBox[
+                         {
+                          TemplateBox[
+                           {
+                            "DisclosuresLocalFiles",
+                            Cell[
+                             BoxData[
+                              FrameBox[
+                               Cell[
+                                "Choose this option if your paclet directly does any of the following during loading or normal usage:\n\[FilledSmallSquare] Creates, deletes or modifies local files\n\[FilledSmallSquare] Imports data from local files\nFile operations related to normal paclet installation and loading are excepted.",
+                                "MoreInfoText"
+                               ],
+                               Background -> GrayLevel[0.95],
+                               FrameMargins -> 20,
+                               FrameStyle -> GrayLevel[0.9],
+                               RoundingRadius -> 5,
+                               ImageSize -> {Scaled[0.65], Automatic}
+                              ]
+                             ],
+                             "MoreInfoText",
+                             Deletable -> True,
+                             CellTags -> {"SectionMoreInfoDisclosuresLocalFiles"},
+                             CellMargins -> {{66, 66}, {15, 15}}
+                            ],
+                            HoldComplete[EvaluationCell[]],
+                            "Click for more information"
+                           },
+                           "InlineMoreInfoOpenerButtonTemplate"
+                          ],
+                          "\"Local files\""
+                         },
+                         "RowDefault"
+                        ]
+                       },
+                       "RowDefault"
+                      ],
+                      StripOnInput -> False,
+                      FontSize -> 12
+                     ]
+                    }
+                   },
+                   DefaultBaseStyle -> "Column",
+                   GridBoxAlignment -> {"Columns" -> {{Left}}},
+                   GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
+                  ],
+                  "Column"
+                 ]
+                }
+               },
+               AutoDelete -> False,
+               BaseStyle -> {"ControlStyle"},
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings -> {"Columns" -> {{2}}}
+              ],
+              "Grid"
+             ]
+            ],
+            "Output",
+            Editable -> False,
+            Deletable -> False,
+            CellMargins -> {{Inherited, Inherited}, {5, Inherited}},
+            TaggingRules -> {
+             "CheckboxData" -> "OEM6eJx9VE1uUzEQpm3SJk1VNrBhZSGWhAOwqZrXFiKlahXnAu7zOLHq53nyT9vHlkNwGY4Al0AsEWdg7CQvKSp4Y3v8efzNzDc+7Q15l4fGAN+/iqGOYcgPigWUtyDVM9+ZaE+W7jhA5dXOcq92fWcaDdB+b4r3aZvNO743FfcjfABPtsEMqtqIAGRQnSWEvzzTvjToowM/wVKYC20I3fWdAowhDweEPhNBqH3fu3Ciyrd3l8f8826xQPTAwkJ7hnXQaJlWrMHoWC1KA4FJ7aAMpmESwTNhG4aK8MAUGoP32s6ZjC5NBoVMMzpm0VXCsOjFHN4f/vjylRUOiLp/yySQV/JEqAqlVprWJjFnKlHP4HFVowueSSLOlMPqESKFSGTBicTXMwcpK5IFXL+7oq6tD8KYDCPmsmUoHDB4KKGma+/40SU6GFuFM3hoa+EPR6K8nTuMVlIa+x+caCZwB8apPH6ftMijnNdL4eb0YPFi4yHbsxYee/j+LY1fGw/H0/QMMZsSv+iLbnvSH1eUQq4/wZYq9jklA+TKz88T3z+NASuKs/xHMP2zlHVxQ8vOzEVoD3pJBzMxb7XI33AqNyVs7edpga3vD9L9Vegtw9VcjIpRu35ePKcnjj6ikQWSjkkD1A7H53fCxFygLMhXhdHlLUkriYOKpImAq/I5fz22RltY87qqwYIbxRDQrjuDDyYbnfDDDd8h7127JJnQ8MFWRNSbV1n1Xu097sX/RkZlsQtwmuSztWxj7f5lXGb6XOplBboXwnh4qjbLk/RhoImV9VuFHfLjsQ3gakfYnI/+qW14vPFA/8nRFDz1bAmzpqaP5zrr/w9MMKBv"
+            },
+            CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
+            CellID -> 135646555
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              GridBox[
+               {
+                {
+                 TagBox[
+                  GridBox[
+                   {
+                    {
+                     StyleBox[
+                      TemplateBox[
+                       {
+                        CheckboxBox[False, {False, "WolframAccount"}],
+                        "\" \"",
+                        TemplateBox[
+                         {
+                          TemplateBox[
+                           {
+                            "DisclosuresWolframAccount",
+                            Cell[
+                             BoxData[
+                              FrameBox[
+                               Cell[
+                                "Choose this option if your paclet directly does any of the following:\n\[FilledSmallSquare] Requires, uses, or records any information related to user\[CloseCurlyQuote]s Wolfram ID\n\[FilledSmallSquare] Interacts with the user\[CloseCurlyQuote]s Cloud account or Wolfram account\n\[FilledSmallSquare] Creates, deletes or modifies the user\[CloseCurlyQuote]s cloud objects\n\[FilledSmallSquare] Creates or executes cloud deployed scheduled tasks\n\[FilledSmallSquare] Uses cloud credits, service credits or Wolfram credits\n\[FilledSmallSquare] Makes WolframAlpha calls",
+                                "MoreInfoText"
+                               ],
+                               Background -> GrayLevel[0.95],
+                               FrameMargins -> 20,
+                               FrameStyle -> GrayLevel[0.9],
+                               RoundingRadius -> 5,
+                               ImageSize -> {Scaled[0.65], Automatic}
+                              ]
+                             ],
+                             "MoreInfoText",
+                             Deletable -> True,
+                             CellTags -> {"SectionMoreInfoDisclosuresWolframAccount"},
+                             CellMargins -> {{66, 66}, {15, 15}}
+                            ],
+                            HoldComplete[EvaluationCell[]],
+                            "Click for more information"
+                           },
+                           "InlineMoreInfoOpenerButtonTemplate"
+                          ],
+                          "\"Wolfram account\""
+                         },
+                         "RowDefault"
+                        ]
+                       },
+                       "RowDefault"
+                      ],
+                      StripOnInput -> False,
+                      FontSize -> 12
+                     ]
+                    }
+                   },
+                   DefaultBaseStyle -> "Column",
+                   GridBoxAlignment -> {"Columns" -> {{Left}}},
+                   GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
+                  ],
+                  "Column"
+                 ]
+                }
+               },
+               AutoDelete -> False,
+               BaseStyle -> {"ControlStyle"},
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings -> {"Columns" -> {{2}}}
+              ],
+              "Grid"
+             ]
+            ],
+            "Output",
+            Editable -> False,
+            Deletable -> False,
+            CellMargins -> {{Inherited, Inherited}, {5, Inherited}},
+            TaggingRules -> {
+             "CheckboxData" -> "OEM6eJx9VMFuEzEQpW3SJm2UXrjAyeLEgfwAlyrZtBCpVas4iLPrnU1MnPXisZsuJ/4CceJH+AT4iYoj4hsYe5NtUlH2kNjjmTfzPG/cb/V4k7tSA9+/9K7wrscPkhnIOaTZE2ycKyRLc+RggdlOtc92sTH2Gmi/NzbLsI3mHWyNxXJgbgHJdjSBRaGFAzJkjcqFPxsqlNqgt4Dvjc6sWPSlND53WRMbCWhNKAcUMRROZPvYOiOPiLBbHfNve8nMGATmZgqZKZwyOVMZK423rBBSg2OpsiCdLllqAJnIS2Yy8geWGa3NUuXT14d3X76zMXz05IqvmMfwayyjQGPTKkjlmbELETNYCFRS5kzwtXefvyJbEWCjYUQb5Q6skA7ZUrlZzFe7Jtr4lImKasizjl2ZIkBigXJQHSkQC6qc/BYmVZmi9RacjHDm+gPRxM3YEAK3IH1YV14pFNqUVDrKGaTUNiIhcF6FvcPaT1pIlaPslORGSVgbNqtdmWLohZhDfQd9XcwEk0Jr5J0LY2FEdzeB21oreDgQcj61RDalFrffWFGeww1om8Xvz0nt2Yk9vxB2qnJMnt4jRHvU6jbCzx/h+32P0B2HNNTmsUiVx6RZn7RHCzEFrj7Bhmr3ORUO6Qrn1wm2+96Z0Hj5CJn2MHRIXNOyMbEe6oNW0OhETOtZ4S859YgUtMZ5fADWGEcBY0W/rnL1nwySQb0+To4pTeet0WliaNZIMzSy3dMboX1UbRyY54lWck7SD2KysKlq/mKUa5XDurbLAnKwA++cydfTy48fSJV3t+vu8daVNQVYV/KjDXb0jlzG6cRsb/vd+C9DalE+A6to2DaWNefmA2N166ekytiN5pnQCP/qU3USHjej/SLHjSb3eDfObmHJN95Lu5+X3F8jELvOGJDeFgmTsqBH8io+MX8B9FTnHQ=="
+            },
+            CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
+            CellID -> 640640588
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              GridBox[
+               {
+                {
+                 TagBox[
+                  GridBox[
+                   {
+                    {
+                     StyleBox[
+                      TemplateBox[
+                       {
+                        CheckboxBox[False, {False, "ExternalServices"}],
+                        "\" \"",
+                        TemplateBox[
+                         {
+                          TemplateBox[
+                           {
+                            "DisclosuresExternalServices",
+                            Cell[
+                             BoxData[
+                              FrameBox[
+                               Cell[
+                                "Choose this option if your paclet directly does any of the following:\n\[FilledSmallSquare] Makes requests to external services (http, ftp, ssh, etc)\n\[FilledSmallSquare] Creates or uses service connection\n\[FilledSmallSquare] Send emails",
+                                "MoreInfoText"
+                               ],
+                               Background -> GrayLevel[0.95],
+                               FrameMargins -> 20,
+                               FrameStyle -> GrayLevel[0.9],
+                               RoundingRadius -> 5,
+                               ImageSize -> {Scaled[0.65], Automatic}
+                              ]
+                             ],
+                             "MoreInfoText",
+                             Deletable -> True,
+                             CellTags -> {"SectionMoreInfoDisclosuresExternalServices"},
+                             CellMargins -> {{66, 66}, {15, 15}}
+                            ],
+                            HoldComplete[EvaluationCell[]],
+                            "Click for more information"
+                           },
+                           "InlineMoreInfoOpenerButtonTemplate"
+                          ],
+                          "\"External services\""
+                         },
+                         "RowDefault"
+                        ]
+                       },
+                       "RowDefault"
+                      ],
+                      StripOnInput -> False,
+                      FontSize -> 12
+                     ]
+                    }
+                   },
+                   DefaultBaseStyle -> "Column",
+                   GridBoxAlignment -> {"Columns" -> {{Left}}},
+                   GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
+                  ],
+                  "Column"
+                 ]
+                }
+               },
+               AutoDelete -> False,
+               BaseStyle -> {"ControlStyle"},
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings -> {"Columns" -> {{2}}}
+              ],
+              "Grid"
+             ]
+            ],
+            "Output",
+            Editable -> False,
+            Deletable -> False,
+            CellMargins -> {{Inherited, Inherited}, {5, Inherited}},
+            TaggingRules -> {
+             "CheckboxData" -> "OEM6eJx9VF1uEzEQpm2SJm3UFokneLF4AtRcgJcq2aYQqVWqOBdwd2cTK1578dhJl4twF8QR4BKIR8QZmPUm2zSC+mHXnhl/8/eN++0eb3JXKOCtsXe5dz1+GM0hXkCSPsPGtUSSNEcOMkz3qnO6j42JV0Dng4lZlccg3sP2RKwG5h6QZMdTyHIlHJAgbVQm/NWlxFgZ9BZweO/AaqE42KWM6U4TGxEoRTiHdOdSOJG2sH1lRRYw9is1/7oXzY1BYG4ukZncSaOZTFlhvGW5iBU4lkgLsVMFSwwgE7pgJiV7YKlRyqyknr0/+vnlG7sRC9Jb+OQBHTJnGKyjYrgOi72ZO5efs7T8IM7PGbj4bbgdWaD8KAbLPNJ/fYXFRmtyT3EFMw46YZAJqZB3b4yFkU7NlBxtColHAxEvZtZ4nVD2nQ9WFNewBGXTsP5c1JbdUI4bYWdSY/TiASHIQyMfI/z4Xq7fDwgnk9INVWAiEukxataazigTM+DyM2y1tMVjoSBZ4/y6wE7fO5MJJ+P/JNO5BGqBuKNtY2o91Ip22b6pmNVE4u94VaYNzlPs2KAclyjrAtRxrv/RIBrU+9PolBx1PxqVRIaoCA6I0SfDpVBelF4Dm15GSsYL4oVlGUXBJIVhs6Dnr0daSQ2b6MY5aLAD75zRG3Lz58NdwvCz3dh7vH1rTQ7WFfx4K0catXGgL6YHj0frySypUXoOVjpItrZ13s0dYVX7YSKrnjSvhEL4V7cqTTn/RvlM41are/xkpCmp3JJtqE2nrwvu7xDoeehOAGn4YpgWOb0jt2EG/wK9kpCX"
+            },
+            CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
+            CellID -> 817301037
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              GridBox[
+               {
+                {
+                 TagBox[
+                  GridBox[
+                   {
+                    {
+                     StyleBox[
+                      TemplateBox[
+                       {
+                        CheckboxBox[False, {False, "WLSystemConfiguration"}],
+                        "\" \"",
+                        TemplateBox[
+                         {
+                          TemplateBox[
+                           {
+                            "DisclosuresWLSystemConfiguration",
+                            Cell[
+                             BoxData[
+                              FrameBox[
+                               Cell[
+                                "Choose this option if your paclet directly does any of the following:\n\[FilledSmallSquare] Creates persistent local scheduled tasks\n\[FilledSmallSquare] Modifies WL system or environment settings\n\[FilledSmallSquare] Modifies <+$Path+>, <+Directory+>, or similar\n\[FilledSmallSquare] Installs additional paclets or dependencies\n\[FilledSmallSquare] Creates, modifies or deletes symbols outside of the Publisher`PacletBaseName` context\n\[FilledSmallSquare] Creates or imports non-public <+ResourceObject+> content\n\[FilledSmallSquare] Makes FrontEnd modifications\n\[FilledSmallSquare] Internal handlers",
+                                "MoreInfoText"
+                               ],
+                               Background -> GrayLevel[0.95],
+                               FrameMargins -> 20,
+                               FrameStyle -> GrayLevel[0.9],
+                               RoundingRadius -> 5,
+                               ImageSize -> {Scaled[0.65], Automatic}
+                              ]
+                             ],
+                             "MoreInfoText",
+                             Deletable -> True,
+                             CellTags -> {"SectionMoreInfoDisclosuresWLSystemConfiguration"},
+                             CellMargins -> {{66, 66}, {15, 15}}
+                            ],
+                            HoldComplete[EvaluationCell[]],
+                            "Click for more information"
+                           },
+                           "InlineMoreInfoOpenerButtonTemplate"
+                          ],
+                          "\"WL system configuration\""
+                         },
+                         "RowDefault"
+                        ]
+                       },
+                       "RowDefault"
+                      ],
+                      StripOnInput -> False,
+                      FontSize -> 12
+                     ]
+                    }
+                   },
+                   DefaultBaseStyle -> "Column",
+                   GridBoxAlignment -> {"Columns" -> {{Left}}},
+                   GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
+                  ],
+                  "Column"
+                 ]
+                }
+               },
+               AutoDelete -> False,
+               BaseStyle -> {"ControlStyle"},
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings -> {"Columns" -> {{2}}}
+              ],
+              "Grid"
+             ]
+            ],
+            "Output",
+            Editable -> False,
+            Deletable -> False,
+            CellMargins -> {{Inherited, Inherited}, {5, Inherited}},
+            TaggingRules -> {
+             "CheckboxData" -> "OEM6eJyFVM1uEzEQpm3SJm3VXkBInCzErY24I9Sq2bQQKSFRHKnXOuvZxMRrrzzetsuL8DI8Ahx4BcQR8QzMepM0rQrkEv/MfPt9M/P5rNHide4LDXx7kPss9y2+E80gnoNMnmCtp5BO6l0PKSYb1T7ZxNoo10D7rZG9KbfheAMbI3HTtreAdLY3hjTTwgMdJLUqhLOOwlhbzB3gZY8XSLiRNYma5k54Ras61iLQmsB2KLEjvEi2sXHhRBqANqtr/n0rmlmLwPxMIbNZmctUwgqbO5aJWINnUjmIvS6YtIBMmILZhOKBJVZre6PM9M3uj89fWOSAaCLLwCGRBOOZtrHQDOMZSBIqmRc4xxDct1IliqIvewwDf2YdA3OtnDVpmYvgPWE/CH979Goo/Ozo5JiWncDMuqLcUjqqVGnhQkbXoBdaE2EpVSmLiFSCsAyVkIGRYGICXWd/zNLlp0IUxdMSi3RiCcvmHpWEZQGG+UQrnIG7GgbktkD4QBW+YrE1Hm79vboQnkoz64iAsaaVlckxqRgBUrVjGEw+kpqjkyrZVMl9MafUCyqKPzdyQS4OPcaFTg+uFDcTRmoqPd/vWwddk9gxMVgOGe62RTyfOpsbSUPRfOdE0YNr0C4Jv9+nq8j9MCV94abKYPT0DiGchyG/j/Dta/n7dYdwMCo/Q80bCalyjOqrm2Y3FVPg6hOsjfs2pykBucD5eYrNs9zblETGfxHT7JSNERNa1sYuh9VFo5zqsZiuTMZfcyoqVWuJ81/nLKH2SqhFFVZkF/9RO2qv1ofRIX1t/73VMrLkVZoYsvzB+bXQeYAMTnsRUbfn5BlHTXTAFHFxabjnL7tGKwNLigMaTXDt3Htrlu7nz++MEq/z5c8eldHijaGzZEVf8L01zfQsDYLLMdm6/wz9UzA1ztCcKw9ybbkqQf3BYdWLczJe6FH9QmiEx7pX3ZRvpdV5anCt9S1+EGY7cxQblDbPTMHzCT0MLb6/dM24yOjNrfz3BygABGI="
+            },
+            CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
+            CellID -> 285713379
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              GridBox[
+               {
+                {
+                 TagBox[
+                  GridBox[
+                   {
+                    {
+                     StyleBox[
+                      TemplateBox[
+                       {
+                        CheckboxBox[False, {False, "OSConfiguration"}],
+                        "\" \"",
+                        TemplateBox[
+                         {
+                          TemplateBox[
+                           {
+                            "DisclosuresOSConfiguration",
+                            Cell[
+                             BoxData[
+                              FrameBox[
+                               Cell[
+                                "Choose this option if your paclet directly does any of the following:\n\[FilledSmallSquare] Modifies OS settings\n\[FilledSmallSquare] Makes any use of <+SystemCredential+>",
+                                "MoreInfoText"
+                               ],
+                               Background -> GrayLevel[0.95],
+                               FrameMargins -> 20,
+                               FrameStyle -> GrayLevel[0.9],
+                               RoundingRadius -> 5,
+                               ImageSize -> {Scaled[0.65], Automatic}
+                              ]
+                             ],
+                             "MoreInfoText",
+                             Deletable -> True,
+                             CellTags -> {"SectionMoreInfoDisclosuresOSConfiguration"},
+                             CellMargins -> {{66, 66}, {15, 15}}
+                            ],
+                            HoldComplete[EvaluationCell[]],
+                            "Click for more information"
+                           },
+                           "InlineMoreInfoOpenerButtonTemplate"
+                          ],
+                          "\"OS configuration\""
+                         },
+                         "RowDefault"
+                        ]
+                       },
+                       "RowDefault"
+                      ],
+                      StripOnInput -> False,
+                      FontSize -> 12
+                     ]
+                    }
+                   },
+                   DefaultBaseStyle -> "Column",
+                   GridBoxAlignment -> {"Columns" -> {{Left}}},
+                   GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
+                  ],
+                  "Column"
+                 ]
+                }
+               },
+               AutoDelete -> False,
+               BaseStyle -> {"ControlStyle"},
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings -> {"Columns" -> {{2}}}
+              ],
+              "Grid"
+             ]
+            ],
+            "Output",
+            Editable -> False,
+            Deletable -> False,
+            CellMargins -> {{Inherited, Inherited}, {5, Inherited}},
+            TaggingRules -> {
+             "CheckboxData" -> "OEM6eJx9VF1uGjEQLgkQCIj0oU95svpWRVygqhrBJmmRgogwF3B2x2DhtVceO2Rzgt6gl+kR2ktUfax6hs7uwoZEbfyy4/n5PDPfzI46Q97iPtfA27Pgs+CH/ChaQbyGRL7C5rVC0rQmHlKUjeouD7A5Dxrofji3m+JaqhvYmYvN2N4Dkq63gDTTwgMpZLNy4acXCmNtMTjAGY+skWoZnPCKpBY2I9CaYI4o5EJ4IdvYuXIiLSEOKjP/0ohW1iIwv1LIbFbEMiVZboNjmYg1eJYoB7HXOUssIBMmZ1aSPzBptbYbZZbvj39+/camNlFSkcuMMwTvyYCVQay3gYFeouAPZzxHakLkIAHjldBnH3l/ah1MjLQLuK+7gsdjEa+XzgaTUC3dT07k13AH2sny/DmvPftlcVPhlspg9OYRodSXrDxF+PG9OL8fEQbz4hlKey4SFTBq1ZbuJBVL4OoB9vhp81hoSLY4v86xOwreptT/+D/FdC+AGipuSWwuXIDa0CnIWIhlPRX8HaeeExk7nBeo3oH0CpBt/XWa2280jsa1fBKd0Dv9z1YnkaWxAg80nYPLO6FDCVmOxmmkVbwmkh1LKQmmKAuXlnb+dmK0MrBLbpaBATcO3luzG1T+msYg3k+UnzzLfMg7N85m4HzOe3sF0tLMyklEefh0SV6skVgyK3DKQ7In1lW3nimrxl8mqiKkdSU0wr+oqizFJlsdUoN7PA/5YGI8uMyRb1ljd2RyHm5p/oe8PwekPYphkWf0R7gp1+kvhuF6zg=="
+            },
+            CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
+            CellID -> 276173724
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              GridBox[
+               {
+                {
+                 TagBox[
+                  GridBox[
+                   {
+                    {
+                     StyleBox[
+                      TemplateBox[
+                       {
+                        CheckboxBox[False, {False, "LocalSystemInteractions"}],
+                        "\" \"",
+                        TemplateBox[
+                         {
+                          TemplateBox[
+                           {
+                            "DisclosuresLocalSystemInteractions",
+                            Cell[
+                             BoxData[
+                              FrameBox[
+                               Cell[
+                                "Choose this option if your paclet directly does any of the following:\n\[FilledSmallSquare] Executes Shell or RUN commands\n\[FilledSmallSquare] Uses external evaluators via <+ExternalEvaluate+>\n\[FilledSmallSquare] Interacts with external libraries\n\[FilledSmallSquare] Reads or writes to streams or sockets\n\[FilledSmallSquare] Launches parallel kernels, subkernels or GPUs",
+                                "MoreInfoText"
+                               ],
+                               Background -> GrayLevel[0.95],
+                               FrameMargins -> 20,
+                               FrameStyle -> GrayLevel[0.9],
+                               RoundingRadius -> 5,
+                               ImageSize -> {Scaled[0.65], Automatic}
+                              ]
+                             ],
+                             "MoreInfoText",
+                             Deletable -> True,
+                             CellTags -> {"SectionMoreInfoDisclosuresLocalSystemInteractions"},
+                             CellMargins -> {{66, 66}, {15, 15}}
+                            ],
+                            HoldComplete[EvaluationCell[]],
+                            "Click for more information"
+                           },
+                           "InlineMoreInfoOpenerButtonTemplate"
+                          ],
+                          "\"Local system interactions\""
+                         },
+                         "RowDefault"
+                        ]
+                       },
+                       "RowDefault"
+                      ],
+                      StripOnInput -> False,
+                      FontSize -> 12
+                     ]
+                    }
+                   },
+                   DefaultBaseStyle -> "Column",
+                   GridBoxAlignment -> {"Columns" -> {{Left}}},
+                   GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
+                  ],
+                  "Column"
+                 ]
+                }
+               },
+               AutoDelete -> False,
+               BaseStyle -> {"ControlStyle"},
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings -> {"Columns" -> {{2}}}
+              ],
+              "Grid"
+             ]
+            ],
+            "Output",
+            Editable -> False,
+            Deletable -> False,
+            CellMargins -> {{Inherited, Inherited}, {5, Inherited}},
+            TaggingRules -> {
+             "CheckboxData" -> "OEM6eJyNVE1uEzEUpm3SJm3UbiohWFndlizYIkTVTNMSKaXVOD2AM/MmseKxR3520+EibDkIR4BLIJaIM/DGk78iipjN2O/ne3/f83mry5vclQr47o13hXddvhdNIZlBmj3DxlAiSZoDBzlmW/U928ZG7BXQfSc28+oaxFvYisW8Zx4ASXYwgrxQwgEJskZtwk8uJCbKoLeAQ5MIxUsk6IF2YEXipNGYNbERgVIEt0euF8KJbBdbl1bkAWq7VvPP29HUGATmphKZKSpnJjNWGm9ZIRIFjqXSQuJUyVIDyIQumcnIHlhmlDJzqSdv9r9/+sL6D5B4RyZ8StDMWBbffWCJyXOhUwwmd0hqeKA8tVAM7oXywhmL7F4K9va0v9D0awWcvgtey8KQzaWbrv2VHFthJdTYMYgUq6hzK6ssnGHoLIg8CNHQMFxtORReJ1MyKYQVSoFiMwIEha8Y+vHiXDld3d4h71wbCwOdmREFXk4N93simU2s8TqlHrevrCiHcA/KZuH7dbay7ISmXws7kRqj4zVCkAfWPEb49rX6fq4RDuMqDPU5Fqn0GDVXmvYgFxPg8iNs8GeXEyUgXeD8OMP2uXcmF04mTxTTvgAatBjTsTGyHlaKVkWSkZisWMtfcwgMW+L8BxWXYAcV2KIPq3QX/6gX9Vbno+iI4nXeG5VGhugPDmiLDhesIMxA3ZeRksmMSGhZTskwSdnYPOj5yUArqWGZ5E0BGmzPO2f0cqH4i5Avw5Awea8z5s+fKKXLW7fWFGBdyQ82KqdtvynqYnceb/c/i6bx6SlUbE03jqs2NP8Q1hPpp7KeVPNSKIS/zbDWVE+QUT7XuEGALj8MBRWWbEOr2ue65H6MQC9UJwakxU9gVBb0lN2G/f8NiuPEKA=="
+            },
+            CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
+            CellID -> 110926144
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              GridBox[
+               {
+                {
+                 TagBox[
+                  GridBox[
+                   {
+                    {
+                     StyleBox[
+                      TemplateBox[
+                       {
+                        CheckboxBox[False, {False, "Other"}],
+                        "\" \"",
+                        TemplateBox[
+                         {
+                          TemplateBox[
+                           {
+                            "DisclosuresOther",
+                            Cell[
+                             BoxData[
+                              FrameBox[
+                               Cell[
+                                "Add additional text as needed in a new cell below to document any additional disclosures that are not listed above.",
+                                "MoreInfoText"
+                               ],
+                               Background -> GrayLevel[0.95],
+                               FrameMargins -> 20,
+                               FrameStyle -> GrayLevel[0.9],
+                               RoundingRadius -> 5,
+                               ImageSize -> {Scaled[0.65], Automatic}
+                              ]
+                             ],
+                             "MoreInfoText",
+                             Deletable -> True,
+                             CellTags -> {"SectionMoreInfoDisclosuresOther"},
+                             CellMargins -> {{66, 66}, {15, 15}}
+                            ],
+                            HoldComplete[EvaluationCell[]],
+                            "Click for more information"
+                           },
+                           "InlineMoreInfoOpenerButtonTemplate"
+                          ],
+                          "\"Other\""
+                         },
+                         "RowDefault"
+                        ]
+                       },
+                       "RowDefault"
+                      ],
+                      StripOnInput -> False,
+                      FontSize -> 12
+                     ]
+                    }
+                   },
+                   DefaultBaseStyle -> "Column",
+                   GridBoxAlignment -> {"Columns" -> {{Left}}},
+                   GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
+                  ],
+                  "Column"
+                 ]
+                }
+               },
+               AutoDelete -> False,
+               BaseStyle -> {"ControlStyle"},
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+               GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+               GridBoxSpacings -> {"Columns" -> {{2}}}
+              ],
+              "Grid"
+             ]
+            ],
+            "Output",
+            Editable -> False,
+            Deletable -> False,
+            CellMargins -> {{Inherited, Inherited}, {5, Inherited}},
+            TaggingRules -> {
+             "CheckboxData" -> "OEM6eJx9U9ty2jAQbRJMoDCkD33qSzV9p7+QAZO0zCRDxuIHFmsNGmTJowvE/cb2L/rY6Td0bcA4velFq72cvZzVpDfmEfelQt5dBF8EP+bX8QbTLYrsles8SEeaaO4xd9nF4Z1duk4SFNL7KjH76lmrL1wvgf3UPKMj3WCJeaHAIymyzsGFv5lJlyrjgkW38Bu0WeQ6MSpFwdfkOAMPWdf17i3kdeDlwczdRAgGQkgvjQbFPD57Bo5pRIGCSc2A5D1LyZmtUJk984YJk4YcNXnqsh0tzlUwvwGyW2TaeKaoSIKDldnhRz58NBbnOjNLynbq2r2eQrpdWxO0oKr7nyyUD7hDZbP6/LxtPId1G49g11K7+O0ZodbXU3+J8O1rdX6cEUZJlUbqdQJCBhdHjaU/z2GNXH7B1vy7PAWF4ojz/db1J8GbHLxM/9FMf4YKPaxI7CxtwMbQq8a+hHXDOn/PMa3md8L5g8pT6KAKPXbdFHe842k8beSb+IbQh5+NErGhZUGPtHOjux2oAFWqmvp3sZLplmXGspxSE9ck5rWdf5hrJTWeSloUqNFOg/dGn9aPR3V1x2vMe0/WFGh9yQetDmjrF0UF6bKrl1v+33aIBk2okpamJTYNRr8pD5O9oz2sJx7dg3L4Ny4OluorGhVy7VpEjvlorj3awpJvPYT+RJc8rBzSTx0m6EywKS7Lgr70E6QE+QuUZGFu"
+            },
+            CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
+            CellID -> 30971724
            ]
           },
           Open
@@ -21099,12 +21758,12 @@ Notebook[
   },
   "SubmissionReviewData" -> {"Review" -> False},
   "ToolsOpen" -> False,
-  "UpdatedTimestamp" -> 3857758681.7149804,
-  "TemplateVersion" -> "1.5.59",
+  "UpdatedTimestamp" -> 3859554684.8096277,
+  "TemplateVersion" -> "1.5.61",
   "StatusMessage" -> "",
   "PacletBuildData" -> {
-   "FileHashes" -> ByteArray["OEM6eJyllm1MHEUcxtGQvqXlJaDQWKUFW2hxb0Feikpq6XFHCAc92eOorQfM7c7tDbe3c+7OAi1t9EOR+EWNpDa1YNq0fpCkTTWWhoBBaZOamiZoa0qiJlpFY5VG2xDjB417cHSue3fbu/jpkufm+T2z8//PS91Whqupx7wWhDIBBGGZtcmihFQ/26AhAaqsFQvQ9rKGeoAEZR62ESQhgqBqkb11DzPcCg5rCg8dIzdqzjo921frigsoIiSO7uoqj9BdVM1whfEDGmUB9rGdZRbep0ah1PQWLEPKaf5lrP/YwflNDLfFjKNCMfyX2lluwuK/fGjyG/br9mRZFSYs9+jhhXe0wkMMV5IMyyJC2YT2escPV/uPz+lf+Xx8Wiv0QSVcAScQ9bJw+4NeLBnKQ14wVAUPH70weO7KWppTVv7buhMLW7IYzppSTlQLuKBK6gEBhizv+MjHF/qPlNGsmV1npvO6hB0MV5dSll3BQSuQsYx4INmxEjQkPfViVZ1/+LJGk8DIaEdttW1vqknNIADNkpwT42muvLu7adLGVTO1B66tF1Otkwub5ZQOBAaK3kJNNGfh1/zW+aHbPMNti5/DQaDw/qUeq1raRdCkvz6yOJ3ZJR9kp8Iz25XnNp787I3rd/sYbmuSPBWZ4O4Ih3aKrpMcwzHJ4HwISoJq6ZVMkH3Hf/67eza7gOEqk0Gi8G8zJEAIt7Ypef3MhpDHM6UwnCUZ8r3T5GkTZsHefRlP1gZWJ8nsVRCBFgnzARMmattduOdmm95VxQmYIShJkWO48gEF/6Rytntq8gRmuNIHwpI6i0nV75nZX9zqSAnoNSsLODr4bJaKE/dQLPD/nsoujWAFAX2D1wkCksUW2OtSgKz69D2+OLJVk2LuyhtjzuLiiU9zac74dOAnuP3ALoZ7tAkqMpRYK+D9UHADSYOGPneUCnuKTuXvqKF2qhTds0cdNvrkCFGQVyMxrJ1zGfzATcVJWVQpiM+y4mAQywbO7EUX1q6xGyiHKtvic2x9IaigxSWVllbpfuSZ61er/mW7/BRJlU3xkQ0KCPkRbyR9bu+ZQl8dfoSSqPJEfFK8Cf2YmTlYvKZdoRiqJMBwPA5BA6a8YkUzereig2KokqB8HFE0nmgKkAys18i8/4+zp6LWiCqFy6xED7j7UZMNp73u6mALRVElJ4Kqh15NFPU2N3gvjaVPFsx5ojqSKo9FvDY9X1vcElYsEwUbP+Vg0/n2S2uP9VAGVXIjDPviriKxE5jLffP2t2lDj1MzVTIiZiQjYrBN5+wr6EpbtYbaqJIZsbn2h2LW6s8gDHz41/tZ1EeV5bVKtM4vPfPeK/nD322mXqqsdDRabS2cLXr8abddvPj9qJuOp8o6J+AlSBplHzakXHn1/OXn2MKoilAle8nVDGTk059y5nfdPytnJt7uvMXoJ1P43aey4Zcfa2tsd9TH3JOOofTNd46U5ORR+7LyHxPshTw="],
-   "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram__CodeEquivalenceUtilities-1.4.4.paclet"
+   "FileHashes" -> ByteArray["OEM6eJyVlnFsE1UcxydOnDg354oQ5qxumQXmtYxtOvxDrF3bjLVd4XXrVJBdr6/to9d75e5d14EJMbrh+EeSZRKlgAkjmSYSmQ5CRjIFEg2GkIgJJGogLBNj4hQ0KjESr1u3V67trf2rybf3/Xzf/d7v9+6ZDQxoacWcHIECYQnCgskqBHkkhUx2GfmhZLJgP7TulFGM5aHAwU6CeEQQlIyCz7yEAUsBlkUOOg5daTnu3vb8Q4riYcUgJA79rd1/JWamVjGgJntAm+CHcdP2dUYuIKWhpGIXFiDlDG911V0Y+4dhwDNaHAkGk39J2xs1WDHb96M+tGsTA1bnwzIGoaBBq3Bef3MkfnMDAzZmp22BASgmq+Zmg0opQV/Eh3lVSclmVSVx4sCpvZ9eKKU5R0L7bv55aaCMAZaCctK2zQMl0soSVpXlO33o81O7h9fRrI8aHnv4mzEUYoC5oCybiCMWVsAC4ljehsWIKunZV5rNocRXMk2a/Ozn28JUbFehSU42DLWS3BOnizwr/uigSe9UXTOwHceqCt0nD9bKqe8P99fuR+0059/aV+ODnbqXGbA2ew6ArMiF5nqsea7zoUZ//VZSMtqy8USgEJ7WJK1CIzN9/90VGbAmT56ENHClDQcM9kGHMuBMPrgAgrxfMvbyGsj4wZ/u7LhaoWdAUz5IlPx1QsL6k62tSb7EeSfGnrqzhgHGfMgLp8l6DeaOyTIUeMFuz5PZKyICjTzmwhpM1NlR032jU+kqQw5mFPJ86uhsWmTDL3u611+7/61qBtQvClt4Y58G8Jfxw9WJD/ni3FueCVzkEL1vyZcDyy/u2ZxzOD0ywSJilXk0+/1ICLpgr0dkBSmgjOTsk1tkPuNzdOWk22CY+EJHcwYbpo54z+p2MuDxdigKkDdZWC4E/V0sL0NVWzrq/d21R1e+2ELtVKldsKedDcriCBGRTyYZrJemy7j+G6Kbsqiiz86y4EgECyrO1XMeLF82PUE5VFmbnWONR6GIZkvKz1XpXuQn311svmvqCVEkVZ7OjrSLbDSEODXpa1tsEn379nJKosqT2UnZFjRVXr7XsMwrUgxVcmAAh6NQhWloXOpEHzS+TjFUybF9gIgyR2SR5VWsAfJr6PfjR9NqRJWaeVauO9K9qDP2EV/XcxEXRVGlMoVqhT45GFTaXOU9f7L4jH56W1pHUqUq5bUq+fLsSFiwQESsfpU32se950vfj1EGVXQphm12qkjmAqZ17878UDRUTc1UKUuZkYCIyna28jV9T1HJMmqjSnnK5umLZtTqVgSGT/x97FHqo8p8rXLVeeuGw3tWJn6so16qPOhos1hdwJr+/EiXLXju+sdd9HmqPOJmOR6SNiGAVSnvhUHTA4mqOHVRpWLO5WQFFFBuXtqfpp79o+NDvkilcjIlr2mSKXlRM1nbvI7WjM+aY6i47vbw6soV1D6v/A/T1ks/"],
+   "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram__CodeEquivalenceUtilities-1.4.11"
   },
   "AutoUpdate" -> True,
   "Openers" -> {
@@ -21114,15 +21773,16 @@ Notebook[
   },
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" -> DateObject[
-   {2022, 3, 31, 19, 39, 25.600902`9.160830188108621},
+   {2022, 4, 21, 14, 55, 54.6281672`9.489991471853822},
    "Instant",
    "Gregorian",
    -4.
   ],
-  "NotebookUUID" -> "e8a467c0-30fe-49eb-9c07-86a699a75dc9"
+  "NotebookUUID" -> "aa906757-7381-4689-b127-dbb1e7ce259f"
  },
  CreateCellID -> True,
- FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (March 30, 2022)",
+ DynamicEvaluationTimeout -> 60,
+ FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (January 26, 2022)",
  StyleDefinitions -> Notebook[
   {
    Cell[StyleData[StyleDefinitions -> "Default.nb"]],
@@ -21168,6 +21828,7 @@ Notebook[
      "MoreInfoText",
      StyleDefinitions -> StyleData["Text"]
     ],
+    FontSize -> 14,
     FontColor -> GrayLevel[0.25]
    ],
    Cell[
@@ -23855,7 +24516,30 @@ Notebook[
                      StripOnInput -> False
                     ],
                     StyleBox[
-                     "\"DEFINITION NOTEBOOK\"",
+                     TagBox[
+                      GridBox[
+                       {
+                        {
+                         "\"DEFINITION NOTEBOOK\"",
+                         StyleBox[
+                          "\"(\[VeryThinSpace]UNDER DEVELOPMENT\[VeryThinSpace]\[VeryThinSpace])\"",
+                          FontSize -> 10,
+                          FontColor -> GrayLevel[0.5],
+                          FontTracking -> "Plain",
+                          FontSlant -> "Plain",
+                          FontVariations -> {"CapsType" -> "Normal"},
+                          PrivateFontOptions -> {"OperatorSubstitution" -> False},
+                          StripOnInput -> False
+                         ]
+                        }
+                       },
+                       GridBoxAlignment -> {"Columns" -> {{Automatic}}, "Rows" -> {{Center}}},
+                       AutoDelete -> False,
+                       GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+                       GridBoxSpacings -> {"Columns" -> {{0.25}}}
+                      ],
+                      "Grid"
+                     ],
                      FontFamily -> "Source Sans Pro",
                      FontTracking -> "SemiCondensed",
                      FontVariations -> {"CapsType" -> "AllSmallCaps"},
@@ -31489,11 +32173,17 @@ Notebook[
     StyleData["DockedCell"],
     CellFrameColor -> GrayLevel[0.75],
     Background -> GrayLevel[16/17]
+   ],
+   Cell[
+    StyleData["DisclosureDetails"],
+    CellMargins -> {{94, Inherited}, {10, 0}},
+    FontSize -> 12,
+    FontColor -> GrayLevel[0.5]
    ]
   },
   Visible -> False,
-  FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (March 30, 2022)",
+  FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (January 26, 2022)",
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"
  ],
- ExpressionUUID -> "e8a467c0-30fe-49eb-9c07-86a699a75dc9"
+ ExpressionUUID -> "aa906757-7381-4689-b127-dbb1e7ce259f"
 ]
