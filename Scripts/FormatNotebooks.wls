@@ -9,9 +9,6 @@
     ```
 *)
 
-(* :!CodeAnalysis::BeginBlock:: *)
-(* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
-
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Defaults*)
@@ -44,21 +41,27 @@ getArg[ name_String, default_: None ] :=
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*enclose*)
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 enclose // Attributes = { HoldAll };
-enclose[ eval_           ] := enclose[ eval, "An unspecified error occured." ];
+enclose[ eval_           ] := enclose[ eval, "An unspecified error occurred." ];
 enclose[ eval_, msg_     ] := enclose[ eval, msg, 1 ];
 enclose[ eval_, msg_, n_ ] := Enclose[
     eval,
     (Print @ ToString @ msg; If[ $strict, Exit @ n ]) &
 ];
+(* :!CodeAnalysis::EndBlock:: *)
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*makeRootString*)
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::NoSurroundingEnclose:: *)
 makeRootString[ str_String ] := enclose[
     ConfirmBy[ ExpandFileName @ StringTrim[ str, "\"" ], DirectoryQ ],
     StringForm[ "`1` is not a valid directory", str ]
 ];
+(* :!CodeAnalysis::EndBlock:: *)
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -96,26 +99,34 @@ getNotebookArgs[ ___ ] := Missing[ "NotFound" ];
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*print*)
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 print[ ind_Integer, msg__ ] :=
     Print[ StringJoin @ ConstantArray[ " ", ind ],
            DateString @ { "DateTimeShort", ".", "Millisecond" },
            ": ",
            msg
     ];
+(* :!CodeAnalysis::EndBlock:: *)
 
 print[ msg__ ] := print[ 0, msg ];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*makeUnreadable*)
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::NoSurroundingEnclose:: *)
 makeUnreadable[ file_ ] := enclose[
     ConfirmBy[ Export[ file, Import[ file, "NB" ] ], FileExistsQ ],
     StringForm[ "Failed to unformat notebook: `1`", file ]
 ];
+(* :!CodeAnalysis::EndBlock:: *)
 
 (******************************************************************************)
 (* ::Subsection::Closed:: *)
 (*makeReadable*)
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::NoSurroundingEnclose:: *)
 makeReadable[ file_ ] := makeReadable[ file, Hash @ ReadByteArray @ file ];
 
 makeReadable[ file_, hash_Integer ] /; skipFormattingQ[ file, hash ] :=
@@ -132,7 +143,9 @@ makeReadable[ file_, hash_Integer ] := enclose[
     ],
     StringForm[ "Failed to format notebook: `1`", file ]
 ];
+(* :!CodeAnalysis::EndBlock:: *)
 
+(* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::VariableError::Block:: *)
 makeReadable[ file_, hash_, HoldComplete[ overrides___ ] ] :=
     Internal`InheritedBlock[ { RawArray, NumericArray, overrides },
@@ -156,6 +169,7 @@ makeReadable[ file_, hash_, HoldComplete[ overrides___ ] ] :=
             "ExcludedNotebookOptions" -> { WindowMargins, WindowSize }
         ]
     ];
+(* :!CodeAnalysis::EndBlock:: *)
 
 (* ::**********************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
@@ -203,6 +217,8 @@ overrideFormat[ sym_Symbol ] := (
 (* ::**********************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*$overrideFormats*)
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 $overrideFormats = HoldComplete[
     Alternatives,
     Apply,
@@ -220,6 +236,7 @@ $overrideFormats = HoldComplete[
     PreIncrement,
     RightComposition
 ];
+(* :!CodeAnalysis::EndBlock:: *)
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
