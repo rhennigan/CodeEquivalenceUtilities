@@ -156,7 +156,6 @@ Notebook[
                "FileManagerDirectory",
                CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 100},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -225,7 +224,6 @@ Notebook[
                   "FileManagerDirectory",
                   CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 110},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -294,7 +292,6 @@ Notebook[
                      "FileManagerDirectory",
                      CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                      CellGroupingRules -> {"SectionGrouping", 120},
-                     TaggingRules -> { },
                      CellFrameLabels -> {
                       {
                        Cell[
@@ -352,7 +349,6 @@ Notebook[
                      "FileManagerFile",
                      CellMargins -> {{69 + Inherited, Inherited}, {Inherited, Inherited}},
                      CellGroupingRules -> {"SectionGrouping", 130},
-                     TaggingRules -> { },
                      CellFrameLabels -> {
                       {
                        Cell[
@@ -426,7 +422,6 @@ Notebook[
                      "FileManagerDirectory",
                      CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                      CellGroupingRules -> {"SectionGrouping", 120},
-                     TaggingRules -> { },
                      CellFrameLabels -> {
                       {
                        Cell[
@@ -498,7 +493,6 @@ Notebook[
                         "FileManagerDirectory",
                         CellMargins -> {{69 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 130},
-                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -556,7 +550,6 @@ Notebook[
                         "FileManagerFile",
                         CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 140},
-                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -612,7 +605,6 @@ Notebook[
                         "FileManagerFile",
                         CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 140},
-                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -668,7 +660,6 @@ Notebook[
                         "FileManagerFile",
                         CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 140},
-                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -724,7 +715,6 @@ Notebook[
                         "FileManagerFile",
                         CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 140},
-                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -780,7 +770,6 @@ Notebook[
                         "FileManagerFile",
                         CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
                         CellGroupingRules -> {"SectionGrouping", 140},
-                        TaggingRules -> { },
                         CellFrameLabels -> {
                          {
                           Cell[
@@ -855,7 +844,6 @@ Notebook[
                      "FileManagerDirectory",
                      CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                      CellGroupingRules -> {"SectionGrouping", 120},
-                     TaggingRules -> { },
                      CellFrameLabels -> {
                       {
                        Cell[
@@ -913,7 +901,6 @@ Notebook[
                      "FileManagerFile",
                      CellMargins -> {{69 + Inherited, Inherited}, {Inherited, Inherited}},
                      CellGroupingRules -> {"SectionGrouping", 130},
-                     TaggingRules -> { },
                      CellFrameLabels -> {
                       {
                        Cell[
@@ -985,7 +972,6 @@ Notebook[
             "FileManagerDirectory",
             CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
             CellGroupingRules -> {"SectionGrouping", 100},
-            TaggingRules -> { },
             CellFrameLabels -> {
              {
               Cell[
@@ -1050,7 +1036,6 @@ Notebook[
                "FileManagerDirectory",
                CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 100},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1102,7 +1087,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1152,7 +1136,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1202,7 +1185,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1252,7 +1234,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1302,7 +1283,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1352,7 +1332,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1402,7 +1381,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1452,7 +1430,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1502,7 +1479,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1552,7 +1528,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1602,7 +1577,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1652,7 +1626,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1702,7 +1675,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1752,7 +1724,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1802,7 +1773,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1869,7 +1839,6 @@ Notebook[
                "FileManagerDirectory",
                CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 100},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1919,7 +1888,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -1986,7 +1954,6 @@ Notebook[
                   "FileManagerDirectory",
                   CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 110},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2044,7 +2011,6 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2094,7 +2060,6 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2150,7 +2115,6 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2200,7 +2164,6 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2250,7 +2213,6 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2300,7 +2262,6 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2356,7 +2317,6 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -2410,7 +2370,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2456,7 +2415,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2506,7 +2464,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2552,7 +2509,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2594,7 +2550,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2640,7 +2595,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2686,7 +2640,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2732,7 +2685,6 @@ Notebook[
             "FileManagerFile",
             CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
             CellGroupingRules -> {"SectionGrouping", 100},
-            TaggingRules -> { },
             CellFrameLabels -> {
              {
               Cell[
@@ -2774,7 +2726,6 @@ Notebook[
             "FileManagerFile",
             CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
             CellGroupingRules -> {"SectionGrouping", 100},
-            TaggingRules -> { },
             CellFrameLabels -> {
              {
               Cell[
@@ -2818,7 +2769,6 @@ Notebook[
             "FileManagerFile",
             CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
             CellGroupingRules -> {"SectionGrouping", 100},
-            TaggingRules -> { },
             CellFrameLabels -> {
              {
               Cell[
@@ -2868,7 +2818,6 @@ Notebook[
             "FileManagerFile",
             CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
             CellGroupingRules -> {"SectionGrouping", 100},
-            TaggingRules -> { },
             CellFrameLabels -> {
              {
               Cell[
@@ -2931,7 +2880,6 @@ Notebook[
                "FileManagerDirectory",
                CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 100},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -2946,98 +2894,6 @@ Notebook[
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
                CellID -> 732494342
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"After.wls\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Scripts/After.wls"}]
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Scripts/After.wls"}]
-                 ],
-                 BoxID -> "FileTreePath",
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 112430048
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"Before.wls\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Scripts/Before.wls"}]
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Scripts/Before.wls"}]
-                 ],
-                 BoxID -> "FileTreePath",
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 368404613
               ],
               Cell[
                BoxData[
@@ -3075,7 +2931,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -3088,52 +2943,6 @@ Notebook[
                },
                CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
                CellID -> 395363541
-              ],
-              Cell[
-               BoxData[
-                InterpretationBox[
-                 TagBox[
-                  TemplateBox[
-                   {
-                    "\"Run.wls\"",
-                    File[
-                     FileNameJoin[{NotebookDirectory[], "Scripts/Run.wls"}]
-                    ]
-                   },
-                   "FileManagerFileOpenerTemplate"
-                  ],
-                  Function[
-                   Annotation[
-                    #1,
-                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
-                     1
-                    ]
-                   ]
-                  ]
-                 ],
-                 File[
-                  FileNameJoin[{NotebookDirectory[], "Scripts/Run.wls"}]
-                 ],
-                 BoxID -> "FileTreePath",
-                 BaseStyle -> {"Text"}
-                ]
-               ],
-               "FileManagerFile",
-               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
-               CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
-               CellFrameLabels -> {
-                {
-                 Cell[
-                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
-                  Background -> None
-                 ],
-                 Inherited
-                },
-                {Inherited, Inherited}
-               },
-               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
-               CellID -> 766777845
               ],
               Cell[
                BoxData[
@@ -3171,7 +2980,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -3235,7 +3043,6 @@ Notebook[
             "FileManagerDirectory",
             CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
             CellGroupingRules -> {"SectionGrouping", 100},
-            TaggingRules -> { },
             CellFrameLabels -> {
              {
               Cell[
@@ -3300,7 +3107,6 @@ Notebook[
                "FileManagerDirectory",
                CellMargins -> {{Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 100},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -3348,7 +3154,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -3394,7 +3199,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -3457,7 +3261,6 @@ Notebook[
                   "FileManagerDirectory",
                   CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 110},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -3509,7 +3312,6 @@ Notebook[
                   "FileManagerFile",
                   CellMargins -> {{46 + Inherited, Inherited}, {Inherited, Inherited}},
                   CellGroupingRules -> {"SectionGrouping", 120},
-                  TaggingRules -> { },
                   CellFrameLabels -> {
                    {
                     Cell[
@@ -3555,7 +3357,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -3605,7 +3406,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -3651,7 +3451,6 @@ Notebook[
                "FileManagerFile",
                CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
                CellGroupingRules -> {"SectionGrouping", 110},
-               TaggingRules -> { },
                CellFrameLabels -> {
                 {
                  Cell[
@@ -3673,7 +3472,6 @@ Notebook[
             "",
             "FileManagerBottomSpacer",
             CellGroupingRules -> {"SectionGrouping", 100},
-            TaggingRules -> { },
             CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
             CellID -> 11675981
            ]
@@ -8073,13 +7871,7 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[
-                            Table[
-                             i,
-                             {i, 5},
-                             {j, i + 2}
-                            ]
-                           ],
+                           HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                            HoldForm[
                             Table[
                              Table[
@@ -8581,12 +8373,7 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[
-                            Table[
-                             ConstantArray[i, i + 2],
-                             {i, 5}
-                            ]
-                           ],
+                           HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                            HoldForm[
                             Table[
                              ConstantArray[
@@ -9335,15 +9122,7 @@ Notebook[
                         Typeset`graph = HoldComplete[
                          Graph[
                           {
-                           HoldForm[
-                            Part[
-                             Table[
-                              Table[j, {j, i}],
-                              {i, 10}
-                             ],
-                             2
-                            ]
-                           ],
+                           HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                            HoldForm[
                             Part[
                              Table[
@@ -9727,15 +9506,7 @@ Notebook[
                          2
                         ]
                        ],
-                       HoldForm[
-                        Part[
-                         Table[
-                          Table[j, {j, i}],
-                          {i, 10}
-                         ],
-                         2
-                        ]
-                       ],
+                       HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                        HoldForm[
                         Part[
                          Table[
@@ -9844,12 +9615,7 @@ Notebook[
                          2
                         ]
                        ],
-                       HoldForm[
-                        Table[
-                         ConstantArray[i, i + 2],
-                         {i, 5}
-                        ]
-                       ],
+                       HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                        HoldForm[
                         Table[
                          ConstantArray[
@@ -10244,13 +10010,7 @@ Notebook[
                          }
                         ]
                        ],
-                       HoldForm[
-                        Table[
-                         i,
-                         {i, 5},
-                         {j, i + 2}
-                        ]
-                       ]
+                       HoldForm[Table[i, {i, 5}, {j, i + 2}]]
                       },
                       {
                        {
@@ -10346,12 +10106,7 @@ Notebook[
                           ]
                          ]
                         ],
-                        HoldForm[
-                         Table[
-                          ConstantArray[i, i + 2],
-                          {i, 5}
-                         ]
-                        ],
+                        HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                         HoldForm[
                          Table[
                           Table[
@@ -10400,13 +10155,7 @@ Notebook[
                           }
                          ]
                         ],
-                        HoldForm[
-                         Table[
-                          i,
-                          {i, 5},
-                          {j, i + 2}
-                         ]
-                        ],
+                        HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                         HoldForm[
                          Table[
                           Table[
@@ -10625,13 +10374,7 @@ Notebook[
                          ]
                         ],
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           i,
-                           {i, 5},
-                           {j, i + 2}
-                          ]
-                         ],
+                         HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                          HoldForm[
                           Table[
                            Table[
@@ -10695,22 +10438,9 @@ Notebook[
                           }
                          ]
                         ],
-                        HoldForm[
-                         Part[
-                          Table[
-                           Table[j, {j, i}],
-                           {i, 10}
-                          ],
-                          2
-                         ]
-                        ],
+                        HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           ConstantArray[i, i + 2],
-                           {i, 5}
-                          ]
-                         ],
+                         HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                          HoldForm[
                           Table[
                            ConstantArray[
@@ -10800,15 +10530,7 @@ Notebook[
                          ]
                         ],
                         DirectedEdge[
-                         HoldForm[
-                          Part[
-                           Table[
-                            Table[j, {j, i}],
-                            {i, 10}
-                           ],
-                           2
-                          ]
-                         ],
+                         HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                          HoldForm[
                           Part[
                            Table[
@@ -11051,13 +10773,7 @@ Notebook[
                          ]
                         },
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           i,
-                           {i, 5},
-                           {j, i + 2}
-                          ]
-                         ],
+                         HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                          HoldForm[
                           Table[
                            Table[
@@ -11105,15 +10821,7 @@ Notebook[
                          ]
                         ] -> {EdgeStyle -> Directive[Opacity[1], Hue[0.2, 1, 0.6]]},
                         DirectedEdge[
-                         HoldForm[
-                          Part[
-                           Table[
-                            Table[j, {j, i}],
-                            {i, 10}
-                           ],
-                           2
-                          ]
-                         ],
+                         HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                          HoldForm[
                           Part[
                            Table[
@@ -11173,13 +10881,7 @@ Notebook[
                           EdgeForm[{Hue[0.07, 1, 1], Opacity[1]}]
                          ]
                         },
-                        HoldForm[
-                         Table[
-                          i,
-                          {i, 5},
-                          {j, i + 2}
-                         ]
-                        ] -> {
+                        HoldForm[Table[i, {i, 5}, {j, i + 2}]] -> {
                          VertexStyle -> Directive[
                           Hue[0, 1, 0.8],
                           EdgeForm[{Hue[0, 1, 0.8], Opacity[1]}]
@@ -11250,12 +10952,7 @@ Notebook[
                          ]
                         ] -> {EdgeStyle -> Directive[Hue[0.2, 1, 0.6], Opacity[1]]},
                         DirectedEdge[
-                         HoldForm[
-                          Table[
-                           ConstantArray[i, i + 2],
-                           {i, 5}
-                          ]
-                         ],
+                         HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                          HoldForm[
                           Table[
                            ConstantArray[
@@ -11274,26 +10971,13 @@ Notebook[
                           ]
                          ]
                         ] -> {EdgeStyle -> Directive[Hue[0.8, 0.6, 0.8], Opacity[1]]},
-                        HoldForm[
-                         Table[
-                          ConstantArray[i, i + 2],
-                          {i, 5}
-                         ]
-                        ] -> {
+                        HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]] -> {
                          VertexStyle -> Directive[
                           Hue[0.8, 0.6, 0.8],
                           EdgeForm[{Hue[0.8, 0.6, 0.8], Opacity[1]}]
                          ]
                         },
-                        HoldForm[
-                         Part[
-                          Table[
-                           Table[j, {j, i}],
-                           {i, 10}
-                          ],
-                          2
-                         ]
-                        ] -> {
+                        HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]] -> {
                          VertexStyle -> Directive[
                           Hue[0.1, 0.6, 0.7],
                           EdgeForm[{Hue[0.1, 0.6, 0.7], Opacity[1]}]
@@ -12511,15 +12195,7 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[
-                           Part[
-                            Table[
-                             Table[j, {j, i}],
-                             {i, 10}
-                            ],
-                            2
-                           ]
-                          ],
+                          HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]],
                           "Tooltip"
                          ]
                         ]
@@ -13371,12 +13047,7 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[
-                           Table[
-                            ConstantArray[i, i + 2],
-                            {i, 5}
-                           ]
-                          ],
+                          HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]],
                           "Tooltip"
                          ]
                         ]
@@ -16412,13 +16083,7 @@ Notebook[
                         Function[
                          Annotation[
                           #1,
-                          HoldForm[
-                           Table[
-                            i,
-                            {i, 5},
-                            {j, i + 2}
-                           ]
-                          ],
+                          HoldForm[Table[i, {i, 5}, {j, i + 2}]],
                           "Tooltip"
                          ]
                         ]
@@ -18297,19 +17962,8 @@ Notebook[
                   {
                    {
                     {
-                     HoldForm[
-                      Table[
-                       i,
-                       {i, 5},
-                       {j, i + 2}
-                      ]
-                     ],
-                     HoldForm[
-                      Table[
-                       ConstantArray[i, i + 2],
-                       {i, 5}
-                      ]
-                     ]
+                     HoldForm[Table[i, {i, 5}, {j, i + 2}]],
+                     HoldForm[Table[ConstantArray[i, i + 2], {i, 5}]]
                     },
                     HoldForm[
                      Table[
@@ -18389,15 +18043,7 @@ Notebook[
                    {
                     {
                      HoldForm[First[Rest[Map[Range, Range[10]]]]],
-                     HoldForm[
-                      Part[
-                       Table[
-                        Table[j, {j, i}],
-                        {i, 10}
-                       ],
-                       2
-                      ]
-                     ]
+                     HoldForm[Part[Table[Table[j, List[j, i]], List[i, 10]], 2]]
                     },
                     HoldForm[
                      Part[
@@ -21758,7 +21404,7 @@ Notebook[
   },
   "SubmissionReviewData" -> {"Review" -> False},
   "ToolsOpen" -> False,
-  "UpdatedTimestamp" -> 3859554684.8096277,
+  "UpdatedTimestamp" -> 3859554685.,
   "TemplateVersion" -> "1.5.61",
   "StatusMessage" -> "",
   "PacletBuildData" -> {
