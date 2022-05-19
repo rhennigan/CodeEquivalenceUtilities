@@ -12,8 +12,6 @@ $mxFile        = FileNameJoin @ {
                      "CodeEquivalenceUtilities.mx"
                  };
 
-GeneralUtilities`EnsureDirectory @ DirectoryName @ $mxFile;
-
 If[ FileExistsQ @ $mxFile,
     Print[ "Removing existing MX file..." ];
     DeleteFile @ $mxFile
@@ -23,6 +21,8 @@ Print[ "Loading paclet..." ];
 PacletDirectoryLoad @ $pacletDir;
 Needs[ "Wolfram`CodeEquivalenceUtilities`" ];
 
+$mxDir = GeneralUtilities`EnsureDirectory @ DirectoryName @ $mxFile;
+Print[ "MX target directory: ", $mxDir ];
 Print[ "Building MX file: ", $mxFile ];
 DumpSave[
     $mxFile,
@@ -30,6 +30,11 @@ DumpSave[
         "Wolfram`CodeEquivalenceUtilities`",
         "Wolfram`CodeEquivalenceUtilities`Private`"
     }
+]
+
+If[ ! FileExistsQ @ $mxFile,
+    Print[ "::error::", "Failed to build MX file!" ];
+    Exit[ 0 ]
 ]
 
 (* :!CodeAnalysis::EndBlock:: *)
