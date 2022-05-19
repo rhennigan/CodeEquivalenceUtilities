@@ -58,5 +58,5 @@ jobs:
       id: upload-build-artifacts-step
       uses: actions/upload-artifact@v2
       with: 
-        path: ${{ env.PACLET_BUILD_DIR }}
+        path: ${{ env.PACLET_TEST_RESULTS }}
         if-no-files-found: ignore

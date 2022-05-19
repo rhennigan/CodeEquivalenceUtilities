@@ -1239,7 +1239,8 @@ With[ {
           URLFetch["https://www.wolframcloud.com/OAuthVersion"|"https://www.wolframcloud.com/app/OAuthVersion", ___],
           URLFetchAsynchronous[ "https://www.wolframcloud.com/files/7918edd1-f8a1-46d0-8b87-7755d5325634", ___ ],
           URLSave[ "https://resources.wolframcloud.com/PacletRepository/pacletsite/PacletSite.mz", ___ ],
-          URLRead[ _? authRequestQ, ___ ]
+          URLRead[ _? authRequestQ, ___ ],
+          URLRead[ HTTPRequest[ domains, _ ], ___ ]
       ]
   ]]);
 
@@ -1248,17 +1249,11 @@ authRequestQ // Attributes = { HoldFirst };
 authRequestQ[
     HTTPRequest[
         Association @ OrderlessPatternSequence[
-            "AbsolutePath" -> "https://www.wolframcloud.com/files/auth",
+            "AbsolutePath" -> "https://www.wolframcloud.com/files/auth"|"https://account.wolfram.com/auth/request-token",
             "Query" -> { },
             ___
         ],
-        Association @ OrderlessPatternSequence[
-            "Body"          -> "",
-            "BodyByteArray" -> { },
-            "BodyBytes"     -> { },
-            Method          -> "GET",
-            ___
-        ]
+        _
     ]
 ] := True;
 
@@ -1461,8 +1456,10 @@ $safeURLs := $safeURLs = rebasedCloudURLs @ Alternatives[
     "https://www.wolframcloud.com/info",
     "https://www.wolframcloud.com/OAuthVersion",
     "https://www.wolframcloud.com/obj/resourcesystem/api/1.0/SearchResources",
+    "https://www.wolframcloud.com/obj/resourcesystem/api/1.0/AcquireResource",
     "https://www.wolframcloud.com/obj/resourcesystem/ResourceVersions",
     "https://www.wolframcloud.com/objects/resourcesystem/api/1.0/SearchResources",
+    "https://www.wolframcloud.com/objects/resourcesystem/api/1.0/AcquireResource",
     "https://www.wolframcloud.com/objects/resourcesystem/ResourceVersions"
 ];
 
