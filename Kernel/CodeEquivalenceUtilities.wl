@@ -32,6 +32,7 @@ If[ FileExistsQ[ Wolfram`CodeEquivalenceUtilities`Internal`$MXFile ]
             Get[ "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Rules`"      ];
             Get[ "Wolfram`CodeEquivalenceUtilities`Equivalence`"               ];
             Get[ "Wolfram`CodeEquivalenceUtilities`Formatting`"                ];
+            Get[ "Wolfram`CodeEquivalenceUtilities`Legacy`"                    ];
         ],
         General::shdw
     ]

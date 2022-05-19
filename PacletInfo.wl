@@ -27,6 +27,7 @@ PacletObject[ <|
                 { "Wolfram`CodeEquivalenceUtilities`Equivalence`"              , "Equivalence.wl"               },
                 { "Wolfram`CodeEquivalenceUtilities`EvaluationControl`"        , "EvaluationControl.wl"         },
                 { "Wolfram`CodeEquivalenceUtilities`Formatting`"               , "Formatting.wl"                },
+                { "Wolfram`CodeEquivalenceUtilities`Legacy`"                   , "Legacy.wl"                    },
                 { "Wolfram`CodeEquivalenceUtilities`Types`"                    , "Types.wl"                     },
                 { "Wolfram`CodeEquivalenceUtilities`Utilities`"                , "Utilities.wl"                 }
             },
