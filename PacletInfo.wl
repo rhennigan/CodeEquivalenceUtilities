@@ -6,22 +6,16 @@ PacletObject[ <|
     "SourceControlURL" -> "https://github.com/rhennigan/CodeEquivalenceUtilities",
     "License"          -> "MIT",
     "PublisherID"      -> "Wolfram",
-    "Version"          -> "1.5.0",
+    "Version"          -> "2.0.0",
     "WolframVersion"   -> "12.2+",
+    "DocumentationURL" -> "https://resources.wolframcloud.com/PacletRepository/resources",
     "Keywords"         -> { "code transformations", "equivalent input" },
     "Extensions"       -> {
         {
             "Kernel",
             "Root"    -> "Kernel",
-            "Symbols" -> {
-                "Wolfram`CodeEquivalenceUtilities`CodeEquivalentQ",
-                "Wolfram`CodeEquivalenceUtilities`EquivalenceTestData",
-                "Wolfram`CodeEquivalenceUtilities`FromCanonicalForm",
-                "Wolfram`CodeEquivalenceUtilities`MakeCanonicalForm",
-                "Wolfram`CodeEquivalenceUtilities`ToCanonicalForm"
-            },
             "Context" -> {
-                { "Wolfram`CodeEquivalenceUtilities`"                          , "init.wl"                      },
+                { "Wolfram`CodeEquivalenceUtilities`"                          , "CodeEquivalenceUtilities.wl"  },
                 { "Wolfram`CodeEquivalenceUtilities`CachedValues`"             , "CachedValues.wl"              },
                 { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Attributes`", "CanonicalForms/Attributes.wl" },
                 { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`"    , "CanonicalForms/Common.wl"     },
@@ -29,12 +23,19 @@ PacletObject[ <|
                 { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Rules`"     , "CanonicalForms/Rules.wl"      },
                 { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`"     , "CanonicalForms/Scope.wl"      },
                 { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Structural`", "CanonicalForms/Structural.wl" },
-                { "Wolfram`CodeEquivalenceUtilities`CodeEquivalenceUtilities`" , "CodeEquivalenceUtilities.wl"  },
-                { "Wolfram`CodeEquivalenceUtilities`Debugging`"                , "Debugging.wl"                 },
+                { "Wolfram`CodeEquivalenceUtilities`Config`"                   , "Config.wl"                    },
+                { "Wolfram`CodeEquivalenceUtilities`Equivalence`"              , "Equivalence.wl"               },
                 { "Wolfram`CodeEquivalenceUtilities`EvaluationControl`"        , "EvaluationControl.wl"         },
                 { "Wolfram`CodeEquivalenceUtilities`Formatting`"               , "Formatting.wl"                },
                 { "Wolfram`CodeEquivalenceUtilities`Types`"                    , "Types.wl"                     },
                 { "Wolfram`CodeEquivalenceUtilities`Utilities`"                , "Utilities.wl"                 }
+            },
+            "Symbols" -> {
+                "Wolfram`CodeEquivalenceUtilities`CodeEquivalentQ",
+                "Wolfram`CodeEquivalenceUtilities`EquivalenceTestData",
+                "Wolfram`CodeEquivalenceUtilities`FromCanonicalForm",
+                "Wolfram`CodeEquivalenceUtilities`MakeCanonicalForm",
+                "Wolfram`CodeEquivalenceUtilities`ToCanonicalForm"
             }
         },
         {

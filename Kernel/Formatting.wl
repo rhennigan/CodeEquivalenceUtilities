@@ -1,25 +1,20 @@
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package header*)
 
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 
+BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 
-BeginPackage[ "Wolfram`CodeEquivalenceUtilities`Formatting`",
-    {
-        "Wolfram`CodeEquivalenceUtilities`Utilities`",
-        "Wolfram`CodeEquivalenceUtilities`Types`",
-        "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`",
-        "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`",
-        "Wolfram`CodeEquivalenceUtilities`EvaluationControl`"
-    }
-];
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
-(* Exported symbols added here with SymbolName::usage *)
+TypedSymbol;
+$LocalContext;
 
 Begin[ "`Private`" ];
 
-(******************************************************************************)
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Style data*)
 $LiteralTypeStyles =
   <|
       "Text" ->
@@ -95,9 +90,9 @@ $ExprTypeStyles =
       ]
   |>;
 
-(******************************************************************************)
-
-MakeAtomicTypeBox // ClearAll;
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*MakeAtomicTypeBox*)
 MakeAtomicTypeBox // Attributes = { HoldAll };
 
 MakeAtomicTypeBox[ value_, typeName_, tooltip_, styles_ ] :=
@@ -196,10 +191,9 @@ makeTypeString[ Complex  ] := "\[DoubleStruckCapitalC]";
 makeTypeString[ str_     ] :=
     ToLowerCase @ StringTake[ ToString @ str, UpTo[ 3 ] ];
 
-
-(******************************************************************************)
-
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*TypedLiteral*)
 TypedLiteral /:
   MakeBoxes[ t : TypedLiteral[ value_, Verbatim[ Blank ][ type_ ] ],
       StandardForm
@@ -215,15 +209,9 @@ TypedLiteral /:
         InterpretationBox[ tagBox, t ]
     ];
 
-
-(*
-TypedSymbol /:
-  MakeBoxes[TypedSymbol[s_?LocalContextQ, p_], StandardForm] :=
-  With[{s$ = SymbolName @ Unevaluated @ s},
-      MakeBoxes[TypedSymbol[s$, p], StandardForm]
-  ];*)
-
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*TypedSymbol*)
 TypedSymbol /:
   MakeBoxes[ t : TypedSymbol[ value_, Verbatim[ Blank ][ type_ ] ],
              StandardForm
@@ -246,17 +234,23 @@ TypedSymbol /:
         InterpretationBox[ tagBox, t ]
     ];
 
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*TypedExpression*)
 TypedExpression /:
   MakeBoxes[ t : TypedExpression[ value_, type_ ], StandardForm ] :=
     With[ { tagBox = MakeAtomicTypeBox[ value, type, t, $ExprTypeStyles ] },
         InterpretationBox[ tagBox, t ]
     ];
 
-(******************************************************************************)
+TypedExpression /: MakeBoxes[ t : TypedExpression[ exp_ ], StandardForm ] :=
+  With[ { boxes = typedExpFrameBox @ t }, InterpretationBox[ boxes, t ] ];
 
-typedExpFramebox // ClearAll;
-typedExpFramebox // Attributes = { HoldAll };
-typedExpFramebox[ t : TypedExpression[ exp___ ] ] :=
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*typedExpFrameBox*)
+typedExpFrameBox // Attributes = { HoldAll };
+typedExpFrameBox[ t : TypedExpression[ exp___ ] ] :=
   With[ { boxes = MakeBoxes[ exp, StandardForm ] },
       FrameBox[ StyleBox[ boxes, GrayLevel @ 0, StripOnInput -> False ],
           Background -> GrayLevel @ 0.975,
@@ -268,21 +262,18 @@ typedExpFramebox[ t : TypedExpression[ exp___ ] ] :=
       ]
   ];
 
-TypedExpression /: MakeBoxes[ t : TypedExpression[ exp_ ], StandardForm ] :=
-  With[ { boxes = typedExpFramebox @ t }, InterpretationBox[ boxes, t ] ];
-
-(******************************************************************************)
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Proportion*)
 Proportion /: MakeBoxes[ t : HoldPattern @ Proportion[ _? UAtomQ, _? UAtomQ ],
                          StandardForm ] :=
   With[ { exp = t },
       MakeBoxes[ exp, StandardForm ]
   ];
 
-(******************************************************************************)
-
-
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Local symbols*)
 $localSymbolHashMod = 64;
 $localSymbolColorFunction = ColorData @ 97;
 
@@ -307,36 +298,9 @@ MakeBoxes[ s_? SymbolQ /; Context @ Unevaluated @ s === $LocalContext,
               InterpretationBox[styled, s]]]
   ];
 
-
-
-(******************************************************************************)
-
-
-
-ruleTopic // ClearAll;
-ruleTopic // Attributes = {HoldFirst};
-
-ruleTopic[RuleDelayed[p_, _]] := ruleTopic[p]
-ruleTopic[Hold[p_]] := ruleTopic[p];
-ruleTopic[HoldForm[p_]] := ruleTopic[p];
-ruleTopic[Verbatim[Condition][p_, _]] := ruleTopic[p];
-ruleTopic[Verbatim[Pattern][_, p_]] := ruleTopic[p];
-ruleTopic[exp_] := With[{h = Head[Unevaluated[exp]]},
-    If[h =!= "System`",
-        Extract[Hold@exp,
-            FirstPosition[Hold@exp,
-                s : Except[
-                    Hold | HoldForm | Condition | Pattern | Blank |
-                      BlankSequence | BlankNullSequence, _Symbol] /;
-                  Context[Unevaluated[s]] === "System`", HoldForm]],
-        h
-    ]
-];
-
-ruleTopic[___] := Null;
-
-
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CodeTransformerObject*)
 MakeBoxes[ifun : CodeTransformerObject[obj_Association], fmt_] ^:=
   BoxForm`ArrangeSummaryBox[
       CodeTransformerObject, ifun, obj["GraphIcon"],
@@ -352,12 +316,10 @@ MakeBoxes[ifun : CodeTransformerObject[obj_Association], fmt_] ^:=
       fmt
   ];
 
-
-
-(******************************************************************************)
-
-
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Unsafe*)
+Unsafe /:
 MakeBoxes[Unsafe[str_String][args___],StandardForm]:=
   With[{ebox=Replace[ToExpression[str,StandardForm,HoldComplete],HoldComplete[exp_]:>MakeBoxes[exp,StandardForm]]},
       Replace[MakeBoxes[HoldComplete[args]],RowBox[{"HoldComplete",app___}]:>
@@ -365,18 +327,22 @@ MakeBoxes[Unsafe[str_String][args___],StandardForm]:=
   ];
 
 
+Unsafe /:
 MakeBoxes[Unsafe[str_String],StandardForm]:=
   With[{ebox=Replace[ToExpression[str,StandardForm,HoldComplete],HoldComplete[exp_]:>MakeBoxes[exp,StandardForm]]},
       InterpretationBox[TagBox[TooltipBox[StyleBox[ebox,RGBColor[1.,0.2,0.2],Bold,ShowStringCharacters -> False],"Unsafe"],#1&] ,Unsafe[str]]
   ];
 
+Unsafe /:
 MakeBoxes[Unsafe[str_String, Null],StandardForm]:=MakeBoxes[Unsafe[str]];
 
+Unsafe /:
 MakeBoxes[Unsafe[expr:Except[_String]],StandardForm]:=
   With[{s=ToFullString[expr]},MakeBoxes[Unsafe[s],StandardForm]];
 
 
-MakeBoxes[HoldPattern[u : Unsafe[s_String, _[args___]]], fmt_] ^:=
+Unsafe /:
+MakeBoxes[HoldPattern[u : Unsafe[s_String, _[args___]]], fmt_] :=
   Module[{argBoxes, headBox},
       argBoxes =
         Replace[MakeBoxes[{args}, fmt], RowBox[{"{", a___, "}"}] :> a];
@@ -388,8 +354,22 @@ MakeBoxes[HoldPattern[u : Unsafe[s_String, _[args___]]], fmt_] ^:=
       ]
   ];
 
+Unsafe /:
+MakeBoxes[
+    HoldPattern[u : Unsafe[s_String, _[args___], "Bindings" -> bind_]],
+    fmt_] :=
+  Module[{argBoxes, headBox},
+      argBoxes =
+        Replace[MakeBoxes[{args}, fmt], RowBox[{"{", a___, "}"}] :> a];
+      headBox =
+        ToBoxes[Tooltip[Style[Last[StringSplit[s, "`"]], Red, Bold, ShowStringCharacters -> False],
+            formatClosure @ bind
+        ], fmt];
+      With[{h = headBox, a = argBoxes},
+          InterpretationBox[RowBox[{h, "[", a, "]"}], u]]
+  ];
 
-formatClosure[Wolfram`CodeEquivalenceUtilities`EvaluationControl`Closure[a_Association]] :=
+formatClosure[Closure[a_Association]] :=
   Grid[
       KeyValueMap[Function[{key, val},
           {key,
@@ -402,62 +382,9 @@ formatClosure[Wolfram`CodeEquivalenceUtilities`EvaluationControl`Closure[a_Assoc
       Dividers -> All
   ];
 
-
-
-
-MakeBoxes[
-    HoldPattern[u : Unsafe[s_String, _[args___], "Bindings" -> bind_]],
-    fmt_] ^:=
-  Module[{argBoxes, headBox},
-      argBoxes =
-        Replace[MakeBoxes[{args}, fmt], RowBox[{"{", a___, "}"}] :> a];
-      headBox =
-        ToBoxes[Tooltip[Style[Last[StringSplit[s, "`"]], Red, Bold, ShowStringCharacters -> False],
-            formatClosure @ bind
-        ], fmt];
-      With[{h = headBox, a = argBoxes},
-          InterpretationBox[RowBox[{h, "[", a, "]"}], u]]
-  ];
-
-
-
-(******************************************************************************)
-
-
-
-compressionIcon =
-  Graphics[{
-      EdgeForm[None], FaceForm[GrayLevel[.5]],
-      FilledCurve[{{{0, 2, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1,
-          0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0,
-          1, 0}, {1, 3, 3}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1,
-          0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1,
-          0}, {0, 1, 0}, {0, 1, 0}}}, {{{509.34000000000003`,
-          588.9599999999999`}, {475.01`, 630.61`}, {468.07`,
-          638.7900000000001`}, {457.78`, 644.13`}, {446.25`,
-          644.13`}, {148.75`, 644.13`}, {137.22`, 644.13`}, {126.93`,
-          638.7900000000001`}, {120.11999999999999`, 630.61`}, {85.78`,
-          588.9599999999999`}, {78.59`, 580.2900000000001`}, {74.38`,
-          569.38`}, {74.38`, 557.3499999999999`}, {74.38`,
-          247.46`}, {74.38`, 220.06`}, {96.56`,
-          197.88000000000002`}, {123.96000000000001`,
-          197.88000000000002`}, {471.04`, 197.88000000000002`}, {498.44`,
-          197.88000000000002`}, {520.63`, 220.06`}, {520.63`,
-          247.46`}, {520.63`, 557.3499999999999`}, {520.63`,
-          569.38`}, {516.41`, 580.2900000000001`}, {509.34000000000003`,
-          588.9599999999999`}}, {{297.5`, 284.65000000000003`}, {161.15`,
-          421.`}, {247.92000000000002`, 421.`}, {247.92000000000002`,
-          470.58`}, {347.08`, 470.58`}, {347.08`, 421.`}, {433.85`,
-          421.`}, {297.5`, 284.65000000000003`}}, {{127.06`,
-          594.54`}, {147.26`, 619.3299999999999`}, {444.76`,
-          619.3299999999999`}, {467.94`, 594.54`}, {127.06`,
-          594.54`}}}]}, ImageSize -> 32, Background -> GrayLevel[14/15],
-      PlotRangePadding -> 150, ImagePadding -> 1, Frame -> True,
-      FrameTicks -> None, FrameStyle -> GrayLevel[.7]];
-
-
-
-With[ { icon = compressionIcon },
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CompressedExpression*)
 CompressedExpression /:
   MakeBoxes[ CompressedExpression[ compressed_ ], fmt_ ] :=
 
@@ -529,18 +456,44 @@ CompressedExpression /:
                                  fmt
       ]
   ];
-];
 
+compressionIcon =
+  Graphics[{
+      EdgeForm[None], FaceForm[GrayLevel[.5]],
+      FilledCurve[{{{0, 2, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1,
+          0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0,
+          1, 0}, {1, 3, 3}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1,
+          0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1,
+          0}, {0, 1, 0}, {0, 1, 0}}}, {{{509.34000000000003`,
+          588.9599999999999`}, {475.01`, 630.61`}, {468.07`,
+          638.7900000000001`}, {457.78`, 644.13`}, {446.25`,
+          644.13`}, {148.75`, 644.13`}, {137.22`, 644.13`}, {126.93`,
+          638.7900000000001`}, {120.11999999999999`, 630.61`}, {85.78`,
+          588.9599999999999`}, {78.59`, 580.2900000000001`}, {74.38`,
+          569.38`}, {74.38`, 557.3499999999999`}, {74.38`,
+          247.46`}, {74.38`, 220.06`}, {96.56`,
+          197.88000000000002`}, {123.96000000000001`,
+          197.88000000000002`}, {471.04`, 197.88000000000002`}, {498.44`,
+          197.88000000000002`}, {520.63`, 220.06`}, {520.63`,
+          247.46`}, {520.63`, 557.3499999999999`}, {520.63`,
+          569.38`}, {516.41`, 580.2900000000001`}, {509.34000000000003`,
+          588.9599999999999`}}, {{297.5`, 284.65000000000003`}, {161.15`,
+          421.`}, {247.92000000000002`, 421.`}, {247.92000000000002`,
+          470.58`}, {347.08`, 470.58`}, {347.08`, 421.`}, {433.85`,
+          421.`}, {297.5`, 284.65000000000003`}}, {{127.06`,
+          594.54`}, {147.26`, 619.3299999999999`}, {444.76`,
+          619.3299999999999`}, {467.94`, 594.54`}, {127.06`,
+          594.54`}}}]}, ImageSize -> 32, Background -> GrayLevel[14/15],
+      PlotRangePadding -> 150, ImagePadding -> 1, Frame -> True,
+      FrameTicks -> None, FrameStyle -> GrayLevel[.7]];
 
-
-(******************************************************************************)
-
-
-
-Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue /:
-  MakeBoxes[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue[(dist_)[args___]], StandardForm] :=
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*RandomValue*)
+RandomValue /:
+  MakeBoxes[RandomValue[(dist_)[args___]], StandardForm] :=
   Module[{rBox, dBox},
-      rBox = With[{str = ToString[Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue, InputForm]},
+      rBox = With[{str = ToString[RandomValue, InputForm]},
           MakeBoxes[
               Interpretation[
                   Tooltip[Style[
@@ -551,40 +504,13 @@ Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue /:
                           StripOnInput -> False],
                       ShowStringCharacters -> False,
                       FontColor -> RGBColor[(1/255)*{107, 132, 37}],
-                      FontWeight -> Bold], str], Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue], StandardForm]];
+                      FontWeight -> Bold], str], RandomValue], StandardForm]];
       dBox = MakeBoxes[dist[args], StandardForm];
       RowBox[{rBox, "[", dBox, "]"}]];
 
-
-
-(*CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue /:
-  MakeBoxes[CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue[(dist_)[args___]], StandardForm] :=
-  Module[{rBox, dBox},
-      With[{str = ToString[CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue, InputForm], dstr = StringTake[SymbolName[ Unevaluated @ dist ], UpTo[ 4 ]]},
-          MakeBoxes[
-              Interpretation[
-                  Row[ { Tooltip[Style[
-                      Framed[Subscript[ "\[ScriptCapitalR]", dstr ],
-                          Background -> RGBColor[{199, 216, 152}/255],
-                          RoundingRadius -> 3, FrameMargins -> 3,
-                          ContentPadding -> False,
-                          StripOnInput -> False],
-                      ShowStringCharacters -> False,
-                      FontColor -> RGBColor[(1/255)*{107, 132, 37}],
-                      FontWeight -> Bold], str <> ": " <> dstr],
-                      "[", args, "]"
-                  } ],
-                  CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue[ dist[ args ] ] ],
-              StandardForm
-          ]
-      ]
-  ];*)
-
-
-End[]; (* `Private` *)
-
-EndPackage[];
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package footer*)
+End[ ];
+EndPackage[ ];
 (* :!CodeAnalysis::EndBlock:: *)
-
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;

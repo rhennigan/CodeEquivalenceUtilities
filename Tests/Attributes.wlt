@@ -3,6 +3,8 @@
 (*Initialization*)
 Needs[ "Wolfram`CodeEquivalenceUtilities`" ];
 
+$CachePersistence = "Session";
+
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 
@@ -18,7 +20,7 @@ VerificationTest[
         Function[ Null, IntegerQ[ Unevaluated[ #1 ] ], HoldAllComplete ]
     ],
     { HoldAllComplete },
-    TestID -> "GetAttributes1@@Tests/Attributes.wlt:16,1-22,2"
+    TestID -> "GetAttributes1@@Tests/Attributes.wlt:18,1-24,2"
 ];
 
 VerificationTest[
@@ -29,7 +31,7 @@ VerificationTest[
         ]
     ],
     { HoldAllComplete },
-    TestID -> "GetAttributes2@@Tests/Attributes.wlt:24,1-33,2"
+    TestID -> "GetAttributes2@@Tests/Attributes.wlt:26,1-35,2"
 ];
 
 VerificationTest[
@@ -40,7 +42,7 @@ VerificationTest[
         ]
     ],
     { HoldFirst, SequenceHold },
-    TestID -> "GetAttributes3@@Tests/Attributes.wlt:35,1-44,2"
+    TestID -> "GetAttributes3@@Tests/Attributes.wlt:37,1-46,2"
 ];
 
 VerificationTest[
@@ -48,25 +50,25 @@ VerificationTest[
         Function[ x, MakeBoxes[ x, StandardForm ], { HoldFirst, SequenceHold } ]
     ],
     { HoldFirst, SequenceHold },
-    TestID -> "GetAttributes4@@Tests/Attributes.wlt:46,1-52,2"
+    TestID -> "GetAttributes4@@Tests/Attributes.wlt:48,1-54,2"
 ];
 
 VerificationTest[
     GetAttributes[ Function[ Null, IntegerQ[ Unevaluated[ #1 ] ] ] ],
     { },
-    TestID -> "GetAttributes5@@Tests/Attributes.wlt:54,1-58,2"
+    TestID -> "GetAttributes5@@Tests/Attributes.wlt:56,1-60,2"
 ];
 
 VerificationTest[
     GetAttributes[ Function[ { x, y }, MakeBoxes[ { x, y }, StandardForm ] ] ],
     { },
-    TestID -> "GetAttributes6@@Tests/Attributes.wlt:60,1-64,2"
+    TestID -> "GetAttributes6@@Tests/Attributes.wlt:62,1-66,2"
 ];
 
 VerificationTest[
     GetAttributes[ Function[ x, MakeBoxes[ x, StandardForm ] ] ],
     { },
-    TestID -> "GetAttributes7@@Tests/Attributes.wlt:66,1-70,2"
+    TestID -> "GetAttributes7@@Tests/Attributes.wlt:68,1-72,2"
 ];
 
 (* ::**********************************************************************:: *)
@@ -76,7 +78,7 @@ VerificationTest[
     With[ { names = RandomSample[ Names[ "*`*" ], 100 ] },
         Attributes /@ names === GetAttributes /@ names
     ],
-    TestID -> "GetAttributesList1@@Tests/Attributes.wlt:75,1-80,2"
+    TestID -> "GetAttributesList1@@Tests/Attributes.wlt:77,1-82,2"
 ];
 
 
@@ -84,7 +86,7 @@ VerificationTest[
     With[ { names = RandomSample[ Names[ "*`*" ], 100 ] },
         Attributes @ names === GetAttributes @ names
     ],
-    TestID -> "GetAttributesList2@@Tests/Attributes.wlt:83,1-88,2"
+    TestID -> "GetAttributesList2@@Tests/Attributes.wlt:85,1-90,2"
 ];
 
 (* ::**********************************************************************:: *)
@@ -118,7 +120,7 @@ VerificationTest[
         },
         "constant"
     },
-    TestID -> "GetAttributesEvalLeaks1@@Tests/Attributes.wlt:95,1-122,2"
+    TestID -> "GetAttributesEvalLeaks1@@Tests/Attributes.wlt:97,1-124,2"
 ];
 
 (* ::**********************************************************************:: *)
@@ -137,7 +139,7 @@ VerificationTest[
           Function[ x, x, { Orderless, Listable } ]
       },
     { False, False, True, True, False, False, True, True },
-    TestID -> "ListableQ1@@Tests/Attributes.wlt:127,1-141,2"
+    TestID -> "ListableQ1@@Tests/Attributes.wlt:129,1-143,2"
 ];
 
 VerificationTest[
@@ -151,7 +153,7 @@ VerificationTest[
         }
     ],
     { False, True, True },
-    TestID -> "ListableQ2@@Tests/Attributes.wlt:143,1-155,2"
+    TestID -> "ListableQ2@@Tests/Attributes.wlt:145,1-157,2"
 ];
 
 (* ::**********************************************************************:: *)
@@ -170,7 +172,7 @@ VerificationTest[
           Function[ x, x, { Orderless, HoldAllComplete } ]
       },
     { False, False, True, True, False, False, True, True },
-    TestID -> "HoldingQ1@@Tests/Attributes.wlt:160,1-174,2"
+    TestID -> "HoldingQ1@@Tests/Attributes.wlt:162,1-176,2"
 ];
 
 VerificationTest[
@@ -184,7 +186,7 @@ VerificationTest[
         }
     ],
     { False, True, True },
-    TestID -> "HoldingQ2@@Tests/Attributes.wlt:176,1-188,2"
+    TestID -> "HoldingQ2@@Tests/Attributes.wlt:178,1-190,2"
 ];
 
 (* :!CodeAnalysis::EndBlock:: *)

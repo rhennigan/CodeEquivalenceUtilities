@@ -1,275 +1,31 @@
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package header*)
 
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 
-BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Rules`",
-    {
-        "Wolfram`CodeEquivalenceUtilities`Utilities`",
-        "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`",
-        "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Attributes`",
-        "Wolfram`CodeEquivalenceUtilities`Types`",
-        "Wolfram`CodeEquivalenceUtilities`EvaluationControl`",
-        "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`"
-    }
-];
+BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Defined symbols*)
+$TransformationRules;
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Declarations*)
+ListableQ;
+TypedSymbol;
 
-(* Exported symbols added here with SymbolName::usage *)
-
-
-$TransformationRules::usage = "";
-
-expandURL;
-
-
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Private*)
 Begin[ "`Private`" ];
 
-(******************************************************************************)
-
-
-
-$TemplateRule =
-  <|
-      "Category"        -> "None",
-      "Description"     -> "None",
-      "Experimental"    -> False,
-      "Post"            -> { },
-      "Repeated"        -> True,
-      "Rule"            -> { },
-      "Stage"           -> "Main",
-      "Strict"          -> True,
-      "Typed"           -> False,
-      "Usage"           -> { }
-  |>;
-
-
-(******************************************************************************)
-
-(* This is the start of a new rule format for generalizing transformations *)
-
-`Experimental`Rules = KeySort @ Join[ $TemplateRule, # ] & /@ {
-    <|
-        "Category"    -> "Attributes",
-        "Usage"       -> { "CanonicalForm", "Simplification", "Optimization" },
-        "Rule"        -> (f_? FlatQ)[ a___, f_[ b___ ], c___ ] :> f[ a, b, c ],
-        "Description" -> "Flatten arguments of functions that have the Flat attribute."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Attributes",
-        "Usage" -> { "CanonicalForm", "Simplification", "Optimization" }
-        ,
-        "Rule" -> (f_? OrderlessQ)[ a___ ] /; ! OrderedQ @ Unevaluated @ { a } :>
-          WithHolding[ { sorted = Sort @ TempHold @ a }, f @ sorted ]
-        ,
-        "Post" -> { (f_)[ TempHold[ a___ ] ] :> f @ a },
-        "Description" -> "Sort arguments of functions that have the Orderless attribute."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Attributes"
-        ,
-        "Usage" -> {
-            "CanonicalForm",
-            "Simplification",
-            "Optimization"
-        }
-        ,
-        "Rule" ->
-          (f_? OneIdentityQ)[
-              x : Except[ _? SymbolQ, y_ /; AtomQ @ Unevaluated @ y ]
-          ] :> x
-        ,
-        "Description" -> "Simplify OneIdentity expressions."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Attributes"
-        ,
-        "Usage" -> {
-            "CanonicalForm",
-            "Simplification",
-            "Optimization"
-        }
-        ,
-        "Rule" ->
-          HoldPattern[
-              f_ @@ { a___ } /;
-                NonHoldingQ @ f && FreeQ[ UpValueSymbols @ f, Apply, { 1 } ]
-          ] :> f @ a
-        ,
-        "Description" -> "Simplify Apply where appropriate."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Tables"
-        ,
-        "Usage" -> {
-            "CanonicalForm"
-        }
-        ,
-        "Rule" ->
-          HoldPattern[ Table[ exp_, ii__, jj_ ] ] :>
-            Table[ Table[ exp, jj ], ii ]
-        ,
-        "Description" ->
-          "Convert tables with multiple iterators to nested tables."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Tables"
-        ,
-        "Usage" -> {
-            "Simplification"
-        }
-        ,
-        "Rule" ->
-          HoldPattern[ Table[ Table[ exp_, jj_ ], ii__ ] ] :>
-            Table[ exp, ii, jj ]
-        ,
-        "Description" ->
-          "Convert nested tables to tables with multiple iterators."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Tables"
-        ,
-        "Usage" -> {
-            "CanonicalForm"
-        }
-        ,
-        "Rule" ->
-          HoldPattern[ Table[ exp_, imax_? HoldNumericQ ] ] :>
-            Table[ exp, { i, 1, imax, 1 } ]
-        ,
-        "Description" ->
-          "Expand numeric table iterators to their full canonical form."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Tables"
-        ,
-        "Usage" -> {
-            "CanonicalForm"
-        }
-        ,
-        "Rule" ->
-          HoldPattern[ Table[ exp_, { i_, imax_? HoldNumericQ } ] ] :>
-            Table[ exp, { i, 1, imax, 1 } ]
-        ,
-        "Description" ->
-          "Expand numeric table iterators to their full canonical form."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Tables"
-        ,
-        "Usage" -> {
-            "Simplification"
-        }
-        ,
-        "Rule" ->
-          HoldPattern[ Table[ exp_, ii___, { j, 1, jmax_, 1 }, kk___ ] ] :>
-            Table[ exp, ii, { j, jmax }, kk ]
-        ,
-        "Description" ->
-          "Simplify numeric iterators."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Tables"
-        ,
-        "Usage" -> {
-            "CanonicalForm"
-        }
-        ,
-        "Rule" ->
-          HoldPattern[ Table[ exp_, { imax_? HoldNumericQ } ] ] :>
-            Table[ exp, { i, 1, imax, 1 } ]
-        ,
-        "Description" ->
-          "Expand numeric table iterators to their full canonical form."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Tables"
-        ,
-        "Usage" -> {
-            "CanonicalForm"
-        }
-        ,
-        "Rule" ->
-          HoldPattern[ Table[ exp_, { i_, imin_, imax_ } ] ] :>
-            Table[ exp, { i, imin, imax, 1 } ]
-        ,
-        "Description" ->
-          "Expand numeric table iterators to their full canonical form."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Tables"
-        ,
-        "Usage" -> {
-            "Simplification"
-        }
-        ,
-        "Rule" ->
-          HoldPattern[
-              Table[ exp_, ii___, { j_, jmin_, jmax_, 1 }, kk___ ]
-          ] :>
-            Table[ exp, ii, { j, jmin, jmax }, kk ]
-        ,
-        "Description" ->
-          "Simplify numeric iterators."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "Tables"
-        ,
-        "Usage" -> {
-            "Simplification"
-        }
-        ,
-        "Rule" ->
-          HoldPattern[ Table[ exp_, ii___, { j_, 1, jmax_ }, kk___ ] ] :>
-            Table[ exp, ii, { j, jmax }, kk ]
-        ,
-        "Description" ->
-          "Simplify numeric iterators."
-    |>
-    , (******************************************************************)
-    <|
-        "Category" -> "General"
-        ,
-        "Usage" -> {
-            "CanonicalForm",
-            "Simplification",
-            "Optimization"
-        }
-        ,
-        "Strict" -> False
-        ,
-        "Experimental" -> True
-        ,
-        "Rule" ->
-          x_? HoldNumericQ /; SafeEvaluatedQ @ x === False :> RuleCondition @ x
-        ,
-        "Description" ->
-          "Evaluate arithmetic expressions."
-    |>
-
-};
-
-
-
-(******************************************************************************)
-
-
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*$TransformationRules*)
 $intAtom = (_Integer | TypedSymbol[ _, Verbatim[ _Integer ] ]);
 
 $intType = Inline[ $intAtom,
@@ -291,15 +47,15 @@ $reaType = Inline[ $reaAtom,
 
 
 
-Wolfram`CodeEquivalenceUtilities`Types`Int // ClearAll;
-Wolfram`CodeEquivalenceUtilities`Types`Int // Attributes = { HoldAllComplete };
+Int // ClearAll;
+Int // Attributes = { HoldAllComplete };
 
-Wolfram`CodeEquivalenceUtilities`Types`Int[ i_ ] := TypedSymbol[ i, _Integer ];
+Int[ i_ ] := TypedSymbol[ i, _Integer ];
 
-Wolfram`CodeEquivalenceUtilities`Types`Rea // ClearAll;
-Wolfram`CodeEquivalenceUtilities`Types`Rea // Attributes = { HoldAllComplete };
+Rea // ClearAll;
+Rea // Attributes = { HoldAllComplete };
 
-Wolfram`CodeEquivalenceUtilities`Types`Rea[ i_ ] := TypedSymbol[ i, _Real ];
+Rea[ i_ ] := TypedSymbol[ i, _Real ];
 
 
 
@@ -1316,7 +1072,7 @@ expandURL[ url_String, iter_ ] :=
 iExpandURL[ url_String ] :=
   If[ StringStartsQ[ url, $CloudBase ],
       Throw[ url, $tag ],
-      Wolfram`CodeEquivalenceUtilities`CachedValues`Cached @ Quiet @ Replace[
+      Wolfram`CodeEquivalenceUtilities`Cached @ Quiet @ Replace[
           Check[ URLExpand @ url, url ],
           Except[ _String? StringQ ] :> Throw[ url, $tag ]
       ]
@@ -1807,14 +1563,11 @@ rules = {
     cleanupRules
 } /. HoldPattern[$unrollLimit] -> $unrollLimit;
 
-
 $TransformationRules = rules;
 
-
-(* :!CodeAnalysis::EndBlock:: *)
-
-End[ ]; (* `Private` *)
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package footer*)
+End[ ];
 EndPackage[ ];
-
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(* :!CodeAnalysis::EndBlock:: *)

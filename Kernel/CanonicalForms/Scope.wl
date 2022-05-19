@@ -1,412 +1,112 @@
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package header*)
 
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 
-BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`",
-    {
-        "Wolfram`CodeEquivalenceUtilities`Utilities`",
-        "Wolfram`CodeEquivalenceUtilities`Types`"
-    }
-];
+BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 
-
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
-
-
-(* Exported symbols added here with SymbolName::usage *)
-$LocalContext                   ::usage = "";
-$LocalSymbolPrefix              ::usage = "";
-$ScopeTransformations           ::usage = "";
-LocalContextQ                   ::usage = "";
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Defined symbols*)
+$LocalContext;
+$LocalSymbolPrefix;
 $NewLocalSymbolCounter;
-NewLocalSymbol                  ::usage = "";
-CanonicalScopingConstructs      ::usage = "";
-CanonicalScopeTables            ::usage = "";
-CanonicalScopeFunctions         ::usage = "";
-CanonicalScopeDelayed           ::usage = "";
-CanonicalScopeRuleDelayed       ::usage = "";
-CanonicalScopeSetDelayed        ::usage = "";
-CanonicalScopeRuleDelayed       ::usage = "";
-CanonicalScopeAll               ::usage = "";
-CanonicalTransformFromScope     ::usage = "";
-HideLocalSymbols                ::usage = "";
-NormalizeNames                  ::usage = "";
+$ScopeTransformations;
+CanonicalScopeAll;
+CanonicalScopeDelayed;
+CanonicalScopeFunctions;
+CanonicalScopeRuleDelayed;
+CanonicalScopeSetDelayed;
+CanonicalScopeTables;
+CanonicalScopingConstructs;
+CanonicalTransformFromScope;
+HideLocalSymbols;
+LocalContextQ;
+NewLocalSymbol;
+NormalizeNames;
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Declarations*)
+TypedSymbol;
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Private*)
 Begin[ "`Private`" ];
 
-
-
-(******************************************************************************)
-
-
-
-$LocalContext := Context[ $LocalContext ] <> "LocalSymbols`";
-
-$LocalSymbolPrefix := $LocalContext <> "S";
-
-$ScopeTransformations =
-  {
-      CanonicalScopeTables,
-      CanonicalScopingConstructs,
-      CanonicalScopeFunctions,
-      CanonicalScopeDelayed
-  };
-
-
-
-(******************************************************************************)
-
-
-
-LocalContextQ // Attributes = { HoldFirst };
-LocalContextQ // Options    = { };
-
-
-(*LocalContextQ[ HoldPattern[ Symbol[ s_String ] ] ] :=
-  SafeContext @ s === $LocalContext;*)
-
-
-LocalContextQ[ s_? SymbolQ ] :=
-    SafeContext @ s === $LocalContext;
-
-
-LocalContextQ[ s_String ] :=
-    ToExpression[ s, StandardForm, LocalContextQ ];
-
-
-LocalContextQ[ ___ ] := False;
-
-
-
-(******************************************************************************)
-
-
-$NewLocalSymbolCounter // ClearAll;
-$NewLocalSymbolCounter = 0;
-
-
-NewLocalSymbol // Attributes = { HoldFirst };
-NewLocalSymbol // Options    = { };
-
-
-(* From an existing symbol *)
-NewLocalSymbol[ x_? SymbolQ ] :=
-
-  Module[ { symName, newSym, newSymName },
-
-      symName    = SymbolName @ Unevaluated @ x;
-      newSym     = Unique[ $LocalContext <> symName <> "$" ];
-      newSymName = $LocalContext <> SymbolName @ newSym;
-
-      Inline[ newSymName, newSymName // Attributes = { Temporary } ];
-
-      newSym
-  ];
-
-
-(* From a symbol name *)
-NewLocalSymbol[ x_String ] := ToExpression[ x, StandardForm, NewLocalSymbol ];
-
-
-(* From an integer *)
-NewLocalSymbol[ i_Integer ] :=
-  Module[ { newSymName, newSymbol },
-      $NewLocalSymbolCounter = i;
-      newSymName = $LocalSymbolPrefix <> ToString @ i;
-      Unprotect @@ { newSymName };
-      ClearAll @@ { newSymName };
-      newSymbol  = Symbol @ newSymName;
-      Inline[ newSymName, newSymName // Attributes = { Temporary } ];
-      newSymbol
-  ];
-
-
-(* From nothing *)
-NewLocalSymbol[ ] :=
-  NewLocalSymbol @@ { ++$NewLocalSymbolCounter };
-
-
-(* From something else, given that it evaluates to a new form *)
-NewLocalSymbol[ x_ ] :=
-  With[ { x$ = x },
-      NewLocalSymbol @ x$ /;
-        Hold @ x =!= Hold @ x$
-  ];
-
-
-
-(******************************************************************************)
-
-
-
 (*
-    In this section, SC = "Scoping Constructs".
+    In this file, SC = "Scoping Constructs".
     These are lexical renaming utilities for With, Module, and Block.
 *)
 
-$scPatt = With | Module | Block | DynamicModule;
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Patterns*)
 
+$delayedForms = Condition|RuleDelayed|SetDelayed|UpSetDelayed|TagSetDelayed;
+$scPatt       = With|Module|Block|DynamicModule;
 
+$extrOpts = Sequence[
+    "ExcludedContexts" -> { Except[ $LocalContext ] },
+    "PostProcessing"   -> Composition[ SafeTranspose, DeleteDuplicates ]
+];
 
-getSCLocalVars // ClearAll;
-getSCLocalVars // Attributes = { HoldFirst };
-getSCLocalVars // Options    = { };
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*$LocalContext*)
+$LocalContext = Context[ $LocalContext ] <> "LocalSymbols`";
 
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*$LocalSymbolPrefix*)
+$LocalSymbolPrefix := $LocalContext <> "S";
 
-getSCLocalVars[ $scPatt[ { localAssignments___ }, localExpression_, ___ ],
-    wrapper_ : HoldPattern
-] :=
-  Inline[ $scPatt,
-      Cases[ Hold @ localAssignments,
-             HoldPattern[ x_ = _ ] | x_ :> wrapper @ x
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*$NewLocalSymbolCounter*)
+$NewLocalSymbolCounter = 0;
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*$ScopeTransformations*)
+$ScopeTransformations = {
+    CanonicalScopeTables,
+    CanonicalScopingConstructs,
+    CanonicalScopeFunctions,
+    CanonicalScopeDelayed
+};
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CanonicalScopeAll*)
+CanonicalScopeAll[ expr_ ] := expr // RightComposition @@ $ScopeTransformations;
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CanonicalScopeDelayed*)
+CanonicalScopeDelayed[ expression_ ] :=
+  Inline[ $delayedForms,
+
+      Module[ { listPositions, funcFolder },
+
+          listPositions =
+            Position[ expression, $delayedForms[ ___ ] ] ~SortBy~ Length;
+
+          funcFolder = ReplacePart[ #1,
+              #2 -> Extract[ #1, #2, localizeDelayed ]
+          ] //. TempHold[ a___ ] :> a &;
+
+          Fold[ funcFolder, expression, listPositions ]
       ]
   ];
 
-
-getSCLocalVars[ TempHold[ a___ ],
-    wrapper_: HoldPattern
-] :=
-  getSCLocalVars[ a, wrapper ];
-
-
-getSCLocalVars[ a_Symbol,
-    wrapper_: HoldPattern
-] :=
-  With[ { a$ = a },
-      getSCLocalVars[ a$, wrapper ]
-  ];
-
-
-
-localizeSC // ClearAll;
-localizeSC // Attributes = { HoldAll };
-localizeSC // Options    = { };
-
-
-localizeSC[ expression : $scPatt[ { ___ }, ___ ] ] :=
-  Inline[ $scPatt,
-
-      Module[
-          {
-              scExp, locals, newLocals, replRules, heldAssignments, repl,
-              setReplaced, symReplaced, heldExpression, heldSCOut
-          },
-
-          scExp  = TempHold @ expression;
-          locals = DeleteDuplicates @ getSCLocalVars[ scExp, Hold ];
-
-          newLocals = ReplaceMasked[ locals,
-                                     Hold[ x_ ] :> NewLocalSymbol @ x,
-                                     { 1 }
-                      ];
-
-          replRules = RuleDelayed @@@ SafeTranspose @ { HoldPattern @@@ locals,
-                                                        newLocals };
-
-
-          heldAssignments = Extract[ scExp, { 1, 1 }, TempHold ];
-
-          repl = HoldPattern[ var_ = val_ ] :>
-                   With[ { v = TempHold @ var /. replRules },
-                       TempHold[ v = val ]
-                   ];
-
-
-          setReplaced = ReplaceMasked[ heldAssignments, repl, { 2 },
-                                       Evaluate -> True ];
-
-          symReplaced = ReplaceMasked[ setReplaced, replRules, { 2 },
-                                       Evaluate -> True ];
-
-          heldExpression = Extract[ scExp, { 1, 2 }, TempHold ] /. replRules;
-
-          heldSCOut = HoldComplete @@ ReplacePart[ scExp,
-                                                   {
-                                                     { 1, 1 } -> symReplaced,
-                                                     { 1, 2 } -> heldExpression
-                                                   }
-                                      ];
-
-          TempHold @@ (heldSCOut //. TempHold[ a___ ] :> a)
-      ]
-  ];
-
-
-
-CanonicalScopingConstructs // Attributes = { };
-CanonicalScopingConstructs // Options    = { };
-
-
-CanonicalScopingConstructs[ exp_ ] :=
-
-  Module[ { pos, folder },
-
-      pos = Reverse[ Position[ exp, $scPatt[ { ___ }, ___ ] ] ~SortBy~ Length ];
-
-      folder = ReplacePart[ #1, #2 -> Extract[ #1, #2, localizeSC ] ] //.
-                 TempHold[ a___ ] :> a &;
-
-      Fold[ folder, exp, pos ]
-  ];
-
-
-
-(******************************************************************************)
-
-
-
-localizeFunction // ClearAll;
-localizeFunction // Attributes = { HoldFirst };
-localizeFunction // Options    = { };
-
-
-localizeFunction[ HoldPattern @ Function[ { var__? SymbolQ }, expr__ ] ] :=
-
-  Module[ { newLocals, replRules, newExp },
-
-      newLocals = HoldComplete @@ {
-          ReleaseHold[ NewLocalSymbol /@ HoldComplete @ var ]
-      };
-
-      replRules =
-        With[ { new = newLocals },
-            {
-                Thread[ RuleDelayed[ HoldPattern /@ HoldComplete @ var, new ],
-                        HoldComplete
-                ] // ReleaseHold
-            }
-        ];
-
-      newExp = TempHold @ Function[ { var }, expr ] //. replRules;
-
-      newExp
-  ];
-
-
-localizeFunction[ HoldPattern @ Function[ var_? SymbolQ, expr__ ] ] :=
-  localizeFunction[ Function[ { var }, expr ] ];
-
-
-
-
-CanonicalScopeFunctions // Attributes = { };
-CanonicalScopeFunctions // Options    = { };
-
-
-CanonicalScopeFunctions[ exp_ ] :=
-
-  Module[ { pos, folder },
-
-      pos = Reverse[ Position[ exp, _Function ] ~SortBy~ Length ];
-
-      folder = ReplacePart[ #1, #2 -> Extract[ #1, #2, localizeFunction ] ] //.
-                 TempHold[ a___ ] :> a &;
-
-      Fold[ folder, exp, pos ]
-  ];
-
-
-
-(******************************************************************************)
-
-
-
-localizeTable // ClearAll;
-localizeTable // Attributes = { HoldFirst };
-localizeTable // Options    = { };
-
-
-localizeTable[ t : HoldPattern @ Table[ _, { i_? LocalContextQ , ___ } ] ] :=
-  TempHold @ t;
-
-
-localizeTable[ table : HoldPattern @ Table[ exp_, { i_, ii___ } ] ] :=
-  Module[ { newLocal, replRule, newExp, newIter },
-      newLocal = NewLocalSymbol @ i;
-      replRule = Inline[ newLocal, HoldPattern @ i :> newLocal ];
-      newExp   = TempHold @ exp //. replRule;
-      newIter  = Inline[ newLocal, TempHold[ { newLocal, ii } ] ];
-      Inline[ { newExp, newIter }, HoldApply @ Table[ newExp, newIter ] ]
-  ];
-
-
-localizeTable[ table : HoldPattern @ Table[ exp_, { i_, ii___ } ], n_ ] :=
-  Module[ { newLocal, replRule, newExp, newIter },
-      newLocal = NewLocalSymbol @ n;
-      replRule = Inline[ newLocal, HoldPattern @ i :> newLocal ];
-      newExp   = TempHold @ exp //. replRule;
-      newIter  = Inline[ newLocal, TempHold[ { newLocal, ii } ] ];
-      Inline[ { newExp, newIter }, HoldApply @ Table[ newExp, newIter ] ]
-  ];
-
-
-
-CanonicalScopeTables // Attributes = { };
-CanonicalScopeTables // Options    = { };
-
-CanonicalScopeTables::unroll =
-  "Warning: Tables should be unrolled before transforming scope.";
-
-
-(*CanonicalScopeTables[ exp_ ] :=
-
-  Module[ { *)(*unrolled, *)(*pos, folder },
-
-      *)(* TODO: move table unrolling to Structural` and reimplement *)(*
-      *)(*unrolled = unrollAllTables @ exp;*)(*
-
-      If[ ! FreeQ[ exp, HoldPattern @ Table[ _, _, __ ] ],
-          Message[ CanonicalScopeTables::unroll ];
-      ];
-
-      pos = Position[ exp*)(*unrolled*)(*,
-                      HoldPattern @ Table[ _, { _, ___ } ]
-            ] ~SortBy~ Length;
-
-      folder = ReplacePart[ #1, #2 -> Extract[ #1, #2, localizeTable ] ] //.
-                 TempHold[ a___ ] :> a &;
-
-      Fold[ folder, exp*)(*unrolled*)(*, pos ]
-  ];*)
-
-
-tableScopeFolder // ClearAll;
-
-tableScopeFolder =
-  With[ { p = First @ #2, n = Last @ #2 },
-      With[ { f = Function[ t, localizeTable[ t, n ], HoldFirst ] },
-
-          ReplacePart[ #1, p -> Extract[ #1, p, f ] ]
-      ]
-  ] &;
-
-
-CanonicalScopeTables[ exp_ ] :=
-    Inline[ tableScopeFolder,
-      Module[ { pos, idx, localized, reapplication },
-        pos = Reverse @ SortBy[ Position[ exp, _Table ], Length ];
-        idx = Transpose @ { pos, Range @ Length @ pos };
-        localized = StripTempHolds @ Fold[ tableScopeFolder, exp, idx ];
-        reapplication = localized //. HoldApply[ f_, { a___ } ] :> f @ a;
-        (*NormalizeNames[ reapplication, "ExcludedContexts" -> { "System`" } ]*)
-        reapplication
-      ]
-    ];
-
-
-
-(******************************************************************************)
-
-
-
-localizeDelayed // ClearAll;
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*localizeDelayed*)
 localizeDelayed // Attributes = { HoldFirst };
-localizeDelayed // Options    = { };
-
-$delayedForms = Condition | RuleDelayed | SetDelayed | UpSetDelayed | TagSetDelayed;
-
 
 localizeDelayed[ (f : $delayedForms )[ p__, v_ ] ] :=
 
@@ -477,53 +177,55 @@ Inline[ $delayedForms,
   ]
   ];
 
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CanonicalScopeFunctions*)
+CanonicalScopeFunctions[ exp_ ] :=
 
+  Module[ { pos, folder },
 
-CanonicalScopeDelayed // Attributes = { };
-CanonicalScopeDelayed // Options    = { };
+      pos = Reverse[ Position[ exp, _Function ] ~SortBy~ Length ];
 
+      folder = ReplacePart[ #1, #2 -> Extract[ #1, #2, localizeFunction ] ] //.
+                 TempHold[ a___ ] :> a &;
 
-CanonicalScopeDelayed[ expression_ ] :=
-  Inline[ $delayedForms,
+      Fold[ folder, exp, pos ]
+  ];
 
-      Module[ { listPositions, funcFolder },
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*localizeFunction*)
+localizeFunction // Attributes = { HoldFirst };
 
-          listPositions =
-            Position[ expression, $delayedForms[ ___ ] ] ~SortBy~ Length;
+localizeFunction[ HoldPattern @ Function[ { var__? SymbolQ }, expr__ ] ] :=
 
-          funcFolder = ReplacePart[ #1,
-              #2 -> Extract[ #1, #2, localizeDelayed ]
-          ] //. TempHold[ a___ ] :> a &;
+  Module[ { newLocals, replRules, newExp },
 
-          Fold[ funcFolder, expression, listPositions ]
-      ]
+      newLocals = HoldComplete @@ {
+          ReleaseHold[ NewLocalSymbol /@ HoldComplete @ var ]
+      };
+
+      replRules =
+        With[ { new = newLocals },
+            {
+                Thread[ RuleDelayed[ HoldPattern /@ HoldComplete @ var, new ],
+                        HoldComplete
+                ] // ReleaseHold
+            }
+        ];
+
+      newExp = TempHold @ Function[ { var }, expr ] //. replRules;
+
+      newExp
   ];
 
 
+localizeFunction[ HoldPattern @ Function[ var_? SymbolQ, expr__ ] ] :=
+  localizeFunction[ Function[ { var }, expr ] ];
 
-CanonicalScopeSetDelayed // Attributes = { };
-CanonicalScopeSetDelayed // Options    = { };
-
-
-CanonicalScopeSetDelayed[ expression_ ] :=
-
-  Module[ { listPositions, funcFolder },
-
-      listPositions = Position[ expression, _SetDelayed ] ~SortBy~ Length;
-
-      funcFolder = ReplacePart[ #1,
-                                #2 -> Extract[ #1, #2, localizeDelayed ]
-                   ] //. TempHold[ a___ ] :> a &;
-
-      Fold[ funcFolder, expression, listPositions ]
-  ];
-
-
-
-CanonicalScopeRuleDelayed // Attributes = { };
-CanonicalScopeRuleDelayed // Options    = { };
-
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CanonicalScopeRuleDelayed*)
 CanonicalScopeRuleDelayed[ expression_ ] :=
 
   Module[ { listPositions, funcFolder },
@@ -537,53 +239,167 @@ CanonicalScopeRuleDelayed[ expression_ ] :=
       Fold[ funcFolder, expression, listPositions ]
   ];
 
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CanonicalScopeSetDelayed*)
+CanonicalScopeSetDelayed[ expression_ ] :=
 
+  Module[ { listPositions, funcFolder },
 
-(******************************************************************************)
+      listPositions = Position[ expression, _SetDelayed ] ~SortBy~ Length;
 
+      funcFolder = ReplacePart[ #1,
+                                #2 -> Extract[ #1, #2, localizeDelayed ]
+                   ] //. TempHold[ a___ ] :> a &;
 
-
-CanonicalScopeAll // Attributes = { };
-CanonicalScopeAll // Options    = { };
-
-
-CanonicalScopeAll[ expression_ ] :=
-  expression // RightComposition @@ $ScopeTransformations;
-
-
-
-(******************************************************************************)
-
-
-
-renameSymbol // ClearAll;
-renameSymbol // Attributes = { };
-renameSymbol // Options    = { };
-
-
-renameSymbol[ symName_String, { i_Integer } | i_Integer ] :=
-  StringJoin @ { $LocalSymbolPrefix,
-                 ToString @ i,
-                 symName ~StringCases~ "$" };
-
-
-renameSymbol[ { i_Integer } | i_Integer ] :=
-  StringJoin @ { $LocalSymbolPrefix, ToString @ i };
-
-
-
-$extrOpts =
-  Sequence[
-      "ExcludedContexts" -> { Except @ $LocalContext },
-      "PostProcessing"   -> (SafeTranspose @* DeleteDuplicates)
+      Fold[ funcFolder, expression, listPositions ]
   ];
 
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CanonicalScopeTables*)
+CanonicalScopeTables::unroll =
+"Warning: Tables should be unrolled before transforming scope.";
+
+tableScopeFolder =
+  With[ { p = First @ #2, n = Last @ #2 },
+      With[ { f = Function[ t, localizeTable[ t, n ], HoldFirst ] },
+
+          ReplacePart[ #1, p -> Extract[ #1, p, f ] ]
+      ]
+  ] &;
+
+CanonicalScopeTables[ exp_ ] :=
+    Inline[ tableScopeFolder,
+      Module[ { pos, idx, localized, reapplication },
+        pos = Reverse @ SortBy[ Position[ exp, _Table ], Length ];
+        idx = Transpose @ { pos, Range @ Length @ pos };
+        localized = StripTempHolds @ Fold[ tableScopeFolder, exp, idx ];
+        reapplication = localized //. HoldApply[ f_, { a___ } ] :> f @ a;
+        (*NormalizeNames[ reapplication, "ExcludedContexts" -> { "System`" } ]*)
+        reapplication
+      ]
+    ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*localizeTable*)
+localizeTable // Attributes = { HoldFirst };
+
+localizeTable[ t : HoldPattern @ Table[ _, { i_? LocalContextQ , ___ } ] ] :=
+  TempHold @ t;
+
+localizeTable[ table : HoldPattern @ Table[ exp_, { i_, ii___ } ] ] :=
+  Module[ { newLocal, replRule, newExp, newIter },
+      newLocal = NewLocalSymbol @ i;
+      replRule = Inline[ newLocal, HoldPattern @ i :> newLocal ];
+      newExp   = TempHold @ exp //. replRule;
+      newIter  = Inline[ newLocal, TempHold[ { newLocal, ii } ] ];
+      Inline[ { newExp, newIter }, HoldApply @ Table[ newExp, newIter ] ]
+  ];
+
+localizeTable[ table : HoldPattern @ Table[ exp_, { i_, ii___ } ], n_ ] :=
+  Module[ { newLocal, replRule, newExp, newIter },
+      newLocal = NewLocalSymbol @ n;
+      replRule = Inline[ newLocal, HoldPattern @ i :> newLocal ];
+      newExp   = TempHold @ exp //. replRule;
+      newIter  = Inline[ newLocal, TempHold[ { newLocal, ii } ] ];
+      Inline[ { newExp, newIter }, HoldApply @ Table[ newExp, newIter ] ]
+  ];
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CanonicalScopingConstructs*)
+CanonicalScopingConstructs[ exp_ ] :=
+
+  Module[ { pos, folder },
+
+      pos = Reverse[ Position[ exp, $scPatt[ { ___ }, ___ ] ] ~SortBy~ Length ];
+
+      folder = ReplacePart[ #1, #2 -> Extract[ #1, #2, localizeSC ] ] //.
+                 TempHold[ a___ ] :> a &;
+
+      Fold[ folder, exp, pos ]
+  ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*localizeSC*)
+localizeSC // Attributes = { HoldAll };
+
+localizeSC[ expression : $scPatt[ { ___ }, ___ ] ] :=
+  Inline[ $scPatt,
+
+      Module[
+          {
+              scExp, locals, newLocals, replRules, heldAssignments, repl,
+              setReplaced, symReplaced, heldExpression, heldSCOut
+          },
+
+          scExp  = TempHold @ expression;
+          locals = DeleteDuplicates @ getSCLocalVars[ scExp, Hold ];
+
+          newLocals = ReplaceMasked[ locals,
+                                     Hold[ x_ ] :> NewLocalSymbol @ x,
+                                     { 1 }
+                      ];
+
+          replRules = RuleDelayed @@@ SafeTranspose @ { HoldPattern @@@ locals,
+                                                        newLocals };
 
 
-CanonicalTransformFromScope // Attributes = { };
-CanonicalTransformFromScope // Options    = { };
+          heldAssignments = Extract[ scExp, { 1, 1 }, TempHold ];
+
+          repl = HoldPattern[ var_ = val_ ] :>
+                   With[ { v = TempHold @ var /. replRules },
+                       TempHold[ v = val ]
+                   ];
 
 
+          setReplaced = ReplaceMasked[ heldAssignments, repl, { 2 },
+                                       Evaluate -> True ];
+
+          symReplaced = ReplaceMasked[ setReplaced, replRules, { 2 },
+                                       Evaluate -> True ];
+
+          heldExpression = Extract[ scExp, { 1, 2 }, TempHold ] /. replRules;
+
+          heldSCOut = HoldComplete @@ ReplacePart[ scExp,
+                                                   {
+                                                     { 1, 1 } -> symReplaced,
+                                                     { 1, 2 } -> heldExpression
+                                                   }
+                                      ];
+
+          TempHold @@ (heldSCOut //. TempHold[ a___ ] :> a)
+      ]
+  ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*getSCLocalVars*)
+getSCLocalVars // Attributes = { HoldFirst };
+
+getSCLocalVars[
+    $scPatt[ { localAssignments___ }, localExpression_, ___ ],
+    Optional[ wrapper_, HoldPattern ]
+] := Inline[
+    $scPatt,
+    Cases[
+        Hold @ localAssignments,
+        HoldPattern[ x_ = _ ] | (x_) :> wrapper @ x
+    ]
+];
+
+getSCLocalVars[ TempHold[ a___ ], Optional[ wrapper_, HoldPattern ] ] :=
+    getSCLocalVars[ a, wrapper ];
+
+getSCLocalVars[ a_Symbol, Optional[ wrapper_, HoldPattern ] ] :=
+    With[ { a$ = a }, getSCLocalVars[ a$, wrapper ] ];
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CanonicalTransformFromScope*)
 CanonicalTransformFromScope[ expression_ ] :=
 
   Inline[ $extrOpts,
@@ -614,48 +430,109 @@ CanonicalTransformFromScope[ expression_ ] :=
       ]
   ];
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*renameSymbol*)
+renameSymbol[ symName_String, { i_Integer } | i_Integer ] :=
+  StringJoin @ { $LocalSymbolPrefix,
+                 ToString @ i,
+                 symName ~StringCases~ "$" };
+
+renameSymbol[ { i_Integer } | i_Integer ] :=
+  StringJoin @ { $LocalSymbolPrefix, ToString @ i };
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*HideLocalSymbols*)
+HideLocalSymbols[ TempHold[ expression___ ],
+                  placeholder_: Nothing
+] :=
+  TempHold @@ HideLocalSymbols[ HoldComplete @ expression,
+                                placeholder
+              ];
 
 
-(******************************************************************************)
+HideLocalSymbols[ expression_,
+                  placeholder_: Nothing
+] :=
+  Module[ { localized },
 
-$excludedContexts :=
-  With[ { contexts = Language`$InternalContexts },
-      Union[ If[ ListQ @ contexts,
-                 contexts,
-                 $legacyExcludedContexts
-             ],
-             DeleteCases[ Contexts[ "Wolfram`CodeEquivalenceUtilities`*" ], $LocalContext ]
+      localized = CanonicalScopeAll @ expression;
+
+      If[ placeholder === Nothing,
+          DeleteCases[ localized, _? LocalContextQ, Infinity, Heads -> True ],
+          localized /. s_? LocalContextQ :> placeholder
       ]
   ];
 
-$legacyExcludedContexts :=
-  Cases[ Lookup[ Options @ Language`ExtendedFullDefinition,
-                 "ExcludedContexts",
-                 { }
-         ],
-         ctx_String? StringQ :>
-           StringReplace[
-               ctx,
-               c: Except["`"]~~EndOfString :> c <> "`"
-           ]
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*LocalContextQ*)
+LocalContextQ // Attributes = { HoldFirst };
+LocalContextQ[ s_? SymbolQ ] := SafeContext @ s === $LocalContext;
+LocalContextQ[ s_String    ] := ToExpression[ s, StandardForm, LocalContextQ ];
+LocalContextQ[ ___         ] := False;
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*NewLocalSymbol*)
+NewLocalSymbol // Attributes = { HoldFirst };
+
+(* From an existing symbol *)
+NewLocalSymbol[ x_? SymbolQ ] :=
+
+  Module[ { symName, newSym, newSymName },
+
+      symName    = SymbolName @ Unevaluated @ x;
+      newSym     = Unique[ $LocalContext <> symName <> "$" ];
+      newSymName = $LocalContext <> SymbolName @ newSym;
+
+      Inline[ newSymName, newSymName // Attributes = { Temporary } ];
+
+      newSym
   ];
 
 
-NormalizeNames // Attributes = { };
-NormalizeNames // Options    = {
-    "ExcludedContexts" -> Automatic,
+(* From a symbol name *)
+NewLocalSymbol[ x_String ] := ToExpression[ x, StandardForm, NewLocalSymbol ];
+
+
+(* From an integer *)
+NewLocalSymbol[ i_Integer ] :=
+  Module[ { newSymName, newSymbol },
+      $NewLocalSymbolCounter = i;
+      newSymName = $LocalSymbolPrefix <> ToString @ i;
+      Unprotect @@ { newSymName };
+      ClearAll @@ { newSymName };
+      newSymbol  = Symbol @ newSymName;
+      Inline[ newSymName, newSymName // Attributes = { Temporary } ];
+      newSymbol
+  ];
+
+
+(* From nothing *)
+NewLocalSymbol[ ] :=
+  NewLocalSymbol @@ { ++$NewLocalSymbolCounter };
+
+
+(* From something else, given that it evaluates to a new form *)
+NewLocalSymbol[ x_ ] :=
+  With[ { x$ = x },
+      NewLocalSymbol @ x$ /;
+        Hold @ x =!= Hold @ x$
+  ];
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*NormalizeNames*)
+NormalizeNames // Options = {
+    "ExcludedContexts"  -> Automatic,
     "PreserveNumbering" -> False,
-    "RemoveTypes" -> False,
-    "ForceGlobal" -> False
+    "RemoveTypes"       -> False,
+    "ForceGlobal"       -> False
 };
 
-
-
-removeTypes[ exp_ ] := exp /. TypedSymbol[ s_Symbol, _ ] :> s;
-
-
-NormalizeNames[ exp_, opts : OptionsPattern[ ] ] :=
-
+NormalizeNames[ exp_, opts: OptionsPattern[ ] ] :=
   Module[
       {
           ectx, freeSymbols, offset, index, newSymbols,
@@ -706,45 +583,42 @@ NormalizeNames[ exp_, opts : OptionsPattern[ ] ] :=
       ]
   ];
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*$excludedContexts*)
+$excludedContexts :=
+    With[ { contexts = Language`$InternalContexts },
+        Union[
+            If[ ListQ @ contexts, contexts, $legacyExcludedContexts ],
+            DeleteCases[
+                Contexts[ "Wolfram`CodeEquivalenceUtilities`*" ],
+                $LocalContext
+            ]
+        ]
+    ];
 
-(******************************************************************************)
+$legacyExcludedContexts :=
+    Cases[
+        Lookup[
+            Options @ Language`ExtendedFullDefinition,
+            "ExcludedContexts",
+            { }
+        ],
+        ctx_String? StringQ :>
+            StringReplace[
+                ctx,
+                c: Except[ "`" ] ~~ EndOfString :> c <> "`"
+            ]
+    ];
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*removeTypes*)
+removeTypes[ exp_ ] := exp /. TypedSymbol[ s_Symbol, _ ] :> s;
 
-
-HideLocalSymbols // Attributes = { };
-HideLocalSymbols // Options    = { };
-
-
-HideLocalSymbols[ TempHold[ expression___ ],
-                  placeholder_: Nothing
-] :=
-  TempHold @@ HideLocalSymbols[ HoldComplete @ expression,
-                                placeholder
-              ];
-
-
-HideLocalSymbols[ expression_,
-                  placeholder_: Nothing
-] :=
-  Module[ { localized },
-
-      localized = CanonicalScopeAll @ expression;
-
-      If[ placeholder === Nothing,
-          DeleteCases[ localized, _? LocalContextQ, Infinity, Heads -> True ],
-          localized /. s_? LocalContextQ :> placeholder
-      ]
-  ];
-
-
-(******************************************************************************)
-
-
-
-End[];
-
-EndPackage[];
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package footer*)
+End[ ];
+EndPackage[ ];
 (* :!CodeAnalysis::EndBlock:: *)
-
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;

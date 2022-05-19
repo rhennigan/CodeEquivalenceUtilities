@@ -1,173 +1,52 @@
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package header*)
 
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 
-BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CachedValues`",
-    {
-        "Wolfram`CodeEquivalenceUtilities`Utilities`",
-        "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`",
-        "Wolfram`CodeEquivalenceUtilities`EvaluationControl`"
-    }
-];
+BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
-
-
-(******************************************************************************)
-(* Exported symbols added here with SymbolName::usage *)
-
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Defined symbols*)
+$CachePersistence;
 Cached;
+CachedQ;
 CacheFileData;
 CacheFileDataLookup;
 CachePath;
+ClearEvalCache;
+InitializeCache;
+InvalidateCacheFile;
 KeyHash;
 UseCache;
-InvalidateCacheFile;
-ClearEvalCache;
-CachedQ;
-InitializeCache;
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Declarations*)
+NormalizeNames;
 
-(******************************************************************************)
-
-
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Private*)
 Begin[ "`Private`" ];
 
+$CachePersistence = "Local";
+$packageRoot      = First @ StringSplit[ $Context, "`" ];
 
-$packageRoot = First @ StringSplit[ $Context, "`" ] ;
-
-
-(******************************************************************************)
-
-
-
-CacheFileData[ a_Association ][ key_ ] := a[ key ];
-
-
-
-(******************************************************************************)
-
-
-
-KeyHash // Attributes = { };
-KeyHash // Options    = { };
-
-
-KeyHash[ expr_ ] :=
-  Key @ StringPadLeft[ StringReverse[ Hash @ expr ~IntegerString~ 16 ],
-                       16,
-                       "0"
-        ];
-
-
-KeyHash[ expr_, exprs__ ] :=
-  KeyHash @ { expr, exprs };
-
-
-
-(******************************************************************************)
-
-
-
-CacheFileDataLookup // Attributes = { };
-CacheFileDataLookup // Options    = { "Depth" -> 3 };
-
-
-CacheFileDataLookup[ Key[ keyHash_String ], opts : OptionsPattern[ ] ] :=
-
-  Module[ { depth, partitionedHash, hashDirPath, hashFile },
-
-      depth             = OptionValue @ "Depth";
-      partitionedHash   = StringPartition[ keyHash, 2 ];
-      hashDirPath       = FileNameJoin @ Take[ partitionedHash, depth ];
-      hashFile          = Drop[ partitionedHash, depth ];
-
-      CacheFileData @ <|
-          "Index"       -> hashDirPath,
-          "Payload"     -> StringJoin[ hashFile, "_p.mx" ],
-          "Metadata"    -> StringJoin[ hashFile, "_m.mx" ]
-      |>
-
-  ];
-
-
-CacheFileDataLookup[ keyExpression : Except[ Key[ _String ] ],
-                     opts : OptionsPattern[ ]
-                   ] :=
-
-  CacheFileDataLookup[ KeyHash @ keyExpression, opts ];
-
-
-
-(******************************************************************************)
-
-
-
-CachePath // Attributes = { };
-CachePath // Options    = { "PackageRoot" -> $packageRoot };
-
-
-CachePath[ key_, opts : OptionsPattern[ ] ] :=
-
-  Module[ { cacheData, cacheDirectory, payload, metadata },
-
-      cacheData = CacheFileDataLookup @ key;
-
-      cacheDirectory = FileNameJoin @ { $UserBaseDirectory,
-                                        "ApplicationData",
-                                        OptionValue @ "PackageRoot",
-                                        "Index",
-                                        cacheData @ "Index"
-                                      };
-
-      payload  = FileNameJoin @ { cacheDirectory, cacheData @ "Payload"  };
-      metadata = FileNameJoin @ { cacheDirectory, cacheData @ "Metadata" };
-
-      <|
-          "Payload"     -> payload,
-          "Metadata"    -> metadata
-      |>
-
-  ];
-
-
-CachePath[ key_, lookup_, opts : OptionsPattern[ ] ] :=
-  CachePath[ key, opts ][ lookup ];
-
-
-
-(******************************************************************************)
-
-
-contentString // ClearAll;
-contentString[ expr_ ] :=
-  Apply[
-      ToFullString,
-      Fold[
-          Function[
-              Replace[
-                  #1,
-                  e_ /; ByteCount[Unevaluated[e]] > 50000 :> With[
-                      {b = ByteCount[Unevaluated[e]]},
-                      Wolfram`CodeEquivalenceUtilities`Utilities`$Redacted[b] /; True
-                  ],
-                  {#2}
-              ]
-          ],
-          expr,
-          Reverse[Range[Min[5, Depth[expr]]]]
-      ]
-  ];
-
-
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Cached*)
 Cached // Attributes = { HoldAllComplete, SequenceHold };
+
 Cached // Options    = {
-    "Expiration"     -> Quantity[ 7, "Days" ],
+    "Expiration"     :> Quantity[ 7, "Days" ],
     "NormalizeNames" -> False
 };
 
 
-Cached[ expr_, opts : OptionsPattern[ ] ] :=
+Cached[ expr_, opts: OptionsPattern[ ] ] /; $localCaching :=
   Module[
       {
           hexpr, pathData, payloadPath, metadataPath,
@@ -250,115 +129,128 @@ Cached[ expr_, opts : OptionsPattern[ ] ] :=
 
   ];
 
+Cached[ expr_, opts: OptionsPattern[ ] ] /; $sessionCaching :=
+    Module[ { $failed, res },
+        $failed = False;
+        Check[ res = expr, $failed = True ];
+        If[ TrueQ @ $failed || FailureQ @ res,
+            res,
+            Cached[ Verbatim @ expr, opts ] = res
+        ]
+    ];
+
+Cached[ expr_, opts: OptionsPattern[ ] ] := expr;
 
 $OriginalCachedDV = DownValues @ Cached;
 
 
-
-(******************************************************************************)
-
-
-
-UseCache // Attributes = { HoldAllComplete };
-UseCache // Options    = {
-    "CacheSymbols" -> {
-        "DiscretizeGraphics",
-        "DominantColors",
-        "EntityList",
-        "EntityValue",
-        "ExampleData",
-        "GenomeData",
-        "GeoElevationData",
-        "GeoListPlot",
-        "GeoWithinQ",
-        "ImageCollage",
-        "Import",
-        "Nearest",
-        "NetModel",
-        "ResourceData",
-        "ResourceObject",
-        "ResourceSearch",
-        "SolarEclipse",
-        "TextSentences",
-        "WikipediaData",
-        "WordCloud",
-        "WordList"
-    },
-    "Expiration" -> Quantity[ 1, "Days" ]
-};
-
-(* :!CodeAnalysis::BeginBlock:: *)
-(* :!CodeAnalysis::Disable::VariableError::Block:: *)
-UseCache[ expression_, opts: OptionsPattern[ ] ] :=
-  Module[ { cacheSymbols, cacheReady },
-
-      cacheSymbols = Flatten @ Apply[
-          HoldComplete,
-          ToExpression[ OptionValue[ "CacheSymbols" ],
-                        InputForm,
-                        HoldComplete
-          ]
-      ];
-
-      Replace[
-          cacheSymbols,
-          HoldComplete[ syms___ ] :>
-            Internal`InheritedBlock[ { syms },
-                ReleaseHold[ override /@ HoldComplete[syms] ];
-                Cached @ expression
-            ]
-      ]
-  ];
-(* :!CodeAnalysis::EndBlock:: *)
+$localCaching := localCachingQ[ ];
+localCachingQ[ ] := localCachingQ @ $CachePersistence;
+localCachingQ[ "Local" ] := True;
+localCachingQ[ Full    ] := True;
+localCachingQ[ All     ] := True;
+localCachingQ[ ___     ] := False;
 
 
-override // Attributes = { HoldAllComplete };
+$sessionCaching := sessionCachingQ[ ];
+sessionCachingQ[ ] := sessionCachingQ @ $CachePersistence;
+sessionCachingQ[ "Session"       ] := True;
+sessionCachingQ[ "Kernel"        ] := True;
+sessionCachingQ[ "KernelSession" ] := True;
+sessionCachingQ[ Automatic       ] := True;
+sessionCachingQ[ ___             ] := False;
 
-override[ sym_ ] := (
-    Unprotect[sym];
-    PrependTo[
-        DownValues[sym],
-        HoldPattern[sym[args___] /; ! TrueQ@$usingCache ] :>
-          Block[{$usingCache = True}, Cached[sym[args]]]
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*contentString*)
+contentString[ expr_ ] :=
+    Apply[
+        ToFullString,
+        Fold[
+            Function[
+                Replace[
+                    #1,
+                    e_ /; ByteCount @ Unevaluated @ e > 50000 :>
+                        With[ { b = ByteCount @ Unevaluated @ e },
+                            Wolfram`CodeEquivalenceUtilities`$Redacted @ b /;
+                                True
+                        ],
+                    { #2 }
+                ]
+            ],
+            expr,
+            Reverse @ Range @ Min[ 5, Depth @ expr ]
+        ]
     ];
-    Protect[sym];
-);
 
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CachedQ*)
+CachedQ // Attributes = { HoldAllComplete, SequenceHold };
+CachedQ[ expr_ ] := AllTrue[ CachePath @ HoldComplete @ expr, FileExistsQ ];
 
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CacheFileData*)
+CacheFileData[ a_Association ][ key_ ] := a[ key ];
 
-(******************************************************************************)
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CacheFileDataLookup*)
+CacheFileDataLookup // Options = { "Depth" -> 3 };
 
+CacheFileDataLookup[ Key[ keyHash_String ], opts: OptionsPattern[ ] ] :=
+    Module[ { depth, partitionedHash, hashDirPath, hashFile },
+        depth           = OptionValue[ "Depth" ];
+        partitionedHash = StringPartition[ keyHash, 2 ];
+        hashDirPath     = FileNameJoin @ Take[ partitionedHash, depth ];
+        hashFile        = Drop[ partitionedHash, depth ];
 
+        CacheFileData @ <|
+            "Index"    -> hashDirPath,
+            "Payload"  -> hashFile <> "_p.mx",
+            "Metadata" -> hashFile <> "_m.mx"
+        |>
+    ];
 
-InvalidateCacheFile // Attributes = { };
-InvalidateCacheFile // Options    = { };
+CacheFileDataLookup[ key: Except[ Key[ _String ] ], opts: OptionsPattern[ ] ] :=
+    CacheFileDataLookup[ KeyHash @ key, opts ];
 
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CachePath*)
+CachePath // Options = { "PackageRoot" -> $packageRoot };
 
-InvalidateCacheFile[ metafile_String? FileExistsQ ] :=
+CachePath[ key_, opts: OptionsPattern[ ] ] :=
+    Module[ { cacheData, cacheDirectory, payload, metadata },
+        cacheData = CacheFileDataLookup @ key;
 
-  With[
-      {
-          meta = Append[ Import @ metafile,
-                         "LastUsedDate" -> DateObject @ 0 ]
-      },
+        cacheDirectory =
+            FileNameJoin @ {
+                $UserBaseDirectory,
+                "ApplicationData",
+                OptionValue[ "PackageRoot" ],
+                "Index",
+                cacheData[ "Index" ]
+            };
 
-      Export[ metafile, meta ];
-      meta
-  ];
+        payload  = FileNameJoin @ { cacheDirectory, cacheData[ "Payload"  ] };
+        metadata = FileNameJoin @ { cacheDirectory, cacheData[ "Metadata" ] };
+        <| "Payload" -> payload, "Metadata" -> metadata |>
+    ];
 
+CachePath[ key_, lookup_, opts: OptionsPattern[ ] ] :=
+    CachePath[ key, opts ][ lookup ];
 
-
-(******************************************************************************)
-
-
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*ClearEvalCache*)
 ClearEvalCache // Attributes = { HoldAllComplete, SequenceHold };
 ClearEvalCache // Options    = { "PackageRoot" -> $packageRoot };
 
-
-ClearEvalCache[ OptionsPattern[ ] ] :=
+ClearEvalCache[ OptionsPattern[ ] ] /; $localCaching :=
     Quiet[
-
         DeleteDirectory[
             FileNameJoin @ {
                 $UserBaseDirectory,
@@ -369,30 +261,15 @@ ClearEvalCache[ OptionsPattern[ ] ] :=
             DeleteContents -> True
         ];
 
-        DownValues[ Cached ] = $OriginalCachedDV;
-        ,
+        DownValues[ Cached ] = $OriginalCachedDV;,
         DeleteDirectory::nodir
     ];
 
+ClearEvalCache[ OptionsPattern[ ] ] /; $sessionCaching :=
+    (DownValues[ Cached ] = $OriginalCachedDV; Null);
 
 ClearEvalCache[ expr_, opts: OptionsPattern[ ] ] :=
-  Scan[ DeleteFile,
-        Select[ CachePath @ HoldComplete @ expr, FileExistsQ ]
-  ];
-
-
-
-(******************************************************************************)
-
-
-
-CachedQ // Attributes = { HoldAllComplete, SequenceHold };
-CachedQ // Options    = { };
-
-
-CachedQ[ expr_ ] :=
-  AllTrue[ CachePath @ HoldComplete @ expr, FileExistsQ ];
-
+    Scan[ DeleteFile, Select[ CachePath @ HoldComplete @ expr, FileExistsQ ] ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -441,12 +318,101 @@ $PrecachedExpressions = HoldComplete[
     WikipediaData[ "computer" ]
 ];
 
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*InvalidateCacheFile*)
+InvalidateCacheFile[ metafile_String? FileExistsQ ] :=
+    Module[ { meta },
+        meta = Append[ Import @ metafile, "LastUsedDate" -> DateObject[ 0 ] ];
+        Export[ metafile, meta ];
+        meta
+    ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
-(*End Package*)
-End[ ]; (* `Private` *)
+(*KeyHash*)
+KeyHash[ expr_ ] :=
+    Key @ StringPadLeft[ StringReverse[ Hash @ expr ~IntegerString~ 16 ],
+                         16,
+                         "0"
+          ];
 
+KeyHash[ expr_, exprs__ ] := KeyHash @ { expr, exprs };
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*UseCache*)
+UseCache // Attributes = { HoldAllComplete };
+
+UseCache // Options    = {
+    "CacheSymbols" -> {
+        "DiscretizeGraphics",
+        "DominantColors",
+        "EntityList",
+        "EntityValue",
+        "ExampleData",
+        "GenomeData",
+        "GeoElevationData",
+        "GeoListPlot",
+        "GeoWithinQ",
+        "ImageCollage",
+        "Import",
+        "Nearest",
+        "NetModel",
+        "ResourceData",
+        "ResourceObject",
+        "ResourceSearch",
+        "SolarEclipse",
+        "TextSentences",
+        "WikipediaData",
+        "WordCloud",
+        "WordList"
+    },
+    "Expiration" :> Quantity[ 1, "Days" ]
+};
+
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::VariableError::Block:: *)
+UseCache[ expression_, opts: OptionsPattern[ ] ] :=
+    Module[ { cacheSymbols, cacheReady },
+
+        cacheSymbols = Flatten @ Apply[
+            HoldComplete,
+            ToExpression[ OptionValue[ "CacheSymbols" ],
+                          InputForm,
+                          HoldComplete
+            ]
+        ];
+
+        Replace[
+            cacheSymbols,
+            HoldComplete[ syms___ ] :>
+              Internal`InheritedBlock[ { syms },
+                  ReleaseHold[ override /@ HoldComplete[syms] ];
+                  Cached @ expression
+              ]
+        ]
+    ];
+(* :!CodeAnalysis::EndBlock:: *)
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*override*)
+override // Attributes = { HoldAllComplete };
+
+override[ sym_ ] := (
+    Unprotect[sym];
+    PrependTo[
+        DownValues[sym],
+        HoldPattern[sym[args___] /; ! TrueQ@$usingCache ] :>
+          Block[{$usingCache = True}, Cached[sym[args]]]
+    ];
+    Protect[sym];
+);
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package footer*)
+End[ ];
 EndPackage[ ];
-
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(* :!CodeAnalysis::EndBlock:: *)

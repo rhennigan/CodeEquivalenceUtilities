@@ -1,11 +1,11 @@
-name: Check
+name: Test
 on: 
   pull_request: 
     branches:  [main]
   workflow_dispatch:
 jobs: 
-  Check: 
-    name: Check
+  Test: 
+    name: Test
     runs-on: ubuntu-latest
     container: 
       image: wolframresearch/wolframengine:latest
@@ -20,11 +20,17 @@ jobs:
       uses: actions/checkout@v2
     - name: Build paclet MX
       run: wolframscript Scripts/BuildMX.wls
-    - name: Check
-      id: check-paclet-step
-      uses: rhennigan/check-paclet@v1.7.1
+    - name: Test
+      id: test-paclet-step
+      uses: rhennigan/test-paclet@v1.7.1
       with: 
         target: Submit
         paclet_cicd_version: 0.26.0
         definition_notebook: ./ResourceDefinition.nb
         resource_system_base: https://www.wolframcloud.com/obj/resourcesystem/api/1.0
+    - name: UploadArtifact
+      id: upload-build-artifacts-step
+      uses: actions/upload-artifact@v2
+      with: 
+        path: ${{ env.PACLET_BUILD_DIR }}
+        if-no-files-found: ignore
