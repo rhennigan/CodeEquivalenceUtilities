@@ -1,6 +1,7 @@
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Initialization*)
+Quiet[ ResourceObject, General::shdw ];
 Needs[ "Wolfram`CodeEquivalenceUtilities`" ];
 
 $CachePersistence = "Session";
@@ -562,6 +563,7 @@ VerificationTest[
 (* ::Subsection::Closed:: *)
 (*CHAPTER 30*)
 VerificationTest[
+  WordList;
   ValidateCorrect[SortBy[Take[WordList[], 50], StringTake[StringReverse[#1], 1] & ], "30.10"],
   TestID -> "Untitled-210@@Tests/EIWL.wlt:564,1-567,2"
 ];
@@ -588,6 +590,7 @@ VerificationTest[
 ];
 
 VerificationTest[
+  ImageCollage;
   ValidateCorrect[ImageCollage[Import["http://nps.gov", "Images"]], "44.4"],
   TestID -> "Untitled-214@@Tests/EIWL.wlt:590,1-593,2"
 ];

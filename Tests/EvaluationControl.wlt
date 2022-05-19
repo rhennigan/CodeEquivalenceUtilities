@@ -1,6 +1,7 @@
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Initialization*)
+Quiet[ ResourceObject, General::shdw ];
 Needs[ "Wolfram`CodeEquivalenceUtilities`" ];
 
 $CachePersistence = "Session";
