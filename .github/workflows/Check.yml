@@ -27,7 +27,7 @@ jobs:
       uses: rhennigan/check-paclet@v1.7.1
       with: 
         target: Submit
-        paclet_cicd_version: 0.26.0
+        paclet_cicd_version: latest
         definition_notebook: ./ResourceDefinition.nb
         resource_system_base: https://www.wolframcloud.com/obj/resourcesystem/api/1.0
   Test: 
@@ -51,11 +51,12 @@ jobs:
       uses: rhennigan/test-paclet@v1.7.1
       with: 
         target: Submit
-        paclet_cicd_version: 0.26.0
+        paclet_cicd_version: latest
         definition_notebook: ./ResourceDefinition.nb
         resource_system_base: https://www.wolframcloud.com/obj/resourcesystem/api/1.0
-    - name: UploadArtifact
-      id: upload-build-artifacts-step
+    - name: Upload test results
+      id: upload-test-results-step
+      if: always() && env.PACLET_TEST_RESULTS
       uses: actions/upload-artifact@v2
       with: 
         path: ${{ env.PACLET_TEST_RESULTS }}
