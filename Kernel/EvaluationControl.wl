@@ -1147,7 +1147,7 @@ With[ {
       pathSystem = whitelistPath[ $InstallationDirectory ],
       pathApps = whitelistPath[ "/wolframcloud/userfiles/WolframApplications" ],
       pathBase = whitelistPath @ $UserBaseDirectory | whitelistPath @ $BaseDirectory,
-      pathTemp = whitelistPath[ $TemporaryDirectory | "/tmp/UserTemporaryFiles/public/" ],
+      pathTemp = whitelistPath[ $TemporaryDirectory | "/tmp/UserTemporaryFiles/public/" | $CacheBaseDirectory ],
       pathPaclets = whitelistPath[ PacletManager`$UserBasePacletsDirectory|"/www/tomcat/webapps/app/data/Paclets/" ],
       pathPacletsTemp = whitelistPath[ FileNameJoin @ { PacletManager`$UserBasePacletsDirectory, "Temporary" } ],
       pathKB = whitelistPath @ FileNameJoin @ { $UserBaseDirectory, "Knowledgebase" },
@@ -1240,7 +1240,8 @@ With[ {
           URLFetchAsynchronous[ "https://www.wolframcloud.com/files/7918edd1-f8a1-46d0-8b87-7755d5325634", ___ ],
           URLSave[ "https://resources.wolframcloud.com/PacletRepository/pacletsite/PacletSite.mz", ___ ],
           URLRead[ _? authRequestQ, ___ ],
-          URLRead[ HTTPRequest[ domains, _ ] | { HTTPRequest[ domains, _ ] }, ___ ]
+          URLRead[ HTTPRequest[ domains, _ ] | { HTTPRequest[ domains, _ ] }, ___ ],
+          (URLSave|URLSaveAsynchronous)[ _? safeCloudObjectQ, pathResources, ___ ]
       ]
   ]]);
 
