@@ -254,7 +254,7 @@ VerificationTest[
 ]; *)
 
 VerificationTest[
-  CodeEquivalentQ[Graphics3D[{Orange, Sphere[RandomReal[1, {100, 3}], 0.05]}], Graphics3D[{Orange, Table[Sphere[RandomReal[1, {3}], 0.05], {100}]}]],
+  StringQ @ Environment[ "GITHUB_ACTIONS" ] || CodeEquivalentQ[Graphics3D[{Orange, Sphere[RandomReal[1, {100, 3}], 0.05]}], Graphics3D[{Orange, Table[Sphere[RandomReal[1, {3}], 0.05], {100}]}]],
   True,
   TestID -> "Untitled-97@@Tests/Rules.wlt:256,1-260,2"
 ];
