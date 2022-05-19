@@ -125,10 +125,24 @@ VerificationTest[
 
 
 VerificationTest[
-  EvaluateSafely[GeoListPlot[TakeLargestBy[Normal[ResourceData["Fireballs and Bolides"]], #Altitude & , 10][[All,"NearestCity"]], GeoLabels -> True]],
-  GeoGraphics[_Graphics, OptionsPattern[]],
-  SameTest -> MatchQ,
-  TestID -> "Untitled-6@@Tests/EvaluationControl.wlt:127,1-132,2"
+    If[ StringQ @ Environment[ "GITHUB_ACTIONS" ],
+        $skipped,
+        EvaluateSafely @ GeoListPlot[
+            Part[
+                TakeLargestBy[
+                    Normal @ ResourceData[ "Fireballs and Bolides" ],
+                    #Altitude &,
+                    10
+                ],
+                All,
+                "NearestCity"
+            ],
+            GeoLabels -> True
+        ]
+    ],
+    $skipped | GeoGraphics[ _Graphics, OptionsPattern[ ] ],
+    SameTest -> MatchQ,
+    TestID   -> "Untitled-6@@Tests/EvaluationControl.wlt:127,1-146,2"
 ];
 
 (* :!CodeAnalysis::EndBlock:: *)
