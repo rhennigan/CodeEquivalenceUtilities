@@ -6,7 +6,7 @@ PacletObject[ <|
     "SourceControlURL" -> "https://github.com/rhennigan/CodeEquivalenceUtilities",
     "License"          -> "MIT",
     "PublisherID"      -> "Wolfram",
-    "Version"          -> "2.0.0",
+    "Version"          -> "2.0.1",
     "WolframVersion"   -> "12.2+",
     "DocumentationURL" -> "https://resources.wolframcloud.com/PacletRepository/resources",
     "Keywords"         -> { "code transformations", "equivalent input" },
@@ -14,23 +14,7 @@ PacletObject[ <|
         {
             "Kernel",
             "Root"    -> "Kernel",
-            "Context" -> {
-                { "Wolfram`CodeEquivalenceUtilities`"                          , "CodeEquivalenceUtilities.wl"  },
-                { "Wolfram`CodeEquivalenceUtilities`CachedValues`"             , "CachedValues.wl"              },
-                { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Attributes`", "CanonicalForms/Attributes.wl" },
-                { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`"    , "CanonicalForms/Common.wl"     },
-                { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Graphics`"  , "CanonicalForms/Graphics.wl"   },
-                { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Rules`"     , "CanonicalForms/Rules.wl"      },
-                { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Scope`"     , "CanonicalForms/Scope.wl"      },
-                { "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Structural`", "CanonicalForms/Structural.wl" },
-                { "Wolfram`CodeEquivalenceUtilities`Config`"                   , "Config.wl"                    },
-                { "Wolfram`CodeEquivalenceUtilities`Equivalence`"              , "Equivalence.wl"               },
-                { "Wolfram`CodeEquivalenceUtilities`EvaluationControl`"        , "EvaluationControl.wl"         },
-                { "Wolfram`CodeEquivalenceUtilities`Formatting`"               , "Formatting.wl"                },
-                { "Wolfram`CodeEquivalenceUtilities`Legacy`"                   , "Legacy.wl"                    },
-                { "Wolfram`CodeEquivalenceUtilities`Types`"                    , "Types.wl"                     },
-                { "Wolfram`CodeEquivalenceUtilities`Utilities`"                , "Utilities.wl"                 }
-            },
+            "Context" -> { "Wolfram`CodeEquivalenceUtilities`" },
             "Symbols" -> {
                 "Wolfram`CodeEquivalenceUtilities`CodeEquivalentQ",
                 "Wolfram`CodeEquivalenceUtilities`EquivalenceTestData",
