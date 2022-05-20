@@ -31,7 +31,7 @@ ValidateOptional[ expr_, ex_ ] :=
     If[ ! StringQ @ Environment[ "GITHUB_ACTIONS" ],
         ValidateCorrect[ expr, ex ],
         With[ { ans = Lookup[ $answerKey, ex ] },
-            If[ ! TrueQ @ CodeEquivalentQ[ HoldComplete @ expr, ans ],
+            If[ ! TrueQ @ Quiet @ CodeEquivalentQ[ HoldComplete @ expr, ans ],
                 Print[ "::warning::An optional validation has failed: ", ex ];
             ];
             True
