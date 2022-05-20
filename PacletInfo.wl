@@ -6,7 +6,7 @@ PacletObject[ <|
     "SourceControlURL" -> "https://github.com/rhennigan/CodeEquivalenceUtilities",
     "License"          -> "MIT",
     "PublisherID"      -> "Wolfram",
-    "Version"          -> "2.0.1",
+    "Version"          -> "2.0.2",
     "WolframVersion"   -> "12.2+",
     "DocumentationURL" -> "https://resources.wolframcloud.com/PacletRepository/resources",
     "Keywords"         -> { "code transformations", "equivalent input" },
