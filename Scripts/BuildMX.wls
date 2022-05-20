@@ -30,11 +30,13 @@ DumpSave[
         "Wolfram`CodeEquivalenceUtilities`",
         "Wolfram`CodeEquivalenceUtilities`Private`"
     }
-]
+];
 
 If[ ! FileExistsQ @ $mxFile,
     Print[ "::error::", "Failed to build MX file!" ];
-    Exit[ 0 ]
-]
+    If[ $EvaluationEnvironment === "Script", Exit[ 1 ] ]
+];
+
+$mxFile
 
 (* :!CodeAnalysis::EndBlock:: *)

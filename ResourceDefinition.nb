@@ -4911,7 +4911,7 @@ Notebook[
              "Initialization for Examples",
              "TemplateCellGroup"
             },
-            CellLabel -> "In[5]:=",
+            CellLabel -> "In[2]:=",
             CellID -> 297609475
            ],
            Cell[
@@ -4920,52 +4920,80 @@ Notebook[
               {
                RowBox[
                 {
-                 "PacletDirectoryLoad",
+                 "Get",
                  "[",
-                 InterpretationBox[
-                  DynamicModuleBox[
-                   {Typeset`open = False},
-                   TemplateBox[
+                 RowBox[
+                  {
+                   "FileNameJoin",
+                   "[",
+                   RowBox[
                     {
-                     "Expression",
-                     StyleBox[
-                      "\"Paclet Directory\"",
-                      "IconizedCustomName",
-                      StripOnInput -> False
-                     ],
-                     GridBox[
+                     "{",
+                     RowBox[
                       {
-                       {
-                        RowBox[
-                         {
-                          TagBox["\"Head: \"", "IconizedLabel"],
-                          "\[InvisibleSpace]",
-                          TagBox["Symbol", "IconizedItem"]
-                         }
-                        ]
-                       },
-                       {
-                        RowBox[
-                         {
-                          TagBox["\"Byte count: \"", "IconizedLabel"],
-                          "\[InvisibleSpace]",
-                          TagBox["0", "IconizedItem"]
-                         }
-                        ]
-                       }
-                      },
-                      GridBoxAlignment -> {"Columns" -> {{Left}}},
-                      DefaultBaseStyle -> "Column",
-                      GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
+                       RowBox[
+                        {
+                         "First",
+                         "[",
+                         InterpretationBox[
+                          DynamicModuleBox[
+                           {Typeset`open = False},
+                           TemplateBox[
+                            {
+                             "Expression",
+                             StyleBox[
+                              "\"Paclet Directory\"",
+                              "IconizedCustomName",
+                              StripOnInput -> False
+                             ],
+                             GridBox[
+                              {
+                               {
+                                RowBox[
+                                 {
+                                  TagBox["\"Head: \"", "IconizedLabel"],
+                                  "\[InvisibleSpace]",
+                                  TagBox["Symbol", "IconizedItem"]
+                                 }
+                                ]
+                               },
+                               {
+                                RowBox[
+                                 {
+                                  TagBox["\"Byte count: \"", "IconizedLabel"],
+                                  "\[InvisibleSpace]",
+                                  TagBox["0", "IconizedItem"]
+                                 }
+                                ]
+                               }
+                              },
+                              GridBoxAlignment -> {"Columns" -> {{Left}}},
+                              DefaultBaseStyle -> "Column",
+                              GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
+                             ],
+                             Dynamic[Typeset`open]
+                            },
+                            "IconizedObject"
+                           ]
+                          ],
+                          PacletResource`DefinitionNotebook`$PacletDirectory,
+                          SelectWithContents -> True,
+                          Selectable -> False
+                         ],
+                         "]"
+                        }
+                       ],
+                       ",",
+                       "\"Scripts\"",
+                       ",",
+                       "\"BuildMX.wls\""
+                      }
                      ],
-                     Dynamic[Typeset`open]
-                    },
-                    "IconizedObject"
-                   ]
-                  ],
-                  PacletResource`DefinitionNotebook`$PacletDirectory,
-                  SelectWithContents -> True,
-                  Selectable -> False
+                     "}"
+                    }
+                   ],
+                   "]"
+                  }
                  ],
                  "]"
                 }
@@ -4976,82 +5004,17 @@ Notebook[
             ],
             "Input",
             "Excluded",
-            TaggingRules -> { },
-            InitializationCell -> True,
-            CellTags -> "DefaultContent",
-            CellLabel -> "In[1]:=",
-            CellID -> 227436451
+            CellID -> 122054456
            ],
            Cell[
             BoxData[
              RowBox[
-              {
-               "Needs",
-               "[",
-               InterpretationBox[
-                DynamicModuleBox[
-                 {Typeset`open = False},
-                 TemplateBox[
-                  {
-                   "Expression",
-                   StyleBox[
-                    "\"Paclet Context\"",
-                    "IconizedCustomName",
-                    StripOnInput -> False
-                   ],
-                   GridBox[
-                    {
-                     {
-                      RowBox[
-                       {
-                        TagBox["\"Head: \"", "IconizedLabel"],
-                        "\[InvisibleSpace]",
-                        TagBox["Symbol", "IconizedItem"]
-                       }
-                      ]
-                     },
-                     {
-                      RowBox[
-                       {
-                        TagBox["\"Byte count: \"", "IconizedLabel"],
-                        "\[InvisibleSpace]",
-                        TagBox["0", "IconizedItem"]
-                       }
-                      ]
-                     }
-                    },
-                    GridBoxAlignment -> {"Columns" -> {{Left}}},
-                    DefaultBaseStyle -> "Column",
-                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
-                   ],
-                   Dynamic[Typeset`open]
-                  },
-                  "IconizedObject"
-                 ]
-                ],
-                PacletResource`DefinitionNotebook`$PacletContext,
-                SelectWithContents -> True,
-                Selectable -> False
-               ],
-               "]"
-              }
+              {RowBox[{"$CachePersistence", "=", "\"Session\""}], ";"}
              ]
             ],
             "Input",
             "Excluded",
-            TaggingRules -> { },
-            InitializationCell -> True,
-            CellLabel -> "In[2]:=",
-            CellID -> 996669468
-           ],
-           Cell[
-            BoxData[RowBox[{"ClearEvalCache", "[", "]"}]],
-            "Input",
-            "Excluded",
-            TaggingRules -> { },
-            InitializationCell -> True,
-            CellLabel -> "In[3]:=",
-            CellID -> 119547485
+            CellID -> 11523008
            ]
           },
           Open
@@ -21769,7 +21732,7 @@ Notebook[
    "DefaultContentMethod" -> "Tagged"
   },
   "SubmissionReviewData" -> {"Review" -> False},
-  "ToolsOpen" -> False,
+  "ToolsOpen" -> True,
   "UpdatedTimestamp" -> 3.8596*^9,
   "TemplateVersion" -> "1.5.61",
   "StatusMessage" -> "",
