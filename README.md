@@ -16,7 +16,7 @@ This Paclet represents the underlying technology that powers several [automated 
 </tr>
 </table>
 
-[![View notebooks](https://wolfr.am/HAAhzkRq)](https://wolfr.am/Z72fzrAk) [![Build Paclet](https://github.com/rhennigan/CodeEquivalenceUtilities/actions/workflows/main.yml/badge.svg)](https://github.com/rhennigan/CodeEquivalenceUtilities/actions/workflows/main.yml) [![Release Paclet](https://github.com/rhennigan/CodeEquivalenceUtilities/actions/workflows/release.yml/badge.svg)](https://github.com/rhennigan/CodeEquivalenceUtilities/actions/workflows/release.yml)
+[![View notebooks](https://wolfr.am/HAAhzkRq)](https://wolfr.am/Z72fzrAk) [![Check](https://github.com/rhennigan/CodeEquivalenceUtilities/actions/workflows/Check.yml/badge.svg)](https://github.com/rhennigan/CodeEquivalenceUtilities/actions/workflows/Check.yml) [![Release](https://github.com/rhennigan/CodeEquivalenceUtilities/actions/workflows/Release.yml/badge.svg)](https://github.com/rhennigan/CodeEquivalenceUtilities/actions/workflows/Release.yml)
 
 ## Installing CodeEquivalenceUtilities
 
