@@ -1,100 +1,51 @@
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package header*)
 
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 
-BeginPackage[ "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Graphics`",
-    {
-        "Wolfram`CodeEquivalenceUtilities`Utilities`"
-    }
-];
+BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+$GraphicsTransformations;
+$NamedColorRules;
+CanonicalTransformFromGraphics;
 
+Begin[ "`Private`" ];
 
-(* Exported symbols added here with SymbolName::usage *)
-$GraphicsTransformations        ::usage = "";
-$NamedColorRules                ::usage = "";
-CanonicalTransformFromGraphics  ::usage = "";
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*$GraphicsTransformations*)
+$GraphicsTransformations = {
+    replaceNamedColors,
+    canonicalRGBColor,
+    listLinePlotsToListPlots,
+    listPlot2DSortedPoints,
+    canonicalSort2DPoints,
+    canonical2DPolyOrdering
+};
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*replaceNamedColors*)
+replaceNamedColors[ expression_ ] := expression //. $NamedColorRules;
 
-
-Begin["`Private`"];
-
-
-
-(******************************************************************************)
-
-
-
-$GraphicsTransformations =
-  {
-      replaceNamedColors,
-      canonicalRGBColor,
-      listLinePlotsToListPlots,
-      listPlot2DSortedPoints,
-      canonicalSort2DPoints,
-      canonical2DPolyOrdering
-  };
-
-
-
-(******************************************************************************)
-
-
-
-$NamedColorRules =
-  Module[ { readableQ, readableNames, getVal, values, colorPatt },
-
-      readableQ     = FreeQ[ Attributes @ #, ReadProtected ] &;
-      readableNames = Select[ Names @ "System`*", readableQ ];
-      getVal        = ToExpression[ #, StandardForm, OwnValues ] &;
-      values        = getVal /@ readableNames;
-      colorPatt     = HoldPattern[ Verbatim[ HoldPattern ][ _ ] :> _RGBColor ];
-
-      Cases[ values, colorPatt, Infinity ]
-  ];
-
-
-
-(******************************************************************************)
-
-
-
-
-replaceNamedColors // ClearAll;
-replaceNamedColors // Attributes = { };
-replaceNamedColors // Options    = { };
-
-
-replaceNamedColors[ expression_ ] :=
-  Inline[ $NamedColorRules, expression //. $NamedColorRules ];
-
-
-
-(******************************************************************************)
-
-
-
-canonicalRGBColor // ClearAll;
-canonicalRGBColor // Attributes = { };
-canonicalRGBColor // Options    = { };
-
-
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*canonicalRGBColor*)
 canonicalRGBColor[ expression_ ] :=
-  expression //. {
-      RGBColor[ { colors__ } ] :> RGBColor[ colors ],
-      RGBColor[ r_, g_, b_ ] :> RGBColor[ r, g, b, 1 ]
-  };
+    ReplaceRepeated[
+        expression,
+        {
+            RGBColor @ { colors__ } :> RGBColor @ colors,
+            RGBColor[ r_, g_, b_ ]  :> RGBColor[ r, g, b, 1 ]
+        }
+    ];
 
-
-
-(******************************************************************************)
-
-
-
-listLinePlotsToListPlots // ClearAll;
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*listLinePlotsToListPlots*)
 listLinePlotsToListPlots // Attributes = { HoldFirst };
-listLinePlotsToListPlots // Options    = { };
-
 
 listLinePlotsToListPlots[ expression_ ] :=
   expression //.
@@ -114,16 +65,10 @@ listLinePlotsToListPlots[ expression_ ] :=
       ] //. TempHold[ ListPlot ][ data_, TempHold[ opts___ ] ] :>
               ListPlot[ data, opts ];
 
-
-
-(******************************************************************************)
-
-
-
-listPlot2DSortedPoints // ClearAll;
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*listPlot2DSortedPoints*)
 listPlot2DSortedPoints // Attributes = { HoldFirst };
-listPlot2DSortedPoints // Options    = { };
-
 
 listPlot2DSortedPoints[ expression_ ] :=
   expression //.
@@ -135,98 +80,77 @@ listPlot2DSortedPoints[ expression_ ] :=
           ] //. TempHold[ ListPlot ][ TempHold[ s1___ ], TempHold[ s2___ ] ] :>
                   ListPlot[ { s1 }, s2 ];
 
-
-
-(******************************************************************************)
-
-
-
-canonicalSort2DPoints // ClearAll;
-canonicalSort2DPoints // Attributes = { };
-canonicalSort2DPoints // Options    = { };
-
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*canonicalSort2DPoints*)
 canonicalSort2DPoints[ expression_ ] :=
   expression //. Point[ { data__ }, args___ ] /; ! UOrderedQ @ { data } :>
     TrEval @ With[ { sortPts = Sort @ TempHold @ data },
                    Point[ sortPts, args ]
              ] //. TempHold -> List;
 
-
-
-(******************************************************************************)
-
-
-
-unordered2dPolyTempQ // ClearAll;
-unordered2dPolyTempQ // Attributes = { HoldFirst };
-unordered2dPolyTempQ // Options    = { };
-
-unordered2dPolyTempQ[ Polygon[ { { _, _ } .. } ] ] := True;
-unordered2dPolyTempQ[ ___ ] := False;
-
-
-
-rotate2dPolypoints // ClearAll;
-rotate2dPolypoints // Attributes = { HoldFirst };
-rotate2dPolypoints // Options    = { };
-
-rotate2dPolypoints[ Polygon[ { points : { _, _ } .. } ] ] :=
-  Polygon @ RotateLeft[ TempHold @ points,
-                        First @ Ordering @ HoldComplete @ points - 1
-            ];
-
-
-
-canonical2dPoly // ClearAll;
-canonical2dPoly // Attributes = { HoldFirst };
-canonical2dPoly // Options    = { };
-
-canonical2dPoly[ Polygon[ { points : { _, _ } .. } ] ] :=
-
-  Module[ { rotateForward, rotateReverse },
-
-      With[ { forward = { points }, reverse = Reverse @ { points } },
-
-          rotateForward = rotate2dPolypoints @ Polygon @ forward;
-          rotateReverse = rotate2dPolypoints @ Polygon @ reverse;
-
-          First @ MaximalBy[ { rotateForward, rotateReverse }, Hash ]
-      ]
-  ];
-
-
-
-canonical2DPolyOrdering // ClearAll;
-canonical2DPolyOrdering // Attributes = { };
-canonical2DPolyOrdering // Options    = { };
-
-
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*canonical2DPolyOrdering*)
 canonical2DPolyOrdering[ expression_ ] :=
   expression //.
     p_? unordered2dPolyTempQ :>
       TrEval @ canonical2dPoly @ p //.
         TempHold -> List;
 
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*unordered2dPolyTempQ*)
+unordered2dPolyTempQ // Attributes = { HoldFirst };
+unordered2dPolyTempQ[ Polygon[ { { _, _ } .. } ] ] := True;
+unordered2dPolyTempQ[ ___ ] := False;
 
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*canonical2dPoly*)
+canonical2dPoly // Attributes = { HoldFirst };
+canonical2dPoly[ Polygon @ { points: { _, _ }.. } ] :=
+    Module[ { rotateForward, rotateReverse },
+        With[ { forward = { points }, reverse = Reverse @ { points } },
+            rotateForward = rotate2dPolypoints @ Polygon @ forward;
+            rotateReverse = rotate2dPolypoints @ Polygon @ reverse;
+            First @ MaximalBy[ { rotateForward, rotateReverse }, Hash ]
+        ]
+    ];
 
-(******************************************************************************)
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*rotate2dPolypoints*)
+rotate2dPolypoints // Attributes = { HoldFirst };
+rotate2dPolypoints[ Polygon[ { points : { _, _ } .. } ] ] :=
+    Polygon @ RotateLeft[ TempHold @ points,
+                          First @ Ordering @ HoldComplete @ points - 1
+              ];
 
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*$NamedColorRules*)
+$NamedColorRules =
+    Module[ { readableQ, names, getVal, values, colorPatt },
 
+        readableQ = FreeQ[ Attributes @ #, ReadProtected ] &;
+        names     = Select[ Names @ "System`*", readableQ ];
+        getVal    = ToExpression[ #, StandardForm, OwnValues ] &;
+        values    = getVal /@ names;
+        colorPatt = HoldPattern[ Verbatim[ HoldPattern ][ _ ] :> _RGBColor ];
 
-CanonicalTransformFromGraphics // Attributes = { };
-CanonicalTransformFromGraphics // Options    = { };
+        Dispatch @ Cases[ values, colorPatt, Infinity ]
+    ];
 
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*CanonicalTransformFromGraphics*)
 CanonicalTransformFromGraphics[ exp_ ] :=
-  exp // RightComposition @@ $GraphicsTransformations;
+    exp // RightComposition @@ $GraphicsTransformations;
 
-
-
-(******************************************************************************)
-
-
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package footer*)
 End[ ];
-
 EndPackage[ ];
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(* :!CodeAnalysis::EndBlock:: *)

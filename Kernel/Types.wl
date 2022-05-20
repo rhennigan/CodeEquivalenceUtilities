@@ -1,62 +1,59 @@
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
-(*Package Header*)
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(*Package header*)
 
-BeginPackage[ "Wolfram`CodeEquivalenceUtilities`Types`",
-    {
-        "Wolfram`CodeEquivalenceUtilities`Utilities`",
-        "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`",
-        "Wolfram`CodeEquivalenceUtilities`CanonicalForms`Attributes`"
-    }
-];
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
-(* Exported symbols added here with SymbolName::usage *)
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 
-$TransformationData         ::usage = "";
-$TransformationPatterns     ::usage = "";
-Algebraic                   ::usage = "";
-CastAllLiterals             ::usage = "";
-CreateTypeClass             ::usage = "";
-EnumerableQ                 ::usage = "";
-EnumerableTypeQ             ::usage = "";
-IteratorType                ::usage = "";
-IteratorTypePrecedence      ::usage = "";
-KnownTypeQ                  ::usage = "";
-LiteralQ                    ::usage = "";
-MakeTypeTransformation      ::usage = "";
-NewInheritedTypedFunction   ::usage = "";
-NumericUnionType            ::usage = "";
-T                           ::usage = "";
-ToTypedExpression           ::usage = "";
-TransformAndPostProcess     ::usage = "";
-Type                        ::usage = "";
-TypeCast                    ::usage = "";
-TypedExpression             ::usage = "";
-TypedLiteral                ::usage = "";
-TypedQ                      ::usage = "";
-TypedSymbol                 ::usage = "";
-Typeof                      ::usage = "";
-UnionType                   ::usage = "";
-UnknownTypeQ                ::usage = "";
-UnTypedQ                    ::usage = "";
-TypedDefinitionQ            ::usage = "";
-ToTypedBinding              ::usage = "";
-IntTypeQ;
-StringTypeQ;
-ListTypeQ;
-ListType;
+BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 
-
-$classType;
-$R;
-$Z;
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Defined symbols*)
 $Q;
+$R;
 $S;
+$Z;
+Algebraic;
+CastAllLiterals;
+CreateTypeClass;
+EnumerableQ;
+EnumerableTypeQ;
+IntTypeQ;
+IteratorType;
+IteratorTypePrecedence;
+KnownTypeQ;
+ListType;
+ListTypeQ;
+LiteralQ;
+MakeTypeTransformation;
+NewInheritedTypedFunction;
+NumericUnionType;
+StringTypeQ;
+T;
+ToTypedBinding;
+ToTypedExpression;
+TransformAndPostProcess;
+Type;
+TypeCast;
+TypedDefinitionQ;
+TypedExpression;
+TypedLiteral;
+TypedQ;
+TypedSymbol;
+Typeof;
+UnionType;
+UnknownTypeQ;
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Declarations*)
+ListableQ;
 
-
-Begin["`Private`"];
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Private*)
+Begin[ "`Private`" ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -72,7 +69,6 @@ Type[ type_ ][ s_Symbol   ] :=  TypedSymbol[ s, type ];
 
 
 Type[ type_ ][ s_? UAtomQ ] := TypedLiteral[ s, type ];
-
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -106,7 +102,6 @@ CreateTypeClass @ TypedSymbol;
 CreateTypeClass @ TypedLiteral;
 CreateTypeClass @ TypedExpression;
 
-
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*UnionType*)
@@ -134,7 +129,6 @@ Algebraic[ f_, t_ ] /; MemberQ[ Attributes @ f, OneIdentity ] := Type @ t;
 (* ::Section::Closed:: *)
 (*TypedExpression*)
 TypedExpression // Attributes = { HoldAllComplete };
-
 TypedExpression[ te_TypedExpression ] := te;
 
 (* ::**********************************************************************:: *)
@@ -185,8 +179,8 @@ TypedSymbol /:
 IntTypeQ // Attributes = { HoldAllComplete };
 
 
-Wolfram`CodeEquivalenceUtilities`CanonicalForms`Common`RandomValue;
-Wolfram`CodeEquivalenceUtilities`CanonicalForms`Attributes`HoldNumericQ;
+Wolfram`CodeEquivalenceUtilities`RandomValue;
+Wolfram`CodeEquivalenceUtilities`HoldNumericQ;
 
 
 IntTypeQ[ _Integer ] := True;
@@ -201,7 +195,6 @@ IntTypeQ[ Floor[ _? HoldNumericQ ] ] := True;
 IntTypeQ[ Ceiling[ _? HoldNumericQ ] ] := True;
 IntTypeQ[ Round[ _? HoldNumericQ ] ] := True;
 
-(* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 
 (* Misc *)
@@ -905,14 +898,9 @@ ToTypedBinding[bind_[patt_, defn_]] :=
     RuleDelayed::rhs
 ];
 
-
-(* :!CodeAnalysis::EndBlock:: *)
-
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
-(*End Package*)
-End[]; (* `Private` *)
-
-EndPackage[];
-
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(*Package footer*)
+End[ ];
+EndPackage[ ];
+(* :!CodeAnalysis::EndBlock:: *)

@@ -1,148 +1,142 @@
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
-
-BeginPackage[ "Wolfram`CodeEquivalenceUtilities`Utilities`" ];
-
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
-
-
-(* Exported symbols added here with SymbolName::usage *)
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package header*)
 
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 
-StringArg;
-StringsQ;
-DefinitionRules;
-ExtractSymbols                  ::usage = "";
-HoldApply                       ::usage = "";
-Inline                          ::usage = "";
-PartialEvaluation               ::usage = "";
-ReplaceMasked                   ::usage = "";
-ReplaceMaskedRepeated           ::usage = "";
-SafeTranspose                   ::usage = "";
-SeqHead                         ::usage = "";
-TempHold                        ::usage = "";
-TrEval                          ::usage = "";
-UAtomQ                          ::usage = "";
-UFlatQ                          ::usage = "";
-UStringQ;
-UIntegerQ;
-UNumericQ                       ::usage = "";
-UOrderedQ                       ::usage = "";
-HFlatten                        ::usage = "";
-HeldHead;
-DefineError                     ::usage = "";
-StripHead                       ::usage = "";
-StripTempHolds                  ::usage = "";
-$EvaluateTempHoldReplacements   ::usage = "";
-SymbolHead                      ::usage = "";
-CopySymbol                      ::usage = "";
-SymbolQ                         ::usage = "";
-UnlockedSymbolQ;
-SafeContext                     ::usage = "";
-ToFullString                    ::usage = "";
-FullSymbolName                  ::usage = "";
-UpValueSymbols                  ::usage = "";
-SafePatternNameQ                ::usage = "";
-FoldModule                      ::usage = "";
-CompressedExpression;
-CompressExpression;
-WithHolding;
-UnpackDispatches;
-LookupSequence;
-ReplaceStrict;
-AbortOnMessage;
-$FailOnMessageStack;
-FailOnMessage;
-ShowStack;
-StackTraceOnMessage;
-RenameSymbol;
-HomePath;
-RelativePath;
-ToWDX;
-FromWDX;
-AbsoluteTimeString;
-FromAbsoluteTimeString;
-MakeSelfExtractingExpression;
-MakeSelfExtractingAPIFunction;
-MakeSelfExtractingFunction;
-CloudEvaluateBinary;
-DefinedQ;
-LogMessages;
-URLFetchNoCookies;
-WithNoCookies;
-EmptyContext;
-DependentNames;
-DependentSymbols;
-DependencyGraph;
-PreserveDefinitions;
-MinimalFullDefinition;
-FullDefinitionData;
-ToDefinitionList;
-CompressWithDefinitions;
-TrackNewSymbols;
+BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
+
+$CatchFunction;
 $CurrentCloudVersionNumber;
+$EvaluateTempHoldReplacements;
+$FailOnMessageStack;
+AbortOnMessage;
+AbsoluteTimeString;
+AddToPath;
+AssertPattern;
+CatchMine;
+CheckPattern;
+CleanSandbox;
+ClearContext;
+CloudEvaluateBinary;
+CloudFiles;
+CloudFileType;
+CloudHashPut;
+CloudObjectExistsQ;
+CloudObjectQ;
+CompressCloudObject;
+CompressedExpression;
+CompressedStringQ;
+CompressExpression;
+CompressWithContext;
+CompressWithDefinitions;
+ContextDepth;
+CopySymbol;
 CreateCloudPackage;
 CreateCloudPackageString;
-DeployCloudPackage;
-ToSandboxedExpression;
-SandboxedDefinition;
-CleanSandbox;
-ContextDepth;
-Subcontexts;
-ReplaceContext;
-ClearContext;
-WithContext;
-CompressWithContext;
+CreateTaskFile;
+DefinedQ;
+DefineError;
 DefinitionLoader;
-SymbolLoader;
+DefinitionRules;
+DependencyGraph;
+DependentNames;
+DependentSymbols;
+DeployCloudPackage;
+EmptyContext;
+EvaluatedTo;
 EvaluateInContext;
-SearchNames;
-SymbolInformation;
+EvaluateInFreshKernel;
+EvaluationReport;
+EvaluationReportData;
+ExtractSymbols;
+FailOnMessage;
+FindInvalidKeyValuePairs;
+FoldModule;
 FormatCode;
 FormatCodeString;
-MakeInputCell;
+FromAbsoluteTimeString;
+FromWDX;
+FullDefinitionData;
+FullSymbolName;
 GetKeyValuePattern;
-FindInvalidKeyValuePairs;
-AssertPattern;
-CheckPattern;
-VerifyPattern;
-$CatchFunction;
-CatchMine;
-SetContext;
-ShowProgress;
-AddToPath;
-WithSystemOptions;
-StrictLexicalScoping;
-SymbolHash;
-EvaluatedTo;
-EvaluationReportData;
-EvaluationReport;
-OnceUnlessFailed;
+HashPath;
 HashString;
 HashStringQ;
-HashPath;
-CloudHashPut;
-SafeSerialize;
-SafeDeserialize;
+HeldHead;
+HFlatten;
+HoldApply;
+HomePath;
 InertTraceQ;
-CloudObjectQ;
-CloudObjectExistsQ;
-CloudFileType;
-CloudFiles;
-ViewUsagePatterns;
-CompressedStringQ;
-UnsetAllOnce;
-UUIDStringQ;
-CompressCloudObject;
-CreateTaskFile;
-EvaluateInFreshKernel;
+Inline;
+LogMessages;
+LookupSequence;
+MakeInputCell;
+MakeSelfExtractingAPIFunction;
+MakeSelfExtractingExpression;
+MakeSelfExtractingFunction;
+MinimalFullDefinition;
+OnceUnlessFailed;
+PartialEvaluation;
+PreserveDefinitions;
+RelativePath;
+RenameSymbol;
+ReplaceContext;
+ReplaceMasked;
+ReplaceMaskedRepeated;
+ReplaceStrict;
+SafeContext;
+SafeDeserialize;
+SafePatternNameQ;
+SafeSerialize;
+SafeTranspose;
+SandboxedDefinition;
+SearchNames;
+SeqHead;
 SequenceDiff;
-
-
+SetContext;
+ShowProgress;
+ShowStack;
+StackTraceOnMessage;
+StrictLexicalScoping;
+StringArg;
+StringsQ;
+StripHead;
+StripTempHolds;
+Subcontexts;
+SymbolHash;
+SymbolHead;
+SymbolInformation;
+SymbolLoader;
+SymbolQ;
+TempHold;
+ToDefinitionList;
+ToFullString;
+ToSandboxedExpression;
+ToWDX;
+TrackNewSymbols;
+TrEval;
+UAtomQ;
+UFlatQ;
+UIntegerQ;
+UnlockedSymbolQ;
+UnpackDispatches;
+UnsetAllOnce;
+UNumericQ;
+UOrderedQ;
+UpValueSymbols;
+URLFetchNoCookies;
+UStringQ;
+UUIDStringQ;
+VerifyPattern;
+ViewUsagePatterns;
+WithContext;
+WithHolding;
+WithNoCookies;
+WithSystemOptions;
 
 Begin[ "`Private`" ];
-
 
 
 (******************************************************************************)
@@ -1489,11 +1483,7 @@ FailOnMessage // Options    = { StackComplete -> True };
 FailOnMessage::failed = "Failing after encountering: `1`";
 
 
-$FailOnMessageTag    // Attributes = { Protected };
-Wolfram`CodeEquivalenceUtilities`Dump`$failOnMessageStack  // Attributes = { Protected };
-$FailOnMessageStack := Wolfram`CodeEquivalenceUtilities`Dump`$failOnMessageStack;
-$FailOnMessageInput  // Attributes = { Protected };
-$FailOnMessageFailed // Attributes = { Protected };
+$FailOnMessageStack = None;
 
 
 modifyProtected // ClearAll;
@@ -1524,9 +1514,8 @@ MessageThrow[ t_, Hold[ msg_, True ] ] /; ! TrueQ @ $FailOnMessageFailed :=
       ];
 
       stack = Most @ Stack[ _ ][[ stackStart ;; ]];
-
-      modifyProtected[ Wolfram`CodeEquivalenceUtilities`Dump`$failOnMessageStack, Wolfram`CodeEquivalenceUtilities`Dump`$failOnMessageStack = stack ];
-      modifyProtected[ $FailOnMessageInput, Unset @ $FailOnMessageInput ];
+      $FailOnMessageStack = stack;
+      Quiet @ Unset @ $FailOnMessageInput;
 
       Block[ { $FailOnMessageFailed = True },
           Message[ FailOnMessage::failed, HoldForm @ msg ]
@@ -1546,7 +1535,7 @@ FailOnMessage[ evaluation_,
       inputSetQ = MatchQ[ $FailOnMessageInput, _HoldForm ];
 
       If[ ! TrueQ @ inputSetQ,
-          modifyProtected[ $FailOnMessageInput, $FailOnMessageInput = HoldForm @ evaluation ]
+          $FailOnMessageInput = HoldForm @ evaluation
       ];
 
       stackInit @
@@ -5728,10 +5717,9 @@ SequenceDiff[seq1_, seq2_] :=
 (******************************************************************************)
 
 
-End[ ]; (* `Private` *)
-
-(* :!CodeAnalysis::EndBlock:: *)
-
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Package footer*)
+End[ ];
 EndPackage[ ];
-
-Wolfram`CodeEquivalenceUtilities`Debugging`$DebugLoad;
+(* :!CodeAnalysis::EndBlock:: *)
