@@ -30,6 +30,20 @@ jobs:
         paclet_cicd_version: latest
         definition_notebook: ./ResourceDefinition.nb
         resource_system_base: https://www.wolframcloud.com/obj/resourcesystem/api/1.0
+    - name: Build
+      id: build-paclet-step
+      uses: rhennigan/build-paclet@v1.7.1
+      with: 
+        target: Submit
+        paclet_cicd_version: latest
+        definition_notebook: ./ResourceDefinition.nb
+        resource_system_base: https://www.wolframcloud.com/obj/resourcesystem/api/1.0
+    - name: UploadArtifact
+      id: upload-build-artifacts-step
+      uses: actions/upload-artifact@v2
+      with: 
+        path: ${{ env.PACLET_BUILD_DIR }}
+        if-no-files-found: ignore
   Test: 
     name: Test
     runs-on: ubuntu-latest
