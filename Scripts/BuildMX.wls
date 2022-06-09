@@ -29,7 +29,8 @@ DumpSave[
     {
         "Wolfram`CodeEquivalenceUtilities`",
         "Wolfram`CodeEquivalenceUtilities`Private`"
-    }
+    },
+    "SymbolAttributes" -> False
 ];
 
 If[ ! FileExistsQ @ $mxFile,
