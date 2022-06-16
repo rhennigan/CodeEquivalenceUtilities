@@ -4,7 +4,7 @@
 <tr>
 <td>
 
-[CodeEquivalenceUtilities](#ComingSoon) is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.
+[CodeEquivalenceUtilities](#https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities) is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.
 
 This allows comparison of unevaluated expressions that may have non-deterministic outputs (e.g. random values, dates, etc).
 
@@ -21,7 +21,7 @@ This Paclet represents the underlying technology that powers several [automated 
 ## Installing CodeEquivalenceUtilities
 
 
-### From the [Wolfram Paclet Repository](#ComingSoon)
+### From the [Wolfram Paclet Repository](#https://resources.wolframcloud.com/PacletRepository/)
 
 Using Wolfram Language version 13.0 or later:
 
@@ -79,7 +79,7 @@ Equivalence for Wolfram Language code can be defined in many ways. The methods u
 
 ## Examples
 
-### Basic Examples (2)
+### Basic Examples
 
 Check if two expressions are equivalent:
 
@@ -111,7 +111,7 @@ These are directly comparable:
 ```
 <img src="Images/5dfbd7b1ec4305fe.png" width="25" height="17" style="width: 1.5625em; height: 1.0625em; background: white;">
 
-<details><summary><h3>Scope (3)</h3></summary>
+<details><summary><h3>Scope</h3></summary>
 
 Get additional information about the equivalence test:
 
@@ -157,7 +157,7 @@ ReleaseHold[%]
 
 </details>
 
-<details><summary><h3>Neat Examples (6)</h3></summary>
+<details><summary><h3>Neat Examples</h3></summary>
 
 Here is a list of expressions, some of which are equivalent to others:
 
