@@ -4,7 +4,7 @@
 <tr>
 <td>
 
-[CodeEquivalenceUtilities](#https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities) is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.
+[CodeEquivalenceUtilities](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities) is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.
 
 This allows comparison of unevaluated expressions that may have non-deterministic outputs (e.g. random values, dates, etc).
 
@@ -21,7 +21,7 @@ This Paclet represents the underlying technology that powers several [automated 
 ## Installing CodeEquivalenceUtilities
 
 
-### From the [Wolfram Paclet Repository](#https://resources.wolframcloud.com/PacletRepository/)
+### From the [Wolfram Paclet Repository](https://resources.wolframcloud.com/PacletRepository/)
 
 Using Wolfram Language version 13.0 or later:
 
