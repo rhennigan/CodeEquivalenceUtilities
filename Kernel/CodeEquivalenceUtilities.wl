@@ -9,13 +9,13 @@ BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
         "CodeEquivalenceUtilities.mx"
     };
 
-If[ FileExistsQ @ `Internal`$MXFile
-    ,
-    `Internal`$MX = True;
-    Get @ `Internal`$MXFile
-    ,
-    `Internal`$MX = False;
-    Quiet[
+Quiet[
+    If[ FileExistsQ @ `Internal`$MXFile
+        ,
+        `Internal`$MX = True;
+        Get @ `Internal`$MXFile
+        ,
+        `Internal`$MX = False;
         Scan[
             Get @ FileNameJoin @ { `Internal`$KernelRoot, # } &,
             {
@@ -34,9 +34,9 @@ If[ FileExistsQ @ `Internal`$MXFile
                 "Formatting.wl",
                 "Legacy.wl"
             }
-        ],
-        General::shdw
-    ]
+        ]
+    ],
+    General::shdw
 ];
 
 EndPackage[ ];
