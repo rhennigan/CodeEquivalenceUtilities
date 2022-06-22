@@ -4,7 +4,7 @@
 <tr>
 <td>
 
-[CodeEquivalenceUtilities](#ComingSoon) is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.
+[CodeEquivalenceUtilities](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities) is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.
 
 This allows comparison of unevaluated expressions that may have non-deterministic outputs (e.g. random values, dates, etc).
 
@@ -21,7 +21,7 @@ This Paclet represents the underlying technology that powers several [automated 
 ## Installing CodeEquivalenceUtilities
 
 
-### From the [Wolfram Paclet Repository](#ComingSoon)
+### From the [Wolfram Paclet Repository](https://resources.wolframcloud.com/PacletRepository/)
 
 Using Wolfram Language version 13.0 or later:
 
@@ -56,28 +56,30 @@ And all versions can be uninstalled using the command:
 PacletUninstall["Wolfram/CodeEquivalenceUtilities"]
 ```
 
-## Paclet Guide
+<details><summary><h2>Paclet Guide</h2></summary>
 
 Equivalence for Wolfram Language code can be defined in many ways. The methods used by CodeEquivalenceUtilities attempt to determine intensional equivalence by transforming expressions into a canonical representation.
 
 ### Equivalence Testing
 
-[CodeEquivalentQ](#ComingSoon) - test if two unevaluated expressions are equivalent
+[CodeEquivalentQ](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities/ref/CodeEquivalentQ.html) - test if two unevaluated expressions are equivalent
 
-[EquivalenceTestData](#ComingSoon) - get additional information about the equivalence test performed by 
-[CodeEquivalentQ](#ComingSoon)
+[EquivalenceTestData](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities/ref/EquivalenceTestData.html) - get additional information about the equivalence test performed by 
+[CodeEquivalentQ](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities/ref/CodeEquivalentQ.html)
 
 ### Code Transformation
 
-[ToCanonicalForm](#ComingSoon) - convert an expression into a canonical representation for direct comparison
+[ToCanonicalForm](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities/ref/ToCanonicalForm.html) - convert an expression into a canonical representation for direct comparison
 
-[MakeCanonicalForm](#ComingSoon) - convert to canonical form without evaluating the input
+[MakeCanonicalForm](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities/ref/MakeCanonicalForm.html) - convert to canonical form without evaluating the input
 
-[FromCanonicalForm](#ComingSoon) - convert a canonical representation back into a normal evaluatable expression
+[FromCanonicalForm](https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities/ref/FromCanonicalForm.html) - convert a canonical representation back into a normal evaluatable expression
+
+</details>
 
 ## Examples
 
-### Basic Examples (2)
+### Basic Examples
 
 Check if two expressions are equivalent:
 
@@ -109,7 +111,7 @@ These are directly comparable:
 ```
 <img src="Images/5dfbd7b1ec4305fe.png" width="25" height="17" style="width: 1.5625em; height: 1.0625em; background: white;">
 
-### Scope (3)
+<details><summary><h3>Scope</h3></summary>
 
 Get additional information about the equivalence test:
 
@@ -153,7 +155,9 @@ ReleaseHold[%]
 ```
 <img src="Images/152f8d1bb9acf613.png" width="65" height="17" style="width: 4.0625em; height: 1.0625em; background: white;">
 
-### Neat Examples (6)
+</details>
+
+<details><summary><h3>Neat Examples</h3></summary>
 
 Here is a list of expressions, some of which are equivalent to others:
 
@@ -208,6 +212,8 @@ grouped = GroupBy[expressions, ToCanonicalForm]
 TableForm[KeyValueMap[Reverse@*List, grouped]]
 ```
 <img src="Images/751d18c398c2d8f2.png" width="628" height="93" style="width: 39.2500em; height: 5.8125em; background: white;">
+
+</details>
 
 ## License
 
