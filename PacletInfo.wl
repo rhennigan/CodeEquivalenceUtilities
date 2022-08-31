@@ -6,7 +6,7 @@ PacletObject[ <|
     "SourceControlURL" -> "https://github.com/rhennigan/CodeEquivalenceUtilities",
     "License"          -> "MIT",
     "PublisherID"      -> "Wolfram",
-    "Version"          -> "2.0.4",
+    "Version"          -> "2.1.0",
     "WolframVersion"   -> "12.2+",
     "DocumentationURL" -> "https://resources.wolframcloud.com/PacletRepository/resources",
     "Keywords"         -> { "code transformations", "equivalent input" },
@@ -16,6 +16,7 @@ PacletObject[ <|
             "Root"    -> "Kernel",
             "Context" -> { "Wolfram`CodeEquivalenceUtilities`" },
             "Symbols" -> {
+                "Wolfram`CodeEquivalenceUtilities`$AllowedEvaluationPatterns",
                 "Wolfram`CodeEquivalenceUtilities`CodeEquivalentQ",
                 "Wolfram`CodeEquivalenceUtilities`EquivalenceTestData",
                 "Wolfram`CodeEquivalenceUtilities`FromCanonicalForm",

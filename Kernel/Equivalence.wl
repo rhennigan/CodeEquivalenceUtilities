@@ -423,6 +423,7 @@ BuildDispatch[ rules_ ] :=
         oldRules = With[ { n = Normal @ $Dispatch }, If[ ListQ @ n, n, { } ] ];
         appended = Append[ rules, HoldApply[ f_, { v___ } ] :> f @ v ];
         newRules = MakeTransformationRules @@ { appended };
+        $dispatchHash = Hash @ newRules;
 
         Catch[
             Check[ $Dispatch = Dispatch @ newRules,

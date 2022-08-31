@@ -15,7 +15,6 @@ Notebook[
       "Wolfram/CodeEquivalenceUtilities",
       "Title",
       Deletable -> False,
-      TaggingRules -> { },
       CellTags -> {"Name", "TemplateCell", "Title"},
       CellID -> 543342918
      ],
@@ -23,7 +22,6 @@ Notebook[
       "Utilities for testing code equivalence",
       "Text",
       Deletable -> False,
-      TaggingRules -> { },
       CellTags -> {"Description", "TemplateCell"},
       CellID -> 51608202
      ],
@@ -63,7 +61,6 @@ Notebook[
             BoxData[RowBox[{"NotebookDirectory", "[", "]"}]],
             "LocalDirectoryInput",
             Deletable -> False,
-            TaggingRules -> { },
             CellID -> 393144923
            ]
           },
@@ -813,6 +810,61 @@ Notebook[
                         },
                         CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
                         CellID -> 797302730
+                       ],
+                       Cell[
+                        BoxData[
+                         InterpretationBox[
+                          TagBox[
+                           TemplateBox[
+                            {
+                             "\"$AllowedEvaluationPatterns.nb\"",
+                             File[
+                              FileNameJoin[
+                               {
+                                NotebookDirectory[],
+                                "Documentation/English/ReferencePages/Symbols/$AllowedEvaluationPatterns.nb"
+                               }
+                              ]
+                             ]
+                            },
+                            "FileManagerFileOpenerTemplate"
+                           ],
+                           Function[
+                            Annotation[
+                             #1,
+                             DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                              4
+                             ]
+                            ]
+                           ]
+                          ],
+                          File[
+                           FileNameJoin[
+                            {
+                             NotebookDirectory[],
+                             "Documentation/English/ReferencePages/Symbols/$AllowedEvaluationPatterns.nb"
+                            }
+                           ]
+                          ],
+                          BoxID -> "FileTreePath",
+                          BaseStyle -> {"Text"}
+                         ]
+                        ],
+                        "FileManagerFile",
+                        CellMargins -> {{92 + Inherited, Inherited}, {Inherited, Inherited}},
+                        CellGroupingRules -> {"SectionGrouping", 140},
+                        CellFrameLabels -> {
+                         {
+                          Cell[
+                           BoxData[TemplateBox[{}, "FileManagerNBIconTemplate"]],
+                           Background -> None
+                          ],
+                          Inherited
+                         },
+                         {Inherited, Inherited}
+                        },
+                        CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+                        CellID -> 347722072
                        ]
                       },
                       Closed
@@ -3632,6 +3684,96 @@ Notebook[
                  TagBox[
                   TemplateBox[
                    {
+                    "\"Misc.wlt\"",
+                    File[FileNameJoin[{NotebookDirectory[], "Tests/Misc.wlt"}]]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[FileNameJoin[{NotebookDirectory[], "Tests/Misc.wlt"}]],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 95448123
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
+                    "\"QuestionFramework.wlt\"",
+                    File[
+                     FileNameJoin[
+                      {NotebookDirectory[], "Tests/QuestionFramework.wlt"}
+                     ]
+                    ]
+                   },
+                   "FileManagerFileOpenerTemplate"
+                  ],
+                  Function[
+                   Annotation[
+                    #1,
+                    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[
+                     1
+                    ]
+                   ]
+                  ]
+                 ],
+                 File[
+                  FileNameJoin[
+                   {NotebookDirectory[], "Tests/QuestionFramework.wlt"}
+                  ]
+                 ],
+                 BoxID -> "FileTreePath",
+                 BaseStyle -> {"Text"}
+                ]
+               ],
+               "FileManagerFile",
+               CellMargins -> {{23 + Inherited, Inherited}, {Inherited, Inherited}},
+               CellGroupingRules -> {"SectionGrouping", 110},
+               CellFrameLabels -> {
+                {
+                 Cell[
+                  BoxData[TemplateBox[{}, "FileManagerWLIconTemplate"]],
+                  Background -> None
+                 ],
+                 Inherited
+                },
+                {Inherited, Inherited}
+               },
+               CellTags -> {"FileManagerCell", "FileManager-PacletFiles"},
+               CellID -> 678352165
+              ],
+              Cell[
+               BoxData[
+                InterpretationBox[
+                 TagBox[
+                  TemplateBox[
+                   {
                     "\"Rules.wlt\"",
                     File[
                      FileNameJoin[{NotebookDirectory[], "Tests/Rules.wlt"}]
@@ -4401,7 +4543,6 @@ Notebook[
                 }
                ],
                "Input",
-               TaggingRules -> { },
                CellLabel -> "In[14]:=",
                CellID -> 453443237
               ],
@@ -4432,7 +4573,6 @@ Notebook[
                 ]
                ],
                "Output",
-               TaggingRules -> { },
                CellLabel -> "Out[16]=",
                CellID -> 313257539
               ]
@@ -4509,13 +4649,11 @@ Notebook[
            Cell[
             "CodeEquivalenceUtilities is a collection of Wolfram Language functions that can be used to test if different pieces of code are equivalent without the need for evaluation.",
             "Text",
-            TaggingRules -> { },
             CellID -> 100012179
            ],
            Cell[
             "This allows comparison of unevaluated expressions that may have non-deterministic outputs (e.g. random values, dates, etc).",
             "Text",
-            TaggingRules -> { },
             CellID -> 166934268
            ],
            Cell[
@@ -4556,7 +4694,6 @@ Notebook[
              }
             ],
             "Text",
-            TaggingRules -> { },
             CellID -> 655013924
            ]
           },
@@ -4624,7 +4761,6 @@ Notebook[
            Cell[
             "TODO",
             "AuthorComment",
-            TaggingRules -> { },
             CellFrameLabels -> {
              {
               None,
@@ -4720,7 +4856,6 @@ Notebook[
              "\"Documentation/English/Guides/CodeEquivalenceUtilities.nb\""
             ],
             "LocalFileInput",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -4904,7 +5039,6 @@ Notebook[
             "Excluded",
             Editable -> False,
             Deletable -> True,
-            TaggingRules -> { },
             CellTags -> {
              "DefaultContent",
              "ExampleInitialization",
@@ -4916,105 +5050,65 @@ Notebook[
            ],
            Cell[
             BoxData[
-             RowBox[
-              {
-               RowBox[
-                {
-                 "Get",
-                 "[",
-                 RowBox[
-                  {
-                   "FileNameJoin",
-                   "[",
-                   RowBox[
-                    {
-                     "{",
-                     RowBox[
-                      {
-                       RowBox[
-                        {
-                         "First",
-                         "[",
-                         InterpretationBox[
-                          DynamicModuleBox[
-                           {Typeset`open = False},
-                           TemplateBox[
-                            {
-                             "Expression",
-                             StyleBox[
-                              "\"Paclet Directory\"",
-                              "IconizedCustomName",
-                              StripOnInput -> False
-                             ],
-                             GridBox[
-                              {
-                               {
-                                RowBox[
-                                 {
-                                  TagBox["\"Head: \"", "IconizedLabel"],
-                                  "\[InvisibleSpace]",
-                                  TagBox["Symbol", "IconizedItem"]
-                                 }
-                                ]
-                               },
-                               {
-                                RowBox[
-                                 {
-                                  TagBox["\"Byte count: \"", "IconizedLabel"],
-                                  "\[InvisibleSpace]",
-                                  TagBox["0", "IconizedItem"]
-                                 }
-                                ]
-                               }
-                              },
-                              GridBoxAlignment -> {"Columns" -> {{Left}}},
-                              DefaultBaseStyle -> "Column",
-                              GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}
-                             ],
-                             Dynamic[Typeset`open]
-                            },
-                            "IconizedObject"
-                           ]
-                          ],
-                          PacletResource`DefinitionNotebook`$PacletDirectory,
-                          SelectWithContents -> True,
-                          Selectable -> False
-                         ],
-                         "]"
-                        }
-                       ],
-                       ",",
-                       "\"Scripts\"",
-                       ",",
-                       "\"BuildMX.wls\""
-                      }
-                     ],
-                     "}"
-                    }
-                   ],
-                   "]"
-                  }
-                 ],
-                 "]"
-                }
-               ],
-               ";"
-              }
-             ]
+             {
+              RowBox[
+               {
+                RowBox[
+                 {
+                  "PacletDirectoryLoad",
+                  "[",
+                  RowBox[{"NotebookDirectory", "[", "]"}],
+                  "]"
+                 }
+                ],
+                ";"
+               }
+              ],
+              "\n",
+              RowBox[
+               {
+                RowBox[
+                 {
+                  "Get",
+                  "[",
+                  RowBox[
+                   {
+                    "FileNameJoin",
+                    "[",
+                    RowBox[
+                     {
+                      "{",
+                      RowBox[
+                       {
+                        RowBox[{"NotebookDirectory", "[", "]"}],
+                        ",",
+                        "\"Scripts\"",
+                        ",",
+                        "\"BuildMX.wls\""
+                       }
+                      ],
+                      "}"
+                     }
+                    ],
+                    "]"
+                   }
+                  ],
+                  "]"
+                 }
+                ],
+                ";"
+               }
+              ],
+              "\n",
+              RowBox[
+               {RowBox[{"$CachePersistence", "=", "\"Session\""}], ";"}
+              ]
+             }
             ],
             "Input",
             "Excluded",
-            CellID -> 122054456
-           ],
-           Cell[
-            BoxData[
-             RowBox[
-              {RowBox[{"$CachePersistence", "=", "\"Session\""}], ";"}
-             ]
-            ],
-            "Input",
-            "Excluded",
-            CellID -> 11523008
+            CellLabel -> "In[1]:=",
+            CellID -> 503204485
            ]
           },
           Open
@@ -5026,14 +5120,12 @@ Notebook[
            Cell[
             "Basic Examples",
             "Subsection",
-            TaggingRules -> { },
             CellLabel -> "In[4]:=",
             CellID -> 462042388
            ],
            Cell[
             "Check if two expressions are equivalent:",
             "Text",
-            TaggingRules -> { },
             CellID -> 128039117
            ],
            Cell[
@@ -5061,14 +5153,12 @@ Notebook[
                 ]
                ],
                "Input",
-               TaggingRules -> { },
                CellLabel -> "In[1]:=",
                CellID -> 145660176
               ],
               Cell[
                BoxData["True"],
                "Output",
-               TaggingRules -> { },
                CellLabel -> "Out[1]=",
                CellID -> 47767555
               ]
@@ -5087,13 +5177,11 @@ Notebook[
                 ]
                ],
                "ExampleDelimiter",
-               TaggingRules -> { },
                CellID -> 123543145
               ],
               Cell[
                "View the canonical representations of expressions:",
                "Text",
-               TaggingRules -> { },
                CellID -> 61801984
               ],
               Cell[
@@ -5113,7 +5201,6 @@ Notebook[
                    ]
                   ],
                   "Input",
-                  TaggingRules -> { },
                   CellLabel -> "In[1]:=",
                   CellID -> 30954357
                  ],
@@ -5299,7 +5386,6 @@ Notebook[
                    ]
                   ],
                   "Output",
-                  TaggingRules -> { },
                   CellLabel -> "Out[1]=",
                   CellID -> 39964845
                  ]
@@ -5324,7 +5410,6 @@ Notebook[
                    ]
                   ],
                   "Input",
-                  TaggingRules -> { },
                   CellLabel -> "In[2]:=",
                   CellID -> 136440674
                  ],
@@ -5510,7 +5595,6 @@ Notebook[
                    ]
                   ],
                   "Output",
-                  TaggingRules -> { },
                   CellLabel -> "Out[2]=",
                   CellID -> 102837553
                  ]
@@ -5521,7 +5605,6 @@ Notebook[
               Cell[
                "These are directly comparable:",
                "Text",
-               TaggingRules -> { },
                CellID -> 367095856
               ],
               Cell[
@@ -5530,14 +5613,12 @@ Notebook[
                  Cell[
                   BoxData[RowBox[{"%", "===", "%%"}]],
                   "Input",
-                  TaggingRules -> { },
                   CellLabel -> "In[3]:=",
                   CellID -> 53743161
                  ],
                  Cell[
                   BoxData["True"],
                   "Output",
-                  TaggingRules -> { },
                   CellLabel -> "Out[3]=",
                   CellID -> 664959305
                  ]
@@ -5559,14 +5640,12 @@ Notebook[
            Cell[
             "Scope",
             "Subsection",
-            TaggingRules -> { },
             CellLabel -> "In[5]:=",
             CellID -> 365377965
            ],
            Cell[
             "Get additional information about the equivalence test:",
             "Text",
-            TaggingRules -> { },
             CellID -> 574259458
            ],
            Cell[
@@ -5650,7 +5729,6 @@ Notebook[
                 ]
                ],
                "Input",
-               TaggingRules -> { },
                CellLabel -> "In[1]:=",
                CellID -> 19701662
               ],
@@ -6243,7 +6321,6 @@ Notebook[
                 ]
                ],
                "Output",
-               TaggingRules -> { },
                CellLabel -> "Out[1]=",
                CellID -> 137244875
               ]
@@ -6262,13 +6339,11 @@ Notebook[
                 ]
                ],
                "ExampleDelimiter",
-               TaggingRules -> { },
                CellID -> 183270128
               ],
               Cell[
                "View the sequence of transformations used to convert an expression to its canonical form:",
                "Text",
-               TaggingRules -> { },
                CellID -> 304712455
               ],
               Cell[
@@ -6300,7 +6375,6 @@ Notebook[
                    ]
                   ],
                   "Input",
-                  TaggingRules -> { },
                   CellLabel -> "In[1]:=",
                   CellID -> 78977440
                  ],
@@ -7078,7 +7152,6 @@ Notebook[
                    ]
                   ],
                   "Output",
-                  TaggingRules -> { },
                   CellLabel -> "Out[1]=",
                   CellID -> 242653389
                  ]
@@ -7101,13 +7174,11 @@ Notebook[
                 ]
                ],
                "ExampleDelimiter",
-               TaggingRules -> { },
                CellID -> 359786118
               ],
               Cell[
                "Convert a canonical representation to a normal expression:",
                "Text",
-               TaggingRules -> { },
                CellID -> 156285582
               ],
               Cell[
@@ -7127,7 +7198,6 @@ Notebook[
                    ]
                   ],
                   "Input",
-                  TaggingRules -> { },
                   CellLabel -> "In[1]:=",
                   CellID -> 756564778
                  ],
@@ -7313,7 +7383,6 @@ Notebook[
                    ]
                   ],
                   "Output",
-                  TaggingRules -> { },
                   CellLabel -> "Out[1]=",
                   CellID -> 187936985
                  ]
@@ -7327,7 +7396,6 @@ Notebook[
                  Cell[
                   BoxData[RowBox[{"FromCanonicalForm", "[", "%", "]"}]],
                   "Input",
-                  TaggingRules -> { },
                   CellLabel -> "In[2]:=",
                   CellID -> 328679117
                  ],
@@ -7368,7 +7436,6 @@ Notebook[
                    ]
                   ],
                   "Output",
-                  TaggingRules -> { },
                   CellLabel -> "Out[2]=",
                   CellID -> 227470473
                  ]
@@ -7376,19 +7443,13 @@ Notebook[
                 Open
                ]
               ],
-              Cell[
-               "Evaluate:",
-               "Text",
-               TaggingRules -> { },
-               CellID -> 479534276
-              ],
+              Cell["Evaluate:", "Text", CellID -> 479534276],
               Cell[
                CellGroupData[
                 {
                  Cell[
                   BoxData[RowBox[{"ReleaseHold", "[", "%", "]"}]],
                   "Input",
-                  TaggingRules -> { },
                   CellLabel -> "In[3]:=",
                   CellID -> 70732566
                  ],
@@ -7403,7 +7464,6 @@ Notebook[
                    ]
                   ],
                   "Output",
-                  TaggingRules -> { },
                   CellLabel -> "Out[3]=",
                   CellID -> 66350377
                  ]
@@ -7425,14 +7485,12 @@ Notebook[
            Cell[
             "Neat Examples",
             "Subsection",
-            TaggingRules -> { },
             CellLabel -> "In[3]:=",
             CellID -> 170216056
            ],
            Cell[
             "Here is a list of expressions, some of which are equivalent to others:",
             "Text",
-            TaggingRules -> { },
             CellID -> 142845178
            ],
            Cell[
@@ -7614,14 +7672,12 @@ Notebook[
              ]
             ],
             "Input",
-            TaggingRules -> { },
             CellLabel -> "In[1]:=",
             CellID -> 8689250
            ],
            Cell[
             "Find the sequence of transformations for each expression:",
             "Text",
-            TaggingRules -> { },
             CellID -> 6364326
            ],
            Cell[
@@ -7669,7 +7725,6 @@ Notebook[
                 ]
                ],
                "Input",
-               TaggingRules -> { },
                CellLabel -> "In[2]:=",
                CellID -> 10456278
               ],
@@ -8070,7 +8125,6 @@ Notebook[
                 ]
                ],
                "Output",
-               TaggingRules -> { },
                CellLabel -> "Out[2]//Short=",
                CellID -> 134563795
               ]
@@ -8081,7 +8135,6 @@ Notebook[
            Cell[
             "Generate a graph for each sequence:",
             "Text",
-            TaggingRules -> { },
             CellID -> 380755029
            ],
            Cell[
@@ -8124,7 +8177,6 @@ Notebook[
                 ]
                ],
                "Input",
-               TaggingRules -> { },
                CellLabel -> "In[3]:=",
                CellID -> 7543077
               ],
@@ -9562,7 +9614,6 @@ Notebook[
                 ]
                ],
                "Output",
-               TaggingRules -> { },
                CellLabel -> "Out[3]=",
                CellID -> 174708868
               ]
@@ -9570,12 +9621,7 @@ Notebook[
              Open
             ]
            ],
-           Cell[
-            "Combine the graphs:",
-            "Text",
-            TaggingRules -> { },
-            CellID -> 629391993
-           ],
+           Cell["Combine the graphs:", "Text", CellID -> 629391993],
            Cell[
             BoxData[
              RowBox[
@@ -9657,14 +9703,12 @@ Notebook[
              ]
             ],
             "Input",
-            TaggingRules -> { },
             CellLabel -> "In[4]:=",
             CellID -> 81711613
            ],
            Cell[
             "Equivalent expressions converge to the same connected component:",
             "Text",
-            TaggingRules -> { },
             CellID -> 127544466
            ],
            Cell[
@@ -9682,7 +9726,6 @@ Notebook[
                 ]
                ],
                "Input",
-               TaggingRules -> { },
                CellLabel -> "In[5]:=",
                CellID -> 347655374
               ],
@@ -16330,7 +16373,6 @@ Notebook[
                 ]
                ],
                "Output",
-               TaggingRules -> { },
                CellLabel -> "Out[5]=",
                CellID -> 74972427
               ]
@@ -16341,7 +16383,6 @@ Notebook[
            Cell[
             "Group the expressions into their corresponding equivalence class:",
             "Text",
-            TaggingRules -> { },
             CellID -> 323935280
            ],
            Cell[
@@ -16365,7 +16406,6 @@ Notebook[
                 ]
                ],
                "Input",
-               TaggingRules -> { },
                CellLabel -> "In[6]:=",
                CellID -> 615243750
               ],
@@ -17290,7 +17330,6 @@ Notebook[
                 ]
                ],
                "Output",
-               TaggingRules -> { },
                CellLabel -> "Out[6]=",
                CellID -> 91602001
               ]
@@ -17320,7 +17359,6 @@ Notebook[
                 ]
                ],
                "Input",
-               TaggingRules -> { },
                CellLabel -> "In[7]:=",
                CellID -> 249180527
               ],
@@ -18365,7 +18403,6 @@ Notebook[
                 ]
                ],
                "Output",
-               TaggingRules -> { },
                CellLabel -> "Out[7]//TableForm=",
                CellID -> 19776170
               ]
@@ -18459,7 +18496,6 @@ Notebook[
            Cell[
             "Richard Hennigan <richardh@wolfram.com>",
             "Text",
-            TaggingRules -> { },
             CellID -> 459376093
            ]
           },
@@ -18531,7 +18567,6 @@ Notebook[
            Cell[
             "https://github.com/rhennigan/CodeEquivalenceUtilities",
             "Text",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -18954,7 +18989,6 @@ Notebook[
            Cell[
             "code equivalence",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -18985,7 +19019,6 @@ Notebook[
            Cell[
             "code transformations",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19015,7 +19048,6 @@ Notebook[
            Cell[
             "equivalent input",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19045,7 +19077,6 @@ Notebook[
            Cell[
             "same code",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19075,7 +19106,6 @@ Notebook[
            Cell[
             "canonical",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19105,7 +19135,6 @@ Notebook[
            Cell[
             "transform code",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19132,24 +19161,9 @@ Notebook[
             },
             CellID -> 291183993
            ],
-           Cell[
-            "exercises",
-            "Item",
-            TaggingRules -> { },
-            CellID -> 36335462
-           ],
-           Cell[
-            "code quiz",
-            "Item",
-            TaggingRules -> { },
-            CellID -> 193079286
-           ],
-           Cell[
-            "grading",
-            "Item",
-            TaggingRules -> { },
-            CellID -> 154307701
-           ]
+           Cell["exercises", "Item", CellID -> 36335462],
+           Cell["code quiz", "Item", CellID -> 193079286],
+           Cell["grading", "Item", CellID -> 154307701]
           },
           Open
          ]
@@ -19564,7 +19578,7 @@ Notebook[
              "CheckboxData" -> "OEM6eJxVUMtKxEAQBHE1EfHuRXLylo8IcYWFxV22/YHJbBuHnUfox2H+3g6o6KkLqqhHD00PG5AaEW4OKotKD7fjJ/oLnj+u+HofWOAJappKDL577t40IRkaSzKxk1AyPI6FsNu7PKub0UQgpF6U0Mx3gom5HVRKMrnvoTlSWZCkwt3oBOdCAdliD8vqxj+x6z1pRG625yBuMrR5dZHxl2hfMOJfZu1eoqb8P/BhlwVpIfzu2w65gk6MNvb+hFyUPL7XxX5wdN4svwDUCmDE"
             },
             CellTags -> {"Categories", "Categories-Checkboxes", "CheckboxCell"},
-            CellID -> 30351138
+            CellID -> 100005783
            ]
           },
           Open
@@ -19628,28 +19642,12 @@ Notebook[
             CellTags -> {"Related Resource Objects", "TemplateCellGroup"},
             CellID -> 280622473
            ],
-           Cell[
-            "SameExpressionShapeQ",
-            "Item",
-            TaggingRules -> { },
-            CellID -> 295743140
-           ],
-           Cell[
-            "SameInstanceQ",
-            "Item",
-            TaggingRules -> { },
-            CellID -> 442236952
-           ],
-           Cell[
-            "SameAsQ",
-            "Item",
-            TaggingRules -> { },
-            CellID -> 228777832
-           ],
+           Cell["SameExpressionShapeQ", "Item", CellID -> 295743140],
+           Cell["SameInstanceQ", "Item", CellID -> 442236952],
+           Cell["SameAsQ", "Item", CellID -> 228777832],
            Cell[
             "CheckMatch",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19680,7 +19678,6 @@ Notebook[
            Cell[
             "DefinitionData",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19710,7 +19707,6 @@ Notebook[
            Cell[
             "EvaluationTiming",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19740,7 +19736,6 @@ Notebook[
            Cell[
             "ExpressionLineDiff",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19770,7 +19765,6 @@ Notebook[
            Cell[
             "ReplaceContext",
             "Item",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19862,7 +19856,6 @@ Notebook[
            Cell[
             "Source, reference or citation information",
             "Text",
-            TaggingRules -> { },
             CellEventActions -> {
              Inherited,
              {"KeyDown", "\t"} :>
@@ -19967,7 +19960,6 @@ Notebook[
              ]
             ],
             "Item",
-            TaggingRules -> { },
             CellID -> 813678111
            ],
            Cell[
@@ -19985,7 +19977,6 @@ Notebook[
              ]
             ],
             "Item",
-            TaggingRules -> { },
             CellID -> 227467228
            ],
            Cell[
@@ -19998,7 +19989,6 @@ Notebook[
              ]
             ],
             "Item",
-            TaggingRules -> { },
             CellID -> 511426257
            ],
            Cell[
@@ -20016,7 +20006,6 @@ Notebook[
              ]
             ],
             "Item",
-            TaggingRules -> { },
             CellID -> 446113075
            ]
           },
@@ -20313,7 +20302,7 @@ Notebook[
                 "CompatibilityOperatingSystem",
                 "CompatibilityOperatingSystem-Checkboxes"
                },
-               CellID -> 753939730
+               CellID -> 33310804
               ]
              },
              Closed
@@ -20497,7 +20486,7 @@ Notebook[
                 "CompatibilityFeatures",
                 "CompatibilityFeatures-Checkboxes"
                },
-               CellID -> 127760316
+               CellID -> 20527146
               ]
              },
              Closed
@@ -20785,7 +20774,7 @@ Notebook[
                 "CompatibilityEvaluationEnvironment",
                 "CompatibilityEvaluationEnvironment-Checkboxes"
                },
-               CellID -> 848733830
+               CellID -> 638411075
               ]
              },
              Closed
@@ -20907,7 +20896,7 @@ Notebook[
                 "CompatibilityCloudSupport",
                 "CompatibilityCloudSupport-Checkboxes"
                },
-               CellID -> 1215791
+               CellID -> 4530747
               ]
              },
              Closed
@@ -21074,10 +21063,10 @@ Notebook[
             Deletable -> False,
             CellMargins -> {{Inherited, Inherited}, {5, Inherited}},
             TaggingRules -> {
-             "CheckboxData" -> "OEM6eJx9VE1uUzEQpm3SJk1VNrBhZSGWhAOwqZrXFiKlahXnAu7zOLHq53nyT9vHlkNwGY4Al0AsEWdg7CQvKSp4Y3v8efzNzDc+7Q15l4fGAN+/iqGOYcgPigWUtyDVM9+ZaE+W7jhA5dXOcq92fWcaDdB+b4r3aZvNO743FfcjfABPtsEMqtqIAGRQnSWEvzzTvjToowM/wVKYC20I3fWdAowhDweEPhNBqH3fu3Ciyrd3l8f8826xQPTAwkJ7hnXQaJlWrMHoWC1KA4FJ7aAMpmESwTNhG4aK8MAUGoP32s6ZjC5NBoVMMzpm0VXCsOjFHN4f/vjylRUOiLp/yySQV/JEqAqlVprWJjFnKlHP4HFVowueSSLOlMPqESKFSGTBicTXMwcpK5IFXL+7oq6tD8KYDCPmsmUoHDB4KKGma+/40SU6GFuFM3hoa+EPR6K8nTuMVlIa+x+caCZwB8apPH6ftMijnNdL4eb0YPFi4yHbsxYee/j+LY1fGw/H0/QMMZsSv+iLbnvSH1eUQq4/wZYq9jklA+TKz88T3z+NASuKs/xHMP2zlHVxQ8vOzEVoD3pJBzMxb7XI33AqNyVs7edpga3vD9L9Vegtw9VcjIpRu35ePKcnjj6ikQWSjkkD1A7H53fCxFygLMhXhdHlLUkriYOKpImAq/I5fz22RltY87qqwYIbxRDQrjuDDyYbnfDDDd8h7127JJnQ8MFWRNSbV1n1Xu097sX/RkZlsQtwmuSztWxj7f5lXGb6XOplBboXwnh4qjbLk/RhoImV9VuFHfLjsQ3gakfYnI/+qW14vPFA/8nRFDz1bAmzpqaP5zrr/w9MMKBv"
+             "CheckboxData" -> "OEM6eJx9VMFuEzEQpW3SJk1VLnDhZCGOlA/gUjXbFiKlahXnB9zdcWLV61l57LbLlY/gZ/gE+AnEEfENjDfJJkEFX2zPjGfezLzxWe9EdmWoLcj96xiqGE7kQTaH/A4KvUOdsaEgD8eYK3tpLBBbjwKUtNLpXepMogW+703wIV0b8Q71JuphiI9ALBtMoaysCsAC3Vl6fXluKLdI0QOtA+gudTKwlj0csPW5CkrvU+/Sq7J5vbtQy8+72RyRQIS5IYFVMOiE0aLG6EWlcgtBFMZDHmwtCgQSytUCNduD0GgtPhg3E0X0abOoirSjFw59qayIpGbw/vDHl68i88DQ6a0ogL2yJ7YqsTDa8Nkm5EIn6I3xqKzQBxIFAxfaY7llkVJksOBVwkvCQ6pKIQKu4i6hG0dBWduYMfKiRag8CHjMoeJn7+TRFXoYOY1TeGx7QYdDld/NPEaXetj/4FU9hnuwXjfr92lredTU9Ur5GQfMXqw9NPKGF9sevn9L69faw/EkhWFkE8YXKeu2mv6o5BJK8wk2WLEvuRhQLP38PKX+WQxYcp75P5Lpn6eqq1s+dqY+QqvoJR5M1azlonwjud1csJWfpwm2ej9I75eptwiXezbMhu35efacQxx9RFtkyDxmDuhndHxxr2xsGtQQ8lVmTX7H1Erk4CYZBuDLRi9fj5w1Dla4ritw4IcxBHSryZCD8Zon2xPXu/GJMqGWg42MeE6vG9aT3tuexf9mxm1xc/CG6bNxbHPt/iVcVPqiMIsOdC+VJXiqNwtN+jzQxtLRRmNP5PHIBfCVZ9umHv0zV8t4S8C/zdEEiGc2h2ld8Sd00/D/D5PLpKs="
             },
             CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
-            CellID -> 135646555
+            CellID -> 337154295
            ],
            Cell[
             BoxData[
@@ -21160,7 +21149,7 @@ Notebook[
              "CheckboxData" -> "OEM6eJx9VMFuEzEQpW3SJm2UXrjAyeLEgfwAlyrZtBCpVas4iLPrnU1MnPXisZsuJ/4CceJH+AT4iYoj4hsYe5NtUlH2kNjjmTfzPG/cb/V4k7tSA9+/9K7wrscPkhnIOaTZE2ycKyRLc+RggdlOtc92sTH2Gmi/NzbLsI3mHWyNxXJgbgHJdjSBRaGFAzJkjcqFPxsqlNqgt4Dvjc6sWPSlND53WRMbCWhNKAcUMRROZPvYOiOPiLBbHfNve8nMGATmZgqZKZwyOVMZK423rBBSg2OpsiCdLllqAJnIS2Yy8geWGa3NUuXT14d3X76zMXz05IqvmMfwayyjQGPTKkjlmbELETNYCFRS5kzwtXefvyJbEWCjYUQb5Q6skA7ZUrlZzFe7Jtr4lImKasizjl2ZIkBigXJQHSkQC6qc/BYmVZmi9RacjHDm+gPRxM3YEAK3IH1YV14pFNqUVDrKGaTUNiIhcF6FvcPaT1pIlaPslORGSVgbNqtdmWLohZhDfQd9XcwEk0Jr5J0LY2FEdzeB21oreDgQcj61RDalFrffWFGeww1om8Xvz0nt2Yk9vxB2qnJMnt4jRHvU6jbCzx/h+32P0B2HNNTmsUiVx6RZn7RHCzEFrj7Bhmr3ORUO6Qrn1wm2+96Z0Hj5CJn2MHRIXNOyMbEe6oNW0OhETOtZ4S859YgUtMZ5fADWGEcBY0W/rnL1nwySQb0+To4pTeet0WliaNZIMzSy3dMboX1UbRyY54lWck7SD2KysKlq/mKUa5XDurbLAnKwA++cydfTy48fSJV3t+vu8daVNQVYV/KjDXb0jlzG6cRsb/vd+C9DalE+A6to2DaWNefmA2N166ekytiN5pnQCP/qU3USHjej/SLHjSb3eDfObmHJN95Lu5+X3F8jELvOGJDeFgmTsqBH8io+MX8B9FTnHQ=="
             },
             CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
-            CellID -> 640640588
+            CellID -> 175822174
            ],
            Cell[
             BoxData[
@@ -21243,7 +21232,7 @@ Notebook[
              "CheckboxData" -> "OEM6eJx9VF1uEzEQpm2SJm3UFokneLF4AtRcgJcq2aYQqVWqOBdwd2cTK1578dhJl4twF8QR4BKIR8QZmPUm2zSC+mHXnhl/8/eN++0eb3JXKOCtsXe5dz1+GM0hXkCSPsPGtUSSNEcOMkz3qnO6j42JV0Dng4lZlccg3sP2RKwG5h6QZMdTyHIlHJAgbVQm/NWlxFgZ9BZweO/AaqE42KWM6U4TGxEoRTiHdOdSOJG2sH1lRRYw9is1/7oXzY1BYG4ukZncSaOZTFlhvGW5iBU4lkgLsVMFSwwgE7pgJiV7YKlRyqyknr0/+vnlG7sRC9Jb+OQBHTJnGKyjYrgOi72ZO5efs7T8IM7PGbj4bbgdWaD8KAbLPNJ/fYXFRmtyT3EFMw46YZAJqZB3b4yFkU7NlBxtColHAxEvZtZ4nVD2nQ9WFNewBGXTsP5c1JbdUI4bYWdSY/TiASHIQyMfI/z4Xq7fDwgnk9INVWAiEukxataazigTM+DyM2y1tMVjoSBZ4/y6wE7fO5MJJ+P/JNO5BGqBuKNtY2o91Ip22b6pmNVE4u94VaYNzlPs2KAclyjrAtRxrv/RIBrU+9PolBx1PxqVRIaoCA6I0SfDpVBelF4Dm15GSsYL4oVlGUXBJIVhs6Dnr0daSQ2b6MY5aLAD75zRG3Lz58NdwvCz3dh7vH1rTQ7WFfx4K0catXGgL6YHj0frySypUXoOVjpItrZ13s0dYVX7YSKrnjSvhEL4V7cqTTn/RvlM41are/xkpCmp3JJtqE2nrwvu7xDoeehOAGn4YpgWOb0jt2EG/wK9kpCX"
             },
             CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
-            CellID -> 817301037
+            CellID -> 487704099
            ],
            Cell[
             BoxData[
@@ -21326,7 +21315,7 @@ Notebook[
              "CheckboxData" -> "OEM6eJyFVM1uEzEQpm3SJm3VXkBInCzErY24I9Sq2bQQKSFRHKnXOuvZxMRrrzzetsuL8DI8Ahx4BcQR8QzMepM0rQrkEv/MfPt9M/P5rNHide4LDXx7kPss9y2+E80gnoNMnmCtp5BO6l0PKSYb1T7ZxNoo10D7rZG9KbfheAMbI3HTtreAdLY3hjTTwgMdJLUqhLOOwlhbzB3gZY8XSLiRNYma5k54Ras61iLQmsB2KLEjvEi2sXHhRBqANqtr/n0rmlmLwPxMIbNZmctUwgqbO5aJWINnUjmIvS6YtIBMmILZhOKBJVZre6PM9M3uj89fWOSAaCLLwCGRBOOZtrHQDOMZSBIqmRc4xxDct1IliqIvewwDf2YdA3OtnDVpmYvgPWE/CH979Goo/Ozo5JiWncDMuqLcUjqqVGnhQkbXoBdaE2EpVSmLiFSCsAyVkIGRYGICXWd/zNLlp0IUxdMSi3RiCcvmHpWEZQGG+UQrnIG7GgbktkD4QBW+YrE1Hm79vboQnkoz64iAsaaVlckxqRgBUrVjGEw+kpqjkyrZVMl9MafUCyqKPzdyQS4OPcaFTg+uFDcTRmoqPd/vWwddk9gxMVgOGe62RTyfOpsbSUPRfOdE0YNr0C4Jv9+nq8j9MCV94abKYPT0DiGchyG/j/Dta/n7dYdwMCo/Q80bCalyjOqrm2Y3FVPg6hOsjfs2pykBucD5eYrNs9zblETGfxHT7JSNERNa1sYuh9VFo5zqsZiuTMZfcyoqVWuJ81/nLKH2SqhFFVZkF/9RO2qv1ofRIX1t/73VMrLkVZoYsvzB+bXQeYAMTnsRUbfn5BlHTXTAFHFxabjnL7tGKwNLigMaTXDt3Htrlu7nz++MEq/z5c8eldHijaGzZEVf8L01zfQsDYLLMdm6/wz9UzA1ztCcKw9ybbkqQf3BYdWLczJe6FH9QmiEx7pX3ZRvpdV5anCt9S1+EGY7cxQblDbPTMHzCT0MLb6/dM24yOjNrfz3BygABGI="
             },
             CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
-            CellID -> 285713379
+            CellID -> 186537875
            ],
            Cell[
             BoxData[
@@ -21409,7 +21398,7 @@ Notebook[
              "CheckboxData" -> "OEM6eJx9VF1uGjEQLgkQCIj0oU95svpWRVygqhrBJmmRgogwF3B2x2DhtVceO2Rzgt6gl+kR2ktUfax6hs7uwoZEbfyy4/n5PDPfzI46Q97iPtfA27Pgs+CH/ChaQbyGRL7C5rVC0rQmHlKUjeouD7A5Dxrofji3m+JaqhvYmYvN2N4Dkq63gDTTwgMpZLNy4acXCmNtMTjAGY+skWoZnPCKpBY2I9CaYI4o5EJ4IdvYuXIiLSEOKjP/0ohW1iIwv1LIbFbEMiVZboNjmYg1eJYoB7HXOUssIBMmZ1aSPzBptbYbZZbvj39+/camNlFSkcuMMwTvyYCVQay3gYFeouAPZzxHakLkIAHjldBnH3l/ah1MjLQLuK+7gsdjEa+XzgaTUC3dT07k13AH2sny/DmvPftlcVPhlspg9OYRodSXrDxF+PG9OL8fEQbz4hlKey4SFTBq1ZbuJBVL4OoB9vhp81hoSLY4v86xOwreptT/+D/FdC+AGipuSWwuXIDa0CnIWIhlPRX8HaeeExk7nBeo3oH0CpBt/XWa2280jsa1fBKd0Dv9z1YnkaWxAg80nYPLO6FDCVmOxmmkVbwmkh1LKQmmKAuXlnb+dmK0MrBLbpaBATcO3luzG1T+msYg3k+UnzzLfMg7N85m4HzOe3sF0tLMyklEefh0SV6skVgyK3DKQ7In1lW3nimrxl8mqiKkdSU0wr+oqizFJlsdUoN7PA/5YGI8uMyRb1ljd2RyHm5p/oe8PwekPYphkWf0R7gp1+kvhuF6zg=="
             },
             CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
-            CellID -> 276173724
+            CellID -> 38603363
            ],
            Cell[
             BoxData[
@@ -21492,7 +21481,7 @@ Notebook[
              "CheckboxData" -> "OEM6eJyNVE1uEzEUpm3SJm3UbiohWFndlizYIkTVTNMSKaXVOD2AM/MmseKxR3520+EibDkIR4BLIJaIM/DGk78iipjN2O/ne3/f83mry5vclQr47o13hXddvhdNIZlBmj3DxlAiSZoDBzlmW/U928ZG7BXQfSc28+oaxFvYisW8Zx4ASXYwgrxQwgEJskZtwk8uJCbKoLeAQ5MIxUsk6IF2YEXipNGYNbERgVIEt0euF8KJbBdbl1bkAWq7VvPP29HUGATmphKZKSpnJjNWGm9ZIRIFjqXSQuJUyVIDyIQumcnIHlhmlDJzqSdv9r9/+sL6D5B4RyZ8StDMWBbffWCJyXOhUwwmd0hqeKA8tVAM7oXywhmL7F4K9va0v9D0awWcvgtey8KQzaWbrv2VHFthJdTYMYgUq6hzK6ssnGHoLIg8CNHQMFxtORReJ1MyKYQVSoFiMwIEha8Y+vHiXDld3d4h71wbCwOdmREFXk4N93simU2s8TqlHrevrCiHcA/KZuH7dbay7ISmXws7kRqj4zVCkAfWPEb49rX6fq4RDuMqDPU5Fqn0GDVXmvYgFxPg8iNs8GeXEyUgXeD8OMP2uXcmF04mTxTTvgAatBjTsTGyHlaKVkWSkZisWMtfcwgMW+L8BxWXYAcV2KIPq3QX/6gX9Vbno+iI4nXeG5VGhugPDmiLDhesIMxA3ZeRksmMSGhZTskwSdnYPOj5yUArqWGZ5E0BGmzPO2f0cqH4i5Avw5Awea8z5s+fKKXLW7fWFGBdyQ82KqdtvynqYnceb/c/i6bx6SlUbE03jqs2NP8Q1hPpp7KeVPNSKIS/zbDWVE+QUT7XuEGALj8MBRWWbEOr2ue65H6MQC9UJwakxU9gVBb0lN2G/f8NiuPEKA=="
             },
             CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
-            CellID -> 110926144
+            CellID -> 221418665
            ],
            Cell[
             BoxData[
@@ -21575,7 +21564,7 @@ Notebook[
              "CheckboxData" -> "OEM6eJx9U9ty2jAQbRJMoDCkD33qSzV9p7+QAZO0zCRDxuIHFmsNGmTJowvE/cb2L/rY6Td0bcA4velFq72cvZzVpDfmEfelQt5dBF8EP+bX8QbTLYrsles8SEeaaO4xd9nF4Z1duk4SFNL7KjH76lmrL1wvgf3UPKMj3WCJeaHAIymyzsGFv5lJlyrjgkW38Bu0WeQ6MSpFwdfkOAMPWdf17i3kdeDlwczdRAgGQkgvjQbFPD57Bo5pRIGCSc2A5D1LyZmtUJk984YJk4YcNXnqsh0tzlUwvwGyW2TaeKaoSIKDldnhRz58NBbnOjNLynbq2r2eQrpdWxO0oKr7nyyUD7hDZbP6/LxtPId1G49g11K7+O0ZodbXU3+J8O1rdX6cEUZJlUbqdQJCBhdHjaU/z2GNXH7B1vy7PAWF4ojz/db1J8GbHLxM/9FMf4YKPaxI7CxtwMbQq8a+hHXDOn/PMa3md8L5g8pT6KAKPXbdFHe842k8beSb+IbQh5+NErGhZUGPtHOjux2oAFWqmvp3sZLplmXGspxSE9ck5rWdf5hrJTWeSloUqNFOg/dGn9aPR3V1x2vMe0/WFGh9yQetDmjrF0UF6bKrl1v+33aIBk2okpamJTYNRr8pD5O9oz2sJx7dg3L4Ny4OluorGhVy7VpEjvlorj3awpJvPYT+RJc8rBzSTx0m6EywKS7Lgr70E6QE+QuUZGFu"
             },
             CellTags -> {"CheckboxCell", "Disclosures", "Disclosures-Checkboxes"},
-            CellID -> 30971724
+            CellID -> 221241384
            ]
           },
           Open
@@ -21646,7 +21635,6 @@ Notebook[
         Cell[
          "Additional information about limitations, issues, etc.",
          "Text",
-         TaggingRules -> { },
          CellEventActions -> {
           Inherited,
           {"KeyDown", "\t"} :>
@@ -21733,23 +21721,14 @@ Notebook[
   },
   "SubmissionReviewData" -> {"Review" -> False},
   "ToolsOpen" -> True,
-  "UpdatedTimestamp" -> 3.8596*^9,
-  "TemplateVersion" -> "1.5.61",
+  "UpdatedTimestamp" -> 3.871*^9,
+  "TemplateVersion" -> "1.5.62",
   "StatusMessage" -> "",
-  "PacletBuildData" -> {
-   "FileHashes" -> ByteArray["OEM6eJyVln1ME2ccx4WQKYQ5eV8nSgYiDnY9s1HFzQVrWxjaYvHa6tyYXK9Prw9c77q756DKlmUSISZqDIa5BMmMI9niMjOShYZAshf3krkxXDbDEv2DdHFmkcmi/8ywtyuUPvXaHuWvJt/e9/N97vn9fs9zxmqCqjMLjOwHPKIRFHjSwrMclHxkoww9QCJNggdYXpNhJ80BngFOBDmIIJD0vNuYSVCPUIIsMsA6NF132d66PVtRHLTIAmS9+Z0he7B+j5mgypMHNPEeECQPb9UzXikOJWU1CzzAnGPs+1N/rSPXEtRmLY4E2Mhf0uFnNVh9D+rnR4lfjQS1JR2WngW8Bi3PNvPWcPD2DoKqT07bD7xAjOyanWaVraSO+N0Cp9pS1KLaSeH8uVDfx1dzcU6w3/XGJcOs8oxpRTlxZXMACZlpRKuy3GNDn4S6B7biLP9U6aZPzxZUEJRxRVkNouA30bzAQ4bmGgTRr0p6+iWD0Xf+GxknzY38p0PX5twrTbLRHUAryT4+tspRcn8fTjpBzm8P6x4vXWmdHIJWTs3xjuMVZ+BenDPTY5+daXW2E1R18hwK0CLjW+wxw2LnA43+Gr/3Nnnzg4HclfC0JumO0zbYEhzrJKin0uRJUAN30Xr5zN0TmX6CItLBeSHgPJK+i9NABgd/e9D+S14ZQdWmg4SRXxtAtCfS2ppk3fX38t8tKw8QlD4dcuw0eUaDeeDG3yHbqcmMNJldIkRAzwlMhwYTOveVHww7la6qSsEMAI6LHp21yxTcrHPq7l7IbiSommVhsTd2a5V89+udpbfnK1KXPBG4zCGakfl5b9Hkmy0ph9MhI0GEtDKPRo8H8mwz6HKINC95lZFceHK/zCVcR9Oj9qqq8c8Kcc7wxh27QrBrp3L07wUiDzhyW+1uiFLfb/5gPHDkdMNQXcsrT2AgVoqjQBPN+IDHRXMyUPW5daKjMuyoyX8R27FSEbPHHTbK2yIkQreMElhfdJeEn9+Qb8UsrJQlZ5kEv1/gVZzvQX/fhW/PdWAOVqqTcyzBABDhQo24xW1/GPnRz5OGf8k2H0Zi5cnkyEaRDvggoyb9VNztIP+Y2oVJWNmYnJRsQdLYlXAdJcb1AVZSYChGCAAVZk/h5PTcbEkNxmAlRfkoJMoMkkWaU7FyPuyd+yp4ZxNmYaV8iZWqKR9Gnc7oemdY+P0QRmFlXQzFeyGrMro8J9tyDo3UYiNWCqJGM3DLLKsMnMr75WjWRNmt1jrsxUpR1Bu3dpU7HDrW/arLtBO7sbJ+ya1Y5YXRVhaPREG9g0VfPzd1df39FzADK4VRRsPC6YASl3+059ZAVc2fJDZjZW3UDHmI1ENX8HJZ26o1OXFDF1Mei9ocRwIJJbJVCkdNG3IPYh9WlnY6VXn7b/Rer2//QcJerKy2NpkszZQl/vlhVwN7ZeaSK+7QiymP2mmGA6iJ9wqqlFDPj6dW/1O4DbuwkrfostE89CpfkNpXbOaaa8WNE93KJ15x5HNTIiMfnKSl6YDVnHA9W89mVd4b2FJQgu1Lyv/o0Jl6"],
-   "LastBuiltArchive" -> "H:\\Documents\\CodeEquivalenceUtilities\\build\\Wolfram__CodeEquivalenceUtilities-2.0.0.paclet"
-  },
   "AutoUpdate" -> True,
-  "Openers" -> {
-   "NotesSection" -> Closed,
-   "PrimaryExamplesSection" -> Open,
-   "ExampleSection" -> {"0" -> Closed, "2" -> Closed}
-  },
   "NotebookIndexQ" -> True,
   "NotebookLastIndexed" ->
    DateObject[
-    {2022, 4, 21, 14, 55, 54.628},
+    {2022, 8, 31, 19, 25, 57.659},
     "Instant",
     "Gregorian",
     -4.0
@@ -21758,13 +21737,14 @@ Notebook[
  },
  CreateCellID -> True,
  DynamicEvaluationTimeout -> 60,
- FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (May 17, 2022)",
+ FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
  StyleDefinitions ->
   Notebook[
    {
     Cell[StyleData[StyleDefinitions -> "Default.nb"]],
     Cell[
      StyleData[All, "Working"],
+     WindowToolbars -> { },
      DockedCells -> {
       Cell[
        BoxData[TemplateBox[{}, "MainGridTemplate"]],
@@ -21857,7 +21837,7 @@ Notebook[
                  }
                 },
                 CompressedData[
-                 "\n1:eJxTTMoPSmVmYGBgBGJJIGYC4vinF5RuVyo58OlumvteXcIBxj//Pfjx0tky\nDh8v+SYJzFB0kGAJ49MtUnBYIKV/V4UNRis5GHKskYl6IuPwCaxO2eEcWJ+E\nQwLYHBUHfrC5InD+7CMKG4oy+OH81TJRKdb32eD6+w991YjpZ4CbD1L2s+6L\nPcz+R1Ui69wfvrKHuQ/Gh7kfxvdLEoiw3CIM178BbA8f3PwJYJoDbn9JxsS3\nNfZMcPcV2HJdX1zw1x7mfhgf5j8YH+Z/mH5Y+MDMh4UfzH5Y+MLchx7+ANUf\nraY=\n               "
+                 "\n1:eJxTTMoPSmVmYGBgBGJJIGYC4oSnF5RuVyo58OlumvteXcIBxj//Pfjx0tky\nDp8u+SYJzFB0kGQJ49MtUnBYIKV/V4UNRis5GHKskYl6AlOnDNUHM0cFaq4I\nnD/niMKGogx+OB+oO8X6Phtcf/+hrxox/Qxw80HKftZ9sYfZ/7BKZJ37w1f2\nMPfB+DD3w/h+SQIRlluE4foh9vDBzYfQHHD7izMmvq2xZ4K7r9CW6/rigr/2\nMPfD+DD/wfgw/8P0w8IHZj4s/GD2w8IX5j708AcA2Xetpg==\n               "
                 ],
                 CurveClosed -> {1}
                ]
@@ -21906,10 +21886,10 @@ Notebook[
                 },
                 {
                  CompressedData[
-                  "\n1:eJxTTMoPSmViYGCQBGIQLTQ3t12zRcShJLdco9dU3mHepS6LtrvCcP4+Xv/m\nN77CDovcOdKu58g7FPjtSo+5KuTw57fmw+zb8g5K/ao+Z2KEHHRuqOoxqCo4\n1OhH27UoCDnsSqhWX5aN4K+ZPvXO8oMI/txz6yeuFFeE67fRSpTaE6sIN79j\n1cqy+5MV4fZf1fp0iemUItx9v7PEGkWeKjrA3A/jf+Fa9FHHQBTOX+1ud9n/\noChcv3mwk84kczG4+Yfi3FqvrBWD29+RcmLj1xdicPfB+DD3w/gw/8H0w/wP\nMx8WPjD7YeEHcx8sfNHDHwBu/qSR\n                "
+                  "\n1:eJxTTMoPSmViYGCQBGIQ3b48/JRRi4jD3qBpin2m8g5n6j32194VhvNZnvdo\nvPUVdoh2sntxM0feQfiT4/m0q0IOQNnSwtvyDmxCIvbHYoQcMhnyG1lUFRyk\neR/oTlAAym/iKVyTjeAf2aiXt/gggt+odqhtubgiXP+k00CLYxXh5mdrf5t+\nd7Ii3P5LDPeYOE8pwt33vfTBHMGnig4w98P4j5fOPqJgIArn539oPRlyUBSu\n/9OGgOxZ5mJw88sKgS5aKwa3XzOm/9DXF2Jw98H4MPfD+DD/wfTD/A8zHxY+\nMPth4QdzHyx80cMfAIsMpwk=\n                "
                  ],
                  CompressedData[
-                  "\n1:eJxTTMoPSmViYGCQB2IQvf+bus9hGwmHDp1Dj7Lq+R1g/C8aMf2HvvI4TGr/\n8PXaHQEMPkz934jyRxrThRx4jt4OchAXgPMDH16pmH8JwZ97RmCl6XRBOP9D\nW/9jplQhOF+/1m7LFGNhOJ/l29N9k18i+AUfW5kZ2kXg/Ple3+bO/C4K5+fN\nDQ4+fUAMzt9xf9q57xnicH6N4AF++Q8IvqPzywC3cgk4PyFkivMkFkk4/4bL\nwedMMyQdDs1vE5FYJOBwYaHqp4u3EPzQT5dO7vwk5SCxtot3p4WYw73/Kfef\nX5RxYLv4XzxkhpjDona/Xv0OBH+hx9ZwiywJOB/mHxgf5l8Y30/526VcIyR+\n5Tb7vkQhON/3fNmadRME4fxHts2x9mcF4HxYfKDHLwCFIt67\n                "
+                  "\n1:eJxTTMoPSmViYGCQB2IQXTFnkfJOGwmHsNp125Lq+R1g/G8aMf2HvvI4KP39\nVvrgjgAGH6b+c19wicp0IQeBKrPVduICcL6EWjDr4ksCqPLTBeH8211/U7+n\nCMH5S+7v45tjLAznX773gHvySwS/qdhtyrc2ETj/04aA7FnfReH8RxHi2y8e\nEIPzNUHOzRCH8x8vnX1E4QOCP+/98mPe5RJw/o9goAoWSTj/6vMs7W/TJR0O\nX9ZOlVwk4PB2no3OlVsI/jKgcRs+STlonhY4vstCzCFoh1zr64syDkBXssXP\nEHO4WvFSzbADwa9JNAo1yJKA82H+gfFh/oXxA29JA7Ug+GY2e4OmJQrB+f83\nVX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE\n                "
                  ]
                 }
                ]
@@ -21942,7 +21922,7 @@ Notebook[
                  }
                 },
                 CompressedData[
-                 "\n1:eJxTTMoPSmVmYGBgBGJJIGYC4vinF5RuVyo58OlumvteXcIBxj//Pfjx0tky\nDh8v+SYJzFB0kGAJ49MtUnBYIKV/V4UNRis5GHKskYl6IuPwCaxO2eEcWJ+E\nQwLYHBUHfrC5InD+7CMKG4oy+OH81TJRKdb32eD6+w991YjpZ4CbD1L2s+6L\nPcz+R1Ui69wfvrKHuQ/Gh7kfxvdLEoiw3CIM178BbA8f3PwJYJoDbn9JxsS3\nNfZMcPcV2HJdX1zw1x7mfhgf5j8YH+Z/mH5Y+MDMh4UfzH5Y+MLchx7+ANUf\nraY=\n               "
+                 "\n1:eJxTTMoPSmVmYGBgBGJJIGYC4oSnF5RuVyo58OlumvteXcIBxj//Pfjx0tky\nDp8u+SYJzFB0kGQJ49MtUnBYIKV/V4UNRis5GHKskYl6AlOnDNUHM0cFaq4I\nnD/niMKGogx+OB+oO8X6Phtcf/+hrxox/Qxw80HKftZ9sYfZ/7BKZJ37w1f2\nMPfB+DD3w/h+SQIRlluE4foh9vDBzYfQHHD7izMmvq2xZ4K7r9CW6/rigr/2\nMPfD+DD/wfgw/8P0w8IHZj4s/GD2w8IX5j708AcA2Xetpg==\n               "
                 ],
                 CurveClosed -> {1}
                ]
@@ -21970,7 +21950,7 @@ Notebook[
                  }
                 },
                 CompressedData[
-                 "\n1:eJxTTMoPSmVmYGBgBGJJIGYC4vinF5RuVyo58OlumvteXcIBxj//Pfjx0tky\nDh8v+SYJzFB0kGAJ49MtUnBYIKV/V4UNRis5GHKskYl6IuPwCaxO2eEcWJ+E\nQwLYHBUHfrC5InD+7CMKG4oy+OH81TJRKdb32eD6+w991YjpZ4CbD1L2s+6L\nPcz+R1Ui69wfvrKHuQ/Gh7kfxvdLEoiw3CIM178BbA8f3PwJYJoDbn9JxsS3\nNfZMcPcV2HJdX1zw1x7mfhgf5j8YH+Z/mH5Y+MDMh4UfzH5Y+MLchx7+ANUf\nraY=\n               "
+                 "\n1:eJxTTMoPSmVmYGBgBGJJIGYC4oSnF5RuVyo58OlumvteXcIBxj//Pfjx0tky\nDp8u+SYJzFB0kGQJ49MtUnBYIKV/V4UNRis5GHKskYl6AlOnDNUHM0cFaq4I\nnD/niMKGogx+OB+oO8X6Phtcf/+hrxox/Qxw80HKftZ9sYfZ/7BKZJ37w1f2\nMPfB+DD3w/h+SQIRlluE4foh9vDBzYfQHHD7izMmvq2xZ4K7r9CW6/rigr/2\nMPfD+DD/wfgw/8P0w8IHZj4s/GD2w8IX5j708AcA2Xetpg==\n               "
                 ]
                ]
               },
@@ -22014,10 +21994,10 @@ Notebook[
                 },
                 {
                  CompressedData[
-                  "\n1:eJxTTMoPSmViYGCQBGIQLTQ3t12zRcShJLdco9dU3mHepS6LtrvCcP4+Xv/m\nN77CDovcOdKu58g7FPjtSo+5KuTw57fmw+zb8g5K/ao+Z2KEHHRuqOoxqCo4\n1OhH27UoCDnsSqhWX5aN4K+ZPvXO8oMI/txz6yeuFFeE67fRSpTaE6sIN79j\n1cqy+5MV4fZf1fp0iemUItx9v7PEGkWeKjrA3A/jf+Fa9FHHQBTOX+1ud9n/\noChcv3mwk84kczG4+Yfi3FqvrBWD29+RcmLj1xdicPfB+DD3w/gw/8H0w/wP\nMx8WPjD7YeEHcx8sfNHDHwBu/qSR\n                "
+                  "\n1:eJxTTMoPSmViYGCQBGIQ3b48/JRRi4jD3qBpin2m8g5n6j32194VhvNZnvdo\nvPUVdoh2sntxM0feQfiT4/m0q0IOQNnSwtvyDmxCIvbHYoQcMhnyG1lUFRyk\neR/oTlAAym/iKVyTjeAf2aiXt/gggt+odqhtubgiXP+k00CLYxXh5mdrf5t+\nd7Ii3P5LDPeYOE8pwt33vfTBHMGnig4w98P4j5fOPqJgIArn539oPRlyUBSu\n/9OGgOxZ5mJw88sKgS5aKwa3XzOm/9DXF2Jw98H4MPfD+DD/wfTD/A8zHxY+\nMPth4QdzHyx80cMfAIsMpwk=\n                "
                  ],
                  CompressedData[
-                  "\n1:eJxTTMoPSmViYGCQB2IQvf+bus9hGwmHDp1Dj7Lq+R1g/C8aMf2HvvI4TGr/\n8PXaHQEMPkz934jyRxrThRx4jt4OchAXgPMDH16pmH8JwZ97RmCl6XRBOP9D\nW/9jplQhOF+/1m7LFGNhOJ/l29N9k18i+AUfW5kZ2kXg/Ple3+bO/C4K5+fN\nDQ4+fUAMzt9xf9q57xnicH6N4AF++Q8IvqPzywC3cgk4PyFkivMkFkk4/4bL\nwedMMyQdDs1vE5FYJOBwYaHqp4u3EPzQT5dO7vwk5SCxtot3p4WYw73/Kfef\nX5RxYLv4XzxkhpjDona/Xv0OBH+hx9ZwiywJOB/mHxgf5l8Y30/526VcIyR+\n5Tb7vkQhON/3fNmadRME4fxHts2x9mcF4HxYfKDHLwCFIt67\n                "
+                  "\n1:eJxTTMoPSmViYGCQB2IQXTFnkfJOGwmHsNp125Lq+R1g/G8aMf2HvvI4KP39\nVvrgjgAGH6b+c19wicp0IQeBKrPVduICcL6EWjDr4ksCqPLTBeH8211/U7+n\nCMH5S+7v45tjLAznX773gHvySwS/qdhtyrc2ETj/04aA7FnfReH8RxHi2y8e\nEIPzNUHOzRCH8x8vnX1E4QOCP+/98mPe5RJw/o9goAoWSTj/6vMs7W/TJR0O\nX9ZOlVwk4PB2no3OlVsI/jKgcRs+STlonhY4vstCzCFoh1zr64syDkBXssXP\nEHO4WvFSzbADwa9JNAo1yJKA82H+gfFh/oXxA29JA7Ug+GY2e4OmJQrB+f83\nVX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE\n                "
                  ]
                 }
                ]
@@ -22502,7 +22482,7 @@ Notebook[
                            True ->
                             GraphicsBox[
                              {
-                              RGBColor[0.98823, 0.41961, 0.20392],
+                              RGBColor[0.98824, 0.41961, 0.20392],
                               Thickness[NCache[2/45, 0.044444]],
                               FilledCurveBox[
                                {
@@ -22746,7 +22726,7 @@ Notebook[
            StyleBox[
             #2,
             "Text",
-            FontColor -> RGBColor[0.53726, 0.53726, 0.53726],
+            FontColor -> RGBColor[0.53725, 0.53725, 0.53725],
             FontSize -> 12,
             FontWeight -> "Plain",
             FontTracking -> "Plain",
@@ -22767,7 +22747,7 @@ Notebook[
             Style[
              RSNB`$$tooltip,
              "Text",
-             FontColor -> RGBColor[0.53726, 0.53726, 0.53726],
+             FontColor -> RGBColor[0.53725, 0.53725, 0.53725],
              FontSize -> 12,
              FontWeight -> "Plain",
              FontTracking -> "Plain"
@@ -22878,7 +22858,7 @@ Notebook[
                 "Default" ->
                  Image[
                   CompressedData[
-                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu3qz1S7sOQBCQDREEygLV4DEEKAtROalw881zT9DCHygC\nFIcoQDYHzRCIG6aXbfvz+y/WeASKA2Uh7sFqCNC/EDfgMgFuDsQ98PBBNgQS\nkjfPPSWYroBqIOEM0QhJjZDYhIQkQRMgABLOkHhnAAPKDaGKS/5TL0yoFTtU\nSSfUSrFUyTtwQGEuRgYUlickASoagh8QU9oDACL9cXs=\n                  "
+                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKtsSV+1ZfuH66ccf336FICAbKAIUB8oC\n1QBVYjUEaD7EhAXNe96/+oI19IDiQFmIOXD3IBsC8QVQDcGIgJgDVI9mCDDE\nIL7A5QY090D8BQlnuCHAkAcKAn1N0AQIAKoEqgfqQjYEGINAQWDoEWkIUCVQ\nPVAXUC8kNQIZwJQAFATGApGGAFUC1QN1QQwBAsoNoYpL/lMvTKgSO1RJJ1RJ\nsdTKO1TJxdQqT+CAwpKNDEAwIv4TV9oDAHfUai0=\n                  "
                   ],
                   "Byte",
                   ColorSpace -> "RGB",
@@ -22888,7 +22868,7 @@ Notebook[
                 "Hover" ->
                  Image[
                   CompressedData[
-                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu1oSV/TkbIAjIhggCZYFq8BgClIWobE9evaR93+ZZJ5ER\nUAQoDlGAbA6aIRA3dKWs3TTjBJoJEAQUB8pC3IPVEKB/gbIdyWtwmQA3B6gG\nqBIePsiGQEJySft+PCbA/LUfEs4QjZDUCIlNcEiuImgCBAFVAtVD4p0BDCg3\nhCouoWKYUCt2qJJOqJViqZJ34IDCXIwMKCxPSAJUNAQ/IKa0BwBUkgRI\n                  "
+                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKptjVswo3764bd/ayUchCMgGigDFgbJA\nNUCVWA0Bmg8xoTdr3dpJRzfPOomJgOJAWYg5cPcgGwLxBVANVu3ICGIOUD2a\nIcAQg/gClxvQ3APxFySc4YYAQx4oCPQ1QRMgCKgSqB6oC9kQYAwCBYGhR6Qh\nQJUg9R17gXohqRHIAKYEoCAwFog0BKgSqB6oC2IIEFBuCFVcQsUwoUrsUCWd\nUCXFUivvUCUXU6s8gQMKSzYyADHFODGlPQBkA8lD\n                  "
                   ],
                   "Byte",
                   ColorSpace -> "RGB",
@@ -22898,7 +22878,7 @@ Notebook[
                 "Pressed" ->
                  Image[
                   CompressedData[
-                   "\n1:eJy9lM8KgkAQxpe6dOzWuZeQwFPHrkYPoGTSxWANovfrLbyJNy+hhAfB+mpS\nTE2NHfqBMn47fszO/plbB2M3EkJ4E7wM87SU0jyvp/jYuN7ece3tyj3aji0X\n1hji7P0843sfQ3LAVY0/mMRxfCtA/KtJmqZ5ntdmDQX6EJMkSbIsIz2KoksB\nYhIxipwOE4ySEgSBlFL7BAp0Sqj61EyoBt/3dV3X2oCOUaqn1QTzRRyG4TeH\n0gc5yCz7UzWhTjZn0QQ51Gf6kXYjrSZ1steBoD7TuosX6iYslTD2hGt1WPYJ\n145lOTsliqe4iuJ98hOMJt0Mue0feOHclw==\n                  "
+                   "\n1:eJytlM0KgkAUhaU2Ldu17iWibcsgEIweQMmkjYEm0dv4Qr5LIKgIUV/dGiTM\nJpwDyvXOmeO5d36m3sHZDSzLike8HPe0iCL3vB7zsQnjfRD622V49AM/mntD\nkpPX84hvv6DDAZd++CaS53lZlnVdX98gJkNeU6Sqqg7bjHaL8CN+SqYoijRN\nkyRZvUFMhjyjcJqWPkREIcsy27ZnbSDPqOi0ikgVcFqnNyE6qi4lgj2p4puH\nDz9SlxSlROg8AVX/VBDAhM+spggrSED3NEVgwmcWc2U3qpayCpoiMFV7rSf6\nixhxYrAnRlbHyD4xsmNNnR1Tp9jIfdK01PNm+xcdthV0bvs7VDZhuw==\n                  "
                   ],
                   "Byte",
                   ColorSpace -> "RGB",
@@ -23005,7 +22985,7 @@ Notebook[
                 "Default" ->
                  Image[
                   CompressedData[
-                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu3qz1S7sOQBCQDREEygLV4DEEKAtROalw881zT9DCHygC\nFIcoQDYHzRCIG6aXbfvz+y/WeASKA2Uh7sFqCNC/EDfgMgFuDsQ98PBBNgQS\nkjfPPSWYroBqIOEM0QhJjZDYhIQkQRMgABLOkHhnAAPKDaGKS/5TL0yoFTtU\nSSfUSrFUyTtwQGEuRgYUlickASoagh8QU9oDACL9cXs=\n                  "
+                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKtsSV+1ZfuH66ccf336FICAbKAIUB8oC\n1QBVYjUEaD7EhAXNe96/+oI19IDiQFmIOXD3IBsC8QVQDcGIgJgDVI9mCDDE\nIL7A5QY090D8BQlnuCHAkAcKAn1N0AQIAKoEqgfqQjYEGINAQWDoEWkIUCVQ\nPVAXUC8kNQIZwJQAFATGApGGAFUC1QN1QQwBAsoNoYpL/lMvTKgSO1RJJ1RJ\nsdTKO1TJxdQqT+CAwpKNDEAwIv4TV9oDAHfUai0=\n                  "
                   ],
                   "Byte",
                   ColorSpace -> "RGB",
@@ -23015,7 +22995,7 @@ Notebook[
                 "Hover" ->
                  Image[
                   CompressedData[
-                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu1oSV/TkbIAjIhggCZYFq8BgClIWobE9evaR93+ZZJ5ER\nUAQoDlGAbA6aIRA3dKWs3TTjBJoJEAQUB8pC3IPVEKB/gbIdyWtwmQA3B6gG\nqBIePsiGQEJySft+PCbA/LUfEs4QjZDUCIlNcEiuImgCBAFVAtVD4p0BDCg3\nhCouoWKYUCt2qJJOqJViqZJ34IDCXIwMKCxPSAJUNAQ/IKa0BwBUkgRI\n                  "
+                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKptjVswo3764bd/ayUchCMgGigDFgbJA\nNUCVWA0Bmg8xoTdr3dpJRzfPOomJgOJAWYg5cPcgGwLxBVANVu3ICGIOUD2a\nIcAQg/gClxvQ3APxFySc4YYAQx4oCPQ1QRMgCKgSqB6oC9kQYAwCBYGhR6Qh\nQJUg9R17gXohqRHIAKYEoCAwFog0BKgSqB6oC2IIEFBuCFVcQsUwoUrsUCWd\nUCXFUivvUCUXU6s8gQMKSzYyADHFODGlPQBkA8lD\n                  "
                   ],
                   "Byte",
                   ColorSpace -> "RGB",
@@ -23025,7 +23005,7 @@ Notebook[
                 "Pressed" ->
                  Image[
                   CompressedData[
-                   "\n1:eJy9lM8KgkAQxpe6dOzWuZeQwFPHrkYPoGTSxWANovfrLbyJNy+hhAfB+mpS\nTE2NHfqBMn47fszO/plbB2M3EkJ4E7wM87SU0jyvp/jYuN7ece3tyj3aji0X\n1hji7P0843sfQ3LAVY0/mMRxfCtA/KtJmqZ5ntdmDQX6EJMkSbIsIz2KoksB\nYhIxipwOE4ySEgSBlFL7BAp0Sqj61EyoBt/3dV3X2oCOUaqn1QTzRRyG4TeH\n0gc5yCz7UzWhTjZn0QQ51Gf6kXYjrSZ1steBoD7TuosX6iYslTD2hGt1WPYJ\n145lOTsliqe4iuJ98hOMJt0Mue0feOHclw==\n                  "
+                   "\n1:eJytlM0KgkAUhaU2Ldu17iWibcsgEIweQMmkjYEm0dv4Qr5LIKgIUV/dGiTM\nJpwDyvXOmeO5d36m3sHZDSzLike8HPe0iCL3vB7zsQnjfRD622V49AM/mntD\nkpPX84hvv6DDAZd++CaS53lZlnVdX98gJkNeU6Sqqg7bjHaL8CN+SqYoijRN\nkyRZvUFMhjyjcJqWPkREIcsy27ZnbSDPqOi0ikgVcFqnNyE6qi4lgj2p4puH\nDz9SlxSlROg8AVX/VBDAhM+spggrSED3NEVgwmcWc2U3qpayCpoiMFV7rSf6\nixhxYrAnRlbHyD4xsmNNnR1Tp9jIfdK01PNm+xcdthV0bvs7VDZhuw==\n                  "
                   ],
                   "Byte",
                   ColorSpace -> "RGB",
@@ -23135,7 +23115,7 @@ Notebook[
                 "Default" ->
                  Image[
                   CompressedData[
-                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu3qz1S7sOQBCQDREEygLV4DEEKAtROalw881zT9DCHygC\nFIcoQDYHzRCIG6aXbfvz+y/WeASKA2Uh7sFqCNC/EDfgMgFuDsQ98PBBNgQS\nkjfPPSWYroBqIOEM0QhJjZDYhIQkQRMgABLOkHhnAAPKDaGKS/5TL0yoFTtU\nSSfUSrFUyTtwQGEuRgYUlickASoagh8QU9oDACL9cXs=\n                  "
+                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKtsSV+1ZfuH66ccf336FICAbKAIUB8oC\n1QBVYjUEaD7EhAXNe96/+oI19IDiQFmIOXD3IBsC8QVQDcGIgJgDVI9mCDDE\nIL7A5QY090D8BQlnuCHAkAcKAn1N0AQIAKoEqgfqQjYEGINAQWDoEWkIUCVQ\nPVAXUC8kNQIZwJQAFATGApGGAFUC1QN1QQwBAsoNoYpL/lMvTKgSO1RJJ1RJ\nsdTKO1TJxdQqT+CAwpKNDEAwIv4TV9oDAHfUai0=\n                  "
                   ],
                   "Byte",
                   ColorSpace -> "RGB",
@@ -23145,7 +23125,7 @@ Notebook[
                 "Hover" ->
                  Image[
                   CompressedData[
-                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu1oSV/TkbIAjIhggCZYFq8BgClIWobE9evaR93+ZZJ5ER\nUAQoDlGAbA6aIRA3dKWs3TTjBJoJEAQUB8pC3IPVEKB/gbIdyWtwmQA3B6gG\nqBIePsiGQEJySft+PCbA/LUfEs4QjZDUCIlNcEiuImgCBAFVAtVD4p0BDCg3\nhCouoWKYUCt2qJJOqJViqZJ34IDCXIwMKCxPSAJUNAQ/IKa0BwBUkgRI\n                  "
+                   "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKptjVswo3764bd/ayUchCMgGigDFgbJA\nNUCVWA0Bmg8xoTdr3dpJRzfPOomJgOJAWYg5cPcgGwLxBVANVu3ICGIOUD2a\nIcAQg/gClxvQ3APxFySc4YYAQx4oCPQ1QRMgCKgSqB6oC9kQYAwCBYGhR6Qh\nQJUg9R17gXohqRHIAKYEoCAwFog0BKgSqB6oC2IIEFBuCFVcQsUwoUrsUCWd\nUCXFUivvUCUXU6s8gQMKSzYyADHFODGlPQBkA8lD\n                  "
                   ],
                   "Byte",
                   ColorSpace -> "RGB",
@@ -23155,7 +23135,7 @@ Notebook[
                 "Pressed" ->
                  Image[
                   CompressedData[
-                   "\n1:eJy9lM8KgkAQxpe6dOzWuZeQwFPHrkYPoGTSxWANovfrLbyJNy+hhAfB+mpS\nTE2NHfqBMn47fszO/plbB2M3EkJ4E7wM87SU0jyvp/jYuN7ece3tyj3aji0X\n1hji7P0843sfQ3LAVY0/mMRxfCtA/KtJmqZ5ntdmDQX6EJMkSbIsIz2KoksB\nYhIxipwOE4ySEgSBlFL7BAp0Sqj61EyoBt/3dV3X2oCOUaqn1QTzRRyG4TeH\n0gc5yCz7UzWhTjZn0QQ51Gf6kXYjrSZ1steBoD7TuosX6iYslTD2hGt1WPYJ\n145lOTsliqe4iuJ98hOMJt0Mue0feOHclw==\n                  "
+                   "\n1:eJytlM0KgkAUhaU2Ldu17iWibcsgEIweQMmkjYEm0dv4Qr5LIKgIUV/dGiTM\nJpwDyvXOmeO5d36m3sHZDSzLike8HPe0iCL3vB7zsQnjfRD622V49AM/mntD\nkpPX84hvv6DDAZd++CaS53lZlnVdX98gJkNeU6Sqqg7bjHaL8CN+SqYoijRN\nkyRZvUFMhjyjcJqWPkREIcsy27ZnbSDPqOi0ikgVcFqnNyE6qi4lgj2p4puH\nDz9SlxSlROg8AVX/VBDAhM+spggrSED3NEVgwmcWc2U3qpayCpoiMFV7rSf6\nixhxYrAnRlbHyD4xsmNNnR1Tp9jIfdK01PNm+xcdthV0bvs7VDZhuw==\n                  "
                   ],
                   "Byte",
                   ColorSpace -> "RGB",
@@ -23265,7 +23245,7 @@ Notebook[
                  "Default" ->
                   Image[
                    CompressedData[
-                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu3qz1S7sOQBCQDREEygLV4DEEKAtROalw881zT9DCHygC\nFIcoQDYHzRCIG6aXbfvz+y/WeASKA2Uh7sFqCNC/EDfgMgFuDsQ98PBBNgQS\nkjfPPSWYroBqIOEM0QhJjZDYhIQkQRMgABLOkHhnAAPKDaGKS/5TL0yoFTtU\nSSfUSrFUyTtwQGEuRgYUlickASoagh8QU9oDACL9cXs=\n                   "
+                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKtsSV+1ZfuH66ccf336FICAbKAIUB8oC\n1QBVYjUEaD7EhAXNe96/+oI19IDiQFmIOXD3IBsC8QVQDcGIgJgDVI9mCDDE\nIL7A5QY090D8BQlnuCHAkAcKAn1N0AQIAKoEqgfqQjYEGINAQWDoEWkIUCVQ\nPVAXUC8kNQIZwJQAFATGApGGAFUC1QN1QQwBAsoNoYpL/lMvTKgSO1RJJ1RJ\nsdTKO1TJxdQqT+CAwpKNDEAwIv4TV9oDAHfUai0=\n                   "
                    ],
                    "Byte",
                    ColorSpace -> "RGB",
@@ -23275,7 +23255,7 @@ Notebook[
                  "Hover" ->
                   Image[
                    CompressedData[
-                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu1oSV/TkbIAjIhggCZYFq8BgClIWobE9evaR93+ZZJ5ER\nUAQoDlGAbA6aIRA3dKWs3TTjBJoJEAQUB8pC3IPVEKB/gbIdyWtwmQA3B6gG\nqBIePsiGQEJySft+PCbA/LUfEs4QjZDUCIlNcEiuImgCBAFVAtVD4p0BDCg3\nhCouoWKYUCt2qJJOqJViqZJ34IDCXIwMKCxPSAJUNAQ/IKa0BwBUkgRI\n                   "
+                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKptjVswo3764bd/ayUchCMgGigDFgbJA\nNUCVWA0Bmg8xoTdr3dpJRzfPOomJgOJAWYg5cPcgGwLxBVANVu3ICGIOUD2a\nIcAQg/gClxvQ3APxFySc4YYAQx4oCPQ1QRMgCKgSqB6oC9kQYAwCBYGhR6Qh\nQJUg9R17gXohqRHIAKYEoCAwFog0BKgSqB6oC2IIEFBuCFVcQsUwoUrsUCWd\nUCXFUivvUCUXU6s8gQMKSzYyADHFODGlPQBkA8lD\n                   "
                    ],
                    "Byte",
                    ColorSpace -> "RGB",
@@ -23285,7 +23265,7 @@ Notebook[
                  "Pressed" ->
                   Image[
                    CompressedData[
-                    "\n1:eJy9lM8KgkAQxpe6dOzWuZeQwFPHrkYPoGTSxWANovfrLbyJNy+hhAfB+mpS\nTE2NHfqBMn47fszO/plbB2M3EkJ4E7wM87SU0jyvp/jYuN7ece3tyj3aji0X\n1hji7P0843sfQ3LAVY0/mMRxfCtA/KtJmqZ5ntdmDQX6EJMkSbIsIz2KoksB\nYhIxipwOE4ySEgSBlFL7BAp0Sqj61EyoBt/3dV3X2oCOUaqn1QTzRRyG4TeH\n0gc5yCz7UzWhTjZn0QQ51Gf6kXYjrSZ1steBoD7TuosX6iYslTD2hGt1WPYJ\n145lOTsliqe4iuJ98hOMJt0Mue0feOHclw==\n                   "
+                    "\n1:eJytlM0KgkAUhaU2Ldu17iWibcsgEIweQMmkjYEm0dv4Qr5LIKgIUV/dGiTM\nJpwDyvXOmeO5d36m3sHZDSzLike8HPe0iCL3vB7zsQnjfRD622V49AM/mntD\nkpPX84hvv6DDAZd++CaS53lZlnVdX98gJkNeU6Sqqg7bjHaL8CN+SqYoijRN\nkyRZvUFMhjyjcJqWPkREIcsy27ZnbSDPqOi0ikgVcFqnNyE6qi4lgj2p4puH\nDz9SlxSlROg8AVX/VBDAhM+spggrSED3NEVgwmcWc2U3qpayCpoiMFV7rSf6\nixhxYrAnRlbHyD4xsmNNnR1Tp9jIfdK01PNm+xcdthV0bvs7VDZhuw==\n                   "
                    ],
                    "Byte",
                    ColorSpace -> "RGB",
@@ -23626,7 +23606,7 @@ Notebook[
                  "Default" ->
                   Image[
                    CompressedData[
-                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu3qz1S7sOQBCQDREEygLV4DEEKAtROalw881zT9DCHygC\nFIcoQDYHzRCIG6aXbfvz+y/WeASKA2Uh7sFqCNC/EDfgMgFuDsQ98PBBNgQS\nkjfPPSWYroBqIOEM0QhJjZDYhIQkQRMgABLOkHhnAAPKDaGKS/5TL0yoFTtU\nSSfUSrFUyTtwQGEuRgYUlickASoagh8QU9oDACL9cXs=\n                   "
+                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKtsSV+1ZfuH66ccf336FICAbKAIUB8oC\n1QBVYjUEaD7EhAXNe96/+oI19IDiQFmIOXD3IBsC8QVQDcGIgJgDVI9mCDDE\nIL7A5QY090D8BQlnuCHAkAcKAn1N0AQIAKoEqgfqQjYEGINAQWDoEWkIUCVQ\nPVAXUC8kNQIZwJQAFATGApGGAFUC1QN1QQwBAsoNoYpL/lMvTKgSO1RJJ1RJ\nsdTKO1TJxdQqT+CAwpKNDEAwIv4TV9oDAHfUai0=\n                   "
                    ],
                    "Byte",
                    ColorSpace -> "RGB",
@@ -23636,7 +23616,7 @@ Notebook[
                  "Hover" ->
                   Image[
                    CompressedData[
-                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu1oSV/TkbIAjIhggCZYFq8BgClIWobE9evaR93+ZZJ5ER\nUAQoDlGAbA6aIRA3dKWs3TTjBJoJEAQUB8pC3IPVEKB/gbIdyWtwmQA3B6gG\nqBIePsiGQEJySft+PCbA/LUfEs4QjZDUCIlNcEiuImgCBAFVAtVD4p0BDCg3\nhCouoWKYUCt2qJJOqJViqZJ34IDCXIwMKCxPSAJUNAQ/IKa0BwBUkgRI\n                   "
+                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKptjVswo3764bd/ayUchCMgGigDFgbJA\nNUCVWA0Bmg8xoTdr3dpJRzfPOomJgOJAWYg5cPcgGwLxBVANVu3ICGIOUD2a\nIcAQg/gClxvQ3APxFySc4YYAQx4oCPQ1QRMgCKgSqB6oC9kQYAwCBYGhR6Qh\nQJUg9R17gXohqRHIAKYEoCAwFog0BKgSqB6oC2IIEFBuCFVcQsUwoUrsUCWd\nUCXFUivvUCUXU6s8gQMKSzYyADHFODGlPQBkA8lD\n                   "
                    ],
                    "Byte",
                    ColorSpace -> "RGB",
@@ -23646,7 +23626,7 @@ Notebook[
                  "Pressed" ->
                   Image[
                    CompressedData[
-                    "\n1:eJy9lM8KgkAQxpe6dOzWuZeQwFPHrkYPoGTSxWANovfrLbyJNy+hhAfB+mpS\nTE2NHfqBMn47fszO/plbB2M3EkJ4E7wM87SU0jyvp/jYuN7ece3tyj3aji0X\n1hji7P0843sfQ3LAVY0/mMRxfCtA/KtJmqZ5ntdmDQX6EJMkSbIsIz2KoksB\nYhIxipwOE4ySEgSBlFL7BAp0Sqj61EyoBt/3dV3X2oCOUaqn1QTzRRyG4TeH\n0gc5yCz7UzWhTjZn0QQ51Gf6kXYjrSZ1steBoD7TuosX6iYslTD2hGt1WPYJ\n145lOTsliqe4iuJ98hOMJt0Mue0feOHclw==\n                   "
+                    "\n1:eJytlM0KgkAUhaU2Ldu17iWibcsgEIweQMmkjYEm0dv4Qr5LIKgIUV/dGiTM\nJpwDyvXOmeO5d36m3sHZDSzLike8HPe0iCL3vB7zsQnjfRD622V49AM/mntD\nkpPX84hvv6DDAZd++CaS53lZlnVdX98gJkNeU6Sqqg7bjHaL8CN+SqYoijRN\nkyRZvUFMhjyjcJqWPkREIcsy27ZnbSDPqOi0ikgVcFqnNyE6qi4lgj2p4puH\nDz9SlxSlROg8AVX/VBDAhM+spggrSED3NEVgwmcWc2U3qpayCpoiMFV7rSf6\nixhxYrAnRlbHyD4xsmNNnR1Tp9jIfdK01PNm+xcdthV0bvs7VDZhuw==\n                   "
                    ],
                    "Byte",
                    ColorSpace -> "RGB",
@@ -23896,7 +23876,7 @@ Notebook[
                  "Default" ->
                   Image[
                    CompressedData[
-                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu3qz1S7sOQBCQDREEygLV4DEEKAtROalw881zT9DCHygC\nFIcoQDYHzRCIG6aXbfvz+y/WeASKA2Uh7sFqCNC/EDfgMgFuDsQ98PBBNgQS\nkjfPPSWYroBqIOEM0QhJjZDYhIQkQRMgABLOkHhnAAPKDaGKS/5TL0yoFTtU\nSSfUSrFUyTtwQGEuRgYUlickASoagh8QU9oDACL9cXs=\n                   "
+                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKtsSV+1ZfuH66ccf336FICAbKAIUB8oC\n1QBVYjUEaD7EhAXNe96/+oI19IDiQFmIOXD3IBsC8QVQDcGIgJgDVI9mCDDE\nIL7A5QY090D8BQlnuCHAkAcKAn1N0AQIAKoEqgfqQjYEGINAQWDoEWkIUCVQ\nPVAXUC8kNQIZwJQAFATGApGGAFUC1QN1QQwBAsoNoYpL/lMvTKgSO1RJJ1RJ\nsdTKO1TJxdQqT+CAwpKNDEAwIv4TV9oDAHfUai0=\n                   "
                    ],
                    "Byte",
                    ColorSpace -> "RGB",
@@ -23906,7 +23886,7 @@ Notebook[
                  "Hover" ->
                   Image[
                    CompressedData[
-                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlgA6GPL7/4uzBmxAEZJNqyJ5V53oy1jVELkNGQBGg\nODGG3LnyeG7DToiu1oSV/TkbIAjIhggCZYFq8BgClIWobE9evaR93+ZZJ5ER\nUAQoDlGAbA6aIRA3dKWs3TTjBJoJEAQUB8pC3IPVEKB/gbIdyWtwmQA3B6gG\nqBIePsiGQEJySft+PCbA/LUfEs4QjZDUCIlNcEiuImgCBAFVAtVD4p0BDCg3\nhCouoWKYUCt2qJJOqJViqZJ34IDCXIwMKCxPSAJUNAQ/IKa0BwBUkgRI\n                   "
+                    "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqA4ANlAJchNy8+3Lv6/OKOvT2Z6yAIyAaKAMWJMeTN67cb\nZx9riFyGCwFlgWrwGHL32pNJhZuAKptjVswo3764bd/ayUchCMgGigDFgbJA\nNUCVWA0Bmg8xoTdr3dpJRzfPOomJgOJAWYg5cPcgGwLxBVANVu3ICGIOUD2a\nIcAQg/gClxvQ3APxFySc4YYAQx4oCPQ1QRMgCKgSqB6oC9kQYAwCBYGhR6Qh\nQJUg9R17gXohqRHIAKYEoCAwFog0BKgSqB6oC2IIEFBuCFVcQsUwoUrsUCWd\nUCXFUivvUCUXU6s8gQMKSzYyADHFODGlPQBkA8lD\n                   "
                    ],
                    "Byte",
                    ColorSpace -> "RGB",
@@ -23916,7 +23896,7 @@ Notebook[
                  "Pressed" ->
                   Image[
                    CompressedData[
-                    "\n1:eJy9lM8KgkAQxpe6dOzWuZeQwFPHrkYPoGTSxWANovfrLbyJNy+hhAfB+mpS\nTE2NHfqBMn47fszO/plbB2M3EkJ4E7wM87SU0jyvp/jYuN7ece3tyj3aji0X\n1hji7P0843sfQ3LAVY0/mMRxfCtA/KtJmqZ5ntdmDQX6EJMkSbIsIz2KoksB\nYhIxipwOE4ySEgSBlFL7BAp0Sqj61EyoBt/3dV3X2oCOUaqn1QTzRRyG4TeH\n0gc5yCz7UzWhTjZn0QQ51Gf6kXYjrSZ1steBoD7TuosX6iYslTD2hGt1WPYJ\n145lOTsliqe4iuJ98hOMJt0Mue0feOHclw==\n                   "
+                    "\n1:eJytlM0KgkAUhaU2Ldu17iWibcsgEIweQMmkjYEm0dv4Qr5LIKgIUV/dGiTM\nJpwDyvXOmeO5d36m3sHZDSzLike8HPe0iCL3vB7zsQnjfRD622V49AM/mntD\nkpPX84hvv6DDAZd++CaS53lZlnVdX98gJkNeU6Sqqg7bjHaL8CN+SqYoijRN\nkyRZvUFMhjyjcJqWPkREIcsy27ZnbSDPqOi0ikgVcFqnNyE6qi4lgj2p4puH\nDz9SlxSlROg8AVX/VBDAhM+spggrSED3NEVgwmcWc2U3qpayCpoiMFV7rSf6\nixhxYrAnRlbHyD4xsmNNnR1Tp9jIfdK01PNm+xcdthV0bvs7VDZhuw==\n                   "
                    ],
                    "Byte",
                    ColorSpace -> "RGB",
@@ -24191,7 +24171,7 @@ Notebook[
                       }
                      ]
                     },
-                    {FaceForm[RGBColor[0.53726, 0.40392, 0.67451, 1.0]]},
+                    {FaceForm[RGBColor[0.53725, 0.40392, 0.67451, 1.0]]},
                     StripOnInput -> False
                    ],
                    StyleBox[
@@ -24314,7 +24294,7 @@ Notebook[
                        {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}
                       },
                       CompressedData[
-                       "\n1:eJxTTMoPSmVmYGBgA2JWIGZiAIMz/8LFHBgYGs4xtDo6wPgJxpuLGj66g/iS\n/w8agOQ9GbS94fwFZ3yWNuxzccCin+W/uxCQPnCrYaEDMr+wwd4DxOf+f9QQ\nSDvYNvD5IPOXNRS4YNHfEP/PzA+Zv+vfHHck9XA+1Dy4eqh9GPrT/m3xRXJv\nw+Z/ch5I/oHwEf6FqEeEB7p+hm//vI1BtAKbgwKY/m8P9rcfa40+iD7676Yb\nNnmFfIcH9lj03/oXbIqp3szYilVNF8S//O+qK6Z8QJqexYVf9uj6ARROjv4=\n\n                    "
+                       "\n1:eJxTTMoPSmVmYGBgA2JWIGYC4qvPs7S/hYs5LHLd9vlvi6MDjL/imLd550d3\nB9O4XZ48hwwcQBSTtjecH2G55UTZPhcHdP1zFinv/OMuBNG/0AHOL86Y+LbG\n3sPh5rnvwY+PGkL08/nA+b3T84SaC1ww9F9fXGDLZe4H50+WYAnjm+sOVw/j\nw8yDqYfZh64f7M4tvnD3Pr2gdPunnAfcPzA+zL8w9bDwQNdf+VLNkMPH2IEB\nBBwUoLSDwzTn7pzn1foOLkDq9003DHmZy8LTKhwe2KPrbxcDhYgphnpwOKnq\nOuwpAfr4miuGfKiB1krhC7/s0fUDAHimvy8=\n                    "
                       ]
                      ]
                     },
@@ -24771,13 +24751,13 @@ Notebook[
                  DefinitionNotebookClient`$ButtonCodeID = 
                   5906117565281445171;
 
-                 
+                 (
                  DefinitionNotebookClient`$ClickedButton = 
                   "Style Guidelines";
 
                  DefinitionNotebookClient`ViewStyleGuidelines[
                   ButtonNotebook[]
-                 ],
+                 ]),
                  DefinitionNotebookClient`ButtonCodeID[5906117565281445171]
                 ]
                ],
@@ -24849,8 +24829,8 @@ Notebook[
                  DefinitionNotebookClient`$ButtonCodeID = 
                   5074018684552945401;
 
-                 DefinitionNotebookClient`$ClickedButton = "Tools";
-                 DefinitionNotebookClient`ToggleToolbar[ButtonNotebook[]],
+                 (DefinitionNotebookClient`$ClickedButton = "Tools";
+                 DefinitionNotebookClient`ToggleToolbar[ButtonNotebook[]]),
                  DefinitionNotebookClient`ButtonCodeID[5074018684552945401]
                 ]
                ],
@@ -25615,14 +25595,14 @@ Notebook[
                      DefinitionNotebookClient`$ButtonCodeID = 
                       3196298050911436087;
 
-                     DefinitionNotebookClient`$ClickedButton = "SubmitUpdate";
+                     (DefinitionNotebookClient`$ClickedButton = "SubmitUpdate";
                      With[ { RSNB`nb = ButtonNotebook[] },
                       DefinitionNotebookClient`DisplayStripe[
                        RSNB`nb,
                        DefinitionNotebookClient`SubmitRepositoryUpdate[RSNB`nb],
                        "ShowProgress" -> True
                       ]
-                     ],
+                     ]),
                      DefinitionNotebookClient`ButtonCodeID[3196298050911436087]
                     ]
                    ],
@@ -25728,14 +25708,14 @@ Notebook[
                      DefinitionNotebookClient`$ButtonCodeID = 
                       3704832848557640569;
 
-                     DefinitionNotebookClient`$ClickedButton = "Submit";
+                     (DefinitionNotebookClient`$ClickedButton = "Submit";
                      With[ { RSNB`nb = ButtonNotebook[] },
                       DefinitionNotebookClient`DisplayStripe[
                        RSNB`nb,
                        DefinitionNotebookClient`SubmitRepository[RSNB`nb],
                        "ShowProgress" -> True
                       ]
-                     ],
+                     ]),
                      DefinitionNotebookClient`ButtonCodeID[3704832848557640569]
                     ]
                    ],
@@ -25860,7 +25840,7 @@ Notebook[
                    }
                   ]
                  },
-                 {FaceForm[RGBColor[0.53726, 0.40392, 0.67451, 1.0]]},
+                 {FaceForm[RGBColor[0.53725, 0.40392, 0.67451, 1.0]]},
                  StripOnInput -> False
                 ],
                 StyleBox[
@@ -25983,7 +25963,7 @@ Notebook[
                     {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}
                    },
                    CompressedData[
-                    "\n1:eJxTTMoPSmVmYGBgA2JWIGZiAIMz/8LFHBgYGs4xtDo6wPgJxpuLGj66g/iS\n/w8agOQ9GbS94fwFZ3yWNuxzccCin+W/uxCQPnCrYaEDMr+wwd4DxOf+f9QQ\nSDvYNvD5IPOXNRS4YNHfEP/PzA+Zv+vfHHck9XA+1Dy4eqh9GPrT/m3xRXJv\nw+Z/ch5I/oHwEf6FqEeEB7p+hm//vI1BtAKbgwKY/m8P9rcfa40+iD7676Yb\nNnmFfIcH9lj03/oXbIqp3szYilVNF8S//O+qK6Z8QJqexYVf9uj6ARROjv4=\n\n                  "
+                    "\n1:eJxTTMoPSmVmYGBgA2JWIGYC4qvPs7S/hYs5LHLd9vlvi6MDjL/imLd550d3\nB9O4XZ48hwwcQBSTtjecH2G55UTZPhcHdP1zFinv/OMuBNG/0AHOL86Y+LbG\n3sPh5rnvwY+PGkL08/nA+b3T84SaC1ww9F9fXGDLZe4H50+WYAnjm+sOVw/j\nw8yDqYfZh64f7M4tvnD3Pr2gdPunnAfcPzA+zL8w9bDwQNdf+VLNkMPH2IEB\nBBwUoLSDwzTn7pzn1foOLkDq9003DHmZy8LTKhwe2KPrbxcDhYgphnpwOKnq\nOuwpAfr4miuGfKiB1krhC7/s0fUDAHimvy8=\n                  "
                    ]
                   ]
                  },
@@ -26481,7 +26461,7 @@ Notebook[
            "Default" ->
             Image[
              CompressedData[
-              "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqAIJQyQAdDAgMDvWEAyCbVEHd3d0tLSzNUABQBihNjiL+/\nv52dnRluAJQFqsFjCFAWj3ZkgGwOmiH43YDmHqyGAP1LpAkQAA8fZEMwQxI/\nAKqHaISkRkhskmQCBEDinQEMKDeEKi6hYphQK3aokk6olWKpknfggMJcjAwo\nLE9IAlQ0BD8gprQHAO6KZcs=\n             "
+              "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqAIJQygMsQf39/d3d3BwcHSxgAsoEiQHFiDAkJCXF2djbD\nDYCyQDV4DAFaZG1tjccECACqQXYSsiFA84kxAW4O3D3IhuD3BVZ/oRkCdB5J\nJkAAxFNwQ4AhT4YhQF3IhgBjkAxDgLqAeiGpEcgApgQyDAHqghgCyhoUG0IV\nl1AxTKgSO1RJJ1RJsdTKO1TJxdQqT5CdREnJRgYgphgnprQHAMBNTEU=\n             "
              ],
              "Byte",
              ColorSpace -> "RGB",
@@ -26491,7 +26471,7 @@ Notebook[
            "Hover" ->
             Image[
              CompressedData[
-              "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqAIJQyQAdDAgMDvWEAyCbVEHd3d0tLSzNUABQBihNjiL+/\nv52dHUSXraWjj0M4BAHZEEGgLFANHkOAshCVDtZuWX6tDZHLkBFQBCgOUYBs\nDpohEDc423jVRSxGMwGCgOJAWYh7sBoC9C/YDa64TICbA1QDVAkPH2RDICGJ\n6QtMBFQDCWeIRkhqhMQmJCQJmgBBkHCGxDsDGFBuCFVcQsUwoVbsUCWdUCvF\nUiXvwAGFuRgZUFiekASoaAh+QExpDwCymM4u\n             "
+              "\n1:eJytlM1Kw0AURoPduHTnui+hDgOSksW0GwMxWWSZYFqKkEJaiO4EX0J8AF9T\nT7gahmjs0MxlWqbffHN67/zNy12yPguCYH/OV1K0i6Ypnu8v+JHV++2mrh5W\n9aHaVM1NOUO8/P50/c9j4eIhsmkxBonj2BgThqH6Cfoo6C6QNE2jKLoaD0bx\n/APhj7TWONW1zs3j9u71KXuXRh8FnVE8dko2BL4QlrdJm7295B+/Gzqjwunz\nsSFSBZ4/p9tNOPgHENKTKsZyGOQjdUlRPYSVR6TqowRpOPEzy4awg4isniME\nJ35mMVdOIx1OAiK74AjB2ZWvlEC6qzEZ4iUTj2viZXe8nBMvJ9bX3fFyi329\nJ3ZKU162E8LlGXd57b8AKuPmMg==\n             "
              ],
              "Byte",
              ColorSpace -> "RGB",
@@ -26501,7 +26481,7 @@ Notebook[
            "Pressed" ->
             Image[
              CompressedData[
-              "\n1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz\nUFAcikHs/4QAMWqAIJQyQAdDMjMzu2AAyCbVkCVLlrx79w7N10ARoDgxhpSU\nlFy+fBmu6ywMwM0EygLV4DEEKAsRefbsWUdHB5qNQBGgOEQBsjlohkDc8PDh\nw8jISKzeB4oDZSHuwWoI0L8QN+AyAW4OxD3w8EE2BOJrTF9gAqAaSIhBuJDU\nGAqOTWRxggBiIyTeGcCAckOo4hIqhkkolWInlBrpJJRKKTaUGnkHDijMxciA\nwvKEJEBFQ/ADYkp7ALL8aPE=\n             "
+              "\n1:eJytlD0OgkAQhYk2lnbW3sLW0lazDZ1G/KHAZDURr8AxuAANp6DmCJT2lPqZ\n0Y0xChvZl2ges29fZmZnd7w6zDc9z/OOA/7my/NU6+VlMeRDRcf9NgrWs+gU\nbAM9WfUJjp6/B7+1wUYDVDf8MonjOE3ToiiuL8CJELcx8X0/z/OGtFlF02Ci\nta6qikhd11mWJUmyewFOhDiraFB+NcFfHMqyDMPwa/nEWRUfk8+7iVSBprWT\n4oP+w4SOSRW/cvjIR+qSPhsTOg+h6lYHAUr07Ho34QQhdM/SBCV6dsFlGiFM\nAoRTsDRBiZ5dYvK4Gp1NnGTisCdOTsfJnCgXE6sc3R3l4habfDq+JwYdX7Y/\n0JC2gc1rfweIxIKt\n             "
              ],
              "Byte",
              ColorSpace -> "RGB",
@@ -26660,7 +26640,7 @@ Notebook[
               }
              },
              CompressedData[
-              "\n1:eJxTTMoPSmVmYGBgBGJJIGZigIIGAwcIQ8kBxk94ekHp9k9Vh4qXaoYcOfoO\nm+a+X37stKZDbP+hrxpzdOA0TBymDqYPl7n2pnG7PHlk4PzZRxQ2FGWIwPWD\njI3p54WbLxuVYn3fnwluD8S8H/Yo9gD5KPYA+TB7YPph9sDMh9EwcZg6FPdh\nMRfdXpi7YPph7oaZD/MXzB5c4QCzBwA8nn+Z\n            "
+              "\n1:eJxTTMoPSmVmYGBgBGJJIGZigIIGAwcIQ8kBxk94ekHp9k9Vh8qXaoYcOfoO\nm+a+X37stKZDTP+hrxpzdOA0TBymDqYPl7n2pnG7PHlk4Pw5RxQ2FGWIwPWD\njI3p54WbLxuVYn3fnwluD8S8H/Yo9gD5KPYA+TB7YPph9sDMh9EwcZg6FPdh\nMRfdXpi7YPph7oaZD/MXzB5c4QCzBwA/Dn+d\n            "
              ]
             ]
            },
@@ -26700,7 +26680,7 @@ Notebook[
                {8.1753, 7.4169}
               },
               CompressedData[
-               "\n1:eJxTTMoPSmViYGCQBGIQ/cTvZcLf/4oOD6tE1rk/5HNQjDzAkqeL4FsusdsW\n1KjgwAAGAg7hCSdehX2Xd5BvfR24Q07QwaZCOJPjjZyDHdf1xQW2Qg56LJYa\niWlyDv2HvmrEzBeG80GmVbmIwvkvtjT6Sb8Qg+t/BLLPUwJuPti6DEm4/WD7\n2qTg7gMZJyIm7QBzP4y/zEVob88lJTi/7+dk7hV1ynD9c3LzfPxZVODmr3ro\n0futUwVu/0bpbbqnzqjA3Qfjw9wP48P8B9MP8z/MfFj4wOyHhR/MfbDwRQ9/\nACBxmlc=\n             "
+               "\n1:eJxTTMoPSmViYGCQBGIQDQFKDg+rRNa5P+RzKPOXE8vSVYTz8z+0ngxpVHCA\nqBNwmPd++THv7/IO8q2vA3fICTpUvlQz5Hgj52DLdX1xga2QQxoYyDmcYLed\nHTpfGM6/k8GQ3+giCue7M1dwq7wQg+vnmbyyKdBTAm6+tsTUK5wZknD7Pec2\nqB1qk4K772Y8iCXtAHM/jP/bquBcxyUEfyJ/ldnqOmW4/qw9JZMlWFTg5tfa\nm8bt6lSB23/2DAiowN0H48PcD+PD/AfTD/M/zHxY+MDsh4UfzH2w8EUPfwD5\nN5G6\n             "
               ]
              }
             ]
@@ -27792,7 +27772,7 @@ Notebook[
               }
              },
              CompressedData[
-              "\n1:eJxTTMoPSmVmYGBgBGJxIGYCYnlv+V0L0owcGMBAx8Fp+3QTt9WicD7LQy6N\nK5tFHJruSTuD+HvWn2o9dV/YocezXr91ubbDwTBOsfbNwg6TXqSKnNbVduB8\n9uJj9W0OB49F0wN1tvM48C7p9tVeyuFw4cns3LwebgdlY/EdNt84HD6IeQT8\nieByuJ/N0Xd6B6cDw0rfOXfyOR3mLPmZHFXN5eAxt0HtUBuHQ+4ea6Ow2dxQ\n93A4cC5n1f91igfO1xO6VaQ31QDOd1KTtOS+jOD3lxZK83IYOhyIn2z6KpHT\nIWBVrZWcMJAfm7Husge3g/3jQ40Tnhg55InPem1yScvh3uT21qjXRg5839Ta\nnshoO9QxBM22eGjkwMSdcOpAprbD0Ydn1j87YeTw+7hTCccSbQfew+5Hpmww\nctgydfof/3vaDoYztSSm9hg5OL7vVQSFF3r4AgAQkIHZ\n            "
+              "\n1:eJxTTMoPSmVmYGBgBGJxIGYCYt1Nc98vTzNyYAADHYfN1Z82BKwWhfPvbm2p\nubBZBM633HKibN99YYfGqc7dOcu1HTq+3L7euFnYQXFDUcZEXW2HzTyFa7pv\nczikSj6KEN/O4/C99MEcwaUcDhXcKhp1PdwO6VefZ2l/43C4og1SweWgeVrg\n+K4dnA79Tz7JX8rndHhzwFLZq5rLwXNug9qhNg6HOO8T7LazuaH2czhccLnx\n4cspHjg/Y+LbGvupBnB+7vPfKz9eQvD5QB5kN3To/pv6/Ukip4MxCAgbOsx+\nJrv8hQe3w4/gx0tnPzFyuO/fOz3vkpaDKhvQZ6+NHF6qGXKskdF2eFglss79\noZGDS3fO89+Z2g6aMf2Hvp4wclhSYMt1fbG2QyGI2mDkAHKG6T1tB5D27h5E\neKKHLwDeAYl+\n            "
              ]
             ]
            },
@@ -27816,7 +27796,7 @@ Notebook[
               }
              },
              CompressedData[
-              "\n1:eJxTTMoPSmVmYGBgBGJxIGYCYu2bGwU79hs6bOc+WyqVqemw8ctC7lfGBg4F\n4rNem1wScCjd8O98op6Bg9u5Q/PKIgQcfjY3Pr8nbOAwwXpp89f//A6z3P8l\nPHip78AABgIOZVKZK/f8FYTzHd1XR13aKOhwYu6lg7+A6r/cXatzMVPQways\n89VaRQGHosw/h7QtBR1Udv5p/xIt4JAnpi/WxiHooLO27YjtNAEHxekWnxy+\nCDisWHDbW+qxgMPDa3dtrjIKOkx6kSpyWlfQ4ViGbKivgbiD5xejrqfTNB3O\nbAi8lu8m7jB7pUD/kcuaDhteXMuu2iDuILNRbD4Tg5ZDRez+BHMdCaj7tBx6\nt4Tc62swhPOnRUfxdk42dDjV9fAViH96jl5351JDBzUTTx3N95oOGjofGzZt\nNHTIeHbSlPWSpsOp9Eq5O3sNHVbN8LJ/uEXTocpwivDbQ4YOOQ4tO4r6NB3Q\nwxcAexGW5g==\n            "
+              "\n1:eJxTTMoPSmVmYGBgBGJxIGYC4uKMiW9r9hs6aMb0H/qaoenQLnbz3HdjA4fl\nlcc1rS4JOJROlmAJ0zNwSK6/aVsZIQCRFzZwYAADAQeX7pznv1/qw/mTTtd7\n7P8rCOcfcVqbeW8jgs+9dVnl8UxBhyD1BZ0bFAUcZpXPWaRsKeigsvNP+5do\nAQctK6AJHIIOX70i2yymCTj4JQlEWH4RcLjHxNkl/1jA4W/7l9vXGQUdgLLX\njuoKOsjUJBqFGog7XF9cYMs1XdPh6+3rjcVu4hB3XtZ0sEh3yczfIA61X8th\n4/4382x0JOD83ul5Qs0NhnD+r7qsPSWTEXyh5gOnFi41dDhZtm++1HtNB5B3\nV240dAjaIdf6+qKmw+mFrts+7zV0uP0TqHGLpkOnY8LTC4cMIeHWp+mAHr4A\nCa2MUA==\n            "
              ]
             ]
            },
@@ -28379,10 +28359,10 @@ Notebook[
              },
              {
               CompressedData[
-               "\n1:eJxTTMoPSmViYGCQAWIQPel0vcf+u9IOWlZA1gl5hwPfzkxi+CqLwe+ST34X\ndUjE4dSdGuVd7HIOEksku5cVCzucOHf7xpsOWYdnqSKndXWFHDTf8u4zmCnj\n8Id1d+JtJ0GHTlce656Z0g6/Tr87eThJwOE9g3/UDh8phw0f9MQ/3uWHqP8p\n4cAABgIOsY9OME9cKu7w4PVd+fdX+R2iEvo7p4SJOeikSj6KCBdwKNrvHLjA\nX9SBybeF119f0GHtzVPe/9JFHDb93GEWwiPkcKgkarvjW2GHNuP9s5hdhKHm\nijj4vUz4O79ZxOG72d+b/SJicP7hZPvupRxiDjLGAZL/9wk7XM+wvODsK+ag\ntLVz8u+/Qg5/SmzSFlwSc2BZPMmKMVfIYWFKUVZ6hrjDvvlS+nefCDpIqtRG\nuepLOKypUP58Yr4g3D9KKtwzDqwVdFit1rGL/4Ckw6I5GeGKSwUdMo+csetv\nlHII49PdNPe9oAMDyB/80g7nPN9Lx1cLOTCd39vuPU/a4cZ/yzPTxYUdnl3s\n3bDiBZA/L1JowTNhB1h8uTyS85bfJeIAANoTu24=\n             "
+               "\n1:eJxTTMoPSmViYGCQAWIQreD4MfnMXWkHLatJp+tPyDsY7Fbn5/4qi8Hvkk9+\nF3VIxMHjYZXIOnY5hyX39/HNKRZ2mP1MdvmLDlmHDczPezR0hRw03/LuM5gp\n4yC+/SLDPSdBh9p125LqZ0o75IaBWAIOGx++nLrJR8ohEqyA32F7Uv1N258S\nDgxgIODQwuu/fspScYc9JZMlWK7xO6R9f5K4MEzMQSdV8lFEuIDDk+Z5Z1f5\nizow+gJV6gs6aEtMvcKZIeJgbxq3y5NHyOHMu5OHnd4KO/hdnBjzz1kYaq6I\nw10VtsapzSIOhjO1JKaKiMH5bqqlTLM4xByeXlC6/XOfsENUivV9f18xh9ML\nXbd9/ivkIKEWzLr4kphDua6i/JccIYc5RxQ2FGWIO+ybL6V/94kg1B0SDpZb\nTpTtmy8I909km8W1o2sFHWRePzKTOiDpIJx4+LL2UkGHFce8zTsbpRzC+HQ3\nzX0v6FB8XeiTI7+0A8camaiUaiGHdTfiy/znSTuAnNErLuxwZRYogKUd5tvo\nAJnCDrD42rqs8rjmLhEHAIs2smM=\n             "
               ],
               CompressedData[
-               "\n1:eJxdVHsw1WkYPp0urBrOzeFw/M7vdo6yOSulyVL7dNnUFLnNKoWzSow22ZhI\ncdxSg0I3EpJkrEoXlxShJiqXWjubFrUqbUTJanVUyv7s7vTHvjPffPO83zvP\n+77zPu9H+W9zD+DzeDxP7kzcX9zhq0Krlcg6ojqd7yBF4vuj9j5JSjgebNau\n6JaiKdGvv3ehEur0/NE5m02Q82Ta7pg+FsHBHd5+N00w1enOmbAfWKD5zePB\n1aaIXtS0b3ofg6SzISM55abgZ+ub5/kyMPRsrLs3aorOplWfLLtpeA73yyfb\nytBxbEmv3WYag1aFY4XZMmh2rCGk7ymULixjYW2GxocViburKIQrYn9VHTCD\nLsxguCyDwm/Fe4PCLc2RYmyXlcThqJUbyw80mcM7Ty8icD+Fh+y0uCMJcsyK\na7WPrKRQqI3nQi1gHzX2e9E4BXVkm1d6kQXESiqjch0N2xkKoQdNICVyYKyr\ngUapaLZhoC8Bt/l/GLy2ZWBWv55c7EYgujlHnfITA8/rxYUuGgIZszX8ywSL\n+OIPvEIpgYsbGcH5XSxujMzckBZvgfIdXXueN7FYYM0lHJKjc/K5+vQRFiXf\nqcbcFXKc0Xi6Ww6xqPL4eu24kzl8ks801X5Qfsatk+K5kpUI9R4qOE/KcajH\n5YXmkRISA2Go/ogcyfxoek2BEoNOybcvlFjAJefha9dNSlRmzls+EESghdHa\nDM1Qgn+UGzBPAbX94GHDIhYhE3waBZJ//KSS2LK4OzHnVgU+JqxIkpcx6K41\nzJnLJ9F9gMvM9c/7x0hIb+JBbSyN+4ss0mT6JFrSrZK92ii47s8MEZ1SQBov\nP2yzlIKvVHw8rZnASZPBDaZ3SLgeLD22W0wgyNs/YF48CfeJ+Q/LYex1JNor\nkURJNtm/qN4cbRkbPi3l3guYK2N7y83g8e2fVluqSUjox4KSchm2P/cKiyUp\nJA24VRFTZbhG0navLlEg9ZQt5RamcGg0NnHyoaFZnH0xKMoEJhP1iBnk+85q\nFliawD2czRzPYpBdqQ04/UIK/yun76ebsiDeJcT1xkhxQXqCr0lloT+xFwPG\nCDk1qWbqLyzOpg8fCtYaoyrKJap7lEWnHyfUdgmc2zkh/sXiasbOZ0YqCYz8\nAw1ydRzf3bFgw1AxpjSkzYloZbFP77DzlRsiPHrtKulL4PQS6VOn8RKh/mWe\n42yWhUpmP31XpxC9N4nOW5cYNClmOOryhGjcOi/2MhjQ7PSs+nNCbMvVVr+s\no7Gd5Bz5QoRZyXgloJFdf656Z78Q7Sknc4IeUEiVFadqtSIEbOYshoKNnOto\nmhh7pB13dasolLNwtu4So8eDlxroSmHZU2KV4qoEuvkfO9KWkZ9x7aae69Kl\nJLLCZpVacfHoHOdtCSCRbj3FfuYkMRLcVubGFpGIZN7cVqwW4Su3a3YXXpHA\nNiv371OFSMhrLbnnTGHTreWkr04APaue7sAaCv01jWq3XAGMWtp6dPNpSG3i\n1kfMFaC/cpl6QTUNvI3S3fpg9Ln/f/UnALedAXVvGcTGmFKOnUZo+/mb6w0l\nLN7HBNeEewjQMDeo7wSUSK4YlfAYIVodXNoyapQQEVvlF9uF6Mqt6FJPUSE7\nIqeAeSf6j1cFX/VThzlfSjDW+CBvHV+F0f3nF5Y9k8CvwvZJZr8SUWuL7VqP\nG+P//+XfKeUiiA==\n             "
+               "\n1:eJxdlHs01nccx81KWi3PzXPxXPyu1Amtm7Sy3l225VARpSKkqJzUqq2WiSLa\nGq3mJEORRiG7IOQRoiakVWs6OKZ1Gc1qrKto7ft7fs/xx77n/M5zvr/f8/1c\n3u/X50uHblkaZmlhYeFHHuHX+oxu1Tojj7lxdxrSZimRbTepk0vkcXmUe8ay\nLiWaT7xf9tidh8uh7BeTw1XIvEj9sK2HQ81uvdv6iypY7T0y/8tNHB6Uf/9m\nt5caE9VHbo7uYVEzLnNqTqkalunW2uNBLD4oe/zq5gs1DKd6Frp0MbjtLATU\nmOMyKL28ozorXYNvjKmHbF7SuPKosX6esx3Wxra576qgMfv80lT6oB00d1ao\nyg/TMKV11OL3MSn5cWQfnOZlm9SkxY4lBmVEMo1OjlQWr0MVCRdVRuMdo6PN\nmOl66Bvvz/n2NY2s2U430/P0KNsXfa1kJYOh/P4bixgDPFcmurVeYtBUP69o\nY5ABkd2D+f1TWJye3jJrsY8BCzZu6UvIZ9HgOeOLuSEG2Cf0+lQYOIQ/v7fm\nhNKAVFJW92cc6p+OD/wqTo+0zbL42iYOuug1U5b16fCMvK57yon62utwNzfj\nItXHITOHPTf0oVY8P8gP79mOgZiIIR5uL+rWFVA67KzOIg7xYj9PdWLdOTxG\nD2SvLynQY7LJUB4ThDQbDGi5QtZYHgVxPh7HLOzRdvW5791cTowXYg/NiOXj\nnKdwGNGdNP5hiz1UC72H1CUsblcTAy2p4f4tTIuCn1DwHgbnkq36lNYUXAvf\n8w+4TqNO5eA78qQ9Nn0ales0n0ZUw4R3v2424Jequwp9I4WXMRFVH8sNYtw4\nSvS/XyfWu4/CzNZLkdNqtdg8bU85yPeTpP39pXYgpn+y1UiZedIg+SgRlKJh\nkn2kRqyvmIbQRrFeDUKDj8dqBo+i50wPilJhqrDkLIjbf+gdVehTkgbTWPxN\n8Cp6oEQsKStFzUHAoitGCXKq0iOJw8/hv3ZH9NpiaYUhofc6h+W7vysLjbU1\nc8yhLZiQ1qrA4lDJiplPOMhyz19QOSgwcb+SSMyhobIi2eojOVatm9W1pIXD\nYDMBuk4GU7p9HJzCCMn+MrF/jkNaZ8r+hHYp6hJP+TcVs/AP+LHmr+NS/BQp\nCMLChGWRFNsOHLz3Tw0D7duCglLRRzC4zhBQ/pSisv3Aq7BbNLZvOPwwOlYm\nchxDI36SV95bVnL0bj9rO+hJY17I/WtMhxwFBJ9Qbxpn83Y1TKhUIOK3rQcO\nLqCG996C4POp4f+3n3kZGBlGYYZdbQD1hhzxBKs9eRRGCQPoJQOhOqvwIYVA\nam7/2iQpBHtuLKLFup5LRJ6raNGnYxJ4uLymX7ky+PxJx629UyUI8iSTYWSw\nOvLSv8WDNsP9i/xJIFxTxmcsgkdd1fi024C4NdaykBP58pWIfIAXeWSl5ny8\neK5VKuo/wgHpO8mEDcjMcR1wlFwTrhMV4txaOiCx0e/C6XsKs648TOkybPH/\n+/I/ZYc7ZA==\n             "
               ]
              }
             ]
@@ -30216,7 +30196,7 @@ Notebook[
              },
              {
               CompressedData[
-               "\n1:eJxdVGdQVAcQPjFKc8yVd+/ae++wBE1QdAyCKMKnR4gUC02CikGKSrWhwKGG\nUE4iAwEplkvEQrlRRAUkCAyC0jSIIKCAiAUpIqMIiIBIcuYHP7IzOzvfzM7O\nfPvtt3M89jh4a7BYLCd1fqnrJD9mV+4SISdhMMnXQgBx+yPyrKYQCrK17mOS\nABPO4e+Mb5FYZLDeZo2JEMWRLafXZvGR+ok+rkGL0GLTa/hbJ4Gq9htRh+tF\n6KBymplDBMwOduWZPRCjPs/1w005Aa/F5jPKWiToY8UUyw8SKMpoTijUpPE2\ndDLf/jOBwTDlZP8CBgtuK7Jc+vggLNQTXzGw1S6/JB8joS8y1Q0rkuLZim9r\nw+yEGLe+sbGap4fzNveZ3RkizHv00pE1Sw8FxZq9pX+I0R3kauc/Ww83nTIW\n5yRKcO7QqF9utxSXHzRv7t9DwVLlkKcpl0I7zr1z3ITGI5lRUaRQinJXm9Sk\n5zTidTXX5oYziDDybAjazCBmbFCj/w6N5fBR2dcwyM2iJ8/MopF0jzjA/koK\nj106fz5eQSEgwdqqTkMKh0QdT90dEqzaWxfzcJKawtR7L5PvdWgMLzvelWpM\nwS2j+I1/IYXdbZMpKTNpBG33PKliKPQrAmKXKWl4rQySdwRIwFxooCsMGXhq\nseJXx4pRmC/mfgxhpvjrG0sfK3wZrLG7HW32UIjZC5X7o4MZPLW2HBVMEyL3\n0JPo7pUM7Go0VyudBWBFmMonSmk4qQINJ6tI1B9Nj5llS0NuX/zzjBD1vv2a\nZEZnKKiWFrBfhZMIpK6TaS8l2KKsGtmixivif4rduEaC9TtLrgzfIzEwtiNq\nQCWG1ti5XXk2ApSGXpIFWonRGaV90VUkxG3zleqLEOGH99/5KTVE2D7MTxfZ\nirDjTqOB95gIxppa3b0cEWxzPN4rNSRIjghc4lMrRI/0SFLmNAqjcVdX53kJ\nEX/CpUc4QCG5c8Nr96cCmIYmao+m0Jir+U1t/hEBEt859J2YwyDqi24jJD48\nefzrAQWDTFFsZp4jCUX1UdL2hVrP+XJRZS4fQjO7T92zpdh2Nz4OEwRkV3w6\n9ulIMa7cFBMuIxDXyHYe5Unhf+yWvh/Bg0lFyP3LxxmMW56d7zbEge6psivF\np9V7m+jItFjFAWdpUYnpYQrbslXlRv5shCz5eNdeT4Ko0wW/eM9gY/+kPjG3\nTASr7MoslpCNilrz3+1LhShhfept4rPRrfNuP+eWANt25zSus2Uj3dHF/O9G\nEm1jR31L8tmgZw651EzwkW2Q1hXK5uBGdE+Gh4yPNq2KN+MZHISiNdmghMAF\nuZ/7ZS8ulo5sP9xgTiB/PtYvlvDw9HqLPv8zDxveBi/UGeaB9V8QmIh4ei2g\ngcCmgzX3904np7B161wfk3E+0t2ik9PU/fKMRTJqK4lXjK20SI8Hz/z4S/pa\nAli1e76WneTixQm1MPUCGF3INxnV4MI7xtOtvUoIy4Khz02FnCn+dvucW4Mr\nOaj+OsWqVu3XksK4mQMFHJQOxXKHgyUgm/6qfT3IQXeihTDEkAKld+pi9R4u\nxI7XqlrzKTh1ZigrnnMR2aUlqplOY+S8bt9WBQ+cq28E/WofKdRvqmc5gbSQ\nOpKt9hv3a7UhugiEp+a4S8opmDfPMbkTx0dCJHdnmzmFMtN5NmFq3ukv/4lX\nuUsQoZjUNkwlYeZ179g5XzFqnL2f8acJ8P9/+S9+xjWt\n             "
+               "\n1:eJxdlHlUFWUYxvGqIJBwl7lzl1nuxTI1jmhFQAT4IAUEqCcDssRSkDCCEDFB\nELcEzRYkCNc4uRCulLJISqyCIhVbbIqmCCaLQQgoINY3d5A/mnPmzPnOzLzf\n+7zP8/usAiOWBkuMjIx8yS08G/175l0M0cA/PisvcIEK1kN7b6SYqLGTbvn9\nYYoKfOY9T5siGum9mRXe9mp4FsVzDplKuNxrOT3CarDkx9TgXXcoVLTm7thU\no0FIw1+h1hsoRDXJ+12rtVgofBhLIR/b2y43Mzgckt0V9SkFz9uxVJYJByvd\nQJj/GAWLuee+653FY5+P8kuvLiWO5Ng/Km3n0evwhse6YRpma2aExVzQIcb8\nudmbfdRYAsWqMoUePvafu67M0KA7Klc5aq6HsZxaUHFIi+TNo45rLfTQtC1T\nnU9mcHGWpXnuXR1OVTf490Sw2H8xbY9lrA6rV7S6T3bgELSlxXmjWgdm+q25\ne25xqAi33Xp+K4+5hgZ5vHQ3a2Z7GYd/gn5d4X2FR+qQ8Qf7nuEQWrA+RT1F\nB/e8B2N/OLAYrfq7skyiw4lji0mHDM6MBISXP2En1mZNR9c6m3Fo3hblnmrH\nosGUCMtnIbt8If8rYw6SA9OYdJ7F+95XTJwPctgQSToKZ7CeyKuy4THTeNu3\nbl9oEXi40bY3hp/QXzvj+vDmUB6ZGy/PcaxTo7GcCIjmYa8tXq6fpEYcleVx\n25GHoayfCh015IdCDttJG0MVNEgKZll6c+I8Ymi4sd1tdgdYPHEbud+9lcZb\nHx+IPtTGwK/k+LHFZB3Rl1Dp68qg5vXmvoGrNOYEJJUOHtci7rN5Pj94qTB4\nvYko1GJVWb11sEaN4e+J8dkalA3ODkiSaMb306B+UaB02bAGS/P5hG7Z0/cM\nAvSuZNRqXDpr88nRSSwSK31Ljq9W407GwUv6PhZC7IJuqGAYfxqHb6q2kGiq\nYOf0y9I0Kx4Fgr1DtNhHIvHPb/4LJ96mIcTO4zaP0sTMd66eU4KnQxc9sNCh\na4qtzO4xBbczH92MNNOh5NVnveLcKJEDhQ6PSlefXEkpRH27eYSZEkUPZMgj\nqc/ez6GnmPzwmkyss4nF2aKedKcwKe7YCQYwuHaaBGGqFMJYtcUaCJgMqaRw\nWlybHFCoxo70305WK6WQFEyVU0Uq0WdvqZjzehqCuwU5UqTuTHiv/rFS5E0q\nQ4YQKzclBn++tnssY3z/Amp8XnIxfy4UFq4kjjMKdHra/Gs1poBA2ZQBBYwM\nF4Vy/U/r1tRSou7J9MSadEcioESRxaGXj5DvDXWW0/A1GKFAQ0zn8y9OU0Ea\na3fKZa8cQhw7alSwFQCWyPHhrqAVrRVqkY982YR+wzzKZRO8vim0lScDgd2y\nM5rBzcjdX7f3yyDQF2/DIqm9X1cXIcfD9lWHG3NYcf9bctACcJMJT30DXu8m\nKsQ8E46Esq2vUKgzuikxJbwJx0dsByXyUMKiSioAp0Rlx4Jjf7qwE7odDEYz\nGCTVHNJo3J9eOH9/qHacIxX+f17+BzFaMpA=\n             "
               ],
               {
                {9.8738, 4.7586},
@@ -30228,7 +30208,7 @@ Notebook[
                {8.7935, 7.9704}
               },
               CompressedData[
-               "\n1:eJxlkntMUwcUxrtOCjEotw9pQ5/AgHt7b33UigwMfEMGrUMKDBfpNoLlkdGw\nYBdgk4kTgqaUh4ouIArqNiVDGUJAJq8xWEEXh1ZUJCAyYSIKm+8NEbcum+yP\nneTk5HdOTnLyfcfTmBGbwmaxWEGO/Lv+E8vhezVYuieeh22cJfP8dhWiiCz5\nzgNcvC9W9s6+q0J2wUC+cJ5A48hlk3aaQXXFEyNZQ8DVfKpo+AMGz6VWdm4o\ngamW+lcnR2h0h9aljXIJvH7N9qEmmkb4KVsNS0SgPDjzjdw2JaKP6id0PMf+\nL2Ftiykl/NkPWndsIZAYnxa7uJbCJ03mHwzPCdQrftqsUVG40nJhqrGCizP6\nviTOjyQuzfiU2HN4cOIJQnqLSTwuXKdr3c2HdjCycyichLFngE45K4DQtPFR\nqTcJwrsgQuzsjs658Q6TD4lva6fbvDYLF9hiNb/wbRKB31FsPLuMxOFwgzKj\nxgP7ZraHrEkgoc1OX3TrcwmKzp22rn1IIlG9aaWSkmHrwYGUVXmO+4bOj5Hb\n5MjXJNkz31HiM+13uVKRAqJEeVWrmsZ7AUSZk6sCUWRYl+cEDb7Ts7BqgQIn\nwngdxWUMlm6oSJtrkSPEy9GRquCa8HjZV0My7Hu433SkWoXAvp3TT36VYkJ3\nec3+31RwaVi9q/+kBC/9Y2XkLbLpxTjpad5z/E9mgZNzunlufzAYdVY0F66W\n4PuiznxNDwPGtHJJj7MUnMixazfSGRgG2scFVVIMJpfkWNwZWBxypqplKLh+\nMHTyOI0Lfc3HjNtl+FL2hV2qoeHrLx/cbZLBr8QeWFupxIEjcXOZjrl2JGlq\nvbMScaOlWw33pTAkB93U11EgONWfuv0uQVNpra9lAwX1PVt0VJMYFwWB9Q1i\nCv1ZHmlfr/NAqv+517z9KHTdiG+b6RYtcH+5MFGeK/xXHwqxbvY7S9nueNvv\naOHpGAqhF1OvTloFmKo8v3a4ncKLp1ljh2P4sHsNz+7wUCKgvuGtOD0PPfe5\nq3walWjMHt51u5WLIrU4uSyGRqR509DHNi5U6yX3bp2gkb5XF97fzYWLy+07\nD+ZoaM88mr9ynYtsdqWLOMrx/3f3HvqZw4P1bl1encO/wJv6kvLlPPTOHoq2\nXGKQUJWEp47/zPAJ8me/osIzXbO+b/w/HssRfBOxxR2ZFStWdAXT/+OANyM+\nmnUTLfj7kv8Cv3B4ZQ==\n             "
+               "\n1:eJxlU2dMFGEQPZUIMQb3jvPuvMYhSraiFAvB8myAjaJiUAEF0RAiajCIIhCI\nQUDsioVqMELU06C5H1gCBiT2jlEBo4glF1GwYDsJfnsL5w8n2ezOfjvzZt57\n6xG/YdGawTKZLJBc4l0KbxQfI7FMgcOzCte9vyxAeS64Pf2QHNF7G3roaAHW\nEO8+j14KW61ePi6dPPjm4neGagqM+EEij6phQWNTZ1IQj81tHCbeDQx9KKdw\n+vOjhfHhHJ68T+K+qym4mPXLEy6zaEw4vWqJor+eZqGNaNFlxFGYTeBtpxg4\nd6tCwv9QOKhxWuoqMCiJrDhz9qgcw56e2Dj1Fo2VzG3qeroCd++Q2EVjblm2\nV8MONwgXyrqqg2h0TZ4TnHJRCfXzez8We9IojyUFziosmFQwY9VYGq5144+x\nUWpH7psmeLhbNBj3YszQnJE0cooIEdVa7P+YMX1CLI3jBTXt1iI9RonjfKER\n5xs5nmWM0NkLGBSnlVZ6bnXHvOGDubylLLJD6jMNGhOqSq6Zanw5ibfhJviI\nBLzhUO9a6lepNOFl2O4j6w/wSIhpCxpS6460ugrtOIMg6fHcCPfcDxG15QLM\nha2Jsi4DCDrZUADc4hofn9FjQD/ZhhynpjAdNiWSift4R87lqQgDPPK/tT7N\n8dMjnMApGgnenZj5N5wNEr/JPFY8vtKhLDNI86t42OXwNUKkr+MkB8/WX1lJ\nGUaExlNRAf4cHo4WXxhhubG5rqKYdZxfmksaOLPQk+rI7v7+ZxmsGfU6Sv1D\nj6PrFduvzmOQtPDrnsUWHe6L7XUMVpyv7yyfosW33uYtVi8G/pWWST8bNI7c\n7r9MdT8/DCbEikgqLKo1EoYYWJb1XGzZqURNCiHgCoPe76mvSiPcpPm0LOw2\nDlNI+l1gsU00+CU5mkykIoJDi/l3dHKTXMKr4mC7/elmY4Nc+h9sHJo5ssEz\nOVLFhUJ5rM1fHdM2VOHQL1B88FZIfn/A40jfviwb8afdH4ME5OcuJwz/y9vT\nyQBxKrx9QIicxv2XBxD7/hqhceg7kP8F0n559w==\n             "
               ]
              }
             ]
@@ -32612,7 +32592,7 @@ Notebook[
     ]
    },
    Visible -> False,
-   FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (May 17, 2022)",
+   FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
    StyleDefinitions -> "PrivateStylesheetFormatting.nb"
   ],
  ExpressionUUID -> "aa906757-7381-4689-b127-dbb1e7ce259f"

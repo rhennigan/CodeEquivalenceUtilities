@@ -7,6 +7,10 @@
 
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 
+(* TODO:
+    Tuples -> Outer
+*)
+
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*Defined symbols*)

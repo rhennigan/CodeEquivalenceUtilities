@@ -537,29 +537,6 @@ ToTypedExpression[ (f_)[ args___? EnumerableQ ] ] /;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
-(*Proportion*)
-Proportion // ClearAll;
-
-Proportion[ TypedSymbol[ s_, _ ], t_ ] :=
-  TypedSymbol[ s, t ];
-
-Proportion[ TypedLiteral[ s_, _ ], t_ ] :=
-  TypedLiteral[ s, t ];
-
-Proportion[ s_, Symbol ] :=
-  TypedLiteral[ s, Symbol ];
-
-Proportion[ s_Symbol, t : Except[ Symbol ] ] :=
-  TypedSymbol[ s, t ];
-
-Proportion[ s_? UAtomQ, t_ ] :=
-  TypedLiteral[ s, t ];
-
-Proportion[ s_, t_ ] :=
-  TypedSymbol[ s, t ];
-
-(* ::**********************************************************************:: *)
-(* ::Section::Closed:: *)
 (*T*)
 T // Attributes = { HoldAllComplete };
 

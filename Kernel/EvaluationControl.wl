@@ -54,13 +54,13 @@ $AllowedEvaluationPatterns = Automatic;
 (* ::Subsection::Closed:: *)
 (*allowEvaluations*)
 allowEvaluations // Attributes = { HoldRest };
-allowEvaluations[ allowed_, eval_ ] :=
+allowEvaluations[ allow_, eval_ ] :=
     Internal`InheritedBlock[
         { $allowedEvaluationPatterns },
         Block[
             {
                 $evalPatternBlock          = True,
-                $AllowedEvaluationPatterns = allowed
+                $AllowedEvaluationPatterns = toAllowedEvaluationPattern @ allow
             },
             eval
         ]
@@ -151,7 +151,7 @@ SandboxViolation // Attributes = { HoldAllComplete };
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*$UnsafeSymbols*)
-$UnsafeSymbols := $UnsafeSymbols = unsafeSymbols[ ];
+$UnsafeSymbols = { };
 
 unsafeSymbols[ ] := Union[ Union @@ Values @ $sec, $additionalUnsafe ];
 
@@ -493,7 +493,7 @@ $additionalUnsafe = { "DeleteObject", "WordList", "WordData" };
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*$UnsafeSymbolPattern*)
-$UnsafeSymbolPattern =
+$UnsafeSymbolPattern :=
   Replace[ Flatten[ HoldComplete @@ ToExpression[ $UnsafeSymbols,
                                                   StandardForm,
                                                   HoldComplete
@@ -567,7 +567,7 @@ UnsafeSymbols // Attributes = { HoldAllComplete };
 UnsafeSymbols // Options    =
   {
       "Definitions" -> Automatic,
-      "SymbolList"  -> $UnsafeSymbols,
+      "SymbolList"  :> $UnsafeSymbols,
       "Seed"        :> $SessionID,
       "RemoveTypes" -> True,
       "Timeout"     -> None,
@@ -581,6 +581,7 @@ UnsafeSymbols[
 
   With[
       {
+          symbols = OptionValue @ "SymbolList",
           definitions =
             Replace[ OptionValue @ "Definitions",
                 {
@@ -591,7 +592,7 @@ UnsafeSymbols[
       },
 
       Union @ Cases[
-          List @@ deleteWhiteListed @ Replace[ definitions @ f,
+          Replace[ deleteWhiteListed @ definitions @ f,
                            HoldPattern[
                                HoldForm[ _ ] ->
                                  {
@@ -606,14 +607,12 @@ UnsafeSymbols[
                                      Attributes     -> a_
                                  }
                            ] :>
-                             Flatten @ { ov, sv, uv, dv, nv, fv, defv, mv, a }
+                             TempHold[ ov, sv, uv, dv, nv, fv, defv, mv, a ]
                            ,
                            { 1 }
-                  ] // Flatten
+                  ]
           ,
-          ( s_? SymbolQ /; MemberQ[ OptionValue @ "SymbolList",
-                                    SymbolName @ Unevaluated @ s
-                           ]
+          ( s_? SymbolQ /; MemberQ[ symbols, SymbolName @ Unevaluated @ s ]
           ) :> ToFullString[ s, "Context" -> None, "ContextPath" -> None ]
           ,
           Infinity,
@@ -625,7 +624,7 @@ deleteWhiteListed[ expr_ ] :=
     DeleteCases[
         expr,
         _? WhiteListedPatternQ,
-        Infinity,
+        { 2, Infinity },
         Heads -> True
     ];
 
@@ -1192,7 +1191,8 @@ $WhiteListedPatterns := (Quiet[ ResourceObject; LocalObject ];
 With[ {
       resourceDir = (Symbol["ResourceSystemClient`Private`resourceCacheDirectory"][ ]),
       persistenceRoot = LocalObjects`PathName @ LocalObject @ $PersistenceBase[[ 2 ]],
-      cloudFilesAPI = rebasedCloudURLs @ Alternatives[ "https://www.wolframcloud.com/files" ]
+      cloudFilesAPI = rebasedCloudURLs @ Alternatives[ "https://www.wolframcloud.com/files" ],
+      exampleDir = DirectoryName @ FindFile[ "ExampleData/rose.gif" ]
   },
   With[ {
       ctx = $contextPattern,
@@ -1202,6 +1202,7 @@ With[ {
           whitelistDomain[ "*.wolframalpha.com" ],
           whitelistDomain[ "*.wolfram.com" ]
       ],
+      pathExamples = whitelistPath[ "ExampleData" | exampleDir ],
       pathSystem = whitelistPath[ $InstallationDirectory ],
       pathApps = whitelistPath[ "/wolframcloud/userfiles/WolframApplications" ],
       pathBase = whitelistPath @ $UserBaseDirectory | whitelistPath @ $BaseDirectory,
@@ -1227,7 +1228,7 @@ With[ {
       pathLockFiles = whitelistPath @ ResourceSystemClient`FileLocking`$LocalLockDirectory,
       pathCache = whitelistPath @ FileNameJoin @ { $UserBaseDirectory, "ApplicationData", "Wolfram", "Index" },
       pathProcLink = whitelistPath @ FileNameJoin @ { $UserBaseDirectory, "ApplicationData", "ProcessLink" },
-      pathNMIndex = whitelistPath @ FileNameJoin @ { whitelistPath @ persistenceRoot, "NetModelIndex" <> StringReplace[ToString[$VersionNumber], "." -> "-"] },
+      pathNMIndex = whitelistPath @ FileNameJoin @ { persistenceRoot, "NetModelIndex" <> StringReplace[ToString[$VersionNumber], "." -> "-"] },
       allowedLibs = $allowedLibs,
       cloudFiles = url_String /; StringStartsQ[ url, cloudFilesAPI~~("/"|"?") ] && StringFreeQ[ url, ("&"|"?")~~"properties=" ],
       rurl = resourceURL,
@@ -1239,7 +1240,7 @@ With[ {
   },
       HoldComplete[
           BinaryRead[ InputStream[ pathPaclets | pathProcLink , _ ], ___ ],
-          BinaryReadList[ InputStream[ String | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp , _ ], ___ ],
+          BinaryReadList[ InputStream[ String | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp | pathExamples , _ ], ___ ],
           BinaryWrite[ OutputStream[ pathTemp | pathResources, _ ], ___ ],
           CreateDirectory[ ],
           CreateDirectory[ pathCache | pathResources | pathResourcePersistence | pathLockFiles | pathSearchIndices | pathPaclets, ___ ],
@@ -1258,13 +1259,13 @@ With[ {
           FileNames[ _, pathSystem | pathResources | pathBase | pathLockFiles | pathPersistence, ___ ],
           FileNames[ "*", { }, 1 ],
           FindFile[ allowedLibs, "AccessPermission" -> "Execute" ],
-          FindFile[ pathSystem | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp ],
+          FindFile[ pathSystem | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp | pathExamples ],
           FindFile[ "put.wl" | ctx, ___ ],
           Get[ "subicon.m" | "deficon.m" | "HDF5Tools/HDF5Tools.m" | $Failed | "put.wl" | ctx, ___ ],
           Get[ pathPaclets | pathSystem | pathApps | pathBase | pathTemp | pathCache | pathResources | pathResourcePersistence | pathLockFiles | pathNMIndex, ___ ],
           Import[ InputStream[ pathPaclets, _ ], ___ ],
           Import[ InputStream[ String, _ ], { "GEOTIFF", "Data" } | { "RAWJSON" } | { "JSON" }, ___ ],
-          Import[ "!cmd /c ver" | "data.MX" | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp, ___ ],
+          Import[ "!cmd /c ver" | "data.MX" | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp | pathExamples, ___ ],
           Import[ domains, "Hyperlinks"|"TSV"|"String"|{"Hyperlinks"|"TSV"|"String"}, ___ ],
           LinkWrite[ _, Except @ CallPacket @ CloudSystem`Private`ServiceDispatch @ CloudSystem`CloudObject`DoCloudOperation[ Except[ "GET" ], ___ ] ],
           LinkWrite[ link_LinkObject, ___ ] /; MatchQ[ $FrontEnd, HoldPattern @ FrontEndObject @ link ],

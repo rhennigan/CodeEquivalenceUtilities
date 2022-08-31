@@ -45,6 +45,10 @@ Cached // Options    = {
     "NormalizeNames" -> False
 };
 
+Cached[ expr_, ___ ] :=
+    With[ { res = Lookup[ $sessionCache, sessionCacheKey @ expr, $missing ] },
+        res /; res =!= $missing
+    ];
 
 Cached[ expr_, opts: OptionsPattern[ ] ] /; $localCaching :=
   Module[
@@ -97,7 +101,7 @@ Cached[ expr_, opts: OptionsPattern[ ] ] /; $localCaching :=
       If[ ! TrueQ @ $failed
           ,
 
-          Cached[ Verbatim @ expr, opts ] = result;
+          $sessionCache[ sessionCacheKey @ expr ] = result;
 
           metadata = Quiet @ CheckPattern[
               Import @ metadataPath,
@@ -135,13 +139,19 @@ Cached[ expr_, opts: OptionsPattern[ ] ] /; $sessionCaching :=
         Check[ res = expr, $failed = True ];
         If[ TrueQ @ $failed || FailureQ @ res,
             res,
-            Cached[ Verbatim @ expr, opts ] = res
+            $sessionCache[ sessionCacheKey @ expr ] = res
         ]
     ];
 
 Cached[ expr_, opts: OptionsPattern[ ] ] := expr;
 
-$OriginalCachedDV = DownValues @ Cached;
+$sessionCache = <| |>;
+
+sessionCacheKey // Attributes = { HoldAllComplete };
+sessionCacheKey[ eval_ ] :=
+    With[ { h = Hash @ $cacheStateValues },
+        HoldComplete[ eval, h ]
+    ];
 
 
 $localCaching := localCachingQ[ ];
@@ -261,12 +271,13 @@ ClearEvalCache[ OptionsPattern[ ] ] /; $localCaching :=
             DeleteContents -> True
         ];
 
-        DownValues[ Cached ] = $OriginalCachedDV;,
+        $sessionCache = <| |>;
+        ,
         DeleteDirectory::nodir
     ];
 
 ClearEvalCache[ OptionsPattern[ ] ] /; $sessionCaching :=
-    (DownValues[ Cached ] = $OriginalCachedDV; Null);
+    ($sessionCache = <| |>; Null);
 
 ClearEvalCache[ expr_, opts: OptionsPattern[ ] ] :=
     Scan[ DeleteFile, Select[ CachePath @ HoldComplete @ expr, FileExistsQ ] ];
@@ -284,7 +295,7 @@ InitializeCache[ "Local" ] :=
     ];
 
 InitializeCache[ "Cloud" ] := (
-    DownValues[ Cached ] = $OriginalCachedDV;
+    $sessionCache = <| |>;
     CloudEvaluate @ InitializeCache[ "Local" ]
 );
 
@@ -331,13 +342,23 @@ InvalidateCacheFile[ metafile_String? FileExistsQ ] :=
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*KeyHash*)
-KeyHash[ expr_ ] :=
+KeyHash[ expr_ ] := keyHash @ { expr, $cacheStateValues };
+
+KeyHash[ expr_, exprs__ ] := KeyHash @ { expr, exprs };
+
+keyHash[ expr_ ] :=
     Key @ StringPadLeft[ StringReverse[ Hash @ expr ~IntegerString~ 16 ],
                          16,
                          "0"
           ];
 
-KeyHash[ expr_, exprs__ ] := KeyHash @ { expr, exprs };
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*$cacheStateValues*)
+$cacheStateValues := {
+    $AllowedEvaluationPatterns,
+    $dispatchHash
+};
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
