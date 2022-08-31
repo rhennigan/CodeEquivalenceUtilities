@@ -449,8 +449,7 @@ constantArrayQ // Attributes = { HoldAllComplete };
 constantArrayQ[ m_List ] :=
   TrueQ @ And[
       ArrayQ @ Unevaluated @ m,
-      SafeEvaluatedQ @ m,
-      Times @@ Dimensions @ m >= 4,
+      Times @@ Dimensions @ Unevaluated @ m >= 4,
       SameQ @@ Map[ HoldComplete, Unevaluated @ m ]
   ];
 
@@ -569,8 +568,8 @@ typedRules = Inline[ { $intType, $reaType }, HoldComplete[
     arr_List? constantArrayQ :>
       WithHolding[
         {
-            dims = Dimensions @ arr,
-            elem = arr[[ ## ]] & @@ Map[ 1 &, dims ]
+            dims = Dimensions @ Unevaluated @ arr,
+            elem = Extract[ Unevaluated @ arr, 1 & /@ dims, TempHold ]
         },
         ConstantArray[ elem, dims ]
     ],
