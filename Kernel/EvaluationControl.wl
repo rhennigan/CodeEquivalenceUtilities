@@ -10,6 +10,7 @@ BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*Defined symbols*)
+$AllowedEvaluationPatterns;
 $Memoize;
 $RandomSymbols;
 $UnsafeSymbolPattern;
@@ -43,6 +44,45 @@ $MaxQuantityArraySize = 25;
 $evaluatorDebug       = False;
 $sandboxAbort         = True;
 $printCount           = 0;
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*$AllowedEvaluationPatterns*)
+$AllowedEvaluationPatterns = Automatic;
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*allowEvaluations*)
+allowEvaluations // Attributes = { HoldRest };
+allowEvaluations[ allowed_, eval_ ] :=
+    Internal`InheritedBlock[
+        { $allowedEvaluationPatterns },
+        Block[
+            {
+                $evalPatternBlock          = True,
+                $AllowedEvaluationPatterns = allowed
+            },
+            eval
+        ]
+    ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*$allowedEvaluationPatterns*)
+$allowedEvaluationPatterns :=
+    With[ { p = toAllowedEvaluationPattern @ $AllowedEvaluationPatterns },
+        If[ TrueQ @ $evalPatternBlock,
+            $allowedEvaluationPatterns = p,
+            p
+        ]
+    ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*toAllowedEvaluationPattern*)
+toAllowedEvaluationPattern[ Automatic ] := Alternatives[ ];
+toAllowedEvaluationPattern[ { p___ }  ] := HoldPattern @ Alternatives @ p;
+toAllowedEvaluationPattern[ p___      ] := HoldPattern @ Alternatives @ p;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -534,7 +574,10 @@ UnsafeSymbols // Options    =
       "RetryCount"  -> None
   };
 
-UnsafeSymbols[ f_? SymbolQ, opts : OptionsPattern[ ] ] :=
+UnsafeSymbols[
+    f_? SymbolQ,
+    opts: OptionsPattern @ { EvaluateSafely, UnsafeSymbols }
+] :=
 
   With[
       {
@@ -548,7 +591,7 @@ UnsafeSymbols[ f_? SymbolQ, opts : OptionsPattern[ ] ] :=
       },
 
       Union @ Cases[
-          List @@ Replace[ definitions @ f,
+          List @@ deleteWhiteListed @ Replace[ definitions @ f,
                            HoldPattern[
                                HoldForm[ _ ] ->
                                  {
@@ -577,6 +620,14 @@ UnsafeSymbols[ f_? SymbolQ, opts : OptionsPattern[ ] ] :=
           Heads -> True
       ]
   ];
+
+deleteWhiteListed[ expr_ ] :=
+    DeleteCases[
+        expr,
+        _? WhiteListedPatternQ,
+        Infinity,
+        Heads -> True
+    ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -628,18 +679,20 @@ CatchUnsafe[ args___ ] :=
 EvaluateSafely // Attributes = { HoldAllComplete };
 
 EvaluateSafely // Options = {
-    "Definitions"      -> Full,
-    "SymbolList"       :> $UnsafeSymbols,
-    "Seed"             :> $SessionID,
-    "RemoveTypes"      -> True,
-    "Timeout"          -> 30,
-    "MemoryConstraint" -> 2^24,
-    "RetryCount"       -> 5
+    "Definitions"               -> Full,
+    "SymbolList"                :> $UnsafeSymbols,
+    "Seed"                      :> $SessionID,
+    "RemoveTypes"               -> True,
+    "Timeout"                   -> 30,
+    "MemoryConstraint"          -> 2^24,
+    "RetryCount"                -> 5,
+    "AllowedEvaluationPatterns" :> $AllowedEvaluationPatterns
 };
 
 EvaluateSafely::unsafe = "Sandboxed the following expressions: `1`";
 
-EvaluateSafely[ expr_, opts: OptionsPattern[ ] ] :=
+EvaluateSafely[ expr_, opts: OptionsPattern[ ] ] := allowEvaluations[
+    OptionValue[ "AllowedEvaluationPatterns" ],
     Module[ { count, expanded, evaluated },
         WhiteListedPatternQ;
         count    = OptionValue[ "RetryCount" ];
@@ -662,7 +715,8 @@ EvaluateSafely[ expr_, opts: OptionsPattern[ ] ] :=
                 "CaughtEvaluation" -> HoldComplete @ Throw[ _, $Untagged ]
             ] :> evaluateWithThrowCatchHandlers[ expr, count, opts ]
         ]
-    ];
+    ]
+];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -1123,7 +1177,11 @@ WhiteListedPatternQ := (
              { 1 }
     ] // ReleaseHold;
 
-    WhiteListedPatternQ[ ___ ] := False;
+    WhiteListedPatternQ[ p___ ] := MatchQ[
+        HoldComplete @ p,
+        _[ $allowedEvaluationPatterns ]
+    ];
+
     WhiteListedPatternQ
 );
 
@@ -1167,7 +1225,7 @@ With[ {
       ],
       pathPersistence = whitelistPath @ persistenceRoot,
       pathLockFiles = whitelistPath @ ResourceSystemClient`FileLocking`$LocalLockDirectory,
-      pathCache = whitelistPath @ FileNameJoin @ { $UserBaseDirectory, "ApplicationData", "CodeEquivalenceUtilities", "Index" },
+      pathCache = whitelistPath @ FileNameJoin @ { $UserBaseDirectory, "ApplicationData", "Wolfram", "Index" },
       pathProcLink = whitelistPath @ FileNameJoin @ { $UserBaseDirectory, "ApplicationData", "ProcessLink" },
       pathNMIndex = whitelistPath @ FileNameJoin @ { whitelistPath @ persistenceRoot, "NetModelIndex" <> StringReplace[ToString[$VersionNumber], "." -> "-"] },
       allowedLibs = $allowedLibs,
@@ -1366,6 +1424,7 @@ safeCloudObjectQ[ (URL|CloudObject)[ url_, ___ ] ] := safeCloudObjectQ @ url;
 Scan[
     Function[ safeCloudObjectQ[ #1 ] = True ],
     rebasedCloudURLs @ {
+        "https://www.wolframcloud.com/info",
         "https://www.wolframcloud.com/files/auth",
         "https://www.wolframcloud.com/files?path=auth&fields=path",
         "https://www.wolframcloud.com/OAuthVersion",
