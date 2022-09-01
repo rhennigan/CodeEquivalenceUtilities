@@ -151,7 +151,7 @@ SandboxViolation // Attributes = { HoldAllComplete };
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*$UnsafeSymbols*)
-$UnsafeSymbols = { };
+$UnsafeSymbols := $UnsafeSymbols = unsafeSymbols[ ];
 
 unsafeSymbols[ ] := Union[ Union @@ Values @ $sec, $additionalUnsafe ];
 
@@ -679,7 +679,7 @@ EvaluateSafely // Attributes = { HoldAllComplete };
 
 EvaluateSafely // Options = {
     "Definitions"               -> Full,
-    "SymbolList"                :> $UnsafeSymbols,
+    "SymbolList"                -> { },
     "Seed"                      :> $SessionID,
     "RemoveTypes"               -> True,
     "Timeout"                   -> 30,
