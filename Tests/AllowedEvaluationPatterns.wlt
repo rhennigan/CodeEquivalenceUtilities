@@ -32,7 +32,12 @@ VerificationTest[
 (* ::Section::Closed:: *)
 (*$AllowedEvaluationPatterns*)
 
-$dataFile = FileNameJoin @ { $tmp, "data.wl" };
+VerificationTest[
+    $dataFile = FileNameJoin @ { $tmp, "data.wl" },
+    _String,
+    SameTest -> MatchQ,
+    TestID   -> "DataFile"
+]
 
 VerificationTest[
     Put[ Range[ 10 ], $dataFile ],

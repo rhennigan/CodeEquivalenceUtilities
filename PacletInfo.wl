@@ -2,19 +2,31 @@ PacletObject[ <|
     "Name"             -> "Wolfram/CodeEquivalenceUtilities",
     "Description"      -> "Utilities for testing code equivalence",
     "Creator"          -> "Richard Hennigan <richardh@wolfram.com>",
-    "URL"              -> "https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/CodeEquivalenceUtilities",
+    "URL"              -> "https://paclets.com/Wolfram/CodeEquivalenceUtilities",
     "SourceControlURL" -> "https://github.com/rhennigan/CodeEquivalenceUtilities",
+    "DocumentationURL" -> "https://paclets.com",
     "License"          -> "MIT",
     "PublisherID"      -> "Wolfram",
     "Version"          -> "2.1.0",
     "WolframVersion"   -> "12.2+",
-    "DocumentationURL" -> "https://resources.wolframcloud.com/PacletRepository/resources",
-    "Keywords"         -> { "code transformations", "equivalent input" },
+    "Keywords"         -> {
+        "canonical forms",
+        "code comparison",
+        "code transformations",
+        "education",
+        "equality",
+        "equivalence",
+        "code grading",
+        "intension",
+        "metaprogramming",
+        "type theory",
+        "wolfram language"
+    },
     "Extensions"       -> {
         {
             "Kernel",
             "Root"    -> "Kernel",
-            "Context" -> { "Wolfram`CodeEquivalenceUtilities`" },
+            "Context" -> "Wolfram`CodeEquivalenceUtilities`",
             "Symbols" -> {
                 "Wolfram`CodeEquivalenceUtilities`$AllowedEvaluationPatterns",
                 "Wolfram`CodeEquivalenceUtilities`CodeEquivalentQ",
@@ -26,18 +38,12 @@ PacletObject[ <|
         },
         {
             "Documentation",
+            "Language" -> "English",
             "Root"     -> "Documentation"
         },
         {
             "Asset",
-            "Assets" -> {
-                { "License" , "./LICENSE"    },
-                { "TestData", "./Tests/Data" }
-            }
-        }(*,
-        {
-            "Tests",
-            "Method" -> "Experimental-v1"
-        } *)
+            "Assets"   -> { "License", "./LICENSE" }
+        }
     }
 |> ]
