@@ -576,7 +576,7 @@ UnsafeSymbols // Options    =
 
 UnsafeSymbols[
     f_? SymbolQ,
-    opts: OptionsPattern @ { EvaluateSafely, UnsafeSymbols }
+    opts: OptionsPattern @ { UnsafeSymbols, EvaluateSafely }
 ] :=
 
   With[
@@ -679,7 +679,7 @@ EvaluateSafely // Attributes = { HoldAllComplete };
 
 EvaluateSafely // Options = {
     "Definitions"               -> Full,
-    "SymbolList"                -> { },
+    "SymbolList"                :> $UnsafeSymbols,
     "Seed"                      :> $SessionID,
     "RemoveTypes"               -> True,
     "Timeout"                   -> 30,
@@ -1192,7 +1192,7 @@ With[ {
       resourceDir = (Symbol["ResourceSystemClient`Private`resourceCacheDirectory"][ ]),
       persistenceRoot = LocalObjects`PathName @ LocalObject @ $PersistenceBase[[ 2 ]],
       cloudFilesAPI = rebasedCloudURLs @ Alternatives[ "https://www.wolframcloud.com/files" ],
-      exampleDir = DirectoryName @ FindFile[ "ExampleData/rose.gif" ]
+      exampleDir = $exampleDirectory
   },
   With[ {
       ctx = $contextPattern,
@@ -1304,6 +1304,23 @@ With[ {
       ]
   ]]);
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*$exampleDirectory*)
+$exampleDirectory :=
+    With[ { f = FindFile[ "ExampleData/rose.gif" ] },
+        If[ FileExistsQ @ f,
+            DirectoryName @ f,
+            FileNameJoin @ {
+                $InstallationDirectory,
+                "Documentation/English/System/ExampleData"
+            }
+        ]
+    ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*authRequestQ*)
 authRequestQ // Attributes = { HoldFirst };
 
 authRequestQ[
