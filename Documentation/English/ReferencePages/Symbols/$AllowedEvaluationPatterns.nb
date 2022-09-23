@@ -1,0 +1,1832 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* Created By: SaveReadableNotebook *)
+(* https://resources.wolframcloud.com/FunctionRepository/resources/SaveReadableNotebook *)
+
+Notebook[
+ {
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "$AllowedEvaluationPatterns",
+      "ObjectName",
+      CellID -> 578532106
+     ],
+     Cell[
+      TextData[
+       {
+        Cell["   ", "ModInfo"],
+        Cell[
+         BoxData[
+          ButtonBox[
+           "$AllowedEvaluationPatterns",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:CodeEquivalenceUtilities/ref/$AllowedEvaluationPatterns"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[LineSeparator]represents a set of default patterns to allow during sandbox evaluation. "
+       }
+      ],
+      "Usage",
+      CellID -> 175131974
+     ],
+     Cell["XXXX", "Notes", CellID -> 734460115]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "Tech Notes",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "TechNotes",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell["Insert links to related tech notes.", "MoreInfoText"],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "TechNotesSection",
+      CellID -> 20719682
+     ],
+     Cell["XXXX", "Tutorials", CellID -> 323298635]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "Related Links",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "RelatedLinks",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Insert links to any related page, including web pages.",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "RelatedLinksSection",
+      CellID -> 7211492
+     ],
+     Cell["XXXX", "RelatedLinks", CellID -> 204340027]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "See Also",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "SeeAlso",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Insert links to any related reference (function) pages. Type a space, a period and then another space between function names. Then click the palette's Inline Listing Toggle button.",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "SeeAlsoSection",
+      CellID -> 182687019
+     ],
+     Cell[
+      TextData[
+       {
+        Cell[
+         BoxData[
+          ButtonBox[
+           "CodeEquivalentQ",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/CodeEquivalentQ"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[EmptyVerySmallSquare] ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "EvaluateSafely",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/EvaluateSafely"
+          ]
+         ],
+         "InlineFormula"
+        ]
+       }
+      ],
+      "SeeAlso",
+      CellID -> 194327160
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Related Guides",
+      "MoreAboutSection",
+      CellID -> 149109308
+     ],
+     Cell["XXXX", "MoreAbout", CellID -> 756755853]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "Examples Initialization",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "ExamplesInitialization",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Input that is to be evaluated before any examples are run, e.g. Needs[\[Ellipsis]].",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "ExamplesInitializationSection",
+      CellID -> 6852700
+     ],
+     Cell[
+      BoxData[
+       RowBox[
+        {
+         "Needs",
+         "[",
+         "\"Wolfram`CodeEquivalenceUtilities`\"",
+         "]"
+        }
+       ]
+      ],
+      "ExampleInitialization",
+      CellID -> 172153366
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      BoxData[
+       InterpretationBox[
+        GridBox[
+         {
+          {
+           StyleBox[
+            RowBox[{"Basic", " ", "Examples"}],
+            "PrimaryExamplesSection"
+           ],
+           ButtonBox[
+            RowBox[
+             {
+              RowBox[{"More", " ", "Examples"}],
+              " ",
+              "\[RightTriangle]"
+             }
+            ],
+            BaseStyle -> "ExtendedExamplesLink",
+            ButtonData :> "ExtendedExamples"
+           ]
+          }
+         }
+        ],
+        $Line = 0;
+       ]
+      ],
+      "PrimaryExamplesSection",
+      CellID -> 530424701
+     ],
+     Cell[
+      "By default, sandbox rules will prevent some evaluations that would otherwise give equivalent outputs::",
+      "ExampleText",
+      CellID -> 380610525
+     ],
+     Cell[
+      BoxData[
+       RowBox[
+        {
+         RowBox[
+          {
+           "Put",
+           "[",
+           RowBox[
+            {RowBox[{"Range", "[", "10", "]"}], ",", "\"data.wl\""}
+           ],
+           "]"
+          }
+         ],
+         ";"
+        }
+       ]
+      ],
+      "Input",
+      CellLabel -> "In[1]:=",
+      CellID -> 130182422
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            "CodeEquivalentQ",
+            "[",
+            RowBox[
+             {
+              RowBox[{"Get", "[", "\"data.wl\"", "]"}],
+              ",",
+              RowBox[{"Range", "[", "10", "]"}]
+             }
+            ],
+            "]"
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[3]:=",
+         CellID -> 564983965
+        ],
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "EvaluateSafely",
+            "unsafe",
+            "\"Sandboxed the following expressions: \\!\\(\\*RowBox[{\\\"HoldComplete\\\", \\\"[\\\", RowBox[{\\\"<<\\\", \\\"\\\\\\\"data.wl\\\\\\\"\\\"}], \\\"]\\\"}]\\)\"",
+            2,
+            3,
+            1,
+            34100295901694291473,
+            "Local",
+            "Wolfram`CodeEquivalenceUtilities`EvaluateSafely"
+           },
+           "MessageTemplate2"
+          ]
+         ],
+         "Message",
+         "MSG",
+         CellLabel -> "During evaluation of In[3]:=",
+         CellID -> 748438447
+        ],
+        Cell[
+         BoxData["False"],
+         "Output",
+         CellLabel -> "Out[3]=",
+         CellID -> 79013216
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      "Allow an evaluation pattern:",
+      "ExampleText",
+      CellID -> 2585285
+     ],
+     Cell[
+      BoxData[
+       RowBox[
+        {
+         RowBox[
+          {
+           "$AllowedEvaluationPatterns",
+           "=",
+           RowBox[
+            {
+             "HoldPattern",
+             "[",
+             RowBox[{"Get", "[", "\"data.wl\"", "]"}],
+             "]"
+            }
+           ]
+          }
+         ],
+         ";"
+        }
+       ]
+      ],
+      "Input",
+      CellLabel -> "In[4]:=",
+      CellID -> 185198906
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            "CodeEquivalentQ",
+            "[",
+            RowBox[
+             {
+              RowBox[{"Get", "[", "\"data.wl\"", "]"}],
+              ",",
+              RowBox[{"Range", "[", "10", "]"}]
+             }
+            ],
+            "]"
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[5]:=",
+         CellID -> 31044658
+        ],
+        Cell[
+         BoxData["True"],
+         "Output",
+         CellLabel -> "Out[5]=",
+         CellID -> 314715678
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      "Restore the default value:",
+      "ExampleText",
+      CellID -> 22954603
+     ],
+     Cell[
+      BoxData[RowBox[{"$AllowedEvaluationPatterns", "=."}]],
+      "Input",
+      CellLabel -> "In[6]:=",
+      CellID -> 67537043
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            "CodeEquivalentQ",
+            "[",
+            RowBox[
+             {
+              RowBox[{"Get", "[", "\"data.wl\"", "]"}],
+              ",",
+              RowBox[{"Range", "[", "10", "]"}]
+             }
+            ],
+            "]"
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[7]:=",
+         CellID -> 228919643
+        ],
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "EvaluateSafely",
+            "unsafe",
+            "\"Sandboxed the following expressions: \\!\\(\\*RowBox[{\\\"HoldComplete\\\", \\\"[\\\", RowBox[{\\\"<<\\\", \\\"\\\\\\\"data.wl\\\\\\\"\\\"}], \\\"]\\\"}]\\)\"",
+            2,
+            7,
+            2,
+            34100295901694291473,
+            "Local",
+            "Wolfram`CodeEquivalenceUtilities`EvaluateSafely"
+           },
+           "MessageTemplate2"
+          ]
+         ],
+         "Message",
+         "MSG",
+         CellLabel -> "During evaluation of In[7]:=",
+         CellID -> 904819
+        ],
+        Cell[
+         BoxData["False"],
+         "Output",
+         CellLabel -> "Out[7]=",
+         CellID -> 114005554
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["\t", "ExampleDelimiter"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleDelimiter",
+         CellID -> 22404082
+        ],
+        Cell[
+         "Give a list of patterns:",
+         "ExampleText",
+         CellID -> 176434660
+        ],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            RowBox[
+             {
+              "$AllowedEvaluationPatterns",
+              "=",
+              RowBox[{"{", RowBox[{"_Get", ",", "_Put"}], "}"}]
+             }
+            ],
+            ";"
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[1]:=",
+         CellID -> 407513743
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "CodeEquivalentQ",
+               "[",
+               RowBox[
+                {
+                 RowBox[
+                  {
+                   "(",
+                   RowBox[
+                    {
+                     RowBox[
+                      {
+                       "Put",
+                       "[",
+                       RowBox[
+                        {RowBox[{"Range", "[", "10", "]"}], ",", "\"data.wl\""}
+                       ],
+                       "]"
+                      }
+                     ],
+                     ";",
+                     " ",
+                     RowBox[{"Get", "[", "\"data.wl\"", "]"}]
+                    }
+                   ],
+                   ")"
+                  }
+                 ],
+                 ",",
+                 RowBox[{"Range", "[", "10", "]"}]
+                }
+               ],
+               "]"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[3]:=",
+            CellID -> 122468401
+           ],
+           Cell[
+            BoxData["True"],
+            "Output",
+            CellLabel -> "Out[3]=",
+            CellID -> 275428119
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         BoxData[RowBox[{"$AllowedEvaluationPatterns", "=."}]],
+         "Input",
+         CellLabel -> "In[4]:=",
+         CellID -> 17178639
+        ]
+       },
+       Open
+      ]
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "More Examples",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "MoreExamples",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Extended examples in standardized sections.",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "ExtendedExamplesSection",
+      CellTags -> "ExtendedExamples",
+      CellID -> 535859218
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Scope", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 581318440
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Generalizations & Extensions", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 440633709
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["Options", "ExampleSection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSection",
+         CellID -> 13471829
+        ],
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["XXXX", "ExampleSubsection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSubsection",
+         CellID -> 107274364
+        ],
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["XXXX", "ExampleSubsection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSubsection",
+         CellID -> 319420462
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Applications", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 203753330
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["Properties & Relations", "ExampleSection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSection",
+         CellID -> 409008506
+        ],
+        Cell[
+         "Some locations are allowed automatically:",
+         "ExampleText",
+         CellID -> 112504317
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "EvaluateSafely",
+               "[",
+               RowBox[{"Import", "[", "\"ExampleData/rose.gif\"", "]"}],
+               "]"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[3]:=",
+            CellID -> 22799601
+           ],
+           Cell[
+            BoxData[
+             GraphicsBox[
+              TagBox[
+               RasterBox[
+                CompressedData[
+                 "\n1:eJztfS2w49qynishGxqaGgqaxTBmEVQqxOw95+ZVylU3VVevKpUSFTQUNIyg\noKGooaGhAw03NJx099fdqyXvOff8zIz3nKNVa1Sytv/G/vz1f/fyX/9X8T/+\nw2w2K9/oUPzL//7P//jHv/yf/zqnG//t7+X//Le//+2//5e///vf/u1v//hP\n//of6eL/pX//j/7x+ZdpfWWd+/7xeODcT6Y1rc+wtuWu7dovjMz7q9/LtKaV\nFlFl0x43RU786Vde+5amNa0vhsPqUBM4l9nyfDm/+h1Na1qD1bSHzXZNm04e\nsl79jqY1LV0s1gmcm2yVr+7v7xM4p/V51qER5sx5T8ic1qdaVb0ncC6zebZa\nnswsmta0XruIJ0mOr4p1tskInMvNklDanbpXv69pTesLIZOOhEzaJNOX6zmd\nkJR/9fua1rS+wDZfEGuumDMJnPNsTvbRq9/XtKbFq++7uWibqyIjcNKxLLev\nflPTmhYvFuibjDC5ylerfEn4JM0TuuhkuU/rtWu1YoWTYEkQJViyWbSeA5mT\nQ35aL1yucIpBlIE5F+tlsS0mcE7rtQvgJDSyE8nASUCdL5k8YctPa1ovWQS/\nZSYCXUyhzZZP6Ehw7U7dRJvTeuG6369QMokzaS9WM9p08pbNim0+Mee0fvwC\nJd7v991+rRY6qZqrGU7An0SkRJ7VoXr1m53WX25dL5fZG/MkC3GBZTwSc9Km\nE7KMXv1Op/UnX1F7pHOixEiVkOn5ZkHndMRNv/7Ctz2tv84CRPu+Y3+mYC+C\n008G14v1l6lwY1o/ZBHMsk3mhs8IjY7JeP5lAue0vvMCwM597+Z5pM3RjneY\nkDmt773u7+/n6yVSYoQiLHS/7jfLcjuBc1rfdaEgvTpUGfztTxomoTHClW6q\nQylbTv0WpvVd1/3O4NwU+Wa7hpEeZXdEKdRR2rsiq/dF11T3S3+/nWk/7tdX\n/z+m9SdcxJwk1rNVFh1Hz2y526/LMj+fmse1o327tDc6v3R05H1uX/3/mNaf\nc5FQfssGFjrhkxgSR8Zk317BkITM/gg0ApbXrsa+C3kS1IlFH1e65/l+vRC1\n3gjAdOdze+41Ij91tpnWb1oenYTgJlgSJm/n5vG4nNuSefLMgHxcewJkeyjP\nba2cacypR7rPpdMNGNPuaro/P4T+StCdFNRp/epFgn2zIXvojTDZ1FuCImGS\n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\n    "
+                ],
+                {{0, 164.0}, {223.0, 0}},
+                {0, 255},
+                ColorFunction -> RGBColor
+               ],
+               BoxForm`ImageTag[
+                "Byte",
+                ColorSpace -> "RGB",
+                Interleaving -> True
+               ],
+               Selectable -> False
+              ],
+              DefaultBaseStyle -> "ImageGraphics",
+              ImageSizeRaw -> {223.0, 164.0},
+              PlotRange -> {{0, 223.0}, {0, 164.0}}
+             ]
+            ],
+            "Output",
+            CellLabel -> "Out[3]=",
+            CellID -> 169874068
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "CopyFile",
+               "[",
+               RowBox[
+                {
+                 RowBox[{"FindFile", "[", "\"ExampleData/rose.gif\"", "]"}],
+                 ",",
+                 "\"rose.gif\""
+                }
+               ],
+               "]"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[5]:=",
+            CellID -> 129296993
+           ],
+           Cell[
+            BoxData["\"H:\\\\Documents\\\\rose.gif\""],
+            "Output",
+            CellLabel -> "Out[5]=",
+            CellID -> 482991116
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "EvaluateSafely",
+               "[",
+               RowBox[{"Import", "[", "\"rose.gif\"", "]"}],
+               "]"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[6]:=",
+            CellID -> 187147155
+           ],
+           Cell[
+            BoxData[
+             TemplateBox[
+              {
+               "EvaluateSafely",
+               "unsafe",
+               "\"Sandboxed the following expressions: \\!\\(\\*RowBox[{\\\"HoldComplete\\\", \\\"[\\\", RowBox[{\\\"Import\\\", \\\"[\\\", \\\"\\\\\\\"rose.gif\\\\\\\"\\\", \\\"]\\\"}], \\\"]\\\"}]\\)\"",
+               2,
+               6,
+               8,
+               34100320030712282318,
+               "Local",
+               "Wolfram`CodeEquivalenceUtilities`EvaluateSafely"
+              },
+              "MessageTemplate2"
+             ]
+            ],
+            "Message",
+            "MSG",
+            CellLabel -> "During evaluation of In[6]:=",
+            CellID -> 751512755
+           ],
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "SandboxException",
+               "[",
+               RowBox[
+                {
+                 RowBox[{"Import", "[", "\"rose.gif\"", "]"}],
+                 ",",
+                 RowBox[
+                  {
+                   "\"CaughtEvaluation\"",
+                   "\[Rule]",
+                   RowBox[
+                    {
+                     "HoldComplete",
+                     "[",
+                     RowBox[{"Import", "[", "\"rose.gif\"", "]"}],
+                     "]"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ],
+               "]"
+              }
+             ]
+            ],
+            "Output",
+            CellLabel -> "Out[6]=",
+            CellID -> 247636377
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             InterpretationBox[
+              Cell["\t", "ExampleDelimiter"],
+              $Line = 0;
+             ]
+            ],
+            "ExampleDelimiter",
+            CellID -> 104728534
+           ],
+           Cell[
+            "Create an important file:",
+            "ExampleText",
+            CellID -> 31624152
+           ],
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               RowBox[
+                {
+                 "Put",
+                 "[",
+                 RowBox[{"\"This is important!\"", ",", "\"important.wl\""}],
+                 "]"
+                }
+               ],
+               ";"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[1]:=",
+            CellID -> 5736523
+           ],
+           Cell[
+            "Create an evil file that wants to delete the important one:",
+            "ExampleText",
+            CellID -> 41262143
+           ],
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               RowBox[
+                {
+                 "Put",
+                 "[",
+                 RowBox[
+                  {
+                   RowBox[
+                    {
+                     "Unevaluated",
+                     "[",
+                     RowBox[{"DeleteFile", "[", "\"important.wl\"", "]"}],
+                     "]"
+                    }
+                   ],
+                   ",",
+                   "\"evil.wl\""
+                  }
+                 ],
+                 "]"
+                }
+               ],
+               ";"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[2]:=",
+            CellID -> 625932984
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[RowBox[{"FilePrint", "[", "\"evil.wl\"", "]"}]],
+               "Input",
+               CellLabel -> "In[3]:=",
+               CellID -> 464794933
+              ],
+              Cell[
+               "DeleteFile[\"important.wl\"]",
+               "Print",
+               CellLabel -> "During evaluation of In[3]:=",
+               CellID -> 82509824
+              ]
+             },
+             Open
+            ]
+           ],
+           Cell[
+            "Allowing a pattern does not automatically allow dependent evaluations:",
+            "ExampleText",
+            CellID -> 64434820
+           ],
+           Cell[
+            BoxData[
+             RowBox[
+              {RowBox[{"$AllowedEvaluationPatterns", "=", "_Get"}], ";"}
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[4]:=",
+            CellID -> 400703206
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                RowBox[
+                 {
+                  "EvaluateSafely",
+                  "[",
+                  RowBox[{"Get", "[", "\"evil.wl\"", "]"}],
+                  "]"
+                 }
+                ]
+               ],
+               "Input",
+               CellLabel -> "In[5]:=",
+               CellID -> 68570141
+              ],
+              Cell[
+               BoxData[
+                TemplateBox[
+                 {
+                  "EvaluateSafely",
+                  "unsafe",
+                  "\"Sandboxed the following expressions: \\!\\(\\*RowBox[{\\\"HoldComplete\\\", \\\"[\\\", RowBox[{\\\"DeleteFile\\\", \\\"[\\\", \\\"\\\\\\\"important.wl\\\\\\\"\\\", \\\"]\\\"}], \\\"]\\\"}]\\)\"",
+                  2,
+                  5,
+                  3,
+                  34100398977671109160,
+                  "Local",
+                  "Wolfram`CodeEquivalenceUtilities`EvaluateSafely"
+                 },
+                 "MessageTemplate2"
+                ]
+               ],
+               "Message",
+               "MSG",
+               CellLabel -> "During evaluation of In[5]:=",
+               CellID -> 852751
+              ],
+              Cell[
+               BoxData[
+                RowBox[
+                 {
+                  "SandboxException",
+                  "[",
+                  RowBox[
+                   {
+                    RowBox[{"<<", "\"evil.wl\""}],
+                    ",",
+                    RowBox[
+                     {
+                      "\"CaughtEvaluation\"",
+                      "\[Rule]",
+                      RowBox[
+                       {
+                        "HoldComplete",
+                        "[",
+                        RowBox[{"DeleteFile", "[", "\"important.wl\"", "]"}],
+                        "]"
+                       }
+                      ]
+                     }
+                    ]
+                   }
+                  ],
+                  "]"
+                 }
+                ]
+               ],
+               "Output",
+               CellLabel -> "Out[5]=",
+               CellID -> 308752568
+              ]
+             },
+             Open
+            ]
+           ],
+           Cell[
+            TextData[
+             {
+              "The ",
+              Cell[
+               BoxData[ButtonBox["DeleteFile", BaseStyle -> "Link"]],
+               "InlineFormula"
+              ],
+              " was not allowed to run:"
+             }
+            ],
+            "ExampleText",
+            CellID -> 75354313
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                RowBox[{"FilePrint", "[", "\"important.wl\"", "]"}]
+               ],
+               "Input",
+               CellLabel -> "In[6]:=",
+               CellID -> 118934565
+              ],
+              Cell[
+               "\"This is important!\"",
+               "Print",
+               CellLabel -> "During evaluation of In[6]:=",
+               CellID -> 66243475
+              ]
+             },
+             Open
+            ]
+           ],
+           Cell[
+            TextData[
+             {
+              "The ",
+              Cell[
+               BoxData[ButtonBox["DeleteFile", BaseStyle -> "Link"]],
+               "InlineFormula"
+              ],
+              " needs to be explicitly allowed via a matching pattern:"
+             }
+            ],
+            "ExampleText",
+            CellID -> 39209199
+           ],
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               RowBox[
+                {
+                 "$AllowedEvaluationPatterns",
+                 "=",
+                 RowBox[{"{", RowBox[{"_Get", ",", "_DeleteFile"}], "}"}]
+                }
+               ],
+               ";"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[7]:=",
+            CellID -> 807230197
+           ],
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "EvaluateSafely",
+               "[",
+               RowBox[{"Get", "[", "\"evil.wl\"", "]"}],
+               "]"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[8]:=",
+            CellID -> 491678896
+           ],
+           Cell[
+            "Hopefully it wasn't too important:",
+            "ExampleText",
+            CellID -> 41611972
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                RowBox[{"FilePrint", "[", "\"important.wl\"", "]"}]
+               ],
+               "Input",
+               CellLabel -> "In[9]:=",
+               CellID -> 41702162
+              ],
+              Cell[
+               BoxData[
+                TemplateBox[
+                 {
+                  "General",
+                  "noopen",
+                  "\"Cannot open \\!\\(\\*RowBox[{\\\"\\\\\\\"important.wl\\\\\\\"\\\"}]\\).\"",
+                  2,
+                  9,
+                  4,
+                  34100398977671109160,
+                  "Local"
+                 },
+                 "MessageTemplate"
+                ]
+               ],
+               "Message",
+               "MSG",
+               CellLabel -> "During evaluation of In[9]:=",
+               CellID -> 299769585
+              ],
+              Cell[
+               BoxData[
+                RowBox[{"FilePrint", "[", "\"important.wl\"", "]"}]
+               ],
+               "Output",
+               CellLabel -> "Out[9]=",
+               CellID -> 74477604
+              ]
+             },
+             Open
+            ]
+           ],
+           Cell[
+            BoxData[RowBox[{"$AllowedEvaluationPatterns", "=."}]],
+            "Input",
+            CellLabel -> "In[10]:=",
+            CellID -> 243735474
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             InterpretationBox[
+              Cell["\t", "ExampleDelimiter"],
+              $Line = 0;
+             ]
+            ],
+            "ExampleDelimiter",
+            CellID -> 18351091
+           ],
+           Cell[
+            "Allow any evaluations:",
+            "ExampleText",
+            CellID -> 277489513
+           ],
+           Cell[
+            BoxData[
+             RowBox[
+              {RowBox[{"$AllowedEvaluationPatterns", "=", "_"}], ";"}
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[1]:=",
+            CellID -> 525873167
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                RowBox[
+                 {
+                  "EvaluateSafely",
+                  "[",
+                  RowBox[
+                   {
+                    "{",
+                    RowBox[
+                     {
+                      RowBox[{"Put", "[", RowBox[{"123", ",", "\"temp\""}], "]"}],
+                      ",",
+                      " ",
+                      RowBox[{"Get", "[", "\"temp\"", "]"}],
+                      ",",
+                      RowBox[{"DeleteFile", "[", "\"temp\"", "]"}]
+                     }
+                    ],
+                    "}"
+                   }
+                  ],
+                  "]"
+                 }
+                ]
+               ],
+               "Input",
+               CellLabel -> "In[2]:=",
+               CellID -> 128274178
+              ],
+              Cell[
+               BoxData[
+                RowBox[
+                 {"{", RowBox[{"Null", ",", "123", ",", "Null"}], "}"}
+                ]
+               ],
+               "Output",
+               CellLabel -> "Out[2]=",
+               CellID -> 325353173
+              ]
+             },
+             Open
+            ]
+           ],
+           Cell[
+            BoxData[RowBox[{"$AllowedEvaluationPatterns", "=."}]],
+            "Input",
+            CellLabel -> "In[3]:=",
+            CellID -> 57283124
+           ]
+          },
+          Open
+         ]
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["Possible Issues", "ExampleSection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSection",
+         CellID -> 517433842
+        ],
+        Cell[
+         "Some evaluations will also need some dependent evaluations allowed:",
+         "ExampleText",
+         CellID -> 36053463
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "url",
+               "=",
+               RowBox[
+                {
+                 "URLShorten",
+                 "[",
+                 RowBox[
+                  {"CloudPut", "[", RowBox[{"Range", "[", "10", "]"}], "]"}
+                 ],
+                 "]"
+                }
+               ]
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[1]:=",
+            CellID -> 15011067
+           ],
+           Cell[
+            BoxData["\"https://wolfr.am/178q7B1PU\""],
+            "Output",
+            CellLabel -> "Out[1]=",
+            CellID -> 433782757
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            RowBox[
+             {
+              "$AllowedEvaluationPatterns",
+              "=",
+              RowBox[
+               {
+                RowBox[{"HoldPattern", "[", "CloudGet", "]"}],
+                "[",
+                "url",
+                "]"
+               }
+              ]
+             }
+            ],
+            ";"
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[2]:=",
+         CellID -> 187650229
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "CodeEquivalentQ",
+               "[",
+               RowBox[
+                {
+                 RowBox[{"CloudGet", "[", "url", "]"}],
+                 ",",
+                 RowBox[{"Range", "[", "10", "]"}]
+                }
+               ],
+               "]"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[3]:=",
+            CellID -> 21047929
+           ],
+           Cell[
+            BoxData[
+             TemplateBox[
+              {
+               "EvaluateSafely",
+               "unsafe",
+               "\"Sandboxed the following expressions: \\!\\(\\*RowBox[{\\\"HoldComplete\\\", \\\"[\\\", RowBox[{\\\"CloudGet\\\", \\\"[\\\", InterpretationBox[RowBox[{\\\"CloudObject\\\", \\\"[\\\", TemplateBox[List[\\\"\\\\\\\"https://www.wolframcloud.com/obj/6e6d532a-01b1-420c-b88e-fad296bca2e1\\\\\\\"\\\", \\\"https://www.wolframcloud.com/obj/6e6d532a-01b1-420c-b88e-fad296bca2e1\\\"], \\\"HyperlinkURL\\\"], \\\"]\\\"}], CloudObject[\\\"https://www.wolframcloud.com/obj/6e6d532a-01b1-420c-b88e-fad296bca2e1\\\"], Rule[SelectWithContents, True]], \\\"]\\\"}], \\\"]\\\"}]\\)\"",
+               2,
+               3,
+               4,
+               34100407736241913485,
+               "Local",
+               "Wolfram`CodeEquivalenceUtilities`EvaluateSafely"
+              },
+              "MessageTemplate2"
+             ]
+            ],
+            "Message",
+            "MSG",
+            CellLabel -> "During evaluation of In[3]:=",
+            CellID -> 52593697
+           ],
+           Cell[
+            BoxData["False"],
+            "Output",
+            CellLabel -> "Out[3]=",
+            CellID -> 858958764
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         TextData[
+          {
+           "Add the expanded ",
+           Cell[
+            BoxData[ButtonBox["CloudObject", BaseStyle -> "Link"]],
+            "InlineFormula"
+           ],
+           " to the list of allowed patterns:"
+          }
+         ],
+         "ExampleText",
+         CellID -> 176476694
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "$AllowedEvaluationPatterns",
+               "=",
+               "\[IndentingNewLine]",
+               RowBox[
+                {
+                 "With",
+                 "[",
+                 RowBox[
+                  {
+                   RowBox[
+                    {
+                     "{",
+                     RowBox[
+                      {
+                       RowBox[{"short", "=", "url"}],
+                       ",",
+                       RowBox[
+                        {"long", "=", RowBox[{"URLExpand", "[", "url", "]"}]}
+                       ]
+                      }
+                     ],
+                     "}"
+                    }
+                   ],
+                   ",",
+                   "\[IndentingNewLine]",
+                   RowBox[
+                    {
+                     "{",
+                     "\[IndentingNewLine]",
+                     RowBox[
+                      {
+                       RowBox[
+                        {
+                         "HoldPattern",
+                         "[",
+                         RowBox[{"CloudGet", "[", "short", "]"}],
+                         "]"
+                        }
+                       ],
+                       ",",
+                       "\[IndentingNewLine]",
+                       RowBox[
+                        {
+                         "HoldPattern",
+                         "[",
+                         RowBox[
+                          {
+                           "CloudGet",
+                           "[",
+                           RowBox[{"CloudObject", "[", "long", "]"}],
+                           "]"
+                          }
+                         ],
+                         "]"
+                        }
+                       ]
+                      }
+                     ],
+                     "\[IndentingNewLine]",
+                     "}"
+                    }
+                   ]
+                  }
+                 ],
+                 "\[IndentingNewLine]",
+                 "]"
+                }
+               ]
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[4]:=",
+            CellID -> 133930630
+           ],
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "{",
+               RowBox[
+                {
+                 RowBox[
+                  {
+                   "HoldPattern",
+                   "[",
+                   RowBox[
+                    {"CloudGet", "[", "\"https://wolfr.am/178q7B1PU\"", "]"}
+                   ],
+                   "]"
+                  }
+                 ],
+                 ",",
+                 RowBox[
+                  {
+                   "HoldPattern",
+                   "[",
+                   RowBox[
+                    {
+                     "CloudGet",
+                     "[",
+                     InterpretationBox[
+                      RowBox[
+                       {
+                        "CloudObject",
+                        "[",
+                        TemplateBox[
+                         {
+                          "\"https://www.wolframcloud.com/obj/6e6d532a-01b1-420c-b88e-fad296bca2e1\"",
+                          "https://www.wolframcloud.com/obj/6e6d532a-01b1-420c-b88e-fad296bca2e1"
+                         },
+                         "HyperlinkURL"
+                        ],
+                        "]"
+                       }
+                      ],
+                      CloudObject[
+                       "https://www.wolframcloud.com/obj/6e6d532a-01b1-420c-b88e-fad296bca2e1"
+                      ],
+                      SelectWithContents -> True
+                     ],
+                     "]"
+                    }
+                   ],
+                   "]"
+                  }
+                 ]
+                }
+               ],
+               "}"
+              }
+             ]
+            ],
+            "Output",
+            CellLabel -> "Out[4]=",
+            CellID -> 962283
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "CodeEquivalentQ",
+               "[",
+               RowBox[
+                {
+                 RowBox[{"CloudGet", "[", "url", "]"}],
+                 ",",
+                 RowBox[{"Range", "[", "10", "]"}]
+                }
+               ],
+               "]"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[5]:=",
+            CellID -> 641566296
+           ],
+           Cell[
+            BoxData["True"],
+            "Output",
+            CellLabel -> "Out[5]=",
+            CellID -> 6361050
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         "Restore the default value:",
+         "ExampleText",
+         CellID -> 40269636
+        ],
+        Cell[
+         BoxData[RowBox[{"$AllowedEvaluationPatterns", "=."}]],
+         "Input",
+         CellLabel -> "In[6]:=",
+         CellID -> 5314065
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Interactive Examples", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 274208768
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Neat Examples", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 22100156
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["Metadata", "MetadataSection", CellID -> 296091881],
+     Cell[
+      TextData[
+       {
+        "New in: ",
+        Cell["??", "HistoryData", CellTags -> "New"],
+        " | Modified in: ",
+        Cell[" ", "HistoryData", CellTags -> "Modified"],
+        " | Obsolete in: ",
+        Cell[" ", "HistoryData", CellTags -> "Obsolete"]
+       }
+      ],
+      "History",
+      CellID -> 226747618
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         TextData[
+          {
+           "Categorization",
+           Cell[
+            BoxData[
+             TemplateBox[
+              {
+               "Metadata",
+               Cell[
+                BoxData[
+                 FrameBox[
+                  Cell[
+                   "Metadata such as page URI, context, and type of documentation page.",
+                   "MoreInfoText"
+                  ],
+                  BaseStyle -> "IFrameBox"
+                 ]
+                ],
+                "MoreInfoTextOuter"
+               ]
+              },
+              "MoreInfoOpenerButtonTemplate"
+             ]
+            ]
+           ]
+          }
+         ],
+         "CategorizationSection",
+         CellID -> 101058035
+        ],
+        Cell[
+         "Symbol",
+         "Categorization",
+         CellLabel -> "Entity Type",
+         CellID -> 91738893
+        ],
+        Cell[
+         "Wolfram/CodeEquivalenceUtilities",
+         "Categorization",
+         CellLabel -> "Paclet Name",
+         CellID -> 123894
+        ],
+        Cell[
+         "Wolfram`CodeEquivalenceUtilities`",
+         "Categorization",
+         CellLabel -> "Context",
+         CellID -> 141847741
+        ],
+        Cell[
+         "Wolfram/CodeEquivalenceUtilities/ref/$AllowedEvaluationPatterns",
+         "Categorization",
+         CellLabel -> "URI",
+         CellID -> 610413924
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell["Keywords", "KeywordsSection", CellID -> 178967354],
+        Cell["XXXX", "Keywords", CellID -> 58718472]
+       },
+       Closed
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         "Syntax Templates",
+         "TemplatesSection",
+         CellID -> 791094000
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Additional Function Template",
+         CellID -> 518321006
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Arguments Pattern",
+         CellID -> 152878994
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Local Variables",
+         CellID -> 328373750
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Color Equal Signs",
+         CellID -> 483394934
+        ]
+       },
+       Closed
+      ]
+     ]
+    },
+    Open
+   ]
+  ]
+ },
+ WindowStatusArea -> Automatic,
+ TaggingRules -> {
+  "WelcomeScreenSettings" -> {"FEStarting" -> False},
+  "InformationPopupMenuItemAdded" -> True,
+  "Paclet" -> "CodeEquivalenceUtilities",
+  "NotebookIndexQ" -> True,
+  "NotebookLastIndexed" ->
+   DateObject[
+    {2022, 8, 31, 19, 25, 57.328},
+    "Instant",
+    "Gregorian",
+    -4.0
+   ],
+  "NotebookUUID" -> "92ca80bf-5599-4a6a-afd7-aff73ec8f532"
+ },
+ FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+ StyleDefinitions ->
+  FrontEnd`FileName[
+   {"Wolfram"},
+   "FunctionPageStylesExt.nb",
+   CharacterEncoding -> "UTF-8"
+  ],
+ ExpressionUUID -> "92ca80bf-5599-4a6a-afd7-aff73ec8f532"
+]

@@ -78,7 +78,7 @@ iEquivalenceTestData[ a___, sym_? SymbolQ, b___ ] :=
     ];
 
 iEquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
-    Module[
+    withEvaluatorHandler @ Module[
         {
             t0, timing, throwQ, testData, equivalentQ,
             hexpr1, hexpr2, cexpr1, cexpr2, eval1, eval2, randomPatt,
@@ -233,6 +233,12 @@ iEquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
         testData
 
     ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*withEvaluatorHandler*)
+withEvaluatorHandler // Attributes = { HoldAllComplete };
+withEvaluatorHandler[ eval_ ] := Block[ { $UnsafeSymbols = { } }, eval ];
 
 (* ::**********************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
@@ -423,6 +429,7 @@ BuildDispatch[ rules_ ] :=
         oldRules = With[ { n = Normal @ $Dispatch }, If[ ListQ @ n, n, { } ] ];
         appended = Append[ rules, HoldApply[ f_, { v___ } ] :> f @ v ];
         newRules = MakeTransformationRules @@ { appended };
+        $dispatchHash = Hash @ newRules;
 
         Catch[
             Check[ $Dispatch = Dispatch @ newRules,

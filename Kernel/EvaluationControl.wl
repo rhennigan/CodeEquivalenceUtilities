@@ -10,6 +10,7 @@ BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*Defined symbols*)
+$AllowedEvaluationPatterns;
 $Memoize;
 $RandomSymbols;
 $UnsafeSymbolPattern;
@@ -43,6 +44,45 @@ $MaxQuantityArraySize = 25;
 $evaluatorDebug       = False;
 $sandboxAbort         = True;
 $printCount           = 0;
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*$AllowedEvaluationPatterns*)
+$AllowedEvaluationPatterns = Automatic;
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*allowEvaluations*)
+allowEvaluations // Attributes = { HoldRest };
+allowEvaluations[ allow_, eval_ ] :=
+    Internal`InheritedBlock[
+        { $allowedEvaluationPatterns },
+        Block[
+            {
+                $evalPatternBlock          = True,
+                $AllowedEvaluationPatterns = toAllowedEvaluationPattern @ allow
+            },
+            eval
+        ]
+    ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*$allowedEvaluationPatterns*)
+$allowedEvaluationPatterns :=
+    With[ { p = toAllowedEvaluationPattern @ $AllowedEvaluationPatterns },
+        If[ TrueQ @ $evalPatternBlock,
+            $allowedEvaluationPatterns = p,
+            p
+        ]
+    ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*toAllowedEvaluationPattern*)
+toAllowedEvaluationPattern[ Automatic ] := Alternatives[ ];
+toAllowedEvaluationPattern[ { p___ }  ] := HoldPattern @ Alternatives @ p;
+toAllowedEvaluationPattern[ p___      ] := HoldPattern @ Alternatives @ p;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -453,7 +493,7 @@ $additionalUnsafe = { "DeleteObject", "WordList", "WordData" };
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*$UnsafeSymbolPattern*)
-$UnsafeSymbolPattern =
+$UnsafeSymbolPattern :=
   Replace[ Flatten[ HoldComplete @@ ToExpression[ $UnsafeSymbols,
                                                   StandardForm,
                                                   HoldComplete
@@ -527,17 +567,21 @@ UnsafeSymbols // Attributes = { HoldAllComplete };
 UnsafeSymbols // Options    =
   {
       "Definitions" -> Automatic,
-      "SymbolList"  -> $UnsafeSymbols,
+      "SymbolList"  :> $UnsafeSymbols,
       "Seed"        :> $SessionID,
       "RemoveTypes" -> True,
       "Timeout"     -> None,
       "RetryCount"  -> None
   };
 
-UnsafeSymbols[ f_? SymbolQ, opts : OptionsPattern[ ] ] :=
+UnsafeSymbols[
+    f_? SymbolQ,
+    opts: OptionsPattern @ { UnsafeSymbols, EvaluateSafely }
+] :=
 
   With[
       {
+          symbols = OptionValue @ "SymbolList",
           definitions =
             Replace[ OptionValue @ "Definitions",
                 {
@@ -548,7 +592,7 @@ UnsafeSymbols[ f_? SymbolQ, opts : OptionsPattern[ ] ] :=
       },
 
       Union @ Cases[
-          List @@ Replace[ definitions @ f,
+          Replace[ deleteWhiteListed @ definitions @ f,
                            HoldPattern[
                                HoldForm[ _ ] ->
                                  {
@@ -563,20 +607,26 @@ UnsafeSymbols[ f_? SymbolQ, opts : OptionsPattern[ ] ] :=
                                      Attributes     -> a_
                                  }
                            ] :>
-                             Flatten @ { ov, sv, uv, dv, nv, fv, defv, mv, a }
+                             TempHold[ ov, sv, uv, dv, nv, fv, defv, mv, a ]
                            ,
                            { 1 }
-                  ] // Flatten
+                  ]
           ,
-          ( s_? SymbolQ /; MemberQ[ OptionValue @ "SymbolList",
-                                    SymbolName @ Unevaluated @ s
-                           ]
+          ( s_? SymbolQ /; MemberQ[ symbols, SymbolName @ Unevaluated @ s ]
           ) :> ToFullString[ s, "Context" -> None, "ContextPath" -> None ]
           ,
           Infinity,
           Heads -> True
       ]
   ];
+
+deleteWhiteListed[ expr_ ] :=
+    DeleteCases[
+        expr,
+        _? WhiteListedPatternQ,
+        { 2, Infinity },
+        Heads -> True
+    ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -628,18 +678,20 @@ CatchUnsafe[ args___ ] :=
 EvaluateSafely // Attributes = { HoldAllComplete };
 
 EvaluateSafely // Options = {
-    "Definitions"      -> Full,
-    "SymbolList"       :> $UnsafeSymbols,
-    "Seed"             :> $SessionID,
-    "RemoveTypes"      -> True,
-    "Timeout"          -> 30,
-    "MemoryConstraint" -> 2^24,
-    "RetryCount"       -> 5
+    "Definitions"               -> Full,
+    "SymbolList"                :> $UnsafeSymbols,
+    "Seed"                      :> $SessionID,
+    "RemoveTypes"               -> True,
+    "Timeout"                   -> 30,
+    "MemoryConstraint"          -> 2^24,
+    "RetryCount"                -> 5,
+    "AllowedEvaluationPatterns" :> $AllowedEvaluationPatterns
 };
 
 EvaluateSafely::unsafe = "Sandboxed the following expressions: `1`";
 
-EvaluateSafely[ expr_, opts: OptionsPattern[ ] ] :=
+EvaluateSafely[ expr_, opts: OptionsPattern[ ] ] := allowEvaluations[
+    OptionValue[ "AllowedEvaluationPatterns" ],
     Module[ { count, expanded, evaluated },
         WhiteListedPatternQ;
         count    = OptionValue[ "RetryCount" ];
@@ -662,7 +714,8 @@ EvaluateSafely[ expr_, opts: OptionsPattern[ ] ] :=
                 "CaughtEvaluation" -> HoldComplete @ Throw[ _, $Untagged ]
             ] :> evaluateWithThrowCatchHandlers[ expr, count, opts ]
         ]
-    ];
+    ]
+];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -1123,7 +1176,11 @@ WhiteListedPatternQ := (
              { 1 }
     ] // ReleaseHold;
 
-    WhiteListedPatternQ[ ___ ] := False;
+    WhiteListedPatternQ[ p___ ] := MatchQ[
+        HoldComplete @ p,
+        _[ $allowedEvaluationPatterns ]
+    ];
+
     WhiteListedPatternQ
 );
 
@@ -1134,7 +1191,8 @@ $WhiteListedPatterns := (Quiet[ ResourceObject; LocalObject ];
 With[ {
       resourceDir = (Symbol["ResourceSystemClient`Private`resourceCacheDirectory"][ ]),
       persistenceRoot = LocalObjects`PathName @ LocalObject @ $PersistenceBase[[ 2 ]],
-      cloudFilesAPI = rebasedCloudURLs @ Alternatives[ "https://www.wolframcloud.com/files" ]
+      cloudFilesAPI = rebasedCloudURLs @ Alternatives[ "https://www.wolframcloud.com/files" ],
+      exampleDir = $exampleDirectory
   },
   With[ {
       ctx = $contextPattern,
@@ -1144,6 +1202,7 @@ With[ {
           whitelistDomain[ "*.wolframalpha.com" ],
           whitelistDomain[ "*.wolfram.com" ]
       ],
+      pathExamples = whitelistPath[ "ExampleData" | exampleDir ],
       pathSystem = whitelistPath[ $InstallationDirectory ],
       pathApps = whitelistPath[ "/wolframcloud/userfiles/WolframApplications" ],
       pathBase = whitelistPath @ $UserBaseDirectory | whitelistPath @ $BaseDirectory,
@@ -1167,9 +1226,9 @@ With[ {
       ],
       pathPersistence = whitelistPath @ persistenceRoot,
       pathLockFiles = whitelistPath @ ResourceSystemClient`FileLocking`$LocalLockDirectory,
-      pathCache = whitelistPath @ FileNameJoin @ { $UserBaseDirectory, "ApplicationData", "CodeEquivalenceUtilities", "Index" },
+      pathCache = whitelistPath @ FileNameJoin @ { $UserBaseDirectory, "ApplicationData", "Wolfram", "Index" },
       pathProcLink = whitelistPath @ FileNameJoin @ { $UserBaseDirectory, "ApplicationData", "ProcessLink" },
-      pathNMIndex = whitelistPath @ FileNameJoin @ { whitelistPath @ persistenceRoot, "NetModelIndex" <> StringReplace[ToString[$VersionNumber], "." -> "-"] },
+      pathNMIndex = whitelistPath @ FileNameJoin @ { persistenceRoot, "NetModelIndex" <> StringReplace[ToString[$VersionNumber], "." -> "-"] },
       allowedLibs = $allowedLibs,
       cloudFiles = url_String /; StringStartsQ[ url, cloudFilesAPI~~("/"|"?") ] && StringFreeQ[ url, ("&"|"?")~~"properties=" ],
       rurl = resourceURL,
@@ -1181,7 +1240,7 @@ With[ {
   },
       HoldComplete[
           BinaryRead[ InputStream[ pathPaclets | pathProcLink , _ ], ___ ],
-          BinaryReadList[ InputStream[ String | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp , _ ], ___ ],
+          BinaryReadList[ InputStream[ String | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp | pathExamples , _ ], ___ ],
           BinaryWrite[ OutputStream[ pathTemp | pathResources, _ ], ___ ],
           CreateDirectory[ ],
           CreateDirectory[ pathCache | pathResources | pathResourcePersistence | pathLockFiles | pathSearchIndices | pathPaclets, ___ ],
@@ -1200,13 +1259,13 @@ With[ {
           FileNames[ _, pathSystem | pathResources | pathBase | pathLockFiles | pathPersistence, ___ ],
           FileNames[ "*", { }, 1 ],
           FindFile[ allowedLibs, "AccessPermission" -> "Execute" ],
-          FindFile[ pathSystem | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp ],
+          FindFile[ pathSystem | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp | pathExamples ],
           FindFile[ "put.wl" | ctx, ___ ],
           Get[ "subicon.m" | "deficon.m" | "HDF5Tools/HDF5Tools.m" | $Failed | "put.wl" | ctx, ___ ],
           Get[ pathPaclets | pathSystem | pathApps | pathBase | pathTemp | pathCache | pathResources | pathResourcePersistence | pathLockFiles | pathNMIndex, ___ ],
           Import[ InputStream[ pathPaclets, _ ], ___ ],
           Import[ InputStream[ String, _ ], { "GEOTIFF", "Data" } | { "RAWJSON" } | { "JSON" }, ___ ],
-          Import[ "!cmd /c ver" | "data.MX" | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp, ___ ],
+          Import[ "!cmd /c ver" | "data.MX" | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp | pathExamples, ___ ],
           Import[ domains, "Hyperlinks"|"TSV"|"String"|{"Hyperlinks"|"TSV"|"String"}, ___ ],
           LinkWrite[ _, Except @ CallPacket @ CloudSystem`Private`ServiceDispatch @ CloudSystem`CloudObject`DoCloudOperation[ Except[ "GET" ], ___ ] ],
           LinkWrite[ link_LinkObject, ___ ] /; MatchQ[ $FrontEnd, HoldPattern @ FrontEndObject @ link ],
@@ -1245,6 +1304,23 @@ With[ {
       ]
   ]]);
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*$exampleDirectory*)
+$exampleDirectory :=
+    With[ { f = FindFile[ "ExampleData/rose.gif" ] },
+        If[ FileExistsQ @ f,
+            DirectoryName @ f,
+            FileNameJoin @ {
+                $InstallationDirectory,
+                "Documentation/English/System/ExampleData"
+            }
+        ]
+    ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*authRequestQ*)
 authRequestQ // Attributes = { HoldFirst };
 
 authRequestQ[
@@ -1366,6 +1442,7 @@ safeCloudObjectQ[ (URL|CloudObject)[ url_, ___ ] ] := safeCloudObjectQ @ url;
 Scan[
     Function[ safeCloudObjectQ[ #1 ] = True ],
     rebasedCloudURLs @ {
+        "https://www.wolframcloud.com/info",
         "https://www.wolframcloud.com/files/auth",
         "https://www.wolframcloud.com/files?path=auth&fields=path",
         "https://www.wolframcloud.com/OAuthVersion",

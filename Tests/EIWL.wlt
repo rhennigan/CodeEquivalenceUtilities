@@ -4,15 +4,9 @@
 Quiet[ ResourceObject, General::shdw ];
 Needs[ "Wolfram`CodeEquivalenceUtilities`" ];
 
-$CachePersistence = "Session";
-
-$testDataDirectory =
-    PacletObject[ "Wolfram/CodeEquivalenceUtilities" ][
-        "AssetLocation",
-        "TestData"
-    ];
-
-$answerKey = Get @ FileNameJoin @ { $testDataDirectory, "EIWLData.wl" };
+$CachePersistence  = "Session";
+$testDataDirectory = FileNameJoin @ { DirectoryName @ $TestFileName, "Data" };
+$answerKey         = Get @ FileNameJoin @ { $testDataDirectory, "EIWLData.wl" };
 
 
 ValidateCorrect // Attributes = { HoldFirst };

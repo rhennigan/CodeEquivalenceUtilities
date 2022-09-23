@@ -3,6 +3,7 @@
 (*Package header*)
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 
+$AllowedEvaluationPatterns;
 $MemoryLimit;
 $RasterBoxErrorThreshold;
 $RasterErrorThreshold;
@@ -18,14 +19,15 @@ Begin[ "`Private`" ];
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Configuration values*)
-$MemoryLimit             = 256 * 1048576;
-$RasterBoxErrorThreshold = 0.1;
-$RasterErrorThreshold    = 0.01;
-$RasterizeTimeLimit      = 5;
-$RasterPerimeter         = 0;
-$RasterSize              = { 100, 100 };
-$TimeLimit               = 5;
-$TransformationLimit     = 10;
+$AllowedEvaluationPatterns = Automatic;
+$MemoryLimit               = 256 * 1048576;
+$RasterBoxErrorThreshold   = 0.1;
+$RasterErrorThreshold      = 0.01;
+$RasterizeTimeLimit        = 5;
+$RasterPerimeter           = 0;
+$RasterSize                = { 100, 100 };
+$TimeLimit                 = 5;
+$TransformationLimit       = 10;
 
 $RasterPatterns = HoldPattern @ Alternatives[
     ArrayPlot,

@@ -264,15 +264,6 @@ typedExpFrameBox[ t : TypedExpression[ exp___ ] ] :=
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
-(*Proportion*)
-Proportion /: MakeBoxes[ t : HoldPattern @ Proportion[ _? UAtomQ, _? UAtomQ ],
-                         StandardForm ] :=
-  With[ { exp = t },
-      MakeBoxes[ exp, StandardForm ]
-  ];
-
-(* ::**********************************************************************:: *)
-(* ::Section::Closed:: *)
 (*Local symbols*)
 $localSymbolHashMod = 64;
 $localSymbolColorFunction = ColorData @ 97;
