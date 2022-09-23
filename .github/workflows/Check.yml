@@ -28,10 +28,10 @@ jobs:
       run: wolframscript Scripts/BuildMX.wls
     - name: Build
       id: build-paclet-step
-      uses: WolframResearch/build-paclet@v1.8.0
+      uses: WolframResearch/build-paclet@v1.9.0
       with: 
         target: Submit
-        paclet_cicd_version: 0.31.0
+        paclet_cicd_version: 0.32.0
         definition_notebook: ./ResourceDefinition.nb
         resource_system_base: https://www.wolframcloud.com/obj/resourcesystem/api/1.0
     - name: UploadArtifact
@@ -55,10 +55,10 @@ jobs:
       run: wolframscript Scripts/BuildMX.wls
     - name: Test
       id: test-paclet-step
-      uses: WolframResearch/test-paclet@v1.8.0
+      uses: WolframResearch/test-paclet@v1.9.0
       with: 
         target: Submit
-        paclet_cicd_version: 0.31.0
+        paclet_cicd_version: 0.32.0
         definition_notebook: ./ResourceDefinition.nb
         resource_system_base: https://www.wolframcloud.com/obj/resourcesystem/api/1.0
     - name: UploadTestResults
