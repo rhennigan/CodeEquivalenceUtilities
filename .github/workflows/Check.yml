@@ -8,6 +8,10 @@ on:
 concurrency: 
   group: ${{ github.ref }}
   cancel-in-progress: true
+env: 
+  WOLFRAM_SYSTEM_ID: Linux-x86-64
+  WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID }}
+  RESOURCE_PUBLISHER_TOKEN: ${{ secrets.RESOURCE_PUBLISHER_TOKEN }}
 jobs: 
   Check: 
     name: Check
@@ -15,10 +19,6 @@ jobs:
     container: 
       image: wolframresearch/wolframengine:latest
       options: --user root
-    env: 
-      WOLFRAM_SYSTEM_ID: Linux-x86-64
-      WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID }}
-      RESOURCE_PUBLISHER_TOKEN: ${{ secrets.RESOURCE_PUBLISHER_TOKEN }}
     timeout-minutes: 15
     steps: 
     - name: Checkout
@@ -46,10 +46,6 @@ jobs:
     container: 
       image: wolframresearch/wolframengine:latest
       options: --user root
-    env: 
-      WOLFRAM_SYSTEM_ID: Linux-x86-64
-      WOLFRAMSCRIPT_ENTITLEMENTID: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID }}
-      RESOURCE_PUBLISHER_TOKEN: ${{ secrets.RESOURCE_PUBLISHER_TOKEN }}
     timeout-minutes: 30
     steps: 
     - name: Checkout
