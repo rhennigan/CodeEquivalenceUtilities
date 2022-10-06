@@ -855,7 +855,7 @@ ToTypedBinding // Attributes = {HoldAllComplete};
 ToTypedBinding // Options = {};
 
 ToTypedBinding[bind_[patt_, defn_]] :=
-    Module[{newPatt, dRepl, newDefn},
+    Quiet[Module[{newPatt, dRepl, newDefn},
       newPatt =
           HoldComplete[patt] /. p_Pattern :> TrEval@toTypedPatterns[p];
 
@@ -869,7 +869,7 @@ ToTypedBinding[bind_[patt_, defn_]] :=
 
       Delete[
         bind @@@ TempHold @@ {{newPatt, newDefn}}, {{1, 1, 0}, {1, 2, 0}}]
-    ];
+    ], RuleDelayed::rhs];
 
     ,
     RuleDelayed::rhs

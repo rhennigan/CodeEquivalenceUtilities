@@ -145,11 +145,17 @@ attributeRules = HoldComplete[
 (******************************************************************************)
 
 
-hasSeqFunQ[ rng : { __Integer | __Rational } ] :=
-  hasSeqFunQ[rng] =
-    MatchQ[Replace[FindSequenceFunction[rng],
-        f_Function :> (seqFun[rng] = f)], _Function];
-
+hasSeqFunQ[ rng: { __Integer | __Rational } ] := hasSeqFunQ[ rng ] =
+    And[ Length @ rng >= 4,
+         ! constantArrayQ @ rng,
+         MatchQ[
+             Replace[
+                 FindSequenceFunction @ rng,
+                 f_Function :> (seqFun[ rng ] = f)
+             ],
+             _Function
+         ]
+    ];
 
 
 (******************************************************************************)
@@ -635,16 +641,24 @@ pureFunctionRules = HoldComplete[
 
 systemSymbols = HoldComplete[
     Circle @ { 0, 0 } :> Circle[ { 0, 0 }, 1 ],
+    Dashed            :> Dashing @ { Small, Small },
+    DotDashed         :> Dashing @ { 0, Small, Small, Small },
     Dotted            :> Dashing @ { 0, Small },
+    Thick             :> Thickness @ Large,
+    Thin              :> Thickness @ Tiny,
     Yesterday         :> DateObject[ Take[ DateList[ ], 3 ] - { 0, 0, 1 } ],
     Today             :> DateObject @ Take[ DateList[ ], 3 ],
     Tomorrow          :> DateObject[ Take[ DateList[ ], 3 ] + { 0, 0, 1 } ],
     Now               :> DateObject @ DateList[ ],
+    InfiniteFuture    :> DateObject[ { Infinity }, "Eternity", "Gregorian", None ],
+    InfinitePast      :> DateObject[ { -Infinity }, "Eternity", "Gregorian", None ],
+    Infinity          :> DirectedInfinity[ 1 ],
     Here              :> $GeoLocation,
     Black             :> GrayLevel[ 0 ],
     Gray              :> GrayLevel[ 0.5 ],
     LightGray         :> GrayLevel[ 0.85 ],
     White             :> GrayLevel[ 1 ],
+    Transparent       :> GrayLevel[ 0, 0 ],
     Blue              :> RGBColor[ 0, 0, 1 ],
     Green             :> RGBColor[ 0, 1, 0 ],
     Cyan              :> RGBColor[ 0, 1, 1 ],
@@ -656,7 +670,12 @@ systemSymbols = HoldComplete[
     Pink              :> RGBColor[ 1, 0.5, 0.5 ],
     Yellow            :> RGBColor[ 1, 1, 0 ],
     LightYellow       :> RGBColor[ 1, 1, 0.85 ],
-    Thick             :> Thickness @ Large
+    $CloudCreditsAvailable :> If[ TrueQ @ $CloudConnected,
+                                  CloudAccountData[ "CloudCreditsAvailable" ],
+                                  Indeterminate
+                              ],
+    $Linked                 :> $ParentLink =!= Null,
+    $PerformanceGoal        :> If[ $ControlActiveSetting, "Speed", "Quality" ]
 ];
 
 systemDownvaluesNull = HoldComplete[
@@ -1025,11 +1044,117 @@ syntaxRules = HoldComplete[
     RightComposition[ a___ ] :> WithHolding[ { reversed = Reverse @ TempHold @ a }, Composition @ reversed ]
     ,
     Identity[ e_ ] :> e
+    ,
+    TrueQ @ TrueQ[ expr_ ] :> TrueQ @ expr
+    ,
+    If[ a_, b_ ] :> If[ a, b, Null ],
+    If[ TrueQ[ a_ ], b_, c_ ] :> If[ a, b, c, c ],
+    If[ True, a_, _ ] :> a,
+    If[ True, a_, _, _ ] :> a,
+    If[ False, _, a_ ] :> a,
+    If[ False, _, a_, _ ] :> a
+    ,
+    Which[ a_, b_ ] :> If[ a, b ],
+    Which[ a_, b_, c_, d___ ] :> If[ a, b, Which[ c, d ] ],
+    HoldPattern[ Which ][ ] :> Null
+    ,
+    Switch[ a_, b_, c__ ] /; EvenQ @ Length @ HoldComplete[ b, c ] :>
+        With[
+            {
+                r = Replace[
+                        Partition[ TempHold[ b, c ], 2 ],
+                        TempHold[ d_, e_ ] :> d :> e,
+                        { 1 }
+                    ]
+            },
+            Replace[ a, { r } ] /; True
+        ]
+    ,
+    Replace[ a_, b_, o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { 0, 0 }, o ],
+
+    Replace[ a_, b_, c_? IntTypeQ, o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { 1, c }, o ],
+
+    Replace[ a_, b_, { c_? IntTypeQ }, o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { c, c }, o ],
+
+    Replace[ a_, b_, DirectedInfinity[ 1 ], o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { 1, DirectedInfinity[ 1 ] }, o ],
+
+    Replace[ a_, b_, { DirectedInfinity[ 1 ] }, o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { 1, DirectedInfinity[ 1 ] }, o ],
+
+    Replace[ a_, b: _Rule|_RuleDelayed, c_, o: OptionsPattern[ ] ] :>
+        Replace[ a, { b }, c, o ],
+
+    Replace[ a_, b_, All, o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { 0, DirectedInfinity[ 1 ] }, o ],
+
+    Replace[ a_, b_, c__, (Rule|RuleDelayed)[ Heads, False ], d___ ] :>
+        Replace[ a, b, c, d ],
+
+    ReplaceAll[ a_, b_ ] :>
+        Replace[ a, b, { 0, DirectedInfinity[ 1 ] }, Heads -> True ]
+];
+
+$booleanFunctions1 = HoldPattern @ Alternatives[
+    AcyclicGraphQ, AlgebraicIntegerQ, AlgebraicUnitQ, \
+    AntihermitianMatrixQ, AntisymmetricMatrixQ, ArrayQ, AssociationQ, \
+    AtomQ, AudioQ, BinaryImageQ, BioSequenceQ, BipartiteGraphQ, BooleanQ, \
+    BoundaryMeshRegionQ, BoundedRegionQ, BusinessDayQ, ByteArrayQ, \
+    ColorQ, CompatibleUnitQ, CompleteGraphQ, CompositeQ, ConnectedGraphQ, \
+    ConnectedMoleculeQ, ConstantRegionQ, ContinuousTimeModelQ, \
+    ConvexPolygonQ, ConvexPolyhedronQ, ConvexRegionQ, CoprimeQ, \
+    CSGRegionQ, DataStructureQ, DateObjectQ, DeviceOpenQ, \
+    DiagonalizableMatrixQ, DiagonalMatrixQ, DirectedGraphQ, DirectoryQ, \
+    DiscreteTimeModelQ, DispatchQ, EdgeTaggedGraphQ, \
+    EdgeTransitiveGraphQ, EdgeWeightedGraphQ, EmptyGraphQ, \
+    EulerianGraphQ, EvenQ, ExactNumberQ, FailureQ, FileExistsQ, GraphQ, \
+    HamiltonianGraphQ, HermitianMatrixQ, ImageQ, IndefiniteMatrixQ, \
+    InexactNumberQ, IntegerQ, IrreduciblePolynomialQ, KnownUnitQ, ListQ, \
+    LoopFreeGraphQ, LowerTriangularMatrixQ, MachineNumberQ, \
+    ManagedLibraryExpressionQ, MatrixQ, MersennePrimeExponentQ, \
+    MeshRegionQ, MissingQ, MixedGraphQ, MoleculeEquivalentQ, MoleculeQ, \
+    MultigraphQ, NegativeDefiniteMatrixQ, NegativeSemidefiniteMatrixQ, \
+    NormalMatrixQ, NumberQ, NumericArrayQ, NumericQ, OddQ, OptionQ, \
+    OrthogonalMatrixQ, PacletObjectQ, PathGraphQ, PerfectNumberQ, \
+    PermutationCyclesQ, PermutationListQ, PlanarGraphQ, PolynomialQ, \
+    PositiveDefiniteMatrixQ, PositiveSemidefiniteMatrixQ, PossibleZeroQ, \
+    PrimePowerQ, PrimeQ, QuadraticIrrationalQ, QuantityQ, \
+    ReactionBalancedQ, RegionQ, RootOfUnityQ, SameQ, SatisfiableQ, \
+    SimpleGraphQ, SimplePolygonQ, SimplePolyhedronQ, SolidRegionQ, \
+    SparseArrayQ, SpatialObservationRegionQ, SquareFreeQ, SquareMatrixQ, \
+    StringQ, StructuredArrayHeadQ, SymmetricMatrixQ, TautologyQ, TensorQ, \
+    TimeObjectQ, TreeGraphQ, TreeLeafQ, TreeQ, TrueQ, UnateQ, \
+    UndirectedGraphQ, UnitaryMatrixQ, UnsameQ, UpperTriangularMatrixQ, \
+    ValueQ, VectorQ, VertexTransitiveGraphQ, VertexWeightedGraphQ, \
+    VideoQ, WeaklyConnectedGraphQ, WeightedGraphQ
+];
+
+$booleanFunctionsN = HoldPattern @ Alternatives[
+    SameQ, UnsameQ
+];
+
+booleanFunctionRules = Inline[ { $booleanFunctions1, $booleanFunctionsN },
+    HoldComplete[
+        TrueQ[ (h:$booleanFunctions1)[ x_ ] ] :> h @ x,
+        TrueQ[ (h:$booleanFunctionsN)[ x___ ] ] :> h @ x,
+        SameQ[ x_, True ] :> TrueQ @ x,
+        SameQ[ True, x_ ] :> TrueQ @ x
+    ]
 ];
 
 
+(* TODO:
+    If[ False|True, ... ],
+    StringQ[ _? StringTypeQ ] -> True,
+    IntegerQ[ _? IntTypeQ ] -> True,
+*)
+
 arithmeticRules = HoldComplete[
 
+    Times[ -1, DirectedInfinity[ 1 ] ] :> DirectedInfinity[ -1 ],
 
     (* distribute Times over Plus *)
     Times[ x_, Plus[ a___ ] ] :>
@@ -1562,6 +1687,7 @@ rules = {
     extraRules,
     syntaxRules,
     arithmeticRules,
+    booleanFunctionRules,
     graphicsRules,
     cleanupRules
 } /. HoldPattern[$unrollLimit] -> $unrollLimit;

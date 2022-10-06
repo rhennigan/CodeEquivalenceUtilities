@@ -321,3 +321,57 @@ VerificationTest[
   ToCanonicalForm[StringJoin[#1, StringJoin[Reverse[Characters[#1]]]] & ],
   TestID -> "Untitled-108@@Tests/Rules.wlt:319,1-323,2"
 ];
+
+VerificationTest[
+    MakeCanonicalForm @ Replace[ x, y_Integer :> y + 1, 2 ],
+    MakeCanonicalForm @ Replace[ x, y_Integer :> y + 1, { 1, 2 }, Heads -> False ],
+    TestID -> "Replace@@Tests/Rules.wlt:325,1-329,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Replace[ x, y_ :> y + 1, All, Heads -> True ],
+    MakeCanonicalForm[ x /. y_ :> y + 1 ],
+    TestID -> "ReplaceAll@@Tests/Rules.wlt:331,1-335,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Replace[ x, y_ :> y + 1, { 0, Infinity }, Heads -> True ],
+    MakeCanonicalForm[ x /. y_ :> y + 1 ],
+    TestID -> "ReplaceAll@@Tests/Rules.wlt:337,1-341,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ If[ TrueQ @ a, b, c ],
+    MakeCanonicalForm @ If[ a, b, c, c ],
+    TestID -> "If@@Tests/Rules.wlt:343,1-347,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ If[ TrueQ @ True, a, b ],
+    MakeCanonicalForm @ If[ TrueQ @ False, b, a ],
+    TestID -> "If-TrueQ@@Tests/Rules.wlt:349,1-353,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ TrueQ @ StringQ @ x,
+    MakeCanonicalForm @ StringQ @ x,
+    TestID -> "TrueQ-StringQ@@Tests/Rules.wlt:355,1-359,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Which[ a, b, True, c ],
+    MakeCanonicalForm @ If[ a, b, c ],
+    TestID -> "Which-If@@Tests/Rules.wlt:361,1-365,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Which[ a, b, c, d, True, e ],
+    MakeCanonicalForm @ If[ a, b, If[ c, d, e ] ],
+    TestID -> "Which-If@@Tests/Rules.wlt:367,1-371,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Switch[ x, _Integer, 1, _String, 2, _, 3 ],
+    MakeCanonicalForm @ Replace[ x, { _Integer :> 1, _String :> 2, _ :> 3 } ],
+    TestID -> "Switch-Replace@@Tests/Rules.wlt:373,1-377,2"
+]
