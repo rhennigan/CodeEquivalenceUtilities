@@ -145,11 +145,17 @@ attributeRules = HoldComplete[
 (******************************************************************************)
 
 
-hasSeqFunQ[ rng : { __Integer | __Rational } ] :=
-  hasSeqFunQ[rng] =
-    MatchQ[Replace[FindSequenceFunction[rng],
-        f_Function :> (seqFun[rng] = f)], _Function];
-
+hasSeqFunQ[ rng: { __Integer | __Rational } ] := hasSeqFunQ[ rng ] =
+    And[ Length @ rng >= 4,
+         ! constantArrayQ @ rng,
+         MatchQ[
+             Replace[
+                 FindSequenceFunction @ rng,
+                 f_Function :> (seqFun[ rng ] = f)
+             ],
+             _Function
+         ]
+    ];
 
 
 (******************************************************************************)
@@ -1064,12 +1070,32 @@ syntaxRules = HoldComplete[
             Replace[ a, { r } ] /; True
         ]
     ,
-    Replace[ a_, b_ ] :> Replace[ a, b, { 0, 0 } ],
-    Replace[ a_, b_, c_? IntTypeQ ] :> Replace[ a, b, { 1, c } ],
-    Replace[ a_, b_, { c_? IntTypeQ } ] :> Replace[ a, b, { c, c } ],
-    Replace[ a_, b_, DirectedInfinity[ 1 ] ] :> Replace[ a, b, { 1, DirectedInfinity[ 1 ] } ],
-    Replace[ a_, b_, { DirectedInfinity[ 1 ] } ] :> Replace[ a, b, { 1, DirectedInfinity[ 1 ] } ],
-    Replace[ a_, b: _Rule|_RuleDelayed, c_ ] :> Replace[ a, { b }, c ]
+    Replace[ a_, b_, o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { 0, 0 }, o ],
+
+    Replace[ a_, b_, c_? IntTypeQ, o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { 1, c }, o ],
+
+    Replace[ a_, b_, { c_? IntTypeQ }, o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { c, c }, o ],
+
+    Replace[ a_, b_, DirectedInfinity[ 1 ], o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { 1, DirectedInfinity[ 1 ] }, o ],
+
+    Replace[ a_, b_, { DirectedInfinity[ 1 ] }, o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { 1, DirectedInfinity[ 1 ] }, o ],
+
+    Replace[ a_, b: _Rule|_RuleDelayed, c_, o: OptionsPattern[ ] ] :>
+        Replace[ a, { b }, c, o ],
+
+    Replace[ a_, b_, All, o: OptionsPattern[ ] ] :>
+        Replace[ a, b, { 0, DirectedInfinity[ 1 ] }, o ],
+
+    Replace[ a_, b_, c__, (Rule|RuleDelayed)[ Heads, False ], d___ ] :>
+        Replace[ a, b, c, d ],
+
+    ReplaceAll[ a_, b_ ] :>
+        Replace[ a, b, { 0, DirectedInfinity[ 1 ] }, Heads -> True ]
 ];
 
 $booleanFunctions1 = HoldPattern @ Alternatives[
