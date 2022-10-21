@@ -257,7 +257,8 @@ equalQ[ a___ ] := TrueQ @ Or[ SameQ @ a, Equal @ a ];
 ToCanonicalForm // Options = {
     "Trace"          -> False,
     "MaxIterations"  -> 512,
-    "TimeConstraint" -> Infinity
+    "TimeConstraint" -> Infinity,
+    "PostProcessing" -> Simplify
 };
 
 ToCanonicalForm[ expr_, opts: OptionsPattern[ ] ] :=
@@ -268,14 +269,16 @@ ToCanonicalForm[ expr_, wrapper_, OptionsPattern[ ] ] :=
         {
             trace   = OptionValue[ "Trace"          ],
             iter    = OptionValue[ "MaxIterations"  ],
-            timeout = OptionValue[ "TimeConstraint" ]
+            timeout = OptionValue[ "TimeConstraint" ],
+            post    = OptionValue[ "PostProcessing" ]
         },
         Cached @ StripCanonical @ iToCanonicalForm[
             expr,
             wrapper,
             trace,
             iter,
-            timeout
+            timeout,
+            post
         ]
     ];
 
@@ -294,11 +297,12 @@ AllEquivalentBy[ _[ args___ ], f_, level_ ] :=
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*iToCanonicalForm*)
-iToCanonicalForm[ expr_, wrapper_, True, limit_, timeout_ ] :=
+iToCanonicalForm[ expr_, wrapper_, True, limit_, timeout_, post_ ] :=
     Module[ { reap, transformations },
-        reap = Reap[ iToCanonicalForm[ expr, wrapper, False, limit, timeout ],
-                     $CanonicalTrace
-               ];
+        reap = Reap[
+            iToCanonicalForm[ expr, wrapper, False, limit, timeout, post ],
+            $CanonicalTrace
+        ];
 
         transformations = Replace[ reap,
                                    {
@@ -310,10 +314,10 @@ iToCanonicalForm[ expr_, wrapper_, True, limit_, timeout_ ] :=
         wrapper @@@ Prepend[ transformations, HoldComplete @ expr ]
     ];
 
-iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_ ] := (
+iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] := (
     TimeConstrained[
         FixedPoint[
-            canonicalStepTransform,
+            postCanonicalStepTransform @ post,
             $LastTransformation = HoldComplete @ expr,
             limit
         ],
@@ -321,6 +325,102 @@ iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_ ] := (
     ];
     Replace[ $LastTransformation, HoldComplete[ e_ ] :> wrapper @ e ]
 );
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*postCanonicalStepTransform*)
+postCanonicalStepTransform[ post_ ][ expr_ ] :=
+    postCanonicalStepTransform[ post, expr ];
+
+postCanonicalStepTransform[ None, expr_ ] :=
+    canonicalStepTransform @ expr;
+
+postCanonicalStepTransform[ post_, expr_ ] :=
+    With[ { tr = canonicalStepTransform @ expr },
+        postApply[ post, tr ]
+    ];
+
+
+inactivate // Attributes = { HoldAllComplete };
+inactivate[ expr_ ] :=
+    ReplaceRepeated[
+        Unevaluated @ expr,
+        {
+            i_Inactive :> i,
+            s: Except[ $$simplifyInert, _Symbol? SymbolQ ] :> Inactive @ s
+        }
+    ];
+
+$inactive // Attributes = { HoldAllComplete };
+
+postApply[ post_, (h1: $$hold|TempHold)[ (h2: $$hold|TempHold)[ expr_ ] ] ] :=
+    With[ { p = postApply[ post, h2[ expr ] ] }, h1 @ p ];
+
+postApply[ post_, (h: $$hold|TempHold)[ expr_ ] ] :=
+    With[
+        {
+            pre = Apply[
+                inactivate,
+                TempHold @ expr /. Inactive -> Inactive @ Inactive
+            ]
+        },
+        { new = post @ pre },
+        h @@ ReplaceAll[
+            Activate[ TempHold @ new /. Inactive @ Inactive -> $inactive ],
+            $inactive -> Inactive
+        ]
+    ];
+
+postApply[ post_, expr_ ] :=
+    With[
+        {
+            pre = Apply[
+                inactivate,
+                TempHold @ expr /. Inactive -> Inactive @ Inactive
+            ]
+        },
+        { new = post @ pre },
+        ReplaceAll[
+            Activate[ TempHold @ new /. Inactive @ Inactive -> $inactive ],
+            $inactive -> Inactive
+        ]
+    ];
+
+
+$simplifySymbolNames := $simplifySymbolNames = Developer`ReadWXFFile @
+    PacletObject[ "Wolfram/CodeEquivalenceUtilities" ][
+        "AssetLocation",
+        "SimplifySymbols"
+    ];
+
+$simplifySymbols := $simplifySymbols = Enclose[
+    Module[ { as, compatible, flat, held },
+        as         = ConfirmBy[ $simplifySymbolNames, AssociationQ ];
+        compatible = KeySelect[ as, LessEqualThan @ $VersionNumber ];
+        flat       = Flatten @ Values @ compatible;
+        held       = ToExpression[ flat, InputForm, HoldComplete ];
+        Replace[
+            Flatten @ Apply[ HoldComplete, held ],
+            HoldComplete[ s___ ] :> HoldPattern @ Alternatives @ s
+        ]
+    ],
+    Alternatives[ ] &
+];
+
+$$simplifyInert := $$simplifyInert = Alternatives @@ {
+    $simplifySymbols,
+    _Symbol? inertQ
+};
+
+
+inertQ // Attributes = { HoldAllComplete };
+
+inertQ[ sym_Symbol? SymbolQ ] :=
+    And[ ! System`Private`HasAnyEvaluationsQ @ sym,
+         ! System`Private`HasAnyCodesQ @ sym
+    ];
+
+inertQ[ ___ ] := False;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -374,7 +474,8 @@ MakeCanonicalForm // Attributes = { HoldAllComplete };
 MakeCanonicalForm // Options    = {
     "Trace"          -> False,
     "MaxIterations"  -> 512,
-    "TimeConstraint" -> Infinity
+    "TimeConstraint" -> Infinity,
+    "PostProcessing" -> Simplify
 };
 
 MakeCanonicalForm[ expr_, opts: OptionsPattern[ ] ] :=
