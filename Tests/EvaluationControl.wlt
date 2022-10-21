@@ -146,4 +146,17 @@ VerificationTest[
     TestID   -> "Untitled-6@@Tests/EvaluationControl.wlt:128,1-147,2"
 ];
 
+
+VerificationTest[
+    CodeEquivalentQ[ RandomInteger /@ Range[ 5 ], Array[ RandomInteger, 5 ] ],
+    True,
+    TestID -> "CodeEquivalentQ-MessageTest-1@@Tests/EvaluationControl.wlt:150,1-154,2"
+];
+
+VerificationTest[
+    CodeEquivalentQ[ RandomInteger /@ Range[ 5 ], Array[ RandomInteger, 6 ] ],
+    True,
+    TestID -> "CodeEquivalentQ-MessageTest-2@@Tests/EvaluationControl.wlt:156,1-160,2"
+];
+
 (* :!CodeAnalysis::EndBlock:: *)
