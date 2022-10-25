@@ -5,6 +5,7 @@ Quiet[ ResourceObject, General::shdw ];
 Needs[ "Wolfram`CodeEquivalenceUtilities`" ];
 
 $CachePersistence = "Session";
+On[ EvaluateSafely::unsafe ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

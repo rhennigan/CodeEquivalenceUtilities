@@ -5,6 +5,7 @@ Quiet[ ResourceObject, General::shdw ];
 Needs[ "Wolfram`CodeEquivalenceUtilities`" ];
 
 $CachePersistence  = "Session";
+On[ EvaluateSafely::unsafe ];
 $testDataDirectory = FileNameJoin @ { DirectoryName @ $TestFileName, "Data" };
 $answerKey         = Get @ FileNameJoin @ { $testDataDirectory, "EIWLData.wl" };
 

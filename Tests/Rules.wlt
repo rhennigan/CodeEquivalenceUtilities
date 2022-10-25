@@ -5,6 +5,7 @@ Quiet @ ResourceObject;
 Needs[ "Wolfram`CodeEquivalenceUtilities`" ];
 
 $CachePersistence = "Session";
+On[ EvaluateSafely::unsafe ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
