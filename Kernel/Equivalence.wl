@@ -315,44 +315,25 @@ iToCanonicalForm[ expr_, wrapper_, True, limit_, timeout_, post_ ] :=
     ];
 
 iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] := (
+
     TimeConstrained[
-        FixedPoint[
-            postCanonicalStepTransform @ post,
-            $LastTransformation = HoldComplete @ expr,
-            limit
+        postApply[
+            post,
+            FixedPoint[
+                canonicalStepTransform,
+                $LastTransformation = HoldComplete @ expr,
+                limit
+            ]
         ],
         timeout
     ];
+
     Replace[ $LastTransformation, HoldComplete[ e_ ] :> wrapper @ e ]
 );
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
-(*postCanonicalStepTransform*)
-postCanonicalStepTransform[ post_ ][ expr_ ] :=
-    postCanonicalStepTransform[ post, expr ];
-
-postCanonicalStepTransform[ None, expr_ ] :=
-    canonicalStepTransform @ expr;
-
-postCanonicalStepTransform[ post_, expr_ ] :=
-    With[ { tr = canonicalStepTransform @ expr },
-        postApply[ post, tr ]
-    ];
-
-
-inactivate // Attributes = { HoldAllComplete };
-inactivate[ expr_ ] :=
-    ReplaceRepeated[
-        Unevaluated @ expr,
-        {
-            i_Inactive :> i,
-            s: Except[ $$simplifyInert, _Symbol? SymbolQ ] :> Inactive @ s
-        }
-    ];
-
-$inactive // Attributes = { HoldAllComplete };
-
+(*postApply*)
 postApply[ post_, (h1: $$hold|TempHold)[ (h2: $$hold|TempHold)[ expr_ ] ] ] :=
     With[ { p = postApply[ post, h2[ expr ] ] }, h1 @ p ];
 
@@ -386,13 +367,33 @@ postApply[ post_, expr_ ] :=
         ]
     ];
 
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*inactivate*)
+inactivate // Attributes = { HoldAllComplete };
+inactivate[ expr_ ] :=
+    ReplaceRepeated[
+        Unevaluated @ expr,
+        {
+            i_Inactive :> i,
+            s: Except[ $$simplifyInert, _Symbol? SymbolQ ] :> Inactive @ s
+        }
+    ];
 
+$inactive // Attributes = { HoldAllComplete };
+
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*$simplifySymbolNames*)
 $simplifySymbolNames := $simplifySymbolNames = Developer`ReadWXFFile @
     PacletObject[ "Wolfram/CodeEquivalenceUtilities" ][
         "AssetLocation",
         "SimplifySymbols"
     ];
 
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*$simplifySymbols*)
 $simplifySymbols := $simplifySymbols = Enclose[
     Module[ { as, compatible, flat, held },
         as         = ConfirmBy[ $simplifySymbolNames, AssociationQ ];
@@ -407,12 +408,17 @@ $simplifySymbols := $simplifySymbols = Enclose[
     Alternatives[ ] &
 ];
 
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*$$simplifyInert*)
 $$simplifyInert := $$simplifyInert = Alternatives @@ {
     $simplifySymbols,
     _Symbol? inertQ
 };
 
-
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*inertQ*)
 inertQ // Attributes = { HoldAllComplete };
 
 inertQ[ sym_Symbol? SymbolQ ] :=

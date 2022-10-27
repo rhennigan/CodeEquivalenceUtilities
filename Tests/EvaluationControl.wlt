@@ -156,7 +156,7 @@ VerificationTest[
 
 VerificationTest[
     CodeEquivalentQ[ RandomInteger /@ Range[ 5 ], Array[ RandomInteger, 6 ] ],
-    True,
+    False,
     TestID -> "CodeEquivalentQ-MessageTest-2@@Tests/EvaluationControl.wlt:157,1-161,2"
 ];
 
