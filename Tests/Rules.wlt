@@ -381,11 +381,11 @@ VerificationTest[
 VerificationTest[
     MakeCanonicalForm[ 1/(3 (1 + x)) - (-1 + 2 x)/(6 (1 - x + x^2)) + 2/(3 (1 + 1/3 (-1 + 2 x)^2)) ],
     MakeCanonicalForm[ 1/(1 + x^3) ],
-    TestID -> "Simplify-Canonical-Forms"
+    TestID -> "Simplify-Canonical-Forms@@Tests/Rules.wlt:381,1-385,2"
 ]
 
 VerificationTest[
     ToCanonicalForm @ HoldComplete[ 1/(3 (1 + x)) - (-1 + 2 x)/(6 (1 - x + x^2)) + 2/(3 (1 + 1/3 (-1 + 2 x)^2)) ],
     MakeCanonicalForm[ 1/(3 (1 + x)) - (-1 + 2 x)/(6 (1 - x + x^2)) + 2/(3 (1 + 1/3 (-1 + 2 x)^2)), HoldComplete],
-    TestID -> "ToCanonicalForm-MakeCanonicalForm-Comparison"
+    TestID -> "ToCanonicalForm-MakeCanonicalForm-Comparison@@Tests/Rules.wlt:387,1-391,2"
 ]
