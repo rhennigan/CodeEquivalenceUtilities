@@ -376,3 +376,16 @@ VerificationTest[
     MakeCanonicalForm @ Replace[ x, { _Integer :> 1, _String :> 2, _ :> 3 } ],
     TestID -> "Switch-Replace@@Tests/Rules.wlt:374,1-378,2"
 ]
+
+
+VerificationTest[
+    MakeCanonicalForm[ 1/(3 (1 + x)) - (-1 + 2 x)/(6 (1 - x + x^2)) + 2/(3 (1 + 1/3 (-1 + 2 x)^2)) ],
+    MakeCanonicalForm[ 1/(1 + x^3) ],
+    TestID -> "Simplify-Canonical-Forms"
+]
+
+VerificationTest[
+    ToCanonicalForm @ HoldComplete[ 1/(3 (1 + x)) - (-1 + 2 x)/(6 (1 - x + x^2)) + 2/(3 (1 + 1/3 (-1 + 2 x)^2)) ],
+    MakeCanonicalForm[ 1/(3 (1 + x)) - (-1 + 2 x)/(6 (1 - x + x^2)) + 2/(3 (1 + 1/3 (-1 + 2 x)^2)), HoldComplete],
+    TestID -> "ToCanonicalForm-MakeCanonicalForm-Comparison"
+]

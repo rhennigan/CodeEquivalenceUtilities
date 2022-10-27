@@ -314,22 +314,26 @@ iToCanonicalForm[ expr_, wrapper_, True, limit_, timeout_, post_ ] :=
         wrapper @@@ Prepend[ transformations, HoldComplete @ expr ]
     ];
 
-iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] := (
+iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] :=
+    Module[ { res },
 
-    TimeConstrained[
-        postApply[
-            post,
+        TimeConstrained[
             FixedPoint[
                 canonicalStepTransform,
                 $LastTransformation = HoldComplete @ expr,
                 limit
-            ]
-        ],
-        timeout
-    ];
+            ],
+            timeout
+        ];
 
-    Replace[ $LastTransformation, HoldComplete[ e_ ] :> wrapper @ e ]
-);
+        res = TimeConstrained[
+            postApply[ post, $LastTransformation ],
+            timeout,
+            $LastTransformation
+        ];
+
+        Replace[ res, HoldComplete[ e_ ] :> wrapper @ e ]
+    ];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -432,7 +436,8 @@ inertQ[ ___ ] := False;
 (* ::Subsection::Closed:: *)
 (*canonicalStepTransform*)
 canonicalStepTransform[ expr0_ ] :=
-    Quiet @ With[ { expr = canonicalStepTransformTop @ expr0 },
+    $LastTransformation = Quiet @ With[
+        { expr = canonicalStepTransformTop @ expr0 },
         Fold[
             Function[
                 Sow[

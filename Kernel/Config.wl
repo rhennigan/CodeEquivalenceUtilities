@@ -56,7 +56,7 @@ $RasterPatterns = HoldPattern @ Alternatives[
 (* ::Section::Closed:: *)
 (*Argument patterns*)
 
-$$hold := Hold | HoldForm | HoldComplete | HoldPattern;
+$$hold := Hold | HoldForm | HoldComplete | HoldPattern | $holdWrapper;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
