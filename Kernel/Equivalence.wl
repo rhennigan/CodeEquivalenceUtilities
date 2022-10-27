@@ -106,7 +106,7 @@ iEquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
             If[ throwQ, Throw @ testData ]
         ];
 
-        testData[ "EqualQ" ] = TrueQ[ hexpr1 == hexpr2 ];
+        testData[ "EqualQ" ] = hexpr1 ~equalQ~ hexpr2;
         timing[ "EqualQ" ];
 
         If[ testData[ "EqualQ" ]
@@ -249,7 +249,12 @@ flattenHolds[ e___ ] := e;
 (* ::**********************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*equalQ*)
-equalQ[ a___ ] := TrueQ @ Or[ SameQ @ a, Equal @ a ];
+equalQ[ a___ ] := TrueQ @ Or[ SameQ @ a, equal0 @ a ];
+
+equal0[ a___ ] :=
+    Replace[ Equal @ a,
+             eq_Equal :> TimeConstrained[ Simplify @ eq, 1, False ]
+    ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

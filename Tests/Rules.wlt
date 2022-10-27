@@ -244,7 +244,7 @@ VerificationTest[
 
 VerificationTest[
   ToCanonicalForm[HoldForm[(#1 - RandomInteger[#1] & )[Range[3, 7, 3]]]],
-  HoldForm[(-RandomInteger[#1] + #1 & )[Table[3*TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer], {TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer], 1, 2, 1}]]],
+  HoldForm[(#1 - RandomInteger[#1] & )[Table[3*TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer], {TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer], 1, 2, 1}]]],
   TestID -> "Untitled-95@@Tests/Rules.wlt:245,1-249,2"
 ];
 
@@ -388,4 +388,12 @@ VerificationTest[
     ToCanonicalForm @ HoldComplete[ 1/(3 (1 + x)) - (-1 + 2 x)/(6 (1 - x + x^2)) + 2/(3 (1 + 1/3 (-1 + 2 x)^2)) ],
     MakeCanonicalForm[ 1/(3 (1 + x)) - (-1 + 2 x)/(6 (1 - x + x^2)) + 2/(3 (1 + 1/3 (-1 + 2 x)^2)), HoldComplete],
     TestID -> "ToCanonicalForm-MakeCanonicalForm-Comparison@@Tests/Rules.wlt:387,1-391,2"
+]
+
+VerificationTest[
+    CodeEquivalentQ[
+        1/(3 (1 + x)) - (-1 + 2 x)/(6 (1 - x + x^2)) + 2/(3 (1 + 1/3 (-1 + 2 x)^2)),
+        1.0/(1 + x^3)
+    ],
+    TestID -> "Math-Equality-Testing@@Tests/Rules.wlt:393,1-399,2"
 ]
