@@ -401,37 +401,37 @@ VerificationTest[
 VerificationTest[
     MakeCanonicalForm[ Table[ If[ IntegerQ @ x, x + 1, $Failed ], { x, 10 } ] ],
     MakeCanonicalForm[ Range[ 10 ] + 1 ],
-    TestID -> "If-Type-Optimization-1"
+    TestID -> "If-Type-Optimization-1@@Tests/Rules.wlt:401,1-405,2"
 ]
 
 VerificationTest[
     MakeCanonicalForm[ Table[ If[ IntegerQ @ x, x + 1, $Failed ], { x, 10 } ] ],
     MakeCanonicalForm[ Table[ If[ AtomQ @ x, x + 1, $Failed ], { x, 10 } ] ],
-    TestID -> "If-Type-Optimization-2"
+    TestID -> "If-Type-Optimization-2@@Tests/Rules.wlt:407,1-411,2"
 ]
 
 VerificationTest[
     MakeCanonicalForm @ AssociationQ @ <| |>,
     HoldForm @ True,
-    TestID -> "AssociationQ-1"
+    TestID -> "AssociationQ-1@@Tests/Rules.wlt:413,1-417,2"
 ]
 
 VerificationTest[
     MakeCanonicalForm @ AssociationQ @ <| { "a" -> 1, <| "b" -> 2 |> } |>,
     HoldForm @ True,
-    TestID -> "AssociationQ-2"
+    TestID -> "AssociationQ-2@@Tests/Rules.wlt:419,1-423,2"
 ]
 
 VerificationTest[
     MakeCanonicalForm @ AssociationQ @ <|  "a" -> 1, <| "b" -> 2 |> |>,
     HoldForm @ True,
-    TestID -> "AssociationQ-3"
+    TestID -> "AssociationQ-3@@Tests/Rules.wlt:425,1-429,2"
 ]
 
 VerificationTest[
     MakeCanonicalForm @ AssociationQ @ <| 123 |>,
     HoldForm @ AssociationQ @ <| 123 |>,
-    TestID -> "AssociationQ-4"
+    TestID -> "AssociationQ-4@@Tests/Rules.wlt:431,1-435,2"
 ]
 
 VerificationTest[
@@ -441,29 +441,29 @@ VerificationTest[
     ],
     HoldForm @ Table[ True, _ ],
     SameTest -> MatchQ,
-    TestID   -> "StringLength-To-Integer-Type"
+    TestID   -> "StringLength-To-Integer-Type@@Tests/Rules.wlt:437,1-445,2"
 ]
 
 VerificationTest[
     MakeCanonicalForm @ { 1.1, 2.2, 3.3, 4.4, 5.5 },
     MakeCanonicalForm @ Table[ x, { x, 1.1, 5.5, 1.1 } ],
-    TestID -> "Roll-Real-Tables"
+    TestID -> "Roll-Real-Tables@@Tests/Rules.wlt:447,1-451,2"
 ]
 
 VerificationTest[
     MakeCanonicalForm @ { 1, 3/2, 2, 5/2, 3, 7/2, 4, 9/2, 5 },
     MakeCanonicalForm @ Table[ i, { i, 1, 5, 1/2 } ],
-    TestID -> "Roll-Mixed-Rational-Tables"
+    TestID -> "Roll-Mixed-Rational-Tables@@Tests/Rules.wlt:453,1-457,2"
 ]
 
 VerificationTest[
     MakeCanonicalForm[ Plus @@ { } ],
     HoldForm[ 0 ],
-    TestID -> "Plus-Zero-Arguments"
+    TestID -> "Plus-Zero-Arguments@@Tests/Rules.wlt:459,1-463,2"
 ]
 
 VerificationTest[
     MakeCanonicalForm[ StringLength /@ { "a", "bb", "ccc" } ],
     MakeCanonicalForm[ Table[ Length @ Characters @ x, { x, { "a", "bb", "ccc" } } ] ],
-    TestID -> "Map-Strings-To-Table"
+    TestID -> "Map-Strings-To-Table@@Tests/Rules.wlt:465,1-469,2"
 ]
