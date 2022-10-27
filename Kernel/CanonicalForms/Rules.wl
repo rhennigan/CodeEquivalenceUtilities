@@ -300,6 +300,21 @@ tableIteratorRules = Inline[ { $intType, $atomicNumber }, HoldComplete[
       RuleCondition[ TempHold @ expr /. HoldPattern[ i ] :> 1 ],
 
 
+    (* unused list iterators *)
+    Table[ expr_, { i_, ii_List } ] /;
+        FreeQ[ HoldComplete @ expr, HoldPattern @ Verbatim @ i ] :>
+        WithHolding[ { j = NewLocalSymbol[ ], len = Length @ Unevaluated @ ii },
+            Table[ expr, { j, len } ]
+        ],
+
+    (* empty tables *)
+    Table[ _, { _TypedSymbol, 1, 0, 1 } ] :> { },
+    Table[ _, { _, { } } ] :> { },
+
+    (* short tables *)
+    Table[ expr_, { i_TypedSymbol, 1, n: 1|2|3, 1 } ] :>
+        RuleCondition @ Table[ TempHold @ expr /. Verbatim @ i -> j, { j, n } ],
+
     Verbatim[ Plus ][ a___, b_?HoldNumericQ, c___, d_?HoldNumericQ, e___ ] /;
       Length[ HoldComplete[ a, c, e ] ] > 0 &&
       ! SafeEvaluatedQ[b + d] && ! SafeEvaluatedQ[d + b] :>

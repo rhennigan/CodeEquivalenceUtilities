@@ -467,3 +467,40 @@ VerificationTest[
     MakeCanonicalForm[ Table[ Length @ Characters @ x, { x, { "a", "bb", "ccc" } } ] ],
     TestID -> "Map-Strings-To-Table@@Tests/Rules.wlt:465,1-469,2"
 ]
+
+VerificationTest[
+    MakeCanonicalForm[ IntegerQ /@ StringLength /@ { "a", "bb", "ccc" } ],
+    MakeCanonicalForm[ Array[ True &, 3 ] ],
+    TestID -> "Simplify-Literals@@Tests/Rules.wlt:471,1-475,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ IntegerQ /@ StringLength /@ {  } ],
+    MakeCanonicalForm[ { } ],
+    TestID -> "Empty-Tables-1@@Tests/Rules.wlt:477,1-481,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ Table[ i + 1, { i, 0 } ] ],
+    MakeCanonicalForm[ { } ],
+    TestID -> "Empty-Tables-2@@Tests/Rules.wlt:483,1-487,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ 2 * Range[ 3 ] + 1 ],
+    HoldForm @ { 3, 5, 7 },
+    TestID -> "Small-Tables@@Tests/Rules.wlt:489,1-493,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ 2 * Range[ 4 ] + 1 ],
+    HoldForm[ _Table ],
+    SameTest -> MatchQ,
+    TestID   -> "Not-Small-Tables-1@@Tests/Rules.wlt:495,1-500,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ 2 * Range[ 4 ] + 1 ],
+    MakeCanonicalForm[ { 3, 5, 7, 9 } ],
+    TestID -> "Not-Small-Tables-2@@Tests/Rules.wlt:502,1-506,2"
+]
