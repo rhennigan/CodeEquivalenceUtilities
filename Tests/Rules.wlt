@@ -397,3 +397,73 @@ VerificationTest[
     ],
     TestID -> "Math-Equality-Testing@@Tests/Rules.wlt:393,1-399,2"
 ]
+
+VerificationTest[
+    MakeCanonicalForm[ Table[ If[ IntegerQ @ x, x + 1, $Failed ], { x, 10 } ] ],
+    MakeCanonicalForm[ Range[ 10 ] + 1 ],
+    TestID -> "If-Type-Optimization-1"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ Table[ If[ IntegerQ @ x, x + 1, $Failed ], { x, 10 } ] ],
+    MakeCanonicalForm[ Table[ If[ AtomQ @ x, x + 1, $Failed ], { x, 10 } ] ],
+    TestID -> "If-Type-Optimization-2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ AssociationQ @ <| |>,
+    HoldForm @ True,
+    TestID -> "AssociationQ-1"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ AssociationQ @ <| { "a" -> 1, <| "b" -> 2 |> } |>,
+    HoldForm @ True,
+    TestID -> "AssociationQ-2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ AssociationQ @ <|  "a" -> 1, <| "b" -> 2 |> |>,
+    HoldForm @ True,
+    TestID -> "AssociationQ-3"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ AssociationQ @ <| 123 |>,
+    HoldForm @ AssociationQ @ <| 123 |>,
+    TestID -> "AssociationQ-4"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Table[
+        IntegerQ @ n,
+        { n, Table[ StringLength @ x, { x, { "a", "bb", "ccc" } } ] }
+    ],
+    HoldForm @ Table[ True, _ ],
+    SameTest -> MatchQ,
+    TestID   -> "StringLength-To-Integer-Type"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ { 1.1, 2.2, 3.3, 4.4, 5.5 },
+    MakeCanonicalForm @ Table[ x, { x, 1.1, 5.5, 1.1 } ],
+    TestID -> "Roll-Real-Tables"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ { 1, 3/2, 2, 5/2, 3, 7/2, 4, 9/2, 5 },
+    MakeCanonicalForm @ Table[ i, { i, 1, 5, 1/2 } ],
+    TestID -> "Roll-Mixed-Rational-Tables"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ Plus @@ { } ],
+    HoldForm[ 0 ],
+    TestID -> "Plus-Zero-Arguments"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ StringLength /@ { "a", "bb", "ccc" } ],
+    MakeCanonicalForm[ Table[ Length @ Characters @ x, { x, { "a", "bb", "ccc" } } ] ],
+    TestID -> "Map-Strings-To-Table"
+]
