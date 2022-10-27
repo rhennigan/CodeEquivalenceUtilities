@@ -943,9 +943,10 @@ makeReplacementRules[ name_ ] :=
 (*evalRestricted*)
 evalRestricted // Attributes = { HoldAllComplete };
 evalRestricted[ expr_, timeLimit_, memoryLimit_, input_ ] :=
-    TimeConstrained[ checkAbort @ expr,
-                     timeLimit,
-                     TimedOut @ HoldForm @ input
+    checkAbort @ TimeConstrained[
+        expr,
+        timeLimit,
+        TimedOut @ HoldForm @ input
     ];
 
 TimedOut /: HoldPattern @ FailureQ[ _TimedOut ] := True;

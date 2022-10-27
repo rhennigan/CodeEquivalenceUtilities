@@ -39,4 +39,6 @@ Quiet[
     General::shdw
 ];
 
+Off[ Wolfram`CodeEquivalenceUtilities`EvaluateSafely::unsafe ];
+
 EndPackage[ ];

@@ -1037,11 +1037,26 @@ extraRules = HoldComplete[
 
 
 syntaxRules = HoldComplete[
+    ApplyTo[ x_, f_ ] :> (x = f @ x),
+    AddTo[ a_, b_ ] :> (a = a + b),
+    SubtractFrom[ a_, b_ ] :> (a = a - b),
+    TimesBy[ a_, b_ ] :> (a = a * b),
+    DivideBy[ a_, b_ ] :> (a = a / b),
+    PreIncrement[ x_ ] :> (x = x + 1),
+    PreDecrement[ x_ ] :> (x = x - 1),
+    AppendTo[ a_, b_ ] :> (a = Append[ a, b ]),
+    PrependTo[ a_, b_ ] :> (a = Prepend[ a, b ]),
+
+    Construct[ f_, x___ ] :> f @ x,
+    OperatorApplied[ f_ ][ x_ ][ y_ ] :> f[ y, x ],
+    ReverseApplied[ f_ ][ a___ ] :> With[ { r = Reverse @ TempHold @ a }, f @ r /; True ],
+    Operate[ p_, f_[ x_, y_ ] ] :> p[ f ][ x, y ],
+
     Composition[ fs__, f_? NonHoldingQ ][ a___ ] :> Composition[ fs ][ f @ a ],
     Composition[ f_ ][ a___ ] :> f @ a,
     a_[ b___, c_Composition, d___ ] :> a[ b, c[ # ] &, d ]
     ,
-    RightComposition[ a___ ] :> WithHolding[ { reversed = Reverse @ TempHold @ a }, Composition @ reversed ]
+    RightComposition[ a___ ] :> With[ { r = Reverse @ TempHold @ a }, Composition @ r /; True ]
     ,
     Identity[ e_ ] :> e
     ,
@@ -1095,8 +1110,53 @@ syntaxRules = HoldComplete[
         Replace[ a, b, c, d ],
 
     ReplaceAll[ a_, b_ ] :>
-        Replace[ a, b, { 0, DirectedInfinity[ 1 ] }, Heads -> True ]
+        Replace[ a, b, { 0, DirectedInfinity[ 1 ] }, Heads -> True ],
+
+    System`MapApply[ f_, expr_ ] :>
+        Apply[ f, expr, { 1 } ]
 ];
+
+
+$$forwardOps = HoldPattern @ Alternatives[
+    Apply,
+    Map,
+    System`MapApply
+];
+
+$$reverseOps = HoldPattern @ Alternatives[
+    Replace,
+    Select,
+    Append,
+    Prepend,
+    ReplacePart,
+    SelectFirst,
+    FirstCase,
+    Cases,
+    DeleteCases,
+    Position,
+    Extract,
+    Delete,
+    AnyTrue,
+    AllTrue,
+    NoneTrue,
+    SortBy,
+    MaximalBy,
+    MinimalBy,
+    DeleteDuplicatesBy,
+    CurryApplied
+];
+
+$$reverseOps2 = HoldPattern @ Alternatives[
+    Insert
+];
+
+operatorFormRules = Inline[ { $$forwardOps, $$reverseOps }, HoldComplete[
+    (h:$$forwardOps)[ a_ ][ b_ ] :> h[ a, b ],
+    (h:$$reverseOps)[ a_ ][ b_ ] :> h[ b, a ],
+    (h:$$reverseOps2)[ a_, b_ ][ c_ ] :> h[ c, a, b ]
+] ];
+
+
 
 $booleanFunctions1 = HoldPattern @ Alternatives[
     AcyclicGraphQ, AlgebraicIntegerQ, AlgebraicUnitQ, \
@@ -1686,6 +1746,7 @@ rules = {
     eiwlRules,
     extraRules,
     syntaxRules,
+    operatorFormRules,
     arithmeticRules,
     booleanFunctionRules,
     graphicsRules,

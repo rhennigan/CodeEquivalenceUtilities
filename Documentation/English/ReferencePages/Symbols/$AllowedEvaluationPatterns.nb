@@ -282,6 +282,31 @@ Notebook[
       CellID -> 530424701
      ],
      Cell[
+      "Enable messaging for sandbox events:",
+      "ExampleText",
+      CellID -> 11588198
+     ],
+     Cell[
+      BoxData[
+       RowBox[
+        {
+         RowBox[
+          {
+           "On",
+           "[",
+           RowBox[{"EvaluateSafely", "::", "unsafe"}],
+           "]"
+          }
+         ],
+         ";"
+        }
+       ]
+      ],
+      "Input",
+      CellLabel -> "In[1]:=",
+      CellID -> 379994201
+     ],
+     Cell[
       "By default, sandbox rules will prevent some evaluations that would otherwise give equivalent outputs::",
       "ExampleText",
       CellID -> 380610525
@@ -305,7 +330,7 @@ Notebook[
        ]
       ],
       "Input",
-      CellLabel -> "In[1]:=",
+      CellLabel -> "In[2]:=",
       CellID -> 130182422
      ],
      Cell[
@@ -341,8 +366,8 @@ Notebook[
             "\"Sandboxed the following expressions: \\!\\(\\*RowBox[{\\\"HoldComplete\\\", \\\"[\\\", RowBox[{\\\"<<\\\", \\\"\\\\\\\"data.wl\\\\\\\"\\\"}], \\\"]\\\"}]\\)\"",
             2,
             3,
-            1,
-            34100295901694291473,
+            9,
+            34129244601778320131,
             "Local",
             "Wolfram`CodeEquivalenceUtilities`EvaluateSafely"
            },
@@ -352,13 +377,13 @@ Notebook[
          "Message",
          "MSG",
          CellLabel -> "During evaluation of In[3]:=",
-         CellID -> 748438447
+         CellID -> 364292292
         ],
         Cell[
          BoxData["False"],
          "Output",
          CellLabel -> "Out[3]=",
-         CellID -> 79013216
+         CellID -> 175534900
         ]
        },
        Open
@@ -1821,7 +1846,7 @@ Notebook[
    ],
   "NotebookUUID" -> "92ca80bf-5599-4a6a-afd7-aff73ec8f532"
  },
- FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+ FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (October 20, 2022)",
  StyleDefinitions ->
   FrontEnd`FileName[
    {"Wolfram"},
