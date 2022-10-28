@@ -953,8 +953,7 @@ entityFrameworkRules = HoldComplete[
       Entity[s, f][EntityProperty[s, "Image"]]
     ,
 
-    Entity[ a___ ][ b_ ] :>
-      EntityValue[ Entity @ a, b ]
+    (e: _Entity|_EntityClass)[ a_ ] :> EntityValue[ e, a ]
     ,
 
     EntityValue[ Entity[ a_String, b___ ], c_String ] :>
@@ -1090,8 +1089,46 @@ extraRules = HoldComplete[
 ];
 
 
+rule[ a_, b_ ] := (Rule|RuleDelayed)[ a, b ];
 
-syntaxRules = HoldComplete[
+syntaxRules = Inline[ rule, HoldComplete[
+    Verbatim[ And ][ a_ ] :> a,
+    Verbatim[ And ][ ] :> True,
+    Verbatim[ And ][ ___, False, ___ ] :> False,
+    Verbatim[ And ][ a___, True, b___ ] :> And[ a, b ],
+
+    Verbatim[ Or ][ a_ ] :> a,
+    Verbatim[ Or ][ ] :> False,
+    Verbatim[ Or ][ ___, True, ___ ] :> True,
+    Verbatim[ Or ][ a___, False, b___ ] :> Or[ a, b ],
+
+    And[ a___, Equal[ b1___, x_, b2___ ], c___, Equal[ d1___, x_, d2___ ], e___ ] :>
+        And[ a, Equal[ b1, b2, d1, d2, x ], c, e ],
+
+    And[ a___, SameQ[ b1___, x_, b2___ ], c___, SameQ[ d1___, x_, d2___ ], e___ ] :>
+        And[ a, SameQ[ b1, b2, d1, d2, x ], c, e ],
+
+    (Equal|SameQ)[ a_ ] :> True,
+    (Equal|SameQ)[ ] :> True,
+
+    Equal[ a___ ] /;
+        ! DuplicateFreeQ @ TempHold @ a || ! OrderedQ @ TempHold @ a :>
+            With[ { b = Union @ TempHold @ a },
+                Equal[ b ] /; True
+            ],
+
+    SameQ[ a___ ] /;
+        ! DuplicateFreeQ @ TempHold @ a || ! OrderedQ @ TempHold @ a :>
+            With[ { b = Union @ TempHold @ a },
+                SameQ[ b ] /; True
+            ],
+
+    Select[ Select[ a_, Equal[ b1___, x_, b2___ ] & ], Equal[ c1___, x_, c2___ ] & ] :>
+        Select[ a, Equal[ b1, b2, c1, c2, x ] & ],
+
+    TrueQ[ Equal[ a___, b_? StringTypeQ, c___ ] ] :>
+        SameQ[ a, b, c ],
+
     ApplyTo[ x_, f_ ] :> (x = f @ x),
     AddTo[ a_, b_ ] :> (a = a + b),
     SubtractFrom[ a_, b_ ] :> (a = a - b),
@@ -1161,15 +1198,68 @@ syntaxRules = HoldComplete[
     Replace[ a_, b_, All, o: OptionsPattern[ ] ] :>
         Replace[ a, b, { 0, DirectedInfinity[ 1 ] }, o ],
 
-    Replace[ a_, b_, c__, (Rule|RuleDelayed)[ Heads, False ], d___ ] :>
+    Replace[ a_, b_, c__, rule[ Heads, False ], d___ ] :>
         Replace[ a, b, c, d ],
 
     ReplaceAll[ a_, b_ ] :>
         Replace[ a, b, { 0, DirectedInfinity[ 1 ] }, Heads -> True ],
 
     System`MapApply[ f_, expr_ ] :>
-        Apply[ f, expr, { 1 } ]
-];
+        Apply[ f, expr, { 1 } ],
+
+    ReplacePart[
+        expr_,
+        (r:Rule|RuleDelayed)[ i_? IntTypeQ, new_ ],
+        o: OptionsPattern[ ]
+    ] :> ReplacePart[ expr, { r[ { i }, new ] }, o ],
+
+    ReplacePart[
+        expr_,
+        (r:Rule|RuleDelayed)[ { i__? IntTypeQ }, new_ ],
+        o: OptionsPattern[ ]
+    ] :> ReplacePart[ expr, { r[ { i }, new ] }, o ],
+
+    ReplacePart[
+        expr_,
+        rules: { ___, rule[ _? IntTypeQ, _ ], ___ },
+        o: OptionsPattern[ ]
+    ] :>
+        With[
+            {
+                rules1 = Replace[
+                    TempHold @ rules,
+                    HoldPattern[ (r:Rule|RuleDelayed)[ i_? IntTypeQ, new_ ] ] :>
+                        r[ { i }, new ],
+                    { 2 }
+                ]
+            },
+            ReplacePart[ expr, rules1, o ] /; True
+        ],
+
+    (* default option value *)
+    ReplacePart[ a_, b_, c___, rule[ Heads, Automatic ], d___ ] :>
+        ReplacePart[ a, b, c, d ],
+
+    (* operator *)
+    ReplacePart[ (r:Rule|RuleDelayed)[ i_? IntTypeQ, new_ ] ] :>
+        ReplacePart[ { r[ { i }, new ] } ],
+
+    ReplacePart[ (r:Rule|RuleDelayed)[ { i__? IntTypeQ }, new_ ] ] :>
+        ReplacePart[ { r[ { i }, new ] } ],
+
+    ReplacePart[ rules: { ___, rule[ _? IntTypeQ, _ ], ___ } ] :>
+        With[
+            {
+                rules1 = Replace[
+                    TempHold @ rules,
+                    HoldPattern[ (r:Rule|RuleDelayed)[ i_? IntTypeQ, new_ ] ] :>
+                        r[ { i }, new ],
+                    { 2 }
+                ]
+            },
+            ReplacePart[ rules1 ] /; True
+        ]
+] ];
 
 
 $$forwardOps = HoldPattern @ Alternatives[
@@ -1205,10 +1295,13 @@ $$reverseOps2 = HoldPattern @ Alternatives[
     Insert
 ];
 
-operatorFormRules = Inline[ { $$forwardOps, $$reverseOps }, HoldComplete[
+operatorFormRules = Inline[ { $$forwardOps, $$reverseOps, $$reverseOps2 }, HoldComplete[
     (h:$$forwardOps)[ a_ ][ b_ ] :> h[ a, b ],
     (h:$$reverseOps)[ a_ ][ b_ ] :> h[ b, a ],
-    (h:$$reverseOps2)[ a_, b_ ][ c_ ] :> h[ c, a, b ]
+    (h:$$reverseOps2)[ a_, b_ ][ c_ ] :> h[ c, a, b ],
+    (h:$$forwardOps)[ a_ ] :> Function[ h[ a, # ] ],
+    (h:$$reverseOps)[ a_ ] :> Function[ h[ #, a ] ],
+    (h:$$reverseOps2)[ a_, b_ ] :> Function[ h[ #, a, b ] ]
 ] ];
 
 
@@ -1377,8 +1470,6 @@ xxByFunctionRules = Inline[ $byFunction, HoldComplete[
       Select[ Select[ thing, this & ], And[ that ] & ]
     ,
     Select[ thing_, And[ this_ ] & ] :> Select[ thing, this & ]
-    ,
-    Select[ expr_, Equal[ args___ ] & ] :> Select[ expr, SameQ @ args & ]
     ,
     (select: $byFunction)[ thing_, Function[ f_[ #1 ] ], args___ ] :>
       select[ thing, f, args ]
@@ -1831,10 +1922,10 @@ rules = {
     randomRules,
     imageRules,
     cloudRules,
+    syntaxRules,
     xxByFunctionRules,
     eiwlRules,
     extraRules,
-    syntaxRules,
     operatorFormRules,
     arithmeticRules,
     booleanFunctionRules,
