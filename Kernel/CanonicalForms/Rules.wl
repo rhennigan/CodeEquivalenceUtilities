@@ -312,8 +312,11 @@ tableIteratorRules = Inline[ { $intType, $atomicNumber }, HoldComplete[
     Table[ _, { _, { } } ] :> { },
 
     (* short tables *)
-    Table[ expr_, { i_TypedSymbol, 1, n: 1|2|3, 1 } ] :>
-        RuleCondition @ Table[ TempHold @ expr /. Verbatim @ i -> j, { j, n } ],
+    Table[ expr_, { i: _Symbol|_TypedSymbol, 1, n: 1|2|3, 1 } ] :>
+        RuleCondition @ Table[
+            TempHold @ expr /. HoldPattern @ Verbatim @ i -> j,
+            { j, n }
+        ],
 
     Verbatim[ Plus ][ a___, b_?HoldNumericQ, c___, d_?HoldNumericQ, e___ ] /;
       Length[ HoldComplete[ a, c, e ] ] > 0 &&
@@ -481,7 +484,7 @@ constantArrayQ // Attributes = { HoldAllComplete };
 constantArrayQ[ m_List ] :=
   TrueQ @ And[
       ArrayQ @ Unevaluated @ m,
-      Times @@ Dimensions @ Unevaluated @ m >= 4,
+      Length @ Unevaluated @ m >= 4,
       SameQ @@ Map[ HoldComplete, Unevaluated @ m ]
   ];
 

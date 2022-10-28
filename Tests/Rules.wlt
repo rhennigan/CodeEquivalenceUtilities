@@ -243,9 +243,12 @@ VerificationTest[
 ];
 
 VerificationTest[
-  ToCanonicalForm[HoldForm[(#1 - RandomInteger[#1] & )[Range[3, 7, 3]]]],
-  HoldForm[(#1 - RandomInteger[#1] & )[Table[3*TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer], {TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer], 1, 2, 1}]]],
-  TestID -> "Untitled-95@@Tests/Rules.wlt:245,1-249,2"
+    MakeCanonicalForm[ # - RandomInteger[ # ] &[ Range[ 3, 7, 3 ] ] ],
+    HoldForm @ {
+        3 - RandomValue @ DiscreteUniformDistribution @ { 3, 6 },
+        6 - RandomValue @ DiscreteUniformDistribution @ { 3, 6 }
+    },
+    TestID -> "Untitled-95@@Tests/Rules.wlt:245,1-249,2"
 ];
 
 (* VerificationTest[
