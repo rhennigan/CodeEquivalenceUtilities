@@ -625,4 +625,47 @@ VerificationTest[
     TestID -> "SameQ-And@@Tests/Rules.wlt:622,1-626,2"
 ]
 
+VerificationTest[
+    MakeCanonicalForm[ Echo /@ { 2, 8, 18, 32, 50, 72, 98, 128, 162, 200 } ],
+    MakeCanonicalForm[ Table[ Echo[ 2 * x^2 ], { x, 10 } ] ],
+    TestID -> "Eliminate-Iterator-Table@@Tests/Rules.wlt:628,1-632,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ 1 == 2 ],
+    HoldForm[ False ],
+    TestID -> "InertEqual-1@@Tests/Rules.wlt:634,1-638,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ "a" == 2.3 ],
+    HoldForm[ False ],
+    TestID -> "InertEqual-2@@Tests/Rules.wlt:640,1-644,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm[ "a" == a ],
+    HoldForm[ _Equal ],
+    SameTest -> MatchQ,
+    TestID   -> "InertEqual-3@@Tests/Rules.wlt:646,1-651,2"
+]
+
+VerificationTest[
+    Length @ MakeCanonicalForm[
+        Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ 1 ],
+        Trace -> True,
+        "MaxIterations" -> 50
+    ] < 50,
+    True,
+    { ToCanonicalForm::cycle },
+    TestID -> "Cycle-Detection-1@@Tests/Rules.wlt:653,1-662,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ 1 ],
+    HoldForm @ Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ 1, 1 ],
+    { ToCanonicalForm::cycle },
+    TestID -> "Cycle-Detection-2@@Tests/Rules.wlt:664,1-669,2"
+]
+
 (* :!CodeAnalysis::EndBlock:: *)

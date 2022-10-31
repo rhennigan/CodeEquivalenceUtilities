@@ -872,7 +872,7 @@ iEvaluateSafely[ expr_, opts : OptionsPattern[ ] ] :=
 
       sandboxed = tempSymbol //. replacementRules;
 
-      eval = Quiet @ Block[ { PrintTemporary },
+      eval = PreemptProtect @ Quiet @ Block[ { PrintTemporary },
           evalRestricted[ ReleaseHold @ sandboxed,
                           OptionValue @ "Timeout",
                           OptionValue @ "MemoryConstraint",
