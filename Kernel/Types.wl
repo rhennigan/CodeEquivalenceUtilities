@@ -202,10 +202,38 @@ IntTypeQ[ Echo[ _? IntTypeQ ] ] := True;
 IntTypeQ[ Echo[ _? IntTypeQ, ___ ] ] := True;
 IntTypeQ[ Identity[ _? IntTypeQ ] ] := True;
 IntTypeQ[ StringLength[ _? StringTypeQ ] ] := True;
-IntTypeQ[ Length[ Characters[ _? StringTypeQ ] ] ] := True;
+IntTypeQ[ StringCount[ _? StringTypeQ, _? StringTypeQ ] ] := True;
+IntTypeQ[ (_? intTypeFunc1Q)[ _ ] ] := True;
+IntTypeQ[ (_? intTypeFunc2Q)[ _, _ ] ] := True;
 
 (* Default *)
 IntTypeQ[ ___ ] := False;
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*intTypeFunc1Q*)
+$intType1Funcs = HoldPattern @ Alternatives[
+    ByteCount,
+    Depth,
+    Hash,
+    LeafCount,
+    Length
+];
+
+intTypeFunc1Q // Attributes = { HoldAllComplete };
+intTypeFunc1Q[ $intType1Funcs ] := Inline[ $intType1Funcs, True ];
+intTypeFunc1Q[ ___            ] := False;
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*intTypeFunc2Q*)
+$intType2Funcs = HoldPattern @ Alternatives[
+    Count
+];
+
+intTypeFunc2Q // Attributes = { HoldAllComplete };
+intTypeFunc2Q[ $intType2Funcs ] := Inline[ $intType2Funcs, True ];
+intTypeFunc2Q[ ___            ] := False;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

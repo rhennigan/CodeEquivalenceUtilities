@@ -668,4 +668,36 @@ VerificationTest[
     TestID -> "Cycle-Detection-2@@Tests/Rules.wlt:664,1-669,2"
 ]
 
+VerificationTest[
+    MakeCanonicalForm @ IntegerQ @ Length @ { 1, 2, 3 },
+    HoldForm @ True,
+    TestID -> "IntTypeQ-Length-1@@Tests/Rules.wlt:671,1-675,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Range @ Length @ Range[ 5 ],
+    MakeCanonicalForm @ Range[ 5 ],
+    TestID -> "IntType-Length-2@@Tests/Rules.wlt:677,1-681,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Table[ i, { i, Count[ Range[ 5 ], _Integer ] } ],
+    HoldForm @ Table[ _TypedSymbol, _ ],
+    SameTest -> MatchQ,
+    TestID   -> "IntTypeQ-Count-1@@Tests/Rules.wlt:683,1-688,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Count[ Range[ 10 ], x_ ],
+    HoldForm[ 10 ],
+    TestID -> "IntTypeQ-Count-2@@Tests/Rules.wlt:690,1-694,2"
+]
+
+VerificationTest[
+    MakeCanonicalForm @ Table[ i, { i, Count @ Range[ 5 ] } ],
+    HoldForm @ Table[ _Symbol, _ ],
+    SameTest -> MatchQ,
+    TestID   -> "Not-IntTypeQ-Count@@Tests/Rules.wlt:696,1-701,2"
+]
+
 (* :!CodeAnalysis::EndBlock:: *)

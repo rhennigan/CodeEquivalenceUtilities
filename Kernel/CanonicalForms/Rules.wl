@@ -341,9 +341,17 @@ tableIteratorRules = Inline[ { $intType, $atomicNumber }, HoldComplete[
                      Plus[ a, bd, c, e ]
         ],
 
-    p: Verbatim[ Plus ][ x_ ] /; Length @ Unevaluated @ p === 1 :> x
+    p: Verbatim[ Plus ][ x_ ] /; Length @ Unevaluated @ p === 1 :> x,
 
-]];
+    (* Table properties *)
+    Length @ Table[ _, { _, 1, n_Integer, 1 } ] /;
+        IntegerQ @ Unevaluated @ n :> RuleCondition @ Max[ 0, n ],
+
+    Count[ list_, Verbatim[ _ ] | Verbatim[ Pattern ][ _, Verbatim[ Blank[ ] ] ] ] :>
+        Length @ list
+
+    (* TODO: account for possible `Nothing` values *)
+] ];
 
 
 (******************************************************************************)
