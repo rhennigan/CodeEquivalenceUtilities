@@ -56,7 +56,7 @@ jobs:
     - name: UploadTestResults
       id: upload-test-results-step
       if: always() && env.PACLET_TEST_RESULTS
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with: 
         path: ${{ env.PACLET_TEST_RESULTS }}
         if-no-files-found: ignore
@@ -84,7 +84,7 @@ jobs:
         resource_system_base: https://www.wolframcloud.com/obj/resourcesystem/api/1.0
     - name: UploadArtifact
       id: upload-build-artifacts-step
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with: 
         path: ${{ env.PACLET_BUILD_DIR }}
         if-no-files-found: ignore
@@ -131,7 +131,7 @@ jobs:
         resource_system_base: https://www.wolframcloud.com/obj/resourcesystem/api/1.0
     - name: UploadArtifact
       id: upload-build-artifacts-step
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with: 
         path: ${{ env.PACLET_BUILD_DIR }}
         if-no-files-found: ignore
