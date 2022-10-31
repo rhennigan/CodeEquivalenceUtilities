@@ -1331,7 +1331,8 @@ operatorFormRules = Inline[ { $$forwardOps, $$reverseOps, $$reverseOps2 }, HoldC
 ] ];
 
 
-
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 $booleanFunctions1 = HoldPattern @ Alternatives[
     AcyclicGraphQ, AlgebraicIntegerQ, AlgebraicUnitQ, \
     AntihermitianMatrixQ, AntisymmetricMatrixQ, ArrayQ, AssociationQ, \
@@ -1340,10 +1341,10 @@ $booleanFunctions1 = HoldPattern @ Alternatives[
     ColorQ, CompatibleUnitQ, CompleteGraphQ, CompositeQ, ConnectedGraphQ, \
     ConnectedMoleculeQ, ConstantRegionQ, ContinuousTimeModelQ, \
     ConvexPolygonQ, ConvexPolyhedronQ, ConvexRegionQ, CoprimeQ, \
-    CSGRegionQ, DataStructureQ, DateObjectQ, DeviceOpenQ, \
+    System`CSGRegionQ, DataStructureQ, DateObjectQ, DeviceOpenQ, \
     DiagonalizableMatrixQ, DiagonalMatrixQ, DirectedGraphQ, DirectoryQ, \
     DiscreteTimeModelQ, DispatchQ, EdgeTaggedGraphQ, \
-    EdgeTransitiveGraphQ, EdgeWeightedGraphQ, EmptyGraphQ, \
+    System`EdgeTransitiveGraphQ, EdgeWeightedGraphQ, EmptyGraphQ, \
     EulerianGraphQ, EvenQ, ExactNumberQ, FailureQ, FileExistsQ, GraphQ, \
     HamiltonianGraphQ, HermitianMatrixQ, ImageQ, IndefiniteMatrixQ, \
     InexactNumberQ, IntegerQ, IrreduciblePolynomialQ, KnownUnitQ, ListQ, \
@@ -1356,15 +1357,16 @@ $booleanFunctions1 = HoldPattern @ Alternatives[
     PermutationCyclesQ, PermutationListQ, PlanarGraphQ, PolynomialQ, \
     PositiveDefiniteMatrixQ, PositiveSemidefiniteMatrixQ, PossibleZeroQ, \
     PrimePowerQ, PrimeQ, QuadraticIrrationalQ, QuantityQ, \
-    ReactionBalancedQ, RegionQ, RootOfUnityQ, SameQ, SatisfiableQ, \
+    System`ReactionBalancedQ, RegionQ, RootOfUnityQ, SameQ, SatisfiableQ, \
     SimpleGraphQ, SimplePolygonQ, SimplePolyhedronQ, SolidRegionQ, \
-    SparseArrayQ, SpatialObservationRegionQ, SquareFreeQ, SquareMatrixQ, \
+    System`SparseArrayQ, SpatialObservationRegionQ, SquareFreeQ, SquareMatrixQ, \
     StringQ, StructuredArrayHeadQ, SymmetricMatrixQ, TautologyQ, TensorQ, \
-    TimeObjectQ, TreeGraphQ, TreeLeafQ, TreeQ, TrueQ, UnateQ, \
+    TimeObjectQ, TreeGraphQ, System`TreeLeafQ, System`TreeQ, TrueQ, UnateQ, \
     UndirectedGraphQ, UnitaryMatrixQ, UnsameQ, UpperTriangularMatrixQ, \
-    ValueQ, VectorQ, VertexTransitiveGraphQ, VertexWeightedGraphQ, \
+    ValueQ, VectorQ, System`VertexTransitiveGraphQ, VertexWeightedGraphQ, \
     VideoQ, WeaklyConnectedGraphQ, WeightedGraphQ
 ];
+(* :!CodeAnalysis::EndBlock:: *)
 
 $booleanFunctionsN = HoldPattern @ Alternatives[
     SameQ, UnsameQ
