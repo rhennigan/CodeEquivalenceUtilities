@@ -126,8 +126,6 @@ HoldNumericQ // Attributes = { HoldAllComplete };
 
 HoldNumericQ[ x_ /; NumericQ @ Unevaluated @ x ] := True;
 
-HoldNumericQ[ _? IntTypeQ ] := True;
-
 HoldNumericQ[ f_[ args___ ] ] :=
     Module[ { fNumeric, argsNumeric },
         fNumeric    = MemberQ[ GetAttributes @ f, NumericFunction ];

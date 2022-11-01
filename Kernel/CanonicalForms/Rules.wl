@@ -53,13 +53,17 @@ $reaType = Inline[ $reaAtom,
 
 Int // ClearAll;
 Int // Attributes = { HoldAllComplete };
-
 Int[ i_ ] := TypedSymbol[ i, _Integer ];
+
 
 Rea // ClearAll;
 Rea // Attributes = { HoldAllComplete };
-
 Rea[ i_ ] := TypedSymbol[ i, _Real ];
+
+
+Str // ClearAll;
+Str // Attributes = { HoldAllComplete };
+Str[ i_ ] := TypedSymbol[ i, _String ];
 
 
 
@@ -145,12 +149,12 @@ attributeRules = HoldComplete[
 (******************************************************************************)
 
 
-hasSeqFunQ[ rng: { __Integer | __Rational } ] := hasSeqFunQ[ rng ] =
+hasSeqFunQ[ rng: { __Integer | __Rational } ] := hasSeqFunQ[ rng ] = TrueQ @
     And[ Length @ rng >= 4,
          ! constantArrayQ @ rng,
          MatchQ[
              Replace[
-                 FindSequenceFunction @ rng,
+                 findSequenceFunction @ rng,
                  f_Function :> (seqFun[ rng ] = f)
              ],
              _Function
@@ -158,11 +162,24 @@ hasSeqFunQ[ rng: { __Integer | __Rational } ] := hasSeqFunQ[ rng ] =
     ];
 
 
+findSequenceFunction[ rng_ ] :=
+    Quiet @ Module[ { n, f },
+        f = TimeConstrained[ FindSequenceFunction[ rng, n ], 1, $Failed ];
+        If[ MatchQ[ f, _FindSequenceFunction | _? FailureQ ],
+            $Failed,
+            With[ { expr = f },
+                Function @ Evaluate[ expr /. n -> # ]
+            ]
+        ]
+    ];
+
+
 (******************************************************************************)
 
 
+$atomicNumber = (_Integer|_Real|_Rational)? UAtomQ;
 
-tableIteratorRules = Inline[ $intType, HoldComplete[
+tableIteratorRules = Inline[ { $intType, $atomicNumber }, HoldComplete[
     Table[exp_, ii_, jj_] :> Table[Table[exp, jj], ii],
 
     Table[exp_, imax_?HoldNumericQ] :>
@@ -177,7 +194,11 @@ tableIteratorRules = Inline[ $intType, HoldComplete[
 
     (* remove redundant Tables in iterator *)
     Table[ expr_, { i_, Table[ j_, { j_, j1_, j2_, dj_ } ] } ] :>
-      Table[ expr, { i, j1, j2, dj } ]
+      Table[ expr, { i, j1, j2, dj } ],
+    Table[ a_, { i1_, Table[ b_, { i2_, imin_, imax_, di_ } ] } ] :>
+        With[ { aNew = TempHold @ a /. HoldPattern @ Verbatim @ i1 :> b },
+            Table[ aNew, { i2, imin, imax, di } ] /; True
+        ]
     ,
 
 
@@ -202,8 +223,8 @@ tableIteratorRules = Inline[ $intType, HoldComplete[
       PartialEvaluation[{rng}, rng = Range[a, b, d]; rng],*)
 
     (* on second thought, let's roll up everything *)
-    rng : { __Integer } /;
-      Length @ rng >= 4 && OrderedQ[ rng ] && SameQ @@ Differences @ rng :>
+    rng : { $atomicNumber.. } /;
+      Length @ rng >= 4 && OrderedQ[ rng ] && Equal @@ Differences @ rng :>
       TrEval @
         With[
             {
@@ -295,18 +316,42 @@ tableIteratorRules = Inline[ $intType, HoldComplete[
       RuleCondition[ TempHold @ expr /. HoldPattern[ i ] :> 1 ],
 
 
-    Plus[ a___, b_?HoldNumericQ, c___, d_?HoldNumericQ, e___ ] /;
+    (* unused list iterators *)
+    Table[ expr_, { i_, ii_List } ] /;
+        FreeQ[ HoldComplete @ expr, HoldPattern @ Verbatim @ i ] :>
+        WithHolding[ { j = NewLocalSymbol[ ], len = Length @ Unevaluated @ ii },
+            Table[ expr, { j, len } ]
+        ],
+
+    (* empty tables *)
+    Table[ _, { _TypedSymbol, 1, 0, 1 } ] :> { },
+    Table[ _, { _, { } } ] :> { },
+
+    (* short tables *)
+    Table[ expr_, { i: _Symbol|_TypedSymbol, 1, n: 1|2|3, 1 } ] :>
+        RuleCondition @ Table[
+            TempHold @ expr /. HoldPattern @ Verbatim @ i -> j,
+            { j, n }
+        ],
+
+    Verbatim[ Plus ][ a___, b_?HoldNumericQ, c___, d_?HoldNumericQ, e___ ] /;
       Length[ HoldComplete[ a, c, e ] ] > 0 &&
       ! SafeEvaluatedQ[b + d] && ! SafeEvaluatedQ[d + b] :>
         WithHolding[ { bd = b + d },
                      Plus[ a, bd, c, e ]
         ],
 
-    Plus[ a___, 0, b___ ] :> Plus[ a, b ],
+    p: Verbatim[ Plus ][ x_ ] /; Length @ Unevaluated @ p === 1 :> x,
 
-    p: HoldPattern[ Plus ][ x_ ] /; Length @ Unevaluated @ p === 1 :> x
+    (* Table properties *)
+    Length @ Table[ _, { _, 1, n_Integer, 1 } ] /;
+        IntegerQ @ Unevaluated @ n :> RuleCondition @ Max[ 0, n ],
 
-]];
+    Count[ list_, Verbatim[ _ ] | Verbatim[ Pattern ][ _, Verbatim[ Blank[ ] ] ] ] :>
+        Length @ list
+
+    (* TODO: account for possible `Nothing` values *)
+] ];
 
 
 (******************************************************************************)
@@ -349,6 +394,10 @@ tableFromOtherFunctions = Inline[ $intType, HoldComplete[
       ],
 
     Map[ f_, Table[ exp_, iter___ ], { 1 } ] :> Table[ f @ exp, iter ],
+    Map[ f_, list_List, { 1 } ] :>
+        With[ { i = NewLocalSymbol[ ] },
+            Table[ f @ i, { i, list } ]
+        ],
 
     (f_)[a1___? UAtomQ, Table[exp_, iter___], a2___? UAtomQ] /;
       ListableQ[ f ] :> Table[f[a1, exp, a2], iter],
@@ -459,11 +508,38 @@ constantArrayQ // Attributes = { HoldAllComplete };
 constantArrayQ[ m_List ] :=
   TrueQ @ And[
       ArrayQ @ Unevaluated @ m,
-      Times @@ Dimensions @ Unevaluated @ m >= 4,
+      Length @ Unevaluated @ m >= 4,
       SameQ @@ Map[ HoldComplete, Unevaluated @ m ]
   ];
 
 constantArrayQ[ ___ ] := False;
+
+
+
+newTypedLocal // ClearAll;
+newTypedLocal[ Integer ] := Int @@ { NewLocalSymbol[ ] };
+newTypedLocal[ Real    ] := Rea @@ { NewLocalSymbol[ ] };
+newTypedLocal[ String  ] := Str @@ { NewLocalSymbol[ ] };
+newTypedLocal[ ___     ] := $Failed;
+
+
+replaceTableFromListType // Attributes = { HoldAllComplete };
+
+replaceTableFromListType[ exp_, i_, ii_ ] :=
+    With[ { local = newTypedLocal @ ListType @ ii },
+        If[ FailureQ @ local,
+            $Failed,
+            replaceTableFromListType[ exp, i, ii, local ]
+        ]
+    ];
+
+replaceTableFromListType[ exp_, i_, ii_, j_ ] :=
+    With[ { held = TempHold[ exp ] /. HoldPattern[ i ] -> j },
+        TempHold @ Table[ held, { j, ii } ]
+    ];
+
+replaceTableFromListType[ ___ ] := $Failed;
+
 
 
 typedRules = Inline[ { $intType, $reaType }, HoldComplete[
@@ -511,9 +587,12 @@ typedRules = Inline[ { $intType, $reaType }, HoldComplete[
           Table[ held, { j, i1, i2, di } ]
       ],
 
+     Table[ exp_, { i_Symbol? SymbolQ, ii: _List|_Table } ] :>
+        With[ { new = replaceTableFromListType[ exp, i, ii ] },
+            new /; ! FailureQ @ new
+        ],
 
-
-    Table[ exp_, { i_? IntTypeQ, n_? IntTypeQ } ] :>
+    Table[ exp_, { i: Except[ _Integer, _? IntTypeQ ], n_? IntTypeQ } ] :>
       Table[ exp, { i, 1, n, 1 } ],
 
 
@@ -678,7 +757,7 @@ systemSymbols = HoldComplete[
     $PerformanceGoal        :> If[ $ControlActiveSetting, "Speed", "Quality" ]
 ];
 
-systemDownvaluesNull = HoldComplete[
+systemDownValuesNull = HoldComplete[
     Circle[ ]     :> Circle @ { 0, 0 },
     Cone[ ]       :> Cone @ { { 0, 0, -1 }, { 0, 0, 1 } },
     Cylinder[ ]   :> Cylinder @ { { 0, 0, -1 }, { 0, 0, 1 } },
@@ -898,8 +977,7 @@ entityFrameworkRules = HoldComplete[
       Entity[s, f][EntityProperty[s, "Image"]]
     ,
 
-    Entity[ a___ ][ b_ ] :>
-      EntityValue[ Entity @ a, b ]
+    (e: _Entity|_EntityClass)[ a_ ] :> EntityValue[ e, a ]
     ,
 
     EntityValue[ Entity[ a_String, b___ ], c_String ] :>
@@ -1035,8 +1113,56 @@ extraRules = HoldComplete[
 ];
 
 
+rule[ a_, b_ ] := (Rule|RuleDelayed)[ a, b ];
 
-syntaxRules = HoldComplete[
+syntaxRules = Inline[ rule, HoldComplete[
+    Verbatim[ And ][ a_ ] :> a,
+    Verbatim[ And ][ ] :> True,
+    Verbatim[ And ][ ___, False, ___ ] :> False,
+    Verbatim[ And ][ a___, True, b___ ] :> And[ a, b ],
+
+    Verbatim[ Or ][ a_ ] :> a,
+    Verbatim[ Or ][ ] :> False,
+    Verbatim[ Or ][ ___, True, ___ ] :> True,
+    Verbatim[ Or ][ a___, False, b___ ] :> Or[ a, b ],
+
+    And[ a___, Equal[ b1___, x_, b2___ ], c___, Equal[ d1___, x_, d2___ ], e___ ] :>
+        And[ a, Equal[ b1, b2, d1, d2, x ], c, e ],
+
+    And[ a___, SameQ[ b1___, x_, b2___ ], c___, SameQ[ d1___, x_, d2___ ], e___ ] :>
+        And[ a, SameQ[ b1, b2, d1, d2, x ], c, e ],
+
+    (eq:Equal|SameQ|Unequal|UnsameQ)[ a___ ] /; ! OrderedQ @ TempHold @ a :>
+        With[ { b = Sort @ TempHold @ a },
+            eq[ b ] /; True
+        ],
+
+    (eq:Equal|SameQ)[ a___ ] /; ! DuplicateFreeQ @ TempHold @ a :>
+        With[ { b = Union @ TempHold @ a },
+            eq[ b ] /; True
+        ],
+
+    (Equal|SameQ|Unequal|UnsameQ)[ a_ ] :> True,
+    (Equal|SameQ|Unequal|UnsameQ)[ ] :> True,
+    Unequal[ a_, b_ ] :> ! Equal[ a, b ],
+    UnsameQ[ a_, b_ ] :> ! SameQ[ a, b ],
+    Unequal[ a_, b_, c__ ] :> ! Equal[ a, b ] && Unequal[ b, c ],
+    UnsameQ[ a_, b_, c__ ] :> ! SameQ[ a, b ] && UnsameQ[ b, c ],
+
+    Select[ Select[ a_, Equal[ b1___, x_, b2___ ] & ], Equal[ c1___, x_, c2___ ] & ] :>
+        Select[ a, Equal[ b1, b2, c1, c2, x ] & ],
+
+    TrueQ[ Equal[ a___, b_? inertAtomQ, c___ ] ] :>
+        SameQ[ a, b, c ],
+
+    (Equal|SameQ)[ x_ .. ] /; inertAtomQ @ x :> True,
+    (Unequal|UnsameQ)[ x_ .. ] /; inertAtomQ @ x :> False,
+
+    (Equal|SameQ)[ x_? inertAtomQ, y_? inertAtomQ ] /; x =!= y :> False,
+
+    Not[ True ] :> False,
+    Not[ False ] :> True,
+
     ApplyTo[ x_, f_ ] :> (x = f @ x),
     AddTo[ a_, b_ ] :> (a = a + b),
     SubtractFrom[ a_, b_ ] :> (a = a - b),
@@ -1106,15 +1232,68 @@ syntaxRules = HoldComplete[
     Replace[ a_, b_, All, o: OptionsPattern[ ] ] :>
         Replace[ a, b, { 0, DirectedInfinity[ 1 ] }, o ],
 
-    Replace[ a_, b_, c__, (Rule|RuleDelayed)[ Heads, False ], d___ ] :>
+    Replace[ a_, b_, c__, rule[ Heads, False ], d___ ] :>
         Replace[ a, b, c, d ],
 
     ReplaceAll[ a_, b_ ] :>
         Replace[ a, b, { 0, DirectedInfinity[ 1 ] }, Heads -> True ],
 
     System`MapApply[ f_, expr_ ] :>
-        Apply[ f, expr, { 1 } ]
-];
+        Apply[ f, expr, { 1 } ],
+
+    ReplacePart[
+        expr_,
+        (r:Rule|RuleDelayed)[ i_? IntTypeQ, new_ ],
+        o: OptionsPattern[ ]
+    ] :> ReplacePart[ expr, { r[ { i }, new ] }, o ],
+
+    ReplacePart[
+        expr_,
+        (r:Rule|RuleDelayed)[ { i__? IntTypeQ }, new_ ],
+        o: OptionsPattern[ ]
+    ] :> ReplacePart[ expr, { r[ { i }, new ] }, o ],
+
+    ReplacePart[
+        expr_,
+        rules: { ___, rule[ _? IntTypeQ, _ ], ___ },
+        o: OptionsPattern[ ]
+    ] :>
+        With[
+            {
+                rules1 = Replace[
+                    TempHold @ rules,
+                    HoldPattern[ (r:Rule|RuleDelayed)[ i_? IntTypeQ, new_ ] ] :>
+                        r[ { i }, new ],
+                    { 2 }
+                ]
+            },
+            ReplacePart[ expr, rules1, o ] /; True
+        ],
+
+    (* default option value *)
+    ReplacePart[ a_, b_, c___, rule[ Heads, Automatic ], d___ ] :>
+        ReplacePart[ a, b, c, d ],
+
+    (* operator *)
+    ReplacePart[ (r:Rule|RuleDelayed)[ i_? IntTypeQ, new_ ] ] :>
+        ReplacePart[ { r[ { i }, new ] } ],
+
+    ReplacePart[ (r:Rule|RuleDelayed)[ { i__? IntTypeQ }, new_ ] ] :>
+        ReplacePart[ { r[ { i }, new ] } ],
+
+    ReplacePart[ rules: { ___, rule[ _? IntTypeQ, _ ], ___ } ] :>
+        With[
+            {
+                rules1 = Replace[
+                    TempHold @ rules,
+                    HoldPattern[ (r:Rule|RuleDelayed)[ i_? IntTypeQ, new_ ] ] :>
+                        r[ { i }, new ],
+                    { 2 }
+                ]
+            },
+            ReplacePart[ rules1 ] /; True
+        ]
+] ];
 
 
 $$forwardOps = HoldPattern @ Alternatives[
@@ -1150,14 +1329,18 @@ $$reverseOps2 = HoldPattern @ Alternatives[
     Insert
 ];
 
-operatorFormRules = Inline[ { $$forwardOps, $$reverseOps }, HoldComplete[
+operatorFormRules = Inline[ { $$forwardOps, $$reverseOps, $$reverseOps2 }, HoldComplete[
     (h:$$forwardOps)[ a_ ][ b_ ] :> h[ a, b ],
     (h:$$reverseOps)[ a_ ][ b_ ] :> h[ b, a ],
-    (h:$$reverseOps2)[ a_, b_ ][ c_ ] :> h[ c, a, b ]
+    (h:$$reverseOps2)[ a_, b_ ][ c_ ] :> h[ c, a, b ],
+    (h:$$forwardOps)[ a_ ] :> Function[ h[ a, # ] ],
+    (h:$$reverseOps)[ a_ ] :> Function[ h[ #, a ] ],
+    (h:$$reverseOps2)[ a_, b_ ] :> Function[ h[ #, a, b ] ]
 ] ];
 
 
-
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 $booleanFunctions1 = HoldPattern @ Alternatives[
     AcyclicGraphQ, AlgebraicIntegerQ, AlgebraicUnitQ, \
     AntihermitianMatrixQ, AntisymmetricMatrixQ, ArrayQ, AssociationQ, \
@@ -1166,10 +1349,10 @@ $booleanFunctions1 = HoldPattern @ Alternatives[
     ColorQ, CompatibleUnitQ, CompleteGraphQ, CompositeQ, ConnectedGraphQ, \
     ConnectedMoleculeQ, ConstantRegionQ, ContinuousTimeModelQ, \
     ConvexPolygonQ, ConvexPolyhedronQ, ConvexRegionQ, CoprimeQ, \
-    CSGRegionQ, DataStructureQ, DateObjectQ, DeviceOpenQ, \
+    System`CSGRegionQ, DataStructureQ, DateObjectQ, DeviceOpenQ, \
     DiagonalizableMatrixQ, DiagonalMatrixQ, DirectedGraphQ, DirectoryQ, \
     DiscreteTimeModelQ, DispatchQ, EdgeTaggedGraphQ, \
-    EdgeTransitiveGraphQ, EdgeWeightedGraphQ, EmptyGraphQ, \
+    System`EdgeTransitiveGraphQ, EdgeWeightedGraphQ, EmptyGraphQ, \
     EulerianGraphQ, EvenQ, ExactNumberQ, FailureQ, FileExistsQ, GraphQ, \
     HamiltonianGraphQ, HermitianMatrixQ, ImageQ, IndefiniteMatrixQ, \
     InexactNumberQ, IntegerQ, IrreduciblePolynomialQ, KnownUnitQ, ListQ, \
@@ -1182,26 +1365,58 @@ $booleanFunctions1 = HoldPattern @ Alternatives[
     PermutationCyclesQ, PermutationListQ, PlanarGraphQ, PolynomialQ, \
     PositiveDefiniteMatrixQ, PositiveSemidefiniteMatrixQ, PossibleZeroQ, \
     PrimePowerQ, PrimeQ, QuadraticIrrationalQ, QuantityQ, \
-    ReactionBalancedQ, RegionQ, RootOfUnityQ, SameQ, SatisfiableQ, \
+    System`ReactionBalancedQ, RegionQ, RootOfUnityQ, SameQ, SatisfiableQ, \
     SimpleGraphQ, SimplePolygonQ, SimplePolyhedronQ, SolidRegionQ, \
-    SparseArrayQ, SpatialObservationRegionQ, SquareFreeQ, SquareMatrixQ, \
+    System`SparseArrayQ, SpatialObservationRegionQ, SquareFreeQ, SquareMatrixQ, \
     StringQ, StructuredArrayHeadQ, SymmetricMatrixQ, TautologyQ, TensorQ, \
-    TimeObjectQ, TreeGraphQ, TreeLeafQ, TreeQ, TrueQ, UnateQ, \
+    TimeObjectQ, TreeGraphQ, System`TreeLeafQ, System`TreeQ, TrueQ, UnateQ, \
     UndirectedGraphQ, UnitaryMatrixQ, UnsameQ, UpperTriangularMatrixQ, \
-    ValueQ, VectorQ, VertexTransitiveGraphQ, VertexWeightedGraphQ, \
+    ValueQ, VectorQ, System`VertexTransitiveGraphQ, VertexWeightedGraphQ, \
     VideoQ, WeaklyConnectedGraphQ, WeightedGraphQ
 ];
+(* :!CodeAnalysis::EndBlock:: *)
 
 $booleanFunctionsN = HoldPattern @ Alternatives[
     SameQ, UnsameQ
 ];
+
+associationQ // Attributes = { HoldAllComplete };
+associationQ[ Association[ a___ ] ] :=
+    AllTrue[ Unevaluated @ { a }, associationRulesQ ];
+
+associationRulesQ // Attributes = { HoldAllComplete };
+associationRulesQ[ (Rule|RuleDelayed)[ _, _ ] ] := True;
+associationRulesQ[ a_List ] := AllTrue[ Unevaluated @ a, associationRulesQ ];
+associationRulesQ[ a_Association ] := associationQ @ a;
+associationRulesQ[ ___ ] := False;
+
+
+atomQ // Attributes = { HoldAllComplete };
+atomQ[ _? UAtomQ       ] := True;
+atomQ[ _? IntTypeQ     ] := True;
+atomQ[ _? RealTypeQ    ] := True;
+atomQ[ _? StringTypeQ  ] := True;
+atomQ[ _? associationQ ] := True;
+atomQ[ ___             ] := False;
+
+
+inertAtomQ // Attributes = { HoldAllComplete };
+inertAtomQ[ _Symbol ] := False;
+inertAtomQ[ expr_   ] := AtomQ @ Unevaluated @ expr;
+inertAtomQ[ ___     ] := False;
+
+
 
 booleanFunctionRules = Inline[ { $booleanFunctions1, $booleanFunctionsN },
     HoldComplete[
         TrueQ[ (h:$booleanFunctions1)[ x_ ] ] :> h @ x,
         TrueQ[ (h:$booleanFunctionsN)[ x___ ] ] :> h @ x,
         SameQ[ x_, True ] :> TrueQ @ x,
-        SameQ[ True, x_ ] :> TrueQ @ x
+        SameQ[ True, x_ ] :> TrueQ @ x,
+        AtomQ[ _? atomQ ] :> True,
+        IntegerQ[ _? IntTypeQ ] :> True,
+        StringQ[ _? StringTypeQ ] :> True,
+        AssociationQ[ _? associationQ ] :> True
     ]
 ];
 
@@ -1212,12 +1427,27 @@ booleanFunctionRules = Inline[ { $booleanFunctions1, $booleanFunctionsN },
     IntegerQ[ _? IntTypeQ ] -> True,
 *)
 
-arithmeticRules = HoldComplete[
+$zero   =  0 |  0.0;
+$posOne =  1 |  1.0;
+$negOne = -1 | -1.0;
 
-    Times[ -1, DirectedInfinity[ 1 ] ] :> DirectedInfinity[ -1 ],
+arithmeticRules = Inline[ { $zero, $posOne, $negOne }, HoldComplete[
+
+    Verbatim[ Plus  ][ ] :> 0,
+    Verbatim[ Times ][ ] :> 1,
+
+    Power[ x_ ] :> x,
+    Power[ Except[ $zero ], 0   ] :> 1,
+    Power[ Except[ $zero ], 0.0 ] :> 1.0,
+    Power[ o: $posOne, $negOne ] :> o,
+
+    Verbatim[ Times ][ a___, $posOne, b___ ] :> Times[ a, b ],
+    Verbatim[ Plus  ][ a___, $zero  , b___ ] :> Plus[  a, b ],
+
+    Verbatim[ Times ][ -1, DirectedInfinity[ 1 ] ] :> DirectedInfinity[ -1 ],
 
     (* distribute Times over Plus *)
-    Times[ x_, Plus[ a___ ] ] :>
+    Verbatim[ Times ][ x_, Verbatim[ Plus ][ a___ ] ] :>
       WithHolding[
           {
               dist = Replace[ TempHold @ Plus @ a,
@@ -1227,13 +1457,8 @@ arithmeticRules = HoldComplete[
           },
           dist
       ]
-    (*,
 
-    * only use up to machine precision *)(*
-    expr_ /; $MachinePrecision < Precision @ HoldComplete @ expr < Infinity :>
-      TrEval @ SetPrecision[ TempHold @ expr, $MachinePrecision ]*)
-
-];
+] ];
 
 
 urlQ // ClearAll;
@@ -1288,8 +1513,6 @@ xxByFunctionRules = Inline[ $byFunction, HoldComplete[
       Select[ Select[ thing, this & ], And[ that ] & ]
     ,
     Select[ thing_, And[ this_ ] & ] :> Select[ thing, this & ]
-    ,
-    Select[ expr_, Equal[ args___ ] & ] :> Select[ expr, SameQ @ args & ]
     ,
     (select: $byFunction)[ thing_, Function[ f_[ #1 ] ], args___ ] :>
       select[ thing, f, args ]
@@ -1425,14 +1648,6 @@ eiwlRules = Inline[ { $intType, $byFunction }, HoldComplete[
       WithHolding[ { list = ReleaseHold @ CodeEquivalenceUtilities`FromCanonicalForm @ Hold @t },
                    BarChart @ list
       ]*)
-
-    t : Table[ Fibonacci @ TypedSymbol[ i_, Verbatim[ _Integer ] ],
-               { TypedSymbol[ i_, Verbatim[ _Integer ] ], _Integer, _Integer, _Integer }
-        ] :>
-      TrEval @ ReleaseHold @ Wolfram`CodeEquivalenceUtilities`FromCanonicalForm @ Hold @ t
-    ,
-
-
 
     (* Hardcoded Overrides: *)
 
@@ -1700,9 +1915,9 @@ priority1Rules = HoldComplete[
     Ceiling[ i_? IntTypeQ ] :> i
     ,
     Round[ i_? IntTypeQ ] :> i
-    ,
+    (* ,
     x_? HoldNumericQ /; ! expandedQ @ x :> TrEval @ expandBlocked @ x,
-    x_? HoldNumericQ /; ! simplifiedQ @ x :> TrEval @ simplify @ x
+    x_? HoldNumericQ /; ! simplifiedQ @ x :> TrEval @ simplify @ x *)
     ,
     (gfx: Graphics|Graphics3D)[ a_, b___ ] :>
       WithHolding[
@@ -1717,7 +1932,12 @@ priority1Rules = HoldComplete[
 
 
 cleanupRules = HoldComplete[
-    TypedSymbol[ TypedSymbol[ s_, t_ ], t_ ] :> TypedSymbol[ s, t ]
+    TypedSymbol[ TypedSymbol[ s_, t_ ], t_ ] :> TypedSymbol[ s, t ],
+
+    Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ a_ ] :>
+        Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ a, a ],
+    Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ a_, a_ ] :>
+        Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ a ]
 ];
 
 
@@ -1734,7 +1954,7 @@ rules = {
     typedRules,
     systemSymbols,
     pureFunctionRules,
-    systemDownvaluesNull,
+    systemDownValuesNull,
     listRules,
     colorRules,
     stringRules,
@@ -1742,10 +1962,10 @@ rules = {
     randomRules,
     imageRules,
     cloudRules,
+    syntaxRules,
     xxByFunctionRules,
     eiwlRules,
     extraRules,
-    syntaxRules,
     operatorFormRules,
     arithmeticRules,
     booleanFunctionRules,

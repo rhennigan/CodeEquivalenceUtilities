@@ -183,7 +183,7 @@ Wolfram`CodeEquivalenceUtilities`RandomValue;
 Wolfram`CodeEquivalenceUtilities`HoldNumericQ;
 
 
-IntTypeQ[ _Integer ] := True;
+IntTypeQ[ x_Integer ] := IntegerQ @ Unevaluated @ x;
 IntTypeQ[ TypedSymbol[ _, Verbatim[ _Integer ] ] ] := True;
 IntTypeQ[ RandomValue[ _DiscreteUniformDistribution ] ] := True;
 
@@ -199,12 +199,62 @@ IntTypeQ[ Round[ _? HoldNumericQ ] ] := True;
 
 (* Misc *)
 IntTypeQ[ Echo[ _? IntTypeQ ] ] := True;
+IntTypeQ[ Echo[ _? IntTypeQ, ___ ] ] := True;
 IntTypeQ[ Identity[ _? IntTypeQ ] ] := True;
 IntTypeQ[ StringLength[ _? StringTypeQ ] ] := True;
+IntTypeQ[ StringCount[ _? StringTypeQ, _? StringTypeQ ] ] := True;
+IntTypeQ[ (_? intTypeFunc1Q)[ _ ] ] := True;
+IntTypeQ[ (_? intTypeFunc2Q)[ _, _ ] ] := True;
 
 (* Default *)
 IntTypeQ[ ___ ] := False;
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*intTypeFunc1Q*)
+$intType1Funcs = HoldPattern @ Alternatives[
+    ByteCount,
+    Depth,
+    Hash,
+    LeafCount,
+    Length
+];
+
+intTypeFunc1Q // Attributes = { HoldAllComplete };
+intTypeFunc1Q[ $intType1Funcs ] := Inline[ $intType1Funcs, True ];
+intTypeFunc1Q[ ___            ] := False;
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*intTypeFunc2Q*)
+$intType2Funcs = HoldPattern @ Alternatives[
+    Count
+];
+
+intTypeFunc2Q // Attributes = { HoldAllComplete };
+intTypeFunc2Q[ $intType2Funcs ] := Inline[ $intType2Funcs, True ];
+intTypeFunc2Q[ ___            ] := False;
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*RealTypeQ*)
+RealTypeQ // Attributes = { HoldAllComplete };
+
+RealTypeQ[ x_Real ] := AtomQ @ Unevaluated @ x;
+RealTypeQ[ TypedSymbol[ _, Verbatim[ _Real ] ] ] := True;
+RealTypeQ[ RandomValue[ _UniformDistribution ] ] := True;
+
+(* Arithmetic *)
+RealTypeQ[ (Plus|Times|Subtract)[ __? RealTypeQ ] ] := True;
+(* TODO: this should work when mixed with integers too *)
+
+(* Misc *)
+RealTypeQ[ Echo[ _? RealTypeQ ]      ] := True;
+RealTypeQ[ Echo[ _? RealTypeQ, ___ ] ] := True;
+RealTypeQ[ Identity[ _? RealTypeQ ]  ] := True;
+
+(* Default *)
+RealTypeQ[ ___ ] := False;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -239,7 +289,8 @@ StringTypeQ[ ___ ] := False;
 (*ListTypeQ*)
 ListTypeQ // Attributes = { HoldAllComplete };
 
-ListTypeQ[ list_ ] := ListType @ list =!= None;
+ListTypeQ[ list_ ] := ListTypeQ[ list, Except[ None ] ];
+ListTypeQ[ list_, type_ ] := MatchQ[ ListType @ list, type ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -251,6 +302,7 @@ ListType // Attributes = { HoldAllComplete };
 (*Literal Lists*)
 ListType[ { __? IntTypeQ    } ] := Integer;
 ListType[ { __? StringTypeQ } ] := String;
+ListType[ { __? RealTypeQ   } ] := Real;
 ListType[ { ___             } ] := Undefined;
 
 (* ::**********************************************************************:: *)
@@ -258,6 +310,7 @@ ListType[ { ___             } ] := Undefined;
 (*Expected List Output*)
 ListType[ Table[ _? IntTypeQ   , __ ] ] := Integer;
 ListType[ Table[ _? StringTypeQ, __ ] ] := String;
+ListType[ Table[ _? RealTypeQ  , __ ] ] := Real;
 ListType[ Table[ _             , __ ] ] := Undefined;
 
 (* ::**********************************************************************:: *)

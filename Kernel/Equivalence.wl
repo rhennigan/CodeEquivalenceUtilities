@@ -323,11 +323,7 @@ iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] :=
     Module[ { res },
 
         TimeConstrained[
-            FixedPoint[
-                canonicalStepTransform,
-                $LastTransformation = HoldComplete @ expr,
-                limit
-            ],
+            cycleDetectTransform[ expr, limit ],
             timeout
         ];
 
@@ -339,6 +335,46 @@ iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] :=
 
         Replace[ res, HoldComplete[ e_ ] :> wrapper @ e ]
     ];
+
+ToCanonicalForm::cycle = "Infinite loop detected in transformations; returning early.";
+
+cycleDetectTransform[ expr_, limit_ ] :=
+    Internal`InheritedBlock[ { seenQ },
+        Module[ { next, previous, step },
+
+            markSeen @ expr;
+            next = previous = HoldComplete @ expr;
+
+            step = Function[
+                next = canonicalStepTransform @ #;
+                If[ next =!= previous && TrueQ @ seenQ @ next,
+                    Message[ ToCanonicalForm::cycle ];
+                    Throw[
+                        Sow[ $LastTransformation = previous, $CanonicalTrace ],
+                        $tag
+                    ],
+                    markSeen @ next;
+                    previous = next
+                ]
+            ];
+
+            Catch[
+                FixedPoint[
+                    step,
+                    $LastTransformation = HoldComplete @ expr,
+                    limit
+                ],
+                $tag
+            ]
+        ]
+    ];
+
+
+seenQ[ ___ ] := False;
+
+markSeen[ HoldComplete[ held_HoldComplete ] ] := markSeen @ held;
+markSeen[ held_HoldComplete ] := (seenQ[ Verbatim[ held ] ] = True);
+markSeen[ other_ ] := markSeen @ HoldComplete @ other;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -544,7 +580,7 @@ BuildDispatch[ rules_ ] :=
     Module[ { oldRules, appended, newRules, added, removed },
 
         oldRules = With[ { n = Normal @ $Dispatch }, If[ ListQ @ n, n, { } ] ];
-        appended = Append[ rules, HoldApply[ f_, { v___ } ] :> f @ v ];
+        appended = DeleteDuplicates @ Append[ rules, HoldApply[ f_, { v___ } ] :> f @ v ];
         newRules = MakeTransformationRules @@ { appended };
         $dispatchHash = Hash @ newRules;
 
@@ -593,8 +629,7 @@ BuildDispatch[ ];
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*$RasterFailure*)
-$RasterFailure /:
-    HoldPattern @ FailureQ @ $RasterFailure := True;
+$RasterFailure /: HoldPattern @ FailureQ @ $RasterFailure := True;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
