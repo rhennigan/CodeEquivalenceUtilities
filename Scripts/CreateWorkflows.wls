@@ -31,8 +31,7 @@ $check = Workflow[
                 {
                     "Checkout",
                     WorkflowStep @ File[ "Scripts/BuildMX.wls" ],
-                    "Test",
-                    "UploadTestResults"
+                    "Test"
                 },
                 <| "Name" -> "Test" |>,
                 TimeConstraint -> Quantity[ 30, "Minutes" ]
@@ -62,8 +61,7 @@ $release =
                     {
                         "Checkout",
                         WorkflowStep @ File[ "Scripts/BuildMX.wls" ],
-                        "Test",
-                        "UploadTestResults"
+                        "Test"
                     },
                     <| "Name" -> "Test" |>,
                     TimeConstraint -> Quantity[ 30, "Minutes" ]
