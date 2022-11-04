@@ -66,7 +66,10 @@ EquivalenceTestData // Attributes = { HoldAllComplete     };
 EquivalenceTestData // Options    = { "AllTests" -> False };
 
 EquivalenceTestData[ expr1_, expr2_, opts : OptionsPattern[ ] ] :=
-    Cached @ Catch @ iEquivalenceTestData[ expr1, expr2, opts ];
+    WithCleanup[
+        Cached @ Catch @ iEquivalenceTestData[ expr1, expr2, opts ],
+        formatLocalSymbols[ ]
+    ];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
