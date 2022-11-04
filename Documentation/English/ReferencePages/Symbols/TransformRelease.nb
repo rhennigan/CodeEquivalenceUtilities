@@ -1,0 +1,841 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* Created By: SaveReadableNotebook *)
+(* https://resources.wolframcloud.com/FunctionRepository/resources/SaveReadableNotebook *)
+
+Notebook[
+ {
+  Cell[
+   CellGroupData[
+    {
+     Cell["TransformRelease", "ObjectName", CellID -> 532355881],
+     Cell[
+      TextData[
+       {
+        Cell["   ", "ModInfo"],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            ButtonBox[
+             "TransformRelease",
+             BaseStyle -> "Link",
+             ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformRelease"
+            ],
+            "[",
+            StyleBox["expr", "TI"],
+            "]"
+           }
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[LineSeparator]marks ",
+        Cell[BoxData[StyleBox["expr", "TI"]], "InlineFormula"],
+        " for transformation even when held via an outer ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "TransformHold",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformHold"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        "."
+       }
+      ],
+      "Usage",
+      CellID -> 326905488
+     ],
+     Cell["XXXX", "Notes", CellID -> 27664815]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "Tech Notes",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "TechNotes",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell["Insert links to related tech notes.", "MoreInfoText"],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "TechNotesSection",
+      CellID -> 215016187
+     ],
+     Cell["XXXX", "Tutorials", CellID -> 223047142]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "Related Links",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "RelatedLinks",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Insert links to any related page, including web pages.",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "RelatedLinksSection",
+      CellID -> 957700126
+     ],
+     Cell["XXXX", "RelatedLinks", CellID -> 53823143]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "See Also",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "SeeAlso",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Insert links to any related reference (function) pages.",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "SeeAlsoSection",
+      CellID -> 139469588
+     ],
+     Cell[
+      TextData[
+       {
+        Cell[
+         BoxData[
+          ButtonBox[
+           "TransformHold",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformHold"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[EmptyVerySmallSquare] ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "MakeCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/MakeCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[EmptyVerySmallSquare] ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "ToCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/ToCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ]
+       }
+      ],
+      "SeeAlso",
+      CellID -> 292906991
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Related Guides",
+      "MoreAboutSection",
+      CellID -> 80290775
+     ],
+     Cell[
+      TextData[
+       ButtonBox[
+        "Code Equivalence Utilities",
+        BaseStyle -> "Link",
+        ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/guide/CodeEquivalenceUtilities"
+       ]
+      ],
+      "MoreAbout",
+      CellID -> 636435031
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "Examples Initialization",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "ExamplesInitialization",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Input that is to be evaluated before any examples are run, e.g. Needs[\[Ellipsis]].",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "ExamplesInitializationSection",
+      CellID -> 246444402
+     ],
+     Cell[
+      BoxData[
+       RowBox[
+        {
+         "Needs",
+         "[",
+         "\"Wolfram`CodeEquivalenceUtilities`\"",
+         "]"
+        }
+       ]
+      ],
+      "ExampleInitialization",
+      CellID -> 7797214
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      BoxData[
+       InterpretationBox[
+        GridBox[
+         {
+          {
+           StyleBox[
+            RowBox[{"Basic", " ", "Examples"}],
+            "PrimaryExamplesSection"
+           ],
+           ButtonBox[
+            RowBox[
+             {
+              RowBox[{"More", " ", "Examples"}],
+              " ",
+              "\[RightTriangle]"
+             }
+            ],
+            BaseStyle -> "ExtendedExamplesLink",
+            ButtonData :> "ExtendedExamples"
+           ]
+          }
+         }
+        ],
+        $Line = 0;
+       ]
+      ],
+      "PrimaryExamplesSection",
+      CellID -> 323238613
+     ],
+     Cell[
+      TextData[
+       {
+        "Mark a subexpression within a ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "TransformHold",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformHold"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " for transformation:"
+       }
+      ],
+      "ExampleText",
+      CellID -> 397248910
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            "MakeCanonicalForm",
+            "[",
+            RowBox[
+             {
+              "Range",
+              "[",
+              RowBox[
+               {
+                "TransformHold",
+                "[",
+                RowBox[
+                 {
+                  RowBox[
+                   {"TransformRelease", "[", RowBox[{"3", "+", "2"}], "]"}
+                  ],
+                  "+",
+                  "4"
+                 }
+                ],
+                "]"
+               }
+              ],
+              "]"
+             }
+            ],
+            "]"
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[1]:=",
+         CellID -> 553041124
+        ],
+        Cell[
+         BoxData[
+          TagBox[
+           RowBox[
+            {
+             "Table",
+             "[",
+             RowBox[
+              {
+               InterpretationBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox[
+                   FrameBox[
+                    RowBox[
+                     {
+                      StyleBox[
+                       AdjustmentBox[
+                        InterpretationBox[
+                         StyleBox[
+                          SubscriptBox["\"\[ScriptS]\"", "1"],
+                          FontWeight -> "DemiBold",
+                          FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                         ],
+                         Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                         SelectWithContents -> True,
+                         Selectable -> False
+                        ],
+                        BoxBaselineShift -> -0.25
+                       ],
+                       FontColor ->
+                        RGBColor[
+                         {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                        ]
+                      ],
+                      StyleBox[
+                       "\[Proportion]",
+                       FontColor ->
+                        RGBColor[
+                         {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                        ]
+                      ],
+                      StyleBox[
+                       "\[DoubleStruckCapitalZ]",
+                       FontColor ->
+                        RGBColor[
+                         {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                        ]
+                      ]
+                     }
+                    ],
+                    Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                    ContentPadding -> False,
+                    FrameStyle -> None,
+                    RoundingRadius -> 5
+                   ],
+                   FontSize -> 0.9 * Inherited
+                  ],
+                  "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                 ],
+                 #1 &
+                ],
+                TypedSymbol[
+                 Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                 Blank[Integer]
+                ]
+               ],
+               ",",
+               RowBox[
+                {
+                 "{",
+                 RowBox[
+                  {
+                   InterpretationBox[
+                    TagBox[
+                     TooltipBox[
+                      StyleBox[
+                       FrameBox[
+                        RowBox[
+                         {
+                          StyleBox[
+                           AdjustmentBox[
+                            InterpretationBox[
+                             StyleBox[
+                              SubscriptBox["\"\[ScriptS]\"", "1"],
+                              FontWeight -> "DemiBold",
+                              FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                             ],
+                             Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                             SelectWithContents -> True,
+                             Selectable -> False
+                            ],
+                            BoxBaselineShift -> -0.25
+                           ],
+                           FontColor ->
+                            RGBColor[
+                             {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                            ]
+                          ],
+                          StyleBox[
+                           "\[Proportion]",
+                           FontColor ->
+                            RGBColor[
+                             {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                            ]
+                          ],
+                          StyleBox[
+                           "\[DoubleStruckCapitalZ]",
+                           FontColor ->
+                            RGBColor[
+                             {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                            ]
+                          ]
+                         }
+                        ],
+                        Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                        ContentPadding -> False,
+                        FrameStyle -> None,
+                        RoundingRadius -> 5
+                       ],
+                       FontSize -> 0.9 * Inherited
+                      ],
+                      "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                     ],
+                     #1 &
+                    ],
+                    TypedSymbol[
+                     Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                     Blank[Integer]
+                    ]
+                   ],
+                   ",",
+                   "1",
+                   ",",
+                   RowBox[{"5", "+", "4"}],
+                   ",",
+                   "1"
+                  }
+                 ],
+                 "}"
+                }
+               ]
+              }
+             ],
+             "]"
+            }
+           ],
+           HoldForm
+          ]
+         ],
+         "Output",
+         CellLabel -> "Out[1]=",
+         CellID -> 192302899
+        ]
+       },
+       Open
+      ]
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "More Examples",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "MoreExamples",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Extended examples in standardized sections.",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "ExtendedExamplesSection",
+      CellTags -> "ExtendedExamples",
+      CellID -> 457277731
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Scope", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 418462180
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Generalizations & Extensions", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 778805518
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["Options", "ExampleSection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSection",
+         CellID -> 258434850
+        ],
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["XXXX", "ExampleSubsection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSubsection",
+         CellID -> 382264602
+        ],
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["XXXX", "ExampleSubsection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSubsection",
+         CellID -> 303513344
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Applications", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 42405571
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Properties & Relations", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 10782411
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Possible Issues", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 115473279
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Interactive Examples", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 332861197
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Neat Examples", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 14411036
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["Metadata", "MetadataSection", CellID -> 119305647],
+     Cell[
+      TextData[
+       {
+        "New in: ",
+        Cell["", "HistoryData", CellTags -> "New"],
+        " | Modified in: ",
+        Cell[" ", "HistoryData", CellTags -> "Modified"],
+        " | Obsolete in: ",
+        Cell[" ", "HistoryData", CellTags -> "Obsolete"]
+       }
+      ],
+      "History",
+      CellID -> 115888172
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         TextData[
+          {
+           "Categorization",
+           Cell[
+            BoxData[
+             TemplateBox[
+              {
+               "Metadata",
+               Cell[
+                BoxData[
+                 FrameBox[
+                  Cell[
+                   "Metadata such as page URI, context, and type of documentation page.",
+                   "MoreInfoText"
+                  ],
+                  BaseStyle -> "IFrameBox"
+                 ]
+                ],
+                "MoreInfoTextOuter"
+               ]
+              },
+              "MoreInfoOpenerButtonTemplate"
+             ]
+            ]
+           ]
+          }
+         ],
+         "CategorizationSection",
+         CellID -> 72310392
+        ],
+        Cell[
+         "Symbol",
+         "Categorization",
+         CellLabel -> "Entity Type",
+         CellID -> 535523773
+        ],
+        Cell[
+         "Wolfram/CodeEquivalenceUtilities",
+         "Categorization",
+         CellLabel -> "Paclet Name",
+         CellID -> 812652232
+        ],
+        Cell[
+         "Wolfram`CodeEquivalenceUtilities`",
+         "Categorization",
+         CellLabel -> "Context",
+         CellID -> 807012423
+        ],
+        Cell[
+         "Wolfram/CodeEquivalenceUtilities/ref/TransformRelease",
+         "Categorization",
+         CellLabel -> "URI",
+         CellID -> 31925057
+        ]
+       },
+       Closed
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell["Keywords", "KeywordsSection", CellID -> 205600941],
+        Cell["XXXX", "Keywords", CellID -> 289944272]
+       },
+       Closed
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         "Syntax Templates",
+         "TemplatesSection",
+         CellID -> 674953830
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Additional Function Template",
+         CellID -> 926472760
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Arguments Pattern",
+         CellID -> 118061822
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Local Variables",
+         CellID -> 477703251
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Color Equal Signs",
+         CellID -> 113808778
+        ]
+       },
+       Closed
+      ]
+     ]
+    },
+    Open
+   ]
+  ]
+ },
+ WindowStatusArea -> Automatic,
+ TaggingRules -> <|
+  "InformationPopupMenuItemAdded" -> True,
+  "Paclet" -> "Wolfram/CodeEquivalenceUtilities",
+  "NotebookIndexQ" -> True,
+  "NotebookLastIndexed" ->
+   DateObject[
+    {2022, 11, 4, 13, 21, 11.821},
+    "Instant",
+    "Gregorian",
+    -4.0
+   ],
+  "NotebookUUID" -> "219c4765-1d80-4197-9354-88e8cf4c9b35"
+ |>,
+ FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (November 2, 2022)",
+ StyleDefinitions ->
+  FrontEnd`FileName[
+   {"Wolfram"},
+   "FunctionPageStylesExt.nb",
+   CharacterEncoding -> "UTF-8"
+  ],
+ ExpressionUUID -> "219c4765-1d80-4197-9354-88e8cf4c9b35"
+]
