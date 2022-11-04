@@ -19,6 +19,7 @@ Quiet[
         Scan[
             Get @ FileNameJoin @ { `Internal`$KernelRoot, # } &,
             {
+                "Symbols.wl",
                 "Config.wl",
                 "Utilities.wl",
                 "CachedValues.wl",

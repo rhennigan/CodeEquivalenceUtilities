@@ -29,11 +29,6 @@ NormalizeNames;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
-(*Declarations*)
-TypedSymbol;
-
-(* ::**********************************************************************:: *)
-(* ::Subsection::Closed:: *)
 (*Private*)
 Begin[ "`Private`" ];
 
@@ -546,7 +541,7 @@ formatLocalSymbol[ name_String, base_String ] :=
             formatLocalSymbol[
                 name,
                 base,
-                Subscript[ "\[ScriptS]", i ],
+                RawBoxes @ SubscriptBox[ "\[ScriptS]", ToBoxes @ i ],
                 localSymbolColor @ i
             ],
             formatLocalSymbol[ name, base, base, localSymbolColor @ base ]

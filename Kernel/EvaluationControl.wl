@@ -21,15 +21,8 @@ FixValue;
 SafeEvaluatedQ;
 SafeExpressionQ;
 SandboxException;
-SandboxViolation;
 Unsafe;
 UnsafeSymbols;
-
-(* ::**********************************************************************:: *)
-(* ::Subsection::Closed:: *)
-(*Declarations*)
-HoldingQ;
-TypedSymbol;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -622,7 +615,13 @@ UnsafeSymbols[
 
 deleteWhiteListed[ expr_ ] :=
     DeleteCases[
-        expr,
+        DeleteCases[
+            expr,
+            HoldPattern @ Verbatim[ HoldPattern ][
+                MakeBoxes[ _? LocalContextQ, StandardForm ]
+            ] :> _,
+            { 5 }
+        ],
         _? WhiteListedPatternQ,
         { 2, Infinity },
         Heads -> True
