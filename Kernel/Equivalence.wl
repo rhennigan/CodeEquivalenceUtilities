@@ -20,6 +20,8 @@ EquivalenceTestData;
 FromCanonicalForm;
 MakeCanonicalForm;
 ToCanonicalForm;
+TransformHold;
+TransformRelease;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -316,14 +318,22 @@ iToCanonicalForm[ expr_, wrapper_, True, limit_, timeout_, post_ ] :=
                                    }
                           ];
 
-        wrapper @@@ Prepend[ transformations, HoldComplete @ expr ]
+        Apply[
+            wrapper,
+            deleteAdjacentDuplicates @ Flatten @ {
+                { HoldComplete @ expr },
+                transformations,
+                { $LastTransformation }
+            },
+            { 1 }
+        ]
     ];
 
 iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] :=
     Module[ { res },
 
         TimeConstrained[
-            cycleDetectTransform[ expr, limit ],
+            cycleDetectTransform[ expr, limit, post ],
             timeout
         ];
 
@@ -338,7 +348,7 @@ iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] :=
 
 ToCanonicalForm::cycle = "Infinite loop detected in transformations; returning early.";
 
-cycleDetectTransform[ expr_, limit_ ] :=
+cycleDetectTransform[ expr_, limit_, post_ ] :=
     Internal`InheritedBlock[ { seenQ },
         Module[ { next, previous, step },
 
@@ -346,7 +356,7 @@ cycleDetectTransform[ expr_, limit_ ] :=
             next = previous = HoldComplete @ expr;
 
             step = Function[
-                next = canonicalStepTransform @ #;
+                next = postApply[ post, canonicalStepTransform @ # ];
                 If[ next =!= previous && TrueQ @ seenQ @ next,
                     Message[ ToCanonicalForm::cycle ];
                     Throw[
@@ -375,6 +385,9 @@ seenQ[ ___ ] := False;
 markSeen[ HoldComplete[ held_HoldComplete ] ] := markSeen @ held;
 markSeen[ held_HoldComplete ] := (seenQ[ Verbatim[ held ] ] = True);
 markSeen[ other_ ] := markSeen @ HoldComplete @ other;
+
+
+deleteAdjacentDuplicates[ list_ ] := First /@ Split @ list;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -420,6 +433,7 @@ inactivate[ expr_ ] :=
     ReplaceRepeated[
         Unevaluated @ expr,
         {
+            th_TransformHold :> th,
             i_Inactive :> i,
             s: Except[ $$simplifyInert, _Symbol? SymbolQ ] :> Inactive @ s
         }
@@ -502,9 +516,19 @@ canonicalStepTransform[ expr_ ] :=
 (* ::Subsection::Closed:: *)
 (*canonicalStepTransformTop*)
 canonicalStepTransformTop[ expr_ ] :=
-    Sow[ NormalizeNames @ StripTempHolds[ expr /. $Dispatch ],
+    Sow[ canonicalStepTransformTop0 @ releaseTransforms @ expr,
          $CanonicalTrace
     ];
+
+canonicalStepTransformTop0[ expr_ ] :=
+    NormalizeNames @ StripTempHolds[ expr /. $Dispatch ];
+
+releaseTransforms[ expr_ ] := ReplaceAll[
+    expr,
+    TransformRelease[ a___ ] :> RuleCondition[
+        TransformRelease @ a /. $Dispatch
+    ]
+];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)

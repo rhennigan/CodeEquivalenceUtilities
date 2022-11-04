@@ -111,11 +111,14 @@ MakeAtomicTypeBox[ value_, typeName_, tooltip_, styles_ ] :=
                       ToString[ Unevaluated @ value, InputForm ]
                   ];*)
 
-      valString =
-        If[ StringQ @ value
-            ,
+      valString = Which[
+            StringQ @ value,
             value
             ,
+            LocalContextQ @ value,
+            MakeBoxes @ value,
+
+            True,
             StringTake[ ToString[
                 HoldComplete @ value /. s_Symbol? LocalContextQ :>
                   TrEval @ Symbol[ "Global`" <> SymbolName @ Unevaluated @ s ],
@@ -157,11 +160,14 @@ MakeAtomicTypeBox[ value_, typeName_, tooltip_, styles_ ] :=
                       ToString[ Unevaluated @ value, InputForm ]
                   ];*)
 
-      valString =
-        If[ StringQ @ value
-            ,
+      valString = Which[
+            StringQ @ value,
             value
             ,
+            LocalContextQ @ value,
+            MakeBoxes @ value
+            ,
+            True,
             StringTake[ ToString[
                 HoldComplete @ value /. s_Symbol? LocalContextQ :>
                   TrEval @ Symbol[ "Global`" <> SymbolName @ Unevaluated @ s ],
@@ -175,7 +181,12 @@ MakeAtomicTypeBox[ value_, typeName_, tooltip_, styles_ ] :=
       sepBox = separator ~StyleBox~ styles[ "Text", "Separator" ];
       typBox = typString ~StyleBox~ styles[ "Text", "Type"      ];
 
-      txtBox = RowBox @ { valBox, sepBox, typBox };
+      txtBox = RowBox @ {
+          AdjustmentBox[ valBox, BoxBaselineShift -> -0.25 ],
+          sepBox,
+          typBox
+      };
+
       frmBox = FrameBox[ txtBox, styles @ "FrameBoxOptions" ];
       ttpStr = ToBoxes @ ToString[ Unevaluated @ tooltip, InputForm ];
       ttpBox = TooltipBox[ StyleBox[ frmBox, FontSize -> Inherited*0.9 ], ttpStr ];
@@ -188,6 +199,7 @@ makeTypeString[ Integer  ] := "\[DoubleStruckCapitalZ]";
 makeTypeString[ Real     ] := "\[DoubleStruckCapitalR]";
 makeTypeString[ Rational ] := "\[DoubleStruckCapitalQ]";
 makeTypeString[ Complex  ] := "\[DoubleStruckCapitalC]";
+makeTypeString[ String   ] := "\[DoubleStruckCapitalS]";
 makeTypeString[ str_     ] :=
     ToLowerCase @ StringTake[ ToString @ str, UpTo[ 3 ] ];
 
@@ -212,24 +224,28 @@ TypedLiteral /:
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*TypedSymbol*)
-TypedSymbol /:
-  MakeBoxes[ t : TypedSymbol[ value_, Verbatim[ Blank ][ type_ ] ],
-             StandardForm
-  ] :=
-  With[ { tagBox = MakeAtomicTypeBox[ value, type, t, $SymbolTypeStyles ] },
-      InterpretationBox[ tagBox, t ]
-  ];
+TypedSymbol /: MakeBoxes[
+    t: TypedSymbol[ value_, Verbatim[ Blank ][ type_ ] ],
+    StandardForm
+] :=
+    With[ { tagBox = MakeAtomicTypeBox[ value, type, t, $SymbolTypeStyles ] },
+        InterpretationBox[ tagBox, t ]
+    ];
 
 
-TypedSymbol /:
-  MakeBoxes[ TypedSymbol[ value_, type_Verbatim ], StandardForm ] :=
-  With[ { t = First @ type },
-      MakeBoxes[ TypedSymbol[ value, t ], StandardForm ]
-  ];
+TypedSymbol /: MakeBoxes[
+    TypedSymbol[ value_, type_Verbatim ],
+    StandardForm
+] :=
+    With[ { t = First @ type },
+        MakeBoxes[ TypedSymbol[ value, t ], StandardForm ]
+    ];
 
 
-TypedSymbol /:
-  MakeBoxes[ t : TypedSymbol[ value_, type_ ], StandardForm ] :=
+TypedSymbol /: MakeBoxes[
+    t: TypedSymbol[ value_, type_ ],
+    StandardForm
+] :=
     With[ { tagBox = MakeAtomicTypeBox[ value, type, t, $SymbolTypeStyles ] },
         InterpretationBox[ tagBox, t ]
     ];
@@ -269,7 +285,7 @@ $localSymbolHashMod = 64;
 $localSymbolColorFunction = ColorData @ 97;
 
 
-MakeBoxes[ s_? SymbolQ /; Context @ Unevaluated @ s === $LocalContext,
+(* MakeBoxes[ s_? SymbolQ /; Context @ Unevaluated @ s === $LocalContext,
            StandardForm
 ] :=
 
@@ -287,7 +303,7 @@ MakeBoxes[ s_? SymbolQ /; Context @ Unevaluated @ s === $LocalContext,
       With[{n = simpleName},
           With[{styled = StyleBox[n, $SymbolTypeStyles["Text", "Value"]]},
               InterpretationBox[styled, s]]]
-  ];
+  ]; *)
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -477,27 +493,6 @@ compressionIcon =
           594.54`}}}]}, ImageSize -> 32, Background -> GrayLevel[14/15],
       PlotRangePadding -> 150, ImagePadding -> 1, Frame -> True,
       FrameTicks -> None, FrameStyle -> GrayLevel[.7]];
-
-(* ::**********************************************************************:: *)
-(* ::Section::Closed:: *)
-(*RandomValue*)
-RandomValue /:
-  MakeBoxes[RandomValue[(dist_)[args___]], StandardForm] :=
-  Module[{rBox, dBox},
-      rBox = With[{str = ToString[RandomValue, InputForm]},
-          MakeBoxes[
-              Interpretation[
-                  Tooltip[Style[
-                      Framed["\[ScriptCapitalR]",
-                          Background -> RGBColor[{199, 216, 152}/255],
-                          RoundingRadius -> 3, FrameMargins -> 3,
-                          ContentPadding -> False,
-                          StripOnInput -> False],
-                      ShowStringCharacters -> False,
-                      FontColor -> RGBColor[(1/255)*{107, 132, 37}],
-                      FontWeight -> Bold], str], RandomValue], StandardForm]];
-      dBox = MakeBoxes[dist[args], StandardForm];
-      RowBox[{rBox, "[", dBox, "]"}]];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

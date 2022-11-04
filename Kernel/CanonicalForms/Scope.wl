@@ -486,8 +486,7 @@ NewLocalSymbol[ x_? SymbolQ ] :=
       symName    = SymbolName @ Unevaluated @ x;
       newSym     = Unique[ $LocalContext <> symName <> "$" ];
       newSymName = $LocalContext <> SymbolName @ newSym;
-
-      Inline[ newSymName, newSymName // Attributes = { Temporary } ];
+      SetAttributes[ Evaluate @ newSymName, Temporary ];
 
       newSym
   ];
@@ -499,15 +498,33 @@ NewLocalSymbol[ x_String ] := ToExpression[ x, StandardForm, NewLocalSymbol ];
 
 (* From an integer *)
 NewLocalSymbol[ i_Integer ] :=
-  Module[ { newSymName, newSymbol },
-      $NewLocalSymbolCounter = i;
-      newSymName = $LocalSymbolPrefix <> ToString @ i;
-      Unprotect @@ { newSymName };
-      ClearAll @@ { newSymName };
-      newSymbol  = Symbol @ newSymName;
-      Inline[ newSymName, newSymName // Attributes = { Temporary } ];
-      newSymbol
-  ];
+    Module[ { newSymName },
+        $NewLocalSymbolCounter = i;
+        newSymName = $LocalSymbolPrefix <> ToString @ i;
+        Unprotect @@ { newSymName };
+        ClearAll @@ { newSymName };
+
+        With[
+            {
+                newSymbol = Symbol @ newSymName,
+                color     = localSymbolColor @ i,
+                base      = Last @ StringSplit[ newSymName, "`" ]
+            },
+            SetAttributes[ newSymbol, Temporary ];
+            newSymbol /: MakeBoxes[ newSymbol, StandardForm ] :=
+                InterpretationBox[
+                    StyleBox[
+                        SubscriptBox[ "\[ScriptS]", i ],
+                        FontColor  -> color,
+                        FontWeight -> "DemiBold"
+                    ],
+                    newSymbol,
+                    Selectable         -> False,
+                    SelectWithContents -> True
+                ];
+            newSymbol
+        ]
+    ];
 
 
 (* From nothing *)
@@ -521,6 +538,19 @@ NewLocalSymbol[ x_ ] :=
       NewLocalSymbol @ x$ /;
         Hold @ x =!= Hold @ x$
   ];
+
+
+localSymbolColor[ name_String ] :=
+    localSymbolColor[ name, Last @ StringSplit[ name, "`" ] ];
+
+localSymbolColor[ name_, base_String ] := localSymbolColor @
+    If[ StringMatchQ[ base, "S" ~~ DigitCharacter.. ],
+        ToExpression @ StringDrop[ base, 1 ],
+        Mod[ Hash @ name, 64 ]
+    ];
+
+localSymbolColor[ n_Integer ] := ColorData[ 97 ][ Mod[ n, 64 ] ];
+localSymbolColor[ ___       ] := localSymbolColor[ 1 ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

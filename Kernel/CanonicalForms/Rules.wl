@@ -15,6 +15,8 @@ BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 (* ::Subsection::Closed:: *)
 (*Defined symbols*)
 $TransformationRules;
+TransformHold;
+TransformRelease;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -26,6 +28,16 @@ TypedSymbol;
 (* ::Subsection::Closed:: *)
 (*Private*)
 Begin[ "`Private`" ];
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*TransformHold*)
+TransformHold // Attributes = { HoldAllComplete };
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*TransformRelease*)
+TransformRelease // Attributes = { HoldAllComplete };
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -177,6 +189,12 @@ findSequenceFunction[ rng_ ] :=
 (******************************************************************************)
 
 
+singleArgumentQ // Attributes = { HoldAllComplete };
+singleArgumentQ[ _SlotSequence|_Sequence ] := False;
+singleArgumentQ[ _                       ] := True;
+singleArgumentQ[ ___                     ] := False;
+
+
 $atomicNumber = (_Integer|_Real|_Rational)? UAtomQ;
 
 tableIteratorRules = Inline[ { $intType, $atomicNumber }, HoldComplete[
@@ -191,6 +209,9 @@ tableIteratorRules = Inline[ { $intType, $atomicNumber }, HoldComplete[
     Table[exp_, {i_, imax_?HoldNumericQ}] :> Table[exp, {i, 1, imax, 1}],
     Table[exp_, {i_, imin_, imax_}] :> Table[exp, {i, imin, imax, 1}]
     ,
+
+    Table[ expr_, { i_, 1, imax: (_Rational|_Real)? UAtomQ, 1 } ] :>
+        With[ { n = Floor @ imax }, Table[ expr, { i, 1, n, 1 } ] /; True ],
 
     (* remove redundant Tables in iterator *)
     Table[ expr_, { i_, Table[ j_, { j_, j1_, j2_, dj_ } ] } ] :>
@@ -334,6 +355,16 @@ tableIteratorRules = Inline[ { $intType, $atomicNumber }, HoldComplete[
             { j, n }
         ],
 
+    Table[ expr_, { i: _Symbol|_TypedSymbol, { ii___ } } ] /;
+        Length @ HoldComplete @ ii < 4 :>
+        RuleCondition @ With[
+            { len = Length @ HoldComplete @ ii },
+            Table[
+                TempHold @ expr /. HoldPattern @ Verbatim @ i -> j,
+                { j, TempHold /@ Unevaluated[ { ii } ] }
+            ]
+        ],
+
     Verbatim[ Plus ][ a___, b_?HoldNumericQ, c___, d_?HoldNumericQ, e___ ] /;
       Length[ HoldComplete[ a, c, e ] ] > 0 &&
       ! SafeEvaluatedQ[b + d] && ! SafeEvaluatedQ[d + b] :>
@@ -341,7 +372,7 @@ tableIteratorRules = Inline[ { $intType, $atomicNumber }, HoldComplete[
                      Plus[ a, bd, c, e ]
         ],
 
-    p: Verbatim[ Plus ][ x_ ] /; Length @ Unevaluated @ p === 1 :> x,
+    p: Verbatim[ Plus ][ x_? singleArgumentQ ] :> x,
 
     (* Table properties *)
     Length @ Table[ _, { _, 1, n_Integer, 1 } ] /;
@@ -394,9 +425,9 @@ tableFromOtherFunctions = Inline[ $intType, HoldComplete[
       ],
 
     Map[ f_, Table[ exp_, iter___ ], { 1 } ] :> Table[ f @ exp, iter ],
-    Map[ f_, list_List, { 1 } ] :>
+    Map[ f_, list_, { 1 } ] :>
         With[ { i = NewLocalSymbol[ ] },
-            Table[ f @ i, { i, list } ]
+            Table[ f @ i, { i, list } ] /; True
         ],
 
     (f_)[a1___? UAtomQ, Table[exp_, iter___], a2___? UAtomQ] /;
@@ -587,7 +618,7 @@ typedRules = Inline[ { $intType, $reaType }, HoldComplete[
           Table[ held, { j, i1, i2, di } ]
       ],
 
-     Table[ exp_, { i_Symbol? SymbolQ, ii: _List|_Table } ] :>
+     Table[ exp_, { i_Symbol? SymbolQ, ii_? ListTypeQ } ] :>
         With[ { new = replaceTableFromListType[ exp, i, ii ] },
             new /; ! FailureQ @ new
         ],
@@ -880,7 +911,10 @@ listRules = Inline[ { $assocOuter, $assocInner, $joinable }, HoldComplete[
               i = NewLocalSymbol[ ]
           },
           Table[ same, { i, 1, len, 1 } ]
-      ]
+      ],
+
+    Length[ { a___? inertAtomQ } ] :>
+        RuleCondition @ Length @ HoldComplete[ a ]
 ] ];
 
 integerRules = HoldComplete[
@@ -901,6 +935,9 @@ colorRules = HoldComplete[
       c = RGBColor @@ r; c]
 ];
 
+
+characterQ[ c_String? UStringQ ] := StringLength @ c === 1;
+characterQ[ ___ ] := False;
 
 stringRules = HoldComplete[
     WordCount[ s_? StringTypeQ ] :>
@@ -969,7 +1006,19 @@ stringRules = HoldComplete[
         str,
 
     StringReverse[ str_ ] :>
-        StringJoin @ Reverse @ Characters @ str
+        StringJoin @ Reverse @ Characters @ str,
+
+    Characters[ FromCharacterCode[ list_ ] ] /; ListTypeQ[ list, Integer ] :>
+        FromCharacterCode /@ list,
+
+    CharacterRange[ c1_? characterQ, c2_? characterQ ] :>
+        With[
+            {
+                n1 = First @ ToCharacterCode @ c1,
+                n2 = First @ ToCharacterCode @ c2
+            },
+            FromCharacterCode /@ Range[ n1, n2 ] /; True
+        ]
 ];
 
 entityFrameworkRules = HoldComplete[
@@ -1091,18 +1140,6 @@ randomRules = Inline[ $intType, HoldComplete[
 extraRules = HoldComplete[
     Total[list_] :> Plus @@ list,
 
-(*Subtract[a_,b_]\[RuleDelayed]TrEval[a-b],
-   Divide[a_,b_]\[RuleDelayed]TrEval[a/b],*)
-(*    Except[-1, x_?UNumericQ /; x < 0] :>
-      PartialEvaluation[{x$}, x$ = -x; Times[-1, x$]],*)
-(*    With[{s_ = val_, vars___}, exp_] /;
-      FreeQ[Unevaluated[exp], HoldPattern[s]] :> With[{vars}, val; exp],
-    With[{s_ = val_, vars___}, exp_] :>
-      PartialEvaluation[{h},
-          h = TempHold[exp] //. HoldPattern[s] -> TempHold[val];
-          With[{vars}, h]],
-    With[{}, exp_] :> exp
-    ,*)
     x_? HoldNumericQ /; And[ SafeEvaluatedQ @ x === False,
                              FreeQ[ HoldComplete @ x, $UnsafeSymbolPattern ]
                         ] :> RuleCondition @ x
@@ -1180,7 +1217,7 @@ syntaxRules = Inline[ rule, HoldComplete[
 
     Composition[ fs__, f_? NonHoldingQ ][ a___ ] :> Composition[ fs ][ f @ a ],
     Composition[ f_ ][ a___ ] :> f @ a,
-    a_[ b___, c_Composition, d___ ] :> a[ b, c[ # ] &, d ]
+    a_[ b___, c_Composition, d___ ] :> a[ b, c[ ## ] &, d ]
     ,
     RightComposition[ a___ ] :> With[ { r = Reverse @ TempHold @ a }, Composition @ r /; True ]
     ,
@@ -1441,8 +1478,11 @@ arithmeticRules = Inline[ { $zero, $posOne, $negOne }, HoldComplete[
     Power[ Except[ $zero ], 0.0 ] :> 1.0,
     Power[ o: $posOne, $negOne ] :> o,
 
-    Verbatim[ Times ][ a___, $posOne, b___ ] :> Times[ a, b ],
-    Verbatim[ Plus  ][ a___, $zero  , b___ ] :> Plus[  a, b ],
+    Verbatim[ Times ][ a___, 1, b___ ] :> Times[ a, b ],
+    Verbatim[ Plus  ][ a___, 0, b___ ] :> Plus[  a, b ],
+
+    Verbatim[ Times ][ OrderlessPatternSequence[ 1.0, _? RealTypeQ, a___ ] ] :> Times @ a,
+    Verbatim[ Plus  ][ OrderlessPatternSequence[ 0.0, _? RealTypeQ, a___ ] ] :>  Plus @ a,
 
     Verbatim[ Times ][ -1, DirectedInfinity[ 1 ] ] :> DirectedInfinity[ -1 ],
 
@@ -1650,19 +1690,6 @@ eiwlRules = Inline[ { $intType, $byFunction }, HoldComplete[
       ]*)
 
     (* Hardcoded Overrides: *)
-
-    (* x11.10 *)
-    HoldPattern[Table[expr_, {c_, CharacterRange["a", "z"]|CharacterRange["A", "Z"]}]] :>
-      WithHolding[
-          {
-              n = NewLocalSymbol[],
-              expr2 =
-                TempHold[expr] /.
-                  HoldPattern[c] :> ToUpperCase[FromLetterNumber[n]]
-          },
-          Table[expr2, {n, 1, 26, 1}]
-      ]
-    ,
     CharacterRange["A", "Z"][[ n_ ]] :>
       ToUpperCase[FromLetterNumber[n]]
     ,
@@ -1910,6 +1937,8 @@ expandBlocked[ e_ ] :=
 (* :!CodeAnalysis::EndBlock:: *)
 
 priority1Rules = HoldComplete[
+    TransformHold[ a___ ] :> TransformHold @ a
+    ,
     Floor[ i_? IntTypeQ ] :> i
     ,
     Ceiling[ i_? IntTypeQ ] :> i
