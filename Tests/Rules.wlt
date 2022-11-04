@@ -443,7 +443,7 @@ VerificationTest[
 VerificationTest[
     MakeCanonicalForm @ Table[
         IntegerQ @ n,
-        { n, Table[ StringLength @ x, { x, { "a", "bb", "ccc" } } ] }
+        { n, Table[ StringLength @ x, { x, { "a", "bb", "ccc", "dddd" } } ] }
     ],
     HoldForm @ Table[ True, _ ],
     SameTest -> MatchQ,

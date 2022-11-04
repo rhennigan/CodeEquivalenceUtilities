@@ -223,6 +223,35 @@ Notebook[
          ],
          "GuideText",
          CellID -> 128160938
+        ],
+        Cell[
+         TextData[
+          {
+           Cell[
+            BoxData[
+             ButtonBox[
+              "TransformHold",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformHold"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " \[EmptyVerySmallSquare] ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "TransformRelease",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformRelease"
+             ]
+            ],
+            "InlineFormula"
+           ]
+          }
+         ],
+         "InlineGuideFunctionListing",
+         CellID -> 566839201
         ]
        },
        Open
@@ -1355,6 +1384,7 @@ Notebook[
  },
  WindowStatusArea -> Automatic,
  TaggingRules -> <|
+  "InformationPopupMenuItemAdded" -> True,
   "Author" -> "rhennigan",
   "CreationDate" -> "07-22-2021 13:20:14",
   "NotebookIndexQ" -> True,
@@ -1365,9 +1395,10 @@ Notebook[
     "Gregorian",
     -4.0
    ],
-  "NotebookUUID" -> "c03dabbe-92ea-4ba6-9bb0-2fa34c8e6f12"
+  "NotebookUUID" -> "c03dabbe-92ea-4ba6-9bb0-2fa34c8e6f12",
+  "Paclet" -> "None"
  |>,
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (November 11, 2021)",
+ FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (November 2, 2022)",
  StyleDefinitions ->
   FrontEnd`FileName[
    {"Wolfram"},

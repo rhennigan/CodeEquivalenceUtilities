@@ -46,37 +46,38 @@ VerificationTest[
         "CodeEquivalence",
         Method -> <|
             "TransformationRules" -> {
-                c_String? LowerCaseQ :> RuleCondition @ ToUpperCase @ c
+                HoldPattern @ FromCharacterCode[ 96 + i_ ] :>
+                    FromCharacterCode[ 64 + i ]
             }
         |>
     ],
     _AssessmentFunction,
     SameTest -> MatchQ,
-    TestID   -> "AssessmentFunction-Custom@@Tests/QuestionFramework.wlt:43,1-56,2"
+    TestID   -> "AssessmentFunction-Custom@@Tests/QuestionFramework.wlt:43,1-57,2"
 ]
 
 VerificationTest[
     res = af @ HoldPattern @ Alphabet[ ],
     _AssessmentResultObject,
     SameTest -> MatchQ,
-    TestID   -> "AssessmentResultObject-Custom@@Tests/QuestionFramework.wlt:58,1-63,2"
+    TestID   -> "AssessmentResultObject-Custom@@Tests/QuestionFramework.wlt:59,1-64,2"
 ]
 
 VerificationTest[
     res[ "AnswerCorrect" ],
     True,
-    TestID -> "AssessmentResult-Correct-Custom@@Tests/QuestionFramework.wlt:65,1-69,2"
+    TestID -> "AssessmentResult-Correct-Custom@@Tests/QuestionFramework.wlt:66,1-70,2"
 ]
 
 VerificationTest[
     res = af @ HoldPattern @ ToLowerCase @ Alphabet[ ],
     _AssessmentResultObject,
     SameTest -> MatchQ,
-    TestID   -> "AssessmentResultObject-Custom-Incorrect@@Tests/QuestionFramework.wlt:71,1-76,2"
+    TestID   -> "AssessmentResultObject-Custom-Incorrect@@Tests/QuestionFramework.wlt:72,1-77,2"
 ]
 
 VerificationTest[
     res[ "AnswerCorrect" ],
     False,
-    TestID -> "AssessmentResult-Correct-Custom-Incorrect@@Tests/QuestionFramework.wlt:78,1-82,2"
+    TestID -> "AssessmentResult-Correct-Custom-Incorrect@@Tests/QuestionFramework.wlt:79,1-83,2"
 ]

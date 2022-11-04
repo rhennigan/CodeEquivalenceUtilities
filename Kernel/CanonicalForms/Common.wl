@@ -11,6 +11,7 @@ BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 (* ::Subsection::Closed:: *)
 (*Defined symbols*)
 Canonical;
+CanonicalScopeAll;
 CodeTransformerObject;
 CompactDefinition;
 FindDependencies;
@@ -19,8 +20,9 @@ MakeTransformationRules;
 PackDefinition;
 RandomValue;
 StripCanonical;
+TransformHold;
+TransformRelease;
 UnpackDefinition;
-CanonicalScopeAll;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -353,7 +355,8 @@ RandomValue /:
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*StripCanonical*)
-StripCanonical[ expression_ ] := StripHead[ expression, Canonical ];
+StripCanonical[ expression_ ] :=
+    StripHead[ expression, Canonical|TransformHold|TransformRelease ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

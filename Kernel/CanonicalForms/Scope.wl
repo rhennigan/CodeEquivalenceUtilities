@@ -29,11 +29,6 @@ NormalizeNames;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
-(*Declarations*)
-TypedSymbol;
-
-(* ::**********************************************************************:: *)
-(* ::Subsection::Closed:: *)
 (*Private*)
 Begin[ "`Private`" ];
 
@@ -486,8 +481,7 @@ NewLocalSymbol[ x_? SymbolQ ] :=
       symName    = SymbolName @ Unevaluated @ x;
       newSym     = Unique[ $LocalContext <> symName <> "$" ];
       newSymName = $LocalContext <> SymbolName @ newSym;
-
-      Inline[ newSymName, newSymName // Attributes = { Temporary } ];
+      SetAttributes[ Evaluate @ newSymName, Temporary ];
 
       newSym
   ];
@@ -499,15 +493,16 @@ NewLocalSymbol[ x_String ] := ToExpression[ x, StandardForm, NewLocalSymbol ];
 
 (* From an integer *)
 NewLocalSymbol[ i_Integer ] :=
-  Module[ { newSymName, newSymbol },
-      $NewLocalSymbolCounter = i;
-      newSymName = $LocalSymbolPrefix <> ToString @ i;
-      Unprotect @@ { newSymName };
-      ClearAll @@ { newSymName };
-      newSymbol  = Symbol @ newSymName;
-      Inline[ newSymName, newSymName // Attributes = { Temporary } ];
-      newSymbol
-  ];
+    Module[ { newSymName },
+        $NewLocalSymbolCounter = i;
+        newSymName = $LocalSymbolPrefix <> ToString @ i;
+        Unprotect @@ { newSymName };
+        ClearAll @@ { newSymName };
+        With[ { newSymbol = Symbol @ newSymName },
+            SetAttributes[ newSymbol, Temporary ];
+            newSymbol
+        ]
+    ];
 
 
 (* From nothing *)
@@ -521,6 +516,75 @@ NewLocalSymbol[ x_ ] :=
       NewLocalSymbol @ x$ /;
         Hold @ x =!= Hold @ x$
   ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*formatLocalSymbols*)
+formatLocalSymbols[ ] :=
+    Map[ formatLocalSymbol,
+         Select[
+             Names[ $LocalContext <> "*" ],
+             ToExpression[ #, InputForm, FormatValues ] === { } &
+         ]
+    ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*formatLocalSymbol*)
+formatLocalSymbol[ name_String ] :=
+    formatLocalSymbol[ name, Last @ StringSplit[ name, "`" ] ];
+
+formatLocalSymbol[ name_String, base_String ] :=
+    Module[ { i },
+        If[ StringMatchQ[ base, "S" ~~ DigitCharacter.. ],
+            i = ToExpression @ StringDrop[ base, 1 ];
+            formatLocalSymbol[
+                name,
+                base,
+                RawBoxes @ SubscriptBox[ "\[ScriptS]", ToBoxes @ i ],
+                localSymbolColor @ i
+            ],
+            formatLocalSymbol[ name, base, base, localSymbolColor @ base ]
+        ]
+    ];
+
+formatLocalSymbol[ name_, base_, label_, color_ ] :=
+    With[ { box = MakeBoxes @ label },
+        ToExpression[
+            name,
+            InputForm,
+            Function[
+                newSymbol,
+                newSymbol /: MakeBoxes[ newSymbol, StandardForm ] :=
+                    InterpretationBox[
+                        StyleBox[
+                            box,
+                            FontColor -> color,
+                            FontWeight -> "DemiBold"
+                        ],
+                        newSymbol,
+                        Selectable -> False,
+                        SelectWithContents -> True
+                    ],
+                HoldAllComplete
+            ]
+        ]
+    ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*localSymbolColor*)
+localSymbolColor[ name_String ] :=
+    localSymbolColor[ name, Last @ StringSplit[ name, "`" ] ];
+
+localSymbolColor[ name_, base_String ] := localSymbolColor @
+    If[ StringMatchQ[ base, "S" ~~ DigitCharacter.. ],
+        ToExpression @ StringDrop[ base, 1 ],
+        Mod[ Hash @ name, 64 ]
+    ];
+
+localSymbolColor[ n_Integer ] := ColorData[ 97 ][ Mod[ n, 64 ] ];
+localSymbolColor[ ___       ] := localSymbolColor[ 1 ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

@@ -34,6 +34,8 @@ T;
 ToTypedBinding;
 ToTypedExpression;
 TransformAndPostProcess;
+TransformHold;
+TransformRelease;
 Type;
 TypeCast;
 TypedDefinitionQ;
@@ -205,6 +207,8 @@ IntTypeQ[ StringLength[ _? StringTypeQ ] ] := True;
 IntTypeQ[ StringCount[ _? StringTypeQ, _? StringTypeQ ] ] := True;
 IntTypeQ[ (_? intTypeFunc1Q)[ _ ] ] := True;
 IntTypeQ[ (_? intTypeFunc2Q)[ _, _ ] ] := True;
+IntTypeQ[ TransformHold[ _? IntTypeQ ] ] := True;
+IntTypeQ[ TransformRelease[ _? IntTypeQ ] ] := True;
 
 (* Default *)
 IntTypeQ[ ___ ] := False;
@@ -249,9 +253,11 @@ RealTypeQ[ (Plus|Times|Subtract)[ __? RealTypeQ ] ] := True;
 (* TODO: this should work when mixed with integers too *)
 
 (* Misc *)
-RealTypeQ[ Echo[ _? RealTypeQ ]      ] := True;
-RealTypeQ[ Echo[ _? RealTypeQ, ___ ] ] := True;
-RealTypeQ[ Identity[ _? RealTypeQ ]  ] := True;
+RealTypeQ[ Echo[ _? RealTypeQ ]             ] := True;
+RealTypeQ[ Echo[ _? RealTypeQ, ___ ]        ] := True;
+RealTypeQ[ Identity[ _? RealTypeQ ]         ] := True;
+RealTypeQ[ TransformHold[ _? RealTypeQ ]    ] := True;
+RealTypeQ[ TransformRelease[ _? RealTypeQ ] ] := True;
 
 (* Default *)
 RealTypeQ[ ___ ] := False;
@@ -277,9 +283,16 @@ StringTypeQ[ Last[ { __? StringTypeQ } ] ] := True;
 StringTypeQ[ Part[ { __? StringTypeQ }, _? IntTypeQ ] ] := True;
 
 (* Misc *)
-StringTypeQ[ Echo[     _? StringTypeQ ] ] := True;
+StringTypeQ[ FromLetterNumber[ _? IntTypeQ ] ] := True;
+StringTypeQ[ ToUpperCase[ _? StringTypeQ ] ] := True;
+StringTypeQ[ ToLowerCase[ _? StringTypeQ ] ] := True;
+StringTypeQ[ Echo[ _? StringTypeQ ] ] := True;
 StringTypeQ[ Identity[ _? StringTypeQ ] ] := True;
 StringTypeQ[ WikipediaData[ _? StringTypeQ ] ] := True;
+StringTypeQ[ FromCharacterCode[ _? IntTypeQ ] ] := True;
+StringTypeQ[ FromCharacterCode[ list_ ] ] := ListTypeQ[ list, Integer ];
+StringTypeQ[ TransformHold[ _? StringTypeQ ] ] := True;
+StringTypeQ[ TransformRelease[ _? StringTypeQ ] ] := True;
 
 (* Default *)
 StringTypeQ[ ___ ] := False;
@@ -318,26 +331,26 @@ ListType[ Table[ _             , __ ] ] := Undefined;
 (*String to StringList Functions*)
 ListType[ WordList[ _? StringTypeQ ] ] := String;
 ListType[ Characters[ _? StringTypeQ ] ] := String;
+ListType[ CharacterRange[ _? StringTypeQ, _? StringTypeQ ] ] := String;
 
 (* ::**********************************************************************:: *)
 (* ::Subsubsubsection::Closed:: *)
 (*TextCases*)
 ListType[ TextCases[ _? StringTypeQ, _? StringTypeQ ] ] := String;
 
-ListType[
-    TextCases[
-        _? StringTypeQ,
-        Verbatim[ Alternatives ][ __? StringTypeQ ]
-    ]
-] :=
-    String;
+ListType[ TextCases[
+    _? StringTypeQ,
+    Verbatim[ Alternatives ][ __? StringTypeQ ]
+] ] := String;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (* Recursive Definitions *)
-ListType[ Part[ list_, _Span ] ] := ListType @ list;
-ListType[ Echo[ list_, ___   ] ] := ListType @ list;
-ListType[ Identity[ list_    ] ] := ListType @ list;
+ListType[ Part[ list_, _Span      ] ] := ListType @ list;
+ListType[ Echo[ list_, ___        ] ] := ListType @ list;
+ListType[ Identity[ list_         ] ] := ListType @ list;
+ListType[ TransformHold[ list_    ] ] := ListType @ list;
+ListType[ TransformRelease[ list_ ] ] := ListType @ list;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -348,6 +361,42 @@ ListType[ (_? ListableQ)[ _? ListTypeQ ] ] := Undefined;
 (* ::Subsection::Closed:: *)
 (* Default *)
 ListType[ ___ ] := None;
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*SequenceTypeQ*)
+SequenceTypeQ // Attributes = { HoldAllComplete };
+
+SequenceTypeQ[ list_ ] := SequenceTypeQ[ list, Except[ None ] ];
+SequenceTypeQ[ list_, type_ ] := MatchQ[ SequenceType @ list, type ];
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*SequenceType*)
+SequenceType // Attributes = { HoldAllComplete };
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Literal Sequences*)
+SequenceType[ Sequence[ __? IntTypeQ    ] ] := Integer;
+SequenceType[ Sequence[ __? StringTypeQ ] ] := String;
+SequenceType[ Sequence[ __? RealTypeQ   ] ] := Real;
+SequenceType[ Sequence[ ___             ] ] := Undefined;
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Expected Sequence Output*)
+SequenceType[ _SlotSequence ] := Undefined;
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Recursive Definitions*)
+SequenceType[ TransformHold[ a_ ] ] := SequenceType @ a;
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*Default*)
+SequenceType[ ___ ] := None;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

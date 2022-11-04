@@ -1,0 +1,2333 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* Created By: SaveReadableNotebook *)
+(* https://resources.wolframcloud.com/FunctionRepository/resources/SaveReadableNotebook *)
+
+Notebook[
+ {
+  Cell[
+   CellGroupData[
+    {
+     Cell["TransformHold", "ObjectName", CellID -> 583114709],
+     Cell[
+      TextData[
+       {
+        Cell["   ", "ModInfo"],
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            ButtonBox[
+             "TransformHold",
+             BaseStyle -> "Link",
+             ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformHold"
+            ],
+            "[",
+            StyleBox["expr", "TI"],
+            "]"
+           }
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[LineSeparator]represents a subexpression that should not be transformed."
+       }
+      ],
+      "Usage",
+      CellID -> 21595601
+     ],
+     Cell[
+      TextData[
+       {
+        Cell[
+         BoxData[
+          ButtonBox[
+           "TransformHold",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformHold"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " can mark subexpressions to be shielded from transformation by ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "ToCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/ToCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " and ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "FromCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/FromCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        "."
+       }
+      ],
+      "Notes",
+      CellID -> 227857683
+     ],
+     Cell[
+      TextData[
+       {
+        "Subexpressions within a ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "TransformHold",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformHold"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " can be marked for transformation using ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "TransformRelease",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformRelease"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        "."
+       }
+      ],
+      "Notes",
+      CellID -> 344256222
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "Tech Notes",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "TechNotes",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell["Insert links to related tech notes.", "MoreInfoText"],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "TechNotesSection",
+      CellID -> 431395662
+     ],
+     Cell["XXXX", "Tutorials", CellID -> 148333219]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "Related Links",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "RelatedLinks",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Insert links to any related page, including web pages.",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "RelatedLinksSection",
+      CellID -> 77877111
+     ],
+     Cell["XXXX", "RelatedLinks", CellID -> 778104105]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "See Also",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "SeeAlso",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Insert links to any related reference (function) pages.",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "SeeAlsoSection",
+      CellID -> 605948389
+     ],
+     Cell[
+      TextData[
+       {
+        Cell[
+         BoxData[
+          ButtonBox[
+           "TransformRelease",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformRelease"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[EmptyVerySmallSquare] ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "MakeCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/MakeCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ],
+        " \[EmptyVerySmallSquare] ",
+        Cell[
+         BoxData[
+          ButtonBox[
+           "ToCanonicalForm",
+           BaseStyle -> "Link",
+           ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/ToCanonicalForm"
+          ]
+         ],
+         "InlineFormula"
+        ]
+       }
+      ],
+      "SeeAlso",
+      CellID -> 296549481
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      "Related Guides",
+      "MoreAboutSection",
+      CellID -> 121140042
+     ],
+     Cell[
+      TextData[
+       ButtonBox[
+        "Code Equivalence Utilities",
+        BaseStyle -> "Link",
+        ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/guide/CodeEquivalenceUtilities"
+       ]
+      ],
+      "MoreAbout",
+      CellID -> 636435031
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "Examples Initialization",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "ExamplesInitialization",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Input that is to be evaluated before any examples are run, e.g. Needs[\[Ellipsis]].",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "ExamplesInitializationSection",
+      CellID -> 28089022
+     ],
+     Cell[
+      BoxData[
+       RowBox[
+        {
+         "Needs",
+         "[",
+         "\"Wolfram`CodeEquivalenceUtilities`\"",
+         "]"
+        }
+       ]
+      ],
+      "ExampleInitialization",
+      CellID -> 179887155
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      BoxData[
+       InterpretationBox[
+        GridBox[
+         {
+          {
+           StyleBox[
+            RowBox[{"Basic", " ", "Examples"}],
+            "PrimaryExamplesSection"
+           ],
+           ButtonBox[
+            RowBox[
+             {
+              RowBox[{"More", " ", "Examples"}],
+              " ",
+              "\[RightTriangle]"
+             }
+            ],
+            BaseStyle -> "ExtendedExamplesLink",
+            ButtonData :> "ExtendedExamples"
+           ]
+          }
+         }
+        ],
+        $Line = 0;
+       ]
+      ],
+      "PrimaryExamplesSection",
+      CellID -> 13571655
+     ],
+     Cell[
+      "Mask part of an expression from transformations:",
+      "ExampleText",
+      CellID -> 247878019
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            "MakeCanonicalForm",
+            "[",
+            RowBox[
+             {
+              "Range",
+              "[",
+              RowBox[
+               {
+                "TransformHold",
+                "[",
+                RowBox[{"3", "+", "1", "+", "2"}],
+                "]"
+               }
+              ],
+              "]"
+             }
+            ],
+            "]"
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[1]:=",
+         CellID -> 17760436
+        ],
+        Cell[
+         BoxData[
+          TagBox[
+           RowBox[
+            {
+             "Table",
+             "[",
+             RowBox[
+              {
+               InterpretationBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox[
+                   FrameBox[
+                    RowBox[
+                     {
+                      StyleBox[
+                       AdjustmentBox[
+                        InterpretationBox[
+                         StyleBox[
+                          SubscriptBox["\"\[ScriptS]\"", "1"],
+                          FontWeight -> "DemiBold",
+                          FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                         ],
+                         Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                         SelectWithContents -> True,
+                         Selectable -> False
+                        ],
+                        BoxBaselineShift -> -0.25
+                       ],
+                       FontColor ->
+                        RGBColor[
+                         {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                        ]
+                      ],
+                      StyleBox[
+                       "\[Proportion]",
+                       FontColor ->
+                        RGBColor[
+                         {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                        ]
+                      ],
+                      StyleBox[
+                       "\[DoubleStruckCapitalZ]",
+                       FontColor ->
+                        RGBColor[
+                         {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                        ]
+                      ]
+                     }
+                    ],
+                    Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                    ContentPadding -> False,
+                    FrameStyle -> None,
+                    RoundingRadius -> 5
+                   ],
+                   FontSize -> 0.9 * Inherited
+                  ],
+                  "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                 ],
+                 #1 &
+                ],
+                TypedSymbol[
+                 Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                 Blank[Integer]
+                ]
+               ],
+               ",",
+               RowBox[
+                {
+                 "{",
+                 RowBox[
+                  {
+                   InterpretationBox[
+                    TagBox[
+                     TooltipBox[
+                      StyleBox[
+                       FrameBox[
+                        RowBox[
+                         {
+                          StyleBox[
+                           AdjustmentBox[
+                            InterpretationBox[
+                             StyleBox[
+                              SubscriptBox["\"\[ScriptS]\"", "1"],
+                              FontWeight -> "DemiBold",
+                              FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                             ],
+                             Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                             SelectWithContents -> True,
+                             Selectable -> False
+                            ],
+                            BoxBaselineShift -> -0.25
+                           ],
+                           FontColor ->
+                            RGBColor[
+                             {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                            ]
+                          ],
+                          StyleBox[
+                           "\[Proportion]",
+                           FontColor ->
+                            RGBColor[
+                             {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                            ]
+                          ],
+                          StyleBox[
+                           "\[DoubleStruckCapitalZ]",
+                           FontColor ->
+                            RGBColor[
+                             {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                            ]
+                          ]
+                         }
+                        ],
+                        Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                        ContentPadding -> False,
+                        FrameStyle -> None,
+                        RoundingRadius -> 5
+                       ],
+                       FontSize -> 0.9 * Inherited
+                      ],
+                      "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                     ],
+                     #1 &
+                    ],
+                    TypedSymbol[
+                     Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                     Blank[Integer]
+                    ]
+                   ],
+                   ",",
+                   "1",
+                   ",",
+                   RowBox[{"3", "+", "1", "+", "2"}],
+                   ",",
+                   "1"
+                  }
+                 ],
+                 "}"
+                }
+               ]
+              }
+             ],
+             "]"
+            }
+           ],
+           HoldForm
+          ]
+         ],
+         "Output",
+         CellLabel -> "Out[1]=",
+         CellID -> 451212941
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      "Compare to the default behavior:",
+      "ExampleText",
+      CellID -> 602037148
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          RowBox[
+           {
+            "MakeCanonicalForm",
+            "[",
+            RowBox[
+             {"Range", "[", RowBox[{"3", "+", "1", "+", "2"}], "]"}
+            ],
+            "]"
+           }
+          ]
+         ],
+         "Input",
+         CellLabel -> "In[2]:=",
+         CellID -> 650968286
+        ],
+        Cell[
+         BoxData[
+          TagBox[
+           RowBox[
+            {
+             "Table",
+             "[",
+             RowBox[
+              {
+               InterpretationBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox[
+                   FrameBox[
+                    RowBox[
+                     {
+                      StyleBox[
+                       AdjustmentBox[
+                        InterpretationBox[
+                         StyleBox[
+                          SubscriptBox["\"\[ScriptS]\"", "1"],
+                          FontWeight -> "DemiBold",
+                          FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                         ],
+                         Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                         SelectWithContents -> True,
+                         Selectable -> False
+                        ],
+                        BoxBaselineShift -> -0.25
+                       ],
+                       FontColor ->
+                        RGBColor[
+                         {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                        ]
+                      ],
+                      StyleBox[
+                       "\[Proportion]",
+                       FontColor ->
+                        RGBColor[
+                         {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                        ]
+                      ],
+                      StyleBox[
+                       "\[DoubleStruckCapitalZ]",
+                       FontColor ->
+                        RGBColor[
+                         {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                        ]
+                      ]
+                     }
+                    ],
+                    Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                    ContentPadding -> False,
+                    FrameStyle -> None,
+                    RoundingRadius -> 5
+                   ],
+                   FontSize -> 0.9 * Inherited
+                  ],
+                  "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                 ],
+                 #1 &
+                ],
+                TypedSymbol[
+                 Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                 Blank[Integer]
+                ]
+               ],
+               ",",
+               RowBox[
+                {
+                 "{",
+                 RowBox[
+                  {
+                   InterpretationBox[
+                    TagBox[
+                     TooltipBox[
+                      StyleBox[
+                       FrameBox[
+                        RowBox[
+                         {
+                          StyleBox[
+                           AdjustmentBox[
+                            InterpretationBox[
+                             StyleBox[
+                              SubscriptBox["\"\[ScriptS]\"", "1"],
+                              FontWeight -> "DemiBold",
+                              FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                             ],
+                             Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                             SelectWithContents -> True,
+                             Selectable -> False
+                            ],
+                            BoxBaselineShift -> -0.25
+                           ],
+                           FontColor ->
+                            RGBColor[
+                             {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                            ]
+                          ],
+                          StyleBox[
+                           "\[Proportion]",
+                           FontColor ->
+                            RGBColor[
+                             {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                            ]
+                          ],
+                          StyleBox[
+                           "\[DoubleStruckCapitalZ]",
+                           FontColor ->
+                            RGBColor[
+                             {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                            ]
+                          ]
+                         }
+                        ],
+                        Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                        ContentPadding -> False,
+                        FrameStyle -> None,
+                        RoundingRadius -> 5
+                       ],
+                       FontSize -> 0.9 * Inherited
+                      ],
+                      "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                     ],
+                     #1 &
+                    ],
+                    TypedSymbol[
+                     Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                     Blank[Integer]
+                    ]
+                   ],
+                   ",",
+                   "1",
+                   ",",
+                   "6",
+                   ",",
+                   "1"
+                  }
+                 ],
+                 "}"
+                }
+               ]
+              }
+             ],
+             "]"
+            }
+           ],
+           HoldForm
+          ]
+         ],
+         "Output",
+         CellLabel -> "Out[2]=",
+         CellID -> 26421060
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["\t", "ExampleDelimiter"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleDelimiter",
+         CellID -> 295788094
+        ],
+        Cell[
+         TextData[
+          {
+           "Prevent transformation of ",
+           Cell[
+            BoxData[ButtonBox["Range", BaseStyle -> "Link"]],
+            "InlineFormula"
+           ],
+           " into a ",
+           Cell[
+            BoxData[ButtonBox["Table", BaseStyle -> "Link"]],
+            "InlineFormula"
+           ],
+           ":"
+          }
+         ],
+         "ExampleText",
+         CellID -> 782789070
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "MakeCanonicalForm",
+               "[",
+               RowBox[
+                {
+                 "Array",
+                 "[",
+                 RowBox[
+                  {RowBox[{"TransformHold", "[", "Range", "]"}], ",", "10"}
+                 ],
+                 "]"
+                }
+               ],
+               "]"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[1]:=",
+            CellID -> 635459623
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              RowBox[
+               {
+                "Table",
+                "[",
+                RowBox[
+                 {
+                  RowBox[
+                   {
+                    "Range",
+                    "[",
+                    InterpretationBox[
+                     TagBox[
+                      TooltipBox[
+                       StyleBox[
+                        FrameBox[
+                         RowBox[
+                          {
+                           StyleBox[
+                            AdjustmentBox[
+                             InterpretationBox[
+                              StyleBox[
+                               SubscriptBox["\"\[ScriptS]\"", "1"],
+                               FontWeight -> "DemiBold",
+                               FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                              ],
+                              Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                              SelectWithContents -> True,
+                              Selectable -> False
+                             ],
+                             BoxBaselineShift -> -0.25
+                            ],
+                            FontColor ->
+                             RGBColor[
+                              {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                             ]
+                           ],
+                           StyleBox[
+                            "\[Proportion]",
+                            FontColor ->
+                             RGBColor[
+                              {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                             ]
+                           ],
+                           StyleBox[
+                            "\[DoubleStruckCapitalZ]",
+                            FontColor ->
+                             RGBColor[
+                              {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                             ]
+                           ]
+                          }
+                         ],
+                         Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                         ContentPadding -> False,
+                         FrameStyle -> None,
+                         RoundingRadius -> 5
+                        ],
+                        FontSize -> 0.9 * Inherited
+                       ],
+                       "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                      ],
+                      #1 &
+                     ],
+                     TypedSymbol[
+                      Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                      Blank[Integer]
+                     ]
+                    ],
+                    "]"
+                   }
+                  ],
+                  ",",
+                  RowBox[
+                   {
+                    "{",
+                    RowBox[
+                     {
+                      InterpretationBox[
+                       TagBox[
+                        TooltipBox[
+                         StyleBox[
+                          FrameBox[
+                           RowBox[
+                            {
+                             StyleBox[
+                              AdjustmentBox[
+                               InterpretationBox[
+                                StyleBox[
+                                 SubscriptBox["\"\[ScriptS]\"", "1"],
+                                 FontWeight -> "DemiBold",
+                                 FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                                ],
+                                Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                                SelectWithContents -> True,
+                                Selectable -> False
+                               ],
+                               BoxBaselineShift -> -0.25
+                              ],
+                              FontColor ->
+                               RGBColor[
+                                {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                               ]
+                             ],
+                             StyleBox[
+                              "\[Proportion]",
+                              FontColor ->
+                               RGBColor[
+                                {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                               ]
+                             ],
+                             StyleBox[
+                              "\[DoubleStruckCapitalZ]",
+                              FontColor ->
+                               RGBColor[
+                                {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                               ]
+                             ]
+                            }
+                           ],
+                           Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                           ContentPadding -> False,
+                           FrameStyle -> None,
+                           RoundingRadius -> 5
+                          ],
+                          FontSize -> 0.9 * Inherited
+                         ],
+                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                        ],
+                        #1 &
+                       ],
+                       TypedSymbol[
+                        Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                        Blank[Integer]
+                       ]
+                      ],
+                      ",",
+                      "1",
+                      ",",
+                      "10",
+                      ",",
+                      "1"
+                     }
+                    ],
+                    "}"
+                   }
+                  ]
+                 }
+                ],
+                "]"
+               }
+              ],
+              HoldForm
+             ]
+            ],
+            "Output",
+            CellLabel -> "Out[1]=",
+            CellID -> 501006178
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         "Compare to the default behavior:",
+         "ExampleText",
+         CellID -> 74151098
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "MakeCanonicalForm",
+               "[",
+               RowBox[{"Array", "[", RowBox[{"Range", ",", "10"}], "]"}],
+               "]"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[2]:=",
+            CellID -> 817221422
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              RowBox[
+               {
+                "Table",
+                "[",
+                RowBox[
+                 {
+                  RowBox[
+                   {
+                    "Table",
+                    "[",
+                    RowBox[
+                     {
+                      InterpretationBox[
+                       TagBox[
+                        TooltipBox[
+                         StyleBox[
+                          FrameBox[
+                           RowBox[
+                            {
+                             StyleBox[
+                              AdjustmentBox[
+                               InterpretationBox[
+                                StyleBox[
+                                 SubscriptBox["\"\[ScriptS]\"", "1"],
+                                 FontWeight -> "DemiBold",
+                                 FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                                ],
+                                Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                                SelectWithContents -> True,
+                                Selectable -> False
+                               ],
+                               BoxBaselineShift -> -0.25
+                              ],
+                              FontColor ->
+                               RGBColor[
+                                {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                               ]
+                             ],
+                             StyleBox[
+                              "\[Proportion]",
+                              FontColor ->
+                               RGBColor[
+                                {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                               ]
+                             ],
+                             StyleBox[
+                              "\[DoubleStruckCapitalZ]",
+                              FontColor ->
+                               RGBColor[
+                                {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                               ]
+                             ]
+                            }
+                           ],
+                           Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                           ContentPadding -> False,
+                           FrameStyle -> None,
+                           RoundingRadius -> 5
+                          ],
+                          FontSize -> 0.9 * Inherited
+                         ],
+                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                        ],
+                        #1 &
+                       ],
+                       TypedSymbol[
+                        Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                        Blank[Integer]
+                       ]
+                      ],
+                      ",",
+                      RowBox[
+                       {
+                        "{",
+                        RowBox[
+                         {
+                          InterpretationBox[
+                           TagBox[
+                            TooltipBox[
+                             StyleBox[
+                              FrameBox[
+                               RowBox[
+                                {
+                                 StyleBox[
+                                  AdjustmentBox[
+                                   InterpretationBox[
+                                    StyleBox[
+                                     SubscriptBox["\"\[ScriptS]\"", "1"],
+                                     FontWeight -> "DemiBold",
+                                     FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                                    ],
+                                    Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                                    SelectWithContents -> True,
+                                    Selectable -> False
+                                   ],
+                                   BoxBaselineShift -> -0.25
+                                  ],
+                                  FontColor ->
+                                   RGBColor[
+                                    {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                                   ]
+                                 ],
+                                 StyleBox[
+                                  "\[Proportion]",
+                                  FontColor ->
+                                   RGBColor[
+                                    {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                                   ]
+                                 ],
+                                 StyleBox[
+                                  "\[DoubleStruckCapitalZ]",
+                                  FontColor ->
+                                   RGBColor[
+                                    {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                                   ]
+                                 ]
+                                }
+                               ],
+                               Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                               ContentPadding -> False,
+                               FrameStyle -> None,
+                               RoundingRadius -> 5
+                              ],
+                              FontSize -> 0.9 * Inherited
+                             ],
+                             "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                            ],
+                            #1 &
+                           ],
+                           TypedSymbol[
+                            Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                            Blank[Integer]
+                           ]
+                          ],
+                          ",",
+                          "1",
+                          ",",
+                          InterpretationBox[
+                           TagBox[
+                            TooltipBox[
+                             StyleBox[
+                              FrameBox[
+                               RowBox[
+                                {
+                                 StyleBox[
+                                  AdjustmentBox[
+                                   InterpretationBox[
+                                    StyleBox[
+                                     SubscriptBox["\"\[ScriptS]\"", "2"],
+                                     FontWeight -> "DemiBold",
+                                     FontColor -> RGBColor[0.88072, 0.61104, 0.14205]
+                                    ],
+                                    Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2,
+                                    SelectWithContents -> True,
+                                    Selectable -> False
+                                   ],
+                                   BoxBaselineShift -> -0.25
+                                  ],
+                                  FontColor ->
+                                   RGBColor[
+                                    {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                                   ]
+                                 ],
+                                 StyleBox[
+                                  "\[Proportion]",
+                                  FontColor ->
+                                   RGBColor[
+                                    {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                                   ]
+                                 ],
+                                 StyleBox[
+                                  "\[DoubleStruckCapitalZ]",
+                                  FontColor ->
+                                   RGBColor[
+                                    {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                                   ]
+                                 ]
+                                }
+                               ],
+                               Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                               ContentPadding -> False,
+                               FrameStyle -> None,
+                               RoundingRadius -> 5
+                              ],
+                              FontSize -> 0.9 * Inherited
+                             ],
+                             "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2, _Integer]\""
+                            ],
+                            #1 &
+                           ],
+                           TypedSymbol[
+                            Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2,
+                            Blank[Integer]
+                           ]
+                          ],
+                          ",",
+                          "1"
+                         }
+                        ],
+                        "}"
+                       }
+                      ]
+                     }
+                    ],
+                    "]"
+                   }
+                  ],
+                  ",",
+                  RowBox[
+                   {
+                    "{",
+                    RowBox[
+                     {
+                      InterpretationBox[
+                       TagBox[
+                        TooltipBox[
+                         StyleBox[
+                          FrameBox[
+                           RowBox[
+                            {
+                             StyleBox[
+                              AdjustmentBox[
+                               InterpretationBox[
+                                StyleBox[
+                                 SubscriptBox["\"\[ScriptS]\"", "2"],
+                                 FontWeight -> "DemiBold",
+                                 FontColor -> RGBColor[0.88072, 0.61104, 0.14205]
+                                ],
+                                Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2,
+                                SelectWithContents -> True,
+                                Selectable -> False
+                               ],
+                               BoxBaselineShift -> -0.25
+                              ],
+                              FontColor ->
+                               RGBColor[
+                                {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                               ]
+                             ],
+                             StyleBox[
+                              "\[Proportion]",
+                              FontColor ->
+                               RGBColor[
+                                {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                               ]
+                             ],
+                             StyleBox[
+                              "\[DoubleStruckCapitalZ]",
+                              FontColor ->
+                               RGBColor[
+                                {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                               ]
+                             ]
+                            }
+                           ],
+                           Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                           ContentPadding -> False,
+                           FrameStyle -> None,
+                           RoundingRadius -> 5
+                          ],
+                          FontSize -> 0.9 * Inherited
+                         ],
+                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2, _Integer]\""
+                        ],
+                        #1 &
+                       ],
+                       TypedSymbol[
+                        Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2,
+                        Blank[Integer]
+                       ]
+                      ],
+                      ",",
+                      "1",
+                      ",",
+                      "10",
+                      ",",
+                      "1"
+                     }
+                    ],
+                    "}"
+                   }
+                  ]
+                 }
+                ],
+                "]"
+               }
+              ],
+              HoldForm
+             ]
+            ],
+            "Output",
+            CellLabel -> "Out[2]=",
+            CellID -> 247447253
+           ]
+          },
+          Open
+         ]
+        ]
+       },
+       Open
+      ]
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell[
+      TextData[
+       {
+        "More Examples",
+        Cell[
+         BoxData[
+          TemplateBox[
+           {
+            "MoreExamples",
+            Cell[
+             BoxData[
+              FrameBox[
+               Cell[
+                "Extended examples in standardized sections.",
+                "MoreInfoText"
+               ],
+               BaseStyle -> "IFrameBox"
+              ]
+             ],
+             "MoreInfoTextOuter"
+            ]
+           },
+           "MoreInfoOpenerButtonTemplate"
+          ]
+         ]
+        ]
+       }
+      ],
+      "ExtendedExamplesSection",
+      CellTags -> "ExtendedExamples",
+      CellID -> 353386615
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Scope", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 196810976
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Generalizations & Extensions", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 273886384
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["Options", "ExampleSection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSection",
+         CellID -> 12401525
+        ],
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["XXXX", "ExampleSubsection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSubsection",
+         CellID -> 137163109
+        ],
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["XXXX", "ExampleSubsection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSubsection",
+         CellID -> 90989969
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Applications", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 578003960
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         BoxData[
+          InterpretationBox[
+           Cell["Properties & Relations", "ExampleSection"],
+           $Line = 0;
+          ]
+         ],
+         "ExampleSection",
+         CellID -> 205461073
+        ],
+        Cell[
+         TextData[
+          {
+           "Subexpressions within a ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "TransformHold",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformHold"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           " wrapper can be unheld using  ",
+           Cell[
+            BoxData[
+             ButtonBox[
+              "TransformRelease",
+              BaseStyle -> "Link",
+              ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformRelease"
+             ]
+            ],
+            "InlineFormula"
+           ],
+           ":"
+          }
+         ],
+         "ExampleText",
+         CellID -> 41417611
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             RowBox[
+              {
+               "MakeCanonicalForm",
+               "[",
+               RowBox[
+                {
+                 "Range",
+                 "[",
+                 RowBox[
+                  {
+                   "TransformHold",
+                   "[",
+                   RowBox[
+                    {
+                     "2",
+                     "+",
+                     "1",
+                     "+",
+                     RowBox[
+                      {"TransformRelease", "[", RowBox[{"4", "+", "3"}], "]"}
+                     ]
+                    }
+                   ],
+                   "]"
+                  }
+                 ],
+                 "]"
+                }
+               ],
+               "]"
+              }
+             ]
+            ],
+            "Input",
+            CellLabel -> "In[1]:=",
+            CellID -> 626703768
+           ],
+           Cell[
+            BoxData[
+             TagBox[
+              RowBox[
+               {
+                "Table",
+                "[",
+                RowBox[
+                 {
+                  InterpretationBox[
+                   TagBox[
+                    TooltipBox[
+                     StyleBox[
+                      FrameBox[
+                       RowBox[
+                        {
+                         StyleBox[
+                          AdjustmentBox[
+                           InterpretationBox[
+                            StyleBox[
+                             SubscriptBox["\"\[ScriptS]\"", "1"],
+                             FontWeight -> "DemiBold",
+                             FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                            ],
+                            Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                            SelectWithContents -> True,
+                            Selectable -> False
+                           ],
+                           BoxBaselineShift -> -0.25
+                          ],
+                          FontColor ->
+                           RGBColor[
+                            {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                           ]
+                         ],
+                         StyleBox[
+                          "\[Proportion]",
+                          FontColor ->
+                           RGBColor[
+                            {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                           ]
+                         ],
+                         StyleBox[
+                          "\[DoubleStruckCapitalZ]",
+                          FontColor ->
+                           RGBColor[
+                            {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                           ]
+                         ]
+                        }
+                       ],
+                       Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                       ContentPadding -> False,
+                       FrameStyle -> None,
+                       RoundingRadius -> 5
+                      ],
+                      FontSize -> 0.9 * Inherited
+                     ],
+                     "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                    ],
+                    #1 &
+                   ],
+                   TypedSymbol[
+                    Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                    Blank[Integer]
+                   ]
+                  ],
+                  ",",
+                  RowBox[
+                   {
+                    "{",
+                    RowBox[
+                     {
+                      InterpretationBox[
+                       TagBox[
+                        TooltipBox[
+                         StyleBox[
+                          FrameBox[
+                           RowBox[
+                            {
+                             StyleBox[
+                              AdjustmentBox[
+                               InterpretationBox[
+                                StyleBox[
+                                 SubscriptBox["\"\[ScriptS]\"", "1"],
+                                 FontWeight -> "DemiBold",
+                                 FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                                ],
+                                Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                                SelectWithContents -> True,
+                                Selectable -> False
+                               ],
+                               BoxBaselineShift -> -0.25
+                              ],
+                              FontColor ->
+                               RGBColor[
+                                {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                               ]
+                             ],
+                             StyleBox[
+                              "\[Proportion]",
+                              FontColor ->
+                               RGBColor[
+                                {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                               ]
+                             ],
+                             StyleBox[
+                              "\[DoubleStruckCapitalZ]",
+                              FontColor ->
+                               RGBColor[
+                                {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                               ]
+                             ]
+                            }
+                           ],
+                           Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                           ContentPadding -> False,
+                           FrameStyle -> None,
+                           RoundingRadius -> 5
+                          ],
+                          FontSize -> 0.9 * Inherited
+                         ],
+                         "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                        ],
+                        #1 &
+                       ],
+                       TypedSymbol[
+                        Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                        Blank[Integer]
+                       ]
+                      ],
+                      ",",
+                      "1",
+                      ",",
+                      RowBox[{"2", "+", "1", "+", "7"}],
+                      ",",
+                      "1"
+                     }
+                    ],
+                    "}"
+                   }
+                  ]
+                 }
+                ],
+                "]"
+               }
+              ],
+              HoldForm
+             ]
+            ],
+            "Output",
+            CellLabel -> "Out[1]=",
+            CellID -> 503254547
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             InterpretationBox[
+              Cell["\t", "ExampleDelimiter"],
+              $Line = 0;
+             ]
+            ],
+            "ExampleDelimiter",
+            CellID -> 793415179
+           ],
+           Cell[
+            TextData[
+             {
+              "Some type inference can still occur for ",
+              Cell[
+               BoxData[
+                ButtonBox[
+                 "TransformHold",
+                 BaseStyle -> "Link",
+                 ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformHold"
+                ]
+               ],
+               "InlineFormula"
+              ],
+              " expressions:"
+             }
+            ],
+            "ExampleText",
+            CellID -> 60013100
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                RowBox[
+                 {
+                  "MakeCanonicalForm",
+                  "[",
+                  RowBox[
+                   {
+                    "Array",
+                    "[",
+                    RowBox[
+                     {
+                      "Range",
+                      ",",
+                      RowBox[
+                       {
+                        "TransformHold",
+                        "[",
+                        RowBox[{"3", "+", "1", "+", "2"}],
+                        "]"
+                       }
+                      ]
+                     }
+                    ],
+                    "]"
+                   }
+                  ],
+                  "]"
+                 }
+                ]
+               ],
+               "Input",
+               CellLabel -> "In[1]:=",
+               CellID -> 11426782
+              ],
+              Cell[
+               BoxData[
+                TagBox[
+                 RowBox[
+                  {
+                   "Table",
+                   "[",
+                   RowBox[
+                    {
+                     RowBox[
+                      {
+                       "Table",
+                       "[",
+                       RowBox[
+                        {
+                         InterpretationBox[
+                          TagBox[
+                           TooltipBox[
+                            StyleBox[
+                             FrameBox[
+                              RowBox[
+                               {
+                                StyleBox[
+                                 AdjustmentBox[
+                                  InterpretationBox[
+                                   StyleBox[
+                                    SubscriptBox["\"\[ScriptS]\"", "1"],
+                                    FontWeight -> "DemiBold",
+                                    FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                                   ],
+                                   Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                                   SelectWithContents -> True,
+                                   Selectable -> False
+                                  ],
+                                  BoxBaselineShift -> -0.25
+                                 ],
+                                 FontColor ->
+                                  RGBColor[
+                                   {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                                  ]
+                                ],
+                                StyleBox[
+                                 "\[Proportion]",
+                                 FontColor ->
+                                  RGBColor[
+                                   {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                                  ]
+                                ],
+                                StyleBox[
+                                 "\[DoubleStruckCapitalZ]",
+                                 FontColor ->
+                                  RGBColor[
+                                   {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                                  ]
+                                ]
+                               }
+                              ],
+                              Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                              ContentPadding -> False,
+                              FrameStyle -> None,
+                              RoundingRadius -> 5
+                             ],
+                             FontSize -> 0.9 * Inherited
+                            ],
+                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                           ],
+                           #1 &
+                          ],
+                          TypedSymbol[
+                           Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                           Blank[Integer]
+                          ]
+                         ],
+                         ",",
+                         RowBox[
+                          {
+                           "{",
+                           RowBox[
+                            {
+                             InterpretationBox[
+                              TagBox[
+                               TooltipBox[
+                                StyleBox[
+                                 FrameBox[
+                                  RowBox[
+                                   {
+                                    StyleBox[
+                                     AdjustmentBox[
+                                      InterpretationBox[
+                                       StyleBox[
+                                        SubscriptBox["\"\[ScriptS]\"", "1"],
+                                        FontWeight -> "DemiBold",
+                                        FontColor -> RGBColor[0.36842, 0.50678, 0.7098]
+                                       ],
+                                       Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                                       SelectWithContents -> True,
+                                       Selectable -> False
+                                      ],
+                                      BoxBaselineShift -> -0.25
+                                     ],
+                                     FontColor ->
+                                      RGBColor[
+                                       {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                                      ]
+                                    ],
+                                    StyleBox[
+                                     "\[Proportion]",
+                                     FontColor ->
+                                      RGBColor[
+                                       {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                                      ]
+                                    ],
+                                    StyleBox[
+                                     "\[DoubleStruckCapitalZ]",
+                                     FontColor ->
+                                      RGBColor[
+                                       {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                                      ]
+                                    ]
+                                   }
+                                  ],
+                                  Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                                  ContentPadding -> False,
+                                  FrameStyle -> None,
+                                  RoundingRadius -> 5
+                                 ],
+                                 FontSize -> 0.9 * Inherited
+                                ],
+                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1, _Integer]\""
+                               ],
+                               #1 &
+                              ],
+                              TypedSymbol[
+                               Wolfram`CodeEquivalenceUtilities`LocalSymbols`S1,
+                               Blank[Integer]
+                              ]
+                             ],
+                             ",",
+                             "1",
+                             ",",
+                             InterpretationBox[
+                              TagBox[
+                               TooltipBox[
+                                StyleBox[
+                                 FrameBox[
+                                  RowBox[
+                                   {
+                                    StyleBox[
+                                     AdjustmentBox[
+                                      InterpretationBox[
+                                       StyleBox[
+                                        SubscriptBox["\"\[ScriptS]\"", "2"],
+                                        FontWeight -> "DemiBold",
+                                        FontColor -> RGBColor[0.88072, 0.61104, 0.14205]
+                                       ],
+                                       Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2,
+                                       SelectWithContents -> True,
+                                       Selectable -> False
+                                      ],
+                                      BoxBaselineShift -> -0.25
+                                     ],
+                                     FontColor ->
+                                      RGBColor[
+                                       {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                                      ]
+                                    ],
+                                    StyleBox[
+                                     "\[Proportion]",
+                                     FontColor ->
+                                      RGBColor[
+                                       {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                                      ]
+                                    ],
+                                    StyleBox[
+                                     "\[DoubleStruckCapitalZ]",
+                                     FontColor ->
+                                      RGBColor[
+                                       {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                                      ]
+                                    ]
+                                   }
+                                  ],
+                                  Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                                  ContentPadding -> False,
+                                  FrameStyle -> None,
+                                  RoundingRadius -> 5
+                                 ],
+                                 FontSize -> 0.9 * Inherited
+                                ],
+                                "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2, _Integer]\""
+                               ],
+                               #1 &
+                              ],
+                              TypedSymbol[
+                               Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2,
+                               Blank[Integer]
+                              ]
+                             ],
+                             ",",
+                             "1"
+                            }
+                           ],
+                           "}"
+                          }
+                         ]
+                        }
+                       ],
+                       "]"
+                      }
+                     ],
+                     ",",
+                     RowBox[
+                      {
+                       "{",
+                       RowBox[
+                        {
+                         InterpretationBox[
+                          TagBox[
+                           TooltipBox[
+                            StyleBox[
+                             FrameBox[
+                              RowBox[
+                               {
+                                StyleBox[
+                                 AdjustmentBox[
+                                  InterpretationBox[
+                                   StyleBox[
+                                    SubscriptBox["\"\[ScriptS]\"", "2"],
+                                    FontWeight -> "DemiBold",
+                                    FontColor -> RGBColor[0.88072, 0.61104, 0.14205]
+                                   ],
+                                   Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2,
+                                   SelectWithContents -> True,
+                                   Selectable -> False
+                                  ],
+                                  BoxBaselineShift -> -0.25
+                                 ],
+                                 FontColor ->
+                                  RGBColor[
+                                   {Rational[47, 255], Rational[13, 51], Rational[6, 17]}
+                                  ]
+                                ],
+                                StyleBox[
+                                 "\[Proportion]",
+                                 FontColor ->
+                                  RGBColor[
+                                   {Rational[94, 255], Rational[43, 85], Rational[181, 255]}
+                                  ]
+                                ],
+                                StyleBox[
+                                 "\[DoubleStruckCapitalZ]",
+                                 FontColor ->
+                                  RGBColor[
+                                   {Rational[14, 51], Rational[97, 255], Rational[8, 15]}
+                                  ]
+                                ]
+                               }
+                              ],
+                              Background -> RGBColor[0.8421, 0.87669, 0.92745],
+                              ContentPadding -> False,
+                              FrameStyle -> None,
+                              RoundingRadius -> 5
+                             ],
+                             FontSize -> 0.9 * Inherited
+                            ],
+                            "\"TypedSymbol[Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2, _Integer]\""
+                           ],
+                           #1 &
+                          ],
+                          TypedSymbol[
+                           Wolfram`CodeEquivalenceUtilities`LocalSymbols`S2,
+                           Blank[Integer]
+                          ]
+                         ],
+                         ",",
+                         "1",
+                         ",",
+                         RowBox[{"3", "+", "1", "+", "2"}],
+                         ",",
+                         "1"
+                        }
+                       ],
+                       "}"
+                      }
+                     ]
+                    }
+                   ],
+                   "]"
+                  }
+                 ],
+                 HoldForm
+                ]
+               ],
+               "Output",
+               CellLabel -> "Out[1]=",
+               CellID -> 70744162
+              ]
+             },
+             Open
+            ]
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                RowBox[
+                 {
+                  "IntTypeQ",
+                  "[",
+                  RowBox[
+                   {
+                    "TransformHold",
+                    "[",
+                    RowBox[{"3", "+", "1", "+", "2"}],
+                    "]"
+                   }
+                  ],
+                  "]"
+                 }
+                ]
+               ],
+               "Input",
+               CellLabel -> "In[2]:=",
+               CellID -> 779588091
+              ],
+              Cell[
+               BoxData["True"],
+               "Output",
+               CellLabel -> "Out[2]=",
+               CellID -> 110471889
+              ]
+             },
+             Open
+            ]
+           ]
+          },
+          Open
+         ]
+        ],
+        Cell[
+         CellGroupData[
+          {
+           Cell[
+            BoxData[
+             InterpretationBox[
+              Cell["\t", "ExampleDelimiter"],
+              $Line = 0;
+             ]
+            ],
+            "ExampleDelimiter",
+            CellID -> 449242005
+           ],
+           Cell[
+            TextData[
+             {
+              Cell[
+               BoxData[
+                ButtonBox[
+                 "TransformHold",
+                 BaseStyle -> "Link",
+                 ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TransformHold"
+                ]
+               ],
+               "InlineFormula"
+              ],
+              " does not evaluate its arguments:"
+             }
+            ],
+            "ExampleText",
+            CellID -> 36878748
+           ],
+           Cell[
+            CellGroupData[
+             {
+              Cell[
+               BoxData[
+                RowBox[
+                 {
+                  "TransformHold",
+                  "[",
+                  RowBox[{"3", "+", "1", "+", "2"}],
+                  "]"
+                 }
+                ]
+               ],
+               "Input",
+               CellLabel -> "In[1]:=",
+               CellID -> 304817461
+              ],
+              Cell[
+               BoxData[
+                RowBox[
+                 {
+                  "TransformHold",
+                  "[",
+                  RowBox[{"3", "+", "1", "+", "2"}],
+                  "]"
+                 }
+                ]
+               ],
+               "Output",
+               CellLabel -> "Out[1]=",
+               CellID -> 286631520
+              ]
+             },
+             Open
+            ]
+           ]
+          },
+          Open
+         ]
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Possible Issues", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 30338479
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Interactive Examples", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 145652706
+     ],
+     Cell[
+      BoxData[
+       InterpretationBox[
+        Cell["Neat Examples", "ExampleSection"],
+        $Line = 0;
+       ]
+      ],
+      "ExampleSection",
+      CellID -> 11910160
+     ]
+    },
+    Open
+   ]
+  ],
+  Cell[
+   CellGroupData[
+    {
+     Cell["Metadata", "MetadataSection", CellID -> 20395130],
+     Cell[
+      TextData[
+       {
+        "New in: ",
+        Cell["", "HistoryData", CellTags -> "New"],
+        " | Modified in: ",
+        Cell[" ", "HistoryData", CellTags -> "Modified"],
+        " | Obsolete in: ",
+        Cell[" ", "HistoryData", CellTags -> "Obsolete"]
+       }
+      ],
+      "History",
+      CellID -> 55319993
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         TextData[
+          {
+           "Categorization",
+           Cell[
+            BoxData[
+             TemplateBox[
+              {
+               "Metadata",
+               Cell[
+                BoxData[
+                 FrameBox[
+                  Cell[
+                   "Metadata such as page URI, context, and type of documentation page.",
+                   "MoreInfoText"
+                  ],
+                  BaseStyle -> "IFrameBox"
+                 ]
+                ],
+                "MoreInfoTextOuter"
+               ]
+              },
+              "MoreInfoOpenerButtonTemplate"
+             ]
+            ]
+           ]
+          }
+         ],
+         "CategorizationSection",
+         CellID -> 1091651
+        ],
+        Cell[
+         "Symbol",
+         "Categorization",
+         CellLabel -> "Entity Type",
+         CellID -> 242966682
+        ],
+        Cell[
+         "Wolfram/CodeEquivalenceUtilities",
+         "Categorization",
+         CellLabel -> "Paclet Name",
+         CellID -> 215458953
+        ],
+        Cell[
+         "Wolfram`CodeEquivalenceUtilities`",
+         "Categorization",
+         CellLabel -> "Context",
+         CellID -> 341877028
+        ],
+        Cell[
+         "Wolfram/CodeEquivalenceUtilities/ref/TransformHold",
+         "Categorization",
+         CellLabel -> "URI",
+         CellID -> 42332323
+        ]
+       },
+       Open
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell["Keywords", "KeywordsSection", CellID -> 575847803],
+        Cell["XXXX", "Keywords", CellID -> 16955005]
+       },
+       Closed
+      ]
+     ],
+     Cell[
+      CellGroupData[
+       {
+        Cell[
+         "Syntax Templates",
+         "TemplatesSection",
+         CellID -> 18706317
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Additional Function Template",
+         CellID -> 5867044
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Arguments Pattern",
+         CellID -> 259838997
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Local Variables",
+         CellID -> 30753010
+        ],
+        Cell[
+         BoxData[""],
+         "Template",
+         CellLabel -> "Color Equal Signs",
+         CellID -> 666751066
+        ]
+       },
+       Closed
+      ]
+     ]
+    },
+    Open
+   ]
+  ]
+ },
+ WindowStatusArea -> Automatic,
+ TaggingRules -> <|
+  "InformationPopupMenuItemAdded" -> True,
+  "Paclet" -> "Wolfram/CodeEquivalenceUtilities",
+  "NotebookIndexQ" -> True,
+  "NotebookLastIndexed" ->
+   DateObject[
+    {2022, 11, 4, 13, 21, 11.464},
+    "Instant",
+    "Gregorian",
+    -4.0
+   ],
+  "NotebookUUID" -> "802339cf-6fdb-4d47-8805-8995338edbd0"
+ |>,
+ FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (November 2, 2022)",
+ StyleDefinitions ->
+  FrontEnd`FileName[
+   {"Wolfram"},
+   "FunctionPageStylesExt.nb",
+   CharacterEncoding -> "UTF-8"
+  ],
+ ExpressionUUID -> "802339cf-6fdb-4d47-8805-8995338edbd0"
+]

@@ -7,7 +7,7 @@ PacletObject[ <|
     "DocumentationURL" -> "https://paclets.com",
     "License"          -> "MIT",
     "PublisherID"      -> "Wolfram",
-    "Version"          -> "2.3.1",
+    "Version"          -> "2.4.0",
     "WolframVersion"   -> "12.2+",
     "Keywords"         -> {
         "canonical forms",
@@ -33,7 +33,9 @@ PacletObject[ <|
                 "Wolfram`CodeEquivalenceUtilities`EquivalenceTestData",
                 "Wolfram`CodeEquivalenceUtilities`FromCanonicalForm",
                 "Wolfram`CodeEquivalenceUtilities`MakeCanonicalForm",
-                "Wolfram`CodeEquivalenceUtilities`ToCanonicalForm"
+                "Wolfram`CodeEquivalenceUtilities`ToCanonicalForm",
+                "Wolfram`CodeEquivalenceUtilities`TransformHold",
+                "Wolfram`CodeEquivalenceUtilities`TransformRelease"
             }
         },
         {
