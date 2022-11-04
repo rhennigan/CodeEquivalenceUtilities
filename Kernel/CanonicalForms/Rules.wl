@@ -196,17 +196,21 @@ singleArgumentQ[ ___                     ] := False;
 
 
 $atomicNumber = (_Integer|_Real|_Rational)? UAtomQ;
+$heldNumeric = Alternatives[
+    _? HoldNumericQ,
+    (TransformHold|TransformRelease)[ _? HoldNumericQ ]
+];
 
-tableIteratorRules = Inline[ { $intType, $atomicNumber }, HoldComplete[
+tableIteratorRules = Inline[ { $atomicNumber, $heldNumeric }, HoldComplete[
     Table[exp_, ii_, jj_] :> Table[Table[exp, jj], ii],
 
-    Table[exp_, imax_?HoldNumericQ] :>
+    Table[exp_, imax: $heldNumeric] :>
       WithHolding[ { i = NewLocalSymbol[] }, Table[exp, {i, 1, imax, 1}]],
 
-    Table[exp_, {imax_?HoldNumericQ}] :>
+    Table[exp_, {imax: $heldNumeric}] :>
       WithHolding[ { i = NewLocalSymbol[] }, Table[exp, {i, 1, imax, 1}]],
 
-    Table[exp_, {i_, imax_?HoldNumericQ}] :> Table[exp, {i, 1, imax, 1}],
+    Table[exp_, {i_, imax: $heldNumeric}] :> Table[exp, {i, 1, imax, 1}],
     Table[exp_, {i_, imin_, imax_}] :> Table[exp, {i, imin, imax, 1}]
     ,
 

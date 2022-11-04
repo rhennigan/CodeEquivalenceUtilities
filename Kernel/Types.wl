@@ -208,6 +208,7 @@ IntTypeQ[ StringCount[ _? StringTypeQ, _? StringTypeQ ] ] := True;
 IntTypeQ[ (_? intTypeFunc1Q)[ _ ] ] := True;
 IntTypeQ[ (_? intTypeFunc2Q)[ _, _ ] ] := True;
 IntTypeQ[ TransformHold[ _? IntTypeQ ] ] := True;
+IntTypeQ[ TransformRelease[ _? IntTypeQ ] ] := True;
 
 (* Default *)
 IntTypeQ[ ___ ] := False;
@@ -252,10 +253,11 @@ RealTypeQ[ (Plus|Times|Subtract)[ __? RealTypeQ ] ] := True;
 (* TODO: this should work when mixed with integers too *)
 
 (* Misc *)
-RealTypeQ[ Echo[ _? RealTypeQ ]          ] := True;
-RealTypeQ[ Echo[ _? RealTypeQ, ___ ]     ] := True;
-RealTypeQ[ Identity[ _? RealTypeQ ]      ] := True;
-RealTypeQ[ TransformHold[ _? RealTypeQ ] ] := True;
+RealTypeQ[ Echo[ _? RealTypeQ ]             ] := True;
+RealTypeQ[ Echo[ _? RealTypeQ, ___ ]        ] := True;
+RealTypeQ[ Identity[ _? RealTypeQ ]         ] := True;
+RealTypeQ[ TransformHold[ _? RealTypeQ ]    ] := True;
+RealTypeQ[ TransformRelease[ _? RealTypeQ ] ] := True;
 
 (* Default *)
 RealTypeQ[ ___ ] := False;
@@ -290,6 +292,7 @@ StringTypeQ[ WikipediaData[ _? StringTypeQ ] ] := True;
 StringTypeQ[ FromCharacterCode[ _? IntTypeQ ] ] := True;
 StringTypeQ[ FromCharacterCode[ list_ ] ] := ListTypeQ[ list, Integer ];
 StringTypeQ[ TransformHold[ _? StringTypeQ ] ] := True;
+StringTypeQ[ TransformRelease[ _? StringTypeQ ] ] := True;
 
 (* Default *)
 StringTypeQ[ ___ ] := False;
@@ -343,10 +346,11 @@ ListType[ TextCases[
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (* Recursive Definitions *)
-ListType[ Part[ list_, _Span   ] ] := ListType @ list;
-ListType[ Echo[ list_, ___     ] ] := ListType @ list;
-ListType[ Identity[ list_      ] ] := ListType @ list;
-ListType[ TransformHold[ list_ ] ] := ListType @ list;
+ListType[ Part[ list_, _Span      ] ] := ListType @ list;
+ListType[ Echo[ list_, ___        ] ] := ListType @ list;
+ListType[ Identity[ list_         ] ] := ListType @ list;
+ListType[ TransformHold[ list_    ] ] := ListType @ list;
+ListType[ TransformRelease[ list_ ] ] := ListType @ list;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)

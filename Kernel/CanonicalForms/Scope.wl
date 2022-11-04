@@ -503,25 +503,8 @@ NewLocalSymbol[ i_Integer ] :=
         newSymName = $LocalSymbolPrefix <> ToString @ i;
         Unprotect @@ { newSymName };
         ClearAll @@ { newSymName };
-
-        With[
-            {
-                newSymbol = Symbol @ newSymName,
-                color     = localSymbolColor @ i,
-                base      = Last @ StringSplit[ newSymName, "`" ]
-            },
+        With[ { newSymbol = Symbol @ newSymName },
             SetAttributes[ newSymbol, Temporary ];
-            newSymbol /: MakeBoxes[ newSymbol, StandardForm ] :=
-                InterpretationBox[
-                    StyleBox[
-                        SubscriptBox[ "\[ScriptS]", i ],
-                        FontColor  -> color,
-                        FontWeight -> "DemiBold"
-                    ],
-                    newSymbol,
-                    Selectable         -> False,
-                    SelectWithContents -> True
-                ];
             newSymbol
         ]
     ];
@@ -539,7 +522,63 @@ NewLocalSymbol[ x_ ] :=
         Hold @ x =!= Hold @ x$
   ];
 
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*formatLocalSymbols*)
+formatLocalSymbols[ ] :=
+    Map[ formatLocalSymbol,
+         Select[
+             Names[ $LocalContext <> "*" ],
+             FormatValues[ # ] === { } &
+         ]
+    ];
 
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*formatLocalSymbol*)
+formatLocalSymbol[ name_String ] :=
+    formatLocalSymbol[ name, Last @ StringSplit[ name, "`" ] ];
+
+formatLocalSymbol[ name_String, base_String ] :=
+    Module[ { i },
+        If[ StringMatchQ[ base, "S" ~~ DigitCharacter.. ],
+            i = ToExpression @ StringDrop[ base, 1 ];
+            formatLocalSymbol[
+                name,
+                base,
+                Subscript[ "\[ScriptS]", i ],
+                localSymbolColor @ i
+            ],
+            formatLocalSymbol[ name, base, base, localSymbolColor @ base ]
+        ]
+    ];
+
+formatLocalSymbol[ name_, base_, label_, color_ ] :=
+    With[ { box = MakeBoxes @ label },
+        ToExpression[
+            name,
+            InputForm,
+            Function[
+                newSymbol,
+                newSymbol /: MakeBoxes[ newSymbol, StandardForm ] :=
+                    InterpretationBox[
+                        StyleBox[
+                            box,
+                            FontColor -> color,
+                            FontWeight -> "DemiBold"
+                        ],
+                        newSymbol,
+                        Selectable -> False,
+                        SelectWithContents -> True
+                    ],
+                HoldAllComplete
+            ]
+        ]
+    ];
+
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*localSymbolColor*)
 localSymbolColor[ name_String ] :=
     localSymbolColor[ name, Last @ StringSplit[ name, "`" ] ];
 

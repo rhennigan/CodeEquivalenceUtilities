@@ -279,13 +279,16 @@ ToCanonicalForm[ expr_, wrapper_, OptionsPattern[ ] ] :=
             timeout = OptionValue[ "TimeConstraint" ],
             post    = OptionValue[ "PostProcessing" ]
         },
-        Cached @ StripCanonical @ iToCanonicalForm[
-            expr,
-            wrapper,
-            trace,
-            iter,
-            timeout,
-            post
+        WithCleanup[
+            Cached @ StripCanonical @ iToCanonicalForm[
+                expr,
+                wrapper,
+                trace,
+                iter,
+                timeout,
+                post
+            ],
+            formatLocalSymbols[ ]
         ]
     ];
 
