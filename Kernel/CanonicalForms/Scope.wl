@@ -524,7 +524,7 @@ formatLocalSymbols[ ] :=
     Map[ formatLocalSymbol,
          Select[
              Names[ $LocalContext <> "*" ],
-             FormatValues[ # ] === { } &
+             ToExpression[ #, InputForm, FormatValues ] === { } &
          ]
     ];
 
