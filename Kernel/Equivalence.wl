@@ -399,7 +399,6 @@ deleteAdjacentDuplicates[ list_ ] := First /@ Split @ list;
 (* ::Subsubsection::Closed:: *)
 (*preprocessCanonical*)
 
-(* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 preprocessCanonical[ expr_ ] := Sow[
     $LastTransformation = ReplaceAll[
@@ -417,7 +416,6 @@ preprocessCanonical[ expr_ ] := Sow[
     ],
     $CanonicalTrace
 ];
-(* :!CodeAnalysis::EndBlock:: *)
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
