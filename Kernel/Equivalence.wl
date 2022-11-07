@@ -327,12 +327,12 @@ iToCanonicalForm[ expr_, wrapper_, True, limit_, timeout_, post_ ] :=
         Apply[
             wrapper,
             deleteAdjacentDuplicates @ Flatten @ {
-                { HoldComplete @ expr },
+                { topHold @ expr },
                 transformations,
                 { $LastTransformation }
             },
             { 1 }
-        ]
+        ] //. topHold[ e_ ] :> e
     ];
 
 iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] :=
@@ -349,7 +349,7 @@ iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] :=
             $LastTransformation
         ];
 
-        Replace[ res, HoldComplete[ e_ ] :> wrapper @ e ]
+        Replace[ res, topHold[ e_ ] :> wrapper @ e ]
     ];
 
 ToCanonicalForm::cycle = "Infinite loop detected in transformations; returning early.";
@@ -377,7 +377,7 @@ cycleDetectTransform[ expr_, limit_, post_ ] :=
             Catch[
                 FixedPoint[
                     step,
-                    $LastTransformation = HoldComplete @ expr,
+                    $LastTransformation = topHold @ expr,
                     limit
                 ],
                 $tag
@@ -388,12 +388,15 @@ cycleDetectTransform[ expr_, limit_, post_ ] :=
 
 seenQ[ ___ ] := False;
 
-markSeen[ HoldComplete[ held_HoldComplete ] ] := markSeen @ held;
-markSeen[ held_HoldComplete ] := (seenQ[ Verbatim[ held ] ] = True);
-markSeen[ other_ ] := markSeen @ HoldComplete @ other;
+markSeen[ topHold[ held_topHold ] ] := markSeen @ held;
+markSeen[ held_topHold ] := (seenQ[ Verbatim[ held ] ] = True);
+markSeen[ other_ ] := markSeen @ topHold @ other;
 
 
 deleteAdjacentDuplicates[ list_ ] := First /@ Split @ list;
+
+topHold // Attributes = { HoldAllComplete };
+topHold[ e_topHold ] := e;
 
 (* ::**********************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
@@ -402,7 +405,7 @@ deleteAdjacentDuplicates[ list_ ] := First /@ Split @ list;
 (* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 preprocessCanonical[ expr_ ] := Sow[
     $LastTransformation = ReplaceAll[
-        HoldComplete @ expr,
+        topHold @ expr,
         {
             Verbatim[ PacletSymbol ][
                 "Wolfram/CodeEquivalenceUtilities",

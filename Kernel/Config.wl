@@ -50,7 +50,7 @@ $RasterPatterns = HoldPattern @ Alternatives[
 (* ::Section::Closed:: *)
 (*Argument patterns*)
 
-$$hold := Hold | HoldForm | HoldComplete | HoldPattern | $holdWrapper;
+$$hold := Hold | HoldForm | HoldComplete | HoldPattern | $holdWrapper | topHold;
 
 $$numConst = HoldPattern @ Alternatives[
     Catalan,
