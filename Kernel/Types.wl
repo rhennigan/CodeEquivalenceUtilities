@@ -136,6 +136,13 @@ TypedExpression[ te_TypedExpression ] := te;
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*TypedSymbol*)
+
+(*TODO: Support additional metadata as third argument of TypedSymbol, e.g.
+    TypedSymbol[ x, _Integer, <| "Positive" -> True |> ]
+    or maybe
+    TypedSymbol[ x, _Integer, MetaInformation -> ... ]
+*)
+
 TypedSymbol /: Normal @ HoldPattern @ TypedSymbol[ s_String, _ ] :=
   Symbol @ s;
 
@@ -200,7 +207,8 @@ IntTypeQ[ Round[ _? HoldNumericQ ] ] := True;
 (* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 
 (* Misc *)
-IntTypeQ[ Echo[ _? IntTypeQ ] ] := True;
+IntTypeQ[ Prime[ _? IntTypeQ ] ] := True; (* not necessarily true if negative *)
+IntTypeQ[ Fibonacci[ _? IntTypeQ ] ] := True; (* not necessarily true if negative *)
 IntTypeQ[ Echo[ _? IntTypeQ, ___ ] ] := True;
 IntTypeQ[ Identity[ _? IntTypeQ ] ] := True;
 IntTypeQ[ StringLength[ _? StringTypeQ ] ] := True;
@@ -249,11 +257,12 @@ RealTypeQ[ TypedSymbol[ _, Verbatim[ _Real ] ] ] := True;
 RealTypeQ[ RandomValue[ _UniformDistribution ] ] := True;
 
 (* Arithmetic *)
-RealTypeQ[ (Plus|Times|Subtract)[ __? RealTypeQ ] ] := True;
-(* TODO: this should work when mixed with integers too *)
+RealTypeQ[ (Plus|Times|Subtract|Power)[
+    OrderlessPatternSequence[ _? RealTypeQ, ___? numberTypeQ ]
+] ] := True;
 
 (* Misc *)
-RealTypeQ[ Echo[ _? RealTypeQ ]             ] := True;
+RealTypeQ[ N[ _? numberTypeQ, ___ ]         ] := True;
 RealTypeQ[ Echo[ _? RealTypeQ, ___ ]        ] := True;
 RealTypeQ[ Identity[ _? RealTypeQ ]         ] := True;
 RealTypeQ[ TransformHold[ _? RealTypeQ ]    ] := True;
@@ -976,6 +985,32 @@ ToTypedBinding[bind_[patt_, defn_]] :=
     ,
     RuleDelayed::rhs
 ];
+
+(* ::**********************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Additional Utilities*)
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*numberTypeQ*)
+numberTypeQ // Attributes = { HoldAllComplete };
+numberTypeQ[ x_Integer? UAtomQ ] := True;
+numberTypeQ[ x_Real? UAtomQ ] := True;
+numberTypeQ[ x_Rational? UAtomQ ] := True;
+numberTypeQ[ _? IntTypeQ ] := True;
+numberTypeQ[ _? RealTypeQ ] := True;
+numberTypeQ[ $$numConst ] := Inline[ $$numConst, True ];
+numberTypeQ[ ___ ] := False;
+
+(* ::**********************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*positiveTypeQ*)
+positiveTypeQ // Attributes = { HoldAllComplete };
+positiveTypeQ[ x_Integer? UAtomQ ] := TrueQ @ Positive @ x;
+positiveTypeQ[ x_Real? UAtomQ ] := TrueQ @ Positive @ x;
+positiveTypeQ[ x_Rational? UAtomQ ] := TrueQ @ Positive @ x;
+positiveTypeQ[ $$numConst ] := Inline[ $$numConst, True ];
+positiveTypeQ[ ___ ] := False;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

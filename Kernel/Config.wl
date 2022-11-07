@@ -52,6 +52,19 @@ $RasterPatterns = HoldPattern @ Alternatives[
 
 $$hold := Hold | HoldForm | HoldComplete | HoldPattern | $holdWrapper;
 
+$$numConst = HoldPattern @ Alternatives[
+    Catalan,
+    Degree,
+    E,
+    EulerGamma,
+    Glaisher,
+    GoldenAngle,
+    GoldenRatio,
+    Khinchin,
+    MachinePrecision,
+    Pi
+];
+
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Package footer*)

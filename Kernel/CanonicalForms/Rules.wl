@@ -226,28 +226,6 @@ tableIteratorRules = Inline[ { $atomicNumber, $heldNumeric }, HoldComplete[
         ]
     ,
 
-
-    (* Reverse tables that use a negative step size *)
-(*    Table[ expr_, { i_, imin_, imax_, Times[ -1, di_ ] } ] :>
-      Reverse @ Table[ expr, { i, imax, imin, di } ]
-    ,*)
-
-(* Evaluate deterministic numeric iterators *)
-(*    Table[exp_, {i_, i1___, ii_ /; !UAtomQ[ii] && HoldNumericQ[ii], i2___}] :>
-      PartialEvaluation[{j}, j = ii; Table[exp, {i, i1, j, i2}]],*)
-
-(* unroll small range tables *)
-   (* Table[i_Symbol, {i_Symbol, a_?HoldNumericQ, b_?HoldNumericQ,
-        d_?HoldNumericQ}] /; (b - a) / d <= $unrollLimit :>
-      PartialEvaluation[{rng}, rng = Range[a, b, d]; rng],
-
-    Table[TypedSymbol[i_, Verbatim[_Integer]],
-        {TypedSymbol[i_, Verbatim[_Integer]],
-            a_?HoldNumericQ, b_?HoldNumericQ, d_?HoldNumericQ}
-    ] /; (b - a) / d <= $unrollLimit :>
-      PartialEvaluation[{rng}, rng = Range[a, b, d]; rng],*)
-
-    (* on second thought, let's roll up everything *)
     rng : { $atomicNumber.. } /;
       Length @ rng >= 4 && OrderedQ[ rng ] && Equal @@ Differences @ rng :>
       TrEval @
@@ -286,17 +264,6 @@ tableIteratorRules = Inline[ { $atomicNumber, $heldNumeric }, HoldComplete[
           Table[ exp2, {  i, 1, imax2, 1 } ]
       ]
 
-
-(*
-    Table[ exp_, { i_, 1, imax_, di : Except[ 1, _Integer ] } ] :>
-      WithHolding[
-          {
-              imax2 = (imax - 1) / di,
-              exp2  = TempHold[ exp ] /.
-                HoldPattern[ Verbatim[ i ] ] :> i * di + 1
-          },
-          Table[ exp2, { i, 0, imax2, 1 } ]
-      ]*)
     ,
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::UnscopedObjectError:: *)
@@ -577,6 +544,12 @@ replaceTableFromListType[ ___ ] := $Failed;
 
 
 
+iterMaxTypeQ // Attributes = { HoldAllComplete };
+iterMaxTypeQ[ _? IntTypeQ  ] := True;
+iterMaxTypeQ[ _? RealTypeQ ] := True;
+iterMaxTypeQ[ $$numConst   ] := Inline[ $$numConst, True ];
+iterMaxTypeQ[ ___          ] := False;
+
 typedRules = Inline[ { $intType, $reaType }, HoldComplete[
 
     (* Table iterators *)
@@ -613,7 +586,7 @@ typedRules = Inline[ { $intType, $reaType }, HoldComplete[
 
 
 
-    Table[ exp_, { i_Symbol? SymbolQ, i1_? IntTypeQ, i2_? IntTypeQ, di_? IntTypeQ } ] :>
+    Table[ exp_, { i_Symbol? SymbolQ, i1_? IntTypeQ, i2_? iterMaxTypeQ, di_? IntTypeQ } ] :>
       WithHolding[
           {
               j = Int @@ { NewLocalSymbol[ ] },
@@ -1940,17 +1913,27 @@ expandBlocked[ e_ ] :=
     ];
 (* :!CodeAnalysis::EndBlock:: *)
 
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 priority1Rules = HoldComplete[
     TransformHold[ a___ ] :> TransformHold @ a
+    ,
+    Verbatim[ System`PacletSymbol ][ "Wolfram/CodeEquivalenceUtilities", sym_String ] :>
+        RuleCondition @
+            If[ StringContainsQ[ sym, "`" ],
+                ToExpression[ sym, InputForm, TempHold ],
+                ToExpression[
+                    "Wolfram`CodeEquivalenceUtilities`"<>sym,
+                    InputForm,
+                    TempHold
+                ]
+            ]
     ,
     Floor[ i_? IntTypeQ ] :> i
     ,
     Ceiling[ i_? IntTypeQ ] :> i
     ,
     Round[ i_? IntTypeQ ] :> i
-    (* ,
-    x_? HoldNumericQ /; ! expandedQ @ x :> TrEval @ expandBlocked @ x,
-    x_? HoldNumericQ /; ! simplifiedQ @ x :> TrEval @ simplify @ x *)
     ,
     (gfx: Graphics|Graphics3D)[ a_, b___ ] :>
       WithHolding[
@@ -1962,7 +1945,7 @@ priority1Rules = HoldComplete[
           Canonical[ gfx ][ c, b ]
       ]
 ];
-
+(* :!CodeAnalysis::EndBlock:: *)
 
 cleanupRules = HoldComplete[
     TypedSymbol[ TypedSymbol[ s_, t_ ], t_ ] :> TypedSymbol[ s, t ],

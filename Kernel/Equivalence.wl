@@ -339,7 +339,7 @@ iToCanonicalForm[ expr_, wrapper_, False, limit_, timeout_, post_ ] :=
     Module[ { res },
 
         TimeConstrained[
-            cycleDetectTransform[ expr, limit, post ],
+            cycleDetectTransform[ preprocessCanonical @ expr, limit, post ],
             timeout
         ];
 
@@ -394,6 +394,28 @@ markSeen[ other_ ] := markSeen @ HoldComplete @ other;
 
 
 deleteAdjacentDuplicates[ list_ ] := First /@ Split @ list;
+
+(* ::**********************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*preprocessCanonical*)
+
+(* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
+preprocessCanonical[ expr_ ] := Sow[
+    $LastTransformation = ReplaceAll[
+        expr,
+        {
+            Verbatim[ PacletSymbol ][
+                "Wolfram/CodeEquivalenceUtilities",
+                "Wolfram`CodeEquivalenceUtilities`TransformHold"
+            ] :> TransformHold,
+            Verbatim[ PacletSymbol ][
+                "Wolfram/CodeEquivalenceUtilities",
+                "Wolfram`CodeEquivalenceUtilities`TransformRelease"
+            ] :> TransformRelease
+        }
+    ],
+    $CanonicalTrace
+];
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
