@@ -359,7 +359,7 @@ cycleDetectTransform[ expr_, limit_, post_ ] :=
         Module[ { next, previous, step },
 
             markSeen @ expr;
-            next = previous = HoldComplete @ expr;
+            next = previous = expr;
 
             step = Function[
                 next = postApply[ post, canonicalStepTransform @ # ];
@@ -402,7 +402,7 @@ deleteAdjacentDuplicates[ list_ ] := First /@ Split @ list;
 (* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 preprocessCanonical[ expr_ ] := Sow[
     $LastTransformation = ReplaceAll[
-        expr,
+        HoldComplete @ expr,
         {
             Verbatim[ PacletSymbol ][
                 "Wolfram/CodeEquivalenceUtilities",
