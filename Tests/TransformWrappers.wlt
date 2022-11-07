@@ -42,11 +42,9 @@ VerificationTest[
 ]
 
 VerificationTest[
-    PacletSymbol[ "Wolfram/CodeEquivalenceUtilities", "Wolfram`CodeEquivalenceUtilities`MakeCanonicalForm" ][
-        Range @ PacletSymbol[ "Wolfram/CodeEquivalenceUtilities", "Wolfram`CodeEquivalenceUtilities`TransformHold" ][ 3 + 1 + 2 ]
-    ],
+    MakeCanonicalForm @ Range @ System`PacletSymbol[ "Wolfram/CodeEquivalenceUtilities", "Wolfram`CodeEquivalenceUtilities`TransformHold" ][ 3 + 1 + 2 ],
     MakeCanonicalForm @ Range @ TransformHold[ 3 + 1 + 2 ],
-    TestID -> "PacletSymbol-TransformHold@@Tests/TransformWrappers.wlt:44,1-50,2"
+    TestID -> "PacletSymbol-TransformHold@@Tests/TransformWrappers.wlt:44,1-48,2"
 ]
 
 (* :!CodeAnalysis::EndBlock:: *)
