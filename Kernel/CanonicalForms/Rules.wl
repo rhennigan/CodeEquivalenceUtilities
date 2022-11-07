@@ -1913,10 +1913,12 @@ expandBlocked[ e_ ] :=
     ];
 (* :!CodeAnalysis::EndBlock:: *)
 
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 priority1Rules = HoldComplete[
     TransformHold[ a___ ] :> TransformHold @ a
     ,
-    PacletSymbol[ "Wolfram/CodeEquivalenceUtilities", sym_String ] :>
+    Verbatim[ System`PacletSymbol ][ "Wolfram/CodeEquivalenceUtilities", sym_String ] :>
         RuleCondition @
             If[ StringContainsQ[ sym, "`" ],
                 ToExpression[ sym, InputForm, TempHold ],
@@ -1932,9 +1934,6 @@ priority1Rules = HoldComplete[
     Ceiling[ i_? IntTypeQ ] :> i
     ,
     Round[ i_? IntTypeQ ] :> i
-    (* ,
-    x_? HoldNumericQ /; ! expandedQ @ x :> TrEval @ expandBlocked @ x,
-    x_? HoldNumericQ /; ! simplifiedQ @ x :> TrEval @ simplify @ x *)
     ,
     (gfx: Graphics|Graphics3D)[ a_, b___ ] :>
       WithHolding[
@@ -1946,7 +1945,7 @@ priority1Rules = HoldComplete[
           Canonical[ gfx ][ c, b ]
       ]
 ];
-
+(* :!CodeAnalysis::EndBlock:: *)
 
 cleanupRules = HoldComplete[
     TypedSymbol[ TypedSymbol[ s_, t_ ], t_ ] :> TypedSymbol[ s, t ],
