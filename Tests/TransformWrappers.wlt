@@ -47,4 +47,17 @@ VerificationTest[
     TestID -> "PacletSymbol-TransformHold@@Tests/TransformWrappers.wlt:44,1-48,2"
 ]
 
+VerificationTest[
+    MakeCanonicalForm[
+        Range @ System`PacletSymbol[
+            "Wolfram/CodeEquivalenceUtilities",
+            "Wolfram`CodeEquivalenceUtilities`TransformHold"
+        ][ 3 + 1 + 2 ],
+        Trace -> True
+    ],
+    { ___ },
+    SameTest -> MatchQ,
+    TestID -> "MakeCanonicalForm-Trace-EvaluationLeak@@Tests/TransformWrappers.wlt:50,1-61,2"
+]
+
 (* :!CodeAnalysis::EndBlock:: *)

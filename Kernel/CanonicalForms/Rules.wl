@@ -881,14 +881,15 @@ listRules = Inline[ { $assocOuter, $assocInner, $joinable }, HoldComplete[
 
     TakeLargestBy[ expr_, fun_, i_ ] :> Take[ SortBy[ expr, fun ], -i ],
 
-    { a: same_RandomInteger, b: same_RandomInteger .. } :>
-      WithHolding[
-          {
-              len = Length @ HoldComplete[ a, b ],
-              i = NewLocalSymbol[ ]
-          },
-          Table[ same, { i, 1, len, 1 } ]
-      ],
+    { a: same_RandomInteger, b: same_RandomInteger .. } /;
+        Length @ HoldComplete[ a, b ] >= 4 :>
+            WithHolding[
+                {
+                    len = Length @ HoldComplete[ a, b ],
+                    i = NewLocalSymbol[ ]
+                },
+                Table[ same, { i, 1, len, 1 } ]
+            ],
 
     Length[ { a___? inertAtomQ } ] :>
         RuleCondition @ Length @ HoldComplete[ a ]
@@ -1023,10 +1024,10 @@ randomRules = Inline[ $intType, HoldComplete[
     RandomInteger[ ] :> RandomInteger[ { 0, 1 } ],
     RandomInteger[ n_? IntTypeQ ] :> RandomInteger[ { 0, n } ]
     ,
-    { r1: RandomInteger[ n_? IntTypeQ ], r2: RandomInteger[ n_ ] .. } :>
-      WithHolding[ { len = Length @ HoldComplete[ r1, r2 ] },
-                   RandomInteger[ n, len ]
-      ]
+    { r1: RandomInteger[ n_? IntTypeQ ], r2: RandomInteger[ n_ ] .. }  :>
+        With[ { len = Length @ HoldComplete[ r1, r2 ] },
+            RandomInteger[ n, len ] /; len >= 4
+        ]
     ,
     RandomReal[ ] :> RandomReal[ 1 ],
     RandomReal[ n_? HoldNumericQ ] :> RandomReal[ { 0, n } ],
