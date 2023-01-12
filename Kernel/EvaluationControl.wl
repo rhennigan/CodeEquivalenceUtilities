@@ -550,7 +550,8 @@ $RandomSymbols = {
     "Today",
     "Tomorrow",
     "UnixTime",
-    "Yesterday"
+    "Yesterday",
+    "Wolfram`CodeEquivalenceUtilities`RandomValue"
 };
 
 (* ::**********************************************************************:: *)
@@ -1144,7 +1145,15 @@ $blackList := HoldComplete[
     URLSubmit,
     Write,
     WriteLine,
-    WriteString
+    WriteString,
+    Developer`ReadExpressionJSONFile,
+    Developer`ReadRawJSONFile,
+    Developer`ReadUBJSONFile,
+    Developer`ReadWXFFile,
+    Developer`WriteExpressionJSONFile,
+    Developer`WriteRawJSONFile,
+    Developer`WriteUBJSONFile,
+    Developer`WriteWXFFile
 ];
 
 (* ::**********************************************************************:: *)
@@ -1238,61 +1247,117 @@ With[ {
       allowedFetchOptions = Except[ (Rule|RuleDelayed)[ "Method"|Method, Except[ "GET" ] ] ] ...,
       allowedFetchElements = $fetchElement
   },
+  {
+      $pathReadable = HoldPattern @ Alternatives[
+            pathApps,
+            pathBase,
+            pathCache,
+            pathExamples,
+            pathKB,
+            pathLockFiles,
+            pathNMIndex,
+            pathPaclets,
+            pathPersistence,
+            pathProcLink,
+            pathResourcePersistence,
+            pathResources,
+            pathSystem,
+            pathTemp
+        ],
+
+      $pathWritable = HoldPattern @ Alternatives[
+            pathCache,
+            pathKB,
+            pathLockFiles,
+            pathPaclets,
+            pathPacletsTemp,
+            pathProcLink,
+            pathResourcePersistence,
+            pathResources,
+            pathSearchIndices,
+            pathTemp
+        ],
+
+      reader1 = Alternatives[
+        BinaryRead,
+        BinaryReadList,
+        FileHash,
+        FileInformation,
+        FindFile,
+        Get,
+        Import,
+        OpenRead,
+        Read,
+        ReadByteArray,
+        ReadLine,
+        ReadList,
+        Developer`ReadExpressionJSONFile,
+        Developer`ReadRawJSONFile,
+        Developer`ReadUBJSONFile,
+        Developer`ReadWXFFile
+      ],
+
+      writerNull = Alternatives[
+        CreateDirectory,
+        CreateFile,
+        OpenAppend,
+        OpenWrite
+      ],
+
+      writer1 = Alternatives[
+        BinaryWrite,
+        CreateDirectory,
+        CreateFile,
+        DeleteFile,
+        DumpSave,
+        Export,
+        OpenAppend,
+        OpenWrite,
+        Write,
+        WriteString,
+        Developer`WriteExpressionJSONFile,
+        Developer`WriteRawJSONFile,
+        Developer`WriteUBJSONFile,
+        Developer`WriteWXFFile
+      ],
+
+      writerLast = Alternatives[
+        Put,
+        PutAppend
+      ]
+  },
+  {
+    $allowedRead  = HoldPattern @ reader1[ $pathReadable | File[ $pathReadable ] | InputStream[ String | $pathReadable, _ ], ___ ],
+    $allowedWrite = HoldPattern @ Alternatives[
+        writerNull[ ],
+        writer1[ $pathWritable | File[ $pathWritable ] | OutputStream[ $pathWritable, _ ], ___ ],
+        writerLast[ ___, $pathWritable | File[ $pathWritable ] | OutputStream[ $pathWritable, _ ] ]
+    ]
+  },
       HoldComplete[
-          BinaryRead[ InputStream[ pathPaclets | pathProcLink , _ ], ___ ],
-          BinaryReadList[ InputStream[ String | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp | pathExamples , _ ], ___ ],
-          BinaryWrite[ OutputStream[ pathTemp | pathResources, _ ], ___ ],
-          CreateDirectory[ ],
-          CreateDirectory[ pathCache | pathResources | pathResourcePersistence | pathLockFiles | pathSearchIndices | pathPaclets, ___ ],
-          CreateFile[ pathKB | pathCache | pathResources | pathResourcePersistence | pathProcLink, ___ ],
-          DeleteFile[ pathTemp | pathKB | pathPacletsTemp | pathCache | pathResources | pathResourcePersistence | pathLockFiles ],
-          DeleteFile[ File[ pathTemp | pathKB | pathPacletsTemp | pathCache | pathResources | pathResourcePersistence | pathLockFiles ] ],
+          $allowedRead,
+          $allowedWrite,
           DeleteFile[ "data.MX" | "put.wl" | "save.mx" ],
           DeleteFile[ sym_Symbol? SymbolQ ] /; ! FileExistsQ @ sym,
-          DumpSave[ pathCache | pathResources, ___ ],
           DumpSave[ "save.mx", NeuralNetworks`Private`NetModel`$NetModelIndexCached ],
-          Export[ pathCache, ___ ],
           Export[ "data.MX", { 1 }, "Byte" ],
-          Export[ OutputStream[ pathResources, _ ], { 1 }, { "Binary", "Byte" } ],
-          FileHash[ s_String /; StringStartsQ[ s, "Resources/" ], ___ ],
-          FileInformation[ pathSystem ],
-          FileNames[ _, pathSystem | pathResources | pathBase | pathLockFiles | pathPersistence, ___ ],
+          FileNames[ _, $pathReadable, ___ ],
           FileNames[ "*", { }, 1 ],
           FindFile[ allowedLibs, "AccessPermission" -> "Execute" ],
-          FindFile[ pathSystem | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp | pathExamples ],
           FindFile[ "put.wl" | ctx, ___ ],
           Get[ "subicon.m" | "deficon.m" | "HDF5Tools/HDF5Tools.m" | $Failed | "put.wl" | ctx, ___ ],
-          Get[ pathPaclets | pathSystem | pathApps | pathBase | pathTemp | pathCache | pathResources | pathResourcePersistence | pathLockFiles | pathNMIndex, ___ ],
-          Import[ InputStream[ pathPaclets, _ ], ___ ],
-          Import[ InputStream[ String, _ ], { "GEOTIFF", "Data" } | { "RAWJSON" } | { "JSON" }, ___ ],
-          Import[ "!cmd /c ver" | "data.MX" | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathTemp | pathExamples, ___ ],
+          Import[ "!cmd /c ver" | "data.MX", ___ ],
           Import[ domains, "Hyperlinks"|"TSV"|"String"|{"Hyperlinks"|"TSV"|"String"}, ___ ],
-          LinkWrite[ _, Except @ CallPacket @ CloudSystem`Private`ServiceDispatch @ CloudSystem`CloudObject`DoCloudOperation[ Except[ "GET" ], ___ ] ],
+          LinkWrite[ _, Except[ CallPacket[ _CloudSystem`Private`ServiceDispatch ] ] ],
+          LinkWrite[ _, CallPacket @ CloudSystem`Private`ServiceDispatch[ _CloudSystem`CloudObject`DoCloudOperation? safeCloudOperationQ ] ],
           LinkWrite[ link_LinkObject, ___ ] /; MatchQ[ $FrontEnd, HoldPattern @ FrontEndObject @ link ],
-          OpenAppend[ pathKB | pathCache, ___ ],
-          OpenRead[ pathKB | pathSystem | pathTemp | pathPaclets | pathCache | pathResources | pathResourcePersistence | pathProcLink, ___ ],
-          OpenWrite[ ],
-          OpenWrite[ pathTemp | pathPaclets | pathPacletsTemp | pathResources | pathResourcePersistence | pathKB, ___ ],
           OpenWrite[ in_String /; StringMatchQ[ in, "in:"~~DigitCharacter.. ], ___, Method -> "RunPipe", ___ ],
-          Put[ ___, pathKB | pathResources | $Failed | "put.wl" | pathResourcePersistence | pathLockFiles ],
-          Put[ $Failed | CURLLink`HTTP`Private`getFile @ None ],
-          Read[ InputStream[ String, _ ], ___ ],
-          Read[ InputStream[ pathSystem | pathTemp | pathKB | pathPaclets | pathProcLink, _ ], ___ ],
-          Read[ pathSystem | pathTemp | pathKB, ___ ],
-          ReadByteArray[ pathSystem | pathTemp | pathKB, ___ ],
-          ReadByteArray[ File[ pathSystem | pathTemp | pathKB ], ___ ],
-          ReadList[ pathSystem | pathTemp | pathKB, ___ ],
-          ReadList[ InputStream[ pathTemp|String, ___ ], ___ ],
-          ReadLine[ pathSystem | pathTemp | pathKB, ___ ],
-          ReadLine[ InputStream[ pathSystem | pathTemp | pathKB | String, ___ ], ___ ],
-          RenameFile[ pathResources|pathTemp|pathLockFiles, pathResources|pathTemp|pathLockFiles, ___ ],
-          RenameFile[ pathResourcePersistence, pathResourcePersistence, ___ ],
+          Put[ ___, "put.wl" | $Failed | CURLLink`HTTP`Private`getFile @ None ],
+          RenameFile[ $pathWritable, $pathWritable, ___ ],
           urlFetch[ cloudFiles | { cloudFiles }, allowedFetchOptions ],
           urlFetch[ cloudFiles | { cloudFiles }, allowedFetchElements, allowedFetchOptions ],
           urlFetch[ (rurl|domains|shortURL) | { rurl|domains|shortURL }, ___ ],
-
-          Write[ OutputStream[ pathPaclets, ___ ], ___ ],
-          WriteString[ "stdout" | OutputStream[ pathKB | pathTemp, _ ] | pathKB | pathTemp, ___ ],
+          WriteString[ "stdout", ___ ],
           CloudGet[ _? safeCloudObjectQ | (rurl|persistence) | CloudObject[ (rurl|persistence) ] | URL[ (rurl|persistence) ] ],
           Unprotect[ s_Symbol /; ! StringStartsQ[ SafeContext @ s, "WolframChallenges`"|"Wolfram`CodeEquivalenceUtilities`" ] ],
           URLFetch["https://www.wolframcloud.com/OAuthVersion"|"https://www.wolframcloud.com/app/OAuthVersion", ___],
@@ -1300,9 +1365,10 @@ With[ {
           URLSave[ "https://resources.wolframcloud.com/PacletRepository/pacletsite/PacletSite.mz", ___ ],
           URLRead[ _? authRequestQ, ___ ],
           URLRead[ HTTPRequest[ domains, _ ] | { HTTPRequest[ domains, _ ] }, ___ ],
-          (URLSave|URLSaveAsynchronous)[ _? safeCloudObjectQ, pathResources, ___ ]
+          (URLSave|URLSaveAsynchronous)[ _? safeCloudObjectQ, $pathWritable, ___ ]
       ]
-  ]]);
+  ]]
+);
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -1473,37 +1539,51 @@ safeCloudObjectQ[ domain_String, path_String, query_ ] :=
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*safeCloudObjectUUIDQ*)
-safeCloudObjectUUIDQ[
-    domain_,
-    path: { "obj"|"objects", uuid_? UUIDStringQ },
-    query_
-] :=
-  Apply[
-      safeCloudObjectQ,
-      {
-          URLBuild @ <|
-              "Scheme" -> "HTTPS",
-              "Domain" -> domain,
-              "Path" -> {
-                  "obj",
-                  CloudObjectInformation[
-                      CloudObject @ URLBuild @ <|
-                          "Scheme" -> "HTTPS",
-                          "Domain" -> domain,
-                          "Path" -> path
-                      |>,
-                      "Path"
-                  ]
-              }
-          |>
-      }
-  ];
+safeCloudObjectUUIDQ[ domain_, path: { "obj" | "objects", uuid_? UUIDStringQ }, query_ ] :=
+    Module[ { pathString },
+
+        pathString = Quiet[
+            CloudObjectInformation[
+                CloudObject @ URLBuild @ <|
+                    "Scheme" -> "HTTPS",
+                    "Domain" -> domain,
+                    "Path"   -> path
+                |>,
+                "Path"
+            ],
+            CloudObjectInformation::cloudnf
+        ];
+
+        TrueQ @ And[
+            StringQ @ pathString,
+            Apply[
+                safeCloudObjectQ,
+                { URLBuild @ <|
+                    "Scheme" -> "HTTPS",
+                    "Domain" -> domain,
+                    "Path"   -> { "obj", pathString }
+                |> }
+            ]
+        ]
+    ];
 
 safeCloudObjectUUIDQ[ domain_String, path_String, query_ ] :=
   safeCloudObjectUUIDQ[ domain, StringSplit[ path, "/" ], query ];
 
+safeCloudObjectUUIDQ[ uuid_? UUIDStringQ ] :=
+    safeCloudObjectUUIDQ[ URLParse[ $CloudBase, "Domain" ], { "obj", uuid }, { } ];
+
 safeCloudObjectUUIDQ[ ___ ] :=
   False;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*safeCloudOperationQ*)
+safeCloudOperationQ // Attributes = { HoldAllComplete };
+safeCloudOperationQ[ CloudSystem`CloudObject`DoCloudOperation[ args___ ] ] := safeCloudOperationQ @ args;
+safeCloudOperationQ[ "GET", { "files" }, { ___ }, __ ] := True;
+safeCloudOperationQ[ "GET", { "files", uuid_? UUIDStringQ, { } }, { ___ }, ___ ] := safeCloudObjectUUIDQ @ uuid;
+safeCloudOperationQ[ ___ ] := False;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
