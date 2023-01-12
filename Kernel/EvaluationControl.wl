@@ -1539,31 +1539,32 @@ safeCloudObjectQ[ domain_String, path_String, query_ ] :=
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*safeCloudObjectUUIDQ*)
-safeCloudObjectUUIDQ[
-    domain_,
-    path: { "obj"|"objects", uuid_? UUIDStringQ },
-    query_
-] :=
-  Apply[
-      safeCloudObjectQ,
-      {
-          URLBuild @ <|
-              "Scheme" -> "HTTPS",
-              "Domain" -> domain,
-              "Path" -> {
-                  "obj",
-                  CloudObjectInformation[
-                      CloudObject @ URLBuild @ <|
-                          "Scheme" -> "HTTPS",
-                          "Domain" -> domain,
-                          "Path" -> path
-                      |>,
-                      "Path"
-                  ]
-              }
-          |>
-      }
-  ];
+safeCloudObjectUUIDQ[ domain_, path: { "obj" | "objects", uuid_? UUIDStringQ }, query_ ] :=
+    Module[ { pathString },
+
+        pathString = Quiet[
+            CloudObjectInformation[
+                CloudObject @ URLBuild @ <|
+                    "Scheme" -> "HTTPS",
+                    "Domain" -> domain,
+                    "Path"   -> path
+                |>,
+                "Path"
+            ],
+            CloudObjectInformation::cloudnf
+        ];
+
+        Apply[
+            safeCloudObjectQ,
+            {
+                URLBuild @ <|
+                    "Scheme" -> "HTTPS",
+                    "Domain" -> domain,
+                    "Path"   -> { "obj", pathString }
+                |>
+            }
+        ] /; StringQ @ pathString
+    ];
 
 safeCloudObjectUUIDQ[ domain_String, path_String, query_ ] :=
   safeCloudObjectUUIDQ[ domain, StringSplit[ path, "/" ], query ];
