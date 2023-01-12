@@ -1,12 +1,15 @@
 #!/bin/bash
 set -e
 
-filesToFormat="$(git --no-pager diff --name-status --no-color --cached | awk '$1 != "D" && $2 ~ /\.nb/ { print $2}')"
+changed="$(git --no-pager diff --name-status --no-color --cached | awk '$1 != "D" && $2 ~ /\.(nb|wlt)/ { print $2}')"
 
-if [ "$filesToFormat" != "" ]; then
-    wolframscript Scripts/FormatNotebooks.wls --notebooks="$filesToFormat"
+echo "Changed files:"
+echo "$changed"
 
-    for sourceFilePath in $filesToFormat
+if [ "$changed" != "" ]; then
+    wolframscript -f Scripts/FormatFiles.wls --files="$changed"
+
+    for sourceFilePath in $changed
     do
     git add $sourceFilePath
     done;
