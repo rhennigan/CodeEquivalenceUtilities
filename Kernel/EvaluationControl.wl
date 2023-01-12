@@ -1554,16 +1554,17 @@ safeCloudObjectUUIDQ[ domain_, path: { "obj" | "objects", uuid_? UUIDStringQ }, 
             CloudObjectInformation::cloudnf
         ];
 
-        Apply[
-            safeCloudObjectQ,
-            {
-                URLBuild @ <|
+        TrueQ @ And[
+            StringQ @ pathString,
+            Apply[
+                safeCloudObjectQ,
+                { URLBuild @ <|
                     "Scheme" -> "HTTPS",
                     "Domain" -> domain,
                     "Path"   -> { "obj", pathString }
-                |>
-            }
-        ] /; StringQ @ pathString
+                |> }
+            ]
+        ]
     ];
 
 safeCloudObjectUUIDQ[ domain_String, path_String, query_ ] :=
