@@ -165,4 +165,85 @@ VerificationTest[
     TestID -> "CodeEquivalentQ-MessageTest-2@@Tests/EvaluationControl.wlt:162,1-166,2"
 ];
 
+VerificationTest[
+    UsingFrontEnd @ Block[ { LinkWrite = HoldComplete @ ##1 & },
+        With[ { link = RandomChoice @ Links[ ] },
+            EvaluateSafely @ LinkWrite[
+                link,
+                CallPacket @ CloudSystem`Private`ServiceDispatch @ CloudSystem`CloudObject`DoCloudOperation[
+                    "GET",
+                    { "files" },
+                    { "test-user/path/to/file", "fields" -> "uuid" },
+                    "text/plain",
+                    { }
+                ]
+            ]
+        ]
+    ],
+    HoldComplete[ _LinkObject, _CallPacket ],
+    SameTest -> MatchQ,
+    TestID   -> "ServiceDispatch-1@@Tests/EvaluationControl.wlt:168,1-186,2"
+];
+
+VerificationTest[
+    UsingFrontEnd @ Block[ { LinkWrite = HoldComplete @ ##1 & },
+        With[ { link = RandomChoice @ Links[ ] },
+            EvaluateSafely @ LinkWrite[
+                link,
+                CallPacket @ CloudSystem`Private`ServiceDispatch @ CloudSystem`CloudObject`DoCloudOperation[
+                    "DELETE",
+                    { "files", "00000000-0000-0000-0000-000000000000" },
+                    { "recursive" -> "true", "filter" -> "file" },
+                    "text/plain",
+                    { }
+                ]
+            ]
+        ]
+    ],
+    _SandboxViolation,
+    SameTest -> MatchQ,
+    TestID   -> "ServiceDispatch-2@@Tests/EvaluationControl.wlt:188,1-206,2"
+];
+
+VerificationTest[
+    UsingFrontEnd @ Block[ { LinkWrite = HoldComplete @ ##1 & },
+        With[ { link = RandomChoice @ Links[ ] },
+            EvaluateSafely @ LinkWrite[
+                link,
+                CallPacket @ CloudSystem`Private`ServiceDispatch @ CloudSystem`CloudObject`DoCloudOperation[
+                    "POST",
+                    { "files", { } },
+                    { "append" -> "false", "icons" -> "FileBrowser,IOS", "path" -> "test-user/path/to/file" },
+                    "application/vnd.wolfram.expression",
+                    { 50, 10 }
+                ]
+            ]
+        ]
+    ],
+    _SandboxViolation,
+    SameTest -> MatchQ,
+    TestID   -> "ServiceDispatch-3@@Tests/EvaluationControl.wlt:208,1-226,2"
+];
+
+VerificationTest[
+    UsingFrontEnd @ Block[ { LinkWrite = HoldComplete @ ##1 & },
+        With[ { link = RandomChoice @ Links[ ] },
+            EvaluateSafely @ LinkWrite[
+                link,
+                CallPacket @ CloudSystem`Private`ServiceDispatch @ CloudSystem`CloudObject`DoCloudOperation[
+                    "GET",
+                    { "files", "00000000-0000-0000-0000-000000000000", { } },
+                    { },
+                    "text/plain",
+                    { }
+                ]
+            ]
+        ]
+    ],
+    _SandboxViolation,
+    SameTest -> MatchQ,
+    TestID   -> "ServiceDispatch-4@@Tests/EvaluationControl.wlt:228,1-246,2"
+];
+
+
 (* :!CodeAnalysis::EndBlock:: *)
