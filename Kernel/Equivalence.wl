@@ -167,7 +167,7 @@ iEquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
         If[ hasRandomSymbolsQ
             ,
             reval1 =
-                Replace[ cexpr1,
+                Replace[ FromCanonicalForm @ cexpr1,
                         HoldComplete[ e_ ] :>
                         EvaluateSafely[ e,
                             "SymbolList" -> $UnsafeSymbols ~Join~ $RandomSymbols
@@ -176,7 +176,7 @@ iEquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
             timing[ "RandomSandboxForms1" ];
 
             reval2 =
-                Replace[ cexpr2,
+                Replace[ FromCanonicalForm @ cexpr2,
                         HoldComplete[ e_ ] :>
                         EvaluateSafely[ e,
                             "SymbolList" -> $UnsafeSymbols ~Join~ $RandomSymbols
