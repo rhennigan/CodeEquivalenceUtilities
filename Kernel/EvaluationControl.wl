@@ -689,6 +689,7 @@ EvaluateSafely // Options = {
 };
 
 EvaluateSafely::unsafe = "Sandboxed the following expressions: `1`";
+Off[ EvaluateSafely::unsafe ];
 
 EvaluateSafely[ expr_, opts: OptionsPattern[ ] ] := allowEvaluations[
     OptionValue[ "AllowedEvaluationPatterns" ],

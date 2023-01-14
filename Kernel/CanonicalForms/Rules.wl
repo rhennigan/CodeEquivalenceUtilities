@@ -109,251 +109,7 @@ simplify[expr_, opts : OptionsPattern[]] :=
 
 $unrollLimit = 20;
 
-attributeRules = HoldComplete[
-    (f_Symbol? SymbolQ)[a1___, f_@a2___, a3___] /;
-      Attributes@f ~ MemberQ ~ Flat :> f[a1, a2, a3]
-    ,
-    (f_Symbol? SymbolQ)[a___] /;
-      Attributes @ f ~MemberQ~ Orderless && ! OrderedQ[Unevaluated[{a}]] :>
-      WithHolding[
-          {
-              sorted = Sort[TempHold[a]]
-          },
-          f[sorted]
-      ]
-    ,
-    (f_Symbol? SymbolQ)[x : Except[_Symbol? SymbolQ, _?UAtomQ]] /;
-      Attributes@f ~ MemberQ ~ OneIdentity :> x
-    ,
-    (f_? SymbolQ) @@ { a___ } /;
-      NonHoldingQ @ f &&
-        FreeQ[ Unevaluated @ { a },
-               s_? SymbolQ /; ! FreeQ[ UpValueSymbols @ s, Apply, { 1 } ],
-               { 1 }
-        ] :> f @ a,
-(*        FreeQ[Unevaluated[{a}],
-            s_Symbol /; Context[Unevaluated[s]] =!= "System`",
-            {1, Infinity}] :> f[a],*)
 
-    (f_? OrderlessQ) @@ Reverse[ h_[ a___ ] ] /; NonHoldingQ[ f ] :> f @@ h[a]
-    ,
-
-    (f_? OrderlessQ) @@ Sort[ h_[ a___ ] ] /; NonHoldingQ[ f ] :> f @@ h[a],
-
-
-
-    ( f_? ListableQ )[ Table[ ei_, { i_, i1_, i2_, di_ } ],
-                       Table[ ej_, { j_, i1_, i2_, di_ } ]
-    ] :>
-      WithHolding[
-          {
-              ej2 = TempHold @ ej /. HoldPattern @ Verbatim @ j :> i
-          },
-          Table[ f[ ei, ej2 ], { i, i1, i2, di } ]
-      ]
-    ,
-
-    Part[ (f_? ListableQ)[ list_? ListTypeQ ], s_Span ] :>
-      f @ Part[ list, s ]
-];
-
-
-(******************************************************************************)
-
-
-hasSeqFunQ[ rng: { __Integer | __Rational } ] := hasSeqFunQ[ rng ] = TrueQ @
-    And[ Length @ rng >= 4,
-         ! constantArrayQ @ rng,
-         MatchQ[
-             Replace[
-                 findSequenceFunction @ rng,
-                 f_Function :> (seqFun[ rng ] = f)
-             ],
-             _Function
-         ]
-    ];
-
-
-findSequenceFunction[ rng_ ] :=
-    Quiet @ Module[ { n, f },
-        f = TimeConstrained[ FindSequenceFunction[ rng, n ], 1, $Failed ];
-        If[ MatchQ[ f, _FindSequenceFunction | _? FailureQ ],
-            $Failed,
-            With[ { expr = f },
-                Function @ Evaluate[ expr /. n -> # ]
-            ]
-        ]
-    ];
-
-
-(******************************************************************************)
-
-
-singleArgumentQ // Attributes = { HoldAllComplete };
-singleArgumentQ[ _SlotSequence|_Sequence ] := False;
-singleArgumentQ[ _                       ] := True;
-singleArgumentQ[ ___                     ] := False;
-
-
-$atomicNumber = (_Integer|_Real|_Rational)? UAtomQ;
-$heldNumeric = Alternatives[
-    _? HoldNumericQ,
-    (TransformHold|TransformRelease)[ _? HoldNumericQ ]
-];
-
-tableIteratorRules = Inline[ { $atomicNumber, $heldNumeric }, HoldComplete[
-    Table[exp_, ii_, jj_] :> Table[Table[exp, jj], ii],
-
-    Table[exp_, imax: $heldNumeric] :>
-      WithHolding[ { i = NewLocalSymbol[] }, Table[exp, {i, 1, imax, 1}]],
-
-    Table[exp_, {imax: $heldNumeric}] :>
-      WithHolding[ { i = NewLocalSymbol[] }, Table[exp, {i, 1, imax, 1}]],
-
-    Table[exp_, {i_, imax: $heldNumeric}] :> Table[exp, {i, 1, imax, 1}],
-    Table[exp_, {i_, imin_, imax_}] :> Table[exp, {i, imin, imax, 1}]
-    ,
-
-    Table[ expr_, { i_, 1, imax: (_Rational|_Real)? UAtomQ, 1 } ] :>
-        With[ { n = Floor @ imax }, Table[ expr, { i, 1, n, 1 } ] /; True ],
-
-    (* remove redundant Tables in iterator *)
-    Table[ expr_, { i_, Table[ j_, { j_, j1_, j2_, dj_ } ] } ] :>
-      Table[ expr, { i, j1, j2, dj } ],
-    Table[ a_, { i1_, Table[ b_, { i2_, imin_, imax_, di_ } ] } ] :>
-        With[ { aNew = TempHold @ a /. HoldPattern @ Verbatim @ i1 :> b },
-            Table[ aNew, { i2, imin, imax, di } ] /; True
-        ]
-    ,
-
-    rng : { $atomicNumber.. } /;
-      Length @ rng >= 4 && OrderedQ[ rng ] && Equal @@ Differences @ rng :>
-      TrEval @
-        With[
-            {
-                imin = First @ rng,
-                imax = Last @ rng,
-                di = First @ Differences @ rng
-            },
-            TempHold @ Range[ imin, imax, di ]
-        ],
-
-
-    (****************************************************)
-    (* EXPERIMENTAL *)
-    (****************************************************)
-    (* normalize imin offset to 1 for integer iterators *)
-    Table[ exp_, { i_, imin : Except[ 1, _Integer ], imax_Integer, di_Integer } ] :>
-      WithHolding[
-          {
-              sub   = imin - 1,
-              imax2 = imax - sub,
-              exp2  = TempHold[ exp ] /. HoldPattern[ Verbatim[ i ] ] :> i + sub
-          },
-          Table[ exp2, { i, 1, imax2, di } ]
-      ],
-
-    (* normalize di step size to 1 for integer iterators *)
-    Table[ exp_, { i_, 1, imax_? HoldNumericQ, di : Except[ 1, _Integer ] } ] :>
-      WithHolding[
-          {
-              imax2 = Floor[ (imax - 1)/di ] + 1,
-              exp2  = TempHold[ exp ] /. HoldPattern[ Verbatim[ i ] ] :>
-                                           1 + di*(i - 1)
-          },
-          Table[ exp2, {  i, 1, imax2, 1 } ]
-      ]
-
-    ,
-(* :!CodeAnalysis::BeginBlock:: *)
-(* :!CodeAnalysis::Disable::UnscopedObjectError:: *)
-    rng : { __Integer | __Rational } /; hasSeqFunQ[rng] :>
-      WithHolding[
-          {
-              sf = seqFun[rng],
-              s = NewLocalSymbol[ ],
-              h = Replace[sf, HoldPattern[Function[expr_]] :> TempHold[expr]] /.
-                Slot[1] :> s,
-              len = Length[rng]
-          },
-          Table[h, {s, 1, len, 1}]
-      ],
-(* :!CodeAnalysis::EndBlock:: *)
-
-    f_[a_?SafeEvaluatedQ, Table[exp_, ii_]] /;
-      Length[Intersection[
-          GetAttributes[f], {NumericFunction, Listable}]] === 2 :>
-      Table[f[a, exp], ii],
-
-    f_[Table[exp_, ii_], b_?SafeEvaluatedQ] /;
-      Length[Intersection[
-          GetAttributes[f], {NumericFunction, Listable}]] === 2 :>
-      Table[f[exp, b], ii],
-
-    Reverse[Table[exp_, {i_, 1, n_, di_}]] :>
-      WithHolding[
-          {
-              imax = di Floor[(n - 1)/di] + 1,
-              h = TempHold[exp] /. HoldPattern[Verbatim @ i ] :> imax - i + 1
-          },
-          Table[h, {i, 1, imax, di}]
-      ]
-    ,
-    Reverse @ Table[ exp_, { i_, i1_, i2_, 1 } ] :>
-      Table[ exp, { i, i2, i1, -1 } ]
-    ,
-
-    (* tables with only one item *)
-    Table[ expr_, { i_, 1, 1, 1 } ][[ 1 | -1 ]] :>
-      RuleCondition[ TempHold @ expr /. HoldPattern[ i ] :> 1 ],
-
-
-    (* unused list iterators *)
-    Table[ expr_, { i_, ii_List } ] /;
-        FreeQ[ HoldComplete @ expr, HoldPattern @ Verbatim @ i ] :>
-        WithHolding[ { j = NewLocalSymbol[ ], len = Length @ Unevaluated @ ii },
-            Table[ expr, { j, len } ]
-        ],
-
-    (* empty tables *)
-    Table[ _, { _TypedSymbol, 1, 0, 1 } ] :> { },
-    Table[ _, { _, { } } ] :> { },
-
-    (* short tables *)
-    Table[ expr_, { i: _Symbol|_TypedSymbol, 1, n: 1|2|3, 1 } ] :>
-        RuleCondition @ Table[
-            TempHold @ expr /. HoldPattern @ Verbatim @ i -> j,
-            { j, n }
-        ],
-
-    Table[ expr_, { i: _Symbol|_TypedSymbol, { ii___ } } ] /;
-        Length @ HoldComplete @ ii < 4 :>
-        RuleCondition @ With[
-            { len = Length @ HoldComplete @ ii },
-            Table[
-                TempHold @ expr /. HoldPattern @ Verbatim @ i -> j,
-                { j, TempHold /@ Unevaluated[ { ii } ] }
-            ]
-        ],
-
-    Verbatim[ Plus ][ a___, b_?HoldNumericQ, c___, d_?HoldNumericQ, e___ ] /;
-      Length[ HoldComplete[ a, c, e ] ] > 0 &&
-      ! SafeEvaluatedQ[b + d] && ! SafeEvaluatedQ[d + b] :>
-        WithHolding[ { bd = b + d },
-                     Plus[ a, bd, c, e ]
-        ],
-
-    p: Verbatim[ Plus ][ x_? singleArgumentQ ] :> x,
-
-    (* Table properties *)
-    Length @ Table[ _, { _, 1, n_Integer, 1 } ] /;
-        IntegerQ @ Unevaluated @ n :> RuleCondition @ Max[ 0, n ],
-
-    Count[ list_, Verbatim[ _ ] | Verbatim[ Pattern ][ _, Verbatim[ Blank[ ] ] ] ] :>
-        Length @ list
-
-    (* TODO: account for possible `Nothing` values *)
-] ];
 
 
 (******************************************************************************)
@@ -369,55 +125,6 @@ tableScopingRules = HoldComplete[
           Table[ held, { j, ii } ]
       ]
 ];
-
-
-(******************************************************************************)
-
-
-tableFromOtherFunctions = Inline[ $intType, HoldComplete[
-    Range[ args___ ] :>
-      WithHolding[ { i = NewLocalSymbol[ ] },
-          Table[ i, { i, args } ]
-      ],
-
-    Array[ f_, n_? IntTypeQ ] :>
-      WithHolding[ { i = NewLocalSymbol[ ] },
-          Table[ f[i], { i, n } ]
-      ],
-
-
-    Array[f_, n_? IntTypeQ, r_] :>
-      WithHolding[
-          {
-              nn = n + r - 1,
-              i = NewLocalSymbol[ ]
-          },
-          Table[f[i], {i, r, nn}]
-      ],
-
-    Map[ f_, Table[ exp_, iter___ ], { 1 } ] :> Table[ f @ exp, iter ],
-    Map[ f_, list_, { 1 } ] :>
-        With[ { i = NewLocalSymbol[ ] },
-            Table[ f @ i, { i, list } ] /; True
-        ],
-
-    (f_)[a1___? UAtomQ, Table[exp_, iter___], a2___? UAtomQ] /;
-      ListableQ[ f ] :> Table[f[a1, exp, a2], iter],
-
-
-    ca : { Repeated[ x_, { 4, Infinity } ] } :>
-      WithHolding[
-          {
-              i = NewLocalSymbol[ ],
-              n = Length @ Unevaluated @ ca
-          },
-          Table[ x, { i, 1, n, 1 } ]
-      ],
-
-    Do[ args___ ] :> (Table[ args ];),
-
-    Scan[ f_, args__ ] :> (Map[ f, args ];)
-]];
 
 
 (******************************************************************************)
@@ -487,19 +194,6 @@ flatLevel2 = Inline[ $flatLevel2Symbols, HoldComplete[
 
 
 ] ];
-
-
-
-(******************************************************************************)
-
-
-
-typingPatterns = HoldComplete[
-    sd_SetDelayed /; ! TypedDefinitionQ[sd] :>
-      TrEval[ToTypedBinding[sd]],
-    rd_RuleDelayed /; ! TypedDefinitionQ[rd] :>
-      TrEval[ToTypedBinding[rd]]
-];
 
 
 
@@ -1916,36 +1610,7 @@ expandBlocked[ e_ ] :=
 
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
-priority1Rules = HoldComplete[
-    TransformHold[ a___ ] :> TransformHold @ a
-    ,
-    Verbatim[ System`PacletSymbol ][ "Wolfram/CodeEquivalenceUtilities", sym_String ] :>
-        RuleCondition @
-            If[ StringContainsQ[ sym, "`" ],
-                ToExpression[ sym, InputForm, TempHold ],
-                ToExpression[
-                    "Wolfram`CodeEquivalenceUtilities`"<>sym,
-                    InputForm,
-                    TempHold
-                ]
-            ]
-    ,
-    Floor[ i_? IntTypeQ ] :> i
-    ,
-    Ceiling[ i_? IntTypeQ ] :> i
-    ,
-    Round[ i_? IntTypeQ ] :> i
-    ,
-    (gfx: Graphics|Graphics3D)[ a_, b___ ] :>
-      WithHolding[
-          {
-              c = TempHold @ a /.
-                { ints__Integer } /; Length @ HoldComplete @ ints >= 4 :>
-                  { Canonical @ ints }
-          },
-          Canonical[ gfx ][ c, b ]
-      ]
-];
+
 (* :!CodeAnalysis::EndBlock:: *)
 
 cleanupRules = HoldComplete[
@@ -1958,13 +1623,10 @@ cleanupRules = HoldComplete[
 ];
 
 
+LoadTransformationRules[ All ];
+
 rules = {
-    HoldComplete[(f_)[a1___, TempHold[a2___], a3___] :> f[a1, a2, a3]],
-    priority1Rules,
-    attributeRules,
-    typingPatterns,
-    tableFromOtherFunctions,
-    tableIteratorRules,
+    GetRules[ "EquivalenceTesting" ],
     orderlessLevel2,
     flatLevel2,
     tableScopingRules,
