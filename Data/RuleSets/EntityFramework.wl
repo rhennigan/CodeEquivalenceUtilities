@@ -13,26 +13,19 @@ Begin[ "`Private`" ];
 (* ::Section::Closed:: *)
 (*Default Values*)
 SetRuleDefaults @ <|
-    "Usage" -> { "EquivalenceTesting" }
+    "Description" -> "Transform entity operations into an equivalent form.",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { Entity }
 |>;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Rules*)
-
-(**********************************************************************************************************************)
-<|
-    "Description" -> "Convert SetDelayed to a typed expression",
-    "Symbols"     :> { SetDelayed },
-    "Rule"        :> sd_SetDelayed /; ! TypedDefinitionQ @ sd :> TrEval @ ToTypedBinding @ sd
-|>
-
-(**********************************************************************************************************************)
-<|
-    "Description" -> "Convert RuleDelayed to a typed expression",
-    "Symbols"     :> { RuleDelayed },
-    "Rule"        :> rd_RuleDelayed /; ! TypedDefinitionQ @ rd :> TrEval @ ToTypedBinding @ rd
-|>
+HoldComplete[
+    Entity[ s_String, f_ ][ "Image" ] :> Entity[ s, f ][ EntityProperty[ s, "Image" ] ],
+    (e: _Entity | _EntityClass)[ a_ ] :> EntityValue[ e, a ],
+    EntityValue[ Entity[ a_String, b___ ], c_String ] :> EntityValue[ Entity[ a, b ], EntityProperty[ a, c ] ]
+]
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)

@@ -14,7 +14,7 @@ Begin[ "`Private`" ];
 (*Default Values*)
 SetRuleDefaults @ <|
     "Category" -> "PriorityRules",
-    "Usage"    -> All,
+    "Usage"    -> { "EquivalenceTesting", "Optimization", "Scoping", "Simplification", "TypeSystem" },
     "Priority" -> -1000
 |>;
 
@@ -28,8 +28,7 @@ SetRuleDefaults @ <|
     "Symbols"     :> { TempHold },
     "Priority"    -> -Infinity,
     "Internal"    -> True,
-    "Rule"        :>
-        (f_)[ a1___, TempHold[ a2___ ], a3___ ] :> f[ a1, a2, a3 ]
+    "Rule"        :> (f_)[ a1___, TempHold[ a2___ ], a3___ ] :> f[ a1, a2, a3 ]
 |>
 
 (**********************************************************************************************************************)
@@ -38,8 +37,7 @@ SetRuleDefaults @ <|
     "Symbols"     :> { TransformHold },
     "Priority"    -> -10000,
     "Internal"    -> True,
-    "Rule"        :>
-        TransformHold[ a___ ] :> TransformHold @ a
+    "Rule"        :> TransformHold[ a___ ] :> TransformHold @ a
 |>
 
 (**********************************************************************************************************************)
@@ -101,6 +99,37 @@ SetRuleDefaults @ <|
                 },
                 Canonical[ gfx ][ c, b ]
             ]
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Description" -> "Flatten TypedSymbol expressions",
+    "Symbols"     :> { TypedSymbol },
+    "Internal"    -> True,
+    "Priority"    -> 9000,
+    "Rule"        :> TypedSymbol[ TypedSymbol[ s_, t_ ], t_ ] :> TypedSymbol[ s, t ]
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Description" -> "Generate a cycle detection warning for testing",
+    "Symbols"     :> { },
+    "Internal"    -> True,
+    "Priority"    -> 10000,
+    "Rule"        :>
+        Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ a_ ] :>
+            Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ a, a ]
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Description" -> "Generate a cycle detection warning for testing",
+    "Symbols"     :> { },
+    "Internal"    -> True,
+    "Priority"    -> 10000,
+    "Rule"        :>
+        Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ a_, a_ ] :>
+            Wolfram`CodeEquivalenceUtilities`Internal`LoopTest[ a ]
 |>
 
 (* ::**************************************************************************************************************:: *)

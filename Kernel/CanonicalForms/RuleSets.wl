@@ -103,15 +103,16 @@ loadNamedRuleSet // beginDefinition;
 loadNamedRuleSet[ name_String ] := Enclose[
     Block[ { $loadingRules = True },
         loadNamedRuleSet[ name ] =
-            Module[ { file0, file, data },
+            Module[ { file0, wxf, file, data },
                 file0 = FileNameJoin @ { $ruleSetPath, name };
-                file = If[ FileExistsQ[ file0 <> ".wxf" ], file0 <> ".wxf", file0 <> ".wl" ];
+                wxf   = file0 <> ".wxf";
+                file  = If[ FileExistsQ @ wxf, wxf, file0 <> ".wl" ];
                 ConfirmAssert @ FileExistsQ @ file;
                 data = ConfirmMatch[ loadRuleFile @ file, { __Association? AssociationQ } ];
                 SortBy[ data, priorityOrder ]
             ]
     ],
-    throwInternalFailure[ HoldForm @ loadNamedRuleSet @ name, ## ] &
+    throwInternalFailure[ HoldForm @ loadNamedRuleSet @ name, ##1 ] &
 ];
 
 loadNamedRuleSet // endDefinition;
