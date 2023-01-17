@@ -44,7 +44,11 @@ combineDilationKernels[ m1_, m2_ ] :=
     Module[ { a1, a2 },
         a1 = arrayUnpad @ m1;
         a2 = arrayUnpad @ m2;
-        SelectFirst[ HoldComplete[ Dot[ a1, a2 ], Dot[ a2, a1 ] ], bitMatrixQ, $Failed ]
+        Quiet @ FirstCase[
+            HoldComplete[ Dot[ a1, a2 ], Dot[ a2, a1 ] ],
+            d_ :> With[ { e = d }, e /; bitMatrixQ @ e ],
+            $Failed
+        ]
     ];
 
 (* ::**************************************************************************************************************:: *)
