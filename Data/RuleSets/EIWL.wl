@@ -18,6 +18,26 @@ SetRuleDefaults @ <|
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
+(*Definitions*)
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*expandURL*)
+expandURL // ClearAll;
+expandURL[ url_String ] := expandURL[ url, 1 ];
+expandURL[ url_String, iter_ ] := Catch[ FixedPoint[ expandURL0, url, iter ], $tag ];
+
+expandURL0[ url_String ] :=
+    If[ StringStartsQ[ url, $CloudBase ],
+        Throw[ url, $tag ],
+        Cached @ Quiet @ Replace[
+            Check[ URLExpand @ url, url ],
+            Except[ _String? StringQ ] :> Throw[ url, $tag ]
+        ]
+    ];
+
+(* ::**************************************************************************************************************:: *)
+(* ::Section::Closed:: *)
 (*Rules*)
 Inline[ { $intType }, HoldComplete[
 
@@ -216,6 +236,8 @@ Inline[ { $intType }, HoldComplete[
         With[ { lower = ToLowerCase @ str },
             WikipediaData @ lower /; lower =!= str
         ]
+    ,
+    FromDigits[IntegerDigits[n_]] :> n
 ] ]
 
 (* ::**************************************************************************************************************:: *)
