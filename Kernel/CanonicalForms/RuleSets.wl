@@ -31,6 +31,7 @@ $$basicRuleValue = $$string | $$integer | $$boolean | _DirectedInfinity | HoldPa
 $$basicRuleValue = $$basicRuleValue | { $$basicRuleValue... };
 
 kvp[ a___ ] := KeyValuePattern @ Cases[ Flatten @ { a }, (Rule|RuleDelayed)[ b_, c_ ] :> (Rule|RuleDelayed)[ b, c ] ];
+except[ a___ ] := Verbatim[ Except ][ a ];
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -59,6 +60,8 @@ $namedRuleSets        = DeleteCases[ FileBaseName /@ FileNames[ { "*.wl", "*.wxf
 $loadingRules         = False;
 $rulesNeedSorting     = False;
 $defaultUsage         = "EquivalenceTesting";
+$$ruleStringKey       = Alternatives[ "Name", "Description", "Group", "Usage", "IncompatibleRules", "RelatedRules" ];
+$$ruleListKey         = Alternatives[ "Usage", "Symbols", "IncompatibleRules", "RelatedRules" ];
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -70,8 +73,14 @@ GetRules[ args___ ] := Cases[ GetRuleData @ args, KeyValuePattern[ "Rule" :> rul
 (*GetRuleData*)
 GetRuleData[ ] := GetRuleData @ All;
 GetRuleData[ All ] := (sortRules[ ]; $RuleData);
+
+GetRuleData[ All, filter__ ] :=
+    With[ { flat = DeleteDuplicates @ Flatten @ Values @ GetRuleData @ All },
+        SortBy[ filterRules[ flat, filter ], priorityOrder ]
+    ];
+
 GetRuleData[ usage_ ] := GetRuleData[ usage, Automatic ];
-GetRuleData[ usage: $$string, filter_ ] := filterRules[ Lookup[ GetRuleData[ ], usage, { } ], filter ];
+GetRuleData[ usage: $$string, filter__ ] := filterRules[ Lookup[ GetRuleData[ ], usage, { } ], filter ];
 
 (* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -96,17 +105,20 @@ sortRules0 // endDefinition;
 filterRules // beginDefinition;
 filterRules[ rules_List, group: $$string ] := Cases[ rules, kvp[ "Group" -> group ] ];
 filterRules[ rules_List, None|Automatic ] := rules;
-filterRules[ rules_List, filter_ ] := With[ { f = makeRuleFilter @ filter }, Select[ rules, f ] ];
+filterRules[ rules_List, filter_? AssociationQ ] := With[ { f = makeRuleFilter @ filter }, Select[ rules, f ] ];
+filterRules[ rules_List, arg__ ] := With[ { as = Association @ arg }, filterRules[ rules, as ] /; AssociationQ @ as ];
+filterRules[ rules_List, func_ ] := Select[ rules, func ];
 filterRules // endDefinition;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*makeRuleFilter*)
 makeRuleFilter // beginDefinition;
+makeRuleFilter // Attributes = { HoldRest };
 makeRuleFilter[ as_Association? AssociationQ ] := combineRuleFilter @ KeyValueMap[ makeRuleFilter, as ];
-makeRuleFilter[ other_ ] := With[ { as = Association @ other }, makeRuleFilter @ as /; AssociationQ @ as ];
-makeRuleFilter[ key_, pattern_? StringPattern`StringPatternQ ] := filterStringMatch[ key, pattern ];
-makeRuleFilter[ key_, pattern_ ] := filterPatternMatch[ key, pattern ];
+makeRuleFilter[ "Symbols", patt_ ] := filterSymbols @ patt;
+makeRuleFilter[ key: $$ruleStringKey, pattern_? stringPatternQ ] := filterStringMatch[ key, pattern ];
+makeRuleFilter[ key_, pattern_ ] := filterOther[ key, pattern ];
 makeRuleFilter // endDefinition;
 
 (* ::**************************************************************************************************************:: *)
@@ -114,37 +126,62 @@ makeRuleFilter // endDefinition;
 (*combineRuleFilter*)
 combineRuleFilter // ClearAll;
 combineRuleFilter[ { f_ } ] := f;
-combineRuleFilter[ fs_List ] := AllTrue[ Function[ f, TrueQ @ f[ # ] & ] /@ fs ];
+combineRuleFilter[ fs_List ] := (Evaluate[ And @@ Through @ Map[ TempHold, fs ][ #1 ] ] &) /. TempHold[ f_ ] :> f;
 combineRuleFilter[ ___ ] := True &;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*filterSymbols*)
+filterSymbols // ClearAll;
+filterSymbols // Attributes = { HoldAllComplete };
+filterSymbols[ pattern_ ][ kvp[ "Symbols" -> symbols_ ] ] := filterSymbols[ pattern, symbols ];
+filterSymbols[ pattern_ ][ as_ ] := False;
+
+filterSymbols[ pattern_? stringPatternQ, { symbols___Symbol } ] :=
+    AnyTrue[ Cases[ HoldComplete @ symbols, s_ :> ToString @ Unevaluated @ s ], StringMatchQ @ pattern ];
+
+filterSymbols[ symbol_Symbol? SymbolQ, { ___, symbol_, ___ } ] := True;
+
+filterSymbols[ { search__Symbol? SymbolQ }, { symbols___Symbol } ] :=
+    Length @ HoldComplete @ search === Length @ Intersection[ HoldComplete @ search, HoldComplete @ symbols ];
+
+filterSymbols[ _, _ ] := False;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*stringPatternQ*)
+stringPatternQ // ClearAll;
+stringPatternQ // Attributes = { HoldAllComplete };
+stringPatternQ[ _StringExpression ] := True;
+stringPatternQ[ expr_ ] := GeneralUtilities`StringPatternQ @ Unevaluated @ expr;
+stringPatternQ[ ___ ] := False;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*filterStringMatch*)
 filterStringMatch // ClearAll;
 filterStringMatch[ key_, patt_ ][ as_ ] := filterStringMatch[ key, patt, as[ key ] ];
+filterStringMatch[ $$ruleListKey, except[ _ ], { } ] := True;
+filterStringMatch[ $$ruleListKey, except[ no_ ], values: { __String } ] := ! AnyTrue[ values, StringMatchQ @ no ];
+filterStringMatch[ key_, except[ no_ ], value_String ] := ! StringMatchQ[ value, no ];
 filterStringMatch[ key_, patt_, str_String ] := StringMatchQ[ str, patt ];
-filterStringMatch[ key_, patt_, values_List ] := AnyTrue[ values, filterStringMatch[ key, patt, # ] & ];
+filterStringMatch[ key: $$ruleListKey, patt_, values: { ___String } ] := AnyTrue[ values, StringMatchQ @ patt ];
 filterStringMatch[ _, _, _ ] := False;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
-(*filterPatternMatch*)
-filterPatternMatch // ClearAll;
-filterPatternMatch[ key_, patt_ ][ kvp[ key_ -> val_ ] ] := filterPatternMatch[ key, patt, HoldComplete @ val ];
-filterPatternMatch[ key_, patt_ ][ ___ ] := False;
-filterPatternMatch[ key_, patterns_List, value_ ] := AllTrue[ patterns, filterPatternMatch[ key, #, value ] & ];
-filterPatternMatch[ key_, patt_, HoldComplete[ values_List ] ] := AnyTrue[ values, matchQHeld @ patt ];
-filterPatternMatch[ key_, patt_, HoldComplete[ expr_ ] ] := matchQHeld[ expr, patt ];
-filterPatternMatch[ _, _, _ ] := False;
+(*filterOther*)
+filterOther // ClearAll;
+filterOther[ key_, val_ ][ kvp[ key_ -> val_ ] ] := True;
+filterOther[ key_, filter_ ][ kvp[ key_ -> val_ ] ] := filterOther[ key, filter, HoldComplete @ val ];
 
-(* ::**************************************************************************************************************:: *)
-(* ::Subsubsection::Closed:: *)
-(*matchQHeld*)
-matchQHeld // beginDefinition;
-matchQHeld // Attributes = { HoldAllComplete };
-matchQHeld[ patt_ ] := Function[ expr, matchQHeld[ expr, patt ], { HoldAllComplete } ];
-matchQHeld[ expr_, patt_ ] := MatchQ[ Unevaluated @ expr, patt ];
-matchQHeld // endDefinition;
+filterOther[ key_, { search___ }, HoldComplete[ { values___ } ] ] :=
+    Length @ HoldComplete @ search === Length @ Intersection[ HoldComplete @ search, HoldComplete @ values ];
+
+filterOther[ key_, search_, HoldComplete[ { ___, search_, ___ } ] ] := True;
+filterOther[ key_, search_, HoldComplete[ search_ ] ] := True;
+filterOther[ key_, func_, HoldComplete[ value_ ] ] := func @ Unevaluated @ value;
+filterOther[ _, _, _ ] := False;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -296,7 +333,8 @@ standardizeRuleData[ as0: kvp[ "Rule" -> rule0_ ] ] :=
 
         $usedRuleNames[ new[ "Name" ] ] = True;
         new[ "Index" ] = $ruleIndex++;
-        Association[ KeyTake[ new, Keys @ defaults ], KeySort @ new ]
+        Association[ KeyTake[ new, Keys @ defaults ], KeySort @ new ] /.
+            Verbatim[ Inherited ] -> Inherited
     ];
 
 standardizeRuleData // endDefinition;
