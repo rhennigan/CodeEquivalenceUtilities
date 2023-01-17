@@ -23,10 +23,14 @@ CodeEquivalenceUtilities::InvalidRuleFile =
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Argument Patterns*)
-$$boolean   = True|False;
-$$integer   = _Integer? IntegerQ;
-$$string    = _String? StringQ;
-$$ruleUsage = $$string | All;
+$$boolean        = True|False;
+$$integer        = _Integer? IntegerQ;
+$$string         = _String? StringQ;
+$$ruleUsage      = $$string | All;
+$$basicRuleValue = $$string | $$integer | $$boolean | _DirectedInfinity | HoldPattern[ Infinity | -Infinity ];
+$$basicRuleValue = $$basicRuleValue | { $$basicRuleValue... };
+
+kvp[ a___ ] := KeyValuePattern @ Cases[ Flatten @ { a }, (Rule|RuleDelayed)[ b_, c_ ] :> (Rule|RuleDelayed)[ b, c ] ];
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -48,19 +52,26 @@ $RuleDefaults = <|
 |>;
 $RuleDefaults // Protect;
 
+$$ruleKey             = Alternatives @@ DeleteCases[ Keys @ $RuleDefaults, "Symbols" ];
 $defaultRuleDefaults  = $RuleDefaults;
 $ruleSetPath         := PacletObject[ "Wolfram/CodeEquivalenceUtilities" ][ "AssetLocation", "RuleSets" ];
 $namedRuleSets        = DeleteCases[ FileBaseName /@ FileNames[ { "*.wl", "*.wxf" }, $ruleSetPath ], "_SAMPLE" ];
 $loadingRules         = False;
 $rulesNeedSorting     = False;
+$defaultUsage         = "EquivalenceTesting";
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*GetRules*)
-GetRules[ usage: $$string ] := (
-    sortRules[ ];
-    Cases[ Lookup[ $RuleData, usage, { } ], KeyValuePattern[ "Rule" :> rule_ ] :> rule ]
-);
+GetRules[ args___ ] := Cases[ GetRuleData @ args, KeyValuePattern[ "Rule" :> rule_ ] :> rule ];
+
+(* ::**************************************************************************************************************:: *)
+(* ::Section::Closed:: *)
+(*GetRuleData*)
+GetRuleData[ ] := GetRuleData @ All;
+GetRuleData[ All ] := (sortRules[ ]; $RuleData);
+GetRuleData[ usage_ ] := GetRuleData[ usage, Automatic ];
+GetRuleData[ usage: $$string, filter_ ] := filterRules[ Lookup[ GetRuleData[ ], usage, { } ], filter ];
 
 (* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -78,6 +89,50 @@ sortRules // endDefinition;
 sortRules0 // beginDefinition;
 sortRules0[ rules_ ] := SortBy[ rules, priorityOrder ];
 sortRules0 // endDefinition;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*filterRules*)
+filterRules // beginDefinition;
+filterRules[ rules_List, group: $$string ] := Cases[ rules, kvp[ "Group" -> group ] ];
+filterRules[ rules_List, None|Automatic ] := rules;
+filterRules[ rules_List, filter_ ] := With[ { f = makeRuleFilter @ filter }, Select[ rules, f ] ];
+filterRules // endDefinition;
+
+
+makeRuleFilter // beginDefinition;
+makeRuleFilter[ as_Association? AssociationQ ] := combineRuleFilter @ KeyValueMap[ makeRuleFilter, as ];
+makeRuleFilter[ other_ ] := With[ { as = Association @ other }, makeRuleFilter @ as /; AssociationQ @ as ];
+makeRuleFilter[ key_, pattern_? StringPattern`StringPatternQ ] := filterStringMatch[ key, pattern ];
+makeRuleFilter[ key_, pattern_ ] := filterPatternMatch[ key, pattern ];
+makeRuleFilter // endDefinition;
+
+
+combineRuleFilter // ClearAll;
+combineRuleFilter[ { f_ } ] := f;
+combineRuleFilter[ fs_List ] := AllTrue[ Function[ f, TrueQ @ f[ # ] & ] /@ fs ];
+combineRuleFilter[ ___ ] := True &;
+
+
+filterStringMatch // ClearAll;
+filterStringMatch[ key_, patt_ ][ as_ ] := filterStringMatch[ key, patt, as[ key ] ];
+filterStringMatch[ key_, patt_, str_String ] := StringMatchQ[ str, patt ];
+filterStringMatch[ key_, patt_, values_List ] := AnyTrue[ values, filterStringMatch[ key, patt, # ] & ];
+filterStringMatch[ _, _, _ ] := False;
+
+filterPatternMatch // ClearAll;
+filterPatternMatch[ key_, patt_ ][ kvp[ key_ -> val_ ] ] := filterPatternMatch[ key, patt, HoldComplete @ val ];
+filterPatternMatch[ key_, patt_ ][ ___ ] := False;
+filterPatternMatch[ key_, patterns_List, value_ ] := AllTrue[ patterns, filterPatternMatch[ key, #, value ] & ];
+filterPatternMatch[ key_, patt_, HoldComplete[ values_List ] ] := AnyTrue[ values, matchQHeld @ patt ];
+filterPatternMatch[ key_, patt_, HoldComplete[ expr_ ] ] := matchQHeld[ expr, patt ];
+filterPatternMatch[ _, _, _ ] := False;
+
+matchQHeld // beginDefinition;
+matchQHeld // Attributes = { HoldAllComplete };
+matchQHeld[ patt_ ] := Function[ expr, matchQHeld[ expr, patt ], { HoldAllComplete } ];
+matchQHeld[ expr_, patt_ ] := MatchQ[ Unevaluated @ expr, patt ];
+matchQHeld // endDefinition;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -201,13 +256,13 @@ toRuleData[ ___ ] := Nothing;
 (*standardizeRuleData*)
 standardizeRuleData // beginDefinition;
 
-standardizeRuleData[ as: KeyValuePattern[ a_ -> b: Except[ $$string|$$integer|$$boolean ] ] ] :=
-    standardizeRuleData @ Append[ as, a :> b ];
+standardizeRuleData[ as: KeyValuePattern[ a: $$ruleKey :> b_ ] ] :=
+    standardizeRuleData @ Append[ as, a -> b ];
 
-standardizeRuleData[ as: KeyValuePattern[ key_ :> Inherited ] ] :=
+standardizeRuleData[ as: kvp[ key_ -> Inherited ] ] :=
     standardizeRuleData @ Append[ as, key :> { Inherited } ];
 
-standardizeRuleData[ as: KeyValuePattern[ key_ :> { ___, Inherited, ___ } ] ] :=
+standardizeRuleData[ as: kvp[ key_ -> { ___, Inherited, ___ } ] ] :=
     standardizeRuleData @ Merge[ { $RuleDefaults, as }, inheritRuleValues ];
 
 standardizeRuleData[ as: KeyValuePattern[ key_ :> inheritRuleValues[ { { defaults___ }, { a___, Inherited, b___ } } ] ] ] :=
@@ -216,7 +271,7 @@ standardizeRuleData[ as: KeyValuePattern[ key_ :> inheritRuleValues[ { { default
 standardizeRuleData[ as: KeyValuePattern[ key_ :> inheritRuleValues[ { ___, values_ } ] ] ] :=
     standardizeRuleData @ Append[ as, key :> values ];
 
-standardizeRuleData[ as0: KeyValuePattern[ "Rule" :> rule0_ ] ] :=
+standardizeRuleData[ as0: kvp[ "Rule" -> rule0_ ] ] :=
     Module[ { rule, defaults, as, new },
         rule     = MakeTransformationRules @ rule0;
         defaults = $RuleDefaults;

@@ -136,6 +136,8 @@ Wolfram`CodeEquivalenceUtilities`FullDefinitionData;
 Wolfram`CodeEquivalenceUtilities`FullSymbolName;
 Wolfram`CodeEquivalenceUtilities`GetAttributes;
 Wolfram`CodeEquivalenceUtilities`GetKeyValuePattern;
+Wolfram`CodeEquivalenceUtilities`GetRuleData;
+Wolfram`CodeEquivalenceUtilities`GetRules;
 Wolfram`CodeEquivalenceUtilities`HashPath;
 Wolfram`CodeEquivalenceUtilities`HashString;
 Wolfram`CodeEquivalenceUtilities`HashStringQ;
