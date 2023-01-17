@@ -6,12 +6,13 @@ Wolfram`CodeEquivalenceUtilitiesLoader`$MXFile = FileNameJoin @ {
     "CodeEquivalenceUtilities.mx"
 };
 
-Block[ { $ContextPath },
-    Quiet[
-        If[ FileExistsQ @ Wolfram`CodeEquivalenceUtilitiesLoader`$MXFile,
-            Get @ Wolfram`CodeEquivalenceUtilitiesLoader`$MXFile,
-            Get[ "Wolfram`CodeEquivalenceUtilities`Package`" ]
-        ],
-        General::shdw
-    ]
+Quiet[
+    If[ FileExistsQ @ Wolfram`CodeEquivalenceUtilitiesLoader`$MXFile,
+        Get @ Wolfram`CodeEquivalenceUtilitiesLoader`$MXFile,
+        WithCleanup[
+            Get[ "Wolfram`CodeEquivalenceUtilities`Package`" ],
+            { $Context, $ContextPath, $ContextAliases } = { ## }
+        ] & [ $Context, $ContextPath, $ContextAliases ]
+    ],
+    General::shdw
 ];

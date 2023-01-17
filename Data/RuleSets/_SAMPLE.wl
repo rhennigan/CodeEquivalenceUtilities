@@ -3,7 +3,7 @@
 
 (*
 Rules are specified as top level associations with the following keys:
-    * Category          (optional): Defaults to FileBaseName of the current file if omitted.
+    * Group             (optional): Defaults to FileBaseName of the current file if omitted.
     * Description       (optional): A short description of the rule.
     * IncompatibleRules (optional): A list of rule names that are not compatible with this rule.
     * Name              (optional): Specifies a name for the rule which can be referenced from other rules.
@@ -29,7 +29,7 @@ Some typical "Usage" values:
 (* ::Section::Closed:: *)
 (*Default Values*)
 SetRuleDefaults @ <|
-    "Category" -> "SampleCategory",
+    "Group"    -> "SampleGroup",
     "Usage"    :> { "SampleUsage" },
     "Priority" -> 10000
 |>;

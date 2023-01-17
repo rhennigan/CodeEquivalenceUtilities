@@ -23,7 +23,10 @@ CodeEquivalenceUtilities::InvalidRuleFile =
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Argument Patterns*)
-$$ruleUsage = _String? StringQ | All;
+$$boolean   = True|False;
+$$integer   = _Integer? IntegerQ;
+$$string    = _String? StringQ;
+$$ruleUsage = $$string | All;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -34,7 +37,7 @@ $RuleData // Protect;
 $RuleDefaults = <|
     "Name"              -> None,
     "Description"       -> "Transform expression with an anonymous replacement rule",
-    "Category"          -> "General",
+    "Group"             -> "General",
     "Usage"             -> { },
     "Symbols"           :> { },
     "Priority"          -> 0,
@@ -49,14 +52,32 @@ $defaultRuleDefaults  = $RuleDefaults;
 $ruleSetPath         := PacletObject[ "Wolfram/CodeEquivalenceUtilities" ][ "AssetLocation", "RuleSets" ];
 $namedRuleSets        = DeleteCases[ FileBaseName /@ FileNames[ { "*.wl", "*.wxf" }, $ruleSetPath ], "_SAMPLE" ];
 $loadingRules         = False;
+$rulesNeedSorting     = False;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*GetRules*)
-GetRules[ usage_String ] :=
-    Cases[ SortBy[ Join[ Lookup[ $RuleData, All, { } ], Lookup[ $RuleData, usage, { } ] ], priorityOrder ],
-           KeyValuePattern[ "Rule" :> rule_ ] :> rule
+GetRules[ usage: $$string ] := (
+    sortRules[ ];
+    Cases[ Lookup[ $RuleData, usage, { } ], KeyValuePattern[ "Rule" :> rule_ ] :> rule ]
+);
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*sortRules*)
+sortRules // beginDefinition;
+
+sortRules[ ] :=
+    If[ TrueQ @ $rulesNeedSorting,
+        blockProtected[ { $RuleData }, $RuleData = sortRules0 /@ $RuleData ];
+        $rulesNeedSorting = False;
     ];
+
+sortRules // endDefinition;
+
+sortRules0 // beginDefinition;
+sortRules0[ rules_ ] := SortBy[ rules, priorityOrder ];
+sortRules0 // endDefinition;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -100,7 +121,7 @@ namedRuleSetQ[ ___         ] := False;
 (*loadNamedRuleSet*)
 loadNamedRuleSet // beginDefinition;
 
-loadNamedRuleSet[ name_String ] := Enclose[
+loadNamedRuleSet[ name: $$string ] := Enclose[
     Block[ { $loadingRules = True },
         loadNamedRuleSet[ name ] =
             Module[ { file0, wxf, file, data },
@@ -109,7 +130,7 @@ loadNamedRuleSet[ name_String ] := Enclose[
                 file  = If[ FileExistsQ @ wxf, wxf, file0 <> ".wl" ];
                 ConfirmAssert @ FileExistsQ @ file;
                 data = ConfirmMatch[ loadRuleFile @ file, { __Association? AssociationQ } ];
-                SortBy[ data, priorityOrder ]
+                data
             ]
     ],
     throwInternalFailure[ HoldForm @ loadNamedRuleSet @ name, ##1 ] &
@@ -121,11 +142,10 @@ loadNamedRuleSet // endDefinition;
 (* ::Subsubsection::Closed:: *)
 (*priorityOrder*)
 priorityOrder // beginDefinition;
-priorityOrder[ KeyValuePattern[ "Priority" :> p_ ] ] := priorityOrder @ p;
-priorityOrder[ KeyValuePattern[ "Priority" -> p_ ] ] := priorityOrder @ p;
-priorityOrder[ -Infinity ] := { -1, 0 };
-priorityOrder[  Infinity ] := {  1, 0 };
-priorityOrder[  n_       ] := {  0, n };
+priorityOrder[ as_Association ] :={ priorityOrder @ as[ "Priority" ], as[ "Index" ] };
+priorityOrder[ -Infinity      ] := { -1, 0 };
+priorityOrder[  Infinity      ] := {  1, 0 };
+priorityOrder[  n_            ] := {  0, n };
 priorityOrder // endDefinition;
 
 (* ::**************************************************************************************************************:: *)
@@ -135,7 +155,7 @@ loadRuleFile // beginDefinition;
 
 loadRuleFile[ file_? FileExistsQ ] :=
     Internal`InheritedBlock[ { $RuleDefaults },
-        blockProtected[ { $RuleDefaults }, $RuleDefaults[ "Category" ] = FileBaseName @ file ];
+        blockProtected[ { $RuleDefaults }, $RuleDefaults[ "Group" ] = FileBaseName @ file ];
         Block[ { $ContextPath = DeleteDuplicates @ Prepend[ $ContextPath, "Wolfram`CodeEquivalenceUtilities`" ] },
             readRuleExpressions @ ExpandFileName @ file
         ]
@@ -147,9 +167,9 @@ loadRuleFile // endDefinition;
 (* ::Subsubsection::Closed:: *)
 (*readRuleExpressions*)
 readRuleExpressions // beginDefinition;
-readRuleExpressions[ file_String  ] := readRuleExpressions[ file, ToUpperCase @ FileExtension @ file ];
-readRuleExpressions[ file_, "WXF" ] := checkRuleExpressions[ file, Developer`ReadWXFFile @ file ];
-readRuleExpressions[ file_, "WL"  ] := checkRuleExpressions[ file, toRuleData /@ ReadList @ file ];
+readRuleExpressions[ file: $$string ] := readRuleExpressions[ file, ToUpperCase @ FileExtension @ file ];
+readRuleExpressions[ file_, "WXF"   ] := checkRuleExpressions[ file, Developer`ReadWXFFile @ file ];
+readRuleExpressions[ file_, "WL"    ] := checkRuleExpressions[ file, toRuleData /@ ReadList @ file ];
 readRuleExpressions // endDefinition;
 
 (* ::**************************************************************************************************************:: *)
@@ -181,7 +201,7 @@ toRuleData[ ___ ] := Nothing;
 (*standardizeRuleData*)
 standardizeRuleData // beginDefinition;
 
-standardizeRuleData[ as: KeyValuePattern[ a_ -> b: Except[ _String|_Integer|True|False ] ] ] :=
+standardizeRuleData[ as: KeyValuePattern[ a_ -> b: Except[ $$string|$$integer|$$boolean ] ] ] :=
     standardizeRuleData @ Append[ as, a :> b ];
 
 standardizeRuleData[ as: KeyValuePattern[ key_ :> Inherited ] ] :=
@@ -196,12 +216,67 @@ standardizeRuleData[ as: KeyValuePattern[ key_ :> inheritRuleValues[ { { default
 standardizeRuleData[ as: KeyValuePattern[ key_ :> inheritRuleValues[ { ___, values_ } ] ] ] :=
     standardizeRuleData @ Append[ as, key :> values ];
 
-standardizeRuleData[ as: KeyValuePattern[ "Rule" :> rule0_ ] ] :=
-    With[ { rule = MakeTransformationRules @ rule0 },
-        Association[ $RuleDefaults, as, "Rule" :> rule ]
+standardizeRuleData[ as0: KeyValuePattern[ "Rule" :> rule0_ ] ] :=
+    Module[ { rule, defaults, as, new },
+        rule     = MakeTransformationRules @ rule0;
+        defaults = $RuleDefaults;
+        as       = Association[ defaults, as0, "Rule" :> Evaluate @ rule ];
+        new      = generateRuleName @ as;
+
+        While[ $usedRuleNames @ new[ "Name" ] && StringQ @ new[ "Name" ],
+               new[ "Name" ] = generateRuleName0[ new[ "Group" ], new ]
+        ];
+
+        $usedRuleNames[ new[ "Name" ] ] = True;
+        new[ "Index" ] = $ruleIndex++;
+        Association[ KeyTake[ new, Keys @ defaults ], KeySort @ new ]
     ];
 
 standardizeRuleData // endDefinition;
+
+$usedRuleNames = <| |>;
+$ruleIndex     = 1;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*generateRuleName*)
+generateRuleName // beginDefinition;
+generateRuleName[ as: KeyValuePattern[ "Name" :> name_ ] ] := generateRuleName @ Association[ as, "Name" -> name ];
+generateRuleName[ as: KeyValuePattern[ "Name" -> name: $$string ] ] := as;
+generateRuleName[ as: KeyValuePattern[ "Name" -> Except[ $$string ] ] ] := generateRuleName @ KeyDrop[ as, "Name" ];
+
+generateRuleName[ as: KeyValuePattern @ { "Group" -> group_, "Rule" :> rule_ } ] :=
+    <| "Name" -> generateRuleName0[ group, as ], as |>;
+
+generateRuleName // endDefinition;
+
+generateRuleName0 // beginDefinition;
+generateRuleName0[ group: $$string, expr_ ] := group <> "-" <> b62Hash[ expr, "MD5", 32 ];
+generateRuleName0 // endDefinition;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*b62Hash*)
+b62Hash // beginDefinition;
+b62Hash[ expr_ ] := b62Hash[ Unevaluated @ expr, "MD5" ];
+b62Hash[ expr_, type_ ] := b62Hash[ Unevaluated @ expr, type, Infinity ];
+b62Hash[ expr_, type_, mod_ ] := b62Encode @ Mod[ Hash[ Unevaluated @ expr, type ], 2^mod ];
+b62Hash // endDefinition;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*b62Encode*)
+b62Encode // beginDefinition;
+b62Encode[ int: $$integer ] := StringJoin @ Replace[ IntegerDigits[ int, 62 ], $b62IntToChar, { 1 } ];
+b62Encode // endDefinition;
+
+$lcChars  = CharacterRange[ "a", "z" ];
+$ucChars  = CharacterRange[ "A", "Z" ];
+$numChars = CharacterRange[ "0", "9" ];
+
+$b62Chars     = Join[ $lcChars, $ucChars, $numChars ];
+$b62IntToChar = Association @ MapIndexed[ First[ #2 ] - 1 -> #1 &, $b62Chars ];
+$b62CharToInt = AssociationMap[ Reverse, $b62IntToChar ];
 
 (* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
@@ -231,8 +306,10 @@ addToRuleData[ data_ ] :=(
 addToRuleData[ usage: $$ruleUsage, data: { __Association } ] :=
     Module[ { current, combined },
         current  = Lookup[ $RuleData, usage, { } ];
-        combined = SortBy[ Union[ current, data ], priorityOrder ];
-        blockProtected[ { $RuleData }, $RuleData[ usage ] = combined ]
+        combined = SortBy[ DeleteDuplicates @ Join[ current, data ], priorityOrder ];
+        blockProtected[ { $RuleData }, $RuleData[ usage ] = combined ];
+        $rulesNeedSorting = True;
+        combined
     ];
 
 addToRuleData // endDefinition;

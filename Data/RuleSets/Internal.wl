@@ -13,7 +13,6 @@ Begin[ "`Private`" ];
 (* ::Section::Closed:: *)
 (*Default Values*)
 SetRuleDefaults @ <|
-    "Category" -> "PriorityRules",
     "Usage"    -> { "EquivalenceTesting", "Optimization", "Scoping", "Simplification", "TypeSystem" },
     "Priority" -> -1000
 |>;
