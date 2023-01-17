@@ -6,13 +6,16 @@ Wolfram`CodeEquivalenceUtilitiesLoader`$MXFile = FileNameJoin @ {
     "CodeEquivalenceUtilities.mx"
 };
 
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 Quiet[
     If[ FileExistsQ @ Wolfram`CodeEquivalenceUtilitiesLoader`$MXFile,
         Get @ Wolfram`CodeEquivalenceUtilitiesLoader`$MXFile,
         WithCleanup[
             Get[ "Wolfram`CodeEquivalenceUtilities`Package`" ],
-            { $Context, $ContextPath, $ContextAliases } = { ## }
-        ] & [ $Context, $ContextPath, $ContextAliases ]
+            { $Context, $ContextPath, System`$ContextAliases } = { ## }
+        ] & [ $Context, $ContextPath, System`$ContextAliases ]
     ],
     General::shdw
 ];
+(* :!CodeAnalysis::EndBlock:: *)

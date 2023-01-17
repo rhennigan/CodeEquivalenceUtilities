@@ -4,7 +4,7 @@
 
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::TopLevelAssociation:: *)
-(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
+(* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 Begin[ "`Private`" ];
@@ -20,8 +20,6 @@ SetRuleDefaults @ <|
 (* ::Section::Closed:: *)
 (*Definitions*)
 
-(* :!CodeAnalysis::BeginBlock:: *)
-(* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 $booleanFunctions1 = HoldPattern @ Alternatives[
     AcyclicGraphQ, AlgebraicIntegerQ, AlgebraicUnitQ, \
     AntihermitianMatrixQ, AntisymmetricMatrixQ, ArrayQ, AssociationQ, \
@@ -55,7 +53,6 @@ $booleanFunctions1 = HoldPattern @ Alternatives[
     ValueQ, VectorQ, System`VertexTransitiveGraphQ, VertexWeightedGraphQ, \
     VideoQ, WeaklyConnectedGraphQ, WeightedGraphQ
 ];
-(* :!CodeAnalysis::EndBlock:: *)
 
 $booleanFunctionsN = HoldPattern @ Alternatives[
     SameQ, UnsameQ
