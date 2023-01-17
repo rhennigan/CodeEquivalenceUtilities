@@ -13,19 +13,41 @@ Begin[ "`Private`" ];
 (* ::Section::Closed:: *)
 (*Default Values*)
 SetRuleDefaults @ <|
-    "Description" -> "Transform entity operations into an equivalent form.",
-    "Usage"       -> { "EquivalenceTesting" },
-    "Symbols"     :> { Entity }
+    "Usage" -> { "EquivalenceTesting" }
 |>;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Rules*)
-HoldComplete[
-    Entity[ s_String, f_ ][ "Image" ] :> Entity[ s, f ][ EntityProperty[ s, "Image" ] ],
-    (e: _Entity | _EntityClass)[ a_ ] :> EntityValue[ e, a ],
-    EntityValue[ Entity[ a_String, b___ ], c_String ] :> EntityValue[ Entity[ a, b ], EntityProperty[ a, c ] ]
-]
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "EntityPropertyString",
+    "Description" -> "Transform Entity property SubValues into an equivalent EntityProperty form",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { Entity, EntityProperty },
+    "Rule"        :> Entity[ s_String, f_ ][ property_String ] :> Entity[ s, f ][ EntityProperty[ s, property ] ]
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "EntitySubValuesToEntityValue",
+    "Description" -> "Transform Entity/EntityClass SubValues into an equivalent EntityValue form",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { Entity, EntityClass, EntityValue },
+    "Rule"        :> (e: _Entity|_EntityClass)[ a_ ] :> EntityValue[ e, a ]
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "EntityPropertyStringToEntityProperty",
+    "Description" -> "Transform entity property strings into an equivalent EntityProperty form",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { Entity, EntityValue, EntityProperty },
+    "Rule"        :>
+        EntityValue[ Entity[ a_String, b___ ], c_String ] :>
+            EntityValue[ Entity[ a, b ], EntityProperty[ a, c ] ]
+|>
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)

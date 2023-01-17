@@ -80,11 +80,26 @@ arrayUnpadCF := arrayUnpadCF =
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Rules*)
-HoldComplete[
-    (f: Erosion | Dilation)[ img_, r_? IntTypeQ ] :> f[ img, BoxMatrix @ r ],
-    (f: Erosion | Dilation)[ (f: Erosion | Dilation)[ img_, m1_? bitMatrixQ ], m2_? bitMatrixQ ] :>
-        With[ { m = combineDilationKernels[ m1, m2 ] }, f[ img, m ] /; bitMatrixQ @ m ]
-]
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "ErosionDilationBoxMatrix",
+    "Description" -> "Convert integer second argument of Erosion/Dilation to a BoxMatrix",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { Erosion, Dilation, BoxMatrix },
+    "Rule"        :> (f: Erosion|Dilation)[ img_, r_? IntTypeQ ] :> f[ img, BoxMatrix @ r ]
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "ErosionDilationNested",
+    "Description" -> "Transform nested Erosion/Dilation into a single Erosion/Dilation",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { Erosion, Dilation },
+    "Rule"        :>
+        (f: Erosion|Dilation)[ (f: Erosion|Dilation)[ img_, m1_? bitMatrixQ ], m2_? bitMatrixQ ] :>
+            With[ { m = combineDilationKernels[ m1, m2 ] }, f[ img, m ] /; bitMatrixQ @ m ]
+|>
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)

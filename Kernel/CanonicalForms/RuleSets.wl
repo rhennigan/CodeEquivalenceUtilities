@@ -99,7 +99,9 @@ filterRules[ rules_List, None|Automatic ] := rules;
 filterRules[ rules_List, filter_ ] := With[ { f = makeRuleFilter @ filter }, Select[ rules, f ] ];
 filterRules // endDefinition;
 
-
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*makeRuleFilter*)
 makeRuleFilter // beginDefinition;
 makeRuleFilter[ as_Association? AssociationQ ] := combineRuleFilter @ KeyValueMap[ makeRuleFilter, as ];
 makeRuleFilter[ other_ ] := With[ { as = Association @ other }, makeRuleFilter @ as /; AssociationQ @ as ];
@@ -107,19 +109,26 @@ makeRuleFilter[ key_, pattern_? StringPattern`StringPatternQ ] := filterStringMa
 makeRuleFilter[ key_, pattern_ ] := filterPatternMatch[ key, pattern ];
 makeRuleFilter // endDefinition;
 
-
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*combineRuleFilter*)
 combineRuleFilter // ClearAll;
 combineRuleFilter[ { f_ } ] := f;
 combineRuleFilter[ fs_List ] := AllTrue[ Function[ f, TrueQ @ f[ # ] & ] /@ fs ];
 combineRuleFilter[ ___ ] := True &;
 
-
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*filterStringMatch*)
 filterStringMatch // ClearAll;
 filterStringMatch[ key_, patt_ ][ as_ ] := filterStringMatch[ key, patt, as[ key ] ];
 filterStringMatch[ key_, patt_, str_String ] := StringMatchQ[ str, patt ];
 filterStringMatch[ key_, patt_, values_List ] := AnyTrue[ values, filterStringMatch[ key, patt, # ] & ];
 filterStringMatch[ _, _, _ ] := False;
 
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*filterPatternMatch*)
 filterPatternMatch // ClearAll;
 filterPatternMatch[ key_, patt_ ][ kvp[ key_ -> val_ ] ] := filterPatternMatch[ key, patt, HoldComplete @ val ];
 filterPatternMatch[ key_, patt_ ][ ___ ] := False;
@@ -128,6 +137,9 @@ filterPatternMatch[ key_, patt_, HoldComplete[ values_List ] ] := AnyTrue[ value
 filterPatternMatch[ key_, patt_, HoldComplete[ expr_ ] ] := matchQHeld[ expr, patt ];
 filterPatternMatch[ _, _, _ ] := False;
 
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*matchQHeld*)
 matchQHeld // beginDefinition;
 matchQHeld // Attributes = { HoldAllComplete };
 matchQHeld[ patt_ ] := Function[ expr, matchQHeld[ expr, patt ], { HoldAllComplete } ];
