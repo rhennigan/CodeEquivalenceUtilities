@@ -320,6 +320,9 @@ standardizeRuleData[ as: KeyValuePattern[ key_ :> inheritRuleValues[ { { default
 standardizeRuleData[ as: KeyValuePattern[ key_ :> inheritRuleValues[ { ___, values_ } ] ] ] :=
     standardizeRuleData @ Append[ as, key :> values ];
 
+standardizeRuleData[ as: kvp[ "Inline" -> { syms___Symbol }, "Rule" -> rule_ ] ] :=
+    standardizeRuleData @ Append[ KeyDrop[ as, "Inline" ], Inline[ { syms }, "Rule" :> rule ] ];
+
 standardizeRuleData[ as0: kvp[ "Rule" -> rule0_ ] ] :=
     Module[ { rule, defaults, as, new },
         rule     = MakeTransformationRules @ rule0;
