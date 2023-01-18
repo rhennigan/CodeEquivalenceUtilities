@@ -61,18 +61,80 @@ $booleanFunctionsN = HoldPattern @ Alternatives[
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Rules*)
-Inline[ { $booleanFunctions1, $booleanFunctionsN },
-    HoldComplete[
-        TrueQ[ (h:$booleanFunctions1)[ x_ ] ] :> h @ x,
-        TrueQ[ (h:$booleanFunctionsN)[ x___ ] ] :> h @ x,
-        SameQ[ x_, True ] :> TrueQ @ x,
-        SameQ[ True, x_ ] :> TrueQ @ x,
-        AtomQ[ _? atomQ ] :> True,
-        IntegerQ[ _? IntTypeQ ] :> True,
-        StringQ[ _? StringTypeQ ] :> True,
-        AssociationQ[ _? associationQ ] :> True
-    ]
-]
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "QFunctions-J1Hx",
+    "Description" -> "Transform expression with an anonymous replacement rule",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { TrueQ },
+    "Inline"      :> { $booleanFunctions1 },
+    "Rule"        :> TrueQ[ (h: $booleanFunctions1)[ x_ ] ] :> h @ x
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "QFunctions-dT7TWk",
+    "Description" -> "Transform expression with an anonymous replacement rule",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { TrueQ },
+    "Inline"      :> { $booleanFunctionsN },
+    "Rule"        :> TrueQ[ (h: $booleanFunctionsN)[ x___ ] ] :> h @ x
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "QFunctions-c5t5aa",
+    "Description" -> "Transform expression with an anonymous replacement rule",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { SameQ, True, TrueQ },
+    "Rule"        :> (x_) === True :> TrueQ @ x
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "QFunctions-eefpzJ",
+    "Description" -> "Transform expression with an anonymous replacement rule",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { True, SameQ, TrueQ },
+    "Rule"        :> True === (x_) :> TrueQ @ x
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "QFunctions-rudVk",
+    "Description" -> "Transform expression with an anonymous replacement rule",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { AtomQ, True },
+    "Rule"        :> AtomQ[ _? atomQ ] :> True
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "QFunctions-bRW95c",
+    "Description" -> "Transform expression with an anonymous replacement rule",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { IntegerQ, True },
+    "Rule"        :> IntegerQ[ _? IntTypeQ ] :> True
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "QFunctions-b5cXk6",
+    "Description" -> "Transform expression with an anonymous replacement rule",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { StringQ, True },
+    "Rule"        :> StringQ[ _? StringTypeQ ] :> True
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "QFunctions-dyteEQ",
+    "Description" -> "Transform expression with an anonymous replacement rule",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { AssociationQ, Association, True },
+    "Rule"        :> AssociationQ[ _? associationQ ] :> True
+|>
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
