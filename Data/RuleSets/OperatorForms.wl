@@ -57,14 +57,66 @@ $$reverseOps2 = HoldPattern @ Alternatives[
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Rules*)
-Inline[ { $$forwardOps, $$reverseOps, $$reverseOps2 }, HoldComplete[
-    (h:$$forwardOps)[ a_ ][ b_ ] :> h[ a, b ],
-    (h:$$reverseOps)[ a_ ][ b_ ] :> h[ b, a ],
-    (h:$$reverseOps2)[ a_, b_ ][ c_ ] :> h[ c, a, b ],
-    (h:$$forwardOps)[ a_ ] :> Function[ h[ a, # ] ],
-    (h:$$reverseOps)[ a_ ] :> Function[ h[ #, a ] ],
-    (h:$$reverseOps2)[ a_, b_ ] :> Function[ h[ #, a, b ] ]
-] ]
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "OperatorForms-QxjJX",
+    "Description" -> "Transform forward operator forms into canonical forms",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { },
+    "Inline"      :> { $$forwardOps },
+    "Rule"        :> (h: $$forwardOps)[ a_ ][ b_ ] :> h[ a, b ]
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "OperatorForms-eyvTQ1",
+    "Description" -> "Transform reverse operator forms into canonical forms",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { },
+    "Inline"      :> { $$reverseOps },
+    "Rule"        :> (h: $$reverseOps)[ a_ ][ b_ ] :> h[ b, a ]
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "OperatorForms-dFqVpP",
+    "Description" -> "Transform reverse operator forms into canonical forms",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { },
+    "Inline"      :> { $$reverseOps2 },
+    "Rule"        :> (h: $$reverseOps2)[ a_, b_ ][ c_ ] :> h[ c, a, b ]
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "OperatorForms-eEcR9I",
+    "Description" -> "Transform forward operator forms into canonical forms",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { },
+    "Inline"      :> { $$forwardOps },
+    "Rule"        :> (h: $$forwardOps)[ a_ ] :> (h[ a, #1 ] &)
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "OperatorForms-cuHSzf",
+    "Description" -> "Transform reverse operator forms into canonical forms",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { },
+    "Inline"      :> { $$reverseOps },
+    "Rule"        :> (h: $$reverseOps)[ a_ ] :> (h[ #1, a ] &)
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "OperatorForms-zZeRC",
+    "Description" -> "Transform reverse operator forms into canonical forms",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { },
+    "Inline"      :> { $$reverseOps2 },
+    "Rule"        :> (h: $$reverseOps2)[ a_, b_ ] :> (h[ #1, a, b ] &)
+|>
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
