@@ -950,7 +950,6 @@ Scan[ defLiteralSymbol,
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*ToTypedBinding*)
-Quiet[
 
 toTypedPatterns // ClearAll;
 toTypedPatterns // Attributes = {HoldAll};
@@ -981,10 +980,6 @@ ToTypedBinding[bind_[patt_, defn_]] :=
       Delete[
         bind @@@ TempHold @@ {{newPatt, newDefn}}, {{1, 1, 0}, {1, 2, 0}}]
     ], RuleDelayed::rhs];
-
-    ,
-    RuleDelayed::rhs
-];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

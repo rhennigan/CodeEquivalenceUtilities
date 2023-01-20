@@ -29,6 +29,10 @@ $$string         = _String? StringQ;
 $$ruleUsage      = $$string | All;
 $$basicRuleValue = $$string | $$integer | $$boolean | _DirectedInfinity | HoldPattern[ Infinity | -Infinity ];
 $$basicRuleValue = $$basicRuleValue | { $$basicRuleValue... };
+$$rule           = (Rule|RuleDelayed)[ _, _ ];
+$$rules          = $$rule | { $$rule... };
+$$filter         = Inherited | _Association? AssociationQ;
+$$customRules    = { ($$rules | $$filter)... };
 
 kvp[ a___ ] := KeyValuePattern @ Cases[ Flatten @ { a }, (Rule|RuleDelayed)[ b_, c_ ] :> (Rule|RuleDelayed)[ b, c ] ];
 except[ a___ ] := Verbatim[ Except ][ a ];
@@ -80,7 +84,36 @@ GetRuleData[ All, filter__ ] :=
     ];
 
 GetRuleData[ usage_ ] := GetRuleData[ usage, Automatic ];
+GetRuleData[ Automatic, filter__ ] := GetRuleData[ $defaultUsage, filter ];
+GetRuleData[ usage: $$string, rules: $$customRules ] := customizeRules[ usage, rules ];
 GetRuleData[ usage: $$string, filter__ ] := filterRules[ Lookup[ GetRuleData[ ], usage, { } ], filter ];
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*customizeRules*)
+customizeRules // beginDefinition;
+
+customizeRules[ usage_, rules_ ] :=
+    sortRules0 @ DeleteDuplicates @ customizeRules[ usage, { }, rules ];
+
+customizeRules[ usage_, { rules___ }, { Inherited|Automatic, rest___ } ] :=
+    customizeRules[ usage, DeleteDuplicates @ Flatten @ { rules, GetRuleData @ usage }, { rest } ];
+
+customizeRules[ usage_, { ___ }, { None, rest___ } ] :=
+    customizeRules[ usage, { }, { rest } ];
+
+customizeRules[ usage_, { rules___ }, { data: kvp[ "Rule" -> _ ], rest___ } ] :=
+    customizeRules[ usage, { rules, toRuleData @ data }, { rest } ];
+
+customizeRules[ usage_, rules_List, { filter_? AssociationQ, rest___ } ] :=
+    customizeRules[ usage, filterRules[ rules, filter ], { rest } ];
+
+customizeRules[ usage_, { rules___ }, { rule: (Rule|RuleDelayed)[ _, _ ], rest___ } ] :=
+    customizeRules[ usage, { rules, toRuleData @ <| "Rule" :> rule |> }, { rest } ];
+
+customizeRules[ usage_, rules_, { } ] := rules;
+
+customizeRules // endDefinition;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)

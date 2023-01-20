@@ -7,7 +7,7 @@ PacletObject[ <|
     "DocumentationURL" -> "https://paclets.com",
     "License"          -> "MIT",
     "PublisherID"      -> "Wolfram",
-    "Version"          -> "2.7.0",
+    "Version"          -> "3.0.0",
     "WolframVersion"   -> "12.2+",
     "Keywords"         -> {
         "canonical forms",

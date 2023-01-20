@@ -357,7 +357,8 @@ keyHash[ expr_ ] :=
 (*$cacheStateValues*)
 $cacheStateValues := {
     $AllowedEvaluationPatterns,
-    $dispatchHash
+    $dispatchHash,
+    $PostProcessingFunction
 };
 
 (* ::**********************************************************************:: *)
