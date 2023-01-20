@@ -262,15 +262,12 @@ correct form for a transformation rule.";
 
 $nohp = Except[ Verbatim[ HoldPattern ][ _ ] ];
 
+MakeTransformationRules[ KeyValuePattern[ "Rule" :> rule_ ] ] :=
+  MakeTransformationRules @ rule;
+
+
 MakeTransformationRules[ ( Rule | RuleDelayed )[ p: $nohp, exp_ ] ] :=
   Inline[ $nohp, MakeTransformationRules[ HoldPattern @ p :> exp ] ];
-
-
-(* :!CodeAnalysis::Disable::Arguments::With:: *)
-MakeTransformationRules[
-    RuleDelayed[ p: $nohp, With[ vars_, exp: Except[ _Condition ] ] ]
-] :=
-  Inline[ $nohp, HoldPattern @ p :> TrEval @ With[ vars, HoldApply @ exp ] ];
 
 
 MakeTransformationRules[ p: $nohp :> eval_PartialEvaluation ] :=

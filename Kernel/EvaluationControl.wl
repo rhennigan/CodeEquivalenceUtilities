@@ -689,6 +689,7 @@ EvaluateSafely // Options = {
 };
 
 EvaluateSafely::unsafe = "Sandboxed the following expressions: `1`";
+Off[ EvaluateSafely::unsafe ];
 
 EvaluateSafely[ expr_, opts: OptionsPattern[ ] ] := allowEvaluations[
     OptionValue[ "AllowedEvaluationPatterns" ],
@@ -1350,7 +1351,6 @@ With[ {
           Import[ domains, "Hyperlinks"|"TSV"|"String"|{"Hyperlinks"|"TSV"|"String"}, ___ ],
           LinkWrite[ _, Except[ CallPacket[ _CloudSystem`Private`ServiceDispatch ] ] ],
           LinkWrite[ _, CallPacket @ CloudSystem`Private`ServiceDispatch[ _CloudSystem`CloudObject`DoCloudOperation? safeCloudOperationQ ] ],
-          LinkWrite[ link_LinkObject, ___ ] /; MatchQ[ $FrontEnd, HoldPattern @ FrontEndObject @ link ],
           OpenWrite[ in_String /; StringMatchQ[ in, "in:"~~DigitCharacter.. ], ___, Method -> "RunPipe", ___ ],
           Put[ ___, "put.wl" | $Failed | CURLLink`HTTP`Private`getFile @ None ],
           RenameFile[ $pathWritable, $pathWritable, ___ ],

@@ -7,7 +7,7 @@ PacletObject[ <|
     "DocumentationURL" -> "https://paclets.com",
     "License"          -> "MIT",
     "PublisherID"      -> "Wolfram",
-    "Version"          -> "2.6.0",
+    "Version"          -> "2.7.0",
     "WolframVersion"   -> "12.2+",
     "Keywords"         -> {
         "canonical forms",
@@ -47,7 +47,8 @@ PacletObject[ <|
             "Asset",
             "Assets"   -> {
                 { "License"        , "./LICENSE"                  },
-                { "SimplifySymbols", "./Data/SimplifySymbols.wxf" }
+                { "SimplifySymbols", "./Data/SimplifySymbols.wxf" },
+                { "RuleSets"       , "./Data/RuleSets"            }
             }
         }
     }
