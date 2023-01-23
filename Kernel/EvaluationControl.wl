@@ -914,7 +914,7 @@ removeTypes[ expr_ ] :=
                     Verbatim[ Pattern ][ symbol_, Verbatim[ Blank ][ ] ],
                     Verbatim[ Verbatim ][ patt_ ]
                 ] :> symbol: patt,
-                HoldPattern @ TypedSymbol[ s_? SymbolQ, _ ] :> TrEval @ s
+                HoldPattern @ TypedSymbol[ s_? SymbolQ, _ ] :> RuleCondition @ s
             }
         ],
         RuleDelayed::rhs

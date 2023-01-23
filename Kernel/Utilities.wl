@@ -78,7 +78,6 @@ MakeSelfExtractingExpression;
 MakeSelfExtractingFunction;
 MinimalFullDefinition;
 OnceUnlessFailed;
-PartialEvaluation;
 PreserveDefinitions;
 RelativePath;
 RenameSymbol;
@@ -116,7 +115,6 @@ ToFullString;
 ToSandboxedExpression;
 ToWDX;
 TrackNewSymbols;
-TrEval;
 UAtomQ;
 UFlatQ;
 UIntegerQ;
@@ -141,24 +139,9 @@ Begin[ "`Private`" ];
 
 (******************************************************************************)
 
-
-
 getUnboundSymbols // ClearAll;
 getUnboundSymbols // Attributes = { HoldAllComplete };
-
-getUnboundSymbols[ args___ ] :=
-  Module[ { $fail },
-      Quiet[ DeleteCases[ Internal`GetUnboundSymbols @ args,
-                          s_ /; Check[ Context @ Unevaluated @ s,
-                                       $fail,
-                                       Context::notfound
-                                ] === $fail
-             ],
-             Context::notfound
-      ]
-  ];
-
-
+getUnboundSymbols[ args___ ] := Select[ Internal`GetUnboundSymbols @ args, SymbolQ ];
 
 (******************************************************************************)
 
@@ -168,14 +151,13 @@ renameURL // Options    = { };
 
 
 renameURL[ s_String ] :=
-  If[ StringQ @ $WolframUUID && StringQ @ $UserURLBase,
-      StringReplace[ s, "user-" <> $WolframUUID :> $UserURLBase ],
-      s
-  ];
+    If[ StringQ @ $WolframUUID && StringQ @ $UserURLBase,
+        StringReplace[ s, "user-"<>$WolframUUID :> $UserURLBase ],
+        s
+    ];
 
 
-renameURL[ CloudObject[ s_String ] ] :=
-  CloudObject @ renameURL @ s;
+renameURL[ CloudObject[ s_String ] ] := CloudObject @ renameURL @ s;
 
 
 
@@ -185,7 +167,7 @@ $cloudRootDirectory := renameURL @ $CloudRootDirectory;
 $cloudRootPattern // ClearAll;
 $cloudRootPattern :=
   If[ StringQ @ $WolframUUID && StringQ @ $UserURLBase,
-      $CloudBase ~~ ("/" | "") ~~ "objects" ~~ ("/" | "") ~~ (("user-" ~~ $WolframUUID) | $UserURLBase) ~~ ("/" | ""),
+      $CloudBase ~~ ("/"|"") ~~ "objects" ~~ ("/"|"") ~~ (("user-"~~$WolframUUID) | $UserURLBase) ~~ ("/"|""),
       ""
   ];
 
@@ -253,12 +235,12 @@ TempHold /:
 
 
 TempHold /: TempHold[ exp___ ] /. p_ :> e_ :=
-  TempHold @@ ( HoldComplete @ exp /. p :> TrEval @ e ) /;
+  TempHold @@ ( HoldComplete @ exp /. p :> RuleCondition @ e ) /;
     TrueQ @ $EvaluateTempHoldReplacements;
 
 
 TempHold /: TempHold[ exp___ ] //. p_ :> e_ :=
-  TempHold @@ ( HoldComplete @ exp //. p :> TrEval @ e ) /;
+  TempHold @@ ( HoldComplete @ exp //. p :> RuleCondition @ e ) /;
     TrueQ @ $EvaluateTempHoldReplacements;
 
 
@@ -269,15 +251,14 @@ StripHead // Attributes = { };
 StripHead // Options    = { };
 
 StripHead[ expression_, head_ ] :=
-  expression //. {
-    (f_)[ a1___, head[ a2___ ], a3___ ] :> f[ a1, a2, a3 ],
-      head[ a___ ] :> a
-  };
+    ReplaceRepeated[
+        expression,
+        { (f_)[ a1___, head[ a2___ ], a3___ ] :> f[ a1, a2, a3 ], head[ a___ ] :> a }
+    ];
 
 (******************************************************************************)
 
-StripTempHolds[ expression_ ] :=
-  StripHead[ expression, TempHold ];
+StripTempHolds[ expression_ ] := StripHead[ expression, TempHold ];
 
 (******************************************************************************)
 
@@ -290,22 +271,6 @@ HoldApply[ (f_)[ args___ ] ] := HoldApply[ f, { args } ];
 
 HoldApply /: Normal @ HoldApply[ f_, { args___ } ] :=
   HoldComplete @ f @ args;
-
-
-
-(******************************************************************************)
-
-
-
-(* Trott-Strzebonski in-place evaluation
-   http://library.wolfram.com/infocenter/Conferences/377/ *)
-TrEval // Attributes = { };
-TrEval // Options    = { };
-
-
-TrEval /: HoldPattern[ swap_ :> TrEval @ eval_ ] :=
-  swap :> With[ { eval$ = eval }, eval$ /; True ];
-
 
 
 (******************************************************************************)
@@ -484,134 +449,6 @@ SeqHead[ arg___ ] := Null /; (
 (******************************************************************************)
 
 
-
-(*Inline // Attributes = { HoldAllComplete };
-Inline // Options    =
-  {
-      Definitions     -> { OwnValues, DownValues, UpValues },
-      MaxIterations   -> 1,
-      "ForceSymbolic" -> False
-  };
-
-
-Inline[ function_,
-        expression_,
-        wrapper_ : Automatic,
-        options : OptionsPattern[ ]
-] :=
-  Module[
-
-      {
-          held, definitionTypes, getDefinitions, replacementRules,
-          makeSymbolic, symbolicRules, replaced, wrapperFunction
-      },
-
-      held = HoldComplete @ expression;
-      definitionTypes = OptionValue @ Definitions;
-
-      getDefinitions =
-        If[ SeqHead @ function === Inactive
-            ,
-            With[ { f = Identity @@ function },
-                With[ { def = # @ f }, Inactivate @ def ] &
-            ]
-            ,
-            # @ function &
-        ];
-
-      replacementRules =
-        Flatten @ Prepend[
-            getDefinitions /@ definitionTypes,
-            HoldPattern[ function /@ list_ ] :> (function @ # & /@ list)
-        ];
-
-      *)(*replacementRules = getDefinitions /@ definitionTypes // Flatten;*)(*
-      makeSymbolic = # /. Verbatim[ Blank ][ ___ ] -> Blank[ ] &;
-
-      symbolicRules = If[ OptionValue @ "ForceSymbolic",
-          MapAt[ makeSymbolic, replacementRules, { All, 1 } ],
-          replacementRules
-      ];
-
-      Off @ ReplaceRepeated::rrlim;
-
-      replaced = ReplaceRepeated[ held, symbolicRules,
-          MaxIterations -> OptionValue @ MaxIterations
-      ];
-
-      On @ ReplaceRepeated::rrlim;
-
-      wrapperFunction = wrapper /. Automatic -> Identity;
-
-      wrapperFunction @@ replaced
-  ];
-
-
-
-Inline[ f_, exp_, opts : OptionsPattern[ ] ] :=
-  Inline[ f, exp, Identity, opts ];
-
-
-
-iInline // ClearAll;
-iInline // Attributes = { HoldAllComplete };
-iInline // Options    = Options @ Inline;
-
-
-iInline[ expression_, function_ ] :=
-  With[ { currentOptions = Options @ iInline },
-        Inline[ function, expression, HoldComplete, currentOptions ]
-  ];
-
-
-
-listToHold // ClearAll;
-listToHold // Attributes = { HoldAllComplete };
-listToHold // Options    = { };
-
-
-listToHold[ { a$___ } ] := Hold @ a$;
-listToHold[ list_List, All ] := Identity @@ (Hold @ list /. List -> Hold);
-
-
-
-dropHead // ClearAll;
-dropHead // Attributes = { };
-dropHead // Options    = { };
-
-
-dropHead = Identity @@ # &;
-
-
-
-Inline[
-    functionList : { ___ },
-    expression_,
-    wrapper_ : Automatic,
-    options : OptionsPattern[ ]
-] :=
-  Module[
-
-      {
-          heldExpression, heldFunctions, functionCount,
-          folded, unstacked, wrapperFunction
-      },
-
-      heldExpression = HoldComplete @ expression;
-      heldFunctions = listToHold @ functionList;
-      functionCount = Length @ heldFunctions;
-
-      iInline ~SetOptions~ options;
-      folded = Fold[ iInline, heldExpression, heldFunctions ];
-      iInline // Options = Options @ Inline;
-
-      unstacked = Nest[ dropHead, folded, functionCount ];
-      wrapperFunction = wrapper /. Automatic -> Identity;
-
-      wrapperFunction @@ unstacked
-  ];*)
-
-
 Inline // Attributes = { HoldAllComplete };
 Inline // Options    = { MaxIterations -> Automatic };
 
@@ -652,34 +489,9 @@ Inline[ { xs___? SymbolQ },
   ];
 
 
-(*Inline[ f_ ][ a$___ ] := Inline[ f, a$ ];*)
-
-
 Inline /:
   (patt_ := Inline[ f_, exp_, a___ ]) :=
     Inline[ f, HoldComplete[ patt := exp ], a ] // ReleaseHold;
-
-
-
-(******************************************************************************)
-
-
-
-PartialEvaluation // Attributes = { HoldAllComplete };
-PartialEvaluation // Options    = { };
-PartialEvaluation // SyntaxInformation =
-  {
-      "LocalVariables" -> { "Solve", { 1, 1 } }
-  };
-
-(* :!CodeAnalysis::BeginBlock:: *)
-(* :!CodeAnalysis::Disable::VariableError::Module:: *)
-PartialEvaluation[ { v___ }, HoldPattern @ CompoundExpression[ e__, r_ ] ] :=
-  Module[ { v },
-      CompoundExpression[ e ];
-      Inline[ { v }, HoldApply @ r ] // StripTempHolds
-  ];
-
 
 
 (******************************************************************************)
@@ -874,13 +686,10 @@ CopySymbol[ a___, f_String, b___ ] :=
 (******************************************************************************)
 
 
-
+SymbolQ // ClearAll;
 SymbolQ // Attributes = { HoldAllComplete };
-SymbolQ // Options    = { };
-
-
-SymbolQ[ s_Symbol ] := Depth @ HoldComplete @ s === 2;
-SymbolQ[ ___ ] := False;
+SymbolQ[ s_Symbol ] := Depth @ HoldComplete @ s === 2 && Unevaluated @ s =!= Internal`$EFAIL;
+SymbolQ[ ___      ] := False;
 
 
 
@@ -906,16 +715,7 @@ safeContext // Attributes = { HoldAllComplete };
 safeContext // Options    = { };
 
 
-safeContext[ sym_? SymbolQ ] :=
-    With[
-      {
-        s = StringTake[ ToString @ HoldComplete @ sym,
-                        { 14, -2 }
-            ]
-      },
-
-      Context @ s
-    ];
+safeContext[ sym_? SymbolQ ] := Context @ Unevaluated @ sym;
 
 
 
@@ -927,7 +727,7 @@ allContexts // Options    = { };
 allContexts[ expr_ ] :=
     DeleteDuplicates[
       Cases[ HoldComplete @ expr,
-             HoldPattern[ s_ ? SymbolQ ] :> safeContext @ s,
+             HoldPattern[ s_Symbol? SymbolQ ] :> safeContext @ s,
              Infinity,
              Heads -> True
       ]
@@ -967,30 +767,26 @@ filterContext[ _, c_ ] := c;
 
 
 
+ToFullString // ClearAll;
 ToFullString // Attributes = { HoldAllComplete, SequenceHold };
-ToFullString // Options    =
-    {
-      "ContextPath" :> $ContextPath,
-      "Context"     :> $Context
-    };
+ToFullString // Options = {
+    "ContextPath"       :> $ContextPath,
+    "Context"           :> $Context,
+    "CharacterEncoding" -> "ASCII"
+};
 
-
-ToFullString[ expr_, OptionsPattern[ ] ] :=
-
+ToFullString[ expr_, opts: OptionsPattern[ ] ] :=
     Block[
-      {
-        $ContextPath = filterContextPath[ expr, OptionValue @ "ContextPath" ],
-        $Context     = filterContext[     expr, OptionValue @ "Context"     ]
-      },
-
-      StringTake[ ToString[ FullForm @ HoldComplete @ expr,
-                            CharacterEncoding -> "ASCII" ]
-                  ,
-                  { If[ MemberQ[ $ContextPath, "System`" ], 14, 21 ], -2 }
-      ]
+        {
+            $ContextPath = filterContextPath[ expr, OptionValue[ "ContextPath" ] ],
+            $Context = filterContext[ expr, OptionValue[ "Context" ] ]
+        },
+        ToString[
+            Unevaluated @ FullForm @ expr,
+            OutputForm,
+            Sequence @@ FilterRules[ { opts }, Options @ ToString ]
+        ]
     ];
-
-
 
 (******************************************************************************)
 
@@ -999,80 +795,25 @@ ToFullString[ expr_, OptionsPattern[ ] ] :=
 $FailureContext = "$Failed`";
 
 
-
-$start    = "$" | LetterCharacter;
-$char     = Except[ "`", "$" | LetterCharacter | DigitCharacter ];
-$context  = $start ~~ $char ... ~~ "`";
-$sym      = $start ~~ $char ...;
-
-
-PossibleNameQ[ s_String ] :=
-    StringMatchQ[ s, ("`" | "") ~~ $context ... ~~ $sym ];
+PossibleNameQ // ClearAll;
+PossibleNameQ // Attributes = { HoldAllComplete };
+PossibleNameQ[ str_String? UStringQ ] := Internal`SymbolNameQ[ str, True ];
+PossibleNameQ[ ___ ] := False;
 
 
 
+FullSymbolName // ClearAll;
 FullSymbolName // Attributes = { HoldAllComplete };
-FullSymbolName // Options    = { };
-
-
-FullSymbolName[ symbol_? SymbolQ ] :=
-
-    Module[ { string },
-
-      string = Block[ { $ContextPath = { }, $Context = "None`" },
-                      StringTake[ ToString @ HoldComplete @ symbol,
-                                  { 21, -2 }
-                      ]
-               ];
-
-      If[ ! StringMatchQ[ string, Context @@ { string } ~~ __ ],
-          "None`" <> string,
-          string
-      ]
-  ];
-
-
-FullSymbolName[ Verbatim[ HoldPattern ][ symbol_Symbol ] ] :=
-    FullSymbolName @ symbol;
-
-
-FullSymbolName[ string_String ? NameQ ] :=
-    ToExpression[ string, StandardForm, FullSymbolName ];
-
-
-FullSymbolName[ string_String ? PossibleNameQ ] :=
-    string;
-
-
-(*FullSymbolName[ string_String ? PossibleNameQ ] :=
-    StringDrop[
-      StringJoin @ Riffle[ Most @ StringSplit[ " " <> string, "`" ], "`" ],
-      1
-    ];*)
-
-
-FullSymbolName[ string_String ? (Not @* NameQ) ] :=
-    $FailureContext <> "$Failed" /; (
-      Message[ FullSymbolName::notfound, string ];
-      True
-    );
-
-
-FullSymbolName[ a : Except[ _String ? (Not @* NameQ) ] ... ] :=
-    $FailureContext <> "$Failed" /; (
-      Message[ FullSymbolName::ssle, HoldForm @ FullSymbolName @ a, 1 ];
-      True
-    );
-
-
+FullSymbolName[ symbol_? SymbolQ ] := Context @ Unevaluated @ symbol <> SymbolName @ Unevaluated @ symbol;
+FullSymbolName[ Verbatim[ HoldPattern ][ symbol_Symbol ] ] := FullSymbolName @ symbol;
+FullSymbolName[ string_String? PossibleNameQ ] := ToExpression[ string, InputForm, FullSymbolName ];
+FullSymbolName[ ___ ] := $Failed;
 
 (******************************************************************************)
 
 
 
 SafeContext // Attributes = { HoldAllComplete };
-SafeContext // Options    = { };
-
 
 SafeContext[ symbol_? SymbolQ ] :=
   Block[ { $Context = "System`", $ContextPath = { "System`" } },
@@ -1095,7 +836,7 @@ SafeContext[ Verbatim[ Unevaluated ][ symbol_? SymbolQ ] ] :=
     SafeContext @ symbol;
 
 
-SafeContext[ string_String ] :=
+SafeContext[ string_String? UStringQ ] :=
     ToExpression[ string, StandardForm, SafeContext ];
 
 
@@ -2683,7 +2424,7 @@ DependentSymbols[ sym_? SymbolQ, opts : OptionsPattern[ ] ] :=
                                   parse1 /@ TempHold @ defs
                        ];
 
-      stage3 = HoldComplete @@ (stage2 //. p_parse2 :> TrEval @ p);
+      stage3 = HoldComplete @@ (stage2 //. p_parse2 :> RuleCondition @ p);
 
       stage4 = stage3 //.
                  (f_)[ a___, TempHold[ b___ ], c___ ] :> f[ a, b, c ] //
@@ -4108,7 +3849,7 @@ getKVP[assoc_Association, n_Integer?Positive] :=
   Replace[
       Replace[assoc,
           {
-              a : Except[_TempHold] :> TrEval@Blank[Head[Unevaluated[a]]]
+              a : Except[_TempHold] :> RuleCondition@Blank[Head[Unevaluated[a]]]
           },
           {n}
       ],
@@ -4760,7 +4501,7 @@ EvaluationReportData[ eval_ ] :=
         {
             (* this indicates that the expression 'b' evaluated to 'c' *)
             { a___, TempHold[ b_ ], TempHold[ c_ ], d___ } :>
-              TrEval[ (* save this information and then remove b *)
+              RuleCondition[ (* save this information and then remove b *)
                       Internal`StuffBag[ $bag,
                                          EvaluatedTo[ HoldForm @ b,
                                                       HoldForm @ c

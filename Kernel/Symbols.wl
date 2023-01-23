@@ -1,3 +1,10 @@
+(* TODO:
+    * Create these:
+        * CodeSimplify
+        * CodeOptimize
+    * Remove lots of symbols from main context
+*)
+
 Wolfram`CodeEquivalenceUtilities`$AllowedEvaluationPatterns;
 Wolfram`CodeEquivalenceUtilities`$CachePersistence;
 Wolfram`CodeEquivalenceUtilities`$CatchFunction;
@@ -183,7 +190,6 @@ Wolfram`CodeEquivalenceUtilities`OnceUnlessFailed;
 Wolfram`CodeEquivalenceUtilities`OneIdentityQ;
 Wolfram`CodeEquivalenceUtilities`OrderlessQ;
 Wolfram`CodeEquivalenceUtilities`PackDefinition;
-Wolfram`CodeEquivalenceUtilities`PartialEvaluation;
 Wolfram`CodeEquivalenceUtilities`PostProcessing;
 Wolfram`CodeEquivalenceUtilities`PreserveDefinitions;
 Wolfram`CodeEquivalenceUtilities`RandomValue;
@@ -237,7 +243,6 @@ Wolfram`CodeEquivalenceUtilities`TransformAndPostProcess;
 Wolfram`CodeEquivalenceUtilities`TransformationRules;
 Wolfram`CodeEquivalenceUtilities`TransformHold;
 Wolfram`CodeEquivalenceUtilities`TransformRelease;
-Wolfram`CodeEquivalenceUtilities`TrEval;
 Wolfram`CodeEquivalenceUtilities`Type;
 Wolfram`CodeEquivalenceUtilities`TypeCast;
 Wolfram`CodeEquivalenceUtilities`TypedDefinitionQ;

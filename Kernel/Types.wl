@@ -157,7 +157,7 @@ TypedLiteral /: Normal @ HoldPattern @ TypedLiteral[ s_String, _ ] :=
 
 TypedExpression /: Normal @ TypedExpression[ exp_ ] :=
   HoldComplete[ exp ] //. TypedExpression[ e_ ] :> e //.
-    t : (_TypedSymbol | _TypedLiteral) :> TrEval @ Normal @ t;
+    t : (_TypedSymbol | _TypedLiteral) :> RuleCondition @ Normal @ t;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -694,7 +694,7 @@ MakeTypeTransformation[ (patt_ :> spec_) ] :=
   },
       With[ { rule = HoldPattern @ epatt :> spec },
           expression : patt :>
-            TrEval[ TypedExpression @ expression /. rule /. t_T :> TrEval @ t ]
+            RuleCondition[ TypedExpression @ expression /. rule /. t_T :> RuleCondition @ t ]
       ]
   ];
 
@@ -722,9 +722,9 @@ MakeTypeTransformation[ Hold[ patterns__ ] ] :=
             (*                Proportion[ s : evalTypes, Typeof @ s_ ] :> s,
 
                 Proportion[ s_, t : HoldPattern @ Typeof[ evalTypes ] ] :>
-                  TrEval @ Proportion[ s, t ],
+                  RuleCondition @ Proportion[ s, t ],
 
-                p : Proportion[ _, evalTypes ] :> TrEval @ p,*)
+                p : Proportion[ _, evalTypes ] :> RuleCondition @ p,*)
 
                 TypedExpression[ t_ ] :> t
             }
@@ -755,9 +755,9 @@ TransformAndPostProcess[ transformations_, expression_ ] :=
                 Proportion[ s : evalTypes, Typeof @ s_ ] :> s,
 
                 Proportion[ s_, t : HoldPattern @ Typeof @ evalTypes ] :>
-                  TrEval @ Proportion[ s, t ],
+                  RuleCondition @ Proportion[ s, t ],
 
-                p : Proportion[ _, evalTypes ] :> TrEval @ p,
+                p : Proportion[ _, evalTypes ] :> RuleCondition @ p,
 
                 HoldPattern @
                   Proportion[ s : TypedLiteral[ _, t_ ], Type[ t_ ] ] :> s,
@@ -798,7 +798,7 @@ TypeCast[ s_, type_ ] :=
 
 TypeCast[ expression_, s_ -> type_Type ] :=
   TypedExpression @ expression /.
-    HoldPattern @ s :> TrEval @ TypeCast[ s, type ];
+    HoldPattern @ s :> RuleCondition @ TypeCast[ s, type ];
 
 TypeCast[ expression_, s_ -> type_ ] :=
   With[ { t = type },
@@ -967,7 +967,7 @@ ToTypedBinding // Options = {};
 ToTypedBinding[bind_[patt_, defn_]] :=
     Quiet[Module[{newPatt, dRepl, newDefn},
       newPatt =
-          HoldComplete[patt] /. p_Pattern :> TrEval@toTypedPatterns[p];
+          HoldComplete[patt] /. p_Pattern :> RuleCondition@toTypedPatterns[p];
 
       dRepl =
         Cases[HoldComplete[patt],

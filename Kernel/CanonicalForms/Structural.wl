@@ -215,7 +215,7 @@ flatLevel2[ function_ ] :=
   Function[ expression,
             expression //.
               f : HoldPattern @ function[ a_ ] /; ! UFlatQ @ a :>
-                TrEval @ HFlatten @ f //.
+                RuleCondition @ HFlatten @ f //.
                   TempHold[ a___ ] :> a
   ];
 
@@ -233,7 +233,7 @@ orderlessLevel2[ function_ ] :=
   Function[ expression,
             expression //.
               HoldPattern @ function @ l : h_[ a___ ] /; ! UOrderedQ @ l :>
-                TrEval @ TempHold[ h ] @ Sort @ TempHold @ a //.
+                RuleCondition @ TempHold[ h ] @ Sort @ TempHold @ a //.
                   TempHold[ f_ ] @ TempHold[ a___ ] :> function @ f @ a
   ];
 
@@ -255,7 +255,7 @@ CanonicalTransformTables[ expression_ ] :=
 (* ::Subsection::Closed:: *)
 (*allRangeToTable*)
 allRangeToTable[ exp_ ] :=
-  exp //. r_Range :> TrEval @ rangeToTable @ r //.
+  exp //. r_Range :> RuleCondition @ rangeToTable @ r //.
     {
         CanonicalTable -> Table,
         TempHold[ a___ ] :> a
@@ -278,7 +278,7 @@ rangeToTable[ HoldPattern @ Range[ args___ ] ] :=
 (* ::Subsection::Closed:: *)
 (*allArrayToTable*)
 allArrayToTable[ exp_ ] :=
-  exp //. a_Array :> TrEval @ arrayToTable @ a //.
+  exp //. a_Array :> RuleCondition @ arrayToTable @ a //.
     {
         CanonicalTable -> Table,
         TempHold[ a___ ] :> a
@@ -307,7 +307,7 @@ arrayToTable[ HoldPattern @ Array[ args___ ] ] :=
 (*distributeAllMapsOverTables*)
 distributeAllMapsOverTables[ exp_ ] :=
   Inline[ $tableMapPatt,
-      exp //. m : $tableMapPatt :> TrEval @ distributeMapOverTable @ m //.
+      exp //. m : $tableMapPatt :> RuleCondition @ distributeMapOverTable @ m //.
         TempHold[ a___ ] :> a
   ];
 
@@ -330,7 +330,7 @@ distributeAllListableOverTable[ exp_ ] :=
 iDistributeAllListableOverTable[ exp_ ] :=
   Inline[ $tableListablePatt,
       exp //. t : $tableListablePatt :>
-        TrEval @ distributeListableOverTable @ t //.
+        RuleCondition @ distributeListableOverTable @ t //.
           TempHold[ a___ ] :> a
   ];
 
@@ -356,7 +356,7 @@ distributeListableOverTable[
 (* ::Subsection::Closed:: *)
 (*unrollAllTables*)
 unrollAllTables[ exp_ ] :=
-  exp //. t : HoldPattern @ Table[ _, _, __ ] :> TrEval @ unrollTable @ t //.
+  exp //. t : HoldPattern @ Table[ _, _, __ ] :> RuleCondition @ unrollTable @ t //.
       TempHold[ a___ ] :> a;
 
 (* ::**********************************************************************:: *)
@@ -376,7 +376,7 @@ unrollTable[ HoldPattern @ Table[ exp_, i_, ii__ ] ] :=
 (* ::Subsection::Closed:: *)
 (*fillAllTableIterators*)
 fillAllTableIterators[ expression_ ] :=
-  expression //. t_Table :> TrEval @ fillTableIterators @ t //.
+  expression //. t_Table :> RuleCondition @ fillTableIterators @ t //.
     {
         CanonicalTable -> Table,
         TempHold[ a___ ] :> a

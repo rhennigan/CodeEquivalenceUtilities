@@ -148,7 +148,7 @@ Inline[ $delayedForms,
                   ! FreeQ[ HoldComplete @ test,
                            Alternatives @@ heldPattVars
                   ] :>
-                  TrEval[
+                  RuleCondition[
                     With[
                       {
                         testReplaced =
@@ -643,7 +643,7 @@ NormalizeNames[ exp_, opts: OptionsPattern[ ] ] :=
       If[ OptionValue @ "ForceGlobal"
           ,
           replaced /. s_Symbol?LocalContextQ :>
-            TrEval @ Symbol[ "Global`" <> SymbolName @ Unevaluated @ s ]
+            RuleCondition @ Symbol[ "Global`" <> SymbolName @ Unevaluated @ s ]
           ,
           replaced
       ]

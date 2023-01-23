@@ -53,7 +53,7 @@ CanonicalOneIdentity[ expression_ ] :=
 CanonicalOrderless[ expression_ ] :=
   Module[ { heldSorted },
       heldSorted = expression //. f_[ a___ ] /; OrderlessQ @ Unevaluated @ f :>
-        TrEval @ sortArgs @ f @ a;
+        RuleCondition @ sortArgs @ f @ a;
       heldSorted //. HoldApply[ f_, { args___ } ] :> f @ args
   ];
 

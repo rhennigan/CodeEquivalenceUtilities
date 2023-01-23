@@ -121,7 +121,7 @@ MakeAtomicTypeBox[ value_, typeName_, tooltip_, styles_ ] :=
             True,
             StringTake[ ToString[
                 HoldComplete @ value /. s_Symbol? LocalContextQ :>
-                  TrEval @ Symbol[ "Global`" <> SymbolName @ Unevaluated @ s ],
+                  RuleCondition @ Symbol[ "Global`" <> SymbolName @ Unevaluated @ s ],
                 InputForm
             ], { 14, -2 } ]
       ];
@@ -170,7 +170,7 @@ MakeAtomicTypeBox[ value_, typeName_, tooltip_, styles_ ] :=
             True,
             StringTake[ ToString[
                 HoldComplete @ value /. s_Symbol? LocalContextQ :>
-                  TrEval @ Symbol[ "Global`" <> SymbolName @ Unevaluated @ s ],
+                  RuleCondition @ Symbol[ "Global`" <> SymbolName @ Unevaluated @ s ],
                 InputForm
             ], { 14, -2 } ]
       ];
