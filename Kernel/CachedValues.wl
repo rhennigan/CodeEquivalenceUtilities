@@ -358,6 +358,7 @@ keyHash[ expr_ ] :=
 $cacheStateValues := {
     $AllowedEvaluationPatterns,
     $dispatchHash,
+    $NormalizeNames,
     $PostProcessingFunction
 };
 

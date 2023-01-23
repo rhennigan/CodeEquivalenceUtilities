@@ -596,6 +596,8 @@ NormalizeNames // Options = {
     "ForceGlobal"       -> False
 };
 
+NormalizeNames[ expr_, opts: OptionsPattern[ ] ] /; ! $NormalizeNames := expr;
+
 NormalizeNames[ exp_, opts: OptionsPattern[ ] ] :=
   Module[
       {
