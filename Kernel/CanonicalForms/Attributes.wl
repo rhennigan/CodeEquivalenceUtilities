@@ -150,7 +150,9 @@ ListableQ[ fun : Function[ expr_ ] ] :=
 ListableQ[ f_  ] := GetAttributes @ f ~MemberQ~ Listable;
 ListableQ[ ___ ] := False;
 
+(* pseudo-listable functions: *)
 ListableQ[ FromLetterNumber ] = True;
+ListableQ[ IntegerName      ] = True;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

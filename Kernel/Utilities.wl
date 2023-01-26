@@ -775,7 +775,7 @@ ToFullString // Options = {
     "CharacterEncoding" -> "ASCII"
 };
 
-ToFullString[ expr_, opts: OptionsPattern[ ] ] :=
+ToFullString[ expr_, opts: OptionsPattern @ { ToFullString, ToString } ] :=
     Block[
         {
             $ContextPath = filterContextPath[ expr, OptionValue[ "ContextPath" ] ],

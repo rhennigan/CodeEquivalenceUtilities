@@ -22,37 +22,183 @@ SetRuleDefaults @ <|
 (*Definitions*)
 
 $$forwardOps = HoldPattern @ Alternatives[
-    Apply,
-    Map,
-    System`MapApply
+    System`Apply,
+    System`ApplyReaction,
+    System`AssociationMap,
+    System`Map,
+    System`MapApply,
+    System`MapThread,
+    System`Scan
 ];
 
 $$reverseOps = HoldPattern @ Alternatives[
-    Replace,
-    Select,
-    Append,
-    Prepend,
-    ReplacePart,
-    SelectFirst,
-    FirstCase,
-    Cases,
-    DeleteCases,
-    Position,
-    Extract,
-    Delete,
-    AnyTrue,
-    AllTrue,
-    NoneTrue,
-    SortBy,
-    MaximalBy,
-    MinimalBy,
-    DeleteDuplicatesBy,
-    CurryApplied
+    System`AllTrue,
+    System`Between,
+    System`BioSequenceModify,
+    System`AnyTrue,
+    System`Append,
+    System`Cases,
+    System`CurryApplied,
+    System`Delete,
+    System`DeleteCases,
+    System`DeleteDuplicatesBy,
+    System`Extract,
+    System`FirstCase,
+    System`MatchQ,
+    System`MaximalBy,
+    System`MinimalBy,
+    System`NoneTrue,
+    System`Position,
+    System`Prepend,
+    System`Replace,
+    System`ReplacePart,
+    System`Select,
+    System`SelectFirst,
+    System`SortBy,
+    System`StringCases,
+    System`StringDelete,
+    System`StringMatchQ,
+    System`StringPosition
+];
+
+$$forwardOps2 = HoldPattern @ Alternatives[
+    System`MapAt
 ];
 
 $$reverseOps2 = HoldPattern @ Alternatives[
-    Insert
+    System`Insert,
+    System`ReplaceAt
 ];
+
+(* TODO: ensure all of these are in the appropriate list
+    * AllTrue
+    * AlphabeticOrder (weird)
+    * AnyTrue
+    * Append
+    * Apply
+    * ApplyReaction
+    * AssociationMap
+    * Between
+    * BioSequenceModify
+    * Cases
+    * CellularAutomaton
+    * ContainsAll
+    * ContainsAny
+    * ContainsExactly
+    * ContainsNone
+    * ContainsOnly
+    * Count
+    * CountDistinctBy
+    * CountsBy
+    * Curry (weird)
+    * CurryApplied (weird)
+    * DateSelect
+    * Delete
+    * DeleteCases
+    * DeleteDuplicatesBy
+    * EqualTo
+    * ExternalEvaluate
+    * Extract
+    * FeatureDistance
+    * FirstCase
+    * FirstPosition
+    * FlattenAt
+    * Fold
+    * FoldList
+    * FoldWhile
+    * FoldWhileList
+    * FreeQ
+    * GenerateDigitalSignature
+    * GenerateFileSignature
+    * GeoWithinQ
+    * GreaterEqualThan
+    * GreaterThan
+    * GroupBy
+    * Insert
+    * IntersectionQ
+    * IntervalMemberQ
+    * KeyDrop
+    * KeyExistsQ
+    * KeyFreeQ
+    * KeyMap
+    * KeyMemberQ
+    * KeySelect
+    * KeySortBy
+    * KeyTake
+    * KeyValueMap
+    * LessEqualThan
+    * LessThan
+    * LexicographicOrder
+    * Lookup
+    * Map
+    * MapApply
+    * MapAt
+    * MapIndexed
+    * MapThread
+    * MatchQ
+    * MaximalBy
+    * MemberQ
+    * Merge
+    * MinimalBy
+    * MoleculeContainsQ
+    * MoleculeFreeQ
+    * MoleculeMatchQ
+    * MoleculeModify
+    * MoleculeSubstructureCount
+    * NearestTo (weird)
+    * NoneTrue
+    * OperatorApplied (weird)
+    * Position
+    * Prepend
+    * Replace
+    * ReplaceAll
+    * ReplaceAt
+    * ReplaceList
+    * ReplacePart
+    * ReplaceRepeated
+    * ReverseSortBy
+    * SameAs
+    * Scan
+    * Select
+    * SelectFirst
+    * SequenceReplace
+    * SortBy
+    * SpeakerMatchQ
+    * StringCases
+    * StringContainsQ
+    * StringDelete
+    * StringEndsQ
+    * StringFreeQ
+    * StringMatchQ
+    * StringPosition
+    * StringReplace
+    * StringReplacePart
+    * StringStartsQ
+    * SubsetMap
+    * SubsetReplace
+    * SubstitutionSystem
+    * TakeLargest
+    * TakeLargestBy
+    * TakeSmallest
+    * TakeSmallestBy
+    * TreeCases
+    * TreeCount
+    * TreeDelete
+    * TreeExtract
+    * TreeFold
+    * TreeInsert
+    * TreeLevel
+    * TreeMap
+    * TreeMapAt
+    * TreePosition
+    * TreeReplacePart
+    * TreeScan
+    * TreeSelect
+    * TuringMachine
+    * UnequalTo
+    * VerifyDigitalSignature
+    * VerifyFileSignature
+*)
 
 (* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -60,8 +206,8 @@ $$reverseOps2 = HoldPattern @ Alternatives[
 
 (**********************************************************************************************************************)
 <|
-    "Name"        -> "OperatorForms-QxjJX",
-    "Description" -> "Transform forward operator forms into canonical forms",
+    "Name"        -> "OperatorForms-Forward-1",
+    "Description" -> "Transform applied forward operator forms into canonical forms",
     "Usage"       -> { "EquivalenceTesting" },
     "Symbols"     :> { },
     "Inline"      :> { $$forwardOps },
@@ -70,8 +216,8 @@ $$reverseOps2 = HoldPattern @ Alternatives[
 
 (**********************************************************************************************************************)
 <|
-    "Name"        -> "OperatorForms-eyvTQ1",
-    "Description" -> "Transform reverse operator forms into canonical forms",
+    "Name"        -> "OperatorForms-Reverse-1",
+    "Description" -> "Transform applied reverse operator forms into canonical forms",
     "Usage"       -> { "EquivalenceTesting" },
     "Symbols"     :> { },
     "Inline"      :> { $$reverseOps },
@@ -80,8 +226,18 @@ $$reverseOps2 = HoldPattern @ Alternatives[
 
 (**********************************************************************************************************************)
 <|
-    "Name"        -> "OperatorForms-dFqVpP",
-    "Description" -> "Transform reverse operator forms into canonical forms",
+    "Name"        -> "OperatorForms-Forward-2",
+    "Description" -> "Transform applied forward operator forms into canonical forms",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { },
+    "Inline"      :> { $$forwardOps2 },
+    "Rule"        :> (h: $$forwardOps2)[ a_, b_ ][ c_ ] :> h[ a, c, b ]
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "OperatorForms-Reverse-2",
+    "Description" -> "Transform applied reverse operator forms into canonical forms",
     "Usage"       -> { "EquivalenceTesting" },
     "Symbols"     :> { },
     "Inline"      :> { $$reverseOps2 },
@@ -90,7 +246,7 @@ $$reverseOps2 = HoldPattern @ Alternatives[
 
 (**********************************************************************************************************************)
 <|
-    "Name"        -> "OperatorForms-eEcR9I",
+    "Name"        -> "OperatorForms-Forward-Function-1",
     "Description" -> "Transform forward operator forms into canonical forms",
     "Usage"       -> { "EquivalenceTesting" },
     "Symbols"     :> { },
@@ -100,7 +256,7 @@ $$reverseOps2 = HoldPattern @ Alternatives[
 
 (**********************************************************************************************************************)
 <|
-    "Name"        -> "OperatorForms-cuHSzf",
+    "Name"        -> "OperatorForms-Reverse-Function-1",
     "Description" -> "Transform reverse operator forms into canonical forms",
     "Usage"       -> { "EquivalenceTesting" },
     "Symbols"     :> { },
@@ -110,7 +266,17 @@ $$reverseOps2 = HoldPattern @ Alternatives[
 
 (**********************************************************************************************************************)
 <|
-    "Name"        -> "OperatorForms-zZeRC",
+    "Name"        -> "OperatorForms-Forward-Function-2",
+    "Description" -> "Transform forward operator forms into canonical forms",
+    "Usage"       -> { "EquivalenceTesting" },
+    "Symbols"     :> { },
+    "Inline"      :> { $$forwardOps2 },
+    "Rule"        :> (h: $$forwardOps2)[ a_, b_ ] :> (h[ a, #1, b ] &)
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "OperatorForms-Reverse-Function-2",
     "Description" -> "Transform reverse operator forms into canonical forms",
     "Usage"       -> { "EquivalenceTesting" },
     "Symbols"     :> { },
