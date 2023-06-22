@@ -943,12 +943,18 @@ makeReplacementRules[ name_ ] :=
 (* ::Subsubsection::Closed:: *)
 (*evalRestricted*)
 evalRestricted // Attributes = { HoldAllComplete };
-evalRestricted[ expr_, timeLimit_, memoryLimit_, input_ ] :=
-    checkAbort @ TimeConstrained[
-        expr,
-        timeLimit,
-        TimedOut @ HoldForm @ input
-    ];
+evalRestricted[ expr_, timeLimit_, memoryLimit_, input_ ] := Catch[
+    Quiet[
+        checkAbort @ TimeConstrained[
+            expr,
+            timeLimit,
+            TimedOut @ HoldForm @ input
+        ],
+        { $RecursionLimit::reclim }
+    ],
+    _TerminatedEvaluation,
+    HoldComplete
+];
 
 TimedOut /: HoldPattern @ FailureQ[ _TimedOut ] := True;
 
