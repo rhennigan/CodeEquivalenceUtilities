@@ -306,7 +306,7 @@ flattenHolds[ e___ ] := e;
 equalQ[ a___ ] := Quiet @ TrueQ @ Or[ SameQ @ a, equal0 @ a ];
 
 equal0[ a___ ] :=
-    Replace[ Equal @ a,
+    Replace[ Equal @ a //. Verbatim[ Times ][ 1.0, x_ ] :> x,
              eq_Equal :> TimeConstrained[ Simplify @ eq, 1, False ]
     ];
 
