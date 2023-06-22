@@ -914,7 +914,7 @@ removeTypes[ expr_ ] :=
                     Verbatim[ Pattern ][ symbol_, Verbatim[ Blank ][ ] ],
                     Verbatim[ Verbatim ][ patt_ ]
                 ] :> symbol: patt,
-                HoldPattern @ TypedSymbol[ s_? SymbolQ, _ ] :> TrEval @ s
+                HoldPattern @ TypedSymbol[ s_? SymbolQ, _ ] :> RuleCondition @ s
             }
         ],
         RuleDelayed::rhs
@@ -943,12 +943,18 @@ makeReplacementRules[ name_ ] :=
 (* ::Subsubsection::Closed:: *)
 (*evalRestricted*)
 evalRestricted // Attributes = { HoldAllComplete };
-evalRestricted[ expr_, timeLimit_, memoryLimit_, input_ ] :=
-    checkAbort @ TimeConstrained[
-        expr,
-        timeLimit,
-        TimedOut @ HoldForm @ input
-    ];
+evalRestricted[ expr_, timeLimit_, memoryLimit_, input_ ] := Catch[
+    Quiet[
+        checkAbort @ TimeConstrained[
+            expr,
+            timeLimit,
+            TimedOut @ HoldForm @ input
+        ],
+        { $RecursionLimit::reclim }
+    ],
+    _TerminatedEvaluation,
+    HoldComplete
+];
 
 TimedOut /: HoldPattern @ FailureQ[ _TimedOut ] := True;
 
@@ -1441,7 +1447,7 @@ resourceURL :=
 $allowedLibs = _String? (
     Function[
         Null,
-        StringQ @ Unevaluated @ # && StringEndsQ[ #, ".so" | ".dll" ],
+        StringQ @ Unevaluated @ # && StringEndsQ[ #, ".so" | ".dll" | ".dylib" ],
         HoldAllComplete
     ]
 );

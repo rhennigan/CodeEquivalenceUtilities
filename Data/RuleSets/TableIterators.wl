@@ -91,7 +91,7 @@ Inline[ { $atomicNumber, $heldNumeric }, HoldComplete[
 
     rng : { $atomicNumber.. } /;
       Length @ rng >= 4 && OrderedQ[ rng ] && Equal @@ Differences @ rng :>
-      TrEval @
+      RuleCondition @
         With[
             {
                 imin = First @ rng,

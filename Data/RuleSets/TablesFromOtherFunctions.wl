@@ -23,7 +23,7 @@ SetRuleDefaults @ <|
 (*Rules*)
 
 HoldComplete[
-    Range[ args___ ] :>
+    Range[ args: Repeated[ _? numberTypeQ, { 1, 3 } ] ] :>
       WithHolding[ { i = NewLocalSymbol[ ] },
           Table[ i, { i, args } ]
       ],

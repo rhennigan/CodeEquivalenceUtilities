@@ -43,7 +43,7 @@ SetRuleDefaults @ <|
 
 (**********************************************************************************************************************)
 <|
-    "Name"        -> "Arithmetic-deiVLm",
+    "Name"        -> "Plus-0",
     "Description" -> "Transform using basic arithmetic rules",
     "Usage"       -> { "EquivalenceTesting", "Simplification", "Optimization" },
     "Symbols"     :> { Plus },
@@ -52,7 +52,16 @@ SetRuleDefaults @ <|
 
 (**********************************************************************************************************************)
 <|
-    "Name"        -> "Arithmetic-cJntVW",
+    "Name"        -> "Plus-1",
+    "Description" -> "Simplify Plus expressions with one argument",
+    "Usage"       -> { "EquivalenceTesting", "Simplification", "Optimization" },
+    "Symbols"     :> { Plus },
+    "Rule"        :> Verbatim[ Plus ][ x_ ] :> x
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "Times-0",
     "Description" -> "Transform using basic arithmetic rules",
     "Usage"       -> { "EquivalenceTesting", "Simplification", "Optimization" },
     "Symbols"     :> { Times },
@@ -61,8 +70,17 @@ SetRuleDefaults @ <|
 
 (**********************************************************************************************************************)
 <|
-    "Name"        -> "Arithmetic-bjzLyg",
-    "Description" -> "Transform using basic arithmetic rules",
+    "Name"        -> "Times-1",
+    "Description" -> "Simplify Times expressions with one argument",
+    "Usage"       -> { "EquivalenceTesting", "Simplification", "Optimization" },
+    "Symbols"     :> { Times },
+    "Rule"        :> Verbatim[ Times ][ x_ ] :> x
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "Power-1",
+    "Description" -> "Simplify Power expressions with one argument",
     "Usage"       -> { "EquivalenceTesting", "Simplification", "Optimization" },
     "Symbols"     :> { Power },
     "Rule"        :> Power[ x_ ] :> x

@@ -1,3 +1,10 @@
+(* TODO:
+    * Create these:
+        * CodeSimplify
+        * CodeOptimize
+    * Remove lots of symbols from main context
+*)
+
 Wolfram`CodeEquivalenceUtilities`$AllowedEvaluationPatterns;
 Wolfram`CodeEquivalenceUtilities`$CachePersistence;
 Wolfram`CodeEquivalenceUtilities`$CatchFunction;
@@ -15,8 +22,6 @@ Wolfram`CodeEquivalenceUtilities`$Memoize;
 Wolfram`CodeEquivalenceUtilities`$NamedColorRules;
 Wolfram`CodeEquivalenceUtilities`$NewLocalSymbolCounter;
 Wolfram`CodeEquivalenceUtilities`$OrderlessLevel2Functions;
-Wolfram`CodeEquivalenceUtilities`$Q;
-Wolfram`CodeEquivalenceUtilities`$R;
 Wolfram`CodeEquivalenceUtilities`$RandomSymbols;
 Wolfram`CodeEquivalenceUtilities`$RasterBoxErrorThreshold;
 Wolfram`CodeEquivalenceUtilities`$RasterDistanceFunction;
@@ -30,7 +35,6 @@ Wolfram`CodeEquivalenceUtilities`$Redacted;
 Wolfram`CodeEquivalenceUtilities`$RestorationReplacements;
 Wolfram`CodeEquivalenceUtilities`$RuleData;
 Wolfram`CodeEquivalenceUtilities`$RuleDefaults;
-Wolfram`CodeEquivalenceUtilities`$S;
 Wolfram`CodeEquivalenceUtilities`$SandboxContext;
 Wolfram`CodeEquivalenceUtilities`$SandboxSymbols;
 Wolfram`CodeEquivalenceUtilities`$ScopeTransformations;
@@ -39,7 +43,6 @@ Wolfram`CodeEquivalenceUtilities`$TransformationRules;
 Wolfram`CodeEquivalenceUtilities`$Uninitialized;
 Wolfram`CodeEquivalenceUtilities`$UnsafeSymbolPattern;
 Wolfram`CodeEquivalenceUtilities`$UnsafeSymbols;
-Wolfram`CodeEquivalenceUtilities`$Z;
 Wolfram`CodeEquivalenceUtilities`AbortOnMessage;
 Wolfram`CodeEquivalenceUtilities`AbsoluteTimeString;
 Wolfram`CodeEquivalenceUtilities`AddToPath;
@@ -187,7 +190,7 @@ Wolfram`CodeEquivalenceUtilities`OnceUnlessFailed;
 Wolfram`CodeEquivalenceUtilities`OneIdentityQ;
 Wolfram`CodeEquivalenceUtilities`OrderlessQ;
 Wolfram`CodeEquivalenceUtilities`PackDefinition;
-Wolfram`CodeEquivalenceUtilities`PartialEvaluation;
+Wolfram`CodeEquivalenceUtilities`PostProcessing;
 Wolfram`CodeEquivalenceUtilities`PreserveDefinitions;
 Wolfram`CodeEquivalenceUtilities`RandomValue;
 Wolfram`CodeEquivalenceUtilities`RealTypeQ;
@@ -228,7 +231,6 @@ Wolfram`CodeEquivalenceUtilities`SymbolHead;
 Wolfram`CodeEquivalenceUtilities`SymbolInformation;
 Wolfram`CodeEquivalenceUtilities`SymbolLoader;
 Wolfram`CodeEquivalenceUtilities`SymbolQ;
-Wolfram`CodeEquivalenceUtilities`T;
 Wolfram`CodeEquivalenceUtilities`TempHold;
 Wolfram`CodeEquivalenceUtilities`ToCanonicalForm;
 Wolfram`CodeEquivalenceUtilities`ToDefinitionList;
@@ -236,12 +238,11 @@ Wolfram`CodeEquivalenceUtilities`ToFullString;
 Wolfram`CodeEquivalenceUtilities`ToSandboxedExpression;
 Wolfram`CodeEquivalenceUtilities`ToTypedBinding;
 Wolfram`CodeEquivalenceUtilities`ToTypedExpression;
-Wolfram`CodeEquivalenceUtilities`ToWDX;
 Wolfram`CodeEquivalenceUtilities`TrackNewSymbols;
 Wolfram`CodeEquivalenceUtilities`TransformAndPostProcess;
+Wolfram`CodeEquivalenceUtilities`TransformationRules;
 Wolfram`CodeEquivalenceUtilities`TransformHold;
 Wolfram`CodeEquivalenceUtilities`TransformRelease;
-Wolfram`CodeEquivalenceUtilities`TrEval;
 Wolfram`CodeEquivalenceUtilities`Type;
 Wolfram`CodeEquivalenceUtilities`TypeCast;
 Wolfram`CodeEquivalenceUtilities`TypedDefinitionQ;

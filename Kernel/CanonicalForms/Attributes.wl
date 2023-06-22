@@ -53,7 +53,7 @@ CanonicalOneIdentity[ expression_ ] :=
 CanonicalOrderless[ expression_ ] :=
   Module[ { heldSorted },
       heldSorted = expression //. f_[ a___ ] /; OrderlessQ @ Unevaluated @ f :>
-        TrEval @ sortArgs @ f @ a;
+        RuleCondition @ sortArgs @ f @ a;
       heldSorted //. HoldApply[ f_, { args___ } ] :> f @ args
   ];
 
@@ -150,7 +150,9 @@ ListableQ[ fun : Function[ expr_ ] ] :=
 ListableQ[ f_  ] := GetAttributes @ f ~MemberQ~ Listable;
 ListableQ[ ___ ] := False;
 
+(* pseudo-listable functions: *)
 ListableQ[ FromLetterNumber ] = True;
+ListableQ[ IntegerName      ] = True;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

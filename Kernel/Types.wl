@@ -157,7 +157,7 @@ TypedLiteral /: Normal @ HoldPattern @ TypedLiteral[ s_String, _ ] :=
 
 TypedExpression /: Normal @ TypedExpression[ exp_ ] :=
   HoldComplete[ exp ] //. TypedExpression[ e_ ] :> e //.
-    t : (_TypedSymbol | _TypedLiteral) :> TrEval @ Normal @ t;
+    t : (_TypedSymbol | _TypedLiteral) :> RuleCondition @ Normal @ t;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -377,35 +377,35 @@ ListType[ ___ ] := None;
 SequenceTypeQ // Attributes = { HoldAllComplete };
 
 SequenceTypeQ[ list_ ] := SequenceTypeQ[ list, Except[ None ] ];
-SequenceTypeQ[ list_, type_ ] := MatchQ[ SequenceType @ list, type ];
+SequenceTypeQ[ list_, type_ ] := MatchQ[ sequenceType @ list, type ];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
-(*SequenceType*)
-SequenceType // Attributes = { HoldAllComplete };
+(*sequenceType*)
+sequenceType // Attributes = { HoldAllComplete };
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*Literal Sequences*)
-SequenceType[ Sequence[ __? IntTypeQ    ] ] := Integer;
-SequenceType[ Sequence[ __? StringTypeQ ] ] := String;
-SequenceType[ Sequence[ __? RealTypeQ   ] ] := Real;
-SequenceType[ Sequence[ ___             ] ] := Undefined;
+sequenceType[ Sequence[ __? IntTypeQ    ] ] := Integer;
+sequenceType[ Sequence[ __? StringTypeQ ] ] := String;
+sequenceType[ Sequence[ __? RealTypeQ   ] ] := Real;
+sequenceType[ Sequence[ ___             ] ] := Undefined;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*Expected Sequence Output*)
-SequenceType[ _SlotSequence ] := Undefined;
+sequenceType[ _SlotSequence ] := Undefined;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*Recursive Definitions*)
-SequenceType[ TransformHold[ a_ ] ] := SequenceType @ a;
+sequenceType[ TransformHold[ a_ ] ] := sequenceType @ a;
 
 (* ::**********************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*Default*)
-SequenceType[ ___ ] := None;
+sequenceType[ ___ ] := None;
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
@@ -694,7 +694,7 @@ MakeTypeTransformation[ (patt_ :> spec_) ] :=
   },
       With[ { rule = HoldPattern @ epatt :> spec },
           expression : patt :>
-            TrEval[ TypedExpression @ expression /. rule /. t_T :> TrEval @ t ]
+            RuleCondition[ TypedExpression @ expression /. rule /. t_T :> RuleCondition @ t ]
       ]
   ];
 
@@ -722,9 +722,9 @@ MakeTypeTransformation[ Hold[ patterns__ ] ] :=
             (*                Proportion[ s : evalTypes, Typeof @ s_ ] :> s,
 
                 Proportion[ s_, t : HoldPattern @ Typeof[ evalTypes ] ] :>
-                  TrEval @ Proportion[ s, t ],
+                  RuleCondition @ Proportion[ s, t ],
 
-                p : Proportion[ _, evalTypes ] :> TrEval @ p,*)
+                p : Proportion[ _, evalTypes ] :> RuleCondition @ p,*)
 
                 TypedExpression[ t_ ] :> t
             }
@@ -755,9 +755,9 @@ TransformAndPostProcess[ transformations_, expression_ ] :=
                 Proportion[ s : evalTypes, Typeof @ s_ ] :> s,
 
                 Proportion[ s_, t : HoldPattern @ Typeof @ evalTypes ] :>
-                  TrEval @ Proportion[ s, t ],
+                  RuleCondition @ Proportion[ s, t ],
 
-                p : Proportion[ _, evalTypes ] :> TrEval @ p,
+                p : Proportion[ _, evalTypes ] :> RuleCondition @ p,
 
                 HoldPattern @
                   Proportion[ s : TypedLiteral[ _, t_ ], Type[ t_ ] ] :> s,
@@ -798,7 +798,7 @@ TypeCast[ s_, type_ ] :=
 
 TypeCast[ expression_, s_ -> type_Type ] :=
   TypedExpression @ expression /.
-    HoldPattern @ s :> TrEval @ TypeCast[ s, type ];
+    HoldPattern @ s :> RuleCondition @ TypeCast[ s, type ];
 
 TypeCast[ expression_, s_ -> type_ ] :=
   With[ { t = type },
@@ -950,7 +950,6 @@ Scan[ defLiteralSymbol,
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*ToTypedBinding*)
-Quiet[
 
 toTypedPatterns // ClearAll;
 toTypedPatterns // Attributes = {HoldAll};
@@ -968,7 +967,7 @@ ToTypedBinding // Options = {};
 ToTypedBinding[bind_[patt_, defn_]] :=
     Quiet[Module[{newPatt, dRepl, newDefn},
       newPatt =
-          HoldComplete[patt] /. p_Pattern :> TrEval@toTypedPatterns[p];
+          HoldComplete[patt] /. p_Pattern :> RuleCondition@toTypedPatterns[p];
 
       dRepl =
         Cases[HoldComplete[patt],
@@ -981,10 +980,6 @@ ToTypedBinding[bind_[patt_, defn_]] :=
       Delete[
         bind @@@ TempHold @@ {{newPatt, newDefn}}, {{1, 1, 0}, {1, 2, 0}}]
     ], RuleDelayed::rhs];
-
-    ,
-    RuleDelayed::rhs
-];
 
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)

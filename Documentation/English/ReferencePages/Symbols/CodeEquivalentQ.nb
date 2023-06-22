@@ -1529,13 +1529,13 @@ Notebook[
     {2021, 7, 26, 10, 41, 22.987},
     "Instant",
     "Gregorian",
-    -4.0
+    -4.
    ],
   "NotebookUUID" -> "5a8b10f1-ac92-daa3-2e6a-125943a49bdf",
   "Paclet" -> "None"
  },
  CellContext -> "Global`",
- FrontEndVersion -> "13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+ FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (November 18, 2022)",
  StyleDefinitions ->
   FrontEnd`FileName[
    {"Wolfram"},

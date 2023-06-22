@@ -1,4 +1,4 @@
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Package header*)
 
@@ -6,84 +6,131 @@
 (* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
 
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
-
-(* ::**********************************************************************:: *)
-(* ::Subsection::Closed:: *)
-(*Defined symbols*)
-$Dispatch;
-$LastTransformation;
-$RasterDistanceFunction;
-$RasterFailure;
-BuildDispatch;
-CodeEquivalentQ;
-EquivalenceTestData;
-FromCanonicalForm;
-MakeCanonicalForm;
-ToCanonicalForm;
-TransformHold;
-TransformRelease;
-
-(* ::**********************************************************************:: *)
-(* ::Subsection::Closed:: *)
-(*Declarations*)
-NormalizeNames;
-TypedSymbol;
-
-(* ::**********************************************************************:: *)
-(* ::Subsection::Closed:: *)
-(*Private*)
 Begin[ "`Private`" ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Messages*)
+CodeEquivalenceUtilities::InvalidRuleSpecification =
+"Invalid rule specification: `1`";
+
+(* ::**************************************************************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Argument Patterns*)
+$$validRule      = (Rule|RuleDelayed)[ _, _ ];
+$$validRuleSpec  = $$validRule | Automatic | Inherited | _Association? AssociationQ;
+$$validRuleSpecs = $$validRuleSpec | { $$validRuleSpec.. };
+
+(* ::**************************************************************************************************************:: *)
+(* ::Section::Closed:: *)
+(*Global Settings*)
+$PostProcessingFunction = Simplify;
+$NormalizeNames         = True;
+
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*$Dispatch*)
 $Dispatch = None;
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*$LastTransformation*)
 $LastTransformation = None;
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*CodeEquivalentQ*)
 CodeEquivalentQ // Attributes = { HoldAllComplete };
+CodeEquivalentQ // Options    = {
+    "NormalizeNames"      :> $NormalizeNames,
+    "PostProcessing"      :> $PostProcessingFunction,
+    "TransformationRules" -> Automatic
+};
+
 CodeEquivalentQ::raster = "Errors detected in rasterization: `1`";
 
-CodeEquivalentQ[   ] := True;
-CodeEquivalentQ[ _ ] := True;
+CodeEquivalentQ[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
+    catchMine @ withOptionSettings[
+        { OptionValue[ "TransformationRules" ], OptionValue[ "NormalizeNames" ], OptionValue[ "PostProcessing" ] },
+        EquivalenceTestData[ expr1, expr2, opts ][ "EquivalentQ" ]
+    ];
 
-CodeEquivalentQ[ expr1_, expr2_ ] :=
-  EquivalenceTestData[ expr1, expr2 ][ "EquivalentQ" ];
+(* ::**************************************************************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*withOptionSettings*)
+withOptionSettings // beginDefinition;
+withOptionSettings // Attributes = { HoldRest };
 
-CodeEquivalentQ[ a_, b_, rest__ ] :=
-    TrueQ @ CodeEquivalentQ[ a, b ] && TrueQ @ CodeEquivalentQ[ b, rest ];
+withOptionSettings[ { rules_, normalize_, post_ }, eval_ ] := Block[
+    {
+        $NormalizeNames         = TrueQ @ normalize,
+        $PostProcessingFunction = toPostProcessingFunction @ post,
+        withOptionSettings      = Function[ Null, #2, HoldFirst ],
+        $NewLocalSymbolCounter  = 0
+    },
+    With[ { unpackedRules = Normal @ $Dispatch },
+        If[ TrueQ @ legacyRulesQ @ unpackedRules,
+            $dispatchHash = Hash @ unpackedRules,
+            buildEquivalenceDispatch @ rules
+        ];
+        eval
+    ]
+];
 
-(* ::**********************************************************************:: *)
+withOptionSettings // endDefinition;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*toPostProcessingFunction*)
+toPostProcessingFunction // beginDefinition;
+toPostProcessingFunction[ Automatic ] := $PostProcessingFunction;
+toPostProcessingFunction[ func_     ] := func;
+toPostProcessingFunction // endDefinition;
+
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*EquivalenceTestData*)
-EquivalenceTestData // Attributes = { HoldAllComplete     };
-EquivalenceTestData // Options    = { "AllTests" -> False };
+EquivalenceTestData // Attributes = { HoldAllComplete };
+EquivalenceTestData // Options = {
+    "AllTests"            -> False,
+    "NormalizeNames"      :> $NormalizeNames,
+    "PostProcessing"      :> $PostProcessingFunction,
+    "TransformationRules" -> Automatic
+};
 
-EquivalenceTestData[ expr1_, expr2_, opts : OptionsPattern[ ] ] :=
-    WithCleanup[
-        Cached @ Catch @ iEquivalenceTestData[ expr1, expr2, opts ],
-        formatLocalSymbols[ ]
+EquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
+    catchMine @ With[ { allTests = OptionValue @ AllTests },
+        withOptionSettings[
+            { OptionValue[ "TransformationRules" ], OptionValue[ "NormalizeNames" ], OptionValue[ "PostProcessing" ] },
+            WithCleanup[ Cached @ iEquivalenceTestData[ expr1, expr2, allTests ], formatLocalSymbols[ ] ]
+        ]
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
+(* ::Subsection::Closed:: *)
+(*buildEquivalenceDispatch*)
+buildEquivalenceDispatch // beginDefinition;
+buildEquivalenceDispatch[ rules: $$validRuleSpecs ] := BuildDispatch @ GetRules[ "EquivalenceTesting", rules ];
+buildEquivalenceDispatch[ rules_ ] := throwFailure[ "InvalidRuleSpecification", rules ];
+buildEquivalenceDispatch // endDefinition;
+
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*iEquivalenceTestData*)
-iEquivalenceTestData // Attributes = { HoldAllComplete     };
-iEquivalenceTestData // Options    = { "AllTests" -> False };
+iEquivalenceTestData // Attributes = { HoldAllComplete };
 
-iEquivalenceTestData[ a___, sym_? SymbolQ, b___ ] :=
-    With[ { eval = HoldComplete[ a, sym, b ] /. OwnValues @ Unevaluated @ sym },
-        iEquivalenceTestData @@ eval /; eval =!= HoldComplete[ a, sym, b ]
+iEquivalenceTestData[ a_, sym_? SymbolQ, allTests_ ] :=
+    With[ { eval = HoldComplete[ a, sym, allTests ] /. OwnValues @ Unevaluated @ sym },
+        iEquivalenceTestData @@ eval /; eval =!= HoldComplete[ a, sym, allTests ]
     ];
 
-iEquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
-    withEvaluatorHandler @ Module[
+iEquivalenceTestData[ sym_? SymbolQ, a_, allTests_ ] :=
+    With[ { eval = HoldComplete[ sym, a, allTests ] /. OwnValues @ Unevaluated @ sym },
+        iEquivalenceTestData @@ eval /; eval =!= HoldComplete[ sym, a, allTests ]
+    ];
+
+iEquivalenceTestData[ expr1_, expr2_, allTests_ ] :=
+    Catch @ withEvaluatorHandler @ Module[
         {
             t0, timing, throwQ, testData, equivalentQ,
             hexpr1, hexpr2, cexpr1, cexpr2, eval1, eval2, randomPatt,
@@ -94,7 +141,7 @@ iEquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
         t0 = AbsoluteTime[ ];
         timing = (testData[ "Timing", # ] = AbsoluteTime[ ] - t0 ) &;
 
-        throwQ      = ! OptionValue @ "AllTests";
+        throwQ      = ! allTests;
         testData    = <| "Timing" -> <| |> |>;
         equivalentQ = False;
 
@@ -137,10 +184,10 @@ iEquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
             If[ throwQ, Throw @ testData ]
         ];
 
-        eval1 = EvaluateSafely @@ hexpr1;
+        eval1 = HoldForm @@ { EvaluateSafely @@ hexpr1 };
         timing[ "Evaluate1" ];
 
-        eval2 = EvaluateSafely @@ hexpr2;
+        eval2 = HoldForm @@ { EvaluateSafely @@ hexpr2 };
         timing[ "Evaluate2" ];
 
         testData[ "SandboxForms" ] = <| 1 -> eval1, 2 -> eval2 |>;
@@ -166,22 +213,24 @@ iEquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
 
         If[ hasRandomSymbolsQ
             ,
-            reval1 =
+            reval1 = HoldForm @@ {
                 Replace[ FromCanonicalForm @ cexpr1,
                         HoldComplete[ e_ ] :>
                         EvaluateSafely[ e,
                             "SymbolList" -> $UnsafeSymbols ~Join~ $RandomSymbols
                         ]
-                ];
+                ]
+            };
             timing[ "RandomSandboxForms1" ];
 
-            reval2 =
+            reval2 = HoldForm @@ {
                 Replace[ FromCanonicalForm @ cexpr2,
                         HoldComplete[ e_ ] :>
                         EvaluateSafely[ e,
                             "SymbolList" -> $UnsafeSymbols ~Join~ $RandomSymbols
                         ]
-                ];
+                ]
+            };
             timing[ "RandomSandboxForms2" ];
 
             testData[ "RandomSandboxForms" ] = <| 1 -> reval1, 2 -> reval2 |>;
@@ -239,63 +288,68 @@ iEquivalenceTestData[ expr1_, expr2_, opts: OptionsPattern[ ] ] :=
 
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*withEvaluatorHandler*)
 withEvaluatorHandler // Attributes = { HoldAllComplete };
 withEvaluatorHandler[ eval_ ] := Block[ { $UnsafeSymbols = { } }, eval ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*flattenHolds*)
 flattenHolds[ $$hold[ h: $$hold[ ___ ] ] ] := h;
 flattenHolds[ e___ ] := e;
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*equalQ*)
-equalQ[ a___ ] := TrueQ @ Or[ SameQ @ a, equal0 @ a ];
+equalQ[ a___ ] := Quiet @ TrueQ @ Or[ SameQ @ a, equal0 @ a ];
 
 equal0[ a___ ] :=
-    Replace[ Equal @ a,
+    Replace[ Equal @ a //. Verbatim[ Times ][ 1.0, x_ ] :> x,
              eq_Equal :> TimeConstrained[ Simplify @ eq, 1, False ]
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*ToCanonicalForm*)
 ToCanonicalForm // Options = {
-    "Trace"          -> False,
-    "MaxIterations"  -> 512,
-    "TimeConstraint" -> Infinity,
-    "PostProcessing" -> Simplify
+    "Trace"               -> False,
+    "MaxIterations"       -> 512,
+    "TimeConstraint"      -> Infinity,
+    "NormalizeNames"      :> $NormalizeNames,
+    "PostProcessing"      :> $PostProcessingFunction,
+    "TransformationRules" -> Automatic
 };
 
 ToCanonicalForm[ expr_, opts: OptionsPattern[ ] ] :=
-    ToCanonicalForm[ expr, ##1 &, opts ];
+    catchMine @ ToCanonicalForm[ expr, ##1 &, opts ];
 
 ToCanonicalForm[ expr_, wrapper_, OptionsPattern[ ] ] :=
-    With[
-        {
-            trace   = OptionValue[ "Trace"          ],
-            iter    = OptionValue[ "MaxIterations"  ],
-            timeout = OptionValue[ "TimeConstraint" ],
-            post    = OptionValue[ "PostProcessing" ]
-        },
-        WithCleanup[
-            Cached @ StripCanonical @ iToCanonicalForm[
-                expr,
-                wrapper,
-                trace,
-                iter,
-                timeout,
-                post
-            ],
-            formatLocalSymbols[ ]
+    catchMine @ withOptionSettings[
+        { OptionValue[ "TransformationRules" ], OptionValue[ "NormalizeNames" ], OptionValue[ "PostProcessing" ] },
+        With[
+            {
+                trace   = OptionValue[ "Trace"          ],
+                iter    = OptionValue[ "MaxIterations"  ],
+                timeout = OptionValue[ "TimeConstraint" ],
+                post    = $PostProcessingFunction
+            },
+            WithCleanup[
+                Cached @ StripCanonical @ iToCanonicalForm[
+                    expr,
+                    wrapper,
+                    trace,
+                    iter,
+                    timeout,
+                    post
+                ],
+                formatLocalSymbols[ ]
+            ]
         ]
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*AllEquivalentBy*)
 AllEquivalentBy[ exprs_, f_ ] :=
@@ -307,7 +361,7 @@ AllEquivalentBy[ exprs_List, f_, level_ ] :=
 AllEquivalentBy[ _[ args___ ], f_, level_ ] :=
     AllEquivalentBy[ Unevaluated @ { args }, f, level ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*iToCanonicalForm*)
 iToCanonicalForm[ expr_, wrapper_, True, limit_, timeout_, post_ ] :=
@@ -398,7 +452,7 @@ deleteAdjacentDuplicates[ list_ ] := First /@ Split @ list;
 topHold // Attributes = { HoldAllComplete };
 topHold[ e_topHold ] := e;
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*preprocessCanonical*)
 
@@ -420,9 +474,11 @@ preprocessCanonical[ expr_ ] := Sow[
     $CanonicalTrace
 ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*postApply*)
+postApply[ None, expr_ ] := expr;
+
 postApply[ post_, (h1: $$hold|TempHold)[ (h2: $$hold|TempHold)[ expr_ ] ] ] :=
     With[ { p = postApply[ post, h2[ expr ] ] }, h1 @ p ];
 
@@ -434,7 +490,7 @@ postApply[ post_, (h: $$hold|TempHold)[ expr_ ] ] :=
                 TempHold @ expr /. Inactive -> Inactive @ Inactive
             ]
         },
-        { new = post @ pre },
+        { new = Replace[ post @ pre, HoldPattern[ post ][ a___ ] :> a ] },
         h @@ ReplaceAll[
             Activate[ TempHold @ new /. Inactive @ Inactive -> $inactive ],
             $inactive -> Inactive
@@ -449,14 +505,14 @@ postApply[ post_, expr_ ] :=
                 TempHold @ expr /. Inactive -> Inactive @ Inactive
             ]
         },
-        { new = post @ pre },
+        { new = Replace[ post @ pre, HoldPattern[ post ][ a___ ] :> a ] },
         ReplaceAll[
             Activate[ TempHold @ new /. Inactive @ Inactive -> $inactive ],
             $inactive -> Inactive
         ]
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*inactivate*)
 inactivate // Attributes = { HoldAllComplete };
@@ -472,7 +528,7 @@ inactivate[ expr_ ] :=
 
 $inactive // Attributes = { HoldAllComplete };
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*$simplifySymbolNames*)
 $simplifySymbolNames := $simplifySymbolNames = Developer`ReadWXFFile @
@@ -481,7 +537,7 @@ $simplifySymbolNames := $simplifySymbolNames = Developer`ReadWXFFile @
         "SimplifySymbols"
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*$simplifySymbols*)
 $simplifySymbols := $simplifySymbols = Enclose[
@@ -498,7 +554,7 @@ $simplifySymbols := $simplifySymbols = Enclose[
     Alternatives[ ] &
 ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*$$simplifyInert*)
 $$simplifyInert := $$simplifyInert = Alternatives @@ {
@@ -506,7 +562,7 @@ $$simplifyInert := $$simplifyInert = Alternatives @@ {
     _Symbol? inertQ
 };
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*inertQ*)
 inertQ // Attributes = { HoldAllComplete };
@@ -518,7 +574,7 @@ inertQ[ sym_Symbol? SymbolQ ] :=
 
 inertQ[ ___ ] := False;
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*canonicalStepTransform*)
 canonicalStepTransform[ expr0_ ] :=
@@ -543,7 +599,7 @@ canonicalStepTransform[ expr0_ ] :=
 canonicalStepTransform[ expr_ ] :=
     $LastTransformation = canonicalStepTransformTop @ expr;
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*canonicalStepTransformTop*)
 canonicalStepTransformTop[ expr_ ] :=
@@ -561,53 +617,58 @@ releaseTransforms[ expr_ ] := ReplaceAll[
     ]
 ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*cst1*)
 cst1 // Attributes = { HoldAllComplete };
 cst1[ expr_ ] := TempHold @ expr /. $Dispatch;
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*cst2*)
 cst2 // Attributes = { HoldAllComplete };
 cst2[ expr_ ] := Cached @ cst1 @ expr;
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*MakeCanonicalForm*)
 MakeCanonicalForm // Attributes = { HoldAllComplete };
 
 MakeCanonicalForm // Options    = {
-    "Trace"          -> False,
-    "MaxIterations"  -> 512,
-    "TimeConstraint" -> Infinity,
-    "PostProcessing" -> Simplify
+    "Trace"               -> False,
+    "MaxIterations"       -> 512,
+    "TimeConstraint"      -> Infinity,
+    "NormalizeNames"      :> $NormalizeNames,
+    "PostProcessing"      :> $PostProcessingFunction,
+    "TransformationRules" -> Automatic
 };
 
 MakeCanonicalForm[ expr_, opts: OptionsPattern[ ] ] :=
-    MakeCanonicalForm[ expr, HoldForm, opts ];
+    catchMine @ MakeCanonicalForm[ expr, HoldForm, opts ];
 
 MakeCanonicalForm[ expr_, wrapper_, opts: OptionsPattern[ ] ] :=
-    Module[ { canonical, trace, wrapped, unwrapped },
-        canonical = ToCanonicalForm[ $holdWrapper @ expr, opts ];
-        trace     = TrueQ @ OptionValue[ "Trace" ];
-        wrapped   = If[ trace, $holdWrapper @@@ canonical, canonical ];
-        unwrapped = wrapped /. $holdWrapper -> wrapper;
-        unwrapped
+    catchMine @ withOptionSettings[
+        { OptionValue[ "TransformationRules" ], OptionValue[ "NormalizeNames" ], OptionValue[ "PostProcessing" ] },
+        Module[ { canonical, trace, wrapped, unwrapped },
+            canonical = ToCanonicalForm[ $holdWrapper @ expr, opts ];
+            trace     = TrueQ @ OptionValue[ "Trace" ];
+            wrapped   = If[ trace, $holdWrapper @@@ canonical, canonical ];
+            unwrapped = wrapped /. $holdWrapper -> wrapper;
+            unwrapped
+        ]
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*$holdWrapper*)
 $holdWrapper // Attributes = { HoldAllComplete };
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*FromCanonicalForm*)
-FromCanonicalForm[ expr_ ] := ReplaceRepeated[ expr, $fromCanonicalFormRules ];
+FromCanonicalForm[ expr_ ] := catchMine @ ReplaceRepeated[ expr, $fromCanonicalFormRules ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*$fromCanonicalFormRules*)
 $fromCanonicalFormRules = Dispatch @ {
@@ -617,7 +678,7 @@ $fromCanonicalFormRules = Dispatch @ {
     StringArg[ x_? SymbolQ ] :> RuleCondition @ SymbolName @ Unevaluated @ x
 };
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*fromLocalContextRHS*)
 fromLocalContextRHS // Attributes = { HoldAllComplete };
@@ -626,17 +687,23 @@ fromLocalContextRHS[ s_Symbol ] :=
         ToExpression[ name, InputForm, $ConditionHold ]
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*BuildDispatch*)
 BuildDispatch[ ] := BuildDispatch @ $TransformationRules;
 
-BuildDispatch[ rules_ ] :=
-    Module[ { oldRules, appended, newRules, added, removed },
+BuildDispatch[ Automatic ] :=
+    If[ TrueQ @ $builtDispatch,
+        $dispatchHash = Hash @ Normal @ $Dispatch;
+        $Dispatch,
+        BuildDispatch @ GetRules @ Automatic
+    ];
+
+BuildDispatch[ rules: { (Rule|RuleDelayed)[ _, _ ]... } ] :=
+    Module[ { oldRules, newRules, added, removed },
 
         oldRules = With[ { n = Normal @ $Dispatch }, If[ ListQ @ n, n, { } ] ];
-        appended = DeleteDuplicates @ Append[ rules, HoldApply[ f_, { v___ } ] :> f @ v ];
-        newRules = MakeTransformationRules @@ { appended };
+        newRules = MakeTransformationRules @ rules;
         $dispatchHash = Hash @ newRules;
 
         Catch[
@@ -677,16 +744,16 @@ Removed: ``
 
 BuildDispatch[ ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Rasterization*)
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*$RasterFailure*)
 $RasterFailure /: HoldPattern @ FailureQ @ $RasterFailure := True;
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*$RasterDistanceFunction*)
 $RasterDistanceFunction = Function[
@@ -696,7 +763,7 @@ $RasterDistanceFunction = Function[
     ]
 ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*rasterHeld*)
 rasterHeld // Attributes = { HoldFirst };
@@ -723,14 +790,14 @@ rasterHeld[ g_ ] :=
         $RasterFailure
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*holdingQ*)
 holdingQ // Attributes = { HoldAllComplete };
 holdingQ[ s_Symbol? SymbolQ ] :=
     ! FreeQ[ Attributes @ s, HoldFirst | HoldAll | HoldAllComplete ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
 (*rasterize*)
 rasterize[ expr_ ] :=
@@ -747,7 +814,7 @@ rasterize[ expr_ ] :=
         ImageCrop[ resized, $RasterSize, Padding -> GrayLevel @ .5 ]
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*rasterBoxErrorRatio*)
 rasterBoxErrorRatio[ raster_ ] :=
@@ -760,7 +827,7 @@ rasterBoxErrorRatio[ raster_ ] :=
         raster
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*averagePixelError*)
 averagePixelError[ img1_, img2_ ] :=
@@ -771,7 +838,7 @@ averagePixelError[ img1_, img2_ ] :=
         TrimmedMean[ Norm /@ diffs, trim ]
     ];
 
-(* ::**********************************************************************:: *)
+(* ::**************************************************************************************************************:: *)
 (* ::Section::Closed:: *)
 (*Package footer*)
 End[ ];

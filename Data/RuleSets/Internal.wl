@@ -23,6 +23,7 @@ SetRuleDefaults @ <|
 
 (**********************************************************************************************************************)
 <|
+    "Name"        -> "StripTempHoldWrappers",
     "Description" -> "Strip TempHold wrappers",
     "Symbols"     :> { TempHold },
     "Priority"    -> -Infinity,
@@ -32,6 +33,7 @@ SetRuleDefaults @ <|
 
 (**********************************************************************************************************************)
 <|
+    "Name"        -> "PreserveTransformHold",
     "Description" -> "Prevent transformation of TransformHold contents",
     "Symbols"     :> { TransformHold },
     "Priority"    -> -10000,
@@ -41,6 +43,7 @@ SetRuleDefaults @ <|
 
 (**********************************************************************************************************************)
 <|
+    "Name"        -> "HandlePacletSymbol",
     "Description" -> "Handle PacletSymbol wrappers for pasted documentation examples",
     "Symbols"     :> { PacletSymbol },
     "Internal"    -> True,
@@ -58,32 +61,17 @@ SetRuleDefaults @ <|
 |>
 
 (**********************************************************************************************************************)
-(* TODO: combine these rules: *)
 <|
+    "Name"        -> "SimplifyTrivialIntegerOperations",
     "Description" -> "Simplify trivial integer operations",
     "Usage"       -> { "EquivalenceTesting", "Optimization", "Simplification" },
-    "Symbols"     :> { Ceiling },
-    "Rule"        :> Ceiling[ i_? IntTypeQ ] :> i
+    "Symbols"     :> { Ceiling, Floor, Round, IntegerPart },
+    "Rule"        :> (Ceiling|Floor|Round|IntegerPart)[ i_? IntTypeQ ] :> i
 |>
 
 (**********************************************************************************************************************)
 <|
-    "Description" -> "Simplify trivial integer operations",
-    "Usage"       -> { "EquivalenceTesting", "Optimization", "Simplification" },
-    "Symbols"     :> { Floor },
-    "Rule"        :> Floor[ i_? IntTypeQ ] :> i
-|>
-
-(**********************************************************************************************************************)
-<|
-    "Description" -> "Simplify trivial integer operations",
-    "Usage"       -> { "EquivalenceTesting", "Optimization", "Simplification" },
-    "Symbols"     :> { Round },
-    "Rule"        :> Round[ i_? IntTypeQ ] :> i
-|>
-
-(**********************************************************************************************************************)
-<|
+    "Name"        -> "MaskGraphicsIntegerLists",
     "Description" -> "Hide large integer lists in graphics from transformations",
     "Usage"       -> { "EquivalenceTesting", "Optimization" },
     "Symbols"     :> { Graphics, Graphics3D },
@@ -102,6 +90,7 @@ SetRuleDefaults @ <|
 
 (**********************************************************************************************************************)
 <|
+    "Name"        -> "FlattenTypedSymbol",
     "Description" -> "Flatten TypedSymbol expressions",
     "Symbols"     :> { TypedSymbol },
     "Internal"    -> True,
@@ -111,6 +100,17 @@ SetRuleDefaults @ <|
 
 (**********************************************************************************************************************)
 <|
+    "Name"        -> "ApplyHoldApply",
+    "Description" -> "Apply HoldApply expressions",
+    "Symbols"     :> { HoldApply },
+    "Internal"    -> True,
+    "Priority"    -> 10000,
+    "Rule"        :> HoldApply[ f_, { v___ } ] :> f @ v
+|>
+
+(**********************************************************************************************************************)
+<|
+    "Name"        -> "LoopTest-1",
     "Description" -> "Generate a cycle detection warning for testing",
     "Symbols"     :> { },
     "Internal"    -> True,
@@ -122,6 +122,7 @@ SetRuleDefaults @ <|
 
 (**********************************************************************************************************************)
 <|
+    "Name"        -> "LoopTest-2",
     "Description" -> "Generate a cycle detection warning for testing",
     "Symbols"     :> { },
     "Internal"    -> True,

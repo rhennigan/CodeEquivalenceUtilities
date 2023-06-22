@@ -2388,7 +2388,7 @@ Notebook[
                                "FEBitmaps",
                                "SquarePlusIconMedium"
                               ],
-                              ImageSizeCache -> {12.0, {0.0, 12.0}}
+                              ImageSizeCache -> {12., {0., 12.}}
                              ],
                              Appearance -> None,
                              ButtonFunction :> (Typeset`open$$ = True),
@@ -2418,7 +2418,7 @@ Notebook[
                                 "MUnitExpressions",
                                 "SuccessIcon"
                                ],
-                               ImageSizeCache -> {16.0, {4.0, 8.0}}
+                               ImageSizeCache -> {16., {4., 8.}}
                               ],
                               Alignment -> Center,
                               ImageSize ->
@@ -3256,7 +3256,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.0015033, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[712, "Bytes"]
                       |>
                      ],
@@ -3362,7 +3362,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.001001, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[624, "Bytes"]
                       |>
                      ],
@@ -3384,7 +3384,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.0030036, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[112, "Bytes"]
                       |>
                      ],
@@ -3422,7 +3422,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.0050089, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[112, "Bytes"]
                       |>
                      ],
@@ -3468,7 +3468,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.013999, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[21608, "Bytes"]
                       |>
                      ],
@@ -3584,7 +3584,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.0050061, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[6472, "Bytes"]
                       |>
                      ],
@@ -3653,7 +3653,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.0095264, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[18928, "Bytes"]
                       |>
                      ],
@@ -3716,7 +3716,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.0045206, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[6920, "Bytes"]
                       |>
                      ],
@@ -3785,7 +3785,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.0065094, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[9712, "Bytes"]
                       |>
                      ],
@@ -3850,7 +3850,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.008024, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[15808, "Bytes"]
                       |>
                      ],
@@ -4181,7 +4181,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.0075238, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[9848, "Bytes"]
                       |>
                      ],
@@ -4329,7 +4329,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.0050043, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[9680, "Bytes"]
                       |>
                      ],
@@ -4400,7 +4400,7 @@ Notebook[
                        "ExpectedMessages" -> { },
                        "ActualMessages" -> { },
                        "AbsoluteTimeUsed" -> Quantity[0.0095123, "Seconds"],
-                       "CPUTimeUsed" -> Quantity[0.0, "Seconds"],
+                       "CPUTimeUsed" -> Quantity[0., "Seconds"],
                        "MemoryUsed" -> Quantity[25152, "Bytes"]
                       |>
                      ],
@@ -4947,7 +4947,7 @@ Notebook[
                                "FEBitmaps",
                                "SquarePlusIconMedium"
                               ],
-                              ImageSizeCache -> {12.0, {0.0, 12.0}}
+                              ImageSizeCache -> {12., {0., 12.}}
                              ],
                              Appearance -> None,
                              ButtonFunction :> (Typeset`open$$ = True),
@@ -4977,7 +4977,7 @@ Notebook[
                                 "MUnitExpressions",
                                 "SuccessIcon"
                                ],
-                               ImageSizeCache -> {16.0, {4.0, 8.0}}
+                               ImageSizeCache -> {16., {4., 8.}}
                               ],
                               Alignment -> Center,
                               ImageSize ->
@@ -5442,17 +5442,6 @@ Notebook[
            {
             {
              ButtonBox[
-              "TrEval",
-              BaseStyle -> "Link",
-              ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/TrEval"
-             ],
-             Cell[
-              "forces evaluation of the right-hand side of a transformation rule",
-              "TableText"
-             ]
-            },
-            {
-             ButtonBox[
               "WithHolding",
               BaseStyle -> "Link",
               ButtonData -> "paclet:Wolfram/CodeEquivalenceUtilities/ref/WithHolding"
@@ -5553,182 +5542,6 @@ Notebook[
          "Symbols that are useful in defining new transformation rules.",
          "Caption",
          CellID -> 379834843
-        ],
-        Cell[
-         CellGroupData[
-          {
-           Cell["TrEval", "Subsubsection", CellID -> 525831222],
-           Cell[
-            CellGroupData[
-             {
-              Cell[
-               "Forces evaluation of the right-hand side of a transformation rule.",
-               "Text",
-               CellID -> 581740758
-              ],
-              Cell[
-               CellGroupData[
-                {
-                 Cell[
-                  BoxData[
-                   RowBox[
-                    {
-                     RowBox[
-                      {
-                       "HoldComplete",
-                       "[",
-                       RowBox[
-                        {
-                         "Table",
-                         "[",
-                         RowBox[
-                          {
-                           "i",
-                           ",",
-                           RowBox[{"{", RowBox[{"i", ",", "1", ",", "5"}], "}"}]
-                          }
-                         ],
-                         "]"
-                        }
-                       ],
-                       "]"
-                      }
-                     ],
-                     "/.",
-                     RowBox[
-                      {"n_Integer", "\[RuleDelayed]", RowBox[{"n", "+", "1"}]}
-                     ]
-                    }
-                   ]
-                  ],
-                  "Input",
-                  CellID -> 46716950
-                 ],
-                 Cell[
-                  BoxData[
-                   RowBox[
-                    {
-                     "HoldComplete",
-                     "[",
-                     RowBox[
-                      {
-                       "Table",
-                       "[",
-                       RowBox[
-                        {
-                         "i",
-                         ",",
-                         RowBox[
-                          {
-                           "{",
-                           RowBox[
-                            {
-                             "i",
-                             ",",
-                             RowBox[{"1", "+", "1"}],
-                             ",",
-                             RowBox[{"5", "+", "1"}]
-                            }
-                           ],
-                           "}"
-                          }
-                         ]
-                        }
-                       ],
-                       "]"
-                      }
-                     ],
-                     "]"
-                    }
-                   ]
-                  ],
-                  "Output",
-                  CellID -> 106028760
-                 ]
-                },
-                Open
-               ]
-              ],
-              Cell[
-               CellGroupData[
-                {
-                 Cell[
-                  BoxData[
-                   RowBox[
-                    {
-                     RowBox[
-                      {
-                       "HoldComplete",
-                       "[",
-                       RowBox[
-                        {
-                         "Table",
-                         "[",
-                         RowBox[
-                          {
-                           "i",
-                           ",",
-                           RowBox[{"{", RowBox[{"i", ",", "1", ",", "5"}], "}"}]
-                          }
-                         ],
-                         "]"
-                        }
-                       ],
-                       "]"
-                      }
-                     ],
-                     "/.",
-                     RowBox[
-                      {
-                       "n_Integer",
-                       "\[RuleDelayed]",
-                       RowBox[{"TrEval", "[", RowBox[{"n", "+", "1"}], "]"}]
-                      }
-                     ]
-                    }
-                   ]
-                  ],
-                  "Input",
-                  CellID -> 498338544
-                 ],
-                 Cell[
-                  BoxData[
-                   RowBox[
-                    {
-                     "HoldComplete",
-                     "[",
-                     RowBox[
-                      {
-                       "Table",
-                       "[",
-                       RowBox[
-                        {
-                         "i",
-                         ",",
-                         RowBox[{"{", RowBox[{"i", ",", "2", ",", "6"}], "}"}]
-                        }
-                       ],
-                       "]"
-                      }
-                     ],
-                     "]"
-                    }
-                   ]
-                  ],
-                  "Output",
-                  CellID -> 104743684
-                 ]
-                },
-                Open
-               ]
-              ]
-             },
-             Open
-            ]
-           ]
-          },
-          Open
-         ]
         ],
         Cell[
          CellGroupData[
@@ -5960,7 +5773,7 @@ Notebook[
                             "\[RuleDelayed]",
                             RowBox[
                              {
-                              "TrEval",
+                              "RuleCondition",
                               "@",
                               RowBox[
                                {
@@ -6809,7 +6622,7 @@ Notebook[
                         GridBoxItemSize -> {
                          "Columns" -> {{Scaled[0.999]}},
                          "ColumnsIndexed" -> { },
-                         "Rows" -> {{1.0}},
+                         "Rows" -> {{1.}},
                          "RowsIndexed" -> { }
                         }
                        ]
@@ -7009,7 +6822,7 @@ Notebook[
                          }
                         ],
                         "\[RuleDelayed]",
-                        RowBox[{"TrEval", "[", "e", "]"}]
+                        RowBox[{"RuleCondition", "[", "e", "]"}]
                        }
                       ]
                      }
@@ -7119,11 +6932,12 @@ Notebook[
     {2021, 2, 19, 13, 35, 13.682},
     "Instant",
     "Gregorian",
-    -5.0
+    -5.
    ],
-  "NotebookUUID" -> "553273e1-809d-b2df-3b59-50f54845a6c4"
+  "NotebookUUID" -> "553273e1-809d-b2df-3b59-50f54845a6c4",
+  "Paclet" -> "None"
  },
- FrontEndVersion -> "13.0 for Microsoft Windows (64-bit) (November 11, 2021)",
+ FrontEndVersion -> "13.2 for Microsoft Windows (64-bit) (November 18, 2022)",
  StyleDefinitions ->
   FrontEnd`FileName[
    {"Wolfram"},

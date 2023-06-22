@@ -265,13 +265,14 @@ $nohp = Except[ Verbatim[ HoldPattern ][ _ ] ];
 MakeTransformationRules[ KeyValuePattern[ "Rule" :> rule_ ] ] :=
   MakeTransformationRules @ rule;
 
+MakeTransformationRules[ Automatic|Inherited ] := GetRules @ Automatic;
 
 MakeTransformationRules[ ( Rule | RuleDelayed )[ p: $nohp, exp_ ] ] :=
   Inline[ $nohp, MakeTransformationRules[ HoldPattern @ p :> exp ] ];
 
 
 MakeTransformationRules[ p: $nohp :> eval_PartialEvaluation ] :=
-  Inline[ $nohp, HoldPattern @ p :> TrEval @ eval ];
+  Inline[ $nohp, HoldPattern @ p :> RuleCondition @ eval ];
 
 
 MakeTransformationRules[ ( Rule | RuleDelayed )[ pattern_, exp_ ] ] :=

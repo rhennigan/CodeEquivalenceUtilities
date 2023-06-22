@@ -21,7 +21,7 @@ namesWithAttribute[ attr_ ] :=
 (* ::**********************************************************************:: *)
 (* ::Section::Closed:: *)
 (*InertSymbols*)
-$mathNames = namesWithAttribute[ NumericFunction|Constant ];
+$mathNames = DeleteCases[ namesWithAttribute[ NumericFunction|Constant ], "Max"|"Min" ];
 
 byVersion = Map[
     "System`" <> # &,

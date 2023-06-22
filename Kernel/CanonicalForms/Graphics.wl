@@ -56,7 +56,7 @@ listLinePlotsToListPlots[ expression_ ] :=
 listLinePlotsToListPlots[ expression_ ] :=
   expression //.
     HoldPattern @ ListLinePlot[ { d__? UNumericQ }, a___ ] :>
-      TrEval @ With[
+      RuleCondition @ With[
           {
               s1 = MapIndexed[ { First @ #2, #1 } &, { d } ],
               s2 = Sort @ TempHold[ a, Joined -> True ]
@@ -75,7 +75,7 @@ listPlot2DSortedPoints[ expression_ ] :=
     HoldPattern @
       ListPlot[ l : { d : { _? UAtomQ, _? UAtomQ } .. }, a___ ] /;
         ! UOrderedQ @ l :>
-          TrEval @ With[ { s1 = Sort @ TempHold @ d, s2 = Sort @ TempHold @ a },
+          RuleCondition @ With[ { s1 = Sort @ TempHold @ d, s2 = Sort @ TempHold @ a },
               TempHold[ ListPlot ][ s1, s2 ]
           ] //. TempHold[ ListPlot ][ TempHold[ s1___ ], TempHold[ s2___ ] ] :>
                   ListPlot[ { s1 }, s2 ];
@@ -85,7 +85,7 @@ listPlot2DSortedPoints[ expression_ ] :=
 (*canonicalSort2DPoints*)
 canonicalSort2DPoints[ expression_ ] :=
   expression //. Point[ { data__ }, args___ ] /; ! UOrderedQ @ { data } :>
-    TrEval @ With[ { sortPts = Sort @ TempHold @ data },
+    RuleCondition @ With[ { sortPts = Sort @ TempHold @ data },
                    Point[ sortPts, args ]
              ] //. TempHold -> List;
 
@@ -95,7 +95,7 @@ canonicalSort2DPoints[ expression_ ] :=
 canonical2DPolyOrdering[ expression_ ] :=
   expression //.
     p_? unordered2dPolyTempQ :>
-      TrEval @ canonical2dPoly @ p //.
+      RuleCondition @ canonical2dPoly @ p //.
         TempHold -> List;
 
 (* ::**********************************************************************:: *)

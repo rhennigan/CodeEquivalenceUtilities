@@ -43,6 +43,7 @@ SetRuleDefaults @ <|
 (**********************************************************************************************************************)
 <|
     "Description" -> "Resolve single-argument forms of functions with the OneIdentity attribute",
+    "Usage"       -> { Inherited, "Simplification", "Optimization" },
     "Symbols"     :> { Attributes, OneIdentity },
     "Rule"        :>
         (f_Symbol? SymbolQ)[ x: Except[ _Symbol? SymbolQ, _? UAtomQ ] ] /; MemberQ[ Attributes @ f, OneIdentity ] :>
@@ -53,6 +54,7 @@ SetRuleDefaults @ <|
 <|
     (* TODO: this doesn't quite belong in attribute rules *)
     "Description" -> "Resolve Apply when the specified function is not holding",
+    "Usage"       -> { Inherited, "Simplification", "Optimization" },
     "Symbols"     :> { Attributes, HoldFirst, HoldRest, HoldAll, HoldAllComplete, Apply },
     "Rule"        :>
         (f_? SymbolQ) @@ { a___ } /; And[
