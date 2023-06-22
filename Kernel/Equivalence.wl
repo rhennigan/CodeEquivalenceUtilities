@@ -301,7 +301,7 @@ flattenHolds[ e___ ] := e;
 (* ::**************************************************************************************************************:: *)
 (* ::Subsubsection::Closed:: *)
 (*equalQ*)
-equalQ[ a___ ] := TrueQ @ Or[ SameQ @ a, equal0 @ a ];
+equalQ[ a___ ] := Quiet @ TrueQ @ Or[ SameQ @ a, equal0 @ a ];
 
 equal0[ a___ ] :=
     Replace[ Equal @ a,
