@@ -1441,7 +1441,7 @@ resourceURL :=
 $allowedLibs = _String? (
     Function[
         Null,
-        StringQ @ Unevaluated @ # && StringEndsQ[ #, ".so" | ".dll" ],
+        StringQ @ Unevaluated @ # && StringEndsQ[ #, ".so" | ".dll" | ".dylib" ],
         HoldAllComplete
     ]
 );
