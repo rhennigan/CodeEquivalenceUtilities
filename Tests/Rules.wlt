@@ -700,4 +700,18 @@ VerificationTest[
     TestID   -> "Not-IntTypeQ-Count@@Tests/Rules.wlt:696,1-701,2"
 ]
 
+VerificationTest[
+    CodeEquivalentQ[ Range[ 4 ], Range @ { 1, 2, 3, 4 } ],
+    False,
+    SameTest -> MatchQ,
+    TestID   -> "Validate-Range-Arguments@@Tests/Rules.wlt:703,1-708,2"
+]
+
+VerificationTest[
+    CodeEquivalentQ[ Max @ IntegerDigits[ 2^20 ], IntegerDigits[ 2^20 ] ],
+    False,
+    SameTest -> MatchQ,
+    TestID   -> "Preserve-Max-In-Simplify@@Tests/Rules.wlt:710,1-715,2"
+]
+
 (* :!CodeAnalysis::EndBlock:: *)
