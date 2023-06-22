@@ -631,7 +631,7 @@ NormalizeNames[ exp_, opts: OptionsPattern[ ] ] :=
 
       index = Range[ offset, offset + Length @ freeSymbols - 1 ];
       newSymbols = NewLocalSymbol /@ index;
-      positions = Position[ exp, # ] & /@ freeSymbols;
+      positions = Function[ x, Position[ exp, x ] ] /@ freeSymbols;
       replacements = Thread[ positions -> newSymbols ];
       replaced = ReplacePart[ exp, replacements ];
 
