@@ -4,7 +4,7 @@
 
 (* :!CodeAnalysis::BeginBlock:: *)
 (* :!CodeAnalysis::Disable::TopLevelAssociation:: *)
-(* :!CodeAnalysis::Disable::BadSymbol::SymbolQ:: *)
+(* :!CodeAnalysis::Disable::SymbolVersionTooNew:: *)
 
 BeginPackage[ "Wolfram`CodeEquivalenceUtilities`" ];
 Begin[ "`Private`" ];
