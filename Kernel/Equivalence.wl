@@ -184,10 +184,10 @@ iEquivalenceTestData[ expr1_, expr2_, allTests_ ] :=
             If[ throwQ, Throw @ testData ]
         ];
 
-        eval1 = EvaluateSafely @@ hexpr1;
+        eval1 = HoldForm @@ { EvaluateSafely @@ hexpr1 };
         timing[ "Evaluate1" ];
 
-        eval2 = EvaluateSafely @@ hexpr2;
+        eval2 = HoldForm @@ { EvaluateSafely @@ hexpr2 };
         timing[ "Evaluate2" ];
 
         testData[ "SandboxForms" ] = <| 1 -> eval1, 2 -> eval2 |>;
@@ -213,22 +213,24 @@ iEquivalenceTestData[ expr1_, expr2_, allTests_ ] :=
 
         If[ hasRandomSymbolsQ
             ,
-            reval1 =
+            reval1 = HoldForm @@ {
                 Replace[ FromCanonicalForm @ cexpr1,
                         HoldComplete[ e_ ] :>
                         EvaluateSafely[ e,
                             "SymbolList" -> $UnsafeSymbols ~Join~ $RandomSymbols
                         ]
-                ];
+                ]
+            };
             timing[ "RandomSandboxForms1" ];
 
-            reval2 =
+            reval2 = HoldForm @@ {
                 Replace[ FromCanonicalForm @ cexpr2,
                         HoldComplete[ e_ ] :>
                         EvaluateSafely[ e,
                             "SymbolList" -> $UnsafeSymbols ~Join~ $RandomSymbols
                         ]
-                ];
+                ]
+            };
             timing[ "RandomSandboxForms2" ];
 
             testData[ "RandomSandboxForms" ] = <| 1 -> reval1, 2 -> reval2 |>;
