@@ -16,6 +16,6 @@ Quiet[
             { $Context, $ContextPath, System`$ContextAliases } = { ## }
         ] & [ $Context, $ContextPath, System`$ContextAliases ]
     ],
-    { RuleDelayed::rhs }
+    { RuleDelayed::rhs, General::shdw }
 ];
 (* :!CodeAnalysis::EndBlock:: *)

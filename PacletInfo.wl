@@ -7,7 +7,7 @@ PacletObject[ <|
     "DocumentationURL" -> "https://paclets.com",
     "License"          -> "MIT",
     "PublisherID"      -> "Wolfram",
-    "Version"          -> "3.0.0",
+    "Version"          -> "3.0.1",
     "WolframVersion"   -> "12.2+",
     "PrimaryContext"   -> "Wolfram`CodeEquivalenceUtilities`",
     "Keywords"         -> {
